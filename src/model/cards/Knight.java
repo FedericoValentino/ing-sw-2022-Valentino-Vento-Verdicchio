@@ -2,9 +2,9 @@ package model.cards;
 
 public class Knight extends CharacterCard{
 
-    public Knight(int baseCost, int uses, int currentCost)
+    public Knight(int baseCost)
     {
-        super(baseCost,uses,currentCost); //costruttore sopra classe
+        super(baseCost); //costruttore sopra classe
     }
     public void effect()
     {

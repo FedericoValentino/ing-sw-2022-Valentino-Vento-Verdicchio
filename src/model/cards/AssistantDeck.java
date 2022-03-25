@@ -46,4 +46,5 @@ public class AssistantDeck
 
     public ArrayList<AssistantCard> getDeck()
         {return deck;}
+
 }

@@ -4,10 +4,10 @@ public class GrandmaWeed extends CharacterCard{
 
     private int noEntry;
 
-    public GrandmaWeed(int baseCost, int uses, int currentCost,int noEntry)
+    public GrandmaWeed(int baseCost)
     {
-        super(baseCost,uses,currentCost); //costruttore sopra classe
-        this.noEntry=noEntry;
+        super(baseCost); //costruttore sopra classe
+        this.noEntry = 0;
     }
 
     public void effect()
