@@ -1,20 +1,21 @@
 package model.cards;
-import model.cards.Card;
 
-public class AssitantDeck
+public class CharacterDeck
 {
   private int playerId;
   private Card[] deck;
 
-  public AssitantDeck(Card[] deck, int playerId)
+
+  public CharacterDeck(Card[] deck, int playerId)
   {
     this.deck=deck;
     this.playerId=playerId;
   }
-
   /*
+  public Card drawCard(){return }
   public boolean checkEmpty(){}
-  public Card[] getDeck(int numCard);
+  public Card getDeck(int numCard){}
  */
   public int getPlayerId(){return playerId;}
+
 }

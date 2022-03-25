@@ -1,7 +1,6 @@
 package model;
 
 import model.cards.AssitantDeck;
-import model.cards.Card;
 
 public class Player
 {
