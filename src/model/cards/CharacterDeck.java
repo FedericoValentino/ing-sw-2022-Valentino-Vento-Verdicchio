@@ -3,10 +3,10 @@ package model.cards;
 public class CharacterDeck
 {
   private int playerId;
-  private Card[] deck;
+  private CharacterCard deck;
 
 
-  public CharacterDeck(Card[] deck, int playerId)
+  public CharacterDeck(CharacterCard deck, int playerId)
   {
     this.deck=deck;
     this.playerId=playerId;
