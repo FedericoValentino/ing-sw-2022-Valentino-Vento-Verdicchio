@@ -1,70 +1,73 @@
 package model.boards;
 import model.boards.token.ColTow;
 import model.boards.token.Student;
-import model.boards.token.Token;
+import model.boards.token.Col;
+
+import java.util.ArrayList;
 
 public class School implements Board
 {
   private ColTow color;
-  private Student[] entrance;
+  private ArrayList<Student> entrance;
   private int[] colors;
   private boolean[] professorTable;
   private int towerCount;
 
-    public School(ColTow color, Student[] entrance, int[] colors, boolean[] professorTable, int towerCount)
-    {
-        this.color=color;
-        this.entrance=entrance;
-        this.colors=colors;
-        this.professorTable=professorTable;
-        this.towerCount=towerCount;
+    public School(ColTow color, Pouch pouch, int towerCount)        //Pouch viene dato in ingresso (dal controller suppongo) per estrarre tramite apposita
+    {                                                               //funzione gli studenti da metetre nell'entrance. Il colore della torre è dato per assegnare
+        this.color = color;                                         //la scuola a uno specifico team e il count delle torri va specificato in ingresso perchè cambiano
+        this.towerCount = towerCount;                               //da partite a 2/4 - 3 giocatori. Il resto è standard, array della dining room vuoto, professori a false
+        this.colors = new int[5];
+        this.professorTable = new boolean[5];
+        for(int i = 0; i<7; i++)
+        {
+            this.entrance.set(i, pouch.extractStudent());
+        }
     }
-  /*
-  public int gainCoin()
-  {
-  }
-  public int checkRemainingTowers()
-  {
-  }
-  public int checkProfessors()
-  {
-  }
-   */
-  public void placeToken(Token s, int pos)
-  {
 
-  }
-  public void removeToken(Token s,int pos)
-  {
+  public void placeToken(Student student, int position)             //Riceve un oggetto studente e una posizione specifica della entrance in cui metterlo;
+  {                                                                 //visto che usiamo arraylists per tutto non so wuanto serva dare la posizione.... può
+      entrance.set(position, student);                              //dare problemi e basterebbe fare una add. Comunque con l'attuale implementazione
+  }                                                                 //di placeToken va così
 
-  }
 
   public ColTow getColor()
   {
     return color;
   }
- /* public Student getEntrance(int pos)
+
+  public Student extractStudent(int index)                          //Estrae un singolo studente dalla entrance e lo ritorna per la funzione che lo ha chiamato
   {
     try
     {
-      for(int i=0;i<entrance.length;i++)
-      {
-        if(i==pos)
-          return entrance[i];
-      }
-    }catch(NullPointerException e)
+      Student student = entrance.get(index);
+      entrance.remove(index);
+      return student;
+    }
+    catch(NullPointerException e)
     {
       System.out.println("i can't give you correctly a specific position of student entrance, maybe because it's a null pointer");
+      return null;
     }
-  }*/
+  }
+
+  public void placeInDiningRoom(int index)              //Da finire
+  {
+     Student student = extractStudent(index);
+     Col color = student.getColor();
+
+  }
+
+  public ArrayList<Student> getEntrance()
+    {return entrance;}
+
   public int[] getColors()
-  {
-    return colors;
-  }
+    {return colors;}
+
   public boolean[] getProfessorTable()
-  {
-    return professorTable;
-  }
-  public int getTowerCount(){return towerCount;}
+    {return professorTable;}
+
+  public int getTowerCount()
+    {return towerCount;}
 
 }
