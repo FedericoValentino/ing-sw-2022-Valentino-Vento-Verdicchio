@@ -14,9 +14,10 @@ public class AssistantDeck
         this.wizard = wizard;
         this.playerName = playerName;
         int j=1;
+        this.deck = new ArrayList<AssistantCard>();
         for(int i = 1; i<=10; i++)
             {
-                this.deck.set(i, new AssistantCard(j, i));     //il valore di movimento va da 1 a 5, quello del turno da 1 a 10
+                this.deck.add(new AssistantCard(j, i));     //il valore di movimento va da 1 a 5, quello del turno da 1 a 10
                 if((i % 2) == 0)                               // sono accoppiati sulle singole carte nel seguente modo (1,1 - 1,2 - 2,3 - 2,4 ecc)
                     {                                          // dunque incremento j (relativo al movimento) solo quando i è pari
                         j++;

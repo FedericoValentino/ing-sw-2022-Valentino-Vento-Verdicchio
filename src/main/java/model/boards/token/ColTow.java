@@ -1,4 +1,4 @@
-package model.boards.token;
+package model.boards.token;         //ordinal
 
 public enum ColTow {
     GREY,
