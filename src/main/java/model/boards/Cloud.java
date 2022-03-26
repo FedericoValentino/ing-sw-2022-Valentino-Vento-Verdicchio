@@ -1,6 +1,5 @@
 package model.boards;
 import model.boards.token.Student;
-import model.boards.token.Token;
 
 public class Cloud implements Board
 {
@@ -14,8 +13,8 @@ public class Cloud implements Board
     }
   }
 
-  public void placeToken(Token s, int pos){}
-  public void removeToken(Token s,int pos) {  }
+  public void placeToken(Student s, int pos){}
+  public void removeToken(Student s,int pos) {  }
   public boolean isEmpty(){
     //da verificare se non posso farlo con una funzione di libreria piuttosto che così
     if(student.length==0)

@@ -1,7 +1,6 @@
 package model.boards.token;
 
-public class Student implements Token
-{
+public class Student {
 
     private Col color;
 

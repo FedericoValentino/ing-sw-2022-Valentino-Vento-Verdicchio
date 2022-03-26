@@ -1,6 +1,6 @@
 package model.boards.token;
 
-public class MotherNature implements Token {
+public class MotherNature {
 
     private int id_position;
 

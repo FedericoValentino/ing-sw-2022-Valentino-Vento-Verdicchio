@@ -1,6 +1,5 @@
 package model.boards;
-
-import model.boards.token.Token;
+import model.boards.token.Student;
 
 public class Islands implements Board {
   private Island[] islands;
@@ -17,10 +16,10 @@ public class Islands implements Board {
 
   }
 
-  public void placeToken(Token s, int pos) {
+  public void placeToken(Student s, int pos) {
   }
 
-  public void removeToken(Token s, int pos) {
+  public void removeToken(Student s, int pos) {
   }
 
   /*
