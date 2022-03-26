@@ -1,15 +1,14 @@
 package model;
 
-import model.cards.AssitantDeck;
+import model.cards.AssistantDeck;
 
 public class Player
 {
   private int playerId;
   private String nome;
   private int coinAmount;
-  private Card currentAssistantCard;
-  private AssitantDeck assistantDeck;
-  private AssitantDeck characterDeck;
+  private AssistantDeck assistantDeck;
+  private AssistantDeck characterDeck;
   private Character[] activeCharacterCards;
   private int maxMotherMovement;
   private int movementValue;

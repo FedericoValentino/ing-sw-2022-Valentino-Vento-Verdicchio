@@ -3,6 +3,7 @@ package model;
 import model.boards.Islands;
 import model.boards.Pouch;
 
+
 public class CurrentGameState {
     private Islands currentIslands;
     private Character currentCharacterDeck;
