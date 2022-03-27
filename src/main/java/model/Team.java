@@ -3,63 +3,78 @@ package model;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 
+import java.util.ArrayList;
+
 public class Team
 {
-  private ColTow color;
-  private Player[] players;
+  private final ColTow color;
+  private ArrayList<Player> players;
   private int controlledIslands;
-  private Col[] controlledProfessors;
+  private ArrayList<Col> controlledProfessors;
 
-
-  public Team(){}
-
-  public void addPlayer(Player p){
-    //da implementare
+  public Team(ColTow color)
+  {
+    this.color = color;
+    this.players = new ArrayList<>();
+    this.controlledIslands = 0;
+    this.controlledProfessors = new ArrayList<>();
   }
 
-  public Team(ColTow color, Player[] players, int controlledIslands, Col[] controlledProfessors)
+  public void addPlayer(Player p)
   {
-    this.color=color;
-    this.controlledIslands=controlledIslands;
-    this.controlledProfessors=controlledProfessors;
-    for(int i=0;i<players.length;i++)
+    this.players.add(p);
+  }
+
+  public void updateProfessors()                            //molto brutto, forse estremamente, vorrei rimuoverlo del tutto
+  {                                                         // e usare la hashmap nel currentGameState
+    for(Player p : players)
     {
-      this.players[i]=players[i];
+      for(int i = 0; i < 5; i ++)
+      {
+        if(p.getPlayerSchool().getProfessorTable()[i] == true)
+        {
+          switch(i)
+          {
+            case(1):
+              if(!controlledProfessors.contains(Col.GREEN))
+                controlledProfessors.add(Col.GREEN);
+              break;
+            case(2):
+              if(!controlledProfessors.contains(Col.RED))
+                controlledProfessors.add(Col.RED);
+              break;
+            case(3):
+              if(!controlledProfessors.contains(Col.YELLOW))
+                controlledProfessors.add(Col.YELLOW);
+              break;
+            case(4):
+              if(!controlledProfessors.contains(Col.PINK))
+                controlledProfessors.add(Col.PINK);
+              break;
+            case(5):
+              if(!controlledProfessors.contains(Col.BLUE))
+                controlledProfessors.add(Col.BLUE);
+              break;
+          }
+        }
+      }
     }
 
   }
 
-  public ColTow getColor()
-  {
+  public ColTow getColor() {
     return color;
   }
 
-  /*
-  public Player getSingleplayers(int idPl)
-
-  {
-    try{
-      for(int i=0;i<players.length;i++)
-        if(players.playerId==idPl)
-          return players[i];
-    }
-    catch (NullPointerException e)
-    {
-      System.out.println("Null pointer exceprtion  in getPlayer(int)");
-    }
-  }
- */
-
-
-  public Player[] getPlayers() {
+  public ArrayList<Player> getPlayers() {
     return players;
   }
 
-  public int getControlledIslands()
-  {
+  public int getControlledIslands() {
     return controlledIslands;
   }
-  public Col[] getControlledProfessors() {
+
+  public ArrayList<Col> getControlledProfessors() {
     return controlledProfessors;
   }
 }

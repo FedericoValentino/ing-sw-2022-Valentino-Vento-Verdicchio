@@ -1,37 +1,71 @@
 package model;
 
+import model.boards.Cloud;
 import model.boards.Islands;
 import model.boards.Pouch;
+import model.boards.token.MotherNature;
+import model.boards.token.Student;
+import model.cards.CharacterCard;
+import model.cards.CharacterDeck;
+
+import java.util.ArrayList;
 
 
 public class CurrentGameState {
-    private Islands currentIslands;
-    private Character currentCharacterDeck;
+    private CharacterDeck currentCharacterDeck;
     private Pouch currentPouch;
-    private Team[] currentTeams;
-    private int turn;
-    private int actions;
-    private boolean gameEnded;
-    private Team winningTeam;
-    private boolean actionPhase;
+    private Islands currentIslands;
+    private ArrayList<Team> currentTeams;
+    private Cloud[] currentClouds;
+    private MotherNature currentMotherNature;
+    private CurrentTurnState currentTurnState;
+    private ArrayList<CharacterCard> currentActiveCharacterCard;
+    private ArrayList<Student> currentExtractedStudents;
     private int bankBalance;
 
-    public CurrentGameState(){
-        //va implementato tutto o solo in parte?
-    }
-
-    /*
-    public Team getTeam(int idTeamIns)
+    public CurrentGameState(int playerNum)
     {
+       this.currentCharacterDeck = new CharacterDeck();
+       this.currentPouch = new Pouch();
+       this.currentIslands = new Islands();
+       this.currentTeams = new ArrayList<Team>();
+       this.currentClouds = new Cloud[playerNum];
+       this.currentMotherNature = new MotherNature();
+       this.currentTurnState = new CurrentTurnState();
+       this.currentActiveCharacterCard = new ArrayList<CharacterCard>();
+       this.currentExtractedStudents = new ArrayList<Student>();
+       this.bankBalance = 20 - playerNum;
 
     }
- */
-    public int getTurn(){return turn;}
-    public boolean getGameEnded(){return gameEnded;}
-    public Team getWinningTeam(){return winningTeam;}
-    public boolean getActionPhase(){return  actionPhase;}
+
+    public void insertExtractedStudent(Student s)
+    {
+        currentExtractedStudents.add(s);
+    }
+
+    public void checkWinner()
+    {
+        for(Team t: currentTeams)
+        {
+            for(Player p: t.getPlayers())
+            {
+                if(p.getPlayerSchool().getTowerCount() == 0 || p.getAssistantDeck().checkEmpty())
+                    CurrentTurnState.updateWinner(t.getColor());
+            }
+        }
+        if(currentIslands.getTotalGroups() == 3 || currentPouch.checkEmpty())
+        {
+            currentTurnState.updateWinner(currentIslands.getMaxCol());
+        }
+    }
+
+    public void updateBankBalance(int coinAmount)
+    {
+        this.bankBalance -= coinAmount;
+    }
+
     public int getBankBalance(){return bankBalance;}
     public Islands getCurrentIslands(){return currentIslands;}
-    public Character getCurrentCharacterDeck(){return currentCharacterDeck;}
+    public CharacterDeck getCurrentCharacterDeck(){return currentCharacterDeck;}
     public Pouch getCurrentPouch() {return currentPouch;}
 }
