@@ -2,7 +2,10 @@ package model.boards;
 
 import model.boards.token.Student;
 
-public interface Board
+public abstract class Board
 {
-  public void placeToken(Student s, int pos);
+  public void placeToken(Student s, int pos)
+  {
+
+  }
 }

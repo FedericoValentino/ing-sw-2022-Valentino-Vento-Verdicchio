@@ -50,7 +50,7 @@ public class CurrentGameState {
             for(Player p: t.getPlayers())
             {
                 if(p.getPlayerSchool().getTowerCount() == 0 || p.getAssistantDeck().checkEmpty())
-                    CurrentTurnState.updateWinner(t.getColor());
+                    currentTurnState.updateWinner(t.getColor());
             }
         }
         if(currentIslands.getTotalGroups() == 3 || currentPouch.checkEmpty())

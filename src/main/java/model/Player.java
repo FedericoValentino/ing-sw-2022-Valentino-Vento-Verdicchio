@@ -20,7 +20,7 @@ public class Player
   public Player(String nome, ColTow col, int towerAmount, String wizard)
   {
     this.nome = nome;
-    this.school = new School(col, , towerAmount);
+    this.school = new School(col, towerAmount);
     this.assistantDeck = new AssistantDeck(wizard, nome);
     this.coinAmount = 1;
     this.currentAssistantCard = null;

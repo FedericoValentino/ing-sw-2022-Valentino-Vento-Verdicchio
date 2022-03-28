@@ -1,7 +1,7 @@
 package model.boards;
 import model.boards.token.Student;
 
-public class Cloud implements Board
+public class Cloud extends Board
 {
   public Student[] student;
 

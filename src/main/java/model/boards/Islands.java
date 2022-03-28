@@ -4,7 +4,7 @@ import model.boards.token.Student;
 
 import java.util.ArrayList;
 
-public class Islands implements Board {
+public class Islands extends Board {
   private ArrayList<Island> islands;
   private int totalGroups;
 

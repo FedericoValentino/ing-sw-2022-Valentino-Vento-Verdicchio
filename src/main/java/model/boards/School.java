@@ -5,29 +5,27 @@ import model.boards.token.Col;
 
 import java.util.ArrayList;
 
-public class School implements Board
+public class School extends Board
 {
   private ColTow color;
   private ArrayList<Student> entrance;
-  private int[] colors;
+  private int[] DiningRoom;
   private boolean[] professorTable;
   private int towerCount;
 
-    public School(ColTow color, Pouch pouch, int towerCount)        //Pouch viene dato in ingresso (dal controller suppongo) per estrarre tramite apposita
+    public School(ColTow color, int towerCount)        //Pouch viene dato in ingresso (dal controller suppongo) per estrarre tramite apposita
     {                                                               //funzione gli studenti da metetre nell'entrance. Il colore della torre è dato per assegnare
         this.color = color;                                         //la scuola a uno specifico team e il count delle torri va specificato in ingresso perchè cambiano
         this.towerCount = towerCount;                               //da partite a 2/4 - 3 giocatori. Il resto è standard, array della dining room vuoto, professori a false
-        this.colors = new int[5];
+        this.DiningRoom = new int[5];
         this.professorTable = new boolean[5];
-        for(int i = 0; i<7; i++)
-        {
-            this.entrance.set(i, pouch.extractStudent());
-        }
+        this.entrance = new ArrayList<Student>();
     }
 
-  public void placeToken(Student student, int position)             //Riceve un oggetto studente e una posizione specifica della entrance in cui metterlo;
+
+  public void placeToken(Student student)             //Riceve un oggetto studente e una posizione specifica della entrance in cui metterlo;
   {                                                                 //visto che usiamo arraylists per tutto non so wuanto serva dare la posizione.... può
-      entrance.set(position, student);                              //dare problemi e basterebbe fare una add. Comunque con l'attuale implementazione
+      entrance.add(student);                              //dare problemi e basterebbe fare una add. Comunque con l'attuale implementazione
   }                                                                 //di placeToken va così
 
 
@@ -51,18 +49,18 @@ public class School implements Board
     }
   }
 
-  public void placeInDiningRoom(int index)              //Da finire
+  public void placeInDiningRoom(int index)
   {
      Student student = extractStudent(index);
      Col color = student.getColor();
-
+     DiningRoom[color.ordinal()]++;
   }
 
   public ArrayList<Student> getEntrance()
     {return entrance;}
 
-  public int[] getColors()
-    {return colors;}
+  public int[] getDiningRoom()
+    {return DiningRoom;}
 
   public boolean[] getProfessorTable()
     {return professorTable;}
