@@ -4,7 +4,7 @@ import model.boards.Board;
 public class Student {
 
     private Col color;
-    private Board currentPosition;
+    private Board currentPosition;//da aggiungere anche un setter di curPos allora
 
     public Student(Col StudentColor)
     {
@@ -24,7 +24,7 @@ public class Student {
             return currentPosition;
         }catch (NullPointerException e)
         {
-            System.out.println("Torno nullo perché var null");
+            System.out.println("I'll return null, because is not initialized");
         return null;} //purtroppo
     }
 
