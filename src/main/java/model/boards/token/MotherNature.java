@@ -1,22 +1,46 @@
 package model.boards.token;
+//serve java.utils.random per randomizzare la posizione
+import java.util.Random;
 
-public class MotherNature {
+public class MotherNature
+{
+    private int idPosition;
 
-    private int id_position;
-
-    public MotherNature(){}  //servirebbe java.utils.random per randomizzare la posizione
-
-    public void move(int value)
-    {
-        //da implementare
+    public MotherNature(){
+        //this.id_position
+        Random r= new Random();
+        this.idPosition=r.nextInt(12);
     }
-    public void setIsland(){
-        //da implementare
+
+    //maxIdIsland deve essere compreso tra 0 e 11
+    public void move(int value,int maxIdIsland)
+    {
+        //da implementare lock su idPos solo quando lo aggiorno
+        //lock(idPosition)
+
+        if(maxIdIsland<0 || maxIdIsland>11)
+        {
+            System.out.println("Error, invalid maxIdIsland" +
+                    " : (you've insert a maxIdIsland >11 or <0)");
+        }
+        else if(maxIdIsland<idPosition)
+        {
+            System.out.println("Error: maxIdIsland "+maxIdIsland+" < idPosition"+
+                    idPosition);
+        }
+        else if(maxIdIsland>=0 && maxIdIsland<=11 && maxIdIsland>idPosition)
+        {
+            int temp=0;
+            temp=idPosition+value;
+            if(temp>maxIdIsland)
+            {
+                temp-=(maxIdIsland+1);
+            }
+            idPosition=temp;
+        }
     }
 
     public int getPosition() {
-        return id_position;
+        return idPosition;
     }
-
-
 }
