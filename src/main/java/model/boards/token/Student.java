@@ -1,8 +1,10 @@
 package model.boards.token;
 
+import model.boards.Board;
 public class Student {
 
     private Col color;
+    private Board currentPosition;
 
     public Student(Col StudentColor)
     {
@@ -14,8 +16,17 @@ public class Student {
     {
         return color;
     }
-    /*public int getPosition()
+
+    public Board getCurrentPosition()
     {
-        //da capire che fa
-    }*/
+        try
+        {
+            return currentPosition;
+        }catch (NullPointerException e)
+        {
+            System.out.println("Torno nullo perché var null");
+        return null;} //purtroppo
+    }
+
+
 }
