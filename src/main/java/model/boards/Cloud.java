@@ -1,39 +1,56 @@
 package model.boards;
 import model.boards.token.Student;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Vector;
+
 public class Cloud extends Board
 {
-  public Student[] student;
+  private ArrayList<Student> student;
 
-  public Cloud(Student[] st)
+  public Cloud(){}
+  public Cloud(ArrayList<Student> st)
   {
-    for(int i=0;i<st.length;i++)
+    for(int i=0;i<st.size();i++)
     {
-      this.student[i]=st[i];
+      this.student.set(i, st.get(i));
     }
   }
 
-  public void placeToken(Student s, int pos){}
-  public void removeToken(Student s,int pos) {  }
+  //add Student to the cloud queue
+  public void placeToken(Student s){
+    student.add(s);
+  }
+
+  //remove the last Student insert
+  public void removeToken(Student s)
+  {
+    if(!student.isEmpty())
+    {
+      student.remove(s);
+    }
+    else
+    {
+      System.out.println("Error,the student vector is empty");
+    }
+  }
+
   public boolean isEmpty(){
     //da verificare se non posso farlo con una funzione di libreria piuttosto che così
-    if(student.length==0)
+    if(student.size()==0)
       return true;
     else
       return false;
   }
 
-  /*public Student getStudent(int pos) {
+  public Student getStudent(int pos) {
     //dovrebbe funzionare ma non so se posso evitarlo usando qualche throw exception
-    if (pos < 0) {
-      System.out.println("parametro minore di 0");
-    } else {
-      try {
-        return student[pos];
-      } catch (NullPointerException e) {
-        System.out.println("Null pointer exception in gestione pos studente");
-      }
+    try {
+      return student.get(pos);
+    } catch (NullPointerException e) {
+      System.out.println("Null pointer exception perché stai restituendo un intero negativo");
     }
-    return ;//da capire cosa ritornare in caso di errore
-  }*/
+    return null;
+  }
 }
