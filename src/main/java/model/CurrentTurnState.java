@@ -32,4 +32,20 @@ public class CurrentTurnState
         gameEnded = true;
         WinningTeam = t;
     }
+
+    public boolean getIsActionPhase() {
+        return actionPhase;
+    }
+    public ColTow getWinningTeam() {
+        return WinningTeam;
+    }
+    public boolean getIsGameEnded() {
+        return gameEnded;
+    }
+    public int getActions() {
+        return actions;
+    }
+    public int getTurn() {
+        return turn;
+    }
 }
