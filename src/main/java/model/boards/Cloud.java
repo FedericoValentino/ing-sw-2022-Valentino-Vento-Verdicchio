@@ -1,15 +1,13 @@
 package model.boards;
-import model.boards.token.ColTow;
 import model.boards.token.Student;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Vector;
-import model.boards.token.Col;
 
 public class Cloud extends Board
 {
-  private ArrayList<Student> student=new ArrayList<Student>();
+  private ArrayList<Student> student;
 
   public Cloud(){}
   public Cloud(ArrayList<Student> st)

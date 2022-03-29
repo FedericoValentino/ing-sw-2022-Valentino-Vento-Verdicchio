@@ -38,10 +38,22 @@ public class Player
     value = currentAssistantCard.getValue();
   }
 
-  public void gainCoin()
+  public int gainCoin()
   {
-
+    int gainedCoins = 0;
+    for(int i = 0; i < 5; i++)
+    {
+      while(school.getDiningRoom()[i] >= school.getRoomCheckpoints()[i])
+      {
+        gainedCoins++;
+        school.updateCheckpoint(i);
+      }
+    }
+    return gainedCoins;
   }
+
+  public void updateCoins(int gain)
+    {coinAmount += gain;}
 
   public School getPlayerSchool()
   {

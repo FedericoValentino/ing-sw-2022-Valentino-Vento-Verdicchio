@@ -49,19 +49,35 @@ public class CurrentGameState {
         {
             for(Player p: t.getPlayers())
             {
-                if(p.getPlayerSchool().getTowerCount() == 0 || p.getAssistantDeck().checkEmpty())
+                if(p.getPlayerSchool().getTowerCount() == 0)
+                {
                     currentTurnState.updateWinner(t.getColor());
+                }
+                if(p.getAssistantDeck().checkEmpty())
+                {
+                    currentTurnState.lastTurn = true;
+                }
             }
         }
-        if(currentIslands.getTotalGroups() == 3 || currentPouch.checkEmpty())
+        if(currentIslands.getTotalGroups() == 3)
         {
             currentTurnState.updateWinner(currentIslands.getMaxCol());
         }
+        else if (currentPouch.checkEmpty())
+        {
+            currentTurnState.lastTurn = true;
+        }
     }
 
-    public void updateBankBalance(int coinAmount)
+    public void updateBankBalance(Player p)
     {
-        this.bankBalance -= coinAmount;
+        int coinsToLose = p.gainCoin();
+        if(coinsToLose <= bankBalance)
+        {
+            bankBalance -= coinsToLose;
+
+        }
+
     }
 
     public int getBankBalance(){return bankBalance;}

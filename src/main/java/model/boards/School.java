@@ -7,17 +7,19 @@ import java.util.ArrayList;
 
 public class School extends Board
 {
-  private ColTow color;
+  private final ColTow color;
   private ArrayList<Student> entrance;
-  private int[] DiningRoom;
+  private int[] diningRoom;
+  private int[] roomCheckpoints;
   private boolean[] professorTable;
   private int towerCount;
 
-    public School(ColTow color, int towerCount)        //Pouch viene dato in ingresso (dal controller suppongo) per estrarre tramite apposita
+    public School(ColTow color, int towerCount)                     //Pouch viene dato in ingresso (dal controller suppongo) per estrarre tramite apposita
     {                                                               //funzione gli studenti da metetre nell'entrance. Il colore della torre è dato per assegnare
         this.color = color;                                         //la scuola a uno specifico team e il count delle torri va specificato in ingresso perchè cambiano
         this.towerCount = towerCount;                               //da partite a 2/4 - 3 giocatori. Il resto è standard, array della dining room vuoto, professori a false
-        this.DiningRoom = new int[5];
+        this.diningRoom = new int[5];
+        this.roomCheckpoints = new int[5];
         this.professorTable = new boolean[5];
         this.entrance = new ArrayList<Student>();
     }
@@ -53,14 +55,26 @@ public class School extends Board
   {
      Student student = extractStudent(index);
      Col color = student.getColor();
-     DiningRoom[color.ordinal()]++;
+     diningRoom[color.ordinal()]++;
   }
+
+  public void updateCheckpoint(int position)
+  {
+    roomCheckpoints[position] += 3;
+  }
+
+
+  public void updateTowerCount(int tower)
+  {towerCount += tower;}
 
   public ArrayList<Student> getEntrance()
     {return entrance;}
 
   public int[] getDiningRoom()
-    {return DiningRoom;}
+    {return diningRoom;}
+
+  public int[] getRoomCheckpoints()
+    {return roomCheckpoints;}
 
   public boolean[] getProfessorTable()
     {return professorTable;}
