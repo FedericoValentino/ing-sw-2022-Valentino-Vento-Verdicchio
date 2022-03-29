@@ -1,13 +1,15 @@
 package model.cards;
 
-
 public class Priest extends CharacterCard {
 
+    private int idCard;
     public Priest(int baseCost) {
-        super(baseCost); //costruttore sopra classe
+        super(baseCost);
+        this.idCard=1;
     }
 
-    public void effect() {
-
+    public int getIdCard() {
+        return idCard;
     }
+
 }
