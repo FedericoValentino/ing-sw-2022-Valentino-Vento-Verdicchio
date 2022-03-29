@@ -12,11 +12,9 @@ public abstract class CharacterCard {
         this.uses = 0;
     }
 
-    public void playCard(){
 
-    }
     public void updateCost() {
-
+        currentCost=baseCost+uses;
     }
 
     public int getBaseCost() {return baseCost;}
