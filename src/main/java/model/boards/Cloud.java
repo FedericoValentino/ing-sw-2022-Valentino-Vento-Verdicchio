@@ -2,8 +2,6 @@ package model.boards;
 import model.boards.token.Student;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Vector;
 
 public class Cloud extends Board
 {
