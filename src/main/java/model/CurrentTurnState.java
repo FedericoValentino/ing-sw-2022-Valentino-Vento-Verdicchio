@@ -9,6 +9,7 @@ public class CurrentTurnState
     private boolean gameEnded;
     private ColTow WinningTeam;
     public boolean actionPhase;
+    public boolean lastTurn;
 
     public CurrentTurnState()
     {
