@@ -14,10 +14,4 @@ public class StudentTest {
         assertTrue(st.getColor().equals(Col.GREEN));
     }
 
-    @Test
-    public void getCurrentPosTest()
-    {
-        assertNull(st.getCurrentPosition());
-    }
-
 }

@@ -9,9 +9,13 @@ public class Cloud extends Board
 {
   private ArrayList<Student> student;
 
-  public Cloud(){}
+  public Cloud()
+  {
+    this.student = new ArrayList<Student>();
+  }
   public Cloud(ArrayList<Student> st)
   {
+    this.student = new ArrayList<Student>();
     for(int i=0;i<st.size();i++)
     {
       this.student.set(i, st.get(i));
