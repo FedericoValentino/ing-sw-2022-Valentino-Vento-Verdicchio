@@ -4,6 +4,7 @@ import model.boards.token.ColTow;
 
 public class CurrentTurnState
 {
+    //HashMap che indica l'ordine di gioco <String> <int> | nome giocatore -> turno
     private int turn;
     private int actions;
     private boolean gameEnded;

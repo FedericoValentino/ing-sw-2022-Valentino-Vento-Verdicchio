@@ -26,7 +26,7 @@ public class Player
     this.lastPlayedCard = null;
     this.movementValue = 0;
     this.MaxMotherMovement = 0;
-    this.value = 0;
+    this.value = (int) (Math.random() * 10 + 1);
     if(expertGame)
       this.coinAmount = 1;
     else

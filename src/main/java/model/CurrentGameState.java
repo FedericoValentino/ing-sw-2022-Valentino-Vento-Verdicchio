@@ -52,6 +52,7 @@ public class CurrentGameState {
         {
             for(Player p: t.getPlayers())
             {
+                //da modificare perchè nella modalità a 4 giocatori 2 player non hanno torri
                 if(p.getPlayerSchool().getTowerCount() == 0)
                 {
                     currentTurnState.updateWinner(t.getColor());
