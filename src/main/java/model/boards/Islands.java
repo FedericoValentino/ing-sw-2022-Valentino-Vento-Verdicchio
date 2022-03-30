@@ -10,7 +10,6 @@ public class Islands extends Board {
 
   public Islands()
   {
-    islands = new ArrayList<>();
     for(int i = 0; i < 12; i++)
     {
       islands.add(new Island(i));
@@ -99,8 +98,7 @@ public class Islands extends Board {
 
   }
 
-  public void placeToken(Student s, int pos)
-  {
+  public void placeToken(Student s, int pos) {
     Island I = islands.get(pos);
     I.addStudent(s);
     islands.set(pos, I);

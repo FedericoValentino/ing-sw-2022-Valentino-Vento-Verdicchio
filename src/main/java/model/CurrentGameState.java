@@ -29,13 +29,12 @@ public class CurrentGameState {
        this.currentCharacterDeck = new CharacterDeck();
        this.currentPouch = new Pouch();
        this.currentIslands = new Islands();
-       this.currentTeams = new ArrayList<>();
-       //Aggiungere creazione di team in base al numero di players;
+       this.currentTeams = new ArrayList<Team>();
        this.currentClouds = new Cloud[playerNum];
        this.currentMotherNature = new MotherNature();
        this.currentTurnState = new CurrentTurnState();
-       this.currentActiveCharacterCard = new ArrayList<>();
-       this.currentExtractedStudents = new ArrayList<>();
+       this.currentActiveCharacterCard = new ArrayList<CharacterCard>();
+       this.currentExtractedStudents = new ArrayList<Student>();
        this.bankBalance = 20 - playerNum;
        this.expertGame = expertGame;
 
