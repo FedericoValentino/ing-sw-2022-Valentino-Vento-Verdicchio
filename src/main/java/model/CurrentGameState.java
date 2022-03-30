@@ -22,8 +22,9 @@ public class CurrentGameState {
     private ArrayList<CharacterCard> currentActiveCharacterCard;
     private ArrayList<Student> currentExtractedStudents;
     private int bankBalance;
+    private boolean expertGame;
 
-    public CurrentGameState(int playerNum)
+    public CurrentGameState(int playerNum, boolean expertGame)
     {
        this.currentCharacterDeck = new CharacterDeck();
        this.currentPouch = new Pouch();
@@ -35,6 +36,7 @@ public class CurrentGameState {
        this.currentActiveCharacterCard = new ArrayList<CharacterCard>();
        this.currentExtractedStudents = new ArrayList<Student>();
        this.bankBalance = 20 - playerNum;
+       this.expertGame = expertGame;
 
     }
 
