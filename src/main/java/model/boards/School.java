@@ -31,11 +31,6 @@ public class School extends Board
   }                                                                 //di placeToken va così
 
 
-  public ColTow getColor()
-  {
-    return color;
-  }
-
   public Student extractStudent(int index)                          //Estrae un singolo studente dalla entrance e lo ritorna per la funzione che lo ha chiamato
   {
     try
@@ -70,16 +65,29 @@ public class School extends Board
   public ArrayList<Student> getEntrance()
     {return entrance;}
 
+  public ColTow getColor()
+  {
+    return color;
+  }
+
   public int[] getDiningRoom()
-    {return diningRoom;}
+    {
+      return diningRoom;
+    }
 
   public int[] getRoomCheckpoints()
-    {return roomCheckpoints;}
+    {
+      return roomCheckpoints;
+    }
 
   public boolean[] getProfessorTable()
-    {return professorTable;}
+    {
+      return professorTable;
+    }
 
   public int getTowerCount()
-    {return towerCount;}
+    {
+      return towerCount;
+    }
 
 }

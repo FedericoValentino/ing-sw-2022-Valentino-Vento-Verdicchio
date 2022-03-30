@@ -17,18 +17,20 @@ public class Player
   private int movementValue;
   private int value;
 
-  public Player(String nome, ColTow col, int towerAmount, String wizard)
+  public Player(String nome, ColTow col, int towerAmount, String wizard, boolean expertGame)
   {
     this.nome = nome;
     this.school = new School(col, towerAmount);
     this.assistantDeck = new AssistantDeck(wizard, nome);
-    this.coinAmount = 1;
     this.currentAssistantCard = null;
     this.lastPlayedCard = null;
     this.movementValue = 0;
     this.MaxMotherMovement = 0;
     this.value = 0;
-
+    if(expertGame)
+      this.coinAmount = 1;
+    else
+      this.coinAmount = 0;
   }
 
   public void chooseAssistantCard(int idCard)
