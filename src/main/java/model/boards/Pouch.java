@@ -15,7 +15,7 @@ public class Pouch
     public Pouch()                                                      //Pouch inizialmente riempie 120 studenti, 24 di ogni colore, e li mischia
     {
         this.setup = true;                                              //Pouch inizializza il bool setup a true perchè viene creato solo una volta all'inizio, proprio nel setup
-        this.content = new ArrayList<Student>();
+        this.content = new ArrayList<>();
         for (int i=0; i<24; i++)
         {this.content.add(new Student(Col.BLUE));}
         for (int i=0; i<24; i++)
@@ -28,7 +28,7 @@ public class Pouch
         {this.content.add(new Student(Col.PINK));}
         Collections.shuffle((this.content));
         for (int i=0; i<2; i++)                                        //Pouch adesso inserisce ordinatamente due studenti di ogni colore (i 10 rimasti) in coda
-        {this.content.add(new Student(Col.BLUE));}            //Questo per la fase di setup
+        {this.content.add(new Student(Col.BLUE));}             //Questo per la fase di setup
         for (int i=0; i<2; i++)
         {this.content.add(new Student(Col.RED));}
         for (int i=0; i<2; i++)
