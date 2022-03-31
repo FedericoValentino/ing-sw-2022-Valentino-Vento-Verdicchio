@@ -15,6 +15,7 @@ public abstract class CharacterCard {
     }
 
     public void updateCost() {
+        this.uses++;
         currentCost=baseCost+uses;
     }
 
