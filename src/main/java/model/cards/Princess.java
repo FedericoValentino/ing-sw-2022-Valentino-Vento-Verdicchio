@@ -3,8 +3,10 @@ package model.cards;
 
 public class Princess extends CharacterCard {
     private int idCard;
-    public Princess(int baseCost) {
-        super(baseCost); //costruttore sopra classe
+    public Princess() {
+        super(); //costruttore sopra classe
+        this.baseCost=2;
+        this.currentCost=this.baseCost;
     }
     public int getIdCard() {
         return idCard;

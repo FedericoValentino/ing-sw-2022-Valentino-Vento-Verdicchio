@@ -10,14 +10,14 @@ public class CharacterDeck
   public CharacterDeck()                                       //Riempie il deck di tutte e 8 le carte, dopodichè le mischia ed elimina
   {
     this.deck = new ArrayList<CharacterCard>();                //le 5 carte in coda, tenendo le 3 "estratte" in testa
-    this.deck.add(new Centaur(3));                   //implementazione brutta, da ripensare con currentGameState/controller
-    this.deck.add(new GrandmaWeed(2));
-    this.deck.add(new Knight(2));
-    this.deck.add(new Herald(3));
-    this.deck.add(new Postman(1));
-    this.deck.add(new Priest(1));
-    this.deck.add(new Princess(2));
-    this.deck.add(new TruffleHunter(3));
+    this.deck.add(new Centaur());                   //implementazione brutta, da ripensare con currentGameState/controller
+    this.deck.add(new GrandmaWeed());
+    this.deck.add(new Knight());
+    this.deck.add(new Herald());
+    this.deck.add(new Postman());
+    this.deck.add(new Priest());
+    this.deck.add(new Princess());
+    this.deck.add(new TruffleHunter());
     Collections.shuffle(this.deck);
     for (int i = 2; i<8; i++)
     {
