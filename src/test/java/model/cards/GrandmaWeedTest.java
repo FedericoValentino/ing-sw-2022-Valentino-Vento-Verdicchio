@@ -7,13 +7,19 @@ import static org.junit.Assert.assertEquals;
 public class GrandmaWeedTest {
     GrandmaWeed g=new GrandmaWeed();
 
+
+    @Test
+    public void testGetUses()
+    {
+        assertEquals(g.getUses(),0);
+    }
     @Test
     public void testUpdateCost()
     {
         Assert.assertEquals(g.getBaseCost(),2);
         Assert.assertEquals(g.currentCost,g.getBaseCost());
         g.updateCost();
-        Assert.assertEquals(g.getCurrentCost(),(g.getBaseCost()+1));
+        assertEquals(g.getCurrentCost(),(g.getUses()+g.getBaseCost()));
     }
 
     @Test

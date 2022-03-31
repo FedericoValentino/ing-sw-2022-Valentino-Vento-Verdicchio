@@ -6,6 +6,12 @@ import static org.junit.Assert.assertEquals;
 public class PostmanTest {
     Postman p=new Postman();
 
+
+    @Test
+    public void testGetUses()
+    {
+        assertEquals(p.getUses(),0);
+    }
     @Test
     public void testUpdateCost()
     {
@@ -13,7 +19,7 @@ public class PostmanTest {
         assertEquals(p.getBaseCost(),1);
         assertEquals(p.currentCost,1);
         p.updateCost();
-        assertEquals(p.getCurrentCost(),(p.getBaseCost()+1));
+        assertEquals(p.getCurrentCost(),(p.getUses()+p.getBaseCost()));
     }
 
     @Test

@@ -8,13 +8,18 @@ public class KnightTest {
     Knight k=new Knight();
 
     @Test
+    public void testGetUses()
+    {
+        assertEquals(k.getUses(),0);
+    }
+    @Test
     public void testUpdateCost()
     {
 
         assertEquals(k.getBaseCost(),2);
         assertEquals(k.currentCost,k.getBaseCost());
         k.updateCost();
-        assertEquals(k.getCurrentCost(),(k.getBaseCost()+1));
+        assertEquals(k.getCurrentCost(),(k.getUses()+k.getBaseCost()));
     }
 
     @Test

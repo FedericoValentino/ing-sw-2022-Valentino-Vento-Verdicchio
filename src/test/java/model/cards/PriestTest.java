@@ -6,6 +6,12 @@ import static org.junit.Assert.assertEquals;
 public class PriestTest {
     Priest p=new Priest();
 
+
+    @Test
+    public void testGetUses()
+    {
+        assertEquals(p.getUses(),0);
+    }
     @Test
     public void testUpdateCost()
     {
@@ -13,7 +19,7 @@ public class PriestTest {
         assertEquals(p.getBaseCost(),1);
         assertEquals(p.currentCost,p.getBaseCost());
         p.updateCost();
-        assertEquals(p.getCurrentCost(),(p.getBaseCost()+1));
+        assertEquals(p.getCurrentCost(),(p.getUses()+p.getBaseCost()));
     }
 
     @Test
