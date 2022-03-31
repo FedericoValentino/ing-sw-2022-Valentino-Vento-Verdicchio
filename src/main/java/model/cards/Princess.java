@@ -6,6 +6,7 @@ public class Princess extends CharacterCard {
     public Princess() {
         super(); //costruttore sopra classe
         this.baseCost=2;
+        this.idCard=11;
         this.currentCost=this.baseCost;
     }
     public int getIdCard() {
