@@ -37,9 +37,10 @@ public class CharacterController
         int index;
         for(int i=0; i< players.size(); i++)
         {
-            if(currentPlayer == players.get(i).getNome())
+            if(currentPlayer.equals(players.get(i).getNome()))
             {
                 index = i;
+                int f;
             }
         }
 
