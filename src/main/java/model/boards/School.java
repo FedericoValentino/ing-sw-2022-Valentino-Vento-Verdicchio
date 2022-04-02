@@ -20,6 +20,11 @@ public class School extends Board
         this.towerCount = towerCount;                               //da partite a 2/4 - 3 giocatori. Il resto è standard, array della dining room vuoto, professori a false
         this.diningRoom = new int[5];
         this.roomCheckpoints = new int[5];
+        for(int i=0;i<5;i++)
+        {
+          this.diningRoom[i]=0;
+          this.roomCheckpoints[i]=2;// because we start counting from 0
+        }
         this.professorTable = new boolean[5];
         this.entrance = new ArrayList<Student>();
     }
@@ -41,16 +46,21 @@ public class School extends Board
     }
     catch(IndexOutOfBoundsException e)
     {
-      System.out.println("i can't give you correctly a specific position of student entrance, maybe because it's a null pointer");
+      System.out.println("Index out of bound in EXTRACT STUDENT");
       return null;
     }
   }
 
   public void placeInDiningRoom(int index)
   {
-     Student student = extractStudent(index);
-     Col color = student.getColor();
-     diningRoom[color.ordinal()]++;
+    try {
+      Student student = extractStudent(index);
+      Col color = student.getColor();
+      diningRoom[color.ordinal()]++;
+    }catch(NullPointerException e)
+    {
+      System.out.println("Vedi che non stai prendendo nulla bro");
+    }
   }
 
   public void updateCheckpoint(int position)
