@@ -39,7 +39,7 @@ public class School extends Board
       entrance.remove(index);
       return student;
     }
-    catch(NullPointerException e)
+    catch(IndexOutOfBoundsException e)
     {
       System.out.println("i can't give you correctly a specific position of student entrance, maybe because it's a null pointer");
       return null;
