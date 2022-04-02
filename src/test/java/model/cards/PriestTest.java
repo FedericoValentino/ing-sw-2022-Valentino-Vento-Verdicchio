@@ -1,5 +1,6 @@
 package model.cards;
 
+import model.CurrentGameState;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -27,4 +28,6 @@ public class PriestTest {
     {
         assertEquals(p.getIdCard(),1);
     }
+
+
 }

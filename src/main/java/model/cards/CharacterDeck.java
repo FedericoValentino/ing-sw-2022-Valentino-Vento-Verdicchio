@@ -19,9 +19,9 @@ public class CharacterDeck
     this.deck.add(new Princess());
     this.deck.add(new TruffleHunter());
     Collections.shuffle(this.deck);
-    for (int i = 2; i<8; i++)
+    for (int i = 0; i<5; i++)
     {
-      this.deck.remove(i);
+      this.deck.remove(0);
     }
   }
 

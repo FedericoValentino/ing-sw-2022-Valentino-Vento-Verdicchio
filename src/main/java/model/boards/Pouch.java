@@ -8,7 +8,6 @@ import java.util.Collections;
 
 public class Pouch
 {
-
     private ArrayList<Student> content;
     private boolean setup;
 

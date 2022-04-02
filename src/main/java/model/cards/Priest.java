@@ -1,5 +1,7 @@
 package model.cards;
 
+import model.CurrentGameState;
+
 public class Priest extends CharacterCard {
 
     private int idCard;

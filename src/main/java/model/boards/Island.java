@@ -147,20 +147,8 @@ public class Island
   public ColTow getOwnership(){return ownership;  }
   public int[] getTeamInfluence() {return teamInfluence;  }
   public boolean getNoEntry(){return noEntry;  }
-
-  public boolean isGroup() {
+  public boolean getGroup() {
     return Group;
   }
-
-  public boolean isMotherNature() {
-    return motherNature;
-  }
-
-  public boolean isNoEntry() {
-    return noEntry;
-  }
-
-  public int getTowerNumber() {
-    return towerNumber;
-  }
+  public int getTowerNumber() {return towerNumber;}
 }
