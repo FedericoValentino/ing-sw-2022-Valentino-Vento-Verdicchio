@@ -41,15 +41,13 @@ public class School extends Board
     }
     catch(IndexOutOfBoundsException e)
     {
-      System.out.println("i can't give you correctly a specific position of student entrance, maybe because it's a null pointer");
+      System.out.println("i can't give you correctly a specific position of student entrance, maybe because it's an out of bounds index");
       return null;
     }
   }
 
-  public void placeInDiningRoom(int index)
+  public void placeInDiningRoom(Col color)
   {
-     Student student = extractStudent(index);
-     Col color = student.getColor();
      diningRoom[color.ordinal()]++;
   }
 
@@ -61,6 +59,10 @@ public class School extends Board
 
   public void updateTowerCount(int tower)
   {towerCount += tower;}
+
+  public void updateProfessorsTable(){            //da fare
+
+  }
 
   public ArrayList<Student> getEntrance()
     {return entrance;}

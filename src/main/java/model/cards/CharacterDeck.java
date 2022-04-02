@@ -28,16 +28,16 @@ public class CharacterDeck
   public boolean checkEmpty()
   {return deck.isEmpty();}
 
-  public CharacterCard drawCard(CharacterCard card)           //Quando una carta viene scelta, viene semplicemente "attivata";
+  public CharacterCard drawCard(int index)                    //Quando una carta viene scelta, viene semplicemente "attivata";
   {                                                           //dunque ne updateremo il current cost col metodo updateCost e ritorneremo
-    card.updateCost();                                        //la carta affinchè sia piazzata nelle active nel current game state; la carta
-    return card;                                              //non viene rimossa dal deck, o almeno credo che il return non implichi il remove.
+    getCard(index).updateCost();                                          //la carta affinchè sia piazzata nelle active nel current game state; la carta
+    return getCard(index);                                              //non viene rimossa dal deck, o almeno credo che il return non implichi il remove.
   }                                                           //Possiamo passare l'oggetto direttamente, e non l'indice della lista, perchè, pur
                                                               //essendo tutti character, sono oggetti tutti diversi, di classi diverse: non c'è ambiguità (in teoria)
   public ArrayList<CharacterCard> getDeck()
     {return deck;}
 
-  public CharacterCard getCard(CharacterCard card)
-  {return card;}
+  public CharacterCard getCard(int index)
+  {return deck.get(index);}
 
 }

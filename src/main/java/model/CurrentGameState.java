@@ -88,4 +88,12 @@ public class CurrentGameState {
     public Islands getCurrentIslands(){return currentIslands;}
     public CharacterDeck getCurrentCharacterDeck(){return currentCharacterDeck;}
     public Pouch getCurrentPouch() {return currentPouch;}
+    public ArrayList<CharacterCard> getCurrentActiveCharacterCard()
+    {
+        return currentActiveCharacterCard;
+    }
+    public ArrayList<Team> getCurrentTeams()
+    {
+      return currentTeams;
+    }
 }

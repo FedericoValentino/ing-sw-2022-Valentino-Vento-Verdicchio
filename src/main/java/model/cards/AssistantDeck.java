@@ -48,4 +48,9 @@ public class AssistantDeck
     public ArrayList<AssistantCard> getDeck()
         {return deck;}
 
+    public AssistantCard getCard(int index)
+    {
+       return deck.get(index);
+    }
+
 }
