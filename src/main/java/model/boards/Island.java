@@ -56,7 +56,7 @@ public class Island
     }
   }
 
-  public void updateTeamInfluence(Team[] team)
+  public void updateTeamInfluence(ArrayList<Team> team)
   {
     int numGREEN = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.GREEN).count();
     int numYELLOW = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.YELLOW).count();
@@ -133,6 +133,14 @@ public class Island
   public void addStudent(Student s)
   {
     currentStudents.add(s);
+  }
+
+  public void updateNoEntry()
+  {
+    if(getNoEntry())
+      noEntry = false;
+    else
+      noEntry = true;
   }
 
   public ArrayList<Student> getCurrentStudents(){

@@ -1,6 +1,7 @@
 package model.cards;
 
 public abstract class CharacterCard {
+    protected int idCard;
     protected int baseCost;
     protected int uses;
     protected int currentCost;
@@ -22,4 +23,5 @@ public abstract class CharacterCard {
     public int getBaseCost() {return baseCost;}
     public int getUses() {return uses;}
     public int getCurrentCost() {return currentCost;}
+    public int getIdCard(){return idCard;}
 }

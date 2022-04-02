@@ -30,8 +30,10 @@ public class CharacterDeck
 
   public CharacterCard drawCard(int index)                    //Quando una carta viene scelta, viene semplicemente "attivata";
   {                                                           //dunque ne updateremo il current cost col metodo updateCost e ritorneremo
-    getCard(index).updateCost();                                          //la carta affinchè sia piazzata nelle active nel current game state; la carta
-    return getCard(index);                                              //non viene rimossa dal deck, o almeno credo che il return non implichi il remove.
+    CharacterCard card = getCard(index);
+    deck.remove(index);
+    card.updateCost();                                        //la carta affinchè sia piazzata nelle active nel current game state;
+    return card;
   }                                                           //Possiamo passare l'oggetto direttamente, e non l'indice della lista, perchè, pur
                                                               //essendo tutti character, sono oggetti tutti diversi, di classi diverse: non c'è ambiguità (in teoria)
   public ArrayList<CharacterCard> getDeck()

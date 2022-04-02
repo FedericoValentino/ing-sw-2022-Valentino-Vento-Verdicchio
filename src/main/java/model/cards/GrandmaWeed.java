@@ -13,6 +13,8 @@ public class GrandmaWeed extends CharacterCard{
         this.idCard=5;
     }
 
+    public void updateNoEntry(int value){noEntry += value;}
+
     public int getIdCard() {
         return idCard;
     }
