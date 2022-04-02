@@ -47,7 +47,7 @@ public class Cloud extends Board
     //dovrebbe funzionare ma non so se posso evitarlo usando qualche throw exception
     try {
       return student.get(pos);
-    } catch (NullPointerException e) {
+    } catch (IndexOutOfBoundsException e) {
       System.out.println("Null pointer exception perché stai restituendo un intero negativo");
     }
     return null;
