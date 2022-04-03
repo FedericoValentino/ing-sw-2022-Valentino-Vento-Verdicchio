@@ -7,9 +7,8 @@ public class PlanningController
 
 
     public void drawStudentForClouds(CurrentGameState game, int position)                                   //mode è un intero che ci dice il numero di team
-    {
-        int numberOfTeams = game.getCurrentTeams().size();                                                  //se ci sono due team (2 o 4 giocatori), si prendono 3
-        for(int i=0; i<numberOfTeams; i++)                                                                  //studenti, se ci sono 3 team, 4, e si mettono sulla
+    {                                                                                                       //se ci sono due team (2 o 4 giocatori), si prendono 3
+        for(int i=0; i<game.getCurrentTeams().size(); i++)                                                  //studenti, se ci sono 3 team, 4, e si mettono sulla
         {                                                                                                   //nuvola selezionata
             game.getCurrentClouds()[position].placeToken(game.getCurrentPouch().extractStudent());
         }
