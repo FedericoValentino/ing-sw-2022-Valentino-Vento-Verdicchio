@@ -39,7 +39,6 @@ public class Player
     MaxMotherMovement = currentAssistantCard.getMovement();
     value = currentAssistantCard.getValue();
   }
-
   public int gainCoin()
   {
     int gainedCoins = 0;
