@@ -5,7 +5,7 @@ import model.boards.token.Student;
 import java.util.ArrayList;
 
 public class Islands extends Board {
-  private ArrayList<Island> islands=new ArrayList<Island>();
+  private ArrayList<Island> islands=new ArrayList<>();
   private int totalGroups;
 
   public Islands()
@@ -113,15 +113,15 @@ public class Islands extends Board {
     {
       if(I.getOwnership() == ColTow.BLACK)
       {
-        Towers[0] += I.getTowerNumber();
+        Towers[ColTow.BLACK.ordinal()] += I.getTowerNumber();
       }
       if(I.getOwnership() == ColTow.GREY)
       {
-        Towers[1] += I.getTowerNumber();
+        Towers[ColTow.GREY.ordinal()] += I.getTowerNumber();
       }
       if(I.getOwnership() == ColTow.WHITE)
       {
-        Towers[2] += I.getTowerNumber();
+        Towers[ColTow.WHITE.ordinal()] += I.getTowerNumber();
       }
     }
     for(int i = 0; i < 2; i++)
@@ -132,16 +132,7 @@ public class Islands extends Board {
         Winner = i;
       }
     }
-    switch(Winner)
-    {
-      case(0):
-        return ColTow.BLACK;
-      case(1):
-        return ColTow.GREY;
-      case(2):
-        return ColTow.WHITE;
-    }
-    return null;
+    return ColTow.values()[Winner];
   }
 
   public ArrayList<Island> getIslands() {return islands;}

@@ -20,7 +20,7 @@ public class Island
   public Island(int islandId)
   {
     this.islandId = islandId;
-    this.currentStudents = new ArrayList<Student>();
+    this.currentStudents = new ArrayList<>();
     this.motherNature = false;
     this.Group = false;
     this.towerNumber = 0;
@@ -28,6 +28,7 @@ public class Island
     this.teamInfluence = new int[3];
     this.noEntry = false;
   }
+
 
   public void calculateOwnership()
   {
@@ -39,18 +40,7 @@ public class Island
         if(this.teamInfluence[i] > max)
         {
           max = this.teamInfluence[i];
-          switch(i)
-          {
-            case(0):
-              ownership = ColTow.BLACK;
-              break;
-            case(1):
-              ownership = ColTow.GREY;
-              break;
-            case(2):
-              ownership = ColTow.WHITE;
-              break;
-          }
+          this.ownership = ColTow.values()[i];
         }
       }
     }
@@ -58,76 +48,34 @@ public class Island
 
   public void updateTeamInfluence(ArrayList<Team> team)
   {
-    int numGREEN = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.GREEN).count();
-    int numYELLOW = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.YELLOW).count();
-    int numRED = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.RED).count();
-    int numPINK = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.PINK).count();
-    int numBLUE = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.BLUE).count();
-    int GREYinf = 0;
-    int BLACKinf = 0;
-    int WHITEinf = 0;
-    for(Team t: team)
+    if(!noEntry)
     {
-      switch(t.getColor()) {
-        case GREY:
-          if (t.getControlledProfessors().contains(Col.GREEN))
-            GREYinf += numGREEN;
-          if (t.getControlledProfessors().contains(Col.YELLOW))
-            GREYinf += numYELLOW;
-          if (t.getControlledProfessors().contains(Col.RED))
-            GREYinf += numRED;
-          if (t.getControlledProfessors().contains(Col.PINK))
-            GREYinf += numPINK;
-          if (t.getControlledProfessors().contains(Col.BLUE))
-            GREYinf += numBLUE;
-          break;
-
-        case BLACK:
-          if (t.getControlledProfessors().contains(Col.GREEN))
-            BLACKinf += numGREEN;
-          if (t.getControlledProfessors().contains(Col.YELLOW))
-            BLACKinf += numYELLOW;
-          if (t.getControlledProfessors().contains(Col.RED))
-            BLACKinf += numRED;
-          if (t.getControlledProfessors().contains(Col.PINK))
-            BLACKinf += numPINK;
-          if (t.getControlledProfessors().contains(Col.BLUE))
-            BLACKinf += numBLUE;
-          break;
-
-        case WHITE:
-          if (t.getControlledProfessors().contains(Col.GREEN))
-            WHITEinf += numGREEN;
-          if (t.getControlledProfessors().contains(Col.YELLOW))
-            WHITEinf += numYELLOW;
-          if (t.getControlledProfessors().contains(Col.RED))
-            WHITEinf += numRED;
-          if (t.getControlledProfessors().contains(Col.PINK))
-            WHITEinf += numPINK;
-          if (t.getControlledProfessors().contains(Col.BLUE))
-            WHITEinf += numBLUE;
-          break;
+      int numGREEN = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.GREEN).count();
+      int numYELLOW = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.YELLOW).count();
+      int numRED = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.RED).count();
+      int numPINK = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.PINK).count();
+      int numBLUE = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.BLUE).count();
+      this.teamInfluence[0] = 0;
+      this.teamInfluence[1] = 0;
+      this.teamInfluence[2] = 0;
+      for(Team t: team)
+      {
+        if (t.getControlledProfessors().contains(Col.GREEN))
+          this.teamInfluence[t.getColor().ordinal()] += numGREEN;
+        if (t.getControlledProfessors().contains(Col.YELLOW))
+          this.teamInfluence[t.getColor().ordinal()]  += numYELLOW;
+        if (t.getControlledProfessors().contains(Col.RED))
+          this.teamInfluence[t.getColor().ordinal()] += numRED;
+        if (t.getControlledProfessors().contains(Col.PINK))
+          this.teamInfluence[t.getColor().ordinal()] += numPINK;
+        if (t.getControlledProfessors().contains(Col.BLUE))
+          this.teamInfluence[t.getColor().ordinal()] += numBLUE;
+      }
+      if(motherNature)
+      {
+        this.teamInfluence[ownership.ordinal()]++;
       }
     }
-    if(motherNature)
-    {
-      if(ownership == ColTow.WHITE)
-      {
-        WHITEinf++;
-      }
-      else if(ownership == ColTow.BLACK)
-      {
-        BLACKinf++;
-      }
-      else if(ownership == ColTow.GREY)
-      {
-        GREYinf++;
-      }
-    }
-    teamInfluence[0] = BLACKinf;
-    teamInfluence[1] = GREYinf;
-    teamInfluence[2] = WHITEinf;
-
   }
 
   public void addStudent(Student s)
