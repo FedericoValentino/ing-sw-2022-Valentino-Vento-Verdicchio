@@ -91,6 +91,11 @@ public class Island
       noEntry = true;
   }
 
+  public void updateTeamInfluence(int value, int team)
+  {
+    teamInfluence[team] += value;
+  }
+
   public ArrayList<Student> getCurrentStudents(){
     return currentStudents;
   }

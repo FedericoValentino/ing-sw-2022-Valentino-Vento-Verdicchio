@@ -95,6 +95,16 @@ public class CharacterController
         deckManagement(card, game);
     }
 
+    public void effect(Knight card, CurrentGameState game, int island, int team)                                //Chiama Update teams influence per calcolare l'influenza
+    {                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
+        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());          //l'influenza del team scelto
+        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(2, team);                   //calcola ownership
+        game.getCurrentIslands().getIslands().get(island).calculateOwnership();
+        deckManagement(card, game);
+    }
+
+
+
 
 
     private void deckManagement(CharacterCard card, CurrentGameState game)                                  //Toglie la carta usata non aggiornata dall'active e
