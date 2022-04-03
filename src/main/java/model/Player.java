@@ -57,7 +57,7 @@ public class Player
   public void updateCoins(int gain)
     {coinAmount += gain;}
 
-  public void updateMaxMotherMovement(){MaxMotherMovement += 2;}
+  public void updateMaxMotherMovement(int movement){MaxMotherMovement += movement;}
 
   public School getPlayerSchool()
   {
