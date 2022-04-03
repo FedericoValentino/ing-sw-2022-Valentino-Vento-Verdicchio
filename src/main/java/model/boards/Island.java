@@ -89,6 +89,7 @@ public class Island
       noEntry = false;
     else
       noEntry = true;
+    int f;
   }
 
   public void updateTeamInfluence(int value, int team)
