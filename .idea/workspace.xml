@@ -4,42 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="213d3983-c80a-48e5-a9e2-b30b963cbfd4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_04_2022_15_46_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_04_2022_15_46__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_04_2022_10_51_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_04_2022_10_51__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+    <list default="true" id="213d3983-c80a-48e5-a9e2-b30b963cbfd4" name="Changes" comment="changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/softeng-GC61.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentTurnState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentTurnState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Island$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Island.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Island.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/School.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/School.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Centaur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Centaur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Herald.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Herald.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Knight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Postman.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Postman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/model/boards/PouchTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/boards/PouchTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,8 +58,16 @@
       <option name="presentableId" value="Default" />
       <updated>1648992173633</updated>
       <workItem from="1648992175840" duration="182000" />
-      <workItem from="1648992381798" duration="307000" />
+      <workItem from="1648992381798" duration="1723000" />
     </task>
+    <task id="LOCAL-00001" summary="changes">
+      <created>1648992721928</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648992721928</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,8 +85,12 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1648992453490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1648992890524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
   </component>

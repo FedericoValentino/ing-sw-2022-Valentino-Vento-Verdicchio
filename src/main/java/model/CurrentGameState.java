@@ -10,7 +10,7 @@ import model.cards.CharacterCard;
 import model.cards.CharacterDeck;
 
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class CurrentGameState {
@@ -44,7 +44,33 @@ public class CurrentGameState {
        this.expertGame = expertGame;
 
     }
-    //updateTurnState
+
+
+    public void updateTurnState()
+    {
+        HashMap<String, Integer> map = new HashMap<>();
+        HashMap<String, Integer> finalmap = new HashMap<>();
+        for(Team t: currentTeams)
+        {
+            for(Player p: t.getPlayers())
+            {
+                map.put(p.getNome(), p.getValue());
+            }
+        }
+        List<Map.Entry<String,Integer>> list = new LinkedList<>(map.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+            public int compare(Map.Entry<String, Integer> o1,
+                               Map.Entry<String, Integer> o2)
+            {
+                return (o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+
+        for (Map.Entry<String, Integer> aa : list) {
+            finalmap.put(aa.getKey(), aa.getValue());
+        }
+        currentTurnState.updateTurn(finalmap);
+    }
 
 
     public void insertExtractedStudent(Student s)
