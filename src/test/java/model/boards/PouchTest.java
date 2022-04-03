@@ -1,6 +1,8 @@
 package model.boards;
 
 import static org.junit.Assert.*;
+
+import model.boards.token.Student;
 import org.junit.Test;
 import model.boards.Pouch;
 
@@ -14,8 +16,9 @@ public class PouchTest{
         test.extractStudent();
         //da inserire il testing con il gamesetup a false
         test.updateSetup(false);
-        test.extractStudent();//perché l'index a 0??????
-
+        Student s=test.getContent().get(0);
+        Student s1=test.extractStudent();//perché l'index a 0??????
+        assertEquals(s,s1);
     }
     @Test
     public void testCheckEmpty()
