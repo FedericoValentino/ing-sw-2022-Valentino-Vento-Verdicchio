@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Add code for testing school, cloud, priest, player and princess">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Update testPlayer, testTeam, team (because I removed getPalyerSchool it was duplicated), a little changes in Cloud">
       <change beforePath="$PROJECT_DIR$/src/test/java/model/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/TeamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/TeamTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/IslandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/boards/IslandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Island.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Island.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/School.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/School.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/model/boards/CloudTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/boards/CloudTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/model/boards/SchoolTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/boards/SchoolTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649010194273</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update testPlayer, testTeam, team (because I removed getPalyerSchool it was duplicated), a little changes in Cloud">
+      <created>1649019493775</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1649019493775</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +237,8 @@
     <MESSAGE value="TestPouch finished" />
     <MESSAGE value="Updates class Pouch" />
     <MESSAGE value="Add code for testing school, cloud, priest, player and princess" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add code for testing school, cloud, priest, player and princess" />
+    <MESSAGE value="Update testPlayer, testTeam, team (because I removed getPalyerSchool it was duplicated), a little changes in Cloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update testPlayer, testTeam, team (because I removed getPalyerSchool it was duplicated), a little changes in Cloud" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetWizard.ic" NAME="AssistantDeckTest.testGetWizard Coverage Results" MODIFIED="1648316377464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

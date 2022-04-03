@@ -59,40 +59,30 @@ public class Player
 
   public void updateMaxMotherMovement(int movement){MaxMotherMovement += movement;}
 
-
-
   public AssistantCard getCurrentAssistantCard() {
     return currentAssistantCard;
   }
-
   public AssistantCard getLastPlayedCard() {
     return lastPlayedCard;
   }
-
   public AssistantDeck getAssistantDeck() {
     return assistantDeck;
   }
-
   public int getCoinAmount() {
     return coinAmount;
   }
-
   public int getMaxMotherMovement() {
     return MaxMotherMovement;
   }
   public int getMovementValue() {
     return movementValue;
   }
-
-
   public int getValue() {
     return value;
   }
-
   public School getSchool() {
     return school;
   }
-
   public String getNome() {
     return nome;
   }

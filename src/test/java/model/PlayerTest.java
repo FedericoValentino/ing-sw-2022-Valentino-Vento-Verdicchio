@@ -6,6 +6,7 @@ import model.cards.AssistantDeck;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PlayerTest {
     Player p1=new Player("Giaco", ColTow.WHITE,8,"ca",false);
@@ -54,4 +55,15 @@ public class PlayerTest {
     {
             assertEquals(p1.getSchool(),p1.school);
     }
+
+    @Test
+    public void testGenericGetter()
+    {
+        assertTrue(p1.getCurrentAssistantCard() instanceof AssistantCard);
+        assertTrue(p1.getLastPlayedCard() instanceof AssistantCard);
+        assertTrue(p1.getAssistantDeck() instanceof AssistantDeck);
+
+
+    }
+
 }
