@@ -11,11 +11,9 @@ public class TeamTest {
     @Test
     public void testAddPlayer()
     {
-        /*
+
         assertEquals(t.getPlayers().size(),0);
         t.addPlayer(p);
-        assertEquals(t.getPlayers(),p);
-
-         */
+        assertEquals(t.getPlayers().get(0),p);
     }
 }

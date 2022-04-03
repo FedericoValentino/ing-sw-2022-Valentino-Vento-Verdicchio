@@ -31,7 +31,7 @@ public class Team
     {
       for(int i = 0; i < 5; i ++)
       {
-        if(p.getPlayerSchool().getProfessorTable()[i])
+        if(p.getSchool().getProfessorTable()[i])
         {
           switch(i)
           {

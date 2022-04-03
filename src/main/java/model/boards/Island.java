@@ -6,6 +6,9 @@ import model.boards.token.Student;
 
 import java.util.ArrayList;
 
+
+//da aggiungere updaterNoEntry e aggiungere un updaterMotherNature
+
 public class Island
 {
   public int islandId;
@@ -25,7 +28,7 @@ public class Island
     this.Group = false;
     this.towerNumber = 0;
     this.ownership = null;
-    this.teamInfluence = new int[3];
+    this.teamInfluence = new int[3]; // da aggiungere descrizione
     this.noEntry = false;
   }
 

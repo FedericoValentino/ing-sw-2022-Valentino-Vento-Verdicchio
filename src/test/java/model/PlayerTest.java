@@ -1,14 +1,17 @@
 package model;
 
 import model.boards.token.ColTow;
+import model.cards.AssistantCard;
 import model.cards.AssistantDeck;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
-    Player p1=new Player("ci", ColTow.WHITE,8,"ca",false);
-    Player p2=new Player("ci", ColTow.BLACK,8,"ca",true);
+    Player p1=new Player("Giaco", ColTow.WHITE,8,"ca",false);
+    Player p2=new Player("ci", ColTow.BLACK,8,"cal",true);
+    AssistantDeck ad=new AssistantDeck("ca","Giaco");
+    AssistantCard ac=new AssistantCard(1,1);
 
     @Test
     public void test()
@@ -37,5 +40,18 @@ public class PlayerTest {
         int i=p2.getMaxMotherMovement();
         p2.getMovementValue();
         assertEquals(i,0);
+    }
+
+    @Test
+    public void testChooseAssistantCard()
+    {
+        assertEquals(ad.getCard(0).getValue(),1);
+        assertEquals(ad.getCard(0).getMovement(),1);
+    }
+
+    @Test
+    public void testGetPlayerSchool()
+    {
+            assertEquals(p1.getSchool(),p1.school);
     }
 }

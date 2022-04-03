@@ -36,4 +36,13 @@ public class IslandTest {
     {
 
     }
+    @Test
+    public void testUpdateNoEntry()
+    {
+        assertFalse(i.getNoEntry());
+        i.updateNoEntry();
+        assertTrue(i.getNoEntry());
+
+    }
+
 }
