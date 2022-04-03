@@ -29,16 +29,21 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    public void effect(Princess card, CurrentGameState game, int studentPosition, int team, String currentPlayer)       //Prende student dalla carta e ne salva il colore
+    public void effect(Princess card, CurrentGameState game, int studentPosition, String currentPlayer)       //Prende student dalla carta e ne salva il colore
     {
         Col color = card.getStudent(studentPosition).getColor();
-        int index = 0;                                                                                      //Cerca a che indice di Teams sta il currentPlayer
-        for(int i=0; i< game.getCurrentTeams().get(team).getPlayers().size(); i++)
+        int teamIndex = 0;
+        int playerIndex = 0;
+        for(int i=0; i<game.getCurrentTeams().size(); i++)
         {
-            if(currentPlayer.equals(game.getCurrentTeams().get(team).getPlayers().get(i).getNome()))
-                index = i;
+            for(int j=0; j< game.getCurrentTeams().get(i).getPlayers().size(); j++)
+            {
+                if(currentPlayer.equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome()))
+                    playerIndex = j;
+                teamIndex = i;
+            }
         }
-        game.getCurrentTeams().get(team).getPlayers().get(index).getSchool().placeInDiningRoom(color);         //Prendo la sucola del currentPlayer e ci piazzo il colore
+        game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).getSchool().placeInDiningRoom(color);         //Prendo la sucola del currentPlayer e ci piazzo il colore
         card.updateStudents(game.getCurrentPouch());                                                           //Updato studenti su carta e solita deckmgmt
         deckManagement(card, game);
     }
@@ -50,15 +55,20 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    public void effect(Postman card, CurrentGameState game, String currentPlayer, int team)                     //Cerca CurrentPlayer come prima e updata il maxmotherMovement con +2(model)
+    public void effect(Postman card, CurrentGameState game, String currentPlayer)                     //Cerca CurrentPlayer come prima e updata il maxmotherMovement con +2(model)
     {
-        int index = 0;
-        for(int i=0; i< game.getCurrentTeams().get(team).getPlayers().size(); i++)
+        int teamIndex = 0;
+        int playerIndex = 0;
+        for(int i=0; i<game.getCurrentTeams().size(); i++)
         {
-            if(currentPlayer.equals(game.getCurrentTeams().get(team).getPlayers().get(i).getNome()))
-                index = i;
+            for(int j=0; j< game.getCurrentTeams().get(i).getPlayers().size(); j++)
+            {
+                if(currentPlayer.equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome()))
+                    playerIndex = j;
+                teamIndex = i;
+            }
         }
-        game.getCurrentTeams().get(team).getPlayers().get(index).updateMaxMotherMovement(2);
+        game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).updateMaxMotherMovement(2);
         deckManagement(card, game);
     }
 

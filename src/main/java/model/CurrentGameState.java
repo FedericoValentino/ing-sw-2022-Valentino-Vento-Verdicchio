@@ -153,6 +153,7 @@ public class CurrentGameState {
 
     public int getBankBalance(){return bankBalance;}
     public Islands getCurrentIslands(){return currentIslands;}
+    public Cloud[] getCurrentClouds(){return currentClouds;}
     public CharacterDeck getCurrentCharacterDeck(){return currentCharacterDeck;}
     public Pouch getCurrentPouch() {return currentPouch;}
     public ArrayList<CharacterCard> getCurrentActiveCharacterCard()
