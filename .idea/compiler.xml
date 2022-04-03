@@ -9,8 +9,5 @@
         <module name="softeng-GC61" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="softeng-GC61" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

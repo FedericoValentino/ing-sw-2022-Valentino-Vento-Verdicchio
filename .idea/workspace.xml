@@ -4,62 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="c1271d99-e45a-4cae-b78d-5b203bc54466" name="Changes" comment="Added To-Do comments">
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" afterDir="false" />
-    </list>
-    <list id="0e708b20-973a-4e83-a0ce-6313c6935b6b" name="Changes by enric" comment="Minor changes" />
-=======
-    <list default="true" id="f812dde3-a062-41c8-890f-463e0175f00f" name="Changes" comment=" Iniziato CharcterController, cambiamenti a CharacterDeck, School, Priest e Princess; da cambiare i test">
+    <list default="true" id="213d3983-c80a-48e5-a9e2-b30b963cbfd4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_04_2022_15_46_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_04_2022_15_46__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_04_2022_10_51_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_04_2022_10_51__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/softeng-GC61.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentTurnState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentTurnState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Island$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Island.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Island.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/School.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/School.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Centaur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Centaur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Herald.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Herald.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Knight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Postman.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Postman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/boards/PouchTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/boards/PouchTest.class" afterDir="false" />
     </list>
->>>>>>> origin/main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-<<<<<<< HEAD
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-=======
-  <component name="CoverageOptionsProvider">
-    <option name="myAddOrReplace" value="1" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit3 Test Class" />
->>>>>>> origin/main
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< HEAD
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="26xrQXrOVzfV3uX3x9PS57xAAsk" />
-=======
-  <component name="ProjectId" id="26s9PO2oVr07x6sWyjsEF0hbaPd" />
->>>>>>> origin/main
+  <component name="ProjectId" id="27I0DHTyTwgsFPc6g6bYMh9z33T" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -67,47 +57,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-<<<<<<< HEAD
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration name="CloudTest.TestPos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="junit.framework.TestCase" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="model.boards" />
-      <recent name="model.cards" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JUnit.CurrentTurnStateTest.TestUpdateActions">
-    <configuration name="AssistantDeckTest.testExtractCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.cards" />
-      <option name="MAIN_CLASS_NAME" value="model.cards.AssistantDeckTest" />
-      <option name="METHOD_NAME" value="testExtractCard" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CurrentTurnStateTest.TestUpdateActions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="model in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
@@ -116,375 +70,48 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.CurrentTurnStateTest" />
-      <option name="METHOD_NAME" value="TestUpdateActions" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CurrentTurnStateTest.assertFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.CurrentTurnStateTest" />
-      <option name="METHOD_NAME" value="assertFalse" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PouchTest.testExtractStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> origin/main
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.boards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.boards" />
-<<<<<<< HEAD
-      <option name="MAIN_CLASS_NAME" value="model.boards.CloudTest" />
-      <option name="METHOD_NAME" value="TestPos" />
-=======
-      <option name="MAIN_CLASS_NAME" value="model.boards.PouchTest" />
-      <option name="METHOD_NAME" value="testExtractStudent" />
->>>>>>> origin/main
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-<<<<<<< HEAD
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.CloudTest.TestPos" />
-=======
-    <configuration name="PouchTest.testGetSetup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.boards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.boards" />
-      <option name="MAIN_CLASS_NAME" value="model.boards.PouchTest" />
-      <option name="METHOD_NAME" value="testGetSetup" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CurrentTurnStateTest.TestUpdateActions" />
-        <item itemvalue="JUnit.CurrentTurnStateTest.assertFalse" />
-        <item itemvalue="JUnit.AssistantDeckTest.testExtractCard" />
-        <item itemvalue="JUnit.PouchTest.testExtractStudent" />
-        <item itemvalue="JUnit.PouchTest.testGetSetup" />
->>>>>>> origin/main
+        <item itemvalue="JUnit.model in softeng-GC61" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
-      <changelist id="c1271d99-e45a-4cae-b78d-5b203bc54466" name="Changes" comment="" />
-      <created>1648376062661</created>
+      <changelist id="213d3983-c80a-48e5-a9e2-b30b963cbfd4" name="Changes" comment="" />
+      <created>1648992173633</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1648376062661</updated>
-      <workItem from="1648376063912" duration="15109000" />
-      <workItem from="1648460476923" duration="765000" />
-      <workItem from="1648468029515" duration="631000" />
-      <workItem from="1648540110601" duration="1512000" />
-      <workItem from="1648548357588" duration="3143000" />
-      <workItem from="1648562199408" duration="72000" />
-      <workItem from="1648563259629" duration="2387000" />
-      <workItem from="1648633239520" duration="457000" />
-      <workItem from="1648633715200" duration="3104000" />
-      <workItem from="1648645743758" duration="5118000" />
-      <workItem from="1648756127650" duration="7000" />
-      <workItem from="1648822140278" duration="142000" />
-      <workItem from="1648897137837" duration="3903000" />
-      <workItem from="1648926670653" duration="620000" />
-      <workItem from="1648975320745" duration="544000" />
+      <updated>1648992173633</updated>
+      <workItem from="1648992175840" duration="182000" />
+      <workItem from="1648992381798" duration="307000" />
     </task>
-    <task id="LOCAL-00001" summary="Non testate">
-      <created>1648392720213</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1648392720213</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Rimosso codice">
-      <created>1648540797632</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1648540797632</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Piccoli aggiustamenti">
-      <created>1648541592545</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1648541592545</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Aggiornato metodo gainCoin">
-      <created>1648551076203</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1648551076203</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Minor changes">
-      <created>1648551168639</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1648551168639</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Correzioni per Setup partita">
-      <created>1648633523622</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1648633523622</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Correzioni per Setup partita">
-      <created>1648633907496</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1648633907496</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added To-Do comments">
-      <created>1648636794322</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1648636794322</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-=======
-      <changelist id="f812dde3-a062-41c8-890f-463e0175f00f" name="Changes" comment="" />
-      <created>1648201401758</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1648201401758</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Prima realizzazione di AssistantCard, AssistantDeck e Pouch">
-      <created>1648215741555</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1648215741555</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Assistant deck messa nella repo perchè non c'era">
-      <created>1648216306734</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1648216306734</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Implementata charcterDeck, corretto costruttore di CharacterCard (vedasi commento) e swappato i character vecchi con quelli che abbiamo effettivamente deciso di realizzare ieri sera (fuori minstrel e thief,&#10;dentro princess e priest)">
-      <created>1648221279808</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1648221279808</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fatta school, manca la funzione per passare lo student in dining room perchè ho in mente un'implementazione ma ora son stanco, vedo domani">
-      <created>1648228711559</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1648228711559</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Testate AssCard e AssDeck, a metà testing di pouch">
-      <created>1648317823190</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1648317823190</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Finita school">
-      <created>1648465544571</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1648465544571</updated>
-    </task>
-    <task id="LOCAL-00007" summary="MinorCorrections">
-      <created>1648570116696</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1648570116696</updated>
-    </task>
-    <task id="LOCAL-00008" summary=" Prime correzioni al setup">
-      <created>1648633442411</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1648633442411</updated>
-    </task>
-    <task id="LOCAL-00009" summary=" Iniziato CharcterController, cambiamenti a CharacterDeck, School, Priest e Princess; da cambiare i test">
-      <created>1648912670774</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1648912670774</updated>
-    </task>
-    <task id="LOCAL-00010" summary=" Iniziato CharcterController, cambiamenti a CharacterDeck, School, Priest e Princess; da cambiare i test">
-      <created>1648912942868</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1648912942868</updated>
-    </task>
-    <task id="LOCAL-00011" summary=" Iniziato CharcterController, cambiamenti a CharacterDeck, School, Priest e Princess; da cambiare i test">
-      <created>1648913115809</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1648913115809</updated>
-    </task>
-    <task id="LOCAL-00012" summary=" Iniziato CharcterController, cambiamenti a CharacterDeck, School, Priest e Princess; da cambiare i test">
-      <created>1648913301387</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1648913301387</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
-    <servers />
-  </component>
->>>>>>> origin/main
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-<<<<<<< HEAD
-            <State>
-              <option name="COLUMN_ID_WIDTH">
-                <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="128" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="105" />
-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="105" />
-                </map>
-              </option>
-            </State>
-=======
             <State />
->>>>>>> origin/main
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="VcsManagerConfiguration">
-<<<<<<< HEAD
-    <MESSAGE value="Non testate" />
-    <MESSAGE value="Rimosso codice" />
-    <MESSAGE value="Piccoli aggiustamenti" />
-    <MESSAGE value="Aggiornato metodo gainCoin" />
-    <MESSAGE value="Minor changes" />
-    <MESSAGE value="Correzioni per Setup partita" />
-    <MESSAGE value="Added to do comments" />
-    <MESSAGE value="Added To-Do comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added To-Do comments" />
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CloudTest_TestPos.ic" NAME="CloudTest.TestPos Coverage Results" MODIFIED="1648541301771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-=======
-    <MESSAGE value="Prima realizzazione di AssistantCard, AssistantDeck e Pouch" />
-    <MESSAGE value="Assistant deck messa nella repo perchè non c'era" />
-    <MESSAGE value="Implementata charcterDeck, corretto costruttore di CharacterCard (vedasi commento) e swappato i character vecchi con quelli che abbiamo effettivamente deciso di realizzare ieri sera (fuori minstrel e thief,&#10;dentro princess e priest)" />
-    <MESSAGE value="Fatta school, manca la funzione per passare lo student in dining room perchè ho in mente un'implementazione ma ora son stanco, vedo domani" />
-    <MESSAGE value="Testate AssCard e AssDeck, a metà testing di pouch" />
-    <MESSAGE value="Finita school" />
-    <MESSAGE value="MinorCorrections" />
-    <MESSAGE value=" Prime correzioni al setup" />
-    <MESSAGE value=" Iniziato CharcterController, cambiamenti a CharacterDeck, School, Priest e Princess; da cambiare i test" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Iniziato CharcterController, cambiamenti a CharacterDeck, School, Priest e Princess; da cambiare i test" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.AssertionError" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CurrentTurnStateTest_assertFalse.ic" NAME="CurrentTurnStateTest.assertFalse Coverage Results" MODIFIED="1648546994918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1648992453490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testCheckEmpty.ic" NAME="AssistantDeckTest.testCheckEmpty Coverage Results" MODIFIED="1648312198119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testGetSetup.ic" NAME="PouchTest.testGetSetup Coverage Results" MODIFIED="1648317551929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testExtractCard.ic" NAME="AssistantDeckTest.testExtractCard Coverage Results" MODIFIED="1648462497107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CurrentTurnStateTest_TestUpdateActions.ic" NAME="CurrentTurnStateTest.TestUpdateActions Coverage Results" MODIFIED="1648547436615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetPlayerName.ic" NAME="AssistantDeckTest.testGetPlayerName Coverage Results" MODIFIED="1648316334838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetWizard.ic" NAME="AssistantDeckTest.testGetWizard Coverage Results" MODIFIED="1648316377464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testCheckEmpty.ic" NAME="PouchTest.testCheckEmpty Coverage Results" MODIFIED="1648317434168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantCardTest_TestGetMovement.ic" NAME="AssistantCardTest.TestGetMovement Coverage Results" MODIFIED="1648316754096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetDeck.ic" NAME="AssistantDeckTest.testGetDeck Coverage Results" MODIFIED="1648316563612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testExtractStudent.ic" NAME="PouchTest.testExtractStudent Coverage Results" MODIFIED="1648317758912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantCardTest_TestGetValue.ic" NAME="AssistantCardTest.TestGetValue Coverage Results" MODIFIED="1648316758133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
->>>>>>> origin/main
   </component>
 </project>
