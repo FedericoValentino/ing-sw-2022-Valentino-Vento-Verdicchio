@@ -56,7 +56,7 @@ public class Island
     }
   }
 
-  public void updateTeamInfluence(Team[] team)
+  public void updateTeamInfluence(ArrayList<Team> team)
   {
     int numGREEN = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.GREEN).count();
     int numYELLOW = (int) currentStudents.stream().filter(Student -> Student.getColor() == Col.YELLOW).count();
@@ -135,6 +135,14 @@ public class Island
     currentStudents.add(s);
   }
 
+  public void updateNoEntry()
+  {
+    if(getNoEntry())
+      noEntry = false;
+    else
+      noEntry = true;
+  }
+
   public ArrayList<Student> getCurrentStudents(){
     return currentStudents;
   }
@@ -147,20 +155,8 @@ public class Island
   public ColTow getOwnership(){return ownership;  }
   public int[] getTeamInfluence() {return teamInfluence;  }
   public boolean getNoEntry(){return noEntry;  }
-
-  public boolean isGroup() {
+  public boolean getGroup() {
     return Group;
   }
-
-  public boolean isMotherNature() {
-    return motherNature;
-  }
-
-  public boolean isNoEntry() {
-    return noEntry;
-  }
-
-  public int getTowerNumber() {
-    return towerNumber;
-  }
+  public int getTowerNumber() {return towerNumber;}
 }

@@ -4,12 +4,16 @@ public class GrandmaWeed extends CharacterCard{
 
     private int noEntry;
     private int idCard;
-    public GrandmaWeed(int baseCost)
+    public GrandmaWeed()
     {
-        super(baseCost); //costruttore sopra classe
+        super(); //costruttore sopra classe
         this.noEntry = 0;
+        this.baseCost=2;
+        this.currentCost=this.baseCost;
         this.idCard=5;
     }
+
+    public void updateNoEntry(int value){noEntry += value;}
 
     public int getIdCard() {
         return idCard;

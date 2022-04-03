@@ -5,7 +5,7 @@ import model.boards.token.Student;
 import java.util.ArrayList;
 
 public class Islands extends Board {
-  private ArrayList<Island> islands;
+  private ArrayList<Island> islands=new ArrayList<Island>();
   private int totalGroups;
 
   public Islands()
@@ -57,7 +57,7 @@ public class Islands extends Board {
         islands.remove(nextIsland);
         islands.remove(previousIsland);
       }
-      else if(currentIsland.isGroup())  //unione doppia(attuabile solo se currentIsland è di già un gruppo di isole
+      else if(currentIsland.getGroup())  //unione doppia(attuabile solo se currentIsland è di già un gruppo di isole
       {
         if(currentIsland.getOwnership() == nextIsland.getOwnership())
         {
@@ -144,9 +144,7 @@ public class Islands extends Board {
     return null;
   }
 
-  public ArrayList<Island> getIslands() {
-    return islands;
-  }
+  public ArrayList<Island> getIslands() {return islands;}
   public int getTotalGroups() {
     return totalGroups;
   }

@@ -7,13 +7,14 @@ public class Cloud extends Board
 {
   private ArrayList<Student> student;
 
-  public Cloud(){}
+  public Cloud(){student= new ArrayList<Student>();}
   public Cloud(ArrayList<Student> st)
   {
       for(int i=0;i<st.size();i++)
       {
         this.student.add(i, st.get(i));
       }
+      student= new ArrayList<Student>();
   }
 
   //add Student to the cloud queue
@@ -46,7 +47,7 @@ public class Cloud extends Board
     //dovrebbe funzionare ma non so se posso evitarlo usando qualche throw exception
     try {
       return student.get(pos);
-    } catch (NullPointerException e) {
+    } catch (IndexOutOfBoundsException e) {
       System.out.println("Null pointer exception perché stai restituendo un intero negativo");
     }
     return null;
