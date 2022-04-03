@@ -3,10 +3,12 @@ package model;
 import model.boards.Cloud;
 import model.boards.Islands;
 import model.boards.Pouch;
+import model.boards.token.Col;
 import model.boards.token.MotherNature;
 import model.boards.token.Student;
 import model.cards.CharacterCard;
 import model.cards.CharacterDeck;
+
 
 import java.util.ArrayList;
 
@@ -42,7 +44,8 @@ public class CurrentGameState {
        this.expertGame = expertGame;
 
     }
-    //UpdateTurnState
+    //updateTurnState
+
 
     public void insertExtractedStudent(Student s)
     {
@@ -85,6 +88,41 @@ public class CurrentGameState {
 
         }
 
+    }
+
+    public void giveProfessors()
+    {
+        for(Col c: Col.values())                                        //scorro tutti i colori di studenti
+        {
+            int max = 0;                                                //mi salvo il numero di studenti massimo che ho trovato
+            Player maxPlayer = null;                                    //mi salvo il player con quel numero di studenti massimo
+            for (Team t : currentTeams)                                 //trovo il player con il colore massimo
+            {
+                for (Player p : t.getPlayers())
+                {
+                    if(p.getSchool().getDiningRoom()[c.ordinal()] > max)
+                    {
+                        max = p.getSchool().getDiningRoom()[c.ordinal()];
+                        maxPlayer = p;
+                    }
+                }
+            }
+            for (Team t : currentTeams)                                  //setto il controllo del professore al maxPlayer
+            {
+                for (Player p : t.getPlayers())
+                {
+                    if(p.equals(maxPlayer))
+                    {
+                        p.school.updateProfessorsTable(c.ordinal(), true);
+                    }
+                    else
+                    {
+                        p.school.updateProfessorsTable(c.ordinal(), false);
+                    }
+                }
+            }
+
+        }
     }
 
     public int getBankBalance(){return bankBalance;}

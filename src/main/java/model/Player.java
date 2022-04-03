@@ -12,7 +12,7 @@ public class Player
   private AssistantCard currentAssistantCard;
   private AssistantCard lastPlayedCard;
   private AssistantDeck assistantDeck;
-  private School school;
+  public School school;
   private int MaxMotherMovement;
   private int movementValue;
   private int value;
