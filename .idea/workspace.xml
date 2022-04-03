@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="ops">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="PlanningController completo, corretto Character, aggiunto getter in currGS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648996362807</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="PlanningController completo, corretto Character, aggiunto getter in currGS">
+      <created>1648998352589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648998352589</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,7 +102,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island" />
     <MESSAGE value="ops" />
-    <option name="LAST_COMMIT_MESSAGE" value="ops" />
+    <MESSAGE value="PlanningController completo, corretto Character, aggiunto getter in currGS" />
+    <option name="LAST_COMMIT_MESSAGE" value="PlanningController completo, corretto Character, aggiunto getter in currGS" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testGetSetup.ic" NAME="PouchTest.testGetSetup Coverage Results" MODIFIED="1648317551929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

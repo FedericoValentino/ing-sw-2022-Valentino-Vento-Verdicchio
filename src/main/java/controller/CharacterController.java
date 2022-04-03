@@ -80,8 +80,12 @@ public class CharacterController
     }
 
     public void effect(Centaur card, CurrentGameState game, int island)               //Va sull'isola e toglie le torri in funzione del calcolo influenza
-    {
+    {                                                                                  //le riaggiorna alla fine
+        int temp = game.getCurrentIslands().getIslands().get(island).towerNumber;
         game.getCurrentIslands().getIslands().get(island).towerNumber = 0;
+        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());
+        game.getCurrentIslands().getIslands().get(island).calculateOwnership();
+        game.getCurrentIslands().getIslands().get(island).towerNumber = temp;
         deckManagement(card, game);
     }
 
@@ -109,7 +113,8 @@ public class CharacterController
     {                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
         game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());          //l'influenza del team scelto
         game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(2, team);                   //calcola ownership
-        game.getCurrentIslands().getIslands().get(island).calculateOwnership();
+        game.getCurrentIslands().getIslands().get(island).calculateOwnership();                                 //rimette a posto l'influenza
+        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(-2, team);
         deckManagement(card, game);
     }
 
