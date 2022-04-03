@@ -13,7 +13,8 @@ public class PouchTest{
         assertEquals(130, test.getContent().size());
         test.extractStudent();
         //da inserire il testing con il gamesetup a false
-
+        test.updateSetup(false);
+        test.extractStudent();//perché l'index a 0??????
 
     }
     @Test

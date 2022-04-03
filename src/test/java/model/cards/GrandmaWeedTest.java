@@ -33,4 +33,12 @@ public class GrandmaWeedTest {
     {
         assertEquals(g.getNoEntry(),0);
     }
+
+    @Test
+    public void testUpdateNoEntry()
+    {
+        int i=g.getNoEntry();
+        g.updateNoEntry(1);
+        assertEquals(i+1,g.getNoEntry());
+    }
 }

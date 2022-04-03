@@ -8,40 +8,40 @@ import java.util.ArrayList;
 
 public class AssistantDeckTest{
 
-    AssistantDeck deck = new AssistantDeck("Giovanni", "Nico");
+    AssistantDeck d = new AssistantDeck("Giovanni", "Nico");
+    AssistantCard a=new AssistantCard(1,1);
+    AssistantCard test = new AssistantCard(2, 10);
 
     @Test
     public void testCheckEmpty()
     {
-        assertFalse(deck.checkEmpty());
+        assertFalse(d.checkEmpty());
     }
 
     @Test
     public void testExtractCard()
     {
-       AssistantCard test = new AssistantCard(2, 10);
-       assertEquals(test.getMovement(), deck.extractCard(2).getMovement());
+       assertEquals(test.getMovement(), d.extractCard(2).getMovement());
     }
 
     @Test
     public void testGetPlayerName()
     {
-        assertEquals("Nico", deck.getPlayerName());
+        assertEquals("Nico", d.getPlayerName());
     }
 
     @Test
     public void testGetWizard()
     {
-        assertEquals("Giovanni", deck.getWizard());
+        assertEquals("Giovanni", d.getWizard());
     }
 
     @Test
-    public void testGetDeck()
+    public void testGetCard()
     {
-        assertArrayEquals(deck, deck.getDeck());
+        assertEquals(a.getMovement(),d.getCard(0).getMovement());
+        assertEquals(a.getValue(),d.getCard(0).getValue());
     }
 
-    private void assertArrayEquals(AssistantDeck deck, ArrayList<AssistantCard> deck1) {
-    }
 }
 

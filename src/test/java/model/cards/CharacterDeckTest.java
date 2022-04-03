@@ -5,28 +5,25 @@ import org.junit.Test;
 
 public class CharacterDeckTest {
     CharacterDeck cd = new CharacterDeck();
-    Priest p=new Priest();
+    CharacterCard cc;CharacterCard cc1;
 
     @Test
     public void testCheckEmpty() {
         assertFalse(cd.checkEmpty());
     }
-/*
+
     @Test
     public void testDrawCard() {
-        assertEquals(p,cd.drawCard(0));
-        assertEquals(p.baseCost+1,p.currentCost);
-    }*/
-
-    @Test
-    public void testGetDeck() {
-        //assertEquals(cd,cd.getDeck());
+        cc1=cd.getCard(0);
+        cc=cd.drawCard(0);
+        assertEquals(cc1,cc);
+        assertEquals(cc.getBaseCost()+1,cc.getCurrentCost());
     }
-/*
+
     @Test
     public void testGetCard() {
-        assertEquals(p,cd.getCard(0));
+        //assertEquals(cc,cd.getCard(0));
     }
 
- */
+
 }
