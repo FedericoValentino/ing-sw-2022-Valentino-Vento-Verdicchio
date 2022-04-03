@@ -115,7 +115,6 @@ public class CharacterController
                 game.getCurrentActiveCharacterCard().remove(i);
         }
         game.getCurrentCharacterDeck().getDeck().add(card);
-        int f;
     }
 
     public CharacterCard getPickedCard()
