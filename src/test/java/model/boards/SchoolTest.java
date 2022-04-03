@@ -28,24 +28,25 @@ public class SchoolTest{
         //I use it to test the catch branch
         s.extractStudent(2);
     }
-    /*
-        @Test
-        public void testPlaceInDiningRoom() {
-            testPlaceToken();
-            s.placeInDiningRoom(Col.YELLOW);
-            assertEquals(s.getDiningRoom()[2],1);
-            s.placeToken(ss2);
-            s.placeInDiningRoom(Col.YELLOW);
-            assertEquals(s.getDiningRoom()[0],1);
-        }
 
-        @Test
-        public void testUpdateCheckpoint() {
-            s.updateCheckpoint(2);
-            //udating the position
-            assertEquals(s.getRoomCheckpoints()[2],5);
-        }
-    */
+    @Test
+    public void testPlaceInDiningRoom() {
+        testPlaceToken();
+        s.placeInDiningRoom(Col.YELLOW);
+        assertEquals(s.getDiningRoom()[2],1);
+        s.placeToken(ss2);
+        s.placeInDiningRoom(Col.GREEN);
+        assertEquals(s.getDiningRoom()[0],1);
+    }
+
+    @Test
+    public void testUpdateCheckpoint() {
+        int i=0;
+        s.updateCheckpoint(i);
+        //udating the position
+        assertEquals(s.getRoomCheckpoints()[i],5);
+    }
+
     @Test
     public void testUpdateTowerCount() {
         int tt=s.getTowerCount();

@@ -10,11 +10,11 @@ public class Cloud extends Board
   public Cloud(){student= new ArrayList<Student>();}
   public Cloud(ArrayList<Student> st)
   {
+      student= new ArrayList<Student>();
       for(int i=0;i<st.size();i++)
       {
         this.student.add(i, st.get(i));
       }
-      student= new ArrayList<Student>();
   }
 
   //add Student to the cloud queue

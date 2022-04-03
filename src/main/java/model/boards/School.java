@@ -20,6 +20,11 @@ public class School extends Board
         this.towerCount = towerCount;
         this.diningRoom = new int[5];
         this.roomCheckpoints = new int[5];
+        for(int i=0;i<5;i++)
+        {
+          this.roomCheckpoints[i]=2;
+          this.diningRoom[i]=0;
+        }
         this.professorTable = new boolean[5];
         this.entrance = new ArrayList<>();
     }

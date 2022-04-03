@@ -9,11 +9,21 @@ import model.boards.token.Col;
 
 public class CloudTest {
     Cloud c= new Cloud();
+    Cloud c2= new Cloud();
     ArrayList<Student> stud=new ArrayList<Student>();
     Student st1=new Student(Col.GREEN);
     Student st2=new Student(Col.PINK);
     Student st3=new Student(Col.YELLOW);
+    ArrayList<Student> stud1=new ArrayList<Student>();
 
+    @Test
+    public void testConstructor()
+    {
+        stud1.add(st1);
+        stud1.add(st2);
+        Cloud c1=new Cloud(stud1);
+        assertEquals(c1.getStudent(1),st2);
+    }
     @Test
     public void testEmptyANDPlaceToken()
     {
@@ -23,20 +33,24 @@ public class CloudTest {
         assertFalse(c.isEmpty());
     }
     @Test
-    public void TestPos()
+    public void testGetPos()
     {
         c.placeToken(st1);
         c.placeToken(st2);
         c.placeToken(st3);
 
-
-        for(int i=0;i<stud.size();i++)
-        {
-            c.getStudent(1);
-            assertTrue(c.getStudent(1).equals(st2));
-            System.out.println("color st2 : " +st2.getColor());
-        }
-
+        c.getStudent(1);
+        assertTrue(c.getStudent(1).equals(st2));
+        //now i want to verify the try catch
+        assertNull(c.getStudent(70));
     }
-    
+
+    @Test
+    public void testRemoveToken()
+    {
+        c2.placeToken(st1);
+        c2.removeToken(st1);
+        assertTrue(c2.isEmpty());
+        c2.removeToken(st1);
+    }
 }

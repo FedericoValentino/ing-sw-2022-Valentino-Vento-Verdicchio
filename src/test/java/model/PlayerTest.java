@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
     Player p1=new Player("ci", ColTow.WHITE,8,"ca",false);
+    Player p2=new Player("ci", ColTow.BLACK,8,"ca",true);
 
     @Test
     public void test()
@@ -28,5 +29,13 @@ public class PlayerTest {
         assertEquals(p1.getCoinAmount(),0);
         p1.updateCoins(2);
         assertEquals(p1.getCoinAmount(),2);
+    }
+
+    @Test
+    public void testGetMaxMotherMovement()
+    {
+        int i=p2.getMaxMotherMovement();
+        p2.getMovementValue();
+        assertEquals(i,0);
     }
 }

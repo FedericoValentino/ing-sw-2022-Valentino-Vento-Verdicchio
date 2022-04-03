@@ -2,6 +2,8 @@ package model.cards;
 
 import model.CurrentGameState;
 import model.boards.Pouch;
+import model.boards.token.Col;
+import model.boards.token.Student;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -33,12 +35,7 @@ public class PriestTest {
     @Test
     public void testUpdateStudents()
     {
-        p.updateStudents(po);//perché aggiungo solo 1 student?
-    }
-    @Test
-    public void testGetStudent()
-    {
-        //il get student di priest rimuove proprio lo student
+        p.updateStudents(po);
     }
 
 }
