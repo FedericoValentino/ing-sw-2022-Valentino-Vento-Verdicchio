@@ -61,6 +61,10 @@ public class Pouch
        return content.isEmpty();
    }
 
+   public void updateSetup(boolean b)
+   {
+       this.setup=b;
+   }
 
    public boolean getSetup()
     {return this.setup;}
