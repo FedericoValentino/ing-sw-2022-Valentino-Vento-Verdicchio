@@ -14,7 +14,7 @@ public class PlanningController
         }
     }
 
-    public void drawAssistantCard(CurrentGameState game, String currentPlayer, int card)                    //Cerca il player nel giusto team, gioca choose assistant card
+    public void drawAssistantCard(CurrentGameState game, String currentPlayer, int cardPosition)                    //Cerca il player nel giusto team, gioca choose assistant card
     {
         int teamIndex = 0;
         int playerIndex = 0;
@@ -27,6 +27,6 @@ public class PlanningController
                     teamIndex = i;
             }
         }
-        game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).chooseAssistantCard(card);
+        game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).chooseAssistantCard(cardPosition);
     }
 }

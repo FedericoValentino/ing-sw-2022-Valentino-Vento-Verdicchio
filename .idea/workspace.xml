@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Commenti aggiunti a Planning, corretto Character">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Fatto meglio planning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" afterDir="false" />
     </list>
@@ -87,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648999755809</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fatto meglio planning">
+      <created>1648999831684</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648999831684</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,7 +117,8 @@
     <MESSAGE value="ops" />
     <MESSAGE value="PlanningController completo, corretto Character, aggiunto getter in currGS" />
     <MESSAGE value="Commenti aggiunti a Planning, corretto Character" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commenti aggiunti a Planning, corretto Character" />
+    <MESSAGE value="Fatto meglio planning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fatto meglio planning" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testGetSetup.ic" NAME="PouchTest.testGetSetup Coverage Results" MODIFIED="1648317551929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
