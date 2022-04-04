@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 public class CurrentTurnState
 {
-    //HashMap che indica l'ordine di gioco <String> <int> | nome giocatore -> turno
     private HashMap<String, Integer> turnOrder;
     private int turn;
     private int actions;
@@ -57,5 +56,9 @@ public class CurrentTurnState
     }
     public int getTurn() {
         return turn;
+    }
+
+    public HashMap<String, Integer> getTurnOrder() {
+        return turnOrder;
     }
 }

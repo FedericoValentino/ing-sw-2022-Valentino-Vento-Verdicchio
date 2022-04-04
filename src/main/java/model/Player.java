@@ -16,11 +16,16 @@ public class Player
   private int MaxMotherMovement;
   private int movementValue;
   private int value;
+  private boolean TowerOwner;
 
   public Player(String nome, ColTow col, int towerAmount, String wizard, boolean expertGame)
   {
     this.nome = nome;
     this.school = new School(col, towerAmount);
+    if(towerAmount != 0)
+    {
+      this.TowerOwner = true;
+    }
     this.assistantDeck = new AssistantDeck(wizard, nome);
     this.currentAssistantCard = null;
     this.lastPlayedCard = null;
@@ -38,6 +43,12 @@ public class Player
     currentAssistantCard = assistantDeck.extractCard(idCard);
     MaxMotherMovement = currentAssistantCard.getMovement();
     value = currentAssistantCard.getValue();
+  }
+
+  public void Discard()
+  {
+    lastPlayedCard = currentAssistantCard;
+    currentAssistantCard = null;
   }
 
   public int gainCoin()
@@ -85,5 +96,9 @@ public class Player
   }
   public String getNome() {
     return nome;
+  }
+
+  public boolean isTowerOwner() {
+    return TowerOwner;
   }
 }

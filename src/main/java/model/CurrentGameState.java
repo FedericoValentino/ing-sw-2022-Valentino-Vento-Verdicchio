@@ -4,6 +4,7 @@ import model.boards.Cloud;
 import model.boards.Islands;
 import model.boards.Pouch;
 import model.boards.token.Col;
+import model.boards.token.ColTow;
 import model.boards.token.MotherNature;
 import model.boards.token.Student;
 import model.cards.CharacterCard;
@@ -32,6 +33,20 @@ public class CurrentGameState {
        this.currentPouch = new Pouch();
        this.currentIslands = new Islands();
        this.currentTeams = new ArrayList<>();
+       if(playerNum == 2 || playerNum == 4)
+       {
+           for(int i = 0; i < 2; i++)
+           {
+               currentTeams.add(new Team(ColTow.values()[i]));
+           }
+       }
+       else if(playerNum == 3)
+       {
+           for(int i = 0; i < 3; i++)
+           {
+               currentTeams.add(new Team(ColTow.values()[i]));
+           }
+       }
        this.currentClouds = new Cloud[playerNum];
        this.currentMotherNature = new MotherNature();
        this.currentTurnState = new CurrentTurnState();
@@ -58,7 +73,8 @@ public class CurrentGameState {
             }
         }
         List<Map.Entry<String,Integer>> list = new LinkedList<>(map.entrySet());
-        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>()
+        {
             public int compare(Map.Entry<String, Integer> o1,
                                Map.Entry<String, Integer> o2)
             {
@@ -163,5 +179,14 @@ public class CurrentGameState {
     public ArrayList<Team> getCurrentTeams()
     {
       return currentTeams;
+    }
+
+    public CurrentTurnState getCurrentTurnState()
+    {
+        return currentTurnState;
+    }
+
+    public MotherNature getCurrentMotherNature() {
+        return currentMotherNature;
     }
 }

@@ -99,6 +99,18 @@ public class Island
     teamInfluence[team] += value;
   }
 
+  public void updateMotherNature()
+  {
+    if(motherNature)
+    {
+      motherNature = false;
+    }
+    else
+    {
+      motherNature = true;
+    }
+  }
+
   public ArrayList<Student> getCurrentStudents(){
     return currentStudents;
   }
