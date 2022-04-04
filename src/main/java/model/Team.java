@@ -27,6 +27,7 @@ public class Team
 
   public void updateProfessors()
   {
+    controlledProfessors = new ArrayList<>();
     for(Player p : players)
     {
       for(int i = 0; i < 5; i ++)

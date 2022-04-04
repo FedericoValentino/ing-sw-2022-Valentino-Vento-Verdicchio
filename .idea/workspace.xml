@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Controller Completato, inseriti metodi di update di alcuni parametri che mancavano e molta altra roba">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Piccolo change ad un for">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentTurnState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentTurnState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Island.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Island.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +67,7 @@
       <updated>1648992173633</updated>
       <workItem from="1648992175840" duration="182000" />
       <workItem from="1648992381798" duration="307000" />
-      <workItem from="1649083342636" duration="46000" />
+      <workItem from="1649083342636" duration="1565000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -95,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649067581517</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Piccolo change ad un for">
+      <created>1649083498867</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649083498867</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +119,8 @@
     <MESSAGE value="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island" />
     <MESSAGE value="ops" />
     <MESSAGE value="Controller Completato, inseriti metodi di update di alcuni parametri che mancavano e molta altra roba" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller Completato, inseriti metodi di update di alcuni parametri che mancavano e molta altra roba" />
+    <MESSAGE value="Piccolo change ad un for" />
+    <option name="LAST_COMMIT_MESSAGE" value="Piccolo change ad un for" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1649067647134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
