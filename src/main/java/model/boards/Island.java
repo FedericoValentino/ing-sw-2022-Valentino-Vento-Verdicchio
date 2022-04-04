@@ -38,7 +38,7 @@ public class Island
     int max = 0;
     if(motherNature)
     {
-      for(int i: teamInfluence)
+      for(int i = 0; i < 3; i++)
       {
         if(this.teamInfluence[i] > max)
         {
