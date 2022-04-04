@@ -27,7 +27,7 @@ public class Island
     this.motherNature = false;
     this.Group = false;
     this.towerNumber = 0;
-    this.ownership = null;
+    this.ownership = ColTow.GREY;
     this.teamInfluence = new int[3]; // da aggiungere descrizione
     this.noEntry = false;
   }

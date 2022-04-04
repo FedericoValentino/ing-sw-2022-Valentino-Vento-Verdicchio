@@ -58,6 +58,8 @@ public class SchoolTest{
     @Test
     public void testGetProfessorTable() {
         //da capire che valori hanno, perchè adesso sono a null
+        s.updateProfessorsTable(0,true);
+        assertEquals(s.getProfessorTable()[0], true);
     }
 
     @Test
