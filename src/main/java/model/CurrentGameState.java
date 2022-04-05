@@ -1,6 +1,8 @@
+
+
 package model;
 
-import model.boards.Cloud;
+import model.boards.Cloud;//
 import model.boards.Islands;
 import model.boards.Pouch;
 import model.boards.token.Col;
@@ -23,9 +25,17 @@ public class CurrentGameState {
     private MotherNature currentMotherNature;
     private CurrentTurnState currentTurnState;
     private ArrayList<CharacterCard> currentActiveCharacterCard;
-    private ArrayList<Student> currentExtractedStudents;
+    //private ArrayList<Student> currentExtractedStudents;
     private int bankBalance;
     private boolean expertGame;
+
+
+    /*
+     * Class Constructor, instantiates a new CurrentGameState, taking as parameters only the number of players playing and if we're playing an expertGame or not
+     *
+     * @param the number of players
+     * @param expert game or not
+     */
 
     public CurrentGameState(int playerNum, boolean expertGame)
     {
@@ -51,7 +61,7 @@ public class CurrentGameState {
        this.currentMotherNature = new MotherNature();
        this.currentTurnState = new CurrentTurnState();
        this.currentActiveCharacterCard = new ArrayList<>();
-       this.currentExtractedStudents = new ArrayList<>();
+       //this.currentExtractedStudents = new ArrayList<>();
        if(expertGame)
            this.bankBalance = 20 - playerNum;
        else
@@ -60,7 +70,10 @@ public class CurrentGameState {
 
     }
 
-
+    /*
+     * Method updateTurnState takes the AssistantCard value that every player has played and puts it in an HashMap and then sorts it from the lowest to the highest
+     *
+     */
     public void updateTurnState()
     {
         HashMap<String, Integer> map = new HashMap<>();
@@ -89,11 +102,16 @@ public class CurrentGameState {
     }
 
 
+    /*
     public void insertExtractedStudent(Student s)
     {
         currentExtractedStudents.add(s);
     }
+    */
 
+    /*
+     * Method checkWinner checks if a winner is found and updates the CurrentTurnState
+     */
     public void checkWinner()
     {
         for(Team t: currentTeams)
@@ -101,7 +119,7 @@ public class CurrentGameState {
             for(Player p: t.getPlayers())
             {
                 //da modificare perchè nella modalità a 4 giocatori 2 player non hanno torri
-                if(p.getSchool().getTowerCount() == 0)
+                if(p.getSchool().getTowerCount() == 0 && p.isTowerOwner())
                 {
                     currentTurnState.updateWinner(t.getColor());
                 }
@@ -121,6 +139,12 @@ public class CurrentGameState {
         }
     }
 
+    /*
+     * Method updateBankBalance updates the BankBalance everytime a player p gains a coin from its DiningRoom
+     *
+     * @param the player to check
+     */
+
     public void updateBankBalance(Player p)
     {
         int coinsToLose = p.gainCoin();
@@ -131,6 +155,11 @@ public class CurrentGameState {
         }
 
     }
+
+
+    /*
+     * Method giveProfessors assigns professors to the player with the most student in their diningRoom
+     */
 
     public void giveProfessors()
     {

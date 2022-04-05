@@ -20,6 +20,10 @@ public class Island
   public int[] teamInfluence;
   private boolean noEntry;
 
+
+  /*
+   * Class Constructor
+   */
   public Island(int islandId)
   {
     this.islandId = islandId;
@@ -28,11 +32,13 @@ public class Island
     this.Group = false;
     this.towerNumber = 0;
     this.ownership = ColTow.GREY;
-    this.teamInfluence = new int[3]; // da aggiungere descrizione
+    this.teamInfluence = new int[3];
     this.noEntry = false;
   }
 
-
+  /*
+   * Method calculateOwnership sets the island ownership to the team with the most influence on it
+   */
   public void calculateOwnership()
   {
     int max = 0;
@@ -48,7 +54,11 @@ public class Island
       }
     }
   }
-
+  /*
+   * Method updateTeamInfluence updates the teamInfluence array with each team influence on the island
+   *
+   * @param the team array from the currentGameState
+   */
   public void updateTeamInfluence(ArrayList<Team> team)
   {
     if(!noEntry)
@@ -81,11 +91,17 @@ public class Island
     }
   }
 
+  /*
+   * Method addStudent adds a student  to the island
+   */
   public void addStudent(Student s)
   {
     currentStudents.add(s);
   }
 
+  /*
+   * Method updateNoEntry sets on or off the access of the island to motherNature
+   */
   public void updateNoEntry()
   {
     if(getNoEntry())
@@ -94,11 +110,18 @@ public class Island
       noEntry = true;
   }
 
+
+  /*
+   * Overload of updateTeamInfluence, only used by CharacterCards which actively modify the influence on an island
+   */
   public void updateTeamInfluence(int value, int team)
   {
     teamInfluence[team] += value;
   }
 
+  /*
+   * Method updateMotherNature sets on or off the presence of mother nature on the island
+   */
   public void updateMotherNature()
   {
     if(motherNature)

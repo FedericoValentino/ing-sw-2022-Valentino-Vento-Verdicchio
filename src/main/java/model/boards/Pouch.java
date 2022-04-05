@@ -1,3 +1,5 @@
+
+
 package model.boards;
 
 import model.boards.token.Col;
@@ -15,34 +17,32 @@ public class Pouch
     {
         this.setup = true;                                              //Pouch inizializza il bool setup a true perchè viene creato solo una volta all'inizio, proprio nel setup
         this.content = new ArrayList<>();
-        for (int i=0; i<24; i++)
-        {this.content.add(new Student(Col.BLUE));}
-        for (int i=0; i<24; i++)
-        {this.content.add(new Student(Col.RED));}
-        for (int i=0; i<24; i++)
-        {this.content.add(new Student(Col.YELLOW));}
-        for (int i=0; i<24; i++)
-        {this.content.add(new Student(Col.GREEN));}
-        for (int i=0; i<24; i++)
-        {this.content.add(new Student(Col.PINK));}
-        Collections.shuffle((this.content));
-        for (int i=0; i<2; i++)                                        //Pouch adesso inserisce ordinatamente due studenti di ogni colore (i 10 rimasti) in coda
-        {this.content.add(new Student(Col.BLUE));}            //Questo per la fase di setup
-        for (int i=0; i<2; i++)
-        {this.content.add(new Student(Col.RED));}
-        for (int i=0; i<2; i++)
-        {this.content.add(new Student(Col.YELLOW));}
-        for (int i=0; i<2; i++)
-        {this.content.add(new Student(Col.GREEN));}
-        for (int i=0; i<2; i++)
-        {this.content.add(new Student(Col.PINK));}
-        //Modificare usando ordinal
+        ArrayList<Student> setupBag = new ArrayList<>();
+        ArrayList<Student> gameBag = new ArrayList<>();
+        for(int i = 0; i < 5; i++)
+        {
+            for(int j = 0; j < 24; j++)
+            {
+                gameBag.add(new Student(Col.values()[i]));
+            }
+        }
+        Collections.shuffle(gameBag);
+        for(int i = 0; i < 5; i++)                                         //Pouch adesso inserisce ordinatamente due studenti di ogni colore (i 10 rimasti) in coda
+        {
+            for(int j = 0; j < 2; j++)
+            {
+                setupBag.add(new Student(Col.values()[i]));
+            }
+        }
+        Collections.shuffle(setupBag);
+        this.content.addAll(gameBag);
+        this.content.addAll(setupBag);
     }
 
    public Student extractStudent()                                              //La funzione si splitta in 2 parti
    {
        int index;
-       if(getSetup())                                                       //se setup == true siamo in fase di setup: l'indice viene scelto
+       if(getSetup())                                                      //se setup == true siamo in fase di setup: l'indice viene scelto
         {                                                                   //randomicamente fra il 120esimo elemento e l'ultimo, per disporre i primi
             int max_index = content.size() - 1;                             //studenti sulle isole
             index = (int) (Math.random() * (max_index - 120) + 120);

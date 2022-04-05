@@ -8,6 +8,11 @@ public class Islands extends Board {
   private ArrayList<Island> islands=new ArrayList<>();
   private int totalGroups;
 
+
+  /*
+   * Class Constructor, creates 12 Island and sets the total group to 12;
+   */
+
   public Islands()
   {
     for(int i = 0; i < 12; i++)
@@ -17,6 +22,9 @@ public class Islands extends Board {
     totalGroups = 12;
   }
 
+  /*
+   * Method idManagement handles the unification of islands and updates the totalGroup parameter to match with the ArrayList.size();
+   */
   public void idManagement()
   {
     Island currentIsland;
@@ -95,14 +103,28 @@ public class Islands extends Board {
       I.islandId = i;
       islands.set(i, I);
     }
+    totalGroups = islands.size();
 
   }
+
+  /*
+   * Method placeToken places a token on an island tile
+   *
+   * @param student token
+   * @param position of the island tile
+   */
 
   public void placeToken(Student s, int pos) {
     Island I = islands.get(pos);
     I.addStudent(s);
     islands.set(pos, I);
   }
+
+  /*
+   * Metod getMaxCol returns the color of the team with the most built towers
+   *
+   * @return the current winning team
+   */
 
   public ColTow getMaxCol()
   {
@@ -135,8 +157,12 @@ public class Islands extends Board {
     return ColTow.values()[Winner];
   }
 
-  public ArrayList<Island> getIslands() {return islands;}
-  public int getTotalGroups() {
+  public ArrayList<Island> getIslands()
+  {
+    return islands;
+  }
+  public int getTotalGroups()
+  {
     return totalGroups;
   }
 }

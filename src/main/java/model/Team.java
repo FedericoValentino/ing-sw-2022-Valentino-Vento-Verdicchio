@@ -12,6 +12,9 @@ public class Team
   private int controlledIslands;
   private ArrayList<Col> controlledProfessors;
 
+  /*
+   * Class Constructor
+   */
   public Team(ColTow color)
   {
     this.color = color;
@@ -20,11 +23,20 @@ public class Team
     this.controlledProfessors = new ArrayList<>();
   }
 
+
+  /*
+   * Method addPlayer adds a player to the team
+   *
+   * @param the player to add
+   */
   public void addPlayer(Player p)
   {
     this.players.add(p);
   }
 
+  /*
+   *Method updateProfessors checks whether a player in the team has a professor or not. If it does then it adds it to its collection of held professors
+   */
   public void updateProfessors()
   {
     controlledProfessors = new ArrayList<>();
