@@ -11,7 +11,9 @@ import static org.junit.Assert.*;
 
 public class IslandsTest {
     Islands is=new Islands();
+    Islands is2=new Islands();
     Student s1=new Student(Col.GREEN);
+    Student s12=new Student(Col.RED);
     Student s2=new Student(Col.PINK);
     Student s3=new Student(Col.BLUE);
     Student s4=new Student(Col.YELLOW);
@@ -23,35 +25,56 @@ public class IslandsTest {
         assertEquals(is.getIslands().get(0).getIslandId(),0);
     }
 
+    //place token basic with 4 groups
     @Test
     public void testPlaceToken()
     {
-        is.placeToken(s1,0);
-        assertEquals(is.getIslands().get(0).getCurrentStudents().get(0),s1);
-        is.placeToken(s2,0);
-        assertEquals(is.getIslands().get(0).getCurrentStudents().get(1),s2);
-        is.placeToken(s2,0);
-        is.placeToken(s2,0);
-        is.placeToken(s3,0);
-        is.placeToken(s4,0);
-        is.placeToken(s3,0);
+        is.getIslands().get(0).currentStudents.add(s1);
+
+        is.getIslands().get(1).currentStudents.add(s2);//pink
+        is.getIslands().get(3).currentStudents.add(s2);//pink
+        is.getIslands().get(2).currentStudents.add(s2);//pink
+
+        is.getIslands().get(0).currentStudents.add(s4);
+        is.getIslands().get(5).currentStudents.add(s4);
+        is.getIslands().get(6).currentStudents.add(s4);
+
+        is.getIslands().get(7).currentStudents.add(s2);//pink
+        is.getIslands().get(10).currentStudents.add(s2);//pink
+        is.getIslands().get(11).currentStudents.add(s2);//pink
+
     }
 
-    @Test
-    public void testIdManagment() {
-        Team t1=new Team(ColTow.BLACK);
-        Team t2=new Team(ColTow.GREY);
-        CurrentGameState c=new CurrentGameState(2,false);
-        Player p1=new Player("ci", ColTow.BLACK,8,"ca",false);
-        Player p2=new Player("asd", ColTow.GREY,8,"caadsds",false);
+    //test with 0 groups because the student are different
+    public void testPlaceToken1()
+    {
+        is2.placeToken(s1,0);
+        assertEquals(is2.getIslands().get(0).getCurrentStudents().get(0),s1);
+        is2.placeToken(s2,0);
+        assertEquals(is2.getIslands().get(0).getCurrentStudents().get(1),s2);
+        is2.placeToken(s1,0);
 
-        is.getIslands().get(0).currentStudents.add(s1);
-        is.getIslands().get(1).currentStudents.add(s2);
-        is.getIslands().get(3).currentStudents.add(s2);
-        is.getIslands().get(2).currentStudents.add(s2);
-        is.getIslands().get(0).currentStudents.add(s3);
-        is.getIslands().get(0).currentStudents.add(s4);
-        is.getIslands().get(10).currentStudents.add(s1);
+
+
+        is2.getIslands().get(0).currentStudents.add(s1);//green p1
+        is2.getIslands().get(1).currentStudents.add(s12);//red p2
+        is2.getIslands().get(2).currentStudents.add(s4);//yellow p1
+        is2.getIslands().get(3).currentStudents.add(s2);//pink p2
+        is2.getIslands().get(4).currentStudents.add(s3);//blue p3
+        is2.getIslands().get(5).currentStudents.add(s1);//green p1
+        is2.getIslands().get(6).currentStudents.add(s12);//red p2
+        is2.getIslands().get(7).currentStudents.add(s4);//yellow p1
+        is2.getIslands().get(8).currentStudents.add(s2);//pink p2
+        is2.getIslands().get(9).currentStudents.add(s3);//blue p3
+        is2.getIslands().get(10).currentStudents.add(s1);//green p1
+        is2.getIslands().get(11).currentStudents.add(s12);//red p2
+
+    }
+
+    public void testIdManagmentCase1(Team t1,Team t2,Player p1,Player p2, CurrentGameState c) {
+
+
+        testPlaceToken();// I put the students in the islands
 
         t1.addPlayer(p1);
         t2.addPlayer(p2);
@@ -60,7 +83,7 @@ public class IslandsTest {
 
         p1.getSchool().updateProfessorsTable(0,true);//green prof
         p2.getSchool().updateProfessorsTable(2,true);//yellow prof
-
+        p1.getSchool().updateProfessorsTable(3,true);//pink
         t1.updateProfessors();
         t2.updateProfessors();
         c.getCurrentTeams().add(t1);
@@ -70,13 +93,60 @@ public class IslandsTest {
             is.getIslands().get(i).calculateOwnership();
             is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
-        is.idManagement();
+
         is.getIslands().get(0).updateMotherNature();
         assertEquals(is.getTotalGroups(),12);
+
+        //calling the management function
         is.idManagement();
-        //assertEquals(is.getTotalGroups(),11); da mettere valida
-        //appena fede updata il numero totali di gruppi in id managment
+        assertEquals(is.getTotalGroups(),4);
+
+        //adding a new student to reload idManagement (reducing to 3 groups)
+        is.getIslands().get(0).currentStudents.add(s3);
+        for(int i=0;i<is.getTotalGroups();i++)
+        {
+            is.getIslands().get(i).calculateOwnership();
+            is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+        }
+        is.idManagement();
+        assertEquals(is.getTotalGroups(),3);
+
     }
+
+    public void testIdManagmentCase2(Team t1,Team t2,Player p1,Player p2, CurrentGameState c, Player p3, Team t3) {
+        testPlaceToken1();// I put the students in the islands
+
+        t1.addPlayer(p1);
+        t2.addPlayer(p2);
+        t3.addPlayer(p3);
+
+        p1.getSchool().updateProfessorsTable(0,true);//green prof
+        p2.getSchool().updateProfessorsTable(1,true);//red prof
+        p1.getSchool().updateProfessorsTable(2,true);//yellow
+        p2.getSchool().updateProfessorsTable(3,true);//pink prof
+        p3.getSchool().updateProfessorsTable(4,true);//blue prof
+        t1.updateProfessors();
+        t2.updateProfessors();
+        c.getCurrentTeams().add(t1);
+        c.getCurrentTeams().add(t2);
+        assertEquals(is2.getTotalGroups(),12);
+
+    }
+
+    @Test
+    public void testIdManagment() {
+        Team t1=new Team(ColTow.BLACK);
+        Team t2=new Team(ColTow.GREY);
+        Team t3=new Team(ColTow.WHITE);
+        CurrentGameState c=new CurrentGameState(2,false);
+        Player p1=new Player("ci", ColTow.BLACK,8,"ca",false);
+        Player p2=new Player("asd", ColTow.GREY,8,"caadsds",false);
+        Player p3=new Player("asd", ColTow.WHITE,8,"caadsds",false);
+
+        testIdManagmentCase1(t1,t2,p1,p2,c); // caso1 testing ez
+        testIdManagmentCase2(t1,t2,p1,p2,c,p3,t3); //caso 2 un po' più elaborato
+
+        }
     @Test
     public void testTotalGroups()
     {
@@ -87,8 +157,9 @@ public class IslandsTest {
     @Test
     public void testGetMax()
     {
-        testIdManagment();//lo chiamo perché ha tutta l'inizializzazione del game
-        ColTow c=is.getMaxCol();
-
+        testIdManagment();//because it has all the inizialization
+        ColTow c=is2.getMaxCol();   // here it will call the island
+                                    //linked to the second test
+        assertEquals(ColTow.GREY,c);
     }
 }

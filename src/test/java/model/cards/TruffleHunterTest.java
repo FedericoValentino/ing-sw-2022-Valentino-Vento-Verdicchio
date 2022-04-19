@@ -1,5 +1,6 @@
 package model.cards;
 
+import model.boards.token.Col;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -26,5 +27,12 @@ public class TruffleHunterTest {
     public void checkIdCard()
     {
         assertEquals(t.getIdCard(),9);
+    }
+
+    @Test
+    public void testSetChooseColor()
+    {
+        t.setChosenColor(Col.YELLOW);
+        assertEquals(Col.YELLOW,t.getChosenColor());
     }
 }
