@@ -75,7 +75,9 @@ public class Islands extends Board {
     resetId();
   }
 
-
+  /*
+   * Method unifyIslands handles the unification of 2 islands
+   */
   private void unifyIslands(Island currentIsland, Island nextIsland)
   {
     if(nextIsland.getMotherNature())
@@ -90,6 +92,7 @@ public class Islands extends Board {
     currentIsland.Group = true;
 
   }
+
 
   private void resetId()
   {
