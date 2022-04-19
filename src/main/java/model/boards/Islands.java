@@ -85,7 +85,7 @@ public class Islands extends Board {
       currentIsland.motherNature = true;
     }
     currentIsland.currentStudents.addAll(nextIsland.currentStudents);
-    currentIsland.towerNumber += 2;
+    currentIsland.towerNumber += 1;
     currentIsland.teamInfluence[0] += nextIsland.teamInfluence[0];
     currentIsland.teamInfluence[1] += nextIsland.teamInfluence[1];
     currentIsland.teamInfluence[2] += nextIsland.teamInfluence[2];
