@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Aggiunti commenti alle mie classi+fix a qualche metodo">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/report.yml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Installazione SonarQube">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +31,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="yaml" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -75,7 +77,9 @@
       <workItem from="1648992381798" duration="307000" />
       <workItem from="1649083342636" duration="1565000" />
       <workItem from="1649254256174" duration="611000" />
-      <workItem from="1649752816814" duration="743000" />
+      <workItem from="1649752816814" duration="1014000" />
+      <workItem from="1649842440527" duration="12000" />
+      <workItem from="1650353508689" duration="686000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -112,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649149990077</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Installazione SonarQube">
+      <created>1649753825001</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649753825001</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +148,8 @@
     <MESSAGE value="Controller Completato, inseriti metodi di update di alcuni parametri che mancavano e molta altra roba" />
     <MESSAGE value="Piccolo change ad un for" />
     <MESSAGE value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
+    <MESSAGE value="Installazione SonarQube" />
+    <option name="LAST_COMMIT_MESSAGE" value="Installazione SonarQube" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1649067647134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

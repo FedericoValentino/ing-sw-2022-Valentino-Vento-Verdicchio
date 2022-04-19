@@ -50,17 +50,8 @@ public class Islands extends Board {
       }
       if(currentIsland.getOwnership() == nextIsland.getOwnership() && currentIsland.getOwnership() == previousIsland.getOwnership()) //Unione tripla
       {
-        if(nextIsland.getMotherNature() || previousIsland.getMotherNature())
-        {
-          currentIsland.motherNature = true;
-        }
-        currentIsland.currentStudents.addAll(nextIsland.currentStudents);
-        currentIsland.currentStudents.addAll(previousIsland.currentStudents);
-        currentIsland.towerNumber += 2;
-        currentIsland.teamInfluence[0] += nextIsland.teamInfluence[0] + previousIsland.teamInfluence[0];
-        currentIsland.teamInfluence[1] += nextIsland.teamInfluence[1] + previousIsland.teamInfluence[1];
-        currentIsland.teamInfluence[2] += nextIsland.teamInfluence[2] + previousIsland.teamInfluence[2];
-        currentIsland.Group = true;
+        unifyIslands(currentIsland, nextIsland);
+        unifyIslands(currentIsland, previousIsland);
         islands.set(i, currentIsland);
         islands.remove(nextIsland);
         islands.remove(previousIsland);
@@ -69,34 +60,39 @@ public class Islands extends Board {
       {
         if(currentIsland.getOwnership() == nextIsland.getOwnership())
         {
-          if(nextIsland.getMotherNature())
-          {
-            currentIsland.motherNature = true;
-          }
-          currentIsland.currentStudents.addAll(nextIsland.currentStudents);
-          currentIsland.towerNumber += 1;
-          currentIsland.teamInfluence[0] += nextIsland.teamInfluence[0];
-          currentIsland.teamInfluence[1] += nextIsland.teamInfluence[1];
-          currentIsland.teamInfluence[2] += nextIsland.teamInfluence[2];
+          unifyIslands(currentIsland, nextIsland);
           islands.set(i, currentIsland);
           islands.remove(nextIsland);
         }
         else if(currentIsland.getOwnership() == previousIsland.getOwnership())
         {
-          if(previousIsland.getMotherNature())
-          {
-            currentIsland.motherNature = true;
-          }
-          currentIsland.currentStudents.addAll(previousIsland.currentStudents);
-          currentIsland.towerNumber += 1;
-          currentIsland.teamInfluence[0] += previousIsland.teamInfluence[0];
-          currentIsland.teamInfluence[1] += previousIsland.teamInfluence[1];
-          currentIsland.teamInfluence[2] += previousIsland.teamInfluence[2];
+          unifyIslands(currentIsland, previousIsland);
           islands.set(i, currentIsland);
           islands.remove(previousIsland);
         }
       }
     }
+    resetId();
+  }
+
+
+  private void unifyIslands(Island currentIsland, Island nextIsland)
+  {
+    if(nextIsland.getMotherNature())
+    {
+      currentIsland.motherNature = true;
+    }
+    currentIsland.currentStudents.addAll(nextIsland.currentStudents);
+    currentIsland.towerNumber += 2;
+    currentIsland.teamInfluence[0] += nextIsland.teamInfluence[0];
+    currentIsland.teamInfluence[1] += nextIsland.teamInfluence[1];
+    currentIsland.teamInfluence[2] += nextIsland.teamInfluence[2];
+    currentIsland.Group = true;
+
+  }
+
+  private void resetId()
+  {
     for(int i = 0; i < islands.size(); i++)
     {
       Island I = islands.get(i);
@@ -104,7 +100,6 @@ public class Islands extends Board {
       islands.set(i, I);
     }
     totalGroups = islands.size();
-
   }
 
   /*
