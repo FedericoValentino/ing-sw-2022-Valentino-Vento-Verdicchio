@@ -48,7 +48,7 @@ public class Islands extends Board {
         nextIsland = islands.get(i+1);
         previousIsland = islands.get(i-1);
       }
-      if(currentIsland.getOwnership() == nextIsland.getOwnership() && currentIsland.getOwnership() == previousIsland.getOwnership()) //Unione tripla
+      if(currentIsland.getOwnership() == nextIsland.getOwnership() && currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || nextIsland.motherNature || previousIsland.motherNature)) //Unione tripla
       {
         unifyIslands(currentIsland, nextIsland);
         unifyIslands(currentIsland, previousIsland);
@@ -58,13 +58,13 @@ public class Islands extends Board {
       }
       else if(currentIsland.getGroup())  //unione doppia(attuabile solo se currentIsland è di già un gruppo di isole
       {
-        if(currentIsland.getOwnership() == nextIsland.getOwnership())
+        if(currentIsland.getOwnership() == nextIsland.getOwnership() && (currentIsland.motherNature || nextIsland.motherNature))
         {
           unifyIslands(currentIsland, nextIsland);
           islands.set(i, currentIsland);
           islands.remove(nextIsland);
         }
-        else if(currentIsland.getOwnership() == previousIsland.getOwnership())
+        else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || previousIsland.motherNature))
         {
           unifyIslands(currentIsland, previousIsland);
           islands.set(i, currentIsland);
