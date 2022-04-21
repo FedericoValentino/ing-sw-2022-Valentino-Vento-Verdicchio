@@ -56,7 +56,7 @@ public class Player
     int gainedCoins = 0;
     for(int i = 0; i < 5; i++)
     {
-      while(school.getDiningRoom()[i] >= school.getRoomCheckpoints()[i])
+      while(school.getDiningRoom()[i] > school.getRoomCheckpoints()[i])
       {
         gainedCoins++;
         school.updateCheckpoint(i);

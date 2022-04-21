@@ -48,7 +48,7 @@ public class Cloud extends Board
     try {
       return student.get(pos);
     } catch (IndexOutOfBoundsException e) {
-      System.out.println("Null pointer exception perché stai restituendo un intero negativo");
+      System.out.println("CLOUD : Null pointer exception perché stai restituendo un intero negativo");
     }
     return null;
   }

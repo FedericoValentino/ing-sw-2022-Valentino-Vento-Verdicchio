@@ -1,6 +1,7 @@
 package model;
 
 import model.boards.School;
+import model.boards.token.Col;
 import model.boards.token.ColTow;
 import model.cards.AssistantCard;
 import model.cards.AssistantDeck;
@@ -14,12 +15,6 @@ public class PlayerTest {
     AssistantDeck ad=new AssistantDeck("ca","Giaco");
     AssistantCard ac=new AssistantCard(1,1);
 
-    @Test
-    public void test()
-    {
-        AssistantDeck as=new AssistantDeck("ca","GIova");
-
-    }
 
     @Test
     public void testUpdateMaxMotherNatureMovement()
@@ -46,8 +41,11 @@ public class PlayerTest {
     @Test
     public void testChooseAssistantCard()
     {
-        assertEquals(ad.getCard(0).getValue(),1);
-        assertEquals(ad.getCard(0).getMovement(),1);
+        p1.chooseAssistantCard(0);
+        assertEquals(p1.getCurrentAssistantCard().getMovement(),1);
+        assertEquals(p1.getCurrentAssistantCard().getValue(),1);
+        assertEquals(p1.getMaxMotherMovement(),1);
+        assertEquals(p1.getValue(),1);
     }
 
     @Test
@@ -56,32 +54,42 @@ public class PlayerTest {
         assertEquals(p1.getSchool(),p1.school);
     }
 
-    /*@Test
+    @Test
     public void testDiscard()
     {
-        AssistantCard a1=new AssistantCard(1,1);
-        AssistantCard a2=new AssistantCard(1,1);
-
-        p1.chooseAssistantCard(1);
-        a1=p1.getCurrentAssistantCard();
-        AssistantCard aTemp=p1.getCurrentAssistantCard();
-        a2=p1.getLastPlayedCard();
+        testChooseAssistantCard(); //to inzialize the current card, because I'm lazy
+        AssistantCard a=p1.getCurrentAssistantCard();
         p1.Discard();
-        assertEquals(a2.getMovement(),aTemp.getMovement());
-        assertEquals(a2.getMovement(),aTemp.getValue());
-        /*da aggiungere quando fede gestirà il problema del null sulla
-        lastCardUsed in Discard
-
-        assertNull(a1);
+        assertNull(p1.getCurrentAssistantCard());
+        assertEquals(a,p1.getLastPlayedCard());
     }
-    */
+    @Test
     public void testGenericGetter()
     {
-        /*assertTrue(p1.getCurrentAssistantCard() instanceof AssistantCard);*/
-        //assertTrue(p1.getLastPlayedCard() instanceof AssistantCard);
         assertTrue(p1.getAssistantDeck() instanceof AssistantDeck);
-        assertTrue(p1.getSchool() instanceof School);
-        assertTrue(p1.getNome() instanceof String);
+        assertEquals(p1.getNome(),"Giaco");
+        assertTrue(p1.isTowerOwner());
+    }
+
+    @Test
+    public void testGainCoin()
+    {
+
+        p1.getSchool().placeInDiningRoom(Col.YELLOW);
+        p1.getSchool().placeInDiningRoom(Col.YELLOW);
+
+        assertEquals(0,p1.gainCoin());
+        assertEquals(2,p1.getSchool().getRoomCheckpoints()[2]);
+
+        p1.getSchool().placeInDiningRoom(Col.YELLOW);
+        p1.getSchool().placeInDiningRoom(Col.YELLOW);
+        assertEquals(1,p1.gainCoin());
+        assertEquals(5,p1.getSchool().getRoomCheckpoints()[2]);
+        p1.getSchool().placeInDiningRoom(Col.YELLOW);
+        p1.getSchool().placeInDiningRoom(Col.YELLOW);
+        assertEquals(1,p1.gainCoin());
+        assertEquals(8,p1.getSchool().getRoomCheckpoints()[2]);
+
     }
 
 }
