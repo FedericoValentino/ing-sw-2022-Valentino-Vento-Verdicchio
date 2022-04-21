@@ -64,12 +64,6 @@ public class Islands extends Board {
           islands.set(i, currentIsland);
           islands.remove(nextIsland);
         }
-        else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || previousIsland.motherNature))
-        {
-          unifyIslands(currentIsland, previousIsland);
-          islands.set(i, currentIsland);
-          islands.remove(previousIsland);
-        }
       }
     }
     resetId();
@@ -135,11 +129,11 @@ public class Islands extends Board {
       {
         Towers[ColTow.BLACK.ordinal()] += I.getTowerNumber();
       }
-      if(I.getOwnership() == ColTow.GREY)
+      else if(I.getOwnership() == ColTow.GREY)
       {
         Towers[ColTow.GREY.ordinal()] += I.getTowerNumber();
       }
-      if(I.getOwnership() == ColTow.WHITE)
+      else if(I.getOwnership() == ColTow.WHITE)
       {
         Towers[ColTow.WHITE.ordinal()] += I.getTowerNumber();
       }

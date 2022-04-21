@@ -96,6 +96,7 @@ public class IslandTest {
         assertTrue(t1.getControlledProfessors().get(1).equals(Col.RED));
         assertTrue(t2.getControlledProfessors().get(1).equals(Col.PINK));
         assertTrue(t2.getControlledProfessors().get(2).equals(Col.BLUE));
+        i.updateMotherNature();
         i.calculateOwnership();
         i.updateTeamInfluence(c.getCurrentTeams());
     }
