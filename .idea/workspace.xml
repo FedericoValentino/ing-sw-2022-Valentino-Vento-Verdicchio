@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="End Player Testing, island.ownership= null in the constructor, delete a = in Player line 59 (while),">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Deleted the previousIsland branch in islands and changed the if in elseif into the getMaxCol&#10;Added a part of tests in testManagementCase1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/IslandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/boards/IslandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/IslandsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/boards/IslandsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/token/MotherNatureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/boards/token/MotherNatureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,33 +60,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IslandsTest.testIdManagment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MotherNatureTest.testGetPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.boards.*" />
+          <option name="PATTERN" value="model.boards.token.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model.boards" />
-      <option name="MAIN_CLASS_NAME" value="model.boards.IslandsTest" />
-      <option name="METHOD_NAME" value="testIdManagment" />
+      <option name="PACKAGE_NAME" value="model.boards.token" />
+      <option name="MAIN_CLASS_NAME" value="model.boards.token.MotherNatureTest" />
+      <option name="METHOD_NAME" value="testGetPosition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.testGainCoin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MotherNatureTest.testMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="model.boards.token.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.PlayerTest" />
-      <option name="METHOD_NAME" value="testGainCoin" />
+      <option name="PACKAGE_NAME" value="model.boards.token" />
+      <option name="MAIN_CLASS_NAME" value="model.boards.token.MotherNatureTest" />
+      <option name="METHOD_NAME" value="testMove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,10 +109,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in softeng-GC61" />
+        <item itemvalue="JUnit.MotherNatureTest.testMove" />
+        <item itemvalue="JUnit.MotherNatureTest.testGetPosition" />
         <item itemvalue="JUnit.model in softeng-GC61" />
         <item itemvalue="JUnit.IslandsTest" />
-        <item itemvalue="JUnit.IslandsTest.testIdManagment" />
-        <item itemvalue="JUnit.PlayerTest.testGainCoin" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650531790054</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Deleted the previousIsland branch in islands and changed the if in elseif into the getMaxCol&#10;Added a part of tests in testManagementCase1">
+      <created>1650577656647</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650577656647</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +213,8 @@
     <MESSAGE value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
     <MESSAGE value="TruffleHunter and Islands tests modified" />
     <MESSAGE value="End Player Testing, island.ownership= null in the constructor, delete a = in Player line 59 (while)," />
-    <option name="LAST_COMMIT_MESSAGE" value="End Player Testing, island.ownership= null in the constructor, delete a = in Player line 59 (while)," />
+    <MESSAGE value="Deleted the previousIsland branch in islands and changed the if in elseif into the getMaxCol&#10;Added a part of tests in testManagementCase1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted the previousIsland branch in islands and changed the if in elseif into the getMaxCol&#10;Added a part of tests in testManagementCase1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetWizard.ic" NAME="AssistantDeckTest.testGetWizard Coverage Results" MODIFIED="1648316377464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -257,7 +262,7 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PriestTest_getStudents.ic" NAME="PriestTest.getStudents Coverage Results" MODIFIED="1649080161092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest.ic" NAME="IslandsTest Coverage Results" MODIFIED="1650571838355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest.ic" NAME="IslandsTest Coverage Results" MODIFIED="1650578565066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testGetSetup.ic" NAME="PouchTest.testGetSetup Coverage Results" MODIFIED="1648317551929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -291,10 +296,13 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$GrandmaWeedTest_testUpdateNoEntry.ic" NAME="GrandmaWeedTest.testUpdateNoEntry Coverage Results" MODIFIED="1648999368077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$MotherNatureTest_testGetPosition.ic" NAME="MotherNatureTest.testGetPosition Coverage Results" MODIFIED="1650578987212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.token.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$TeamTest_testAddPlayer.ic" NAME="TeamTest.testAddPlayer Coverage Results" MODIFIED="1649016632340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1650577235750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1650578572855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testUpdateMaxMotherNatureMovement.ic" NAME="PlayerTest.testUpdateMaxMotherNatureMovement Coverage Results" MODIFIED="1649020105661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -327,7 +335,7 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_boards_in_softeng_GC61.ic" NAME="model.boards in softeng-GC61 Coverage Results" MODIFIED="1650398687536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testGetMax.ic" NAME="IslandsTest.testGetMax Coverage Results" MODIFIED="1650400582781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testGetMax.ic" NAME="IslandsTest.testGetMax Coverage Results" MODIFIED="1650578489611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PriestTest.ic" NAME="PriestTest Coverage Results" MODIFIED="1649080039459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -339,7 +347,7 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testIdManagment.ic" NAME="IslandsTest.testIdManagment Coverage Results" MODIFIED="1650390356343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1650530085451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1650577477944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testChooseAssistantCard.ic" NAME="PlayerTest.testChooseAssistantCard Coverage Results" MODIFIED="1650406693597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>

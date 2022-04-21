@@ -110,7 +110,6 @@ public class IslandsTest {
         c.getCurrentTeams().add(t2);
         for(int i=0;i<12;i++)
         {
-
             is.getIslands().get(i).calculateOwnership();
             is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
@@ -171,15 +170,16 @@ public class IslandsTest {
         for(int i=0;i<is.getTotalGroups();i++)
         {
             is.getIslands().get(i).calculateOwnership();
-          //  is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-            System.out.println("isola "+i+" "+ is.getIslands().get(i).getOwnership()+is.getIslands().get(i).getTowerNumber());
+            is.getIslands().get(i).updateMotherNature();
+            is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            System.out.println("ISLANDS TEST : isola "+i+" "+ is.getIslands().get(i).getOwnership()+is.getIslands().get(i).getTowerNumber());
 
         }
         //assertEquals(ColTow.BLACK,is.getIslands().get(0).getOwnership());
 
         //now I'm adding pink students to merge it with the second group
 
-
+        System.out.println("asda "+is.getMaxCol());
     }
 
     public void testIdManagmentCase2(Team t1,Team t2,Player p1,Player p2, CurrentGameState c, Player p3, Team t3) {
@@ -221,23 +221,21 @@ public class IslandsTest {
         assertEquals(12,is2.getTotalGroups()); //because i don't have
         //mother nature= true, so it don't change anything
 
-        System.out.println("176666666");
+
         //don't do anything because I don't have already updated the ownership
         is2.idManagement();
         for(int i=0;i<is2.getTotalGroups();i++) {
             is2.getIslands().get(i).updateMotherNature();
             is2.getIslands().get(i).calculateOwnership();
             is2.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-            System.out.println("Influence : "+i+" "+is2.getIslands().get(i).getOwnership());
         }
 
         is2.idManagement();
         for(int i=0;i<is2.getTotalGroups();i++) {
             is2.getIslands().get(i).calculateOwnership();
             is2.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-            System.out.println("Influence : "+i+" "+is2.getIslands().get(i).getOwnership());
         }
-        System.out.println("FINE 17776");
+
 
         assertEquals(12,is2.getTotalGroups());
     }

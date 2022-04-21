@@ -1,6 +1,7 @@
 package model.boards.token;
 
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class MotherNatureTest {
     MotherNature mother= new MotherNature();
@@ -8,17 +9,17 @@ public class MotherNatureTest {
     @Test
     public void testMove()
     {
-        //System.out.println("Pos iniziale mN: "+mother.getPosition());
         mother.move(123,13);
-        //System.out.println("Pos finale mN: "+mother.getPosition());
 
-        //System.out.println("Pos iniziale mN: "+mother.getPosition());
         mother.move(5,6);
 
-        //System.out.println("Pos finale mN: "+mother.getPosition());
+        mother.move(9,11);
     }
 
-
+    @Test
+    public void testGetPosition() {
+        assertTrue(mother.getPosition()<=11 && mother.getPosition()>=0);
+    }
 }
 
 
