@@ -26,6 +26,10 @@ public class Player
     {
       this.TowerOwner = true;
     }
+    else
+    {
+      this.TowerOwner = false;
+    }
     this.assistantDeck = new AssistantDeck(wizard, nome);
     this.currentAssistantCard = null;
     this.lastPlayedCard = null;
