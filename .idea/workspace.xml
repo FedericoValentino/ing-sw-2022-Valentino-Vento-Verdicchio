@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Suddivisione metodo idManagement">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="FIX pudduh" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,6 +128,7 @@
       <workItem from="1649752816814" duration="743000" />
       <workItem from="1650622203582" duration="30000" />
       <workItem from="1650624385842" duration="18000" />
+      <workItem from="1650624506839" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -166,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649149990077</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="FIX pudduh">
+      <created>1650624622625</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650624622625</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +197,8 @@
     <MESSAGE value="Controller Completato, inseriti metodi di update di alcuni parametri che mancavano e molta altra roba" />
     <MESSAGE value="Piccolo change ad un for" />
     <MESSAGE value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
+    <MESSAGE value="FIX pudduh" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX pudduh" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGenericGetter.ic" NAME="PlayerTest.testGenericGetter Coverage Results" MODIFIED="1649101611547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
