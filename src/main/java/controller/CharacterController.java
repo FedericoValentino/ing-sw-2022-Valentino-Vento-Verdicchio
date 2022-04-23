@@ -45,7 +45,7 @@ public class CharacterController
             }
         }
         game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).getSchool().placeInDiningRoom(color);         //Prendo la sucola del currentPlayer e ci piazzo il colore
-        card.updateStudents(game.getCurrentPouch());                                                           //Updato studenti su carta e solita deckmgmt
+        card.updateStudents(game.getCurrentPouch());                                                                      //Updato studenti su carta e solita deckmgmt
         deckManagement(card, game);
     }
 
