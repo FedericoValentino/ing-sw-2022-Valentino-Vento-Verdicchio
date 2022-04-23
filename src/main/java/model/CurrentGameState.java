@@ -133,7 +133,7 @@ public class CurrentGameState {
                 }
             }
         }
-        if(currentIslands.getTotalGroups() == 3)
+        if(currentIslands.getTotalGroups() <= 3)
         {
             currentTurnState.updateWinner(currentIslands.getMaxCol());
         }

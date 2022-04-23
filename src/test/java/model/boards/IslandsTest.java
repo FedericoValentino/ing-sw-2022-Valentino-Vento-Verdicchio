@@ -42,6 +42,8 @@ public class IslandsTest {
     @Test
     public void testPlaceToken1()
     {
+        //mancano 2 isole
+
         is.getIslands().get(0).currentStudents.add(s1);//green
 
         is.getIslands().get(1).currentStudents.add(s2);//pink
@@ -172,14 +174,11 @@ public class IslandsTest {
             is.getIslands().get(i).calculateOwnership();
             is.getIslands().get(i).updateMotherNature();
             is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-            System.out.println("ISLANDS TEST : isola "+i+" "+ is.getIslands().get(i).getOwnership()+is.getIslands().get(i).getTowerNumber());
 
         }
         //assertEquals(ColTow.BLACK,is.getIslands().get(0).getOwnership());
 
         //now I'm adding pink students to merge it with the second group
-
-        System.out.println("asda "+is.getMaxCol());
     }
 
     public void testIdManagmentCase2(Team t1,Team t2,Player p1,Player p2, CurrentGameState c, Player p3, Team t3) {

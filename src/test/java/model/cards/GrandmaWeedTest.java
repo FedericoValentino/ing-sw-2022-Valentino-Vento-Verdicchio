@@ -31,7 +31,7 @@ public class GrandmaWeedTest {
     @Test
     public void checkGetUses()
     {
-        assertEquals(g.getNoEntry(),0);
+        assertEquals(g.getNoEntry(),4);
     }
 
     @Test

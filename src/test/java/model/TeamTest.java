@@ -1,6 +1,7 @@
 package model;
 
 import model.boards.token.ColTow;
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,8 +20,7 @@ public class TeamTest {
     //molte linee di codice testate in island
 
     @Test
-    public void testGetColor()
-    {
-        assertTrue(t.getColor() instanceof ColTow);
+    public void testGetColor() {
+        Assert.assertTrue(this.t.getColor() instanceof ColTow);
     }
 }
