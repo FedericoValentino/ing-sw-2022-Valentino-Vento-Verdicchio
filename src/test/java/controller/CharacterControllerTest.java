@@ -9,8 +9,7 @@ import model.boards.token.Student;
 import model.cards.*;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 public class CharacterControllerTest {
 
@@ -227,18 +226,72 @@ public class CharacterControllerTest {
 
         CharacterController.effect(testCard, controllerTest.getGame(), island);
 
+        assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
+        assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        assertEquals(testCard.getIdCard(), controllerTest.getGame().getCurrentCharacterDeck().getCard(0).getIdCard());
+
+        assertTrue(controllerTest.getGame().getCurrentIslands().getIslands().get(island).getNoEntry());
+        assertEquals(3, testCard.getNoEntry());
+
+    }
+
+    @Test
+    public void testTestEffect4()
+    {
+        setupTest();
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
+        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
+        Centaur testCard = new Centaur();
+        for(int i=0; i < 3 ; i++)
+            controllerTest.getGame().getCurrentCharacterDeck().getDeck().remove(0);
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
+        int island = (int) ((Math.random()*11));
+
+        if(controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size() == 1)
+            controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.remove(0);
+
+        Student s1 = new Student(Col.GREEN);
+        Student s2 = new Student(Col.RED);
+        Student s3 = new Student(Col.YELLOW);
+        Student s4 = new Student(Col.PINK);
+        Student s5 = new Student(Col.BLUE);
+
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s1);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s2);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s3);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s4);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s5);
+
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().updateProfessorsTable(0, true);   //green
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().updateProfessorsTable(1, true);   //red
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().updateProfessorsTable(2, true);   //yellow
+
+        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().updateProfessorsTable(3, true);   //pink
+        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().updateProfessorsTable(4, true);   //blue
+
+        controllerTest.getGame().getCurrentTeams().get(0).updateProfessors();
+        controllerTest.getGame().getCurrentTeams().get(1).updateProfessors();
+
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateTeamInfluence(controllerTest.getGame().getCurrentTeams());
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).calculateOwnership();
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).towerNumber = 1;
+
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+
+        CharacterController.effect(testCard, controllerTest.getGame(), island);
 
         assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
         assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
         assertEquals(testCard.getIdCard(), controllerTest.getGame().getCurrentCharacterDeck().getCard(0).getIdCard());
+
+        //da finire con island corretta
+
     }
 
     @Test
-    public void testTestEffect4() {
-    }
+    public void testTestEffect5()
+    {
 
-    @Test
-    public void testTestEffect5() {
     }
 
     @Test

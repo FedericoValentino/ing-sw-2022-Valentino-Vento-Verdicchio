@@ -7,7 +7,7 @@ public class GrandmaWeed extends CharacterCard{
     public GrandmaWeed()
     {
         super(); //costruttore sopra classe
-        this.noEntry = 0;
+        this.noEntry = 4;
         this.baseCost=2;
         this.currentCost=this.baseCost;
         this.idCard=5;
