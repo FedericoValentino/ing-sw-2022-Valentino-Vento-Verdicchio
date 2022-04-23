@@ -98,8 +98,8 @@ public class CharacterControllerTest {
 
         CharacterController.effect(testCard, controllerTest.getGame(), 0, "fede");
 
-
-
+        assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
+        assertEquals(4 ,testCard.getStudents().size());
     }
 
     @Test

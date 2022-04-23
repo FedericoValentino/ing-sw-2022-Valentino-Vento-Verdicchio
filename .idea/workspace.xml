@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Test di pickCard, deckManagement, Priest fatti, Princess underway.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650707643245</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Test di pickCard, deckManagement, Priest fatti, Princess underway.">
+      <created>1650723119546</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650723119546</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +226,8 @@
     <MESSAGE value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
     <MESSAGE value="FIX pudduh" />
     <MESSAGE value="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi" />
+    <MESSAGE value="Test di pickCard, deckManagement, Priest fatti, Princess underway." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test di pickCard, deckManagement, Priest fatti, Princess underway." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGetMaxMotherMovement.ic" NAME="PlayerTest.testGetMaxMotherMovement Coverage Results" MODIFIED="1649002802256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

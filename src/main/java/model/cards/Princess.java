@@ -26,6 +26,10 @@ public class Princess extends CharacterCard {
         students.add(pouch.extractStudent());
     }
 
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
     public Student getStudent(int index)
     {
         Student student;
