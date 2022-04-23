@@ -14,6 +14,7 @@ import model.cards.CharacterDeck;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class CurrentGameState {
@@ -84,11 +85,14 @@ public class CurrentGameState {
                 map.put(p.getNome(), p.getValue());
             }
         }
+        finalmap = map.entrySet().stream()
+                                 .sorted(Map.Entry.comparingByValue())
+                                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+        /*
         List<Map.Entry<String,Integer>> list = new LinkedList<>(map.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>>()
         {
-            public int compare(Map.Entry<String, Integer> o1,
-                               Map.Entry<String, Integer> o2)
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2)
             {
                 return (o1.getValue()).compareTo(o2.getValue());
             }
@@ -97,6 +101,7 @@ public class CurrentGameState {
         for (Map.Entry<String, Integer> aa : list) {
             finalmap.put(aa.getKey(), aa.getValue());
         }
+         */
         currentTurnState.updateTurn(finalmap);
     }
 

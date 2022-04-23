@@ -17,7 +17,7 @@ public class CurrentGameStateTest {
         /*
         int i=p1.getCoinAmount();
         assertEquals(cg1.getBankBalance(),0);
-        cg1.updateBankBalance(p1);
+        cg1.updateBankBalance(p1, 0);
         assertEquals(cg1.getBankBalance(),0);
         */
     }

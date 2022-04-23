@@ -73,6 +73,7 @@ public class MainController
             actionController.setCurrentPlayer(currentPlayer);
         }
         game.getCurrentTurnState().getTurnOrder().remove(currentPlayer);
+        actionController.setCurrentPlayer(currentPlayer);
     }
 
 
@@ -117,4 +118,11 @@ public class MainController
     }
     public CharacterController getCharacterController() {return characterController;}
 
+    public String getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public ActionController getActionController() {
+        return actionController;
+    }
 }
