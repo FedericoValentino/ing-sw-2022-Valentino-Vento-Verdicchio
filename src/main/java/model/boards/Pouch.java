@@ -63,7 +63,7 @@ public class Pouch
 
    public void updateSetup(boolean b)
    {
-       this.setup=b;
+       this.setup = b;
    }
 
    public boolean getSetup()

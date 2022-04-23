@@ -5,6 +5,7 @@ import model.boards.token.ColTow;
 import model.cards.AssistantCard;
 import model.cards.AssistantDeck;
 
+
 public class Player
 {
   private String nome;
@@ -57,20 +58,31 @@ public class Player
 
   public int gainCoin()
   {
-    int gainedCoins = 0;
-    for(int i = 0; i < 5; i++)
-    {
-      while(school.getDiningRoom()[i] > school.getRoomCheckpoints()[i])
+      int gainedCoins = 0;
+      for(int i = 0; i < 5; i++)
       {
-        gainedCoins++;
-        school.updateCheckpoint(i);
+        while(school.getDiningRoom()[i] > school.getRoomCheckpoints()[i])
+        {
+          gainedCoins++;
+          school.updateCheckpoint(i);
+        }
       }
-    }
-    return gainedCoins;
+      updateCoins(gainedCoins);
+      return gainedCoins;
   }
 
+
   public void updateCoins(int gain)
-    {coinAmount += gain;}
+    {
+      if(coinAmount + gain < 0)
+      {
+        coinAmount = 0;
+      }
+      else
+      {
+        coinAmount += gain;
+      }
+    }
 
   public void updateMaxMotherMovement(int movement){MaxMotherMovement += movement;}
 

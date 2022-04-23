@@ -50,7 +50,7 @@ public class MainController
 
             }
         }
-
+        game.getCurrentPouch().updateSetup(false);
         for(Team t: game.getCurrentTeams())
         {
             for(Player p: t.getPlayers())
@@ -110,5 +110,11 @@ public class MainController
         }
         return null;
     }
+
+    public CurrentGameState getGame()
+    {
+        return game;
+    }
+    public CharacterController getCharacterController() {return characterController;}
 
 }

@@ -67,7 +67,6 @@ public class CurrentGameState {
        else
            this.bankBalance = 0;
        this.expertGame = expertGame;
-
     }
 
     /*
@@ -145,15 +144,22 @@ public class CurrentGameState {
      * @param the player to check
      */
 
-    public void updateBankBalance(Player p)
+    public void updateBankBalance(Player p, int gain)
     {
-        int coinsToLose = p.gainCoin();
-        if(coinsToLose <= bankBalance)
+        int coinsToLose = 0;
+        if(gain == 0)
         {
-            bankBalance -= coinsToLose;
-
+            coinsToLose = p.gainCoin();
         }
-
+        else
+        {
+            p.updateCoins(gain);
+            coinsToLose = gain;
+        }
+        if(coinsToLose <= bankBalance)
+            bankBalance -= coinsToLose;
+        else
+            bankBalance = 0;
     }
 
 

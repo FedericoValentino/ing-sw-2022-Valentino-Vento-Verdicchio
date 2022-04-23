@@ -18,7 +18,8 @@ public class CharacterController
                                                                                     // inoltre, ne updata il costo e updata il bank balance e il player balance
         pickedCard = game.getCurrentCharacterDeck().drawCard(position);
         game.getCurrentActiveCharacterCard().add(pickedCard);
-        game.updateBankBalance(player);
+        int gain = pickedCard.getCurrentCost() - 1;
+        game.updateBankBalance(player, gain);
     }
 
     public static void effect(Priest card, CurrentGameState game, int studentPosition, int chosenIsland)           //Prende lo studente dalla carta di tipo priest
@@ -89,8 +90,8 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    public static void effect(TruffleHunter card, CurrentGameState game, Col color, int island)        //Complessa. Va sull'isola e rimuove dal currentStudents di questa
-    {                                                                                           //gli studenti del colore desiderato. Si salva un contatore per sapere quanti ne toglie
+    public static void effect(TruffleHunter card, CurrentGameState game, Col color, int island)                //Complessa. Va sull'isola e rimuove dal currentStudents di questa
+    {                                                                                                           //gli studenti del colore desiderato. Si salva un contatore per sapere quanti ne toglie
         int cont = 0;
         for(int i=0; i<game.getCurrentIslands().getIslands().get(island).currentStudents.size(); i++)
         {
