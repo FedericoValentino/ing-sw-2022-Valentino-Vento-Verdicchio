@@ -153,8 +153,8 @@ public class CurrentGameState {
         }
         else
         {
-            p.updateCoins(gain);
-            coinsToLose = gain;
+            p.updateCoins(-gain);
+            coinsToLose = -(gain-1);
         }
         if(coinsToLose <= bankBalance)
             bankBalance -= coinsToLose;

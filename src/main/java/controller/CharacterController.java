@@ -23,9 +23,9 @@ public class CharacterController
     }
 
     public static void effect(Priest card, CurrentGameState game, int studentPosition, int chosenIsland)           //Prende lo studente dalla carta di tipo priest
-    {                                                                                                       //Prende l'isola giusta da game e usa place token per piazzarlo
-        Student student = card.getStudent(studentPosition);                                                 //UpdateStudents pesca dal pouch e rimette uno studente sulla carta
-        game.getCurrentIslands().placeToken(student, chosenIsland);                                         //Deckmgmt elimina la vecchia priest dalle active e piazza questa updatata nel charDeck
+    {                                                                                                                 //Prende l'isola giusta da game e usa place token per piazzarlo
+                                                                                                                    //UpdateStudents pesca dal pouch e rimette uno studente sulla carta
+        game.getCurrentIslands().placeToken(card.getStudent(studentPosition), chosenIsland);                                         //Deckmgmt elimina la vecchia priest dalle active e piazza questa updatata nel charDeck
         card.updateStudents(game.getCurrentPouch());
         deckManagement(card, game);
     }
@@ -123,7 +123,7 @@ public class CharacterController
 
 
 
-    private static void deckManagement(CharacterCard card, CurrentGameState game)                                  //Toglie la carta usata non aggiornata dall'active e
+    public static void deckManagement(CharacterCard card, CurrentGameState game)                                  //Toglie la carta usata non aggiornata dall'active e
     {                                                                                                       //mette la copia aggiornata nel charcterCard (inactive)
         for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
         {

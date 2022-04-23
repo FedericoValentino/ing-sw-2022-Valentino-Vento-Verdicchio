@@ -27,6 +27,9 @@ public class Priest extends CharacterCard {
             students.add(pouch.extractStudent());
         }
 
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
 
     public Student getStudent(int index)
     {

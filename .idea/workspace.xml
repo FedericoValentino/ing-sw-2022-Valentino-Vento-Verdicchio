@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Ennesimo cambiamento semantico in Planning">
-      <change afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Pouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Pouch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/model/boards/token/MotherNatureTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/boards/token/MotherNatureTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +41,35 @@
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="yaml" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="JUnit.CharacterControllerTest.testPickCard">
-    <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CharacterControllerTest.testEffect">
+    <configuration name="CharacterControllerTest.deckManagement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="deckManagement" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterControllerTest.testEffect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="testEffect" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -101,29 +122,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IslandsTest.testPlaceToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.boards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.boards" />
-      <option name="MAIN_CLASS_NAME" value="model.boards.IslandsTest" />
-      <option name="METHOD_NAME" value="testPlaceToken" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CharacterControllerTest.testEffect" />
         <item itemvalue="JUnit.CharacterControllerTest.testPickCard" />
+        <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
         <item itemvalue="JUnit.IslandsTest.testGetMax" />
         <item itemvalue="JUnit.IslandsTest.testIdManagment" />
-        <item itemvalue="JUnit.IslandsTest.testPlaceToken" />
-        <item itemvalue="JUnit.All in softeng-GC61" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650624622625</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi">
+      <created>1650707643245</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650707643245</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,18 +224,8 @@
     <MESSAGE value="Piccolo change ad un for" />
     <MESSAGE value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
     <MESSAGE value="FIX pudduh" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX pudduh" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/model/boards/Pouch.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGetMaxMotherMovement.ic" NAME="PlayerTest.testGetMaxMotherMovement Coverage Results" MODIFIED="1649002802256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
