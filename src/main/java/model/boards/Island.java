@@ -86,7 +86,7 @@ public class Island
       }
       if(motherNature)
       {
-        this.teamInfluence[ownership.ordinal()]++;
+        this.teamInfluence[ownership.ordinal()] += towerNumber;
       }
     }
   }

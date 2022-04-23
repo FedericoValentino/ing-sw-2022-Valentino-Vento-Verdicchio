@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Piccola correzione a un math.random nei test">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Iniziato CentaurEffectTest, serve la correzione di island prima.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650728213622</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Iniziato CentaurEffectTest, serve la correzione di island prima.">
+      <created>1650729623717</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1650729623717</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +258,8 @@
     <MESSAGE value="Aggiornato getter in princess" />
     <MESSAGE value="Test Princess e Herald conclusi" />
     <MESSAGE value="Piccola correzione a un math.random nei test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Piccola correzione a un math.random nei test" />
+    <MESSAGE value="Iniziato CentaurEffectTest, serve la correzione di island prima." />
+    <option name="LAST_COMMIT_MESSAGE" value="Iniziato CentaurEffectTest, serve la correzione di island prima." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGetMaxMotherMovement.ic" NAME="PlayerTest.testGetMaxMotherMovement Coverage Results" MODIFIED="1649002802256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
