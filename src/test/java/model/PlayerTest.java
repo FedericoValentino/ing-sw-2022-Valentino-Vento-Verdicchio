@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 
 public class PlayerTest {
     Player p1=new Player("Giaco", ColTow.WHITE,8,"ca",false);
+    Player p3=new Player("paol", ColTow.WHITE,0,"ca",false);
     Player p2=new Player("ci", ColTow.BLACK,8,"cal",true);
     AssistantDeck ad=new AssistantDeck("ca","Giaco");
     AssistantCard ac=new AssistantCard(1,1);

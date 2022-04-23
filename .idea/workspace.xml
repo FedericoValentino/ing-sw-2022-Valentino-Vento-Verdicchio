@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Reloaded version with all the changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Ending CurrentGameStateTest">
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650731045638</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Ending CurrentGameStateTest">
+      <created>1650734398158</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650734398158</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +223,8 @@
     <MESSAGE value="FIX pudduh" />
     <MESSAGE value="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi" />
     <MESSAGE value="Reloaded version with all the changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reloaded version with all the changes" />
+    <MESSAGE value="Ending CurrentGameStateTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ending CurrentGameStateTest" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetWizard.ic" NAME="AssistantDeckTest.testGetWizard Coverage Results" MODIFIED="1648316377464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -256,7 +263,7 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testUpdateTurnState.ic" NAME="CurrentGameStateTest.testUpdateTurnState Coverage Results" MODIFIED="1650615099174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testUpdateBankBalance.ic" NAME="CurrentGameStateTest.testUpdateBankBalance Coverage Results" MODIFIED="1650639697141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testUpdateBankBalance.ic" NAME="CurrentGameStateTest.testUpdateBankBalance Coverage Results" MODIFIED="1650734264318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testCheckEmpty.ic" NAME="PouchTest.testCheckEmpty Coverage Results" MODIFIED="1648317434168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -284,7 +291,7 @@
       <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1649067647134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testGetter.ic" NAME="CurrentGameStateTest.testGetter Coverage Results" MODIFIED="1650731857410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testGetter.ic" NAME="CurrentGameStateTest.testGetter Coverage Results" MODIFIED="1650734260458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$AssistantDeckTest.ic" NAME="AssistantDeckTest Coverage Results" MODIFIED="1648996607034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -314,7 +321,7 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$TeamTest_testAddPlayer.ic" NAME="TeamTest.testAddPlayer Coverage Results" MODIFIED="1649016632340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1650730908703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1650734312598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testUpdateMaxMotherNatureMovement.ic" NAME="PlayerTest.testUpdateMaxMotherNatureMovement Coverage Results" MODIFIED="1649020105661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
