@@ -22,20 +22,23 @@ public class CurrentGameStateTest {
     HashMap<String, Integer> tOO=new HashMap<>();
 
 
-
     @Test
     public void testUpdateBankBalance()
     {
-        Player p11=new Player("ci", ColTow.WHITE,8,"ca",false);
-        Player p22=new Player("asd", ColTow.BLACK,8,"caadsds",false);
+        Player p11=new Player("ci", ColTow.WHITE,8,"ca",true);
+        Player p22=new Player("asd", ColTow.BLACK,8,"caadsds",true);
 
         int i=p1.getCoinAmount();
+        cg1.getCurrentTeams().get(0).addPlayer(p11);
+        cg1.getCurrentTeams().get(1).addPlayer(p22);
         assertEquals(cg1.getBankBalance(),0);
         cg1.updateBankBalance(p1, 0);
         assertEquals(cg1.getBankBalance(),0);
 
-        cg1.updateBankBalance(p11,1);
-        //assertEquals(cg1.getBankBalance(),0);
+        //else branch
+        cg1.updateBankBalance(p11,-222);
+        assertEquals(cg1.getBankBalance(),0);
+
     }
 
     @Test
@@ -158,6 +161,7 @@ public void testPlaceToken1()
         assertTrue(cg1.getCurrentMotherNature().getPosition()>=0);
         assertTrue(!cg1.getCurrentCharacterDeck().checkEmpty());
 
+        assertTrue(cg2.getCurrentClouds().length==2);
         //da rivedere, perché questa add va messa  in una funzione dedicata nel model (problema discusso)
         //assertEquals(,cg1.getCurrentActiveCharacterCard());
         // cg1.getCurrentActiveCharacterCard().add(cg1.getCurrentCharacterDeck().drawCard(0));
