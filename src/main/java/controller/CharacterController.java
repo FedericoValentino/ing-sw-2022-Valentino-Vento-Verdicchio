@@ -36,20 +36,7 @@ public class CharacterController
     public static void effect(Princess card, CurrentGameState game, int studentPosition, String currentPlayer)       //Prende student dalla carta e ne salva il colore
     {
         Col color = card.getStudent(studentPosition).getColor();
-        int teamIndex = 0;
-        int playerIndex = 0;
-        for(int i=0; i<game.getCurrentTeams().size(); i++)
-        {
-            for(int j=0; j< game.getCurrentTeams().get(i).getPlayers().size(); j++)
-            {
-                if(currentPlayer.equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome()))
-                {
-                    playerIndex = j;
-                    teamIndex = i;
-                }
-            }
-        }
-        game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).getSchool().placeInDiningRoom(color);         //Prendo la sucola del currentPlayer e ci piazzo il colore
+        MainController.findPlayerByName(game, currentPlayer).getSchool().placeInDiningRoom(color);         //Prendo la sucola del currentPlayer e ci piazzo il colore
         card.updateStudents(game.getCurrentPouch());                                                                      //Updato studenti su carta e solita deckmgmt
         deckManagement(card, game);
     }
@@ -64,22 +51,7 @@ public class CharacterController
 
     public static void effect(Postman card, CurrentGameState game, String currentPlayer)                     //Cerca CurrentPlayer come prima e updata il maxmotherMovement con +2(model)
     {
-        int teamIndex = 0;
-        int playerIndex = 0;
-        for(int i=0; i<game.getCurrentTeams().size(); i++)
-        {
-            for(int j=0; j< game.getCurrentTeams().get(i).getPlayers().size(); j++)
-            {
-                if(currentPlayer.equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome()))
-                {
-                    playerIndex = j;
-                    teamIndex = i;
-                }
-            }
-        }
-        System.out.println(teamIndex);
-        System.out.println(playerIndex);
-        game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).updateMaxMotherMovement(2);
+        MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
         deckManagement(card, game);
     }
 
