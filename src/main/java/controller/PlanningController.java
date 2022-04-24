@@ -16,6 +16,8 @@ public class PlanningController
 
     public void drawAssistantCard(CurrentGameState game, String currentPlayer, int cardPosition)                    //Cerca il player nel giusto team, gioca choose assistant card
     {
+        MainController.findPlayerByName(game, currentPlayer).chooseAssistantCard(cardPosition);
+        /*
         int teamIndex = 0;
         int playerIndex = 0;
         for(int i=0; i<game.getCurrentTeams().size(); i++)
@@ -28,5 +30,6 @@ public class PlanningController
             }
         }
         game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).chooseAssistantCard(cardPosition);
+         */
     }
 }
