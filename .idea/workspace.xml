@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Main controller e Action Controller test fatti, fix al metodo di updateTurnOrder e altre cosucce">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Test ActionController, fix in giro nel codice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Island.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Island.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +42,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="yaml" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -137,8 +128,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterControllerTest.testTestEffect1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+    <configuration name="controller in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="controller.*" />
@@ -146,9 +137,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
-      <option name="METHOD_NAME" value="testTestEffect1" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,17 +145,17 @@
     <list>
       <item itemvalue="JUnit.ActionControllerTest" />
       <item itemvalue="JUnit.ActionControllerTest.testMoveMN" />
-      <item itemvalue="JUnit.CharacterControllerTest.testTestEffect1" />
       <item itemvalue="JUnit.ActionControllerTest.testPlaceStudentToDiningRoom" />
       <item itemvalue="JUnit.ActionControllerTest.testSolveEverything" />
+      <item itemvalue="JUnit.controller in softeng-GC61" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ActionControllerTest.testSolveEverything" />
         <item itemvalue="JUnit.ActionControllerTest.testMoveMN" />
+        <item itemvalue="JUnit.controller in softeng-GC61" />
         <item itemvalue="JUnit.ActionControllerTest.testPlaceStudentToDiningRoom" />
         <item itemvalue="JUnit.ActionControllerTest" />
-        <item itemvalue="JUnit.CharacterControllerTest.testTestEffect1" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650734398158</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Test ActionController, fix in giro nel codice">
+      <created>1650804761244</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1650804761244</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +276,8 @@
     <MESSAGE value="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi" />
     <MESSAGE value="Reloaded version with all the changes" />
     <MESSAGE value="Ending CurrentGameStateTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ending CurrentGameStateTest" />
+    <MESSAGE value="Test ActionController, fix in giro nel codice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test ActionController, fix in giro nel codice" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testIdManagment.ic" NAME="IslandsTest.testIdManagment Coverage Results" MODIFIED="1650390356343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -329,6 +326,9 @@
       <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest_testTestEffect1.ic" NAME="CharacterControllerTest.testTestEffect1 Coverage Results" MODIFIED="1650792203268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1650804840060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testDiscard.ic" NAME="PlayerTest.testDiscard Coverage Results" MODIFIED="1650406970259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

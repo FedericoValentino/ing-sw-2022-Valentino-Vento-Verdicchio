@@ -53,6 +53,10 @@ public class ActionControllerTest
         System.out.println();
         controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), controllerTest.getCurrentPlayer(), 7);
         int movement = (int) ((Math.random() * (MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getMaxMotherMovement() - 1)) + 1);
+        if(movement == 0)
+        {
+            movement++;
+        }
         System.out.println("Moving MotherNature of " + movement + " positions");
         int previousPosition = controllerTest.getGame().getCurrentMotherNature().getPosition();
         controllerTest.getActionController().MoveMN(movement, controllerTest.getGame());
@@ -103,6 +107,7 @@ public class ActionControllerTest
         MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().placeToken(new Student(Col.RED));
         MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().placeToken(new Student(Col.RED));
         MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().placeToken(new Student(Col.RED));
+        MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().placeToken(new Student(Col.RED));
         //piazzo due studenti rossi nella dining room del current player
         controllerTest.getActionController().placeStudentToDiningRoom(
                 MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size()-1,
@@ -115,6 +120,12 @@ public class ActionControllerTest
                 controllerTest.getCurrentPlayer()
         );
         //piazzo tre studenti rossi sull'isola 0
+        controllerTest.getActionController().placeStudentToIsland(
+                MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size()-1,
+                0,
+                controllerTest.getGame(),
+                controllerTest.getCurrentPlayer()
+        );
         controllerTest.getActionController().placeStudentToIsland(
                 MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size()-1,
                 0,
