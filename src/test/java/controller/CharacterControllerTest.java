@@ -51,7 +51,9 @@ public class CharacterControllerTest {
     }
 
     @Test
-    public void testEffect() {
+    //Priest
+    public void testEffect()
+    {
         setupTest();
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
@@ -85,6 +87,7 @@ public class CharacterControllerTest {
     }
 
     @Test
+    //Princess
     public void testTestEffect()
     {
         setupTest();
@@ -118,6 +121,7 @@ public class CharacterControllerTest {
     }
 
     @Test
+    //Herald
     public void testTestEffect1()
     {
         setupTest();
@@ -174,12 +178,13 @@ public class CharacterControllerTest {
 
         assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[0]);
         assertEquals(3, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[1]);
-
-        if(controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature)
-            assertEquals(ColTow.WHITE, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getOwnership());
-        else
-            assertEquals(null, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getOwnership());
-
+        assertEquals(ColTow.WHITE, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getOwnership());
+        assertEquals(1, controllerTest.getGame().getCurrentIslands().getIslands().get(island).towerNumber);
+        assertEquals(7, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
+        assertEquals(1, controllerTest.getGame().getCurrentTeams().get(1).getControlledIslands());
+        assertEquals(8, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().getTowerCount());
+        assertEquals(0, controllerTest.getGame().getCurrentTeams().get(0).getControlledIslands());
+        assertFalse(controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature);
     }
 
     @Test

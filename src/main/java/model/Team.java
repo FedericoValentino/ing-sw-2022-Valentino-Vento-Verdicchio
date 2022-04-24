@@ -75,6 +75,13 @@ public class Team
 
   }
 
+  public void updateControlledIslands(int value)
+  {
+    if(controlledIslands == 0 && value<0){}
+    else
+      controlledIslands += value;
+  }
+
   public ColTow getColor() {
     return color;
   }

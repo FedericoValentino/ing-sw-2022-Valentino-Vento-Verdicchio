@@ -54,7 +54,9 @@ public class CharacterController
 
     public static void effect(Herald card, CurrentGameState game, int island)                                          //Banalmente risolve subito l'isola selezionata
     {
+        game.getCurrentIslands().getIslands().get(island).updateMotherNature();
         ActionController.solveEverything(game, island);
+        game.getCurrentIslands().getIslands().get(island).updateMotherNature();
         deckManagement(card, game);
     }
 

@@ -101,10 +101,12 @@ public class ActionController
                     if(p.isTowerOwner() && t.getColor() == previousOwner)
                     {
                         p.getSchool().updateTowerCount(game.getCurrentIslands().getIslands().get(pos).getTowerNumber());
+                        t.updateControlledIslands(-1);
                     }
                     if(p.isTowerOwner() && t.getColor() == currentOwner)
                     {
                         p.getSchool().updateTowerCount(-(game.getCurrentIslands().getIslands().get(pos).getTowerNumber()));
+                        t.updateControlledIslands(1);
                     }
                 }
             }

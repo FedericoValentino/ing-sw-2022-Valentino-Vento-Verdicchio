@@ -48,6 +48,10 @@ public class Island
       {
         if(this.teamInfluence[i] > max)
         {
+          if(towerNumber == 0)
+          {
+            towerNumber = 1;
+          }
           max = this.teamInfluence[i];
           this.ownership = ColTow.values()[i];
         }
@@ -86,7 +90,8 @@ public class Island
       }
       if(motherNature)
       {
-        this.teamInfluence[ownership.ordinal()] += towerNumber;
+        if(ownership != null)
+          this.teamInfluence[ownership.ordinal()] += towerNumber;
       }
     }
   }
