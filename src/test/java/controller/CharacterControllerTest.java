@@ -187,6 +187,7 @@ public class CharacterControllerTest {
     }
 
     @Test
+    //Postman
     public void testTestEffect2()
     {
         setupTest();
@@ -197,7 +198,7 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
 
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateMaxMotherMovement(6);
-        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateMaxMotherMovement(2);
+        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateMaxMotherMovement(2);
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
@@ -214,6 +215,7 @@ public class CharacterControllerTest {
     }
 
     @Test
+    //GWeed
     public void testTestEffect3()
     {
         setupTest();
@@ -238,6 +240,7 @@ public class CharacterControllerTest {
     }
 
     @Test
+    //Centaur
     public void testTestEffect4()
     {
         setupTest();
@@ -306,6 +309,7 @@ public class CharacterControllerTest {
     }
 
     @Test
+    //THunter
     public void testTestEffect5()
     {
         setupTest();
@@ -367,6 +371,7 @@ public class CharacterControllerTest {
     }
 
     @Test
+    //Knight
     public void testTestEffect6()
     {
         setupTest();

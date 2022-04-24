@@ -14,7 +14,7 @@ public class AssistantDeck
         this.wizard = wizard;
         this.playerName = playerName;
         int j=1;
-        this.deck = new ArrayList<AssistantCard>();
+        this.deck = new ArrayList<>();
         for(int i = 1; i<=10; i++)
             {
                 this.deck.add(new AssistantCard(j, i));     //il valore di movimento va da 1 a 5, quello del turno da 1 a 10
@@ -31,10 +31,10 @@ public class AssistantDeck
         return deck.isEmpty();
     }
 
-    public AssistantCard extractCard(int index)     //estrae una carta dal deck e lo aggiorna
+    public AssistantCard extractCard(int cardPosition)     //estrae una carta dal deck e lo aggiorna
     {
-        AssistantCard card = deck.get(index);
-        deck.remove(index);
+        AssistantCard card = deck.get(cardPosition);
+        deck.remove(cardPosition);
         return card;
     }
 

@@ -43,9 +43,9 @@ public class Player
       this.coinAmount = 0;
   }
 
-  public void chooseAssistantCard(int idCard)
+  public void chooseAssistantCard(int cardPosition)
   {
-    currentAssistantCard = assistantDeck.extractCard(idCard);
+    currentAssistantCard = assistantDeck.extractCard(cardPosition);
     MaxMotherMovement = currentAssistantCard.getMovement();
     value = currentAssistantCard.getValue();
   }

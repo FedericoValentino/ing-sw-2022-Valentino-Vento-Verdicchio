@@ -43,8 +43,10 @@ public class CharacterController
             for(int j=0; j< game.getCurrentTeams().get(i).getPlayers().size(); j++)
             {
                 if(currentPlayer.equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome()))
+                {
                     playerIndex = j;
-                teamIndex = i;
+                    teamIndex = i;
+                }
             }
         }
         game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).getSchool().placeInDiningRoom(color);         //Prendo la sucola del currentPlayer e ci piazzo il colore
@@ -69,10 +71,14 @@ public class CharacterController
             for(int j=0; j< game.getCurrentTeams().get(i).getPlayers().size(); j++)
             {
                 if(currentPlayer.equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome()))
+                {
                     playerIndex = j;
-                teamIndex = i;
+                    teamIndex = i;
+                }
             }
         }
+        System.out.println(teamIndex);
+        System.out.println(playerIndex);
         game.getCurrentTeams().get(teamIndex).getPlayers().get(playerIndex).updateMaxMotherMovement(2);
         deckManagement(card, game);
     }

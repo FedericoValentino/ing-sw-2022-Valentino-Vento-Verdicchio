@@ -42,6 +42,7 @@ public class CurrentGameState {
     {
        this.currentCharacterDeck = new CharacterDeck();
        this.currentPouch = new Pouch();
+        this.currentMotherNature = new MotherNature();
        this.currentIslands = new Islands();
        this.currentTeams = new ArrayList<>();
        if(playerNum == 2 || playerNum == 4)
@@ -63,7 +64,6 @@ public class CurrentGameState {
        {
            currentClouds[i] = new Cloud();
        }
-       this.currentMotherNature = new MotherNature();
        this.currentTurnState = new CurrentTurnState();
        this.currentActiveCharacterCard = new ArrayList<>();
        //this.currentExtractedStudents = new ArrayList<>();

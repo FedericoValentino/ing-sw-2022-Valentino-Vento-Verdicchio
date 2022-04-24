@@ -9,12 +9,12 @@ public class Cloud extends Board
 
   public Cloud()
   {
-    student= new ArrayList<Student>();
+    student= new ArrayList<>();
   }
 
   public Cloud(ArrayList<Student> st)
   {
-      student= new ArrayList<Student>();
+      student= new ArrayList<>();
       for(int i=0;i<st.size();i++)
       {
         this.student.add(i, st.get(i));
@@ -55,5 +55,10 @@ public class Cloud extends Board
       System.out.println("CLOUD : Null pointer exception perché stai restituendo un intero negativo");
     }
     return null;
+  }
+
+  public ArrayList<Student> getStudents()
+  {
+    return student;
   }
 }
