@@ -35,6 +35,7 @@ public class MainController
     public void Setup()
     {
         int MNpos = game.getCurrentMotherNature().getPosition();
+        game.getCurrentIslands().getIslands().get(MNpos).updateMotherNature();
         for(int i = MNpos+1; i < 12 + MNpos; i++)
         {
             if(i != MNpos + 6)
@@ -124,5 +125,13 @@ public class MainController
 
     public ActionController getActionController() {
         return actionController;
+    }
+
+    public PlanningController getPlanningController() {
+        return planningController;
+    }
+
+    public boolean isExpertGame() {
+        return expertGame;
     }
 }

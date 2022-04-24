@@ -59,6 +59,10 @@ public class CurrentGameState {
            }
        }
        this.currentClouds = new Cloud[playerNum];
+       for(int i = 0; i < playerNum; i++)
+       {
+           currentClouds[i] = new Cloud();
+       }
        this.currentMotherNature = new MotherNature();
        this.currentTurnState = new CurrentTurnState();
        this.currentActiveCharacterCard = new ArrayList<>();

@@ -50,12 +50,17 @@ public class ActionController
                 }
             }
         }
+        game.giveProfessors();
+        for(Team t: game.getCurrentTeams())
+        {
+            t.updateProfessors();
+        }
     }
 
     public void MoveMN(int amount, CurrentGameState game)
     {
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
-        game.getCurrentMotherNature().move(amount, game.getCurrentIslands().getTotalGroups());
+        game.getCurrentMotherNature().move(amount, game.getCurrentIslands().getTotalGroups()-1);
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
         if(!checkForCharacter(game))
         {

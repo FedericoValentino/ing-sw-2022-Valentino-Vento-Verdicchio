@@ -7,7 +7,11 @@ public class Cloud extends Board
 {
   private ArrayList<Student> student;
 
-  public Cloud(){student= new ArrayList<Student>();}
+  public Cloud()
+  {
+    student= new ArrayList<Student>();
+  }
+
   public Cloud(ArrayList<Student> st)
   {
       student= new ArrayList<Student>();
