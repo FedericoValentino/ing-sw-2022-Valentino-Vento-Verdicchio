@@ -20,16 +20,16 @@ public class IslandsTest {
 
     @Test
     public void testIdManagment() {
-        Team t1=new Team(ColTow.BLACK);
-        Team t2=new Team(ColTow.GREY);
-        Team t3=new Team(ColTow.WHITE);
+        Team t3=new Team(ColTow.BLACK);
+        Team t1=new Team(ColTow.GREY);
+        Team t2=new Team(ColTow.WHITE);
         CurrentGameState c=new CurrentGameState(2,false);
-        Player p1=new Player("ci", ColTow.BLACK,8,"ca",false);
-        Player p2=new Player("asd", ColTow.GREY,8,"caadsds",false);
-        Player p3=new Player("adsd", ColTow.WHITE,8,"caaddassds",false);
+        Player p3=new Player("ci", ColTow.BLACK,8,"ca",false);
+        Player p1=new Player("asd", ColTow.GREY,8,"caadsds",false);
+        Player p2=new Player("adsd", ColTow.WHITE,8,"caaddassds",false);
 
-        testIdManagmentCase1(t1,t2,p1,p2,c); // caso1 testing ez
-        testIdManagmentCase2(t1,t2,p1,p2,c,p3,t3); //caso 2 un po' più elaborato
+        testIdManagmentCase1(t3,t1,p3,p1,c); // caso1 testing ez
+        testIdManagmentCase2(t2,t1,p2,p1,c,p3,t3); //caso 2 un po' più elaborato
 
     }
     @Test
@@ -73,25 +73,25 @@ public class IslandsTest {
 
 
 
-        is2.getIslands().get(0).currentStudents.add(s1);//green p1
+        is2.getIslands().get(0).currentStudents.add(s1);//green p3
 
-        is2.getIslands().get(1).currentStudents.add(s12);//red p2
-        is2.getIslands().get(2).currentStudents.add(s4);//yellow p1
-        is2.getIslands().get(3).currentStudents.add(s2);//pink p2
+        is2.getIslands().get(1).currentStudents.add(s12);//red p1
+        is2.getIslands().get(2).currentStudents.add(s4);//yellow p2
+        is2.getIslands().get(3).currentStudents.add(s2);//pink p1
 
-        is2.getIslands().get(4).currentStudents.add(s3);//blue p3
+        is2.getIslands().get(4).currentStudents.add(s3);//blue p2
 
-        is2.getIslands().get(5).currentStudents.add(s1);//green p1
+        is2.getIslands().get(5).currentStudents.add(s1);//green p3
 
-        is2.getIslands().get(6).currentStudents.add(s12);//red p2
-        is2.getIslands().get(7).currentStudents.add(s4);//yellow p1
-        is2.getIslands().get(8).currentStudents.add(s2);//pink p2
+        is2.getIslands().get(6).currentStudents.add(s12);//red p1
+        is2.getIslands().get(7).currentStudents.add(s4);//yellow p3
+        is2.getIslands().get(8).currentStudents.add(s2);//pink p1
 
-        is2.getIslands().get(9).currentStudents.add(s3);//blue p3
+        is2.getIslands().get(9).currentStudents.add(s3);//blue p2
 
-        is2.getIslands().get(10).currentStudents.add(s1);//green p1
+        is2.getIslands().get(10).currentStudents.add(s1);//green p3
 
-        is2.getIslands().get(11).currentStudents.add(s12);//red p2
+        is2.getIslands().get(11).currentStudents.add(s12);//red p1
 
     }
 
@@ -132,7 +132,6 @@ public class IslandsTest {
         for(int i=0;i<is.getTotalGroups();i++)
         {
             is.getIslands().get(i).calculateOwnership();
-            System.out.println(i+" "+ is.getIslands().get(i).getOwnership());
             is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
         is.idManagement();
@@ -145,7 +144,6 @@ public class IslandsTest {
         is.getIslands().get(0).currentStudents.add(s2);
         is.getIslands().get(0).currentStudents.add(s2);
         is.getIslands().get(0).updateMotherNature();
-        is.getIslands().get(1).updateMotherNature();
         is.getIslands().get(2).updateMotherNature();
         is.getIslands().get(3).updateMotherNature();
 
@@ -153,14 +151,12 @@ public class IslandsTest {
         is.getIslands().get(0).updateTeamInfluence(c.getCurrentTeams());
         is.idManagement();
 
-        System.out.println(0+" "+ is.getIslands().get(0).getOwnership());
-        //ERRRRRRRRO
         assertEquals(9,is.getTotalGroups());
+        assertEquals(ColTow.BLACK, is.getMaxCol());
 
 
-        for(int i=0;i<is.getTotalGroups();i++) {
-            assertEquals(ColTow.BLACK, is.getMaxCol());
-        }
+
+
 
         //testing the case in which I change the number of students
 
@@ -176,26 +172,36 @@ public class IslandsTest {
             //is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
 
-        //ERRRRRRRRO grey
         assertEquals(ColTow.BLACK,is.getIslands().get(0).getOwnership());
 
-        //now I'm adding pink students to merge it with the second group
-
-        is.getIslands().get(0).addStudent(s2);
-        is.getIslands().get(0).addStudent(s2);
-        is.getIslands().get(0).addStudent(s2);
+        //add pink students to the first group
+        for(int i=0;i<20;i++)
+            is.getIslands().get(0).addStudent(s2);
+        //enable the final group
+        is.getIslands().get(0).updateMotherNature();
+        for(int i=0;i<is.getTotalGroups();i++)
+        {
+            is.getIslands().get(i).updateMotherNature();
+            is.getIslands().get(i).calculateOwnership();
+            is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+        }
+        is.idManagement();
 
         is.idManagement();
+        is.idManagement();
+        is.idManagement();
+        is.idManagement();
+
         for(int i=0;i<is.getTotalGroups();i++)
         {
             is.getIslands().get(i).calculateOwnership();
-            is.getIslands().get(i).updateMotherNature();
             is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-
+            System.out.println("id "+i +" "+ is.getIslands().get(i).getOwnership()+ "n tower: "+is.getIslands().get(i).getTowerNumber());
         }
-        //assertEquals(ColTow.BLACK,is.getIslands().get(0).getOwnership());
 
-        //now I'm adding pink students to merge it with the second group
+        assertEquals(ColTow.BLACK,is.getMaxCol());
+
+
     }
 
     public void testIdManagmentCase2(Team t1,Team t2,Player p1,Player p2, CurrentGameState c, Player p3, Team t3) {
@@ -271,8 +277,8 @@ public class IslandsTest {
 
         // here it will call the island linked to the second test
         ColTow c=is2.getMaxCol();
-        System.out.println(is2.getIslands().get(2).getOwnership());
-        System.out.println(is2.getIslands().get(3).getOwnership());
+        //System.out.println(is2.getIslands().get(2).getOwnership());
+        //System.out.println(is2.getIslands().get(3).getOwnership());
 
         assertEquals(ColTow.GREY,c);
     }

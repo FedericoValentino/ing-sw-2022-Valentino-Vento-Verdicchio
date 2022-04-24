@@ -130,6 +130,9 @@ public class Islands extends Board {
   public ColTow getMaxCol()
   {
     int[] Towers = new int[3];
+    Towers [0]=0;
+    Towers [1]=0;
+    Towers [2]=0;
     int max = 0;
     int Winner = 0;
     for(Island I: islands)
@@ -147,7 +150,7 @@ public class Islands extends Board {
         Towers[ColTow.WHITE.ordinal()] += I.getTowerNumber();
       }
     }
-    for(int i = 0; i < 2; i++)
+    for(int i = 0; i < 3; i++)
     {
       if(Towers[i] > max)
       {
