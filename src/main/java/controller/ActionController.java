@@ -86,7 +86,7 @@ public class ActionController
         return false;
     }
 
-    public void solveEverything(CurrentGameState game, int pos)
+    public static void solveEverything(CurrentGameState game, int pos)
     {
         ColTow previousOwner = game.getCurrentIslands().getIslands().get(pos).getOwnership();
         game.getCurrentIslands().getIslands().get(pos).updateTeamInfluence(game.getCurrentTeams());

@@ -2,9 +2,12 @@ package controller;
 
 import model.CurrentGameState;
 import model.Player;
+import model.Team;
 import model.boards.token.Col;
+import model.boards.token.ColTow;
 import model.boards.token.Student;
 import model.cards.*;
+
 
 import java.util.ArrayList;
 
@@ -51,8 +54,7 @@ public class CharacterController
 
     public static void effect(Herald card, CurrentGameState game, int island)                                          //Banalmente risolve subito l'isola selezionata
     {
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());
-        game.getCurrentIslands().getIslands().get(island).calculateOwnership();
+        ActionController.solveEverything(game, island);
         deckManagement(card, game);
     }
 
@@ -82,11 +84,8 @@ public class CharacterController
 
     public static void effect(Centaur card, CurrentGameState game, int island)               //Va sull'isola e toglie le torri in funzione del calcolo influenza
     {                                                                                  //le riaggiorna alla fine
-        int temp = game.getCurrentIslands().getIslands().get(island).towerNumber;
         game.getCurrentIslands().getIslands().get(island).towerNumber = 0;
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());
-        game.getCurrentIslands().getIslands().get(island).calculateOwnership();
-        game.getCurrentIslands().getIslands().get(island).towerNumber = temp;
+        ActionController.solveEverything(game, island);
         deckManagement(card, game);
     }
 
@@ -101,8 +100,7 @@ public class CharacterController
                 cont++;
             }
         }
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());          //Calcola influenza con nuova roba
-        game.getCurrentIslands().getIslands().get(island).calculateOwnership();
+        ActionController.solveEverything(game, island);
         for(int i=0; i<cont; i++)
         {
             game.getCurrentIslands().getIslands().get(island).currentStudents.add(new Student(color));          //Riempie di nuovo gli studenti nell'isola creandone
@@ -111,10 +109,30 @@ public class CharacterController
     }
 
     public static void effect(Knight card, CurrentGameState game, int island, int team)                                //Chiama Update teams influence per calcolare l'influenza
-    {                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
+    {
+        ColTow previousOwner = game.getCurrentIslands().getIslands().get(island).getOwnership();                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
         game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());          //l'influenza del team scelto
         game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(2, team);                   //calcola ownership
-        game.getCurrentIslands().getIslands().get(island).calculateOwnership();                                 //rimette a posto l'influenza
+        game.getCurrentIslands().getIslands().get(island).calculateOwnership();
+        ColTow currentOwner = game.getCurrentIslands().getIslands().get(island).getOwnership();
+        if(previousOwner != currentOwner)
+        {
+            for(Team t: game.getCurrentTeams())
+            {
+                for(Player p: t.getPlayers())
+                {
+                    if(p.isTowerOwner() && t.getColor() == previousOwner)
+                    {
+                        p.getSchool().updateTowerCount(game.getCurrentIslands().getIslands().get(island).getTowerNumber());
+                    }
+                    if(p.isTowerOwner() && t.getColor() == currentOwner)
+                    {
+                        p.getSchool().updateTowerCount(-(game.getCurrentIslands().getIslands().get(island).getTowerNumber()));
+                    }
+                }
+            }
+        }
+        game.getCurrentIslands().idManagement();                                                                                                        //rimette a posto l'influenza
         game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(-2, team);
         deckManagement(card, game);
     }
