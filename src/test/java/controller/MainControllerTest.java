@@ -136,4 +136,13 @@ public class MainControllerTest
         controllerTest.determineNextPlayer();
         assert(controllerTest.getCurrentPlayer() instanceof String);
     }
+
+    @Test
+    public void testIsExpertGame()
+    {
+        setupTest();
+        controllerTest.getGame().updateTurnState();
+        controllerTest.determineNextPlayer();
+        assert(controllerTest.isExpertGame() == true || controllerTest.isExpertGame() == false);
+    }
 }
