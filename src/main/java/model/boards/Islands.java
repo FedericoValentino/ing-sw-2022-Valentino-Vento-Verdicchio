@@ -67,6 +67,12 @@ public class Islands extends Board {
           islands.set(i, currentIsland);
           islands.remove(nextIsland);
         }
+        else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || previousIsland.motherNature) && currentIsland.getOwnership() != null)
+        {
+          unifyIslands(currentIsland, previousIsland);
+          islands.set(i, currentIsland);
+          islands.remove(previousIsland);
+        }
       }
     }
     resetId();
