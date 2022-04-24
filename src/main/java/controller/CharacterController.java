@@ -126,10 +126,12 @@ public class CharacterController
                     if(p.isTowerOwner() && t.getColor() == previousOwner)
                     {
                         p.getSchool().updateTowerCount(game.getCurrentIslands().getIslands().get(island).getTowerNumber());
+                        t.updateControlledIslands(-1);
                     }
                     if(p.isTowerOwner() && t.getColor() == currentOwner)
                     {
                         p.getSchool().updateTowerCount(-(game.getCurrentIslands().getIslands().get(island).getTowerNumber()));
+                        t.updateControlledIslands(1);
                     }
                 }
             }
