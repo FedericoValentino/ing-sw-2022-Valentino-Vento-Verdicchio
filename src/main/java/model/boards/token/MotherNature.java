@@ -20,13 +20,13 @@ public class MotherNature
 
         if(maxIdIsland<0 || maxIdIsland>11)
         {
-            System.out.println("MOTHER NATURE: Error, invalid maxIdIsland" +
-                    " : (you've insert a maxIdIsland >11 or <0)");
+            //System.out.println("MOTHER NATURE: Error, invalid maxIdIsland" +
+              //      " : (you've insert a maxIdIsland >11 or <0)");
         }
         else if(maxIdIsland<idPosition)
         {
-            System.out.println("MOTHER NATURE: Error: maxIdIsland "+maxIdIsland+" < idPosition"+
-                    idPosition);
+            // System.out.println("MOTHER NATURE: Error: maxIdIsland "+maxIdIsland+" < idPosition"+
+               //     idPosition);
         }
         else if(maxIdIsland>=0 && maxIdIsland<=11 && maxIdIsland>idPosition)
         {

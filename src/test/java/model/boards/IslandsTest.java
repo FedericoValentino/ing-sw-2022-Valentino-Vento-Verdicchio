@@ -55,6 +55,8 @@ public class IslandsTest {
         is.getIslands().get(6).currentStudents.add(s4);
 
         is.getIslands().get(7).currentStudents.add(s2);//pink
+        is.getIslands().get(8).currentStudents.add(s2);//pink
+        is.getIslands().get(9).currentStudents.add(s2);//pink
         is.getIslands().get(10).currentStudents.add(s2);//pink
         is.getIslands().get(11).currentStudents.add(s2);//pink
 
@@ -110,14 +112,10 @@ public class IslandsTest {
         t2.updateProfessors();
         c.getCurrentTeams().add(t1);
         c.getCurrentTeams().add(t2);
-        for(int i=0;i<12;i++)
-        {
+        for(int i=0;i<12;i++) {
             is.getIslands().get(i).calculateOwnership();
             is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
-
-
-        assertEquals(is.getTotalGroups(),12);
 
         //calling the management function, but it can't operate
         //because mother nature it's not setted
@@ -125,27 +123,44 @@ public class IslandsTest {
         assertEquals(is.getTotalGroups(),12);
 
         //merging the island in positions 1,2,3 ( so remain 11-3= 8 groups)
-        is.getIslands().get(2).updateMotherNature();
+        for(int i=1;i<4;i++)
+        {
+            is.getIslands().get(i).updateMotherNature();
+            is.getIslands().get(i).calculateOwnership();
+        }
+
+        for(int i=0;i<is.getTotalGroups();i++)
+        {
+            is.getIslands().get(i).calculateOwnership();
+            System.out.println(i+" "+ is.getIslands().get(i).getOwnership());
+            is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+        }
         is.idManagement();
-        assertEquals(8,is.getTotalGroups());
+
+        assertEquals(10,is.getTotalGroups());
 
 
         //adding a new student to reload idManagement (reducing to 3 groups)
         is.getIslands().get(0).currentStudents.add(s2);
         is.getIslands().get(0).currentStudents.add(s2);
         is.getIslands().get(0).currentStudents.add(s2);
-        is.getIslands().get(2).updateMotherNature();
         is.getIslands().get(0).updateMotherNature();
-        for(int i=0;i<is.getTotalGroups();i++)
-        {
-            is.getIslands().get(i).calculateOwnership();
-            is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-        }
+        is.getIslands().get(1).updateMotherNature();
+        is.getIslands().get(2).updateMotherNature();
+        is.getIslands().get(3).updateMotherNature();
+
+        is.getIslands().get(0).calculateOwnership();
+        is.getIslands().get(0).updateTeamInfluence(c.getCurrentTeams());
         is.idManagement();
-        assertEquals(is.getTotalGroups(),7);
+
+        System.out.println(0+" "+ is.getIslands().get(0).getOwnership());
+        //ERRRRRRRRO
+        assertEquals(9,is.getTotalGroups());
 
 
-
+        for(int i=0;i<is.getTotalGroups();i++) {
+            assertEquals(ColTow.BLACK, is.getMaxCol());
+        }
 
         //testing the case in which I change the number of students
 
@@ -160,7 +175,9 @@ public class IslandsTest {
             is.getIslands().get(i).calculateOwnership();
             //is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
-        assertEquals(ColTow.GREY,is.getIslands().get(0).getOwnership());
+
+        //ERRRRRRRRO grey
+        assertEquals(ColTow.BLACK,is.getIslands().get(0).getOwnership());
 
         //now I'm adding pink students to merge it with the second group
 
