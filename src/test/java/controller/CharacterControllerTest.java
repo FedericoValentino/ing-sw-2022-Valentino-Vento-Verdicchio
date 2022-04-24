@@ -16,8 +16,8 @@ public class CharacterControllerTest {
     MainController controllerTest = new MainController(2, true);
 
     public void setupTest() {
-        controllerTest.AddPlayer(0, "jack", 8, "Franco");
-        controllerTest.AddPlayer(1, "fede", 8, "Giulio");
+        controllerTest.AddPlayer(0, "jack", 8, "Franco");   //grey
+        controllerTest.AddPlayer(1, "fede", 8, "Giulio");   //white
         controllerTest.Setup();
     }
 
@@ -63,8 +63,9 @@ public class CharacterControllerTest {
         System.out.println(island);
         for (int i = 0; i < 4; i++)
             testCard.updateStudents(controllerTest.getGame().getCurrentPouch());
-        for(int i=0; i < size ; i++)
-            controllerTest.getGame().getCurrentCharacterDeck().getDeck().remove(0);
+        if (size > 0) {
+            controllerTest.getGame().getCurrentCharacterDeck().getDeck().subList(0, size).clear();
+        }
 
         Col color = testCard.getStudents().get(0).getColor();
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
@@ -96,8 +97,7 @@ public class CharacterControllerTest {
         Princess testCard = new Princess();
         for (int i = 0; i < 4; i++)
             testCard.updateStudents(controllerTest.getGame().getCurrentPouch());
-        for(int i=0; i < 3 ; i++)
-            controllerTest.getGame().getCurrentCharacterDeck().getDeck().remove(0);
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().subList(0, 3).clear();
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
@@ -128,8 +128,7 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
         Herald testCard = new Herald();
-        for(int i=0; i < 3 ; i++)
-            controllerTest.getGame().getCurrentCharacterDeck().getDeck().remove(0);
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().subList(0, 3).clear();
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
 
         int island = (int) ((Math.random()*11));
@@ -194,8 +193,7 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
         Postman testCard = new Postman();
-        for(int i=0; i < 3 ; i++)
-            controllerTest.getGame().getCurrentCharacterDeck().getDeck().remove(0);
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().subList(0, 3).clear();
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
 
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateMaxMotherMovement(6);
@@ -222,8 +220,7 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
         GrandmaWeed testCard = new GrandmaWeed();
-        for(int i=0; i < 3 ; i++)
-            controllerTest.getGame().getCurrentCharacterDeck().getDeck().remove(0);
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().subList(0, 3).clear();
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
         int island = (int) ((Math.random()*11));
 
@@ -247,8 +244,7 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
         Centaur testCard = new Centaur();
-        for(int i=0; i < 3 ; i++)
-            controllerTest.getGame().getCurrentCharacterDeck().getDeck().remove(0);
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().subList(0, 3).clear();
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
         int island = (int) ((Math.random()*11));
 
@@ -277,9 +273,18 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentTeams().get(0).updateProfessors();
         controllerTest.getGame().getCurrentTeams().get(1).updateProfessors();
 
+        if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature)
+            controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateTeamInfluence(controllerTest.getGame().getCurrentTeams());
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).calculateOwnership();
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).towerNumber = 1;
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().updateTowerCount(-1);
+        controllerTest.getGame().getCurrentTeams().get(0).updateControlledIslands(1);
+
+        Student s6 = new Student(Col.BLUE);
+        Student s7 = new Student(Col.PINK);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s6);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s7);
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
@@ -289,8 +294,15 @@ public class CharacterControllerTest {
         assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
         assertEquals(testCard.getIdCard(), controllerTest.getGame().getCurrentCharacterDeck().getCard(0).getIdCard());
 
-        //da finire con island corretta
-
+        assertEquals(3, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[0]);
+        assertEquals(4, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[1]);
+        assertEquals(ColTow.WHITE, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getOwnership());
+        assertEquals(1, controllerTest.getGame().getCurrentIslands().getIslands().get(island).towerNumber);
+        assertEquals(7, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
+        assertEquals(1, controllerTest.getGame().getCurrentTeams().get(1).getControlledIslands());
+        assertEquals(8, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().getTowerCount());
+        assertEquals(0, controllerTest.getGame().getCurrentTeams().get(0).getControlledIslands());
+        assertEquals(1, controllerTest.getGame().getCurrentTeams().get(1).getControlledIslands());
     }
 
     @Test
