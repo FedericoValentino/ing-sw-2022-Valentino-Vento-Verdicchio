@@ -33,7 +33,6 @@ public class CharacterControllerTest {
         CharacterCard card2 = controllerTest.getGame().getCurrentCharacterDeck().getCard(1);
         CharacterCard card3 = controllerTest.getGame().getCurrentCharacterDeck().getCard(2);
         int baseInitialCost = card1.getBaseCost();
-        System.out.println(baseInitialCost);
 
         //pick card
 
@@ -60,7 +59,6 @@ public class CharacterControllerTest {
         Priest testCard = new Priest();
         int size = controllerTest.getGame().getCurrentCharacterDeck().getDeck().size();
         int island = (int) ((Math.random()*11));
-        System.out.println(island);
         for (int i = 0; i < 4; i++)
             testCard.updateStudents(controllerTest.getGame().getCurrentPouch());
         if (size > 0) {
@@ -70,7 +68,6 @@ public class CharacterControllerTest {
         Col color = testCard.getStudents().get(0).getColor();
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        System.out.println(controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size());
 
         CharacterController.effect(testCard, controllerTest.getGame(), 0, island);
 
@@ -84,7 +81,6 @@ public class CharacterControllerTest {
             assertEquals(1, controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size());
         else
             assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size());
-        System.out.println(controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size());
     }
 
     @Test
@@ -435,9 +431,7 @@ public class CharacterControllerTest {
         setupTest();
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        System.out.println(controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
-        System.out.println(controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));;
         CharacterCard card = controllerTest.getGame().getCurrentActiveCharacterCard().get(0);
         controllerTest.getCharacterController().deckManagement(controllerTest.getGame().getCurrentActiveCharacterCard().get(0), controllerTest.getGame());
         assertEquals(2, controllerTest.getGame().getCurrentActiveCharacterCard().size());

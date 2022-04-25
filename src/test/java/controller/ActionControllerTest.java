@@ -50,22 +50,17 @@ public class ActionControllerTest
         Random r = new Random();
         setupTest();
         for (AssistantCard c : MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getAssistantDeck().getDeck()) {
-            System.out.print(c.getMovement() + " " + c.getValue() + " | ");
         }
-        System.out.println();
         controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), controllerTest.getCurrentPlayer(), 7);
         int movement = r.nextInt(MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getMaxMotherMovement() - 1) + 1;
         if(movement == 0)
         {
             movement++;
         }
-        System.out.println("Moving MotherNature of " + movement + " positions");
         int previousPosition = controllerTest.getGame().getCurrentMotherNature().getPosition();
         controllerTest.getActionController().MoveMN(movement, controllerTest.getGame());
         assert(false == controllerTest.getGame().getCurrentIslands().getIslands().get(previousPosition).getMotherNature());
-        System.out.println(controllerTest.getGame().getCurrentIslands().getIslands().get(previousPosition).getMotherNature());
         assert(true == controllerTest.getGame().getCurrentIslands().getIslands().get(controllerTest.getGame().getCurrentMotherNature().getPosition()).getMotherNature());
-        System.out.println(controllerTest.getGame().getCurrentIslands().getIslands().get(controllerTest.getGame().getCurrentMotherNature().getPosition()).getMotherNature());
     }
 
     @Test
