@@ -56,6 +56,17 @@ public class MainControllerTest
                 {
                     assertEquals(1, controllerTest.getGame().getCurrentIslands().getIslands().get(i).getCurrentStudents().size());
                 }
+            }
+            else
+            {
+                if(i >= 12)
+                {
+                    assertEquals(0, controllerTest.getGame().getCurrentIslands().getIslands().get(i-12).getCurrentStudents().size());
+                }
+                else
+                {
+                    assertEquals(0, controllerTest.getGame().getCurrentIslands().getIslands().get(i).getCurrentStudents().size());
+                }
 
             }
         }

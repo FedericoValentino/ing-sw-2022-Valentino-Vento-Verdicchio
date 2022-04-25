@@ -20,36 +20,27 @@ public class ActionController
         this.currentPlayer = Player;
     }
 
+    /*
+     * Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
+     */
     public void placeStudentToIsland(int entrancepos, int islandId, CurrentGameState game, String name)
     {
-        Student s = null;
-        for(Team t : game.getCurrentTeams())
-        {
-            for(Player p: t.getPlayers())
-            {
-                if(p.getNome().equals(name))
-                {
-                    s = p.getSchool().extractStudent(entrancepos);
-                }
-            }
-        }
+        Student s = MainController.findPlayerByName(game, name).getSchool().extractStudent(entrancepos);
         game.getCurrentIslands().getIslands().get(islandId).addStudent(s);
     }
 
+    /*
+     * Method placeStudentToDiningRoom places a student in the player's dining room, updating the controlled professors accordingly
+     */
     public void placeStudentToDiningRoom(int entrancepos, CurrentGameState game, String name)
     {
+
+        Player p = MainController.findPlayerByName(game, name);
         Student s;
-        for(Team t : game.getCurrentTeams())
-        {
-            for(Player p: t.getPlayers())
-            {
-                if(p.getNome().equals(name))
-                {
-                    s = p.getSchool().extractStudent(entrancepos);
-                    p.getSchool().placeInDiningRoom(s.getColor());
-                }
-            }
-        }
+
+        s = p.getSchool().extractStudent(entrancepos);
+        p.getSchool().placeInDiningRoom(s.getColor());
+
         game.giveProfessors();
         for(Team t: game.getCurrentTeams())
         {
@@ -57,6 +48,9 @@ public class ActionController
         }
     }
 
+    /*
+     * Method moveMN moves mother nature for the specified amount
+     */
     public void MoveMN(int amount, CurrentGameState game)
     {
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
@@ -91,6 +85,9 @@ public class ActionController
         return false;
     }
 
+    /*
+     * Method solveEverything handles the exchange of towers between islands and players
+     */
     public static void solveEverything(CurrentGameState game, int pos)
     {
         ColTow previousOwner = game.getCurrentIslands().getIslands().get(pos).getOwnership();
