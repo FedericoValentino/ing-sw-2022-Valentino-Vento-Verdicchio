@@ -49,8 +49,6 @@ public class ActionControllerTest
     {
         Random r = new Random();
         setupTest();
-        for (AssistantCard c : MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getAssistantDeck().getDeck()) {
-        }
         controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), controllerTest.getCurrentPlayer(), 7);
         int movement = r.nextInt(MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getMaxMotherMovement() - 1) + 1;
         if(movement == 0)
