@@ -7,13 +7,14 @@ public class TruffleHunter extends CharacterCard{
     private Col ChosenColor;
     public TruffleHunter()
     {
-        super(); //costruttore sopra classe
+        super();
         this.baseCost=3;
         this.idCard=9;
         this.currentCost=this.baseCost;
         this.ChosenColor = null;
     }
 
+    //Updates the color chosen by the player at the moment of activation
     public void setChosenColor(Col c)
     {
         this.ChosenColor = c;

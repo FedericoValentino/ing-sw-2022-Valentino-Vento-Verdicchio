@@ -9,29 +9,40 @@ public class AssistantDeck
     private final String playerName;
     private final String wizard;
 
-    public AssistantDeck(String wizard, String playerName)      //crea nuovo deck, con ingresso wizard scelto dal player, e il player da assegnare
+    //Creates a new deck, assigned to a player and to a wizard
+    public AssistantDeck(String wizard, String playerName)
     {
         this.wizard = wizard;
         this.playerName = playerName;
         int j=1;
         this.deck = new ArrayList<>();
+
+        /* We ensure here that the cards are created with the correct values: the Value
+        of a card goes from 1 to 10, and the Movement from 1 to 5. Each deck contains 10 cards,
+        where the Value increments card by card, and the Movement every 2 cards (for example
+        1,1 - 2,1 - 3,2 - 4,2 - 5,2 etc).
+        To ensure this, the counter responsible for the Movement is incremented every time
+        the counter i is an even number.
+         */
         for(int i = 1; i<=10; i++)
             {
-                this.deck.add(new AssistantCard(j, i));     //il valore di movimento va da 1 a 5, quello del turno da 1 a 10
-                if((i % 2) == 0)                               // sono accoppiati sulle singole carte nel seguente modo (1,1 - 1,2 - 2,3 - 2,4 ecc)
-                    {                                          // dunque incremento j (relativo al movimento) solo quando i è pari
+                this.deck.add(new AssistantCard(j, i));
+                if((i % 2) == 0)
+                    {
                         j++;
                     }
 
             }
     }
 
-    public boolean checkEmpty()         //checka se il deck è vuoto, può esser utile per controlli vittoria complessi..
+    //Checks if the deck is empty, useful for some end game circumstances
+    public boolean checkEmpty()
     {
         return deck.isEmpty();
     }
 
-    public AssistantCard extractCard(int cardPosition)     //estrae una carta dal deck e lo aggiorna
+    //Returns the desired card and removes it from the deck
+    public AssistantCard extractCard(int cardPosition)
     {
         AssistantCard card = deck.get(cardPosition);
         deck.remove(cardPosition);

@@ -7,10 +7,13 @@ public class CharacterDeck
 {
   private ArrayList<CharacterCard> deck;
 
-  public CharacterDeck()                                       //Riempie il deck di tutte e 8 le carte, dopodichè le mischia ed elimina
+  /*Creates every character Object, shuffles the collection, and eliminates 5 of them.
+  This ensures a random CharacterDeck composition every game
+   */
+  public CharacterDeck()
   {
-    this.deck = new ArrayList<CharacterCard>();                //le 5 carte in coda, tenendo le 3 "estratte" in testa
-    this.deck.add(new Centaur());                   //implementazione brutta, da ripensare con currentGameState/controller
+    this.deck = new ArrayList<>();
+    this.deck.add(new Centaur());
     this.deck.add(new GrandmaWeed());
     this.deck.add(new Knight());
     this.deck.add(new Herald());
@@ -25,17 +28,20 @@ public class CharacterDeck
     }
   }
 
+  //Checks if the deck is empty
   public boolean checkEmpty()
   {return deck.isEmpty();}
 
-  public CharacterCard drawCard(int index)                    //Quando una carta viene scelta, viene semplicemente "attivata";
-  {                                                           //dunque ne updateremo il current cost col metodo updateCost e ritorneremo
+  /* Gets the card "ready" for its further activation: removes it from
+  the CharacterDeck, updates its cost (and with is its uses) and returns it */
+  public CharacterCard drawCard(int index)
+  {
     CharacterCard card = getCard(index);
     deck.remove(index);
-    card.updateCost();                                        //la carta affinchè sia piazzata nelle active nel current game state;
+    card.updateCost();
     return card;
-  }                                                           //Possiamo passare l'oggetto direttamente, e non l'indice della lista, perchè, pur
-                                                              //essendo tutti character, sono oggetti tutti diversi, di classi diverse: non c'è ambiguità (in teoria)
+  }
+
   public ArrayList<CharacterCard> getDeck()
     {return deck;}
 

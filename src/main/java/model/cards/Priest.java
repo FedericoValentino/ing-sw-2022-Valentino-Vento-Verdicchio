@@ -19,9 +19,7 @@ public class Priest extends CharacterCard {
         this.students = new ArrayList<>();
     }
 
-    public int getIdCard() {
-        return idCard;
-    }
+    //Adds one student from the pouch to the collection
     public void updateStudents(Pouch pouch)
         {
             students.add(pouch.extractStudent());
@@ -31,6 +29,7 @@ public class Priest extends CharacterCard {
         return students;
     }
 
+    //Returns the student selected, eliminating it from the collection
     public Student getStudent(int index)
     {
       Student student;
@@ -39,4 +38,7 @@ public class Priest extends CharacterCard {
       return student;
     }
 
+    public int getIdCard() {
+        return idCard;
+    }
 }

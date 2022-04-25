@@ -18,9 +18,8 @@ public class Princess extends CharacterCard {
         this.currentCost=this.baseCost;
         this.students = new ArrayList<>();
     }
-    public int getIdCard() {
-        return idCard;
-    }
+
+    //Adds a student from the pouch to the collection
     public void updateStudents(Pouch pouch)
     {
         students.add(pouch.extractStudent());
@@ -30,11 +29,16 @@ public class Princess extends CharacterCard {
         return students;
     }
 
+    //Returns the selected student, removing it from the collection
     public Student getStudent(int index)
     {
         Student student;
         student = students.get(index);
         students.remove(index);
         return student;
+    }
+
+    public int getIdCard() {
+        return idCard;
     }
 }

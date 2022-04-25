@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Character and Planning Tests updated with comments">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Character and Planning controllers updated with comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/PlanningControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/PlanningControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650893464037</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Character and Planning controllers updated with comments">
+      <created>1650895496212</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1650895496212</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +311,8 @@
     <MESSAGE value="Removed prints from controller tests" />
     <MESSAGE value="rimosso codice" />
     <MESSAGE value="Character and Planning Tests updated with comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Character and Planning Tests updated with comments" />
+    <MESSAGE value="Character and Planning controllers updated with comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Character and Planning controllers updated with comments" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGainCoin.ic" NAME="PlayerTest.testGainCoin Coverage Results" MODIFIED="1650530932301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

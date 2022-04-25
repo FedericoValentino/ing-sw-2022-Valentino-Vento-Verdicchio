@@ -6,15 +6,14 @@ public abstract class CharacterCard {
     protected int uses;
     protected int currentCost;
 
-    //(enry) Ho modificato il costruttore base delle character cards: com'era implementato prima
-    //prevedeva di ricevere in ingresso non solo baseCost, che ha senso, ma anche currentCost e uses.
-    //Al momento della crezione delle carte però currentCost sarà identico a baseCost e uses = 0 per
-    //ovvi motivi. Ho cambiato anche tutti i costruttori delle singole carte per matchare i cambiamenti
+    /* BaseCost, ID, and other characteristics, are detailed in
+    the constructor of each card */
     public CharacterCard()
     {
         this.uses = 0;
     }
 
+    //Updates the uses of the card upon activation and updates the currentCost
     public void updateCost() {
         this.uses++;
         currentCost=baseCost+uses;
