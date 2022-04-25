@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Character and Planning controllers updated with comments">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Cards in model have now comments on important methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Pouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Pouch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/School.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/Col.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/Col.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/ColTow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/ColTow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/School.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/School.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650895496212</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Cards in model have now comments on important methods">
+      <created>1650896736057</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1650896736057</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +319,8 @@
     <MESSAGE value="rimosso codice" />
     <MESSAGE value="Character and Planning Tests updated with comments" />
     <MESSAGE value="Character and Planning controllers updated with comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Character and Planning controllers updated with comments" />
+    <MESSAGE value="Cards in model have now comments on important methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cards in model have now comments on important methods" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGainCoin.ic" NAME="PlayerTest.testGainCoin Coverage Results" MODIFIED="1650530932301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -513,7 +521,7 @@
       <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650875385189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1650891015578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1650898378042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testGetMax.ic" NAME="IslandsTest.testGetMax Coverage Results" MODIFIED="1650396133158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>

@@ -7,8 +7,6 @@ import model.boards.token.Student;
 import java.util.ArrayList;
 
 
-//da aggiungere updaterNoEntry e aggiungere un updaterMotherNature
-
 public class Island
 {
   public int islandId;

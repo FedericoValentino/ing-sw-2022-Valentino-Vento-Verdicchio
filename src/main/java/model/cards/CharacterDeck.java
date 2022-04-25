@@ -32,8 +32,10 @@ public class CharacterDeck
   public boolean checkEmpty()
   {return deck.isEmpty();}
 
-  /* Gets the card "ready" for its further activation: removes it from
-  the CharacterDeck, updates its cost (and with is its uses) and returns it */
+  /*
+  Gets the card "ready" for its further activation: removes it from
+  the CharacterDeck, updates its cost (and with is its uses) and returns it
+  */
   public CharacterCard drawCard(int index)
   {
     CharacterCard card = getCard(index);

@@ -13,12 +13,20 @@ public class Pouch
     private ArrayList<Student> content;
     private boolean setup;
 
-    public Pouch()                                                      //Pouch inizialmente riempie 120 studenti, 24 di ogni colore, e li mischia
+    /*
+    It creates two bags of students, and then puts them together; the gameBag contains
+    the students to utilize during the game phase, while the setupBag is to be used during the
+    Setup of the match. Initially the boolean setup will be set as true, and it will be
+    updated through the relative method by the controller during the setup phase
+     */
+    public Pouch()
     {
-        this.setup = true;                                              //Pouch inizializza il bool setup a true perchè viene creato solo una volta all'inizio, proprio nel setup
+        this.setup = true;
         this.content = new ArrayList<>();
         ArrayList<Student> setupBag = new ArrayList<>();
         ArrayList<Student> gameBag = new ArrayList<>();
+
+        //Fills the gameBag with 120 students, 24 of each color, and then shuffles it
         for(int i = 0; i < 5; i++)
         {
             for(int j = 0; j < 24; j++)
@@ -27,7 +35,9 @@ public class Pouch
             }
         }
         Collections.shuffle(gameBag);
-        for(int i = 0; i < 5; i++)                                         //Pouch adesso inserisce ordinatamente due studenti di ogni colore (i 10 rimasti) in coda
+
+        //Fills the setupBag with 2 students of each color to use in the setup phase, then shuffles it
+        for(int i = 0; i < 5; i++)
         {
             for(int j = 0; j < 2; j++)
             {
@@ -35,20 +45,30 @@ public class Pouch
             }
         }
         Collections.shuffle(setupBag);
+
+        //Content represents the main bag: gameBag at the head, setupBag at the tail
         this.content.addAll(gameBag);
         this.content.addAll(setupBag);
     }
 
-   public Student extractStudent()                                              //La funzione si splitta in 2 parti
+    /*
+    Removes a student from the pouch and returns it. It functions differently
+    in setupPhase and in gamePhase
+    */
+   public Student extractStudent()
    {
        int index;
-       if(getSetup())                                                      //se setup == true siamo in fase di setup: l'indice viene scelto
-        {                                                                   //randomicamente fra il 120esimo elemento e l'ultimo, per disporre i primi
-            int max_index = content.size() - 1;                             //studenti sulle isole
-            index = (int) (Math.random() * (max_index - 120) + 120);
+
+       /*If we are in the setup phase, the pouch will take students from the setupBag,
+       so taking them from the tail of the content */
+       if(getSetup())
+        {
+            index = 120;
          }
-       else                                                                 //se setup == false siamo in fase normale, dunque si va a togliere elementi
-         {                                                                  //dalla testa della collezione (index == 0), già mischiati nel costruttore
+
+       //If we are not in the setup phase, the pouch will take students from the head
+       else
+         {
            index = 0;
          }
        Student student = content.get(index);
@@ -56,11 +76,13 @@ public class Pouch
        return student;
    }
 
-   public boolean checkEmpty()                                  //controlla se il pouch è vuoto, anche qui utile per controlli fine game
+   //Checks if pouch is empty, useful for certain end game shenanigans
+   public boolean checkEmpty()
    {
        return content.isEmpty();
    }
 
+   //Sets the setup value to False when we're out of the setup phase
    public void updateSetup(boolean b)
    {
        this.setup = b;

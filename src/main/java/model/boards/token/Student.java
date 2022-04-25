@@ -5,6 +5,7 @@ public class Student {
 
     private Col color;
 
+    //Creates a new student given the student color
     public Student(Col StudentColor)
     {
       this.color = StudentColor;
