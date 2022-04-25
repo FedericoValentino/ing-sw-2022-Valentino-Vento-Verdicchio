@@ -42,7 +42,7 @@ public class CurrentGameState {
     {
        this.currentCharacterDeck = new CharacterDeck();
        this.currentPouch = new Pouch();
-        this.currentMotherNature = new MotherNature();
+       this.currentMotherNature = new MotherNature();
        this.currentIslands = new Islands();
        this.currentTeams = new ArrayList<>();
        if(playerNum == 2 || playerNum == 4)
@@ -92,30 +92,10 @@ public class CurrentGameState {
         finalmap = map.entrySet().stream()
                                  .sorted(Map.Entry.comparingByValue())
                                  .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-        /*
-        List<Map.Entry<String,Integer>> list = new LinkedList<>(map.entrySet());
-        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>()
-        {
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2)
-            {
-                return (o1.getValue()).compareTo(o2.getValue());
-            }
-        });
 
-        for (Map.Entry<String, Integer> aa : list) {
-            finalmap.put(aa.getKey(), aa.getValue());
-        }
-         */
         currentTurnState.updateTurn(finalmap);
     }
 
-
-    /*
-    public void insertExtractedStudent(Student s)
-    {
-        currentExtractedStudents.add(s);
-    }
-    */
 
     /*
      * Method checkWinner checks if a winner is found and updates the CurrentTurnState
