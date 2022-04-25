@@ -1,4 +1,5 @@
 package model.boards;
+import model.Team;
 import model.boards.token.ColTow;
 import model.boards.token.Student;
 
@@ -131,8 +132,12 @@ public class Islands extends Board {
    * @return the current winning team
    */
 
-  public ColTow getMaxCol()
+  public ColTow getMaxCol(ArrayList<Team> Teams)
   {
+    int[] ControlledProfessors = new int[3];
+    ControlledProfessors[0] = 0;
+    ControlledProfessors[1] = 0;
+    ControlledProfessors[2] = 0;
     int[] Towers = new int[3];
     Towers [0]=0;
     Towers [1]=0;
@@ -144,25 +149,49 @@ public class Islands extends Board {
       if(I.getOwnership() == ColTow.BLACK)
       {
         Towers[ColTow.BLACK.ordinal()] += I.getTowerNumber();
+        ControlledProfessors[ColTow.BLACK.ordinal()] += getTeam(Teams, ColTow.BLACK).getControlledProfessors().size();
       }
       else if(I.getOwnership() == ColTow.GREY)
       {
         Towers[ColTow.GREY.ordinal()] += I.getTowerNumber();
+        ControlledProfessors[ColTow.GREY.ordinal()] += getTeam(Teams, ColTow.GREY).getControlledProfessors().size();
       }
       else if(I.getOwnership() == ColTow.WHITE)
       {
         Towers[ColTow.WHITE.ordinal()] += I.getTowerNumber();
+        ControlledProfessors[ColTow.WHITE.ordinal()] += getTeam(Teams, ColTow.WHITE).getControlledProfessors().size();
       }
     }
     for(int i = 0; i < 3; i++)
     {
+      if(Towers[i] == max)
+      {
+        if(Towers[i] + ControlledProfessors[i] > Towers[Winner] + ControlledProfessors[Winner])
+        {
+          max = Towers[i];
+          Winner = i;
+        }
+      }
       if(Towers[i] > max)
       {
         max = Towers[i];
         Winner = i;
       }
     }
+
     return ColTow.values()[Winner];
+  }
+
+  private Team getTeam(ArrayList<Team> Teams, ColTow color)
+  {
+    for(Team t: Teams)
+    {
+      if(t.getColor() == color)
+      {
+        return t;
+      }
+    }
+    return null;
   }
 
   public ArrayList<Island> getIslands()
