@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Deleted part of the System.out.printl">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Cambio ad idManagement, adesso solo una chiamata riesce a unire tutte le isole possibili. Fix a IslandsTest.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/IslandsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/boards/IslandsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +48,7 @@
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="yaml" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="JUnit.IslandsTest">
+  <component name="RunManager" selected="JUnit.All in softeng-GC61 (1)">
     <configuration name="All in softeng-GC61 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <option name="PACKAGE_NAME" value="" />
@@ -128,10 +126,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in softeng-GC61 (1)" />
         <item itemvalue="JUnit.IslandsTest" />
         <item itemvalue="JUnit.IslandsTest.testIdManagment" />
         <item itemvalue="JUnit.model in softeng-GC61" />
-        <item itemvalue="JUnit.All in softeng-GC61 (1)" />
         <item itemvalue="JUnit.All in softeng-GC61" />
       </list>
     </recent_temporary>
@@ -246,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650815564565</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Cambio ad idManagement, adesso solo una chiamata riesce a unire tutte le isole possibili. Fix a IslandsTest.">
+      <created>1650875049600</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1650875049600</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +291,8 @@
     <MESSAGE value="Test ActionController, fix in giro nel codice" />
     <MESSAGE value="Fix a dei test" />
     <MESSAGE value="PlanningControllerTesting 100% line coverage is go" />
-    <option name="LAST_COMMIT_MESSAGE" value="PlanningControllerTesting 100% line coverage is go" />
+    <MESSAGE value="Cambio ad idManagement, adesso solo una chiamata riesce a unire tutte le isole possibili. Fix a IslandsTest." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio ad idManagement, adesso solo una chiamata riesce a unire tutte le isole possibili. Fix a IslandsTest." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -434,6 +440,7 @@
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$MainControllerTest.ic" NAME="MainControllerTest Coverage Results" MODIFIED="1650719002063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650875083411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testUpdateTurnState.ic" NAME="CurrentGameStateTest.testUpdateTurnState Coverage Results" MODIFIED="1650615099174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>

@@ -86,8 +86,6 @@ public void testPlaceToken1()
             cg2.getCurrentIslands().getIslands().get(i).updateTeamInfluence(cg2.getCurrentTeams());
         }
         cg2.getCurrentIslands().idManagement();
-        assertEquals(4, cg2.getCurrentIslands().getTotalGroups());
-        cg2.getCurrentIslands().idManagement();
         assertEquals(2, cg2.getCurrentIslands().getTotalGroups());
     }
 
