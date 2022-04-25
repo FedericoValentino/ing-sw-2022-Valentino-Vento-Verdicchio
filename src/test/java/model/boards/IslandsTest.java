@@ -178,7 +178,7 @@ public class IslandsTest {
         for(int i=0;i<20;i++)
             is.getIslands().get(0).addStudent(s2);
         //enable the final group
-        is.getIslands().get(0).updateMotherNature();
+        //is.getIslands().get(0).updateMotherNature();
         for(int i=0;i<is.getTotalGroups();i++)
         {
             is.getIslands().get(i).updateMotherNature();

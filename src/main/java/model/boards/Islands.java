@@ -57,6 +57,7 @@ public class Islands extends Board {
         islands.set(i, currentIsland);
         islands.remove(nextIsland);
         islands.remove(previousIsland);
+        i = 0;
       }
       else if(currentIsland.getGroup())  //unione doppia(attuabile solo se currentIsland è di già un gruppo di isole
       {
@@ -66,12 +67,15 @@ public class Islands extends Board {
           unifyIslands(currentIsland, nextIsland);
           islands.set(i, currentIsland);
           islands.remove(nextIsland);
+          i = 0;
         }
-        else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || previousIsland.motherNature) && currentIsland.getOwnership() != null)
+        else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || previousIsland.motherNature)
+                && currentIsland.getOwnership() != null)
         {
           unifyIslands(currentIsland, previousIsland);
           islands.set(i, currentIsland);
           islands.remove(previousIsland);
+          i = 0;
         }
       }
     }
