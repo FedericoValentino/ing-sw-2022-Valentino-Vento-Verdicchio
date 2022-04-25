@@ -15,33 +15,63 @@ public class CharacterController
 {
     private CharacterCard pickedCard;
 
-
-    public void pickCard(CurrentGameState game, int position, Player player)        //Questa funzione prende la carta dal CharDeck e la mette
-    {                                                                               //nell'active deck, oltre a memorizzarla (sol temporanea)
-                                                                                    // inoltre, ne updata il costo e updata il bank balance e il player balance
+    /*
+    Takes the selected card from the CharDeck and puts it in the ActiveDeck;
+    handles the economy related to this action
+     */
+    public void pickCard(CurrentGameState game, int position, Player player)
+    {
+        //drawCard updates the cost and the uses of the selected card
         pickedCard = game.getCurrentCharacterDeck().drawCard(position);
         game.getCurrentActiveCharacterCard().add(pickedCard);
+
+        /*Updates player balance and bank balance using the currentCost-1 of the card,
+        which is how much the card cost when it was played  */
         int gain = pickedCard.getCurrentCost() - 1;
         game.updateBankBalance(player, gain);
     }
 
-    public static void effect(Priest card, CurrentGameState game, int studentPosition, int chosenIsland)           //Prende lo studente dalla carta di tipo priest
-    {                                                                                                                 //Prende l'isola giusta da game e usa place token per piazzarlo
-                                                                                                                    //UpdateStudents pesca dal pouch e rimette uno studente sulla carta
-        game.getCurrentIslands().placeToken(card.getStudent(studentPosition), chosenIsland);                                         //Deckmgmt elimina la vecchia priest dalle active e piazza questa updatata nel charDeck
+    /*
+    Finds the card that has been used in the ActiveCharDeck, removes it from there,
+    and places it, with updated values, in the CharacterDeck.
+     */
+    public static void deckManagement(CharacterCard card, CurrentGameState game)
+    {
+        for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
+        {
+            if(card.getIdCard() == game.getCurrentActiveCharacterCard().get(i).getIdCard())
+                game.getCurrentActiveCharacterCard().remove(i);
+        }
+        game.getCurrentCharacterDeck().getDeck().add(card);
+    }
+
+    //From here on we have the Characters' effects: every one of them calls deckManagement at the end
+
+    /*
+    Takes a Student from the Priest card residing at the desired position; places it on the
+    chosen island. Then, refills the Priest card with another student from the pouch.
+     */
+    public static void effect(Priest card, CurrentGameState game, int studentPosition, int chosenIsland)
+    {
+        game.getCurrentIslands().placeToken(card.getStudent(studentPosition), chosenIsland);
         card.updateStudents(game.getCurrentPouch());
         deckManagement(card, game);
     }
 
-    public static void effect(Princess card, CurrentGameState game, int studentPosition, String currentPlayer)       //Prende student dalla carta e ne salva il colore
+    /*
+    Takes a student from the card at the desired position, saves its color; then finds the active player
+    and obtains its school, placing the student in the dining room (updating the dining room structure using the student's color)
+     */
+    public static void effect(Princess card, CurrentGameState game, int studentPosition, String currentPlayer)
     {
         Col color = card.getStudent(studentPosition).getColor();
-        MainController.findPlayerByName(game, currentPlayer).getSchool().placeInDiningRoom(color);         //Prendo la sucola del currentPlayer e ci piazzo il colore
-        card.updateStudents(game.getCurrentPouch());                                                                      //Updato studenti su carta e solita deckmgmt
+        MainController.findPlayerByName(game, currentPlayer).getSchool().placeInDiningRoom(color);
+        card.updateStudents(game.getCurrentPouch());
         deckManagement(card, game);
     }
 
-    public static void effect(Herald card, CurrentGameState game, int island)                                          //Banalmente risolve subito l'isola selezionata
+    //Resolves the influence calculation on the island as if MN has ended there her movement
+    public static void effect(Herald card, CurrentGameState game, int island)
     {
         game.getCurrentIslands().getIslands().get(island).updateMotherNature();
         ActionController.solveEverything(game, island);
@@ -49,28 +79,34 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    public static void effect(Postman card, CurrentGameState game, String currentPlayer)                     //Cerca CurrentPlayer come prima e updata il maxmotherMovement con +2(model)
+    //Finds the active player using its name, increases its maxMotherMovement by 2
+    public static void effect(Postman card, CurrentGameState game, String currentPlayer)
     {
         MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
         deckManagement(card, game);
     }
 
-    public static void effect(GrandmaWeed card, CurrentGameState game, int island)         //Cerca isola e mette a true il NoEntry (vedi metodo model)
+    //Sets the noEntry field on the desired island to true; decrements the noEntry field on the card by 1
+    public static void effect(GrandmaWeed card, CurrentGameState game, int island)
     {
         game.getCurrentIslands().getIslands().get(island).updateNoEntry();
-        card.updateNoEntry(-1);                                                //Updata i NoEntry sulla carta
+        card.updateNoEntry(-1);
         deckManagement(card, game);
     }
 
-    public static void effect(Centaur card, CurrentGameState game, int island)               //Va sull'isola e toglie le torri in funzione del calcolo influenza
-    {                                                                                  //le riaggiorna alla fine
+    //Removes the towers from the desired island before calculating the influence
+    public static void effect(Centaur card, CurrentGameState game, int island)
+    {
         game.getCurrentIslands().getIslands().get(island).towerNumber = 0;
         ActionController.solveEverything(game, island);
         deckManagement(card, game);
     }
 
-    public static void effect(TruffleHunter card, CurrentGameState game, Col color, int island)                //Complessa. Va sull'isola e rimuove dal currentStudents di questa
-    {                                                                                                           //gli studenti del colore desiderato. Si salva un contatore per sapere quanti ne toglie
+    //Ignores a color of student in the influence calculation
+    public static void effect(TruffleHunter card, CurrentGameState game, Col color, int island)
+    {
+        /*Uses this for cycle to remove the students of the selected color from the island: uses a
+        counter to save how many students were removed  */
         int cont = 0;
         for(int i=0; i<game.getCurrentIslands().getIslands().get(island).currentStudents.size(); i++)
         {
@@ -80,19 +116,28 @@ public class CharacterController
                 cont++;
             }
         }
+
         ActionController.solveEverything(game, island);
+
+        //After the influence calculations, it adds to the island as many students of the selected color as the number of the counter
         for(int i=0; i<cont; i++)
         {
-            game.getCurrentIslands().getIslands().get(island).currentStudents.add(new Student(color));          //Riempie di nuovo gli studenti nell'isola creandone
-        }                                                                                                       //di nuovi quanti ne indica il contatore
+            game.getCurrentIslands().getIslands().get(island).currentStudents.add(new Student(color));
+        }
         deckManagement(card, game);
     }
 
-    public static void effect(Knight card, CurrentGameState game, int island, int team)                                //Chiama Update teams influence per calcolare l'influenza
+    /*
+    Adds 2 extra influence to the Active team during the influence calculation. Since the standard method
+    solveEverything updates the teamInfluence internally, it is needed to manually update the teams influence,
+    add 2 extra influence to the desired team, calculate ownership, update towers and calling the idManagement.
+    In the end, the boosted influence is set to its previous value.
+     */
+    public static void effect(Knight card, CurrentGameState game, int island, int team)
     {
         ColTow previousOwner = game.getCurrentIslands().getIslands().get(island).getOwnership();                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());          //l'influenza del team scelto
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(2, team);                   //calcola ownership
+        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());
+        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(2, team);
         game.getCurrentIslands().getIslands().get(island).calculateOwnership();
         ColTow currentOwner = game.getCurrentIslands().getIslands().get(island).getOwnership();
         if(previousOwner != currentOwner)
@@ -114,24 +159,11 @@ public class CharacterController
                 }
             }
         }
-        game.getCurrentIslands().idManagement();                                                                                                        //rimette a posto l'influenza
+        game.getCurrentIslands().idManagement();
         game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(-2, team);
         deckManagement(card, game);
     }
 
-
-
-
-
-    public static void deckManagement(CharacterCard card, CurrentGameState game)                                  //Toglie la carta usata non aggiornata dall'active e
-    {                                                                                                       //mette la copia aggiornata nel charcterCard (inactive)
-        for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
-        {
-            if(card.getIdCard() == game.getCurrentActiveCharacterCard().get(i).getIdCard())
-                game.getCurrentActiveCharacterCard().remove(i);
-        }
-        game.getCurrentCharacterDeck().getDeck().add(card);
-    }
 
     public CharacterCard getPickedCard()
     {

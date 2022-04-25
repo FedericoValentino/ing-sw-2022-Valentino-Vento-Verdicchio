@@ -4,17 +4,24 @@ import model.CurrentGameState;
 
 public class PlanningController
 {
-
-
-    public void drawStudentForClouds(CurrentGameState game, int position)                                   //mode è un intero che ci dice il numero di team
-    {                                                                                                       //se ci sono due team (2 o 4 giocatori), si prendono 3
-        for(int i=0; i<=game.getCurrentTeams().size(); i++)                                                 //studenti, se ci sono 3 team, 4, e si mettono sulla
-        {                                                                                                   //nuvola selezionata
+    /*
+    It draws students from the pouch and places them on the desired cloud: through the
+    CurrentTeams.size, it fills the cloud with 3 students in case of matches with 2 or 4 player,
+    and with 4 students in matches with 3 players
+     */
+    public void drawStudentForClouds(CurrentGameState game, int position)
+    {
+        for(int i=0; i<=game.getCurrentTeams().size(); i++)
+        {
             game.getCurrentClouds()[position].placeToken(game.getCurrentPouch().extractStudent());
         }
     }
 
-    public void drawAssistantCard(CurrentGameState game, String currentPlayer, int cardPosition)                    //Cerca il player nel giusto team, gioca choose assistant card
+    /*
+    It finds the currentPlayer by its name and it plays the desired AssistantCard, identified in
+    its deck by cardPosition
+     */
+    public void drawAssistantCard(CurrentGameState game, String currentPlayer, int cardPosition)
     {
         MainController.findPlayerByName(game, currentPlayer).chooseAssistantCard(cardPosition);
     }
