@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
 public class IslandsTest {
     Islands is=new Islands();
     Islands is2=new Islands();
+    Islands is3=new Islands();
     Student s1=new Student(Col.GREEN);
     Student s12=new Student(Col.RED);
     Student s2=new Student(Col.PINK);
@@ -30,6 +31,7 @@ public class IslandsTest {
 
         testIdManagmentCase1(t3,t1,p3,p1,c); // caso1 testing ez
         testIdManagmentCase2(t2,t1,p2,p1,c,p3,t3); //caso 2 un po' più elaborato
+        testIdManagmentCase3(t3,t1,p3,p1,c); // caso1 testing ez
 
     }
     @Test
@@ -139,6 +141,7 @@ public class IslandsTest {
         assertEquals(10,is.getTotalGroups());
 
 
+
         //adding a new student to reload idManagement (reducing to 3 groups)
         is.getIslands().get(0).currentStudents.add(s2);
         is.getIslands().get(0).currentStudents.add(s2);
@@ -185,18 +188,13 @@ public class IslandsTest {
             is.getIslands().get(i).calculateOwnership();
             is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
-        is.idManagement();
 
-        is.idManagement();
-        is.idManagement();
-        is.idManagement();
-        is.idManagement();
 
         for(int i=0;i<is.getTotalGroups();i++)
         {
             is.getIslands().get(i).calculateOwnership();
             is.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-            System.out.println("id "+i +" "+ is.getIslands().get(i).getOwnership()+ "n tower: "+is.getIslands().get(i).getTowerNumber());
+            //System.out.println("id "+i +" "+ is.getIslands().get(i).getOwnership()+ "n tower: "+is.getIslands().get(i).getTowerNumber());
         }
 
         assertEquals(ColTow.BLACK,is.getMaxCol());
@@ -207,9 +205,9 @@ public class IslandsTest {
     public void testIdManagmentCase2(Team t1,Team t2,Player p1,Player p2, CurrentGameState c, Player p3, Team t3) {
         testPlaceToken2();// I put the students in the islands
 
-        t1.addPlayer(p1);
-        t2.addPlayer(p2);
-        t3.addPlayer(p3);
+        t1.addPlayer(p1);//white
+        t2.addPlayer(p2);//grey
+        t3.addPlayer(p3);//black
 
         //reset the professors table of testIdManagmentCase1 becuase they have professor in common
         for(int i=0;i<5;i++)
@@ -218,11 +216,11 @@ public class IslandsTest {
             p2.getSchool().updateProfessorsTable(i,false);//green prof
         }
 
-        p1.getSchool().updateProfessorsTable(0,true);//green prof
-        p2.getSchool().updateProfessorsTable(1,true);//red prof
-        p1.getSchool().updateProfessorsTable(2,true);//yellow
-        p2.getSchool().updateProfessorsTable(3,true);//pink prof
-        p3.getSchool().updateProfessorsTable(4,true);//blue prof
+        p1.getSchool().updateProfessorsTable(0,true);//green prof  white
+        p2.getSchool().updateProfessorsTable(1,true);//red prof    grey
+        p1.getSchool().updateProfessorsTable(2,true);//yellow      white
+        p2.getSchool().updateProfessorsTable(3,true);//pink prof   grey
+        p3.getSchool().updateProfessorsTable(4,true);//blue prof   black
 
         t1.updateProfessors();
         t2.updateProfessors();
@@ -262,6 +260,79 @@ public class IslandsTest {
         assertEquals(12,is2.getTotalGroups());
     }
 
+    public void testIdManagmentCase3(Team t1,Team t2,Player p1,Player p2, CurrentGameState c) {
+        //t1 black
+        //t2 grey
+        //System.out.println("Inizio test 3");
+        is3.getIslands().get(0).currentStudents.add(s1);//green  black
+
+        is3.getIslands().get(1).currentStudents.add(s2);//pink   grey
+        is3.getIslands().get(3).currentStudents.add(s2);//pink
+        is3.getIslands().get(2).currentStudents.add(s2);//pink
+
+        is3.getIslands().get(4).currentStudents.add(s4);//yellow  white
+        is3.getIslands().get(5).currentStudents.add(s4);
+        is3.getIslands().get(6).currentStudents.add(s4);
+
+        is3.getIslands().get(7).currentStudents.add(s2);//pink   grey
+        is3.getIslands().get(8).currentStudents.add(s2);//pink
+        is3.getIslands().get(9).currentStudents.add(s2);//pink
+        is3.getIslands().get(10).currentStudents.add(s2);//pink
+        is3.getIslands().get(11).currentStudents.add(s2);//pink
+
+        for(int i=0;i<12;i++) {
+            is3.getIslands().get(i).calculateOwnership();
+            is3.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            is3.getIslands().get(i).updateMotherNature();
+        }
+
+        //merging the island in positions 1,2,3 ( so remain 11-3= 8 groups)
+        for(int i=1;i<4;i++)
+        {
+            is3.getIslands().get(i).calculateOwnership();
+        }
+        is3.idManagement();
+        for(int i=0;i<is3.getTotalGroups();i++)
+        {
+            is3.getIslands().get(i).calculateOwnership();
+            is3.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            //System.out.println("id "+i +" "+ is3.getIslands().get(i).getOwnership()+ "n tower: "+is3.getIslands().get(i).getTowerNumber());
+        }
+        is3.getIslands().get(6).addStudent(s1);
+        is3.getIslands().get(6).addStudent(s1);
+        is3.getIslands().get(6).addStudent(s1);
+        is3.getIslands().get(7).addStudent(s1);
+        is3.getIslands().get(7).addStudent(s1);
+        is3.getIslands().get(7).addStudent(s1);
+        is3.getIslands().get(8).addStudent(s1);
+        is3.getIslands().get(8).addStudent(s1);
+        is3.getIslands().get(8).addStudent(s1);
+        is3.idManagement();
+
+        for(int i=0;i<is3.getTotalGroups();i++)
+        {
+            is3.getIslands().get(i).calculateOwnership();
+            is3.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            //System.out.println("id "+i +" "+ is3.getIslands().get(i).getOwnership()+ "n tower: "+is3.getIslands().get(i).getTowerNumber());
+        }
+
+
+        assertEquals(4,is3.getTotalGroups());
+
+
+
+
+        for(int i=0;i<is3.getTotalGroups();i++)
+        {
+            is3.getIslands().get(i).calculateOwnership();
+            is3.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            //System.out.println("id "+i +" "+ is3.getIslands().get(i).getOwnership()+ "n tower: "+is3.getIslands().get(i).getTowerNumber());
+        }
+
+        //assertEquals(ColTow.BLACK,is.getMaxCol());
+
+
+    }
 
     @Test
     public void testTotalGroups()
@@ -273,7 +344,8 @@ public class IslandsTest {
     @Test
     public void testGetMax()
     {
-        testIdManagment();//because it has all the inizialization
+        testIdManagment();//because it has all the inizialization, but the possible problem
+        //is that recalling this function there is the possibility of mixing professors or team
 
         // here it will call the island linked to the second test
         ColTow c=is2.getMaxCol();
