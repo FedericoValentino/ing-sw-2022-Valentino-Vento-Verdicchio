@@ -15,9 +15,12 @@ public class CharacterController
 {
     private CharacterCard pickedCard;
 
-    /**
-    Takes the selected card from the CharDeck and puts it in the ActiveDeck;
-    handles the economy related to this action
+
+    /** Takes the selected card from the CharDeck and puts it in the ActiveDeck;
+     handles the economy related to this action
+     * @param game
+     * @param player
+     * @param position
      */
     public void pickCard(CurrentGameState game, int position, Player player)
     {

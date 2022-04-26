@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="centaurTest completed and replaced a couple of for cycle with list.clean commands">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Controller updated with fancy comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,12 +235,12 @@
       <option name="project" value="LOCAL" />
       <updated>1650795522170</updated>
     </task>
-    <task id="LOCAL-00012" summary="PlanningControllerTesting 100% line coverage is go">
-      <created>1650813316365</created>
+    <task id="LOCAL-00012" summary="Controller updated with fancy comments">
+      <created>1650986792431</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1650813316365</updated>
+      <updated>1650986792431</updated>
     </task>
     <task id="LOCAL-00013" summary="Removed prints from controller tests">
       <created>1650880557472</created>
@@ -280,7 +277,7 @@
       <option name="project" value="LOCAL" />
       <updated>1650896736057</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +317,8 @@
     <MESSAGE value="Update of Team, Island and solveEverything to better account for influence calculation when ownership == null and to add the updateControlledIslands functionality in Team" />
     <MESSAGE value="centaurTest completed" />
     <MESSAGE value="centaurTest completed and replaced a couple of for cycle with list.clean commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="centaurTest completed and replaced a couple of for cycle with list.clean commands" />
+    <MESSAGE value="Controller updated with fancy comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controller updated with fancy comments" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$AssistantDeckTest.ic" NAME="AssistantDeckTest Coverage Results" MODIFIED="1648996607034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
