@@ -20,8 +20,8 @@ public class ActionController
         this.currentPlayer = Player;
     }
 
-    /*
-     * Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
+    /**
+      Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
      */
     public void placeStudentToIsland(int entrancepos, int islandId, CurrentGameState game, String name)
     {
@@ -29,8 +29,8 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(islandId).addStudent(s);
     }
 
-    /*
-     * Method placeStudentToDiningRoom places a student in the player's dining room, updating the controlled professors accordingly
+    /**
+      Method placeStudentToDiningRoom places a student in the player's dining room, updating the controlled professors accordingly
      */
     public void placeStudentToDiningRoom(int entrancepos, CurrentGameState game, String name)
     {
@@ -48,8 +48,8 @@ public class ActionController
         }
     }
 
-    /*
-     * Method moveMN moves mother nature for the specified amount
+    /**
+      Method moveMN moves mother nature for the specified amount
      */
     public void MoveMN(int amount, CurrentGameState game)
     {
@@ -64,7 +64,7 @@ public class ActionController
 
     }
 
-    /*returns true if there are any influence cards*/
+    /**returns true if there are any influence cards*/
     private boolean checkForCharacter(CurrentGameState game)
     {
         for(CharacterCard c: game.getCurrentActiveCharacterCard())
@@ -85,8 +85,8 @@ public class ActionController
         return false;
     }
 
-    /*
-     * Method solveEverything handles the exchange of towers between islands and players
+    /**
+      Method solveEverything handles the exchange of towers between islands and players
      */
     public static void solveEverything(CurrentGameState game, int pos)
     {

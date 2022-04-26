@@ -27,16 +27,16 @@ public class MainController
         this.expertGame = expert;
     }
 
-    /*
-     * Method AddPlayer adds a player to the specified team
+    /**
+      Method AddPlayer adds a player to the specified team
      */
     public void AddPlayer(int team, String name, int towers, String Wizard)
     {
         this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, Wizard, this.expertGame));
     }
 
-    /*
-     * Method Setup handles the game setup phase: placing students in the islands and placing students in the players entrances
+    /**
+      Method Setup handles the game setup phase: placing students in the islands and placing students in the players entrances
      */
     public void Setup()
     {
@@ -71,8 +71,8 @@ public class MainController
 
     }
 
-    /*
-     * Method determineNextPlayer extracts the next player to play from the CurrentTurnState HashMap
+    /**
+      Method determineNextPlayer extracts the next player to play from the CurrentTurnState HashMap
      */
     public void determineNextPlayer()
     {
@@ -86,16 +86,16 @@ public class MainController
         actionController.setCurrentPlayer(currentPlayer);
     }
 
-    /*
-     * Method updateTurnState updates the HashMap with the new turn order
+    /**
+      Method updateTurnState updates the HashMap with the new turn order
      */
     public void updateTurnState()
     {
         game.updateTurnState();
     }
 
-    /*
-     * Method findPlayerByName return the Player with the given name
+    /**
+      Method findPlayerByName return the Player with the given name
      */
     public static Player findPlayerByName(CurrentGameState game, String player)
     {
@@ -111,8 +111,8 @@ public class MainController
         }
         return null;
     }
-    /*
-     * Method getPlayerColor returns given a playerName his team color
+    /**
+      Method getPlayerColor returns given a playerName his team color
      */
     public static ColTow getPlayerColor(CurrentGameState game, String player)
     {

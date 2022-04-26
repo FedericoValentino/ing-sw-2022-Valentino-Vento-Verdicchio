@@ -15,7 +15,7 @@ public class CharacterController
 {
     private CharacterCard pickedCard;
 
-    /*
+    /**
     Takes the selected card from the CharDeck and puts it in the ActiveDeck;
     handles the economy related to this action
      */
@@ -31,7 +31,7 @@ public class CharacterController
         game.updateBankBalance(player, gain);
     }
 
-    /*
+    /**
     Finds the card that has been used in the ActiveCharDeck, removes it from there,
     and places it, with updated values, in the CharacterDeck.
      */
@@ -47,7 +47,7 @@ public class CharacterController
 
     //From here on we have the Characters' effects: every one of them calls deckManagement at the end
 
-    /*
+    /**
     Takes a Student from the Priest card residing at the desired position; places it on the
     chosen island. Then, refills the Priest card with another student from the pouch.
      */
@@ -58,7 +58,7 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    /*
+    /**
     Takes a student from the card at the desired position, saves its color; then finds the active player
     and obtains its school, placing the student in the dining room (updating the dining room structure using the student's color)
      */
@@ -70,7 +70,7 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    //Resolves the influence calculation on the island as if MN has ended there her movement
+    /**Resolves the influence calculation on the island as if MN has ended there her movement */
     public static void effect(Herald card, CurrentGameState game, int island)
     {
         if(game.getCurrentIslands().getIslands().get(island).getMotherNature() == false)
@@ -80,14 +80,14 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    //Finds the active player using its name, increases its maxMotherMovement by 2
+    /**Finds the active player using its name, increases its maxMotherMovement by 2 */
     public static void effect(Postman card, CurrentGameState game, String currentPlayer)
     {
         MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
         deckManagement(card, game);
     }
 
-    //Sets the noEntry field on the desired island to true; decrements the noEntry field on the card by 1
+    /**Sets the noEntry field on the desired island to true; decrements the noEntry field on the card by 1 */
     public static void effect(GrandmaWeed card, CurrentGameState game, int island)
     {
         game.getCurrentIslands().getIslands().get(island).updateNoEntry();
@@ -95,7 +95,7 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    //Removes the towers from the desired island before calculating the influence
+    /**Removes the towers from the desired island before calculating the influence */
     public static void effect(Centaur card, CurrentGameState game, int island)
     {
         game.getCurrentIslands().getIslands().get(island).towerNumber = 0;
@@ -103,7 +103,7 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    //Ignores a color of student in the influence calculation
+    /**Ignores a color of student in the influence calculation */
     public static void effect(TruffleHunter card, CurrentGameState game, Col color, int island)
     {
         /*Uses this for cycle to remove the students of the selected color from the island: uses a
@@ -120,7 +120,7 @@ public class CharacterController
 
         ActionController.solveEverything(game, island);
 
-        //After the influence calculations, it adds to the island as many students of the selected color as the number of the counter
+        /**After the influence calculations, it adds to the island as many students of the selected color as the number of the counter */
         for(int i=0; i<cont; i++)
         {
             game.getCurrentIslands().getIslands().get(island).currentStudents.add(new Student(color));
@@ -128,7 +128,7 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    /*
+    /**
     Adds 2 extra influence to the Active team during the influence calculation. Since the standard method
     solveEverything updates the teamInfluence internally, it is needed to manually update the teams influence,
     add 2 extra influence to the desired team, calculate ownership, update towers and calling the idManagement.

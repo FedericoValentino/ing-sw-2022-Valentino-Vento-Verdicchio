@@ -4,7 +4,7 @@ import model.CurrentGameState;
 
 public class PlanningController
 {
-    /*
+    /**
     It draws students from the pouch and places them on the desired cloud: through the
     CurrentTeams.size, it fills the cloud with 3 students in case of matches with 2 or 4 player,
     and with 4 students in matches with 3 players
@@ -17,7 +17,7 @@ public class PlanningController
         }
     }
 
-    /*
+    /**
     It finds the currentPlayer by its name and it plays the desired AssistantCard, identified in
     its deck by cardPosition
      */
