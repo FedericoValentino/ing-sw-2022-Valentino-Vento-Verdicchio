@@ -20,8 +20,12 @@ public class ActionController
         this.currentPlayer = Player;
     }
 
-    /**
-      Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
+
+    /** Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
+     * @param entrancepos  the index identifying the position of the player's student into the school entrance
+     * @param islandId  the id of the island onto which the student must be placed
+     * @param game  an instance of the game
+     * @param name  the player's name, needed to access his school
      */
     public void placeStudentToIsland(int entrancepos, int islandId, CurrentGameState game, String name)
     {
@@ -29,8 +33,12 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(islandId).addStudent(s);
     }
 
-    /**
-      Method placeStudentToDiningRoom places a student in the player's dining room, updating the controlled professors accordingly
+
+    /** Method placeStudentToDiningRoom places the selected student from the entrance to the dining room, and checks
+        whether this action has granted the player the control of a professor
+     * @param entrancepos  the index identifying the position of the player's student into the school entrance
+     * @param game  an instance of the game
+     * @param name  the player's name, needed to access his school
      */
     public void placeStudentToDiningRoom(int entrancepos, CurrentGameState game, String name)
     {
@@ -48,8 +56,10 @@ public class ActionController
         }
     }
 
-    /**
-      Method moveMN moves mother nature for the specified amount
+
+    /** Method moveMN moves mother nature for the specified amount
+     * @param amount  amount of spaces mother nature has to move through
+     * @param game  an instance of the game
      */
     public void MoveMN(int amount, CurrentGameState game)
     {
@@ -64,7 +74,11 @@ public class ActionController
 
     }
 
-    /**returns true if there are any influence cards*/
+
+    /** Returns true if there are any influence related character cards present in the Active Characters Deck
+     * @param game  an instance of hte game
+     * @return whether influence based card are currently active
+     */
     private boolean checkForCharacter(CurrentGameState game)
     {
         for(CharacterCard c: game.getCurrentActiveCharacterCard())
@@ -85,8 +99,11 @@ public class ActionController
         return false;
     }
 
-    /**
-      Method solveEverything handles the exchange of towers between islands and players
+
+    /** Method solveEverything is responsible for the influence calculation on the desired island, and
+        handles the eventual exchange of towers between players' schools and the island
+     * @param game  an instance of the game
+     * @param pos  the island on which the influence calculation has to be called
      */
     public static void solveEverything(CurrentGameState game, int pos)
     {

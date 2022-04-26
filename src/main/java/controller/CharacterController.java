@@ -18,9 +18,9 @@ public class CharacterController
 
     /** Takes the selected card from the CharDeck and puts it in the ActiveDeck;
      handles the economy related to this action
-     * @param game
-     * @param player
-     * @param position
+     * @param game  an instance of the game
+     * @param player   the player interacting with the card
+     * @param position  the position of the chosen card in the deck
      */
     public void pickCard(CurrentGameState game, int position, Player player)
     {
@@ -34,9 +34,10 @@ public class CharacterController
         game.updateBankBalance(player, gain);
     }
 
-    /**
-    Finds the card that has been used in the ActiveCharDeck, removes it from there,
-    and places it, with updated values, in the CharacterDeck.
+    /** Finds the card that has been used in the ActiveCharDeck, removes it from there,
+     and places it, with updated values, in the CharacterDeck.
+     * @param card  reference to the used card
+     * @param game  an instance of the game
      */
     public static void deckManagement(CharacterCard card, CurrentGameState game)
     {
@@ -50,9 +51,12 @@ public class CharacterController
 
     //From here on we have the Characters' effects: every one of them calls deckManagement at the end
 
-    /**
-    Takes a Student from the Priest card residing at the desired position; places it on the
-    chosen island. Then, refills the Priest card with another student from the pouch.
+    /** Takes a Student from the Priest card residing at the desired position; places it on the
+     chosen island. Then, refills the Priest card with another student from the pouch.
+     * @param card  the chosen card
+     * @param game  an instance of the game
+     * @param studentPosition  the position of the chosen student onto the Priest card
+     * @param chosenIsland  the island on which the student must be placed
      */
     public static void effect(Priest card, CurrentGameState game, int studentPosition, int chosenIsland)
     {
@@ -61,9 +65,13 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    /**
-    Takes a student from the card at the desired position, saves its color; then finds the active player
-    and obtains its school, placing the student in the dining room (updating the dining room structure using the student's color)
+
+    /** Takes a student from the card at the desired position, saves its color; then finds the active player
+     and obtains its school, placing the student in the dining room (updating the dining room structure using the student's color)
+     * @param card  the chosen card
+     * @param game  an instance of the game
+     * @param studentPosition  the position of the chosen student onto the Princess card
+     * @param currentPlayer  the name of the player who plays the effect
      */
     public static void effect(Princess card, CurrentGameState game, int studentPosition, String currentPlayer)
     {
@@ -73,7 +81,12 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    /**Resolves the influence calculation on the island as if MN has ended there her movement */
+
+    /** Resolves the influence calculation on the island as if MN has ended there her movement
+     * @param card  the chosen card
+     * @param game  an instance of the game
+     * @param island  the island on which the influence calculation must occur
+     */
     public static void effect(Herald card, CurrentGameState game, int island)
     {
         if(game.getCurrentIslands().getIslands().get(island).getMotherNature() == false)
@@ -83,14 +96,24 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    /**Finds the active player using its name, increases its maxMotherMovement by 2 */
+
+    /** Adds 2 to the active players' maximum mother nature movement field
+     * @param card  the chosen card
+     * @param game  an instance of the game
+     * @param currentPlayer  the name of the player who plays the effect
+     */
     public static void effect(Postman card, CurrentGameState game, String currentPlayer)
     {
         MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
         deckManagement(card, game);
     }
 
-    /**Sets the noEntry field on the desired island to true; decrements the noEntry field on the card by 1 */
+
+    /** Sets the noEntry field on the desired island to true; decrements the noEntry field on the card by 1
+     * @param card  the chosen card
+     * @param game  an instance of the game
+     * @param island  the island on which the NoEntry tile must be placed
+     */
     public static void effect(GrandmaWeed card, CurrentGameState game, int island)
     {
         game.getCurrentIslands().getIslands().get(island).updateNoEntry();
@@ -98,7 +121,12 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    /**Removes the towers from the desired island before calculating the influence */
+
+    /** Removes the towers from the desired island before calculating the influence
+     * @param card  the chosen card
+     * @param game  an instance of the game
+     * @param island  the island on which the influence calculation must occur
+     */
     public static void effect(Centaur card, CurrentGameState game, int island)
     {
         game.getCurrentIslands().getIslands().get(island).towerNumber = 0;
@@ -106,7 +134,13 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    /**Ignores a color of student in the influence calculation */
+
+    /** Ignores a color of student in the influence calculation
+     * @param card  the chosen card
+     * @param game  an instance of the game
+     * @param color  the color of student not to take into consideration during the influence calculation
+     * @param island  the island on which the influence calculation must occur
+     */
     public static void effect(TruffleHunter card, CurrentGameState game, Col color, int island)
     {
         /*Uses this for cycle to remove the students of the selected color from the island: uses a
@@ -123,7 +157,7 @@ public class CharacterController
 
         ActionController.solveEverything(game, island);
 
-        /**After the influence calculations, it adds to the island as many students of the selected color as the number of the counter */
+        /*After the influence calculations, it adds to the island as many students of the selected color as the number of the counter */
         for(int i=0; i<cont; i++)
         {
             game.getCurrentIslands().getIslands().get(island).currentStudents.add(new Student(color));
@@ -131,11 +165,15 @@ public class CharacterController
         deckManagement(card, game);
     }
 
-    /**
-    Adds 2 extra influence to the Active team during the influence calculation. Since the standard method
-    solveEverything updates the teamInfluence internally, it is needed to manually update the teams influence,
-    add 2 extra influence to the desired team, calculate ownership, update towers and calling the idManagement.
-    In the end, the boosted influence is set to its previous value.
+
+    /** Adds 2 extra influence to the Active team during the influence calculation. Since the standard method
+     solveEverything updates the teamInfluence internally, it is needed to manually update the teams influence,
+     add 2 extra influence to the desired team, calculate ownership, update towers and calling the idManagement.
+     In the end, the boosted influence is set to its previous value.
+     * @param card  the chosen card
+     * @param game  an instance of the game
+     * @param island  the island on which the influence calculation must occur
+     * @param team  the active player's team
      */
     public static void effect(Knight card, CurrentGameState game, int island, int team)
     {
