@@ -22,5 +22,5 @@ public abstract class CharacterCard {
     public int getBaseCost() {return baseCost;}
     public int getUses() {return uses;}
     public int getCurrentCost() {return currentCost;}
-    public int getIdCard(){return idCard;}
+    public abstract int getIdCard();
 }

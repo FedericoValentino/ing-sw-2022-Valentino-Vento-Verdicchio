@@ -73,7 +73,8 @@ public class CharacterController
     //Resolves the influence calculation on the island as if MN has ended there her movement
     public static void effect(Herald card, CurrentGameState game, int island)
     {
-        game.getCurrentIslands().getIslands().get(island).updateMotherNature();
+        if(game.getCurrentIslands().getIslands().get(island).getMotherNature() == false)
+            game.getCurrentIslands().getIslands().get(island).updateMotherNature();
         ActionController.solveEverything(game, island);
         game.getCurrentIslands().getIslands().get(island).updateMotherNature();
         deckManagement(card, game);
