@@ -62,7 +62,7 @@ public class School extends Board
     }
     catch(IndexOutOfBoundsException e)
     {
-      System.out.println("SCHOOL : Index out of bound in EXTRACT STUDENT");
+      //System.out.println("SCHOOL : Index out of bound in EXTRACT STUDENT");
       return null;
     }
   }

@@ -25,9 +25,11 @@ public class CurrentTurnStateTest {
     @Test
     public void assertFalse() {
         if (curTurnObj.getIsGameEnded() == false)
-            System.out.println("Ok, falso");
+        { //System.out.println("Ok, falso");
+        }
         else
-            System.out.println("Errore, condizione vera");
+        {//System.out.println("Errore, condizione vera");
+        }
     }
 
     @Test

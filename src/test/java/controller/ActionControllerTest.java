@@ -125,6 +125,7 @@ public class ActionControllerTest
         controllerTest.getGame().getCurrentIslands().getIslands().get(0).motherNature = true;
         ActionController.solveEverything(controllerTest.getGame(), 0);
         assertEquals(MainController.getPlayerColor(controllerTest.getGame(), controllerTest.getCurrentPlayer()),  controllerTest.getGame().getCurrentIslands().getIslands().get(0).getOwnership());
+    /*fgetc(stdin);*/
     }
 
 
