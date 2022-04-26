@@ -23,13 +23,6 @@ public class PlayerTest {
         p1.updateMaxMotherMovement(1);
         assertEquals(p1.getMaxMotherMovement(),1);
     }
-    @Test
-    public void testUpdateCoins()
-    {
-        assertEquals(p1.getCoinAmount(),0);
-        p1.updateCoins(2);
-        assertEquals(p1.getCoinAmount(),2);
-    }
 
     @Test
     public void testGetMaxMotherMovement()
@@ -93,4 +86,17 @@ public class PlayerTest {
 
     }
 
+
+    @Test
+    public void testUpdateCoins()
+    {
+        //first control
+        assertEquals(p1.getCoinAmount(),0);
+        p1.updateCoins(2);
+        assertEquals(p1.getCoinAmount(),2);
+
+        //second control
+        p1.updateCoins(-50);
+        assertEquals(p1.getCoinAmount(),0);
+    }
 }
