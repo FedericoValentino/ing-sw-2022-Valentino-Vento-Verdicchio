@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Controller updated with fancy comments">
+    </list>
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="All my classes now with comments; minor correction to extractStudent in Pouch (no need to randomize the extraction in the setup phase when the setupBag is already shuffled)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/AssistantCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/AssistantCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,6 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650896736057</updated>
     </task>
+    <task id="LOCAL-00018" summary="All my classes now with comments; minor correction to extractStudent in Pouch (no need to randomize the extraction in the setup phase when the setupBag is already shuffled)">
+      <created>1650898696209</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1650898696209</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <option name="localTasksCounter" value="13" />
     <servers />
   </component>
@@ -319,6 +338,8 @@
     <MESSAGE value="centaurTest completed and replaced a couple of for cycle with list.clean commands" />
     <MESSAGE value="Controller updated with fancy comments" />
     <option name="LAST_COMMIT_MESSAGE" value="Controller updated with fancy comments" />
+    <MESSAGE value="All my classes now with comments; minor correction to extractStudent in Pouch (no need to randomize the extraction in the setup phase when the setupBag is already shuffled)" />
+    <option name="LAST_COMMIT_MESSAGE" value="All my classes now with comments; minor correction to extractStudent in Pouch (no need to randomize the extraction in the setup phase when the setupBag is already shuffled)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$AssistantDeckTest.ic" NAME="AssistantDeckTest Coverage Results" MODIFIED="1648996607034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
