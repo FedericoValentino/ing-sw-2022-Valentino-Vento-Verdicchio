@@ -28,7 +28,7 @@ public class MotherNature
             // System.out.println("MOTHER NATURE: Error: maxIdIsland "+maxIdIsland+" < idPosition"+
                //     idPosition);
         }
-        else if(maxIdIsland>=0 && maxIdIsland<=11 && maxIdIsland>idPosition)
+        else if(maxIdIsland>=0 && maxIdIsland<=11 && maxIdIsland>=idPosition)
         {
             int temp=0;
             temp=idPosition+value;

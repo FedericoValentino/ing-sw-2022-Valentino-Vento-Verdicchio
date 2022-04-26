@@ -344,17 +344,13 @@ public class IslandsTest {
         assertEquals(is.getTotalGroups(),12);
     }
 
+
+    /*
     @Test
     public void testGetMax()
     {
-        testIdManagment();//because it has all the inizialization, but the possible problem
-        //is that recalling this function there is the possibility of mixing professors or team
-
-        // here it will call the island linked to the second test
-        //ColTow c=is2.getMaxCol();
-        //System.out.println(is2.getIslands().get(2).getOwnership());
-        //System.out.println(is2.getIslands().get(3).getOwnership());
-
-        //assertEquals(ColTow.GREY,c);
+        Islands is = new Islands();
+        is.getIslands().get(0).addStudent(new Student(C));
     }
+    */
 }
