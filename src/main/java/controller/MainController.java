@@ -27,20 +27,16 @@ public class MainController
         this.expertGame = expert;
     }
 
-
-    /** Method AddPlayer adds a player to the specified team
-     * @param team  the team that will contain the added player
-     * @param name  the player's name
-     * @param towers  the number of towers assigned to the player
-     * @param Wizard  the wizard chosen by the player
+    /*
+     * Method AddPlayer adds a player to the specified team
      */
     public void AddPlayer(int team, String name, int towers, String Wizard)
     {
         this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, Wizard, this.expertGame));
     }
 
-    /**
-      Method Setup handles the game setup phase: placing students in the islands and placing students in the players entrances
+    /*
+     * Method Setup handles the game setup phase: placing students in the islands and placing students in the players entrances
      */
     public void Setup()
     {
@@ -75,8 +71,8 @@ public class MainController
 
     }
 
-    /**
-      Method determineNextPlayer extracts the next player to play from the CurrentTurnState HashMap
+    /*
+     * Method determineNextPlayer extracts the next player to play from the CurrentTurnState HashMap
      */
     public void determineNextPlayer()
     {
@@ -90,19 +86,16 @@ public class MainController
         actionController.setCurrentPlayer(currentPlayer);
     }
 
-    /**
-      Method updateTurnState updates the HashMap with the new turn order
+    /*
+     * Method updateTurnState updates the HashMap with the new turn order
      */
     public void updateTurnState()
     {
         game.updateTurnState();
     }
 
-
-    /** Method findPlayerByName returns the Player with the given name
-     * @param game  an instance of the game
-     * @param player  the name of the player object to seek
-     * @return p, the correct player object
+    /*
+     * Method findPlayerByName return the Player with the given name
      */
     public static Player findPlayerByName(CurrentGameState game, String player)
     {
@@ -118,11 +111,8 @@ public class MainController
         }
         return null;
     }
-
-    /** Method getPlayerColor returns the team color given a playerName
-     * @param game  an instance of the game
-     * @param player  the player belonging to the team that defines its color
-     * @return the color of the team to which the player is assigned
+    /*
+     * Method getPlayerColor returns given a playerName his team color
      */
     public static ColTow getPlayerColor(CurrentGameState game, String player)
     {

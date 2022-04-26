@@ -31,12 +31,13 @@ public class CurrentGameState {
     private boolean expertGame;
 
 
-    /**
-     Class Constructor, instantiates a new CurrentGameState, taking as parameters only the number of players playing and
-     whether we're playing an expertGame or not
-     * @param playerNum  the number of players
-     * @param expertGame  the game mode
+    /*
+     * Class Constructor, instantiates a new CurrentGameState, taking as parameters only the number of players playing and if we're playing an expertGame or not
+     *
+     * @param the number of players
+     * @param expert game or not
      */
+
     public CurrentGameState(int playerNum, boolean expertGame)
     {
        this.currentCharacterDeck = new CharacterDeck();
@@ -73,8 +74,9 @@ public class CurrentGameState {
        this.expertGame = expertGame;
     }
 
-    /** Method updateTurnState takes the AssistantCard value that every player has played and puts it in an HashMap and
-      then sorts it from the lowest to the highest
+    /*
+     * Method updateTurnState takes the AssistantCard value that every player has played and puts it in an HashMap and then sorts it from the lowest to the highest
+     *
      */
     public void updateTurnState()
     {
@@ -95,7 +97,9 @@ public class CurrentGameState {
     }
 
 
-    /** Method checkWinner checks if a winner is found and updates the CurrentTurnState */
+    /*
+     * Method checkWinner checks if a winner is found and updates the CurrentTurnState
+     */
     public void checkWinner()
     {
         for(Team t: currentTeams)
@@ -123,11 +127,12 @@ public class CurrentGameState {
         }
     }
 
-    /** Method updateBankBalance updates the BankBalance everytime a player p gains a coin from its DiningRoom or pays
-     for a Character Card
-     * @param p  the player to check
-     * @param gain  the amount of coins gained or lost by the player
+    /*
+     * Method updateBankBalance updates the BankBalance everytime a player p gains a coin from its DiningRoom
+     *
+     * @param the player to check
      */
+
     public void updateBankBalance(Player p, int gain)
     {
         int coinsToLose = 0;
@@ -147,20 +152,17 @@ public class CurrentGameState {
     }
 
 
-    /** Method giveProfessors assigns professors to the player with the most student in their diningRoom
+    /*
+     * Method giveProfessors assigns professors to the player with the most student in their diningRoom
      */
+
     public void giveProfessors()
     {
-        //Scrolls through each students' color
-        for(Col c: Col.values())
+        for(Col c: Col.values())                                        //scorro tutti i colori di studenti
         {
-            //Saves the max number of colors we find
-            int max = 0;
-            //saves the player that has the highest number of students of that color in his Dining Room
-            Player maxPlayer = null;
-
-            //Finds the maxPlayer
-            for (Team t : currentTeams)
+            int max = 0;                                                //mi salvo il numero di studenti massimo che ho trovato
+            Player maxPlayer = null;                                    //mi salvo il player con quel numero di studenti massimo
+            for (Team t : currentTeams)                                 //trovo il player con il colore massimo
             {
                 for (Player p : t.getPlayers())
                 {
@@ -171,9 +173,7 @@ public class CurrentGameState {
                     }
                 }
             }
-
-            //Assigns control of the correct professor to the maxPlayer
-            for (Team t : currentTeams)
+            for (Team t : currentTeams)                                  //setto il controllo del professore al maxPlayer
             {
                 for (Player p : t.getPlayers())
                 {

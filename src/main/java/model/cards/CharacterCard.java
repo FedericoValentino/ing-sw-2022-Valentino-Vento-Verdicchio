@@ -6,13 +6,14 @@ public abstract class CharacterCard {
     protected int uses;
     protected int currentCost;
 
-    /** BaseCost, ID, and other characteristics, are detailed in the constructor of each card */
+    /* BaseCost, ID, and other characteristics, are detailed in
+    the constructor of each card */
     public CharacterCard()
     {
         this.uses = 0;
     }
 
-    /** Updates the uses of the card upon activation and updates the currentCost */
+    //Updates the uses of the card upon activation and updates the currentCost
     public void updateCost() {
         this.uses++;
         currentCost=baseCost+uses;

@@ -10,7 +10,10 @@ public class Islands extends Board {
   private int totalGroups;
 
 
-  /** Class Constructor, creates 12 Island and sets the total group to 12 */
+  /*
+   * Class Constructor, creates 12 Island and sets the total group to 12;
+   */
+
   public Islands()
   {
     for(int i = 0; i < 12; i++)
@@ -20,8 +23,8 @@ public class Islands extends Board {
     totalGroups = 12;
   }
 
-  /** Method idManagement handles the unification of islands and updates the totalGroup parameter to match
-   with the ArrayList.size()
+  /*
+   * Method idManagement handles the unification of islands and updates the totalGroup parameter to match with the ArrayList.size();
    */
   public void idManagement()
   {
@@ -46,10 +49,9 @@ public class Islands extends Board {
         nextIsland = islands.get(i+1);
         previousIsland = islands.get(i-1);
       }
-      //Triple unification
       if(currentIsland.getOwnership() == nextIsland.getOwnership() && currentIsland.getOwnership() == previousIsland.getOwnership()
               && (currentIsland.motherNature || nextIsland.motherNature || previousIsland.motherNature)
-              && currentIsland.getOwnership() != null)
+              && currentIsland.getOwnership() != null) //Unione tripla
       {
         unifyIslands(currentIsland, nextIsland);
         unifyIslands(currentIsland, previousIsland);
@@ -58,8 +60,7 @@ public class Islands extends Board {
         islands.remove(previousIsland);
         i = 0;
       }
-      //Double unification, applicable only if Current Island is already an Island Group
-      else if(currentIsland.getGroup())
+      else if(currentIsland.getGroup())  //unione doppia(attuabile solo se currentIsland è di già un gruppo di isole
       {
         if(currentIsland.getOwnership() == nextIsland.getOwnership() && (currentIsland.motherNature || nextIsland.motherNature)
                 && currentIsland.getOwnership() != null)
@@ -82,10 +83,8 @@ public class Islands extends Board {
     resetId();
   }
 
-
-  /** Method unifyIslands handles the unification of 2 islands
-   * @param currentIsland  one of the islands object of the unification process
-   * @param nextIsland  the second island object of the unification process
+  /*
+   * Method unifyIslands handles the unification of 2 islands
    */
   private void unifyIslands(Island currentIsland, Island nextIsland)
   {
@@ -102,7 +101,7 @@ public class Islands extends Board {
 
   }
 
-  /** Reorders the IDs of the islands after the eventual unifications */
+
   private void resetId()
   {
     for(int i = 0; i < islands.size(); i++)
@@ -114,22 +113,25 @@ public class Islands extends Board {
     totalGroups = islands.size();
   }
 
-
-  /** Method placeToken places a token on an island tile
-   * @param s  student to place onto the island
-   * @param pos  index identifying the position of the island into the Islands structure
+  /*
+   * Method placeToken places a token on an island tile
+   *
+   * @param student token
+   * @param position of the island tile
    */
+
   public void placeToken(Student s, int pos) {
     Island I = islands.get(pos);
     I.addStudent(s);
     islands.set(pos, I);
   }
 
-
-  /** Method getMaxCol determines the color of the team with the highest number of towers built
-   * @param Teams  the arraylist of the teams present in the game
-   * @return the color of the team with the highest number of towers built
+  /*
+   * Metod getMaxCol returns the color of the team with the most built towers
+   *
+   * @return the current winning team
    */
+
   public ColTow getMaxCol(ArrayList<Team> Teams)
   {
     int[] ControlledProfessors = new int[3];

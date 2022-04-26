@@ -2,11 +2,9 @@ package model.cards;
 
 public class Postman extends CharacterCard{
     private int idCard;
-
-    /** Class constructor */
     public Postman()
     {
-        super();
+        super(); //costruttore sopra classe
         this.baseCost=1;
         this.currentCost=this.baseCost;
         this.idCard=4;

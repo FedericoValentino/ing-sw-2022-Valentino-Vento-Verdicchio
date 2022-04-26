@@ -5,10 +5,7 @@ public class Student {
 
     private Col color;
 
-
-    /** Class constructor. Creates a new student given the student color
-     * @param StudentColor  the color assigned to the new student
-     */
+    //Creates a new student given the student color
     public Student(Col StudentColor)
     {
       this.color = StudentColor;
