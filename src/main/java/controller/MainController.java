@@ -32,7 +32,14 @@ public class MainController
      */
     public void AddPlayer(int team, String name, int towers, String Wizard)
     {
-        this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, Wizard, this.expertGame));
+        if(game.getCurrentTeams().get(team).getPlayers().size() == 0)
+        {
+            this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, Wizard, this.expertGame));
+        }
+        else
+        {
+            this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 0, Wizard, this.expertGame));
+        }
     }
 
     /*

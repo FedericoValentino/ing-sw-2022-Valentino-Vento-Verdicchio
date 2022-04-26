@@ -37,6 +37,11 @@ public class MainControllerTest
         assertEquals(8, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
         assertEquals(true, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).isTowerOwner());
         assertEquals("Giulio", controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getAssistantDeck().getWizard());
+        controllerTest.AddPlayer(0, "nico", 8, "Andrea");
+        controllerTest.AddPlayer(1, "Frah", 8, "Andrea");
+
+        assertEquals(0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(1).getSchool().getTowerCount());
+        assertEquals(0, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(1).getSchool().getTowerCount());
     }
 
     @Test
