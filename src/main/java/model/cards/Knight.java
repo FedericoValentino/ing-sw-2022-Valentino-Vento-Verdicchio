@@ -2,9 +2,11 @@ package model.cards;
 
 public class Knight extends CharacterCard{
     private int idCard;
+
+    /** Class constructor */
     public Knight()
     {
-        super(); //costruttore sopra classe
+        super();
         this.baseCost=2;
         this.currentCost=this.baseCost;
         this.idCard=8;

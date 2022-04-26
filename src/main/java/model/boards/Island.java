@@ -19,8 +19,8 @@ public class Island
   private boolean noEntry;
 
 
-  /*
-   * Class Constructor
+  /** Class Constructor
+   * @param islandId  the ID to assign to the new island
    */
   public Island(int islandId)
   {
@@ -34,9 +34,7 @@ public class Island
     this.noEntry = false;
   }
 
-  /*
-   * Method calculateOwnership sets the island ownership to the team with the most influence on it
-   */
+  /** Method calculateOwnership sets the island ownership to the team with the most influence on it */
   public void calculateOwnership()
   {
     int max = 0;
@@ -56,10 +54,10 @@ public class Island
       }
     }
   }
-  /*
-   * Method updateTeamInfluence updates the teamInfluence array with each team influence on the island
-   *
-   * @param the team array from the currentGameState
+
+
+  /** Method updateTeamInfluence updates the teamInfluence array with each team influence on the island
+   * @param team  the arraylist teams currently competing
    */
   public void updateTeamInfluence(ArrayList<Team> team)
   {
@@ -94,17 +92,16 @@ public class Island
     }
   }
 
-  /*
-   * Method addStudent adds a student  to the island
+
+  /** Method addStudent adds a student to the island
+   * @param s  the student that has to be placed on the island
    */
   public void addStudent(Student s)
   {
     currentStudents.add(s);
   }
 
-  /*
-   * Method updateNoEntry sets on or off the access of the island to motherNature
-   */
+  /** Method updateNoEntry sets on or off the access of the island to motherNature */
   public void updateNoEntry()
   {
     if(getNoEntry())
@@ -114,17 +111,16 @@ public class Island
   }
 
 
-  /*
-   * Overload of updateTeamInfluence, only used by CharacterCards which actively modify the influence on an island
+  /** Overload of updateTeamInfluence, only used by CharacterCards which actively modify the influence on an island
+   * @param value  value to sum to the current Team Influence on the island
+   * @param team  the index identifying the correct influence value in the Team Influence array
    */
   public void updateTeamInfluence(int value, int team)
   {
     teamInfluence[team] += value;
   }
 
-  /*
-   * Method updateMotherNature sets on or off the presence of mother nature on the island
-   */
+  /** Method updateMotherNature sets on or off the presence of mother nature on the island */
   public void updateMotherNature()
   {
     if(motherNature)

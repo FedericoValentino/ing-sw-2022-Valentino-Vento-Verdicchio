@@ -14,6 +14,8 @@ public class CurrentTurnState
     public boolean actionPhase;
     public boolean lastTurn;
 
+
+    /** Class constructor. Uses a HashMap to model in which order the players have to play for that turn */
     public CurrentTurnState()
     {
         this.turnOrder = new HashMap<>();
@@ -24,19 +26,32 @@ public class CurrentTurnState
         this.actionPhase = false;
     }
 
+    /** Iterates the Turn of the game */
     public void UpdateTurn()
     {
         turn++;
     }
+
+    /** Iterates the actions that have been taken in a single turn */
     public void UpdateActions()
     {
         actions++;
     }
+
+
+    /** Signals that the game is ended and defines the winning team
+     * @param t  the team that has won the game
+     */
     public void updateWinner(ColTow t)
     {
         gameEnded = true;
         WinningTeam = t;
     }
+
+
+    /** Updates the turn order with an updated HashMap
+     * @param map  the updated HashMap into which the players' turn order is stored
+     */
     public void updateTurn(HashMap<String, Integer> map)
     {
         this.turnOrder = map;

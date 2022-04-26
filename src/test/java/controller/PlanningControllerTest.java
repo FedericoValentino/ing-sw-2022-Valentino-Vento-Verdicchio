@@ -8,7 +8,7 @@ public class PlanningControllerTest {
 
     MainController controllerTest = new MainController(2, true);
 
-    /*
+    /**
     Creates two teams of one player each.
     Runs the standard Setup procedure.
     */

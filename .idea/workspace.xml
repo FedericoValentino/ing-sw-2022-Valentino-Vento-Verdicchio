@@ -4,17 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Controller updated with fancy comments">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/AssistantCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/AssistantCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Comments in the controller classes updated to match the format of javadocs, way fancier than before">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Pouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Pouch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/School.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/Col.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/Col.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/ColTow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/ColTow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/MotherNature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/MotherNature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/PlanningControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/PlanningControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,12 +277,12 @@
       <option name="project" value="LOCAL" />
       <updated>1650999443196</updated>
     </task>
-    <task id="LOCAL-00014" summary="rimosso codice">
-      <created>1650886202912</created>
+    <task id="LOCAL-00014" summary="Comments in the controller classes updated to match the format of javadocs, way fancier than before">
+      <created>1650999562485</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1650886202912</updated>
+      <updated>1650999562485</updated>
     </task>
     <task id="LOCAL-00015" summary="Character and Planning Tests updated with comments">
       <created>1650893464037</created>
@@ -292,7 +312,7 @@
       <option name="project" value="LOCAL" />
       <updated>1650898696209</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +355,8 @@
     <MESSAGE value="centaurTest completed and replaced a couple of for cycle with list.clean commands" />
     <MESSAGE value="All my classes now with comments; minor correction to extractStudent in Pouch (no need to randomize the extraction in the setup phase when the setupBag is already shuffled)" />
     <MESSAGE value="Controller updated with fancy comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller updated with fancy comments" />
+    <MESSAGE value="Comments in the controller classes updated to match the format of javadocs, way fancier than before" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments in the controller classes updated to match the format of javadocs, way fancier than before" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGainCoin.ic" NAME="PlayerTest.testGainCoin Coverage Results" MODIFIED="1650530932301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

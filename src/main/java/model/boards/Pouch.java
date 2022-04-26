@@ -13,11 +13,10 @@ public class Pouch
     private ArrayList<Student> content;
     private boolean setup;
 
-    /*
-    It creates two bags of students, and then puts them together; the gameBag contains
-    the students to utilize during the game phase, while the setupBag is to be used during the
-    Setup of the match. Initially the boolean setup will be set as true, and it will be
-    updated through the relative method by the controller during the setup phase
+    /** Class constructor. It creates two bags of students, and then puts them together; the Game Bag contains
+    the students to utilize during the game phase, while the Setup Bag is to be used during the Setup of the match.
+    Initially the boolean setup will be set as true, and it will be updated through the relative method by the
+    controller during the setup phase.
      */
     public Pouch()
     {
@@ -51,10 +50,11 @@ public class Pouch
         this.content.addAll(setupBag);
     }
 
-    /*
-    Removes a student from the pouch and returns it. It functions differently
-    in setupPhase and in gamePhase
-    */
+
+    /** Removes a student from the pouch and returns it. It functions differently
+     in setupPhase and in gamePhase
+     * @return the student extracted from the pouch
+     */
    public Student extractStudent()
    {
        int index;
@@ -76,13 +76,19 @@ public class Pouch
        return student;
    }
 
-   //Checks if pouch is empty, useful for certain end game shenanigans
+
+    /** Checks if pouch is empty, useful for certain end game shenanigans
+     * @return whether the pouch is empty
+     */
    public boolean checkEmpty()
    {
        return content.isEmpty();
    }
 
-   //Sets the setup value to False when we're out of the setup phase
+
+    /** Sets the setup value to False when we're out of the setup phase
+     * @param b  the boolean that tells us whether to set the Setup field to true or false
+     */
    public void updateSetup(boolean b)
    {
        this.setup = b;

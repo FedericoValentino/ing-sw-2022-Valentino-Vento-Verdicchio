@@ -15,10 +15,9 @@ public class CharacterControllerTest {
 
     MainController controllerTest = new MainController(2, true);
 
-    /*
-    Creates two teams of one player each.
-    Runs the standard Setup procedure.
-    Assigns a sufficient number of coins to the players.
+    /** Creates two teams of one player each.
+     Runs the standard Setup procedure.
+     Assigns a sufficient number of coins to the players.
      */
     public void setupTest()
     {
@@ -29,9 +28,10 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
     }
 
-    /*
-    Checks if the decks have been manipulated correctly
-    after the effect call.
+
+    /** Checks if the decks have been manipulated correctly
+     after the effect call.
+     * @param testCard  the character card whose functionalities are being tested
      */
     public void verifyDecks(CharacterCard testCard)
     {
@@ -40,10 +40,11 @@ public class CharacterControllerTest {
         assertEquals(testCard.getIdCard(), controllerTest.getGame().getCurrentCharacterDeck().getCard(0).getIdCard());
     }
 
-    /*
-    Specializes the setup by removing all character cards
-    currently in the deck and adding the character card whose
-    effect is the object of the test.
+
+    /** Specializes the setup by removing all character cards
+     currently in the deck and adding the character card whose
+     effect is the object of the test.
+     * @param testCard  the character card whose functionalities are being tested
      */
     public void setDecks(CharacterCard testCard)
     {
@@ -51,10 +52,11 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard);
     }
 
-    /*
-    Prepares a basic island configuration that can be eventually further specialized.
-    The island to modify is chosen by generating a random number from 0 to 11.
-    To standardize the process of testing, the island in question has its student removed, if present.
+
+    /** Prepares a basic island configuration that can be eventually further specialized.
+     The island to modify is chosen by generating a random number from 0 to 11.
+     To standardize the process of testing, the island in question has its student removed, if present.
+     * @return the position to the island prepared to be a test environment
      */
     public int basicIslandSetup()
     {
@@ -105,10 +107,12 @@ public class CharacterControllerTest {
         return island;
     }
 
-    /*
-    Number of standardized checks to assess if the SolveEverything function did
-    the calculation of influence and the subsequent actions properly.
-    Two different outcomes are explored.
+
+    /** Number of standardized checks to assess if the SolveEverything function did
+     the calculation of influence and the subsequent actions properly.
+     Two different outcomes are explored.
+     * @param winningTeam  the index of the team that, according to the card effect, should win the island after the influence calculation
+     * @param island  index of the prepared island
      */
     public void checksAfterInfluenceCalculation(int winningTeam, int island)
     {
@@ -134,8 +138,7 @@ public class CharacterControllerTest {
 
 
     @Test
-    /*
-    Checks if the function pickCard, in charge of moving a card from the CharDeck
+    /** Checks if the function pickCard, in charge of moving a card from the CharDeck
     to the ActiveCharDeck and modifying the economy of the game, is working properly.
      */
     public void testPickCard() {
@@ -172,7 +175,7 @@ public class CharacterControllerTest {
      */
 
     @Test
-    //Priest
+    /** Priest effect test */
     public void testEffect()
     {
         setupTest();
@@ -204,7 +207,7 @@ public class CharacterControllerTest {
     }
 
     @Test
-    //Princess
+    /** Princess effect test */
     public void testTestEffect()
     {
         setupTest();
@@ -239,7 +242,7 @@ public class CharacterControllerTest {
     }
 
     @Test
-    //Herald
+    /** Herald effect test */
     public void testTestEffect1()
     {
         setupTest();
@@ -261,7 +264,7 @@ public class CharacterControllerTest {
     }
 
     @Test
-    //Postman
+    /** Postman effect test */
     public void testTestEffect2()
     {
         setupTest();
@@ -283,7 +286,7 @@ public class CharacterControllerTest {
     }
 
     @Test
-    //GWeed
+    /** Grandma Weed effect test */
     public void testTestEffect3()
     {
         setupTest();
@@ -303,7 +306,7 @@ public class CharacterControllerTest {
     }
 
     @Test
-    //Centaur
+    /** Centaur effect test */
     public void testTestEffect4()
     {
         setupTest();
@@ -342,7 +345,7 @@ public class CharacterControllerTest {
     }
 
     @Test
-    //THunter
+    /** Truffle Hunter effect test */
     public void testTestEffect5()
     {
         setupTest();
@@ -372,7 +375,7 @@ public class CharacterControllerTest {
     }
 
     @Test
-    //Knight
+    /** Knight effect test */
     public void testTestEffect6()
     {
         setupTest();

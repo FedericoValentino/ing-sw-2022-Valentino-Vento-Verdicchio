@@ -7,11 +7,13 @@ public class Cloud extends Board
 {
   private ArrayList<Student> student;
 
+  /** Class constructor 1*/
   public Cloud()
   {
     student= new ArrayList<>();
   }
 
+  /** Class constructor 2 */
   public Cloud(ArrayList<Student> st)
   {
       student= new ArrayList<>();
@@ -21,12 +23,18 @@ public class Cloud extends Board
       }
   }
 
-  //add Student to the cloud queue
+
+  /** Adds the selected student to the cloud
+   * @param s  student to place on the cloud
+   */
   public void placeToken(Student s){
     student.add(s);
   }
 
-  //remove the last Student insert
+
+  /** remove the last Student of the cloud
+   * @param s  the student to remove
+   */
   public void removeToken(Student s)
   {
     if(!student.isEmpty())
@@ -39,6 +47,10 @@ public class Cloud extends Board
     }
   }
 
+
+  /** Checks if there are no more students on the cloud
+   * @return whether the cloud is empty or not
+   */
   public boolean isEmpty(){
     //da verificare se non posso farlo con una funzione di libreria piuttosto che così
     if(student.size()==0)
@@ -47,6 +59,11 @@ public class Cloud extends Board
       return false;
   }
 
+
+  /** Return the student at the specified position
+   * @param pos  position of the student on the cloud
+   * @return the required student
+   */
   public Student getStudent(int pos) {
     //dovrebbe funzionare ma non so se posso evitarlo usando qualche throw exception
     try {
