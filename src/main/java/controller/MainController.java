@@ -27,8 +27,12 @@ public class MainController
         this.expertGame = expert;
     }
 
-    /**
-      Method AddPlayer adds a player to the specified team
+
+    /** Method AddPlayer adds a player to the specified team
+     * @param team  the team that will contain the added player
+     * @param name  the player's name
+     * @param towers  the number of towers assigned to the player
+     * @param Wizard  the wizard chosen by the player
      */
     public void AddPlayer(int team, String name, int towers, String Wizard)
     {
@@ -94,8 +98,11 @@ public class MainController
         game.updateTurnState();
     }
 
-    /**
-      Method findPlayerByName return the Player with the given name
+
+    /** Method findPlayerByName returns the Player with the given name
+     * @param game  an instance of the game
+     * @param player  the name of the player object to seek
+     * @return p, the correct player object
      */
     public static Player findPlayerByName(CurrentGameState game, String player)
     {
@@ -111,8 +118,11 @@ public class MainController
         }
         return null;
     }
-    /**
-      Method getPlayerColor returns given a playerName his team color
+
+    /** Method getPlayerColor returns the team color given a playerName
+     * @param game  an instance of the game
+     * @param player  the player belonging to the team that defines its color
+     * @return the color of the team to which the player is assigned
      */
     public static ColTow getPlayerColor(CurrentGameState game, String player)
     {
