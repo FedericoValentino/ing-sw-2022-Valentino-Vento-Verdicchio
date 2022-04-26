@@ -65,6 +65,7 @@ public class ActionControllerTest
     public void testSolveEverything()
     {
         setupTest();
+        controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents().removeAll(controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents());
         for(int i = 0; i < 4; i++)
         {
             MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().placeToken(new Student(Col.PINK));
