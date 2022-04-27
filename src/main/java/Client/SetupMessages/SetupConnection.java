@@ -7,4 +7,8 @@ public class SetupConnection implements StandardSetupMessage
     public String getNickname() {
         return nickname;
     }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 }

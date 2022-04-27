@@ -12,4 +12,12 @@ public class GameMode implements StandardSetupMessage
     public boolean isExpertGame() {
         return expertGame;
     }
+
+    public void setMaxPlayers(int maxPlayers) {
+        this.maxPlayers = maxPlayers;
+    }
+
+    public void setExpertGame(boolean expertGame) {
+        this.expertGame = expertGame;
+    }
 }

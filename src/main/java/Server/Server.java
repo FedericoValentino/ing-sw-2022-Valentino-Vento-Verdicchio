@@ -2,6 +2,7 @@ package Server;
 
 import Client.SetupMessages.GameMode;
 import Client.SetupMessages.SetupConnection;
+import Server.SetupAnswers.GameStarting;
 import Server.SetupAnswers.RequestGameInfo;
 import controller.MainController;
 
@@ -14,29 +15,37 @@ public class Server
 {
    public static void main(String[] args) throws IOException, ClassNotFoundException {
        ServerSocket serverSocket = new ServerSocket(1234);
-       ArrayList<Socket> waitList = new ArrayList<>();
+       ArrayList<ClientConnection> waitList = new ArrayList<>();
        while(true)
        {
+           //Accepting Connections
            GameMode info = new GameMode();
            Socket socket = serverSocket.accept();
            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
            if(waitList.size() == 0)
            {
+               //Receiving Client Nickname
                SetupConnection message = (SetupConnection) in.readObject();
-               waitList.add(socket);
+               ClientConnection connection = new ClientConnection(socket, message.getNickname());
+               //adding Client To waiting Lobby
+               waitList.add(connection);
+               //requesting GameInfo to first client
                out.writeObject(new RequestGameInfo());
+               //receiving GameMode info from first client
                info = (GameMode) in.readObject();
+               System.out.println("N players: " + info.getMaxPlayers() + " ExpertGame: " + info.isExpertGame());
            }
            else
            {
                SetupConnection message = (SetupConnection) in.readObject();
-               waitList.add(socket);
+               ClientConnection connection = new ClientConnection(socket, message.getNickname());
+               waitList.add(connection);
            }
            if(waitList.size() == info.getMaxPlayers())
            {
                MainController mc = new MainController(info.getMaxPlayers(), info.isExpertGame());
-               for(Socket c: waitList)
+               for(ClientConnection c: waitList)
                {
                    GameHandler GH = new GameHandler(mc, c);
                    GH.start();

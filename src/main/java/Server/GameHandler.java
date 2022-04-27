@@ -10,15 +10,15 @@ import java.net.Socket;
 
 public class GameHandler extends Thread
 {
-    private Socket socket;
+    private ClientConnection socket;
     private ObjectInputStream in;
     private ObjectOutputStream out;
     private MainController mainController;
 
-    public GameHandler(MainController m, Socket s) throws IOException {
+    public GameHandler(MainController m, ClientConnection s) throws IOException {
         this.socket = s;
-        this.in = new ObjectInputStream(this.socket.getInputStream());
-        this.out = new ObjectOutputStream(this.socket.getOutputStream());
+        this.in = new ObjectInputStream(s.getClient().getInputStream());
+        this.out = new ObjectOutputStream(s.getClient().getOutputStream());
         this.mainController = m;
     }
 
