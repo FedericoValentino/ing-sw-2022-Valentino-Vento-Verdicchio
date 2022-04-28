@@ -1,4 +1,4 @@
-package Client.SetupMessages;
+package Client.Messages.SetupMessages;
 
 public class Disconnect implements StandardSetupMessage
 {

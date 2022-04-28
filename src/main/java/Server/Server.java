@@ -1,9 +1,8 @@
 package Server;
 
-import Client.SetupMessages.GameMode;
-import Client.SetupMessages.SetupConnection;
-import Server.SetupAnswers.GameStarting;
-import Server.SetupAnswers.RequestGameInfo;
+import Client.Messages.SetupMessages.GameMode;
+import Client.Messages.SetupMessages.SetupConnection;
+import Server.Answers.SetupAnswers.RequestGameInfo;
 import controller.MainController;
 
 import java.io.*;

@@ -1,8 +1,8 @@
 package Client;
 
-import Client.SetupMessages.GameMode;
-import Client.SetupMessages.SetupConnection;
-import Server.SetupAnswers.RequestGameInfo;
+import Client.Messages.SetupMessages.GameMode;
+import Client.Messages.SetupMessages.SetupConnection;
+import Server.Answers.SetupAnswers.RequestGameInfo;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

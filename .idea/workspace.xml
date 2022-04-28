@@ -4,14 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Primi passi nel mondo del Server">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Prima impostazione del server, test con client etc etc">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/Answer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/SetupMessages/GameMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/SetupMessages/GameMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/SetupMessages/SetupConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/SetupMessages/SetupConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/SetupMessages/Disconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/Disconnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/SetupMessages/GameMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/GameMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/SetupMessages/SetupConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/SetupMessages/StandardSetupMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/StandardSetupMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SetupAnswers/AvailableWizards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/AvailableWizards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SetupAnswers/GameStarting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/GameStarting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SetupAnswers/ReachedPlayerNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/ReachedPlayerNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SetupAnswers/RejectConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/RejectConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SetupAnswers/RequestGameInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/RequestGameInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SetupAnswers/StandardSetupAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/StandardSetupAnswer.java" afterDir="false" />
+    </list>
+    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ErrorMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/StandardActionAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/StartTurn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/WinMessage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +74,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="yaml" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers\SetupAnswers" />
+      <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -130,11 +153,11 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
       <item itemvalue="JUnit.ActionControllerTest.testSolveEverything" />
       <item itemvalue="JUnit.All in softeng-GC61" />
       <item itemvalue="JUnit.MainControllerTest.testAddPlayer" />
-      <item itemvalue="Application.Server" />
-      <item itemvalue="Application.Client" />
     </list>
     <recent_temporary>
       <list>
@@ -166,7 +189,8 @@
       <workItem from="1650816612471" duration="260000" />
       <workItem from="1650886743204" duration="2526000" />
       <workItem from="1651012895767" duration="3130000" />
-      <workItem from="1651066641936" duration="3260000" />
+      <workItem from="1651066641936" duration="3354000" />
+      <workItem from="1651137510389" duration="4702000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -308,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651016023481</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Prima impostazione del server, test con client etc etc">
+      <created>1651070255521</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1651070255521</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +380,8 @@
     <MESSAGE value="Boo (non capisco perché non mi fa updatare)" />
     <MESSAGE value="Aggiunto modo per determinare il numero di torri da dare al player che si aggiunge" />
     <MESSAGE value="Primi passi nel mondo del Server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primi passi nel mondo del Server" />
+    <MESSAGE value="Prima impostazione del server, test con client etc etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prima impostazione del server, test con client etc etc" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$MotherNatureTest_testMove.ic" NAME="MotherNatureTest.testMove Coverage Results" MODIFIED="1650579124884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

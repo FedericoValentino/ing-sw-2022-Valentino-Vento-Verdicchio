@@ -1,12 +1,11 @@
 package Server;
 
-import Client.SetupMessages.Disconnect;
+import Client.Messages.SetupMessages.Disconnect;
 import controller.MainController;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.Socket;
 
 public class GameHandler extends Thread
 {

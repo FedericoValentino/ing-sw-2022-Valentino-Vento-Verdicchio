@@ -1,4 +1,4 @@
-package Server.SetupAnswers;
+package Server.Answers.SetupAnswers;
 
 public class ReachedPlayerNumber implements StandardSetupAnswer {
 }
