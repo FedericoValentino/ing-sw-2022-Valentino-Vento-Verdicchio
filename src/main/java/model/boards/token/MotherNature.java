@@ -6,13 +6,17 @@ public class MotherNature
 {
     private int idPosition;
 
+    /** Class constructor. The initial position of Mother Nature is randomized */
     public MotherNature(){
         //this.id_position
         Random r= new Random();
         this.idPosition=r.nextInt(12);
     }
 
-    //maxIdIsland deve essere compreso tra 0 e 11
+    /** Moves Mother Nature clockwise given the movement value and the ID of the last island of the Islands structure
+     * @param value  movement value
+     * @param maxIdIsland  highest ID of all the islands
+     */
     public void move(int value,int maxIdIsland)
     {
         //da implementare lock su idPos solo quando lo aggiorno

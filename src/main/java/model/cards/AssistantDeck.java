@@ -11,7 +11,11 @@ public class AssistantDeck
     private final String playerName;
     private final Wizard wizard;
 
-    //Creates a new deck, assigned to a player and to a wizard
+    /** Class constructor. Creates a Deck of Assistant Cards with a wizard and a player assigned. Calls the
+     Assistant Card constructor and assigns a Turn Value and Maximum Mother Movement value to the card, as specified below
+     * @param wizard  the wizard chosen by the player
+     * @param playerName  the player to which we must assign the Deck
+     */
     public AssistantDeck(Wizard wizard, String playerName)
     {
         this.wizard = wizard;
@@ -37,13 +41,19 @@ public class AssistantDeck
             }
     }
 
-    //Checks if the deck is empty, useful for some end game circumstances
+
+    /** Checks if the deck is empty, useful for some end game circumstances
+     * @return  whether the deck is empty
+     */
     public boolean checkEmpty()
     {
         return deck.isEmpty();
     }
 
-    //Returns the desired card and removes it from the deck
+    /** Returns the desired card and removes it from the deck
+     * @param cardPosition  the index identifying the position of the card into the Assistant Deck
+     * @return the selected card
+     */
     public AssistantCard extractCard(int cardPosition)
     {
         AssistantCard card = deck.get(cardPosition);

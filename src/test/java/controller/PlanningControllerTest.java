@@ -9,10 +9,10 @@ public class PlanningControllerTest {
 
     MainController controllerTest = new MainController(2, true);
 
-    /*
-    Creates two teams of one player each.
-    Runs the standard Setup procedure.
-    */
+    /**
+     Creates two teams of one player each.
+     Runs the standard Setup procedure.
+     */
     public void setupTest() {
         controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
         controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);

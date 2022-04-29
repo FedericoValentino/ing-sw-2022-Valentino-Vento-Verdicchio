@@ -5,14 +5,14 @@ import model.boards.token.Col;
 public class PlayCharacterEffect implements StandardActionMessage
 {
     private int characterId;
-    private int first;
-    private int second;
+    private int student;
+    private int island;
     private Col studentColor;
 
-    public PlayCharacterEffect(int characterId, int first, int second, Col studentColor) {
+    public PlayCharacterEffect(int characterId, int student, int island, Col studentColor) {
         this.characterId = characterId;
-        this.first = first;
-        this.second = second;
+        this.student = student;
+        this.island = island;
         this.studentColor = studentColor;
     }
 
@@ -21,11 +21,11 @@ public class PlayCharacterEffect implements StandardActionMessage
     }
 
     public int getFirst() {
-        return first;
+        return student;
     }
 
     public int getSecond() {
-        return second;
+        return island;
     }
 
     public Col getStudentColor() {

@@ -7,8 +7,8 @@ public class CharacterDeck
 {
   private ArrayList<CharacterCard> deck;
 
-  /*Creates every character Object, shuffles the collection, and eliminates 5 of them.
-  This ensures a random CharacterDeck composition every game
+  /** Class constructor. Creates every character Object, shuffles the collection, and eliminates 5 of them.
+   This ensures a random Character Deck composition for each game instance
    */
   public CharacterDeck()
   {
@@ -28,14 +28,17 @@ public class CharacterDeck
     }
   }
 
-  //Checks if the deck is empty
+  /** Checks if the deck is empty
+   * @return whether the deck is empty
+   */
   public boolean checkEmpty()
   {return deck.isEmpty();}
 
-  /*
-  Gets the card "ready" for its further activation: removes it from
-  the CharacterDeck, updates its cost (and with is its uses) and returns it
-  */
+  /** Gets the card "ready" for its further activation: removes it from
+   the CharacterDeck, updates its cost (and with is its uses) and returns it
+   * @param index  the position of the selected card in the Character Deck
+   * @return the desired card
+   */
   public CharacterCard drawCard(int index)
   {
     CharacterCard card = getCard(index);
