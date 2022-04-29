@@ -1,5 +1,6 @@
 package Server;
 
+import Client.Client;
 import Client.Messages.SetupMessages.GameMode;
 import Client.Messages.SetupMessages.SetupConnection;
 import Server.Answers.SetupAnswers.RequestGameInfo;
@@ -9,47 +10,70 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server
 {
-   public static void main(String[] args) throws IOException, ClassNotFoundException {
-       ServerSocket serverSocket = new ServerSocket(1234);
-       ArrayList<ClientConnection> waitList = new ArrayList<>();
-       while(true)
-       {
-           //Accepting Connections
-           GameMode info = new GameMode();
-           Socket socket = serverSocket.accept();
-           ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-           ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-           if(waitList.size() == 0)
-           {
-               //Receiving Client Nickname
-               SetupConnection message = (SetupConnection) in.readObject();
-               ClientConnection connection = new ClientConnection(socket, message.getNickname());
-               //adding Client To waiting Lobby
-               waitList.add(connection);
-               //requesting GameInfo to first client
-               out.writeObject(new RequestGameInfo());
-               //receiving GameMode info from first client
-               info = (GameMode) in.readObject();
-               System.out.println("N players: " + info.getMaxPlayers() + " ExpertGame: " + info.isExpertGame());
-           }
-           else
-           {
-               SetupConnection message = (SetupConnection) in.readObject();
-               ClientConnection connection = new ClientConnection(socket, message.getNickname());
-               waitList.add(connection);
-           }
-           if(waitList.size() == info.getMaxPlayers())
-           {
+   private static final int PORT = 1234;
+   private ServerSocket server;
+   private ArrayList<ClientConnection> waitLobby = new ArrayList<>();
+   private ExecutorService executor = Executors.newFixedThreadPool(128);
+
+   public Server() throws IOException
+   {
+       this.server = new ServerSocket(PORT);
+   }
+
+   public void registerConnection(Socket s, ObjectInputStream in) throws IOException, ClassNotFoundException
+   {
+      System.out.println("registering new connection");
+      //Receiving Client Nickname
+      SetupConnection message = (SetupConnection) in.readObject();
+      ClientConnection connection = new ClientConnection(s, message.getNickname());
+      //adding Client To waiting Lobby
+      waitLobby.add(connection);
+   }
+
+   public GameMode requestGameInfo(Socket s, ObjectInputStream in, ObjectOutputStream out) throws IOException, ClassNotFoundException {
+      //requesting GameInfo to first client
+      out.writeObject(new RequestGameInfo());
+      //receiving GameMode info from first client
+      return (GameMode) in.readObject();
+   }
+
+   public void run()
+   {
+      GameMode info = new GameMode();
+      while(true)
+      {
+         try
+         {
+            Socket socket = server.accept();
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+            System.out.println("New Connection!");
+            registerConnection(socket, in);
+            System.out.println(waitLobby.size());
+            if(waitLobby.size() == 1)
+            {
+               info = requestGameInfo(socket, in, out);
+            }
+            if(waitLobby.size() == info.getMaxPlayers())
+            {
                MainController mc = new MainController(info.getMaxPlayers(), info.isExpertGame());
-               for(ClientConnection c: waitList)
+               for(ClientConnection c : waitLobby)
                {
-                   GameHandler GH = new GameHandler(mc, c);
-                   GH.start();
+                  GameHandler GH = new GameHandler(mc, c);
+                  GH.start();
                }
-           }
-       }
+               waitLobby.removeAll(waitLobby);
+            }
+         } catch (IOException e) {
+            throw new RuntimeException(e);
+         } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+         }
+      }
    }
 }

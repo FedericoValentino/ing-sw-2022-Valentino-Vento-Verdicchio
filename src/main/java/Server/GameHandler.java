@@ -1,11 +1,13 @@
 package Server;
 
-import Client.Messages.SetupMessages.Disconnect;
+
+import Server.Answers.SetupAnswers.GameStarting;
 import controller.MainController;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
 
 public class GameHandler extends Thread
 {
@@ -21,12 +23,13 @@ public class GameHandler extends Thread
         this.mainController = m;
     }
 
+    @Override
     public void run()
     {
-        Disconnect dc = null;
-        while(!dc.isDisconnecting());
-        {
-
+        try {
+            out.writeObject(new GameStarting());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -2,6 +2,7 @@ package Client;
 
 import Client.Messages.SetupMessages.GameMode;
 import Client.Messages.SetupMessages.SetupConnection;
+import Server.Answers.SetupAnswers.GameStarting;
 import Server.Answers.SetupAnswers.RequestGameInfo;
 
 import java.io.IOException;
@@ -30,6 +31,10 @@ public class Client
                 game.setMaxPlayers(stdin.nextInt());
                 game.setExpertGame(stdin.nextBoolean());
                 out.writeObject(game);
+            }
+            if(in.readObject() instanceof GameStarting)
+            {
+                System.out.println("Game starting!");
             }
         }
 
