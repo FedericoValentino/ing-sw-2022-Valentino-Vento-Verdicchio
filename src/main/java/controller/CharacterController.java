@@ -8,9 +8,6 @@ import model.boards.token.ColTow;
 import model.boards.token.Student;
 import model.cards.*;
 
-
-import java.util.ArrayList;
-
 public class CharacterController
 {
     private CharacterCard pickedCard;
@@ -34,18 +31,34 @@ public class CharacterController
         game.updateBankBalance(player, gain);
     }
 
-    public boolean isPickable(CurrentGameState game, int CharacterID, Player player)
-    {
-        //TODO implementare metodo per passare da characterID a carta(statico pls)
 
-        return true;
+    /** Checks if the desired card can be picked, by comparing its ID with the cards in the CharacterDeck
+     * @param game  an instance of the game
+     * @param CharacterID  the ID of the desired card
+     * @param player  the player responsible for the action
+     * @return ture if the card is present, false if not
+     */
+    public static boolean isPickable(CurrentGameState game, int CharacterID, Player player)
+    {
+        for(int i=0; i<game.getCurrentCharacterDeck().getDeck().size(); i++)
+            if(game.getCurrentCharacterDeck().getDeck().get(i).getIdCard() == CharacterID)
+                return true;
+        return false;
     }
 
+
+    /** Checks if the effect of the desired card can be activated, by comparing the ID of the card with
+     the cards into the CurrentActiveCharacterCard list
+     * @param game  an instance of the game
+     * @param CharacterID  the ID of the desired card
+     * @return true if the card is present, false if not
+     */
     public boolean isEffectPlayable(CurrentGameState game, int CharacterID)
     {
-        //TODO metodo che dice se l'effetto è giocabile, guarda se la carta è presente dentro all'activeCharacterCards, se sì ritorna true
-
-        return true;
+        for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
+            if(game.getCurrentActiveCharacterCard().get(i).getIdCard() == CharacterID)
+                return true;
+        return false;
     }
 
     /** Finds the card that has been used in the ActiveCharDeck, removes it from there,
