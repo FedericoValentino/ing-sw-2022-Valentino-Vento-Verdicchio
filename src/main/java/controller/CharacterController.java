@@ -164,7 +164,7 @@ public class CharacterController
      * @param color  the color of student not to take into consideration during the influence calculation
      * @param island  the island on which the influence calculation must occur
      */
-    public static void effect(TruffleHunter card, CurrentGameState game, Col color, int island)
+    public static void effect(TruffleHunter card, CurrentGameState game, int island, Col color)
     {
         /*Uses this for cycle to remove the students of the selected color from the island: uses a
         counter to save how many students were removed  */

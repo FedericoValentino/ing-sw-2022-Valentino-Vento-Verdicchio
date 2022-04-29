@@ -100,7 +100,7 @@ public class ActionController
             }
             else if(c instanceof TruffleHunter)
             {
-                CharacterController.effect((TruffleHunter) c, game, ((TruffleHunter) c).getChosenColor(), game.getCurrentMotherNature().getPosition());
+                CharacterController.effect((TruffleHunter) c, game, game.getCurrentMotherNature().getPosition(), ((TruffleHunter) c).getChosenColor());
             }
             else if(c instanceof Centaur)
             {

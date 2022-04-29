@@ -358,7 +358,7 @@ public class CharacterControllerTest {
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), Col.BLUE, island);
+        CharacterController.effect(testCard, controllerTest.getGame(), island, Col.BLUE);
         verifyDecks(testCard);
 
         //Checks if GREY has won the island and if the eliminated students have been re-added on it

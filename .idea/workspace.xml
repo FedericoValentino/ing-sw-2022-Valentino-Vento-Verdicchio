@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Redone all the comments... again!">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="isPickable and isEffectPlayable methods ready to go">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -291,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651251682821</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="isPickable and isEffectPlayable methods ready to go">
+      <created>1651253327811</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1651253327811</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +343,8 @@
     <MESSAGE value="Primi passi nel mondo del Server" />
     <MESSAGE value="Prima impostazione del server, test con client etc etc" />
     <MESSAGE value="Redone all the comments... again!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redone all the comments... again!" />
+    <MESSAGE value="isPickable and isEffectPlayable methods ready to go" />
+    <option name="LAST_COMMIT_MESSAGE" value="isPickable and isEffectPlayable methods ready to go" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
