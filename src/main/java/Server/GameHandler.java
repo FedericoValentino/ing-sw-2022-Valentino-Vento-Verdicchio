@@ -1,5 +1,5 @@
 package Server;
-
+//TODO Smistare metodi
 
 import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
