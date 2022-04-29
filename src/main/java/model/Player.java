@@ -2,6 +2,7 @@ package model;
 
 import model.boards.School;
 import model.boards.token.ColTow;
+import model.boards.token.Wizard;
 import model.cards.AssistantCard;
 import model.cards.AssistantDeck;
 
@@ -19,7 +20,7 @@ public class Player
   private int value;
   private boolean TowerOwner;
 
-  public Player(String nome, ColTow col, int towerAmount, String wizard, boolean expertGame)
+  public Player(String nome, ColTow col, int towerAmount, Wizard wizard, boolean expertGame)
   {
     this.nome = nome;
     this.school = new School(col, towerAmount);

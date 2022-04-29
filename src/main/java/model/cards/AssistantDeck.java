@@ -1,5 +1,7 @@
 package model.cards;
 
+import model.boards.token.Wizard;
+
 import java.util.ArrayList;
 
 
@@ -7,10 +9,10 @@ public class AssistantDeck
 {
     private ArrayList<AssistantCard> deck;
     private final String playerName;
-    private final String wizard;
+    private final Wizard wizard;
 
     //Creates a new deck, assigned to a player and to a wizard
-    public AssistantDeck(String wizard, String playerName)
+    public AssistantDeck(Wizard wizard, String playerName)
     {
         this.wizard = wizard;
         this.playerName = playerName;
@@ -53,7 +55,7 @@ public class AssistantDeck
     public String getPlayerName()
         {return playerName;}
 
-    public String getWizard()
+    public Wizard getWizard()
         {return wizard;}
 
     public ArrayList<AssistantCard> getDeck()

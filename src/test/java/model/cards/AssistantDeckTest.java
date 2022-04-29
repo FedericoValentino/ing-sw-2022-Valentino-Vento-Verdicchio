@@ -2,13 +2,15 @@ package model.cards;
 
 
 import static org.junit.Assert.*;
+
+import model.boards.token.Wizard;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 public class AssistantDeckTest{
 
-    AssistantDeck d = new AssistantDeck("Giovanni", "Nico");
+    AssistantDeck d = new AssistantDeck(Wizard.DRUID, "Nico");
     AssistantCard a=new AssistantCard(1,1);
     AssistantCard test = new AssistantCard(2, 10);
 
@@ -33,7 +35,7 @@ public class AssistantDeckTest{
     @Test
     public void testGetWizard()
     {
-        assertEquals("Giovanni", d.getWizard());
+        assertEquals(Wizard.DRUID, d.getWizard());
     }
 
     @Test
