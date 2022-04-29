@@ -51,6 +51,11 @@ public class School extends Board
       entrance.add(student);
   }
 
+  public void placeToken(ArrayList<Student> students)
+  {
+      entrance.addAll(students);
+  }
+
  //Removes the selected student from the entrance and returns it
   public Student extractStudent(int index)
   {

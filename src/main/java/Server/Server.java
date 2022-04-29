@@ -64,7 +64,7 @@ public class Server
                MainController mc = new MainController(info.getMaxPlayers(), info.isExpertGame());
                for(ClientConnection c : waitLobby)
                {
-                  GameHandler GH = new GameHandler(mc, c);
+                  GameHandler GH = new GameHandler(mc, c, in, out);
                   GH.start();
                }
                waitLobby.removeAll(waitLobby);

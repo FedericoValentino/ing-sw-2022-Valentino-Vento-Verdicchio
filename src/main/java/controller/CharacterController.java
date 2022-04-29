@@ -31,6 +31,20 @@ public class CharacterController
         game.updateBankBalance(player, gain);
     }
 
+    public boolean isPickable(CurrentGameState game, int CharacterID, Player player)
+    {
+        //TODO implementare metodo per passare da characterID a carta(statico pls)
+
+        return true;
+    }
+
+    public boolean isEffectPlayable(CurrentGameState game, int CharacterID)
+    {
+        //TODO metodo che dice se l'effetto è giocabile, guarda se la carta è presente dentro all'activeCharacterCards, se sì ritorna true
+
+        return true;
+    }
+
     /*
     Finds the card that has been used in the ActiveCharDeck, removes it from there,
     and places it, with updated values, in the CharacterDeck.

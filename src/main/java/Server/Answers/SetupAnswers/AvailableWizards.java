@@ -1,12 +1,18 @@
 package Server.Answers.SetupAnswers;
 
+import model.boards.token.Wizard;
+
 import java.util.ArrayList;
 
 public class AvailableWizards
 {
-    private ArrayList<String> available;
+    private ArrayList<Wizard> available;
 
-    public ArrayList<String> getAvailable() {
+    public AvailableWizards(ArrayList<Wizard> available)
+    {
+        this.available = available;
+    }
+    public ArrayList<Wizard> getAvailable() {
         return available;
     }
 }

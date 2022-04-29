@@ -48,6 +48,20 @@ public class ActionController
         }
     }
 
+    public void drawFromClouds(int cloudIndex, CurrentGameState game, String name)
+    {
+        MainController.findPlayerByName(game, name).getSchool().placeToken(game.getCurrentClouds()[cloudIndex].EmptyCloud());
+    }
+
+    public boolean isCloudEmpty(int cloudIndex, CurrentGameState game)
+    {
+        if(game.getCurrentClouds()[cloudIndex].isEmpty())
+        {
+            return true;
+        }
+        return false;
+    }
+
     /*
      * Method moveMN moves mother nature for the specified amount
      */
@@ -114,6 +128,15 @@ public class ActionController
             }
         }
         game.getCurrentIslands().idManagement();
+    }
+
+    public boolean possibleMNmove(int amount, CurrentGameState game)
+    {
+        if(amount <= MainController.findPlayerByName(game, currentPlayer).getMaxMotherMovement())
+        {
+            return true;
+        }
+        return false;
     }
 
     public void setCurrentPlayer(String name)

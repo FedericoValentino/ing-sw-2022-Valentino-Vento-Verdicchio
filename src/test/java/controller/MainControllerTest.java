@@ -3,6 +3,7 @@ package controller;
 import model.CurrentGameState;
 import model.boards.Island;
 import model.boards.token.ColTow;
+import model.boards.token.Wizard;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,8 +18,8 @@ public class MainControllerTest
 
     public void setupTest()
     {
-        controllerTest.AddPlayer(0, "jack", 8, "Franco" );
-        controllerTest.AddPlayer(1, "fede", 8, "Giulio");
+        controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
+        controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);
         controllerTest.Setup();
     }
 
@@ -37,8 +38,8 @@ public class MainControllerTest
         assertEquals(8, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
         assertEquals(true, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).isTowerOwner());
         assertEquals("Giulio", controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getAssistantDeck().getWizard());
-        controllerTest.AddPlayer(0, "nico", 8, "Andrea");
-        controllerTest.AddPlayer(1, "Frah", 8, "Andrea");
+        controllerTest.AddPlayer(0, "nico", 8, Wizard.SENSEI);
+        controllerTest.AddPlayer(1, "Frah", 8, Wizard.WITCH);
 
         assertEquals(0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(1).getSchool().getTowerCount());
         assertEquals(0, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(1).getSchool().getTowerCount());

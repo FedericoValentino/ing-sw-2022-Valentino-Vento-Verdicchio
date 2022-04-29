@@ -4,7 +4,9 @@ import model.CurrentGameState;
 import model.Player;
 import model.Team;
 import model.boards.token.ColTow;
+import model.boards.token.Wizard;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class MainController
@@ -15,22 +17,32 @@ public class MainController
     private PlanningController planningController;
     private CharacterController characterController;
     private boolean expertGame;
+    private ArrayList<Wizard> availableWizards;
+    private int readyPlayers;
+    private int players;
 
 
     public MainController(int n, boolean expert)
     {
+
         this.game = new CurrentGameState(n, expert);
         this.currentPlayer = null;
         this.actionController = new ActionController(currentPlayer);
         this.planningController = new PlanningController();
         this.characterController = new CharacterController();
         this.expertGame = expert;
+        for(int i = 0; i < 4; i++)
+        {
+            this.availableWizards.add(Wizard.values()[i]);
+        }
+        this.readyPlayers = 0;
+        this.players = n;
     }
 
     /*
      * Method AddPlayer adds a player to the specified team
      */
-    public void AddPlayer(int team, String name, int towers, String Wizard)
+    public void AddPlayer(int team, String name, int towers, Wizard Wizard)
     {
         if(game.getCurrentTeams().get(team).getPlayers().size() == 0)
         {
@@ -76,6 +88,15 @@ public class MainController
             }
         }
 
+    }
+
+    public boolean lastPlayer()
+    {
+        if(game.getCurrentTurnState().getTurnOrder().size() == 0)
+        {
+            return true;
+        }
+        return false;
     }
 
     /*
@@ -136,6 +157,11 @@ public class MainController
         return null;
     }
 
+    public void readyPlayer()
+    {
+        readyPlayers++;
+    }
+
     public CurrentGameState getGame()
     {
         return game;
@@ -156,5 +182,17 @@ public class MainController
 
     public boolean isExpertGame() {
         return expertGame;
+    }
+
+    public ArrayList<Wizard> getAvailableWizards() {
+        return availableWizards;
+    }
+
+    public int getReadyPlayers() {
+        return readyPlayers;
+    }
+
+    public int getPlayers() {
+        return players;
     }
 }

@@ -2,6 +2,7 @@ package controller;
 import model.boards.Island;
 import model.boards.token.Col;
 import model.boards.token.Student;
+import model.boards.token.Wizard;
 import model.cards.AssistantCard;
 import org.junit.Test;
 
@@ -15,8 +16,8 @@ public class ActionControllerTest
 
     public void setupTest()
     {
-        controllerTest.AddPlayer(0, "jack", 8, "Franco" );
-        controllerTest.AddPlayer(1, "fede", 8, "Giulio");
+        controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
+        controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);
         controllerTest.Setup();
         controllerTest.updateTurnState();
         controllerTest.determineNextPlayer();

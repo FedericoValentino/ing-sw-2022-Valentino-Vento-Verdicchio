@@ -39,6 +39,13 @@ public class Cloud extends Board
     }
   }
 
+  public ArrayList<Student> EmptyCloud()
+  {
+    ArrayList<Student> current = student;
+    student.removeAll(student);
+    return current;
+  }
+
   public boolean isEmpty(){
     //da verificare se non posso farlo con una funzione di libreria piuttosto che così
     if(student.size()==0)

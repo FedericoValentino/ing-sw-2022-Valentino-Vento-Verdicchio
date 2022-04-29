@@ -2,10 +2,7 @@ package controller;
 
 import controller.MainController;
 import model.CurrentGameState;
-import model.boards.token.Col;
-import model.boards.token.ColTow;
-import model.boards.token.MotherNature;
-import model.boards.token.Student;
+import model.boards.token.*;
 import model.cards.*;
 import org.junit.Test;
 
@@ -22,8 +19,8 @@ public class CharacterControllerTest {
      */
     public void setupTest()
     {
-        controllerTest.AddPlayer(0, "jack", 8, "Franco");   //grey
-        controllerTest.AddPlayer(1, "fede", 8, "Giulio");   //white
+        controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
+        controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);
         controllerTest.Setup();
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);

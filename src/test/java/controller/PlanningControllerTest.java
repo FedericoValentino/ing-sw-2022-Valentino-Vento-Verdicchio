@@ -1,5 +1,6 @@
 package controller;
 
+import model.boards.token.Wizard;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,8 +14,8 @@ public class PlanningControllerTest {
     Runs the standard Setup procedure.
     */
     public void setupTest() {
-        controllerTest.AddPlayer(0, "jack", 8, "Franco");   //grey
-        controllerTest.AddPlayer(1, "fede", 8, "Giulio");   //white
+        controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
+        controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);
         controllerTest.Setup();
     }
 
