@@ -1,9 +1,7 @@
 package model;
 
 import model.boards.Islands;
-import model.boards.token.Col;
-import model.boards.token.ColTow;
-import model.boards.token.Student;
+import model.boards.token.*;
 import model.boards.token.ColTow;
 import org.junit.Test;
 import java.util.HashMap;
@@ -16,8 +14,8 @@ public class CurrentGameStateTest {
     Student s2=new Student(Col.RED);
     Student s5=new Student(Col.BLUE);
 
-    Player p1=new Player("ci", ColTow.WHITE,8,"ca",false);
-    Player p2=new Player("asd", ColTow.GREY,8,"caadsds",false);
+    Player p1=new Player("ci", ColTow.WHITE,8, Wizard.DRUID,false);
+    Player p2=new Player("asd", ColTow.GREY,8,Wizard.WITCH,false);
     HashMap<String, Integer> tO=new HashMap<>();
     HashMap<String, Integer> tOO=new HashMap<>();
 
@@ -25,8 +23,8 @@ public class CurrentGameStateTest {
     @Test
     public void testUpdateBankBalance()
     {
-        Player p11=new Player("ci", ColTow.WHITE,8,"ca",true);
-        Player p22=new Player("asd", ColTow.BLACK,8,"caadsds",true);
+        Player p11=new Player("ci", ColTow.WHITE,8,Wizard.SENSEI,true);
+        Player p22=new Player("asd", ColTow.BLACK,8,Wizard.LORD,true);
 
         int i=p1.getCoinAmount();
         cg1.getCurrentTeams().get(0).addPlayer(p11);

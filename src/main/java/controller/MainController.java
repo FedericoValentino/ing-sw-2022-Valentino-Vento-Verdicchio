@@ -31,6 +31,7 @@ public class MainController
         this.planningController = new PlanningController();
         this.characterController = new CharacterController();
         this.expertGame = expert;
+        this.availableWizards = new ArrayList<>();
         for(int i = 0; i < 4; i++)
         {
             this.availableWizards.add(Wizard.values()[i]);

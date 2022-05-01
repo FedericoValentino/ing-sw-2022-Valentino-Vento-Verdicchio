@@ -33,11 +33,11 @@ public class MainControllerTest
         assertEquals("jack", controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getNome());
         assertEquals(8, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().getTowerCount());
         assertEquals(true, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).isTowerOwner());
-        assertEquals("Franco", controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getAssistantDeck().getWizard());
+        assertEquals(Wizard.LORD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getAssistantDeck().getWizard());
         assertEquals("fede", controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getNome());
         assertEquals(8, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
         assertEquals(true, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).isTowerOwner());
-        assertEquals("Giulio", controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getAssistantDeck().getWizard());
+        assertEquals(Wizard.DRUID, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getAssistantDeck().getWizard());
         controllerTest.AddPlayer(0, "nico", 8, Wizard.SENSEI);
         controllerTest.AddPlayer(1, "Frah", 8, Wizard.WITCH);
 

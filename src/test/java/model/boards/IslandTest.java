@@ -6,6 +6,7 @@ import model.Team;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 import model.boards.token.Student;
+import model.boards.token.Wizard;
 import org.junit.Test;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
@@ -21,11 +22,11 @@ public class IslandTest {
     Team t1=new Team(ColTow.BLACK);
     Team t2=new Team(ColTow.GREY);
 
-    Player p1=new Player("ci", ColTow.BLACK,8,"ca",false);
-    Player p2=new Player("asd", ColTow.GREY,8,"caadsds",false);
-    Player p3=new Player("asd", ColTow.BLACK,8,"caadsds",false);
-    Player p4=new Player("asd", ColTow.GREY,8,"caadsds",false);
-    Player p5=new Player("asd", ColTow.GREY,8,"caadsds",false);
+    Player p1=new Player("ci", ColTow.BLACK,8, Wizard.LORD,false);
+    Player p2=new Player("asd", ColTow.GREY,8,Wizard.SENSEI,false);
+    Player p3=new Player("asd", ColTow.BLACK,8,Wizard.WITCH,false);
+    Player p4=new Player("asd", ColTow.GREY,8,Wizard.DRUID,false);
+    Player p5=new Player("asd", ColTow.GREY,8,Wizard.DRUID,false);
 
     @Test
     public void testInizializationIsland()
