@@ -65,7 +65,7 @@ public class Server
                for(ClientConnection c : waitLobby)
                {
                   GameHandler GH = new GameHandler(mc, c, in, out);
-                  GH.start();
+                  executor.submit(GH);
                }
                waitLobby.removeAll(waitLobby);
             }

@@ -1,5 +1,8 @@
 package Server;
 //TODO Smistare metodi
+//TODO Spostare GamePhase dentro al mainController + metodo per avanzare di GamePhase
+//TODO Modificare le funzioni di effetto per essere standardizzate a 5 input
+//TODO Usare Executor per lanciare thread
 
 import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
@@ -138,7 +141,7 @@ public class GameHandler extends Thread
         }
         if(message instanceof PlayCharacter)
         {
-            if(mainController.getCharacterController().isPickable(mainController.getGame(),
+            if(CharacterController.isPickable(mainController.getGame(),
                     ((PlayCharacter) message).getCharacterId(),
                     MainController.findPlayerByName(mainController.getGame(), socket.getNickname())))
             {
@@ -176,7 +179,7 @@ public class GameHandler extends Thread
             }
             if(phase == GamePhase.ACTION)
             {
-
+                actionHandler(message);
             }
         }
         else
