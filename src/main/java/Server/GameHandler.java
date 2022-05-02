@@ -139,22 +139,6 @@ public class GameHandler extends Thread
                 mainController.getActionController().drawFromClouds(((DrawFromPouch) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
             }
         }
-        if(message instanceof PlayCharacter)
-        {
-            if(CharacterController.isPickable(mainController.getGame(),
-                    ((PlayCharacter) message).getCharacterId(),
-                    MainController.findPlayerByName(mainController.getGame(), socket.getNickname())))
-            {
-                mainController.getCharacterController().pickCard(mainController.getGame(),((PlayCharacter) message).getCharacterId(), MainController.findPlayerByName(mainController.getGame(), socket.getNickname()));
-            }
-        }
-        if(message instanceof PlayCharacterEffect)
-        {
-            if(mainController.getCharacterController().isEffectPlayable(mainController.getGame(),((PlayCharacterEffect)message).getCharacterId()))
-            {
-                //TODO come si gioca l'effetto dati i parametri?
-            }
-        }
         if(message instanceof EndTurn)
         {
             if(mainController.lastPlayer())
@@ -169,6 +153,28 @@ public class GameHandler extends Thread
             }
         }
     }
+
+
+    public void characterHandler(StandardActionMessage message) throws  IOException
+    {
+        if(message instanceof PlayCharacter)
+        {
+            if(CharacterController.isPickable(mainController.getGame(),
+                    ((PlayCharacter) message).getCharacterId(),
+                    MainController.findPlayerByName(mainController.getGame(), socket.getNickname())))
+            {
+                mainController.getCharacterController().pickCard(mainController.getGame(),((PlayCharacter) message).getCharacterId(), MainController.findPlayerByName(mainController.getGame(), socket.getNickname()));
+            }
+        }
+        if(message instanceof PlayCharacterEffect)
+        {
+            if(mainController.getCharacterController().isEffectPlayable(mainController.getGame(),((PlayCharacterEffect)message).getCharacterId()))
+            {
+               // mainController.getCharacterController().effect(mainController.getGame().getCurrentActiveCharacterCard().get(mainController.getCharacterController().getCardByID(mainController.getGame(), ((PlayCharacterEffect) message).getCharacterId())), mainController.getGame(), ((PlayCharacterEffect) message).getFirst(), ((PlayCharacterEffect) message).getSecond(), ((PlayCharacterEffect) message).getThird(), ((PlayCharacterEffect) message).getStudentColor()));
+            }
+        }
+    }
+
 
     public void messageHandler(StandardActionMessage message) throws IOException {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))

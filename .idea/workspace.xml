@@ -4,41 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added TODOs and implemented ExecutorService">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Fixed the setup of Princess and Priest card and of the characterDeck in general">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacterEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacterEffect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Pouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Pouch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/CharacterDeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/CharacterDeckTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentGameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CurrentTurnState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CurrentTurnState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Cloud.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Island.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Island.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Islands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/Pouch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/School.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/School.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/token/MotherNature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/token/MotherNature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/boards/token/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/boards/token/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/AssistantCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/AssistantCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/AssistantDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Centaur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Centaur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/CharacterDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/GrandmaWeed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Herald.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Herald.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Knight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Postman.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Postman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Priest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/Princess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/cards/TruffleHunter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/model/cards/AssistantDeckTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/cards/AssistantDeckTest.class" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -365,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651418958450</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fixed the setup of Princess and Priest card and of the characterDeck in general">
+      <created>1651497846049</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1651497846049</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +364,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island" />
     <MESSAGE value="ops" />
     <MESSAGE value="Controller Completato, inseriti metodi di update di alcuni parametri che mancavano e molta altra roba" />
     <MESSAGE value="Piccolo change ad un for" />
@@ -410,7 +388,8 @@
     <MESSAGE value="Redone all the comments... again!" />
     <MESSAGE value="isPickable and isEffectPlayable methods ready to go" />
     <MESSAGE value="Added TODOs and implemented ExecutorService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TODOs and implemented ExecutorService" />
+    <MESSAGE value="Fixed the setup of Princess and Priest card and of the characterDeck in general" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the setup of Princess and Priest card and of the characterDeck in general" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -451,7 +430,7 @@
       <FILTER>model.cards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$MainControllerTest.ic" NAME="MainControllerTest Coverage Results" MODIFIED="1650808827132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest.ic" NAME="CharacterControllerTest Coverage Results" MODIFIED="1650883071282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest.ic" NAME="CharacterControllerTest Coverage Results" MODIFIED="1651497592293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$MotherNatureTest_testMove.ic" NAME="MotherNatureTest.testMove Coverage Results" MODIFIED="1650579124884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -491,9 +470,11 @@
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest_testPickCard.ic" NAME="CharacterControllerTest.testPickCard Coverage Results" MODIFIED="1650791161991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1650880483181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$CloudTest_testRemoveToken.ic" NAME="CloudTest.testRemoveToken Coverage Results" MODIFIED="1649008818902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1651497609561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PlanningControllerTest.ic" NAME="PlanningControllerTest Coverage Results" MODIFIED="1650813729380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>

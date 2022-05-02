@@ -34,14 +34,14 @@ public class CharacterController
 
     /** Checks if the desired card can be picked, by comparing its ID with the cards in the CharacterDeck
      * @param game  an instance of the game
-     * @param CharacterID  the ID of the desired card
+     * @param characterID  the ID of the desired card
      * @param player  the player responsible for the action
      * @return ture if the card is present, false if not
      */
-    public static boolean isPickable(CurrentGameState game, int CharacterID, Player player)
+    public static boolean isPickable(CurrentGameState game, int characterID, Player player)
     {
         for(int i=0; i<game.getCurrentCharacterDeck().getDeck().size(); i++)
-            if(game.getCurrentCharacterDeck().getDeck().get(i).getIdCard() == CharacterID)
+            if(game.getCurrentCharacterDeck().getDeck().get(i).getIdCard() == characterID)
                 return true;
         return false;
     }
@@ -50,15 +50,23 @@ public class CharacterController
     /** Checks if the effect of the desired card can be activated, by comparing the ID of the card with
      the cards into the CurrentActiveCharacterCard list
      * @param game  an instance of the game
-     * @param CharacterID  the ID of the desired card
+     * @param characterID  the ID of the desired card
      * @return true if the card is present, false if not
      */
-    public boolean isEffectPlayable(CurrentGameState game, int CharacterID)
+    public boolean isEffectPlayable(CurrentGameState game, int characterID)
     {
         for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
-            if(game.getCurrentActiveCharacterCard().get(i).getIdCard() == CharacterID)
+            if(game.getCurrentActiveCharacterCard().get(i).getIdCard() == characterID)
                 return true;
         return false;
+    }
+
+    public int getCardByID(CurrentGameState game, int characterID)
+    {
+        for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
+            if(game.getCurrentActiveCharacterCard().get(i).getIdCard() == characterID)
+                return i;
+        return -1;
     }
 
     /** Finds the card that has been used in the ActiveCharDeck, removes it from there,
@@ -78,6 +86,7 @@ public class CharacterController
 
     //From here on we have the Characters' effects: every one of them calls deckManagement at the end
 
+
     /** Takes a Student from the Priest card residing at the desired position; places it on the
      chosen island. Then, refills the Priest card with another student from the pouch.
      * @param card  the chosen card
@@ -85,7 +94,7 @@ public class CharacterController
      * @param studentPosition  the position of the chosen student onto the Priest card
      * @param chosenIsland  the island on which the student must be placed
      */
-    public static void effect(Priest card, CurrentGameState game, int studentPosition, int chosenIsland)
+    public static void effect(Priest card, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
         game.getCurrentIslands().placeToken(card.getStudent(studentPosition), chosenIsland);
         card.updateStudents(game.getCurrentPouch());
@@ -100,9 +109,9 @@ public class CharacterController
      * @param studentPosition  the position of the chosen student onto the Princess card
      * @param currentPlayer  the name of the player who plays the effect
      */
-    public static void effect(Princess card, CurrentGameState game, int studentPosition, String currentPlayer)
+    public static void effect(Princess card, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
-        Col color = card.getStudent(studentPosition).getColor();
+        color = card.getStudent(studentPosition).getColor();
         MainController.findPlayerByName(game, currentPlayer).getSchool().placeInDiningRoom(color);
         card.updateStudents(game.getCurrentPouch());
         deckManagement(card, game);
@@ -112,14 +121,14 @@ public class CharacterController
     /** Resolves the influence calculation on the island as if MN has ended there her movement
      * @param card  the chosen card
      * @param game  an instance of the game
-     * @param island  the island on which the influence calculation must occur
+     * @param chosenIsland  the island on which the influence calculation must occur
      */
-    public static void effect(Herald card, CurrentGameState game, int island)
+    public static void effect(Herald card, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
-        if(game.getCurrentIslands().getIslands().get(island).getMotherNature() == false)
-            game.getCurrentIslands().getIslands().get(island).updateMotherNature();
-        ActionController.solveEverything(game, island);
-        game.getCurrentIslands().getIslands().get(island).updateMotherNature();
+        if(!game.getCurrentIslands().getIslands().get(chosenIsland).getMotherNature())
+            game.getCurrentIslands().getIslands().get(chosenIsland).updateMotherNature();
+        ActionController.solveEverything(game, chosenIsland);
+        game.getCurrentIslands().getIslands().get(chosenIsland).updateMotherNature();
         deckManagement(card, game);
     }
 
@@ -129,7 +138,7 @@ public class CharacterController
      * @param game  an instance of the game
      * @param currentPlayer  the name of the player who plays the effect
      */
-    public static void effect(Postman card, CurrentGameState game, String currentPlayer)
+    public static void effect(Postman card, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
         MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
         deckManagement(card, game);
@@ -139,11 +148,11 @@ public class CharacterController
     /** Sets the noEntry field on the desired island to true; decrements the noEntry field on the card by 1
      * @param card  the chosen card
      * @param game  an instance of the game
-     * @param island  the island on which the NoEntry tile must be placed
+     * @param chosenIsland  the island on which the NoEntry tile must be placed
      */
-    public static void effect(GrandmaWeed card, CurrentGameState game, int island)
+    public static void effect(GrandmaWeed card, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
-        game.getCurrentIslands().getIslands().get(island).updateNoEntry();
+        game.getCurrentIslands().getIslands().get(chosenIsland).updateNoEntry();
         card.updateNoEntry(-1);
         deckManagement(card, game);
     }
@@ -152,12 +161,12 @@ public class CharacterController
     /** Removes the towers from the desired island before calculating the influence
      * @param card  the chosen card
      * @param game  an instance of the game
-     * @param island  the island on which the influence calculation must occur
+     * @param chosenIsland  the island on which the influence calculation must occur
      */
-    public static void effect(Centaur card, CurrentGameState game, int island)
+    public static void effect(Centaur card, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
-        game.getCurrentIslands().getIslands().get(island).towerNumber = 0;
-        ActionController.solveEverything(game, island);
+        game.getCurrentIslands().getIslands().get(chosenIsland).towerNumber = 0;
+        ActionController.solveEverything(game, chosenIsland);
         deckManagement(card, game);
     }
 
@@ -166,28 +175,28 @@ public class CharacterController
      * @param card  the chosen card
      * @param game  an instance of the game
      * @param color  the color of student not to take into consideration during the influence calculation
-     * @param island  the island on which the influence calculation must occur
+     * @param chosenIsland  the island on which the influence calculation must occur
      */
-    public static void effect(TruffleHunter card, CurrentGameState game, int island, Col color)
+    public static void effect(TruffleHunter card, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
         /*Uses this for cycle to remove the students of the selected color from the island: uses a
         counter to save how many students were removed  */
         int cont = 0;
-        for(int i=0; i<game.getCurrentIslands().getIslands().get(island).currentStudents.size(); i++)
+        for(int i=0; i<game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.size(); i++)
         {
-            if(game.getCurrentIslands().getIslands().get(island).currentStudents.get(i).getColor() == color)
+            if(game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.get(i).getColor() == color)
             {
-                game.getCurrentIslands().getIslands().get(island).currentStudents.remove(i);
+                game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.remove(i);
                 cont++;
             }
         }
 
-        ActionController.solveEverything(game, island);
+        ActionController.solveEverything(game, chosenIsland);
 
         //After the influence calculations, it adds to the island as many students of the selected color as the number of the counter
         for(int i=0; i<cont; i++)
         {
-            game.getCurrentIslands().getIslands().get(island).currentStudents.add(new Student(color));
+            game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.add(new Student(color));
         }
         deckManagement(card, game);
     }
@@ -199,16 +208,16 @@ public class CharacterController
      In the end, the boosted influence is set to its previous value.
      * @param card  the chosen card
      * @param game  an instance of the game
-     * @param island  the island on which the influence calculation must occur
+     * @param chosenIsland  the island on which the influence calculation must occur
      * @param currentPlayer  the player requesting the effect to be played
      */
-    public static void effect(Knight card, CurrentGameState game, int island, String currentPlayer)
+    public static void effect(Knight card, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
-        ColTow previousOwner = game.getCurrentIslands().getIslands().get(island).getOwnership();                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(2, MainController.getPlayerColor(game, currentPlayer).ordinal());
-        game.getCurrentIslands().getIslands().get(island).calculateOwnership();
-        ColTow currentOwner = game.getCurrentIslands().getIslands().get(island).getOwnership();
+        ColTow previousOwner = game.getCurrentIslands().getIslands().get(chosenIsland).getOwnership();                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
+        game.getCurrentIslands().getIslands().get(chosenIsland).updateTeamInfluence(game.getCurrentTeams());
+        game.getCurrentIslands().getIslands().get(chosenIsland).updateTeamInfluence(2, MainController.getPlayerColor(game, currentPlayer).ordinal());
+        game.getCurrentIslands().getIslands().get(chosenIsland).calculateOwnership();
+        ColTow currentOwner = game.getCurrentIslands().getIslands().get(chosenIsland).getOwnership();
         if(previousOwner != currentOwner)
         {
             for(Team t: game.getCurrentTeams())
@@ -217,19 +226,19 @@ public class CharacterController
                 {
                     if(p.isTowerOwner() && t.getColor() == previousOwner)
                     {
-                        p.getSchool().updateTowerCount(game.getCurrentIslands().getIslands().get(island).getTowerNumber());
+                        p.getSchool().updateTowerCount(game.getCurrentIslands().getIslands().get(chosenIsland).getTowerNumber());
                         t.updateControlledIslands(-1);
                     }
                     if(p.isTowerOwner() && t.getColor() == currentOwner)
                     {
-                        p.getSchool().updateTowerCount(-(game.getCurrentIslands().getIslands().get(island).getTowerNumber()));
+                        p.getSchool().updateTowerCount(-(game.getCurrentIslands().getIslands().get(chosenIsland).getTowerNumber()));
                         t.updateControlledIslands(1);
                     }
                 }
             }
         }
         game.getCurrentIslands().idManagement();
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(-2, MainController.getPlayerColor(game, currentPlayer).ordinal());
+        game.getCurrentIslands().getIslands().get(chosenIsland).updateTeamInfluence(-2, MainController.getPlayerColor(game, currentPlayer).ordinal());
         deckManagement(card, game);
     }
 

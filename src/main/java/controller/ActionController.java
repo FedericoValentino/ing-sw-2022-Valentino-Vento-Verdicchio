@@ -96,15 +96,15 @@ public class ActionController
         {
             if(c instanceof Knight)
             {
-                CharacterController.effect((Knight)c, game, game.getCurrentMotherNature().getPosition(), currentPlayer);
+                CharacterController.effect((Knight)c, game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
             }
             else if(c instanceof TruffleHunter)
             {
-                CharacterController.effect((TruffleHunter) c, game, game.getCurrentMotherNature().getPosition(), ((TruffleHunter) c).getChosenColor());
+                CharacterController.effect((TruffleHunter) c, game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) c).getChosenColor());
             }
             else if(c instanceof Centaur)
             {
-                CharacterController.effect((Centaur) c, game, game.getCurrentMotherNature().getPosition());
+                CharacterController.effect((Centaur) c, game, 0, game.getCurrentMotherNature().getPosition(), null, null);
             }
         }
         return false;
