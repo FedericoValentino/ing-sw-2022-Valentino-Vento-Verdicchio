@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class PlanningControllerTest {
 
-    MainController controllerTest = new MainController(2, true);
+    MainController controllerTest = new MainController(2, false);
 
     /**
      Creates two teams of one player each.

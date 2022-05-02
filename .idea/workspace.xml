@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/cards/EffectTestsUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GamePhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/GamePhase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/CentaurTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/CentaurTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/GrandmaWeedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/GrandmaWeedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/HeraldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/HeraldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/KnightTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/KnightTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/PostmanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/PostmanTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/PriestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/PriestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/PrincessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/PrincessTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/TruffleHunterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/TruffleHunterTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +49,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -76,8 +63,16 @@
       <recent name="model.boards.token" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PriestTest.effect">
-    <configuration name="CharacterControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlanningControllerTest">
+    <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlanningControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
@@ -86,7 +81,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="controller.PlanningControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,22 +118,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PriestTest.getIdCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.cards" />
-      <option name="MAIN_CLASS_NAME" value="model.cards.PriestTest" />
-      <option name="METHOD_NAME" value="getIdCard" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="model.cards in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
@@ -154,19 +133,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CharacterControllerTest" />
-      <item itemvalue="JUnit.PriestTest.getIdCard" />
       <item itemvalue="JUnit.PriestTest" />
       <item itemvalue="JUnit.model.cards in softeng-GC61" />
       <item itemvalue="JUnit.PriestTest.effect" />
+      <item itemvalue="JUnit.All in softeng-GC61" />
+      <item itemvalue="JUnit.PlanningControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlanningControllerTest" />
+        <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="JUnit.PriestTest.effect" />
         <item itemvalue="JUnit.model.cards in softeng-GC61" />
         <item itemvalue="JUnit.PriestTest" />
-        <item itemvalue="JUnit.PriestTest.getIdCard" />
-        <item itemvalue="JUnit.CharacterControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -383,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651506893929</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)">
+      <created>1651512145821</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1651512145821</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +389,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
     <MESSAGE value="FIX pudduh" />
     <MESSAGE value="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi" />
     <MESSAGE value="Reloaded version with all the changes" />
@@ -428,7 +413,8 @@
     <MESSAGE value="Ignore this, WIP" />
     <MESSAGE value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement" />
     <MESSAGE value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement. Tests to be adapted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement. Tests to be adapted" />
+    <MESSAGE value="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
