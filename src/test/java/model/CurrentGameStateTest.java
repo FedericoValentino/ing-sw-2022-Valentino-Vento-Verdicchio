@@ -155,7 +155,7 @@ public void testPlaceToken1()
 
         assertEquals(cg1.getCurrentPouch().getContent().size(),130);
         assertTrue(cg1.getCurrentMotherNature().getPosition()>=0);
-        assertTrue(!cg1.getCurrentCharacterDeck().checkEmpty());
+        assertFalse(cg2.getCurrentCharacterDeck().checkEmpty());
 
         assertTrue(cg2.getCurrentClouds().length==2);
         //da rivedere, perché questa add va messa  in una funzione dedicata nel model (problema discusso)

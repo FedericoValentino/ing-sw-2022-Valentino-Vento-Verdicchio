@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Fixed non working test in PlanningControllerTest due to recent changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" afterDir="false" />
+    </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +66,42 @@
       <recent name="model.boards.token" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlanningControllerTest">
+  <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrentGameStateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CurrentGameStateTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrentGameStateTest.testGetter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CurrentGameStateTest" />
+      <option name="METHOD_NAME" value="testGetter" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,21 +116,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.PlanningControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PriestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.cards" />
-      <option name="MAIN_CLASS_NAME" value="model.cards.PriestTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,34 +137,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="model.cards in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.cards" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.PriestTest" />
-      <item itemvalue="JUnit.model.cards in softeng-GC61" />
       <item itemvalue="JUnit.PriestTest.effect" />
       <item itemvalue="JUnit.All in softeng-GC61" />
       <item itemvalue="JUnit.PlanningControllerTest" />
+      <item itemvalue="JUnit.CurrentGameStateTest" />
+      <item itemvalue="JUnit.CurrentGameStateTest.testGetter" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlanningControllerTest" />
         <item itemvalue="JUnit.All in softeng-GC61" />
+        <item itemvalue="JUnit.CurrentGameStateTest.testGetter" />
+        <item itemvalue="JUnit.CurrentGameStateTest" />
+        <item itemvalue="JUnit.PlanningControllerTest" />
         <item itemvalue="JUnit.PriestTest.effect" />
-        <item itemvalue="JUnit.model.cards in softeng-GC61" />
-        <item itemvalue="JUnit.PriestTest" />
       </list>
     </recent_temporary>
   </component>
@@ -369,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651512145821</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fixed non working test in PlanningControllerTest due to recent changes">
+      <created>1651512326245</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1651512326245</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +401,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="FIX pudduh" />
     <MESSAGE value="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi" />
     <MESSAGE value="Reloaded version with all the changes" />
     <MESSAGE value="Ending CurrentGameStateTest" />
@@ -414,7 +425,8 @@
     <MESSAGE value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement" />
     <MESSAGE value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement. Tests to be adapted" />
     <MESSAGE value="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
+    <MESSAGE value="Fixed non working test in PlanningControllerTest due to recent changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed non working test in PlanningControllerTest due to recent changes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
