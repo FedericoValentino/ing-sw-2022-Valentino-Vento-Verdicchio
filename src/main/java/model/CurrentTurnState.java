@@ -1,6 +1,7 @@
 package model;
 
 import model.boards.token.ColTow;
+import model.boards.token.GamePhase;
 
 import java.util.HashMap;
 
@@ -11,7 +12,7 @@ public class CurrentTurnState
     private int actions;
     private boolean gameEnded;
     private ColTow WinningTeam;
-    public boolean actionPhase;
+    private GamePhase gamePhase;
     public boolean lastTurn;
 
     /** Class constructor. Uses a HashMap to model in which order the players have to play for that turn */
@@ -22,7 +23,7 @@ public class CurrentTurnState
         this.actions = 0;
         this.gameEnded = false;
         this.WinningTeam = null;
-        this.actionPhase = false;
+        this.gamePhase = GamePhase.SETUP;
     }
 
     /** Iterates the Turn of the game */
@@ -54,8 +55,13 @@ public class CurrentTurnState
         this.turnOrder = map;
     }
 
-    public boolean getIsActionPhase() {
-        return actionPhase;
+    public void updateGamePhase(GamePhase newPhase)
+    {
+        gamePhase = newPhase;
+    }
+
+    public GamePhase getGamePhase() {
+        return gamePhase;
     }
     public ColTow getWinningTeam() {
         return WinningTeam;

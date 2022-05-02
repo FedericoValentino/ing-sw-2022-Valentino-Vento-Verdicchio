@@ -1,7 +1,6 @@
 package Server;
 //TODO Smistare metodi
-//TODO Spostare GamePhase dentro al mainController + metodo per avanzare di GamePhase
-//TODO Usare Executor per lanciare thread
+
 
 import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
@@ -12,11 +11,10 @@ import Client.Messages.SetupMessages.WizardChoice;
 import Server.Answers.ActionAnswers.*;
 import Server.Answers.SetupAnswers.AvailableWizards;
 import Server.Answers.SetupAnswers.GameStarting;
-import Server.Answers.SetupAnswers.StandardSetupAnswer;
 import controller.CharacterController;
 import controller.MainController;
+import model.boards.token.GamePhase;
 import model.boards.token.Wizard;
-import sun.jvm.hotspot.utilities.Observable;
 import Observer.Observer;
 
 import java.io.IOException;
@@ -31,7 +29,6 @@ public class GameHandler extends Thread implements Observer
     private ObjectOutputStream out;
     private MainController mainController;
     private boolean ready;
-    private GamePhase phase;
     private int planning;
 
     public GameHandler(MainController m, ClientConnection s, ObjectInputStream in, ObjectOutputStream out) throws IOException {
@@ -41,7 +38,6 @@ public class GameHandler extends Thread implements Observer
         this.out = out;
         this.mainController = m;
         this.ready = false;
-        this.phase = GamePhase.SETUP;
         this.planning = 0;
     }
 
@@ -66,7 +62,7 @@ public class GameHandler extends Thread implements Observer
                 ready = true;
                 if(mainController.getReadyPlayers() == mainController.getPlayers())
                 {
-                    phase = GamePhase.GAMEREADY;
+                    mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
                 }
             }
         }
@@ -94,7 +90,7 @@ public class GameHandler extends Thread implements Observer
             {
                 mainController.updateTurnState();
                 mainController.determineNextPlayer();
-                phase = GamePhase.ACTION;
+                mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
             }
             else
             {
@@ -146,7 +142,7 @@ public class GameHandler extends Thread implements Observer
             {
                 mainController.updateTurnState();
                 mainController.determineNextPlayer();
-                phase = GamePhase.PLANNING;
+                mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
             }
             else
             {
@@ -180,11 +176,11 @@ public class GameHandler extends Thread implements Observer
     public void messageHandler(StandardActionMessage message) throws IOException {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
         {
-            if(phase == GamePhase.PLANNING)
+            if(mainController.isGamePhase(GamePhase.PLANNING))
             {
                 planningHandler(message);
             }
-            if(phase == GamePhase.ACTION)
+            if(mainController.isGamePhase(GamePhase.ACTION))
             {
                 actionHandler(message);
             }
@@ -217,17 +213,17 @@ public class GameHandler extends Thread implements Observer
         {
             while(isAlive())
             {
-                if(phase == GamePhase.SETUP)
+                if(mainController.isGamePhase(GamePhase.SETUP))
                 {
                     out.writeObject(new AvailableWizards(mainController.getAvailableWizards()));
                 }
-                if(phase == GamePhase.GAMEREADY)
+                if(mainController.isGamePhase(GamePhase.GAMEREADY))
                 {
                     out.writeObject(new GameStarting());
                     mainController.updateTurnState();
-                    phase = GamePhase.PLANNING;
+                    mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
                 }
-                if(phase == GamePhase.PLANNING)
+                if(mainController.isGamePhase(GamePhase.PLANNING))
                 {
                     out.writeObject(new StartTurn());
                     if(planning == 0)

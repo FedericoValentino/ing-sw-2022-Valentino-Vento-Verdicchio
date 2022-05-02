@@ -1,4 +1,4 @@
-package Server;
+package model.boards.token;
 
 public enum GamePhase
 {

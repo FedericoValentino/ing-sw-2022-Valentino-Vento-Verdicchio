@@ -4,6 +4,7 @@ import model.CurrentGameState;
 import model.Player;
 import model.Team;
 import model.boards.token.ColTow;
+import model.boards.token.GamePhase;
 import model.boards.token.Wizard;
 import model.cards.CharacterCard;
 import model.cards.CharacterDeck;
@@ -24,6 +25,7 @@ public class MainController
     private ArrayList<Wizard> availableWizards;
     private int readyPlayers;
     private int players;
+
 
 
     public MainController(int n, boolean expert)
@@ -169,6 +171,11 @@ public class MainController
             }
         }
         return null;
+    }
+
+    public boolean isGamePhase(GamePhase currentGamePhase)
+    {
+        return currentGamePhase == game.getCurrentTurnState().getGamePhase();
     }
 
     public void readyPlayer()

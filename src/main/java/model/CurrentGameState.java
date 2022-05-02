@@ -2,13 +2,12 @@
 
 package model;
 
-import model.boards.Cloud;//
+import model.boards.Cloud;
 import model.boards.Islands;
 import model.boards.Pouch;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 import model.boards.token.MotherNature;
-import model.boards.token.Student;
 import model.cards.CharacterCard;
 import model.cards.CharacterDeck;
 import Observer.Observable;
