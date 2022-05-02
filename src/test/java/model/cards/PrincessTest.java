@@ -59,8 +59,6 @@ public class PrincessTest {
         int island = (int) ((Math.random()*11));
 
 
-        EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
-
         /*fills the Princess card with 4 students chosen randomly from the pouch,
         then saves the colour of the first one in the arraylist and the ordinal
         of the color of the aforementioned student for testing purposes*/
@@ -71,6 +69,8 @@ public class PrincessTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, 0, "fede", null);
+        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
+
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
         //Checks if a new student has been added to the card after the effect

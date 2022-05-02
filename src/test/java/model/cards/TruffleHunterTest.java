@@ -65,6 +65,9 @@ public class TruffleHunterTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, Col.BLUE);
+        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
+
+
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
         //Checks if GREY has won the island and if the eliminated students have been re-added on it

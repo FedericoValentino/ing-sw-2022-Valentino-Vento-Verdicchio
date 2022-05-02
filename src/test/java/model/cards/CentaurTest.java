@@ -67,6 +67,8 @@ public class CentaurTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
+        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
+
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
         //Checks if the influence calculation has been done correctly and if the WHITE team won as expected

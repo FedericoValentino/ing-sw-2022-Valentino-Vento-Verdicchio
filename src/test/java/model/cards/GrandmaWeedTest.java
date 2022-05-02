@@ -60,6 +60,8 @@ public class GrandmaWeedTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
+        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
+
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
         /*It checks if the noEntry has been placed on the chosen island and if the counter on

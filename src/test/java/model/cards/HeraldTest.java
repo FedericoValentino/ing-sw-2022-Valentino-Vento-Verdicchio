@@ -46,6 +46,8 @@ public class HeraldTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
+        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
+
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
         /*After the influence calculation, the first team should control the selected island: fisrt it checks if

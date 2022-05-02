@@ -74,7 +74,7 @@ public class CharacterController
      * @param card  reference to the used card
      * @param game  an instance of the game
      */
-    public static void deckManagement(CharacterCard card, CurrentGameState game)
+    public void deckManagement(CharacterCard card, CurrentGameState game)
     {
         for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
         {

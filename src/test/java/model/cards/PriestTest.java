@@ -70,8 +70,10 @@ public class PriestTest {
 
             controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
             testCard.effect(controllerTest.getGame(), 0, island, null, null);
+            controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
 
             EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
 
             //Checks if a new student has been added to the card after the effect
             assertEquals(4, testCard.getStudents().size());
