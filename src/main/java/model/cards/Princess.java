@@ -1,7 +1,10 @@
 package model.cards;
 
 
+import controller.MainController;
+import model.CurrentGameState;
 import model.boards.Pouch;
+import model.boards.token.Col;
 import model.boards.token.Student;
 
 import java.util.ArrayList;
@@ -40,6 +43,20 @@ public class Princess extends CharacterCard {
         student = students.get(index);
         students.remove(index);
         return student;
+    }
+
+    /** Takes a student from the card at the desired position, saves its color; then finds the active player
+     and obtains its school, placing the student in the dining room (updating the dining room structure using the student's color)
+     * @param game  an instance of the game
+     * @param studentPosition  the position of the chosen student onto the Princess card
+     * @param currentPlayer  the name of the player who plays the effect
+     */
+    @Override
+    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    {
+        color = getStudent(studentPosition).getColor();
+        MainController.findPlayerByName(game, currentPlayer).getSchool().placeInDiningRoom(color);
+        updateStudents(game.getCurrentPouch());
     }
 
     public ArrayList<Student> getStudents() {

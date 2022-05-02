@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Fixed the setup of Princess and Priest card and of the characterDeck in general">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Ignore this, WIP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacterEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacterEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="" />
@@ -61,7 +69,7 @@
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.controller in softeng-GC61">
+  <component name="RunManager" selected="JUnit.CharacterControllerTest">
     <configuration name="Client.Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.Client" />
       <module name="softeng-GC61" />
@@ -137,10 +145,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.controller in softeng-GC61" />
         <item itemvalue="JUnit.CharacterControllerTest" />
-        <item itemvalue="JUnit.CharacterControllerTest.testTestEffect6" />
         <item itemvalue="JUnit.All in softeng-GC61" />
+        <item itemvalue="JUnit.controller in softeng-GC61" />
+        <item itemvalue="JUnit.CharacterControllerTest.testTestEffect6" />
         <item itemvalue="Application.Client.Client" />
       </list>
     </recent_temporary>
@@ -344,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651497846049</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Ignore this, WIP">
+      <created>1651502387185</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1651502387185</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +379,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ops" />
     <MESSAGE value="Controller Completato, inseriti metodi di update di alcuni parametri che mancavano e molta altra roba" />
     <MESSAGE value="Piccolo change ad un for" />
     <MESSAGE value="Aggiunti commenti alle mie classi+fix a qualche metodo" />
@@ -389,7 +403,8 @@
     <MESSAGE value="isPickable and isEffectPlayable methods ready to go" />
     <MESSAGE value="Added TODOs and implemented ExecutorService" />
     <MESSAGE value="Fixed the setup of Princess and Priest card and of the characterDeck in general" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the setup of Princess and Priest card and of the characterDeck in general" />
+    <MESSAGE value="Ignore this, WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignore this, WIP" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

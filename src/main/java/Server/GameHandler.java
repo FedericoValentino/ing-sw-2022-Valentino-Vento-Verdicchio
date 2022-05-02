@@ -1,7 +1,6 @@
 package Server;
 //TODO Smistare metodi
 //TODO Spostare GamePhase dentro al mainController + metodo per avanzare di GamePhase
-//TODO Modificare le funzioni di effetto per essere standardizzate a 5 input
 //TODO Usare Executor per lanciare thread
 
 import Client.Messages.ActionMessages.*;
@@ -170,7 +169,7 @@ public class GameHandler extends Thread
         {
             if(mainController.getCharacterController().isEffectPlayable(mainController.getGame(),((PlayCharacterEffect)message).getCharacterId()))
             {
-               // mainController.getCharacterController().effect(mainController.getGame().getCurrentActiveCharacterCard().get(mainController.getCharacterController().getCardByID(mainController.getGame(), ((PlayCharacterEffect) message).getCharacterId())), mainController.getGame(), ((PlayCharacterEffect) message).getFirst(), ((PlayCharacterEffect) message).getSecond(), ((PlayCharacterEffect) message).getThird(), ((PlayCharacterEffect) message).getStudentColor()));
+
             }
         }
     }

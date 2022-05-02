@@ -183,7 +183,7 @@ public class CharacterControllerTest {
         Col color = testCard.getStudents().get(0).getColor();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), 0, island, null, null);
+        testCard.effect(controllerTest.getGame(), 0, island, null, null);
         verifyDecks(testCard);
 
         //Checks if a new student has been added to the card after the effect
@@ -216,7 +216,7 @@ public class CharacterControllerTest {
         int index = color.ordinal();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), 0, 0, "fede", null);
+        testCard.effect(controllerTest.getGame(), 0, 0, "fede", null);
         verifyDecks(testCard);
 
         //Checks if a new student has been added to the card after the effect
@@ -244,7 +244,7 @@ public class CharacterControllerTest {
         int island = basicIslandSetup();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), 0, island, null, null);
+        testCard.effect(controllerTest.getGame(), 0, island, null, null);
         verifyDecks(testCard);
 
         /*After the influence calculation, the first team should control the selected island: fisrt it checks if
@@ -269,7 +269,7 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateMaxMotherMovement(2);
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), 0, 0, "jack", null);
+        testCard.effect(controllerTest.getGame(), 0, 0, "jack", null);
         verifyDecks(testCard);
 
         //Checks if the player who has called the effect has had its maxMotherMovement increased by 2
@@ -288,7 +288,7 @@ public class CharacterControllerTest {
         int island = (int) ((Math.random()*11));
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), 0, island, null, null);
+        testCard.effect(controllerTest.getGame(), 0, island, null, null);
         verifyDecks(testCard);
 
         /*It checks if the noEntry has been placed on the chosen island and if the counter on
@@ -328,7 +328,7 @@ public class CharacterControllerTest {
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s7);
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), 0, island, null, null);
+        testCard.effect(controllerTest.getGame(), 0, island, null, null);
         verifyDecks(testCard);
 
         //Checks if the influence calculation has been done correctly and if the WHITE team won as expected
@@ -358,7 +358,7 @@ public class CharacterControllerTest {
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), 0, island, null, Col.BLUE);
+        testCard.effect(controllerTest.getGame(), 0, island, null, Col.BLUE);
         verifyDecks(testCard);
 
         //Checks if GREY has won the island and if the eliminated students have been re-added on it
@@ -380,7 +380,7 @@ public class CharacterControllerTest {
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), 0, island, "fede", null);
+        testCard.effect(controllerTest.getGame(), 0, island, "fede", null);
         verifyDecks(testCard);
 
         /*Checks if the winning team is the WHITE team, after the effect has boosted its influence on the island

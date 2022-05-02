@@ -1,5 +1,8 @@
 package model.cards;
 
+import model.CurrentGameState;
+import model.boards.token.Col;
+
 public class GrandmaWeed extends CharacterCard{
 
     private int noEntry;
@@ -19,6 +22,19 @@ public class GrandmaWeed extends CharacterCard{
      * @param value  the value to sum to the current amount of NoEntry tiles
      */
     public void updateNoEntry(int value){noEntry += value;}
+
+
+    /** Sets the noEntry field on the desired island to true; decrements the noEntry field on the card by 1
+     * @param game  an instance of the game
+     * @param chosenIsland  the island on which the NoEntry tile must be placed
+     */
+    @Override
+    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    {
+        game.getCurrentIslands().getIslands().get(chosenIsland).updateNoEntry();
+        updateNoEntry(-1);
+    }
+
 
     public int getIdCard() {
         return idCard;

@@ -1,5 +1,8 @@
 package model.cards;
 
+import model.CurrentGameState;
+import model.boards.token.Col;
+
 public abstract class CharacterCard {
     protected int idCard;
     protected int baseCost;
@@ -17,6 +20,8 @@ public abstract class CharacterCard {
         this.uses++;
         currentCost=baseCost+uses;
     }
+
+    public abstract void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color);
 
     public int getBaseCost() {return baseCost;}
     public int getUses() {return uses;}

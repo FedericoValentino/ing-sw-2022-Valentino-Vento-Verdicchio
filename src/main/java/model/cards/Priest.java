@@ -2,6 +2,7 @@ package model.cards;
 
 import model.CurrentGameState;
 import model.boards.Pouch;
+import model.boards.token.Col;
 import model.boards.token.Student;
 
 import java.util.ArrayList;
@@ -39,6 +40,19 @@ public class Priest extends CharacterCard {
       student = students.get(index);
       students.remove(index);
       return student;
+    }
+
+    /** Takes a Student from the Priest card residing at the desired position; places it on the
+     chosen island. Then, refills the Priest card with another student from the pouch.
+     * @param game  an instance of the game
+     * @param studentPosition  the position of the chosen student onto the Priest card
+     * @param chosenIsland  the island on which the student must be placed
+     */
+    @Override
+    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    {
+        game.getCurrentIslands().placeToken(getStudent(studentPosition), chosenIsland);
+        updateStudents(game.getCurrentPouch());
     }
 
     public ArrayList<Student> getStudents() {
