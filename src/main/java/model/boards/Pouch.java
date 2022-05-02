@@ -62,7 +62,7 @@ public class Pouch
        so taking them from the tail of the content */
        if(getSetup())
         {
-            index = 120;
+            index = content.size() - 10;
          }
 
        //If we are not in the setup phase, the pouch will take students from the head

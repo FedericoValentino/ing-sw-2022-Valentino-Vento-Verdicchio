@@ -1,5 +1,7 @@
 package model.cards;
 
+import model.boards.Pouch;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -45,6 +47,18 @@ public class CharacterDeck
     deck.remove(index);
     card.updateCost();
     return card;
+  }
+
+  public void SetupCards(Pouch pouch)
+  {
+    for(int i=0; i< deck.size(); i++)
+    {
+      if(deck.get(i) instanceof Priest)
+        ((Priest) deck.get(i)).updateStudents(pouch);
+      else if(deck.get(i) instanceof Princess)
+        ((Princess) deck.get(i)).updateStudents(pouch);
+      i++;
+    }
   }
 
   public ArrayList<CharacterCard> getDeck()

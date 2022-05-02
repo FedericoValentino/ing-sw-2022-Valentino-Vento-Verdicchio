@@ -5,6 +5,10 @@ import model.Player;
 import model.Team;
 import model.boards.token.ColTow;
 import model.boards.token.Wizard;
+import model.cards.CharacterCard;
+import model.cards.CharacterDeck;
+import model.cards.Priest;
+import model.cards.Princess;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -92,7 +96,6 @@ public class MainController
                 }
             }
         }
-
     }
 
     public boolean lastPlayer()

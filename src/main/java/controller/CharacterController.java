@@ -123,6 +123,7 @@ public class CharacterController
         deckManagement(card, game);
     }
 
+
     /** Adds 2 to the active players' maximum mother nature movement field
      * @param card  the chosen card
      * @param game  an instance of the game
@@ -133,6 +134,7 @@ public class CharacterController
         MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
         deckManagement(card, game);
     }
+
 
     /** Sets the noEntry field on the desired island to true; decrements the noEntry field on the card by 1
      * @param card  the chosen card
@@ -146,6 +148,7 @@ public class CharacterController
         deckManagement(card, game);
     }
 
+
     /** Removes the towers from the desired island before calculating the influence
      * @param card  the chosen card
      * @param game  an instance of the game
@@ -157,6 +160,7 @@ public class CharacterController
         ActionController.solveEverything(game, island);
         deckManagement(card, game);
     }
+
 
     /** Ignores a color of student in the influence calculation
      * @param card  the chosen card
@@ -188,6 +192,7 @@ public class CharacterController
         deckManagement(card, game);
     }
 
+
     /** Adds 2 extra influence to the Active team during the influence calculation. Since the standard method
      solveEverything updates the teamInfluence internally, it is needed to manually update the teams influence,
      add 2 extra influence to the desired team, calculate ownership, update towers and calling the idManagement.
@@ -195,13 +200,13 @@ public class CharacterController
      * @param card  the chosen card
      * @param game  an instance of the game
      * @param island  the island on which the influence calculation must occur
-     * @param team  the active player's team
+     * @param currentPlayer  the player requesting the effect to be played
      */
-    public static void effect(Knight card, CurrentGameState game, int island, int team)
+    public static void effect(Knight card, CurrentGameState game, int island, String currentPlayer)
     {
         ColTow previousOwner = game.getCurrentIslands().getIslands().get(island).getOwnership();                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
         game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(game.getCurrentTeams());
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(2, team);
+        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(2, MainController.getPlayerColor(game, currentPlayer).ordinal());
         game.getCurrentIslands().getIslands().get(island).calculateOwnership();
         ColTow currentOwner = game.getCurrentIslands().getIslands().get(island).getOwnership();
         if(previousOwner != currentOwner)
@@ -224,7 +229,7 @@ public class CharacterController
             }
         }
         game.getCurrentIslands().idManagement();
-        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(-2, team);
+        game.getCurrentIslands().getIslands().get(island).updateTeamInfluence(-2, MainController.getPlayerColor(game, currentPlayer).ordinal());
         deckManagement(card, game);
     }
 

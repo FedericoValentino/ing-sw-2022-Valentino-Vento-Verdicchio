@@ -39,7 +39,6 @@ public class CurrentGameState {
      */
     public CurrentGameState(int playerNum, boolean expertGame)
     {
-       this.currentCharacterDeck = new CharacterDeck();
        this.currentPouch = new Pouch();
        this.currentMotherNature = new MotherNature();
        this.currentIslands = new Islands();
@@ -67,7 +66,13 @@ public class CurrentGameState {
        this.currentActiveCharacterCard = new ArrayList<>();
        //this.currentExtractedStudents = new ArrayList<>();
        if(expertGame)
+       {
            this.bankBalance = 20 - playerNum;
+           this.currentCharacterDeck = new CharacterDeck();
+           getCurrentPouch().updateSetup(false);
+           currentCharacterDeck.SetupCards(getCurrentPouch());
+           getCurrentPouch().updateSetup(true);
+       }
        else
            this.bankBalance = 0;
        this.expertGame = expertGame;

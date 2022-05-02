@@ -1,6 +1,8 @@
 package model.cards;
 
 import static org.junit.Assert.*;
+
+import model.CurrentGameState;
 import org.junit.Test;
 
 public class CharacterDeckTest {

@@ -380,7 +380,7 @@ public class CharacterControllerTest {
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterController.effect(testCard, controllerTest.getGame(), island, 1);
+        CharacterController.effect(testCard, controllerTest.getGame(), island, "fede");
         verifyDecks(testCard);
 
         /*Checks if the winning team is the WHITE team, after the effect has boosted its influence on the island

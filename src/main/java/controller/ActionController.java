@@ -96,7 +96,7 @@ public class ActionController
         {
             if(c instanceof Knight)
             {
-                CharacterController.effect((Knight)c, game, game.getCurrentMotherNature().getPosition(), MainController.getPlayerColor(game, currentPlayer).ordinal());
+                CharacterController.effect((Knight)c, game, game.getCurrentMotherNature().getPosition(), currentPlayer);
             }
             else if(c instanceof TruffleHunter)
             {
