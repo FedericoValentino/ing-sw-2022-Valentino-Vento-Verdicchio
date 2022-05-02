@@ -16,13 +16,15 @@ import Server.Answers.SetupAnswers.StandardSetupAnswer;
 import controller.CharacterController;
 import controller.MainController;
 import model.boards.token.Wizard;
+import sun.jvm.hotspot.utilities.Observable;
+import Observer.Observer;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
-public class GameHandler extends Thread
+public class GameHandler extends Thread implements Observer
 {
     private ClientConnection socket;
     private ObjectInputStream in;
@@ -250,6 +252,19 @@ public class GameHandler extends Thread
         }
 
 
+
+    }
+
+
+    @Override
+    public void update(String message)
+    {
+        try
+        {
+            out.writeObject(new ViewMessage(message));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

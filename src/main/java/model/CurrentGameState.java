@@ -11,13 +11,13 @@ import model.boards.token.MotherNature;
 import model.boards.token.Student;
 import model.cards.CharacterCard;
 import model.cards.CharacterDeck;
-
+import Observer.Observable;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 
-public class CurrentGameState {
+public class CurrentGameState extends Observable {
     private CharacterDeck currentCharacterDeck;
     private Pouch currentPouch;
     private Islands currentIslands;
