@@ -1,5 +1,5 @@
 package Server;
-//TODO Smistare metodi
+
 
 
 import Client.Messages.ActionMessages.*;
@@ -167,7 +167,7 @@ public class GameHandler extends Thread implements Observer
         {
             if(mainController.getCharacterController().isEffectPlayable(mainController.getGame(),((PlayCharacterEffect)message).getCharacterId()))
             {
-
+                mainController.getCharacterController().playEffect(((PlayCharacterEffect) message).getCharacterId(), mainController.getGame(), ((PlayCharacterEffect) message).getFirst(), ((PlayCharacterEffect) message).getSecond(), ((PlayCharacterEffect) message).getThird(), ((PlayCharacterEffect) message).getStudentColor());
             }
         }
     }
