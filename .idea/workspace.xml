@@ -4,6 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added checkForCharacter test in ActionControllerTest" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added tests and corrected methods in characterController">
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" afterDir="false" />
+    </list>
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Action Controller fixed">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -66,6 +70,7 @@
       <recent name="model.boards.token" />
     </key>
   </component>
+  <component name="RunManager" selected="JUnit.MainControllerTest.testFindPlayerByName"/>
   <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="All in ing-sw-2022-Valentino-Vento-Verdicchio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
@@ -99,6 +104,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainControllerTest.testFindPlayerByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MainControllerTest" />
+      <option name="METHOD_NAME" value="testFindPlayerByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="controller in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
@@ -113,34 +134,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="model.cards in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.cards" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.controller in softeng-GC61" />
       <item itemvalue="JUnit.All in softeng-GC61" />
-      <item itemvalue="JUnit.model.cards in softeng-GC61" />
       <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
       <item itemvalue="JUnit.CharacterControllerTest.playEffect" />
+      <item itemvalue="JUnit.MainControllerTest.testFindPlayerByName" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in softeng-GC61" />
+        <item itemvalue="JUnit.MainControllerTest.testFindPlayerByName" />
         <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
         <item itemvalue="JUnit.CharacterControllerTest.playEffect" />
         <item itemvalue="JUnit.controller in softeng-GC61" />
         <item itemvalue="JUnit.model.cards in softeng-GC61" />
+        <item itemvalue="JUnit.All in softeng-GC61" />
       </list>
     </recent_temporary>
   </component>
@@ -280,12 +289,12 @@
       <option name="project" value="LOCAL" />
       <updated>1651583272528</updated>
     </task>
-    <task id="LOCAL-00017" summary="Cards in model have now comments on important methods">
-      <created>1650896736057</created>
+    <task id="LOCAL-00017" summary="Added checkForCharacter test in ActionControllerTest">
+      <created>1651583114088</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1650896736057</updated>
+      <updated>1651583114088</updated>
     </task>
     <task id="LOCAL-00018" summary="Boo (non capisco perché non mi fa updatare)">
       <created>1651007322037</created>
@@ -378,6 +387,8 @@
       <option name="project" value="LOCAL" />
       <updated>1651512580192</updated>
     </task>
+    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="18" />
     <option name="localTasksCounter" value="17" />
     <servers />
   </component>
@@ -423,6 +434,10 @@
     <MESSAGE value="Added tests and corrected methods in characterController" />
     <MESSAGE value="Action Controller fixed" />
     <option name="LAST_COMMIT_MESSAGE" value="Action Controller fixed" />
+    <MESSAGE value="Last test added in CharController" />
+    <MESSAGE value="Added checkForCharacter test in ActionControllerTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checkForCharacter test in ActionControllerTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests and corrected methods in characterController" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
