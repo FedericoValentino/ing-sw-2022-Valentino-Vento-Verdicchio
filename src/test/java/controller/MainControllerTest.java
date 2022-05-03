@@ -3,6 +3,7 @@ package controller;
 import model.CurrentGameState;
 import model.boards.Island;
 import model.boards.token.ColTow;
+import model.boards.token.GamePhase;
 import model.boards.token.Wizard;
 import org.junit.Test;
 
@@ -162,4 +163,44 @@ public class MainControllerTest
         controllerTest.determineNextPlayer();
         assert(controllerTest.isExpertGame() == true || controllerTest.isExpertGame() == false);
     }
+
+    @Test
+    public void testLastPlayer()
+    {
+        setupTest();
+        controllerTest.getGame().updateTurnState();
+        controllerTest.determineNextPlayer();
+        assert(!controllerTest.lastPlayer());
+        controllerTest.determineNextPlayer();
+        assert(controllerTest.lastPlayer());
+    }
+
+    @Test
+    public void testIsGamePhase()
+    {
+        assertEquals(true, controllerTest.isGamePhase(GamePhase.SETUP));
+    }
+
+    @Test
+    public void testReadyPlayer()
+    {
+        int x = controllerTest.getReadyPlayers();
+        controllerTest.readyPlayer();
+        assertEquals(x + 1, controllerTest.getReadyPlayers());
+    }
+
+    @Test
+    public void testGetAvailableWizards()
+    {
+        setupTest();
+        assert(controllerTest.getAvailableWizards().get(0) instanceof Wizard);
+    }
+
+    @Test
+    public void testGetPlayers()
+    {
+        setupTest();
+        assert(controllerTest.getPlayers() >= 2);
+    }
 }
+
