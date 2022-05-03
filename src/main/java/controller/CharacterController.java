@@ -42,7 +42,11 @@ public class CharacterController
     {
         for(int i=0; i<game.getCurrentCharacterDeck().getDeck().size(); i++)
             if(game.getCurrentCharacterDeck().getDeck().get(i).getIdCard() == characterID)
-                return true;
+            {
+                CharacterCard card = game.getCurrentCharacterDeck().getDeck().get(i);
+                if(player.getCoinAmount() >= card.getCurrentCost())
+                    return true;
+            }
         return false;
     }
 
@@ -86,9 +90,12 @@ public class CharacterController
 
     public void playEffect(int cardID, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
-        CharacterCard card = getCardByID(game, cardID);
-        card.effect(game, studentPosition, chosenIsland, currentPlayer, color);
-        deckManagement(card, game);
+        if(isEffectPlayable(game, cardID))
+        {
+            CharacterCard card = getCardByID(game, cardID);
+            card.effect(game, studentPosition, chosenIsland, currentPlayer, color);
+            deckManagement(card, game);
+        }
     }
 
 

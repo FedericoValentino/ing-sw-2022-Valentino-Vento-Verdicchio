@@ -93,4 +93,67 @@ public class CharacterControllerTest {
         //Verifies if the method returns the right card by comparing the correct ID with the dummy's ID
         assertEquals(8, card.getIdCard());
     }
+
+    @Test
+    public void isPickable()
+    {
+        setupTest(controllerTest);
+
+        Herald testCard = new Herald();
+        EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+        assertTrue(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), 3, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
+
+        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(-3);
+        System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
+
+        assertFalse(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), 3, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
+    }
+
+    @Test
+    public void isEffectPlayable()
+    {
+        setupTest(controllerTest);
+
+        Herald testCard = new Herald();
+        EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+
+        assertTrue(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), 3));
+        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
+
+        assertFalse(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), 3));
+    }
+
+    @Test
+    public void getCardByID()
+    {
+        setupTest(controllerTest);
+
+        Herald testCard1 = new Herald();
+        EffectTestsUtility.setDecks(testCard1, controllerTest.getGame());
+        Knight testCard2 = new Knight();
+
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard2);
+
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0));
+
+        CharacterCard resultCard = controllerTest.getCharacterController().getCardByID(controllerTest.getGame(), 8);
+
+        assertNull(controllerTest.getCharacterController().getCardByID(controllerTest.getGame(), 5));
+        assert(resultCard instanceof Knight);
+        assert(!(resultCard instanceof Herald));
+    }
+
+    @Test
+    public void playEffect()
+    {
+
+    }
 }
