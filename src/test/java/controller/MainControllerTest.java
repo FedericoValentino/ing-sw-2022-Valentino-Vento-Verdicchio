@@ -12,6 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class MainControllerTest
 {
@@ -123,6 +124,7 @@ public class MainControllerTest
     {
         setupTest();
         assertEquals(controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0), MainController.findPlayerByName(controllerTest.getGame(), "jack"));
+        assertNull(MainController.findPlayerByName(controllerTest.getGame(), "pirla"));
     }
 
     @Test
@@ -130,6 +132,7 @@ public class MainControllerTest
     {
         setupTest();
         assertEquals(ColTow.values()[0], MainController.getPlayerColor(controllerTest.getGame(), "jack"));
+        assertNull(MainController.getPlayerColor(controllerTest.getGame(), "giorgio"));
     }
 
     @Test
