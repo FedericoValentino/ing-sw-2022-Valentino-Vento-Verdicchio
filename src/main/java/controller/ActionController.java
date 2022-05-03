@@ -97,14 +97,20 @@ public class ActionController
             if(c instanceof Knight)
             {
                 c.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
+                CharacterController.deckManagement(c, game);
+                return  true;
             }
             else if(c instanceof TruffleHunter)
             {
                 c.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) c).getChosenColor());
+                CharacterController.deckManagement(c, game);
+                return  true;
             }
             else if(c instanceof Centaur)
             {
                 c.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, null);
+                CharacterController.deckManagement(c, game);
+                return  true;
             }
         }
         return false;

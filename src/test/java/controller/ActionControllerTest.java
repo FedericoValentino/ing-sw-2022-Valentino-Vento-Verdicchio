@@ -130,35 +130,6 @@ public class ActionControllerTest
     /*fgetc(stdin);*/
     }
 
-    @Test
-    public void TestDrawFromClouds()
-    {
-        setupTest();
-        controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
-        int x = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size();
-        controllerTest.getActionController().drawFromClouds(0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
-        assert(controllerTest.getGame().getCurrentClouds()[0].getStudents().isEmpty());
-        assert(x + 3 == MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size());
-    }
-
-    @Test
-    public void TestIsCloudEmpty()
-    {
-        setupTest();
-        assert(controllerTest.getActionController().isCloudEmpty(0, controllerTest.getGame()));
-        controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
-        assert(!controllerTest.getActionController().isCloudEmpty(0, controllerTest.getGame()));
-    }
-
-    @Test
-    public void testPossibleMNmove()
-    {
-        setupTest();
-        controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), controllerTest.getCurrentPlayer(), 7);
-        assert(controllerTest.getActionController().possibleMNmove(4, controllerTest.getGame()));
-        assert(!controllerTest.getActionController().possibleMNmove(6, controllerTest.getGame()));
-    }
-
 
 
 }
