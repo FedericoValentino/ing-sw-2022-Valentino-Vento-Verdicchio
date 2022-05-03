@@ -84,6 +84,14 @@ public class CharacterController
         game.getCurrentCharacterDeck().getDeck().add(card);
     }
 
+    public void playEffect(int cardID, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    {
+        CharacterCard card = getCardByID(game, cardID);
+        card.effect(game, studentPosition, chosenIsland, currentPlayer, color);
+        deckManagement(card, game);
+    }
+
+
     public CharacterCard getPickedCard()
     {
         return pickedCard;
