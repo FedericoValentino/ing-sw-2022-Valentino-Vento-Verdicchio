@@ -53,4 +53,21 @@ public class CloudTest {
         assertTrue(c2.isEmpty());
         c2.removeToken(st1);
     }
+
+    @Test
+    public void testEmptyCloud()
+    {
+        Cloud c1 = new Cloud();
+        Student s1 = new Student(Col.YELLOW);
+        Student s2 = new Student(Col.GREEN);
+        ArrayList<Student> ss = new ArrayList<>();
+        c1.placeToken(s1);
+        c1.placeToken(s2);
+        ss = c1.EmptyCloud();
+        assert(ss.contains(s1));
+        assert(ss.contains(s2));
+        assert(c1.isEmpty());
+
+
+    }
 }

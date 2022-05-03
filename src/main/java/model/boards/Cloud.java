@@ -48,7 +48,8 @@ public class Cloud extends Board
 
   public ArrayList<Student> EmptyCloud()
   {
-    ArrayList<Student> current = student;
+    ArrayList<Student> current = new ArrayList<>();
+    current.addAll(student);
     student.removeAll(student);
     return current;
   }

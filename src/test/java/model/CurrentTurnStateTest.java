@@ -1,11 +1,11 @@
 package model;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
+import model.boards.token.GamePhase;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class CurrentTurnStateTest {
     CurrentTurnState curTurnObj = new CurrentTurnState();
@@ -56,5 +56,12 @@ public class CurrentTurnStateTest {
         assertNull(curTurnObj.getWinningTeam());
         curTurnObj.updateWinner(cW);
         assertTrue(curTurnObj.getWinningTeam().equals(cW));
+    }
+
+    @Test
+    public void TestUpdateGamePhase()
+    {
+        curTurnObj.updateGamePhase(GamePhase.PLANNING);
+        assertEquals(GamePhase.PLANNING, curTurnObj.getGamePhase());
     }
 }

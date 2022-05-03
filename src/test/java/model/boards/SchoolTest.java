@@ -7,6 +7,8 @@ import model.boards.token.ColTow;
 import model.boards.token.Student;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class SchoolTest{
     School s=new School(ColTow.BLACK,6);
     School s2=new School(ColTow.GREY,6);
@@ -18,6 +20,19 @@ public class SchoolTest{
     public void testPlaceToken() {
         s.placeToken(ss1);
         assertEquals(s.getEntrance().get(0),ss1);
+    }
+
+    @Test
+    public void testPlaceToken2()
+    {
+        School st = new School(ColTow.BLACK,6);
+        st.getEntrance().removeAll(st.getEntrance());
+        ArrayList<Student> ss = new ArrayList<>();
+        ss.add(ss1);
+        ss.add(ss2);
+        st.placeToken(ss);
+        assertEquals(st.getEntrance().get(0), ss1);
+        assertEquals(st.getEntrance().get(1), ss2);
     }
 
 
@@ -66,5 +81,4 @@ public class SchoolTest{
     public void testGetColor() {
         assertEquals(s.getColor(),ColTow.BLACK);
     }
-
 }
