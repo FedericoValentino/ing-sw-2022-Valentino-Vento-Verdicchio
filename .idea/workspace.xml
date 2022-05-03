@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Tests">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" afterDir="false" />
     </list>
+    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,27 +66,27 @@
       <recent name="model.boards.token" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in softeng-GC61">
-    <configuration name="ActionControllerTest.TestDrawFromClouds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ActionControllerTest" />
-      <option name="METHOD_NAME" value="TestDrawFromClouds" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.controller in softeng-GC61">
     <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrentGameStateTest.testGetter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CurrentGameStateTest" />
+      <option name="METHOD_NAME" value="testGetter" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,19 +136,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ActionControllerTest.TestDrawFromClouds" />
       <item itemvalue="JUnit.controller in softeng-GC61" />
       <item itemvalue="JUnit.PriestTest.effect" />
       <item itemvalue="JUnit.All in softeng-GC61" />
+      <item itemvalue="JUnit.CurrentGameStateTest.testGetter" />
       <item itemvalue="JUnit.model.cards in softeng-GC61" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in softeng-GC61" />
-        <item itemvalue="JUnit.ActionControllerTest.TestDrawFromClouds" />
         <item itemvalue="JUnit.controller in softeng-GC61" />
+        <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="JUnit.model.cards in softeng-GC61" />
         <item itemvalue="JUnit.PriestTest.effect" />
+        <item itemvalue="JUnit.CurrentGameStateTest.testGetter" />
       </list>
     </recent_temporary>
   </component>
@@ -273,12 +274,12 @@
       <option name="project" value="LOCAL" />
       <updated>1651579260792</updated>
     </task>
-    <task id="LOCAL-00015" summary="Tests">
-      <created>1651580781182</created>
+    <task id="LOCAL-00015" summary="Updated all the comments of Controller and Model classes to match the quality of the previous updates">
+      <created>1651006642725</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1651580781182</updated>
+      <updated>1651006642725</updated>
     </task>
     <task id="LOCAL-00016" summary="Character and Planning controllers updated with comments">
       <created>1650895496212</created>
@@ -385,7 +386,7 @@
       <option name="project" value="LOCAL" />
       <updated>1651512580192</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,6 +405,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Ending CurrentGameStateTest" />
     <MESSAGE value="Test ActionController, fix in giro nel codice" />
     <MESSAGE value="Fix a dei test" />
     <MESSAGE value="PlanningControllerTesting 100% line coverage is go" />
@@ -428,8 +430,7 @@
     <MESSAGE value="Fixed non working test in PlanningControllerTest due to recent changes" />
     <MESSAGE value="Fixed non working test in CurrentGameState due to recent changes.&#10;Now only the Character tests need attention" />
     <MESSAGE value="Test" />
-    <MESSAGE value="Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -455,7 +456,7 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testGiveProfessors.ic" NAME="CurrentGameStateTest.testGiveProfessors Coverage Results" MODIFIED="1650721805092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1651582672810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1651579665219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PrincessTest.ic" NAME="PrincessTest Coverage Results" MODIFIED="1649006056059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
@@ -524,7 +525,7 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PouchTest_testExtractStudent.ic" NAME="PouchTest.testExtractStudent Coverage Results" MODIFIED="1649001215029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1651580716200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1651579849581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetPlayerName.ic" NAME="AssistantDeckTest.testGetPlayerName Coverage Results" MODIFIED="1648316334838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

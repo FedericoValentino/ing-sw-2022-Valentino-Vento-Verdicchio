@@ -154,6 +154,20 @@ public class CharacterControllerTest {
     @Test
     public void playEffect()
     {
+        setupTest(controllerTest);
 
+        Herald testCard = new Herald();
+        EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().playEffect(3, controllerTest.getGame(), -1, 3, null, null);
+
+        //Checks if the sizes of the decks have been handled correctly (2 cards in the Active, on in the Char)
+        assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
+
+
+        assertEquals(3, controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getIdCard());
     }
 }
