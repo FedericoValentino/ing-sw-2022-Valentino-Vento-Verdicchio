@@ -3,7 +3,7 @@ import model.boards.Island;
 import model.boards.token.Col;
 import model.boards.token.Student;
 import model.boards.token.Wizard;
-import model.cards.AssistantCard;
+import model.cards.*;
 import org.junit.Test;
 
 import java.util.Random;
@@ -128,6 +128,77 @@ public class ActionControllerTest
         ActionController.solveEverything(controllerTest.getGame(), 0);
         assertEquals(MainController.getPlayerColor(controllerTest.getGame(), controllerTest.getCurrentPlayer()),  controllerTest.getGame().getCurrentIslands().getIslands().get(0).getOwnership());
     /*fgetc(stdin);*/
+    }
+
+    @Test
+    public void TestDrawFromClouds()
+    {
+        setupTest();
+        controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
+        int x = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size();
+        controllerTest.getActionController().drawFromClouds(0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
+        assert(controllerTest.getGame().getCurrentClouds()[0].getStudents().isEmpty());
+        assert(x + 3 == MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size());
+    }
+
+    @Test
+    public void TestIsCloudEmpty()
+    {
+        setupTest();
+        assert(controllerTest.getActionController().isCloudEmpty(0, controllerTest.getGame()));
+        controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
+        assert(!controllerTest.getActionController().isCloudEmpty(0, controllerTest.getGame()));
+    }
+
+    @Test
+    public void testPossibleMNmove()
+    {
+        setupTest();
+        controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), controllerTest.getCurrentPlayer(), 7);
+        assert(controllerTest.getActionController().possibleMNmove(4, controllerTest.getGame()));
+        assert(!controllerTest.getActionController().possibleMNmove(6, controllerTest.getGame()));
+    }
+
+    @Test
+    public void checkForCharacters()
+    {
+        setupTest();
+
+        CharacterCard knight = new Knight();
+        CharacterCard truffleHunter = new TruffleHunter();
+        CharacterCard centaur = new Centaur();
+
+        EffectTestsUtility.setDecks(knight, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(knight, controllerTest.getGame());
+
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(truffleHunter);
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(centaur);
+
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(10);
+
+        for(int i=0; i<3; i++)
+            controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+
+        assertEquals(3, controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        assertEquals(0, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
+
+        controllerTest.getActionController().MoveMN(3, controllerTest.getGame());
+        controllerTest.getActionController().MoveMN(3, controllerTest.getGame());
+        controllerTest.getActionController().MoveMN(3, controllerTest.getGame());
+
+        assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        assertEquals(3, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
+
+        Herald herald = new Herald();
+
+        EffectTestsUtility.setDecks(herald, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(herald, controllerTest.getGame());
+
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getActionController().MoveMN(3, controllerTest.getGame());
+
+        assertEquals(1, controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        assertEquals(0, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
     }
 
 
