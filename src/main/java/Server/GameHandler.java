@@ -32,9 +32,9 @@ public class GameHandler extends Thread implements Observer
     private int planning;
     private int action;
     private int team;
-    private Object obj;
+    private Semaphore sem;
 
-    public GameHandler(MainController m, ClientConnection s, int team) throws IOException {
+    public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem) throws IOException {
 
         this.socket = s;
         this.mainController = m;
@@ -43,7 +43,7 @@ public class GameHandler extends Thread implements Observer
         this.planning = 0;
         this.action = 0;
         this.team = team;
-        this.obj = new Object();
+        this.sem = sem;
     }
 
     public void setupHandler(StandardSetupMessage message) throws IOException, InterruptedException {
@@ -77,26 +77,20 @@ public class GameHandler extends Thread implements Observer
                     mainController.updateTurnState();
                     mainController.determineNextPlayer();
                     mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
-                    synchronized (obj)
-                    {
-                        obj.notifyAll();
-                    }
-
+                    sem.release(mainController.getPlayers()-1);
+                    System.out.println(sem.availablePermits());
                 }
                 else
                 {
-                    System.out.println("Waiting for all players to ready up");
-                    synchronized (obj)
-                    {
-                        obj.wait();
-                    }
+                    System.out.println("Waiting for all players to be ready");
+                    sem.acquire();
+                    System.out.println(sem.availablePermits());
                 }
             }
         }
         if(message instanceof Disconnect)
         {
             socket.getClient().close();
-
         }
 
     }
@@ -238,6 +232,7 @@ public class GameHandler extends Thread implements Observer
     @Override
     public void run()
     {
+        boolean flag = false;
         try
         {
             while(isAlive())
@@ -245,13 +240,14 @@ public class GameHandler extends Thread implements Observer
                 if(mainController.isGamePhase(GamePhase.SETUP) && !choseWizard)
                 {
                     socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
+                    flag = true;
                 }
-                if(mainController.isGamePhase(GamePhase.GAMEREADY))
+                else if(mainController.isGamePhase(GamePhase.GAMEREADY))
                 {
                     socket.sendAnswer(new SerializedAnswer(new GameStarting()));
                     //mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
                 }
-                if(mainController.isGamePhase(GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                else if(mainController.isGamePhase(GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                 {
                     socket.sendAnswer(new SerializedAnswer(new StartTurn()));
                     if(planning == 0)
@@ -262,8 +258,9 @@ public class GameHandler extends Thread implements Observer
                     {
                         socket.sendAnswer(new SerializedAnswer(new RequestCard()));
                     }
+                    flag = true;
                 }
-                if(mainController.isGamePhase(GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                else if(mainController.isGamePhase(GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                 {
                     socket.sendAnswer(new SerializedAnswer(new StartTurn()));
                     if(action >= 0 && action <= 2)
@@ -278,8 +275,14 @@ public class GameHandler extends Thread implements Observer
                     {
                         socket.sendAnswer(new SerializedAnswer(new RequestCloud("Seleziona nuvola da svuotare")));
                     }
+                    flag = true;
+
                 }
-                readMessage();
+                if(flag)
+                {
+                    readMessage();
+                }
+
             }
         }
         catch(IOException e)

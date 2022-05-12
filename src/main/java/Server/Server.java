@@ -13,6 +13,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 
 public class Server
 {
@@ -33,6 +34,7 @@ public class Server
       ClientConnection connection = new ClientConnection(s);
       SetupConnection message = (SetupConnection) connection.getInputStream().readObject();
       connection.setNickname(message.getNickname());
+      connection.setTeam(message.getTeam());
       //adding Client To waiting Lobby
       waitLobby.add(connection);
    }
@@ -62,10 +64,11 @@ public class Server
             if(waitLobby.size() == info.getMaxPlayers())
             {
                MainController mc = new MainController(info.getMaxPlayers(), info.isExpertGame());
+               Semaphore sem = new Semaphore(0);
                int x = 0;
                for(ClientConnection c : waitLobby)
                {
-                  GameHandler GH = new GameHandler(mc, c,x%info.getMaxPlayers());
+                  GameHandler GH = new GameHandler(mc, c, c.getTeam(), sem);
                   mc.getGame().addObserver(GH);
                   GH.start();
                   x++;

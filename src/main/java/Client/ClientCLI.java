@@ -21,6 +21,7 @@ import java.util.Scanner;
 public class ClientCLI implements ClientView
 {
     private String nickname;
+    private int team;
     private String ServerIP;
     private Scanner stdin = new Scanner(System.in);
     private Socket socket;
@@ -96,6 +97,8 @@ public class ClientCLI implements ClientView
     public void run() throws IOException, ClassNotFoundException {
         System.out.println("NickName?");
         nickname = stdin.next();
+        System.out.println("Team?");
+        team = stdin.nextInt();
         System.out.println("Server IP?");
         ServerIP = stdin.next();
 
@@ -104,6 +107,7 @@ public class ClientCLI implements ClientView
         in = new ObjectInputStream(socket.getInputStream());
         SetupConnection setup = new SetupConnection();
         setup.setNickname(nickname);
+        setup.setTeam(team);
         out.writeObject(setup);
         out.flush();
         out.reset();

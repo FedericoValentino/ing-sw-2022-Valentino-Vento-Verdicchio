@@ -13,6 +13,7 @@ public class ClientConnection
     private ObjectOutputStream outputStream;
     private ObjectInputStream inputStream;
     private String nickname;
+    private int team;
 
     public ClientConnection(Socket client) throws IOException {
         this.client = client;
@@ -36,6 +37,10 @@ public class ClientConnection
         this.nickname = nickname;
     }
 
+    public void setTeam(int team) {
+        this.team = team;
+    }
+
     public Socket getClient()
     {
         return client;
@@ -48,5 +53,9 @@ public class ClientConnection
 
     public ObjectInputStream getInputStream() {
         return inputStream;
+    }
+
+    public int getTeam() {
+        return team;
     }
 }

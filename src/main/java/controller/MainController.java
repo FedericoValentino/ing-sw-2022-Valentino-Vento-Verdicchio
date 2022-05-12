@@ -205,7 +205,7 @@ public class MainController
         return expertGame;
     }
 
-    public ArrayList<Wizard> getAvailableWizards() {
+    public synchronized ArrayList<Wizard> getAvailableWizards() {
         return availableWizards;
     }
 
