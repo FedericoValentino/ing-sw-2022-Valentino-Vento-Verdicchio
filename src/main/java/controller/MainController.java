@@ -178,6 +178,11 @@ public class MainController
         return currentGamePhase == game.getCurrentTurnState().getGamePhase();
     }
 
+    public void resetReady()
+    {
+        readyPlayers = 0;
+    }
+
     public void readyPlayer()
     {
         readyPlayers++;

@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Protocol">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="" />
@@ -172,7 +168,7 @@
       <workItem from="1651137510389" duration="4702000" />
       <workItem from="1651417980273" duration="1496000" />
       <workItem from="1652274524881" duration="7998000" />
-      <workItem from="1652364117265" duration="6633000" />
+      <workItem from="1652364117265" duration="12423000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -412,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652367883930</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Protocol">
+      <created>1652370789655</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1652370789655</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,25 +463,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Protocol" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Client/ClientCLI.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/GameHandler.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/GameHandler.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="in" />

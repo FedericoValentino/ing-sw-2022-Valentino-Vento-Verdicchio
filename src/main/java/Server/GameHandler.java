@@ -33,6 +33,7 @@ public class GameHandler extends Thread implements Observer
     private int action;
     private int team;
     private Semaphore sem;
+    private boolean flag;
 
     public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem) throws IOException {
 
@@ -44,6 +45,7 @@ public class GameHandler extends Thread implements Observer
         this.action = 0;
         this.team = team;
         this.sem = sem;
+        this.flag = false;
     }
 
     public void setupHandler(StandardSetupMessage message) throws IOException, InterruptedException {
@@ -57,6 +59,7 @@ public class GameHandler extends Thread implements Observer
                     mainController.AddPlayer(team, socket.getNickname(), 8, w);
                     mainController.getAvailableWizards().remove(w);
                     socket.sendAnswer(new SerializedAnswer(new InfoMessage("Wizard Selected, type [Ready] if you're ready to start!")));
+                    flag = true;
                     choseWizard = true;
                 }
                 else
@@ -78,7 +81,9 @@ public class GameHandler extends Thread implements Observer
                     mainController.determineNextPlayer();
                     mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
                     sem.release(mainController.getPlayers()-1);
+                    mainController.resetReady();
                     System.out.println(sem.availablePermits());
+
                 }
                 else
                 {
@@ -232,7 +237,7 @@ public class GameHandler extends Thread implements Observer
     @Override
     public void run()
     {
-        boolean flag = false;
+
         try
         {
             while(isAlive())
@@ -245,7 +250,18 @@ public class GameHandler extends Thread implements Observer
                 else if(mainController.isGamePhase(GamePhase.GAMEREADY))
                 {
                     socket.sendAnswer(new SerializedAnswer(new GameStarting()));
-                    //mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
+                    flag = false;
+                    mainController.readyPlayer();
+                    if(mainController.getReadyPlayers() == mainController.getPlayers())
+                    {
+                        mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
+                        System.out.println("It's " + mainController.getCurrentPlayer() + " turn");
+                        sem.release(mainController.getPlayers()-1);
+                    }
+                    else
+                    {
+                        sem.acquire();
+                    }
                 }
                 else if(mainController.isGamePhase(GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                 {
