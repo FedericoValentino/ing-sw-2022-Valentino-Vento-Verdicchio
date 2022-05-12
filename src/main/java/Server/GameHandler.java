@@ -77,7 +77,11 @@ public class GameHandler extends Thread implements Observer
                     mainController.updateTurnState();
                     mainController.determineNextPlayer();
                     mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
-                    notifyAll();
+                    synchronized (obj)
+                    {
+                        obj.notifyAll();
+                    }
+
                 }
                 else
                 {
