@@ -20,8 +20,7 @@ import model.boards.token.Wizard;
 import Observer.Observer;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.util.concurrent.Semaphore;
 
 
 public class GameHandler extends Thread implements Observer
@@ -45,8 +44,7 @@ public class GameHandler extends Thread implements Observer
         this.team = team;
     }
 
-    public void setupHandler(StandardSetupMessage message) throws IOException
-    {
+    public void setupHandler(StandardSetupMessage message) throws IOException, InterruptedException {
         if(message instanceof WizardChoice)
         {
             synchronized (mainController.getAvailableWizards())
@@ -77,6 +75,12 @@ public class GameHandler extends Thread implements Observer
                     mainController.updateTurnState();
                     mainController.determineNextPlayer();
                     mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
+                    notifyAll();
+                }
+                else
+                {
+                    System.out.println("Waiting for all players to ready up");
+                    wait();
                 }
             }
         }
@@ -208,7 +212,7 @@ public class GameHandler extends Thread implements Observer
 
     }
 
-    public void readMessage() throws IOException, ClassNotFoundException {
+    public void readMessage() throws IOException, ClassNotFoundException, InterruptedException {
         SerializedMessage input = (SerializedMessage) socket.getInputStream().readObject();
         if(input.getCommand() != null)
         {
@@ -232,18 +236,6 @@ public class GameHandler extends Thread implements Observer
                 if(mainController.isGamePhase(GamePhase.SETUP) && !choseWizard)
                 {
                     socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
-                }
-                if(choseWizard && ready && mainController.isGamePhase(GamePhase.SETUP))
-                {
-                    boolean x = false;
-                    while(mainController.getReadyPlayers() != mainController.getPlayers())
-                    {
-                        if(!x)
-                        {
-                            System.out.println("Waiting for all clients to be ready");
-                            x = true;
-                        }
-                    }
                 }
                 if(mainController.isGamePhase(GamePhase.GAMEREADY))
                 {
@@ -288,8 +280,10 @@ public class GameHandler extends Thread implements Observer
         catch(ClassNotFoundException e)
         {
 
-        }
+        } catch (InterruptedException e)
+        {
 
+        }
 
 
     }
