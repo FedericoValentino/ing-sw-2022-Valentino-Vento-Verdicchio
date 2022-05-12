@@ -32,6 +32,7 @@ public class GameHandler extends Thread implements Observer
     private int planning;
     private int action;
     private int team;
+    private Object obj;
 
     public GameHandler(MainController m, ClientConnection s, int team) throws IOException {
 
@@ -42,6 +43,7 @@ public class GameHandler extends Thread implements Observer
         this.planning = 0;
         this.action = 0;
         this.team = team;
+        this.obj = new Object();
     }
 
     public void setupHandler(StandardSetupMessage message) throws IOException, InterruptedException {
@@ -80,7 +82,10 @@ public class GameHandler extends Thread implements Observer
                 else
                 {
                     System.out.println("Waiting for all players to ready up");
-                    wait();
+                    synchronized (obj)
+                    {
+                        obj.wait();
+                    }
                 }
             }
         }

@@ -167,7 +167,7 @@
       <workItem from="1651137510389" duration="4702000" />
       <workItem from="1651417980273" duration="1496000" />
       <workItem from="1652274524881" duration="7998000" />
-      <workItem from="1652364117265" duration="3077000" />
+      <workItem from="1652364117265" duration="3587000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -386,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652366268447</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Protocol">
+      <created>1652367367589</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1652367367589</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
