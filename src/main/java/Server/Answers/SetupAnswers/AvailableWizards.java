@@ -4,7 +4,7 @@ import model.boards.token.Wizard;
 
 import java.util.ArrayList;
 
-public class AvailableWizards
+public class AvailableWizards implements StandardSetupAnswer
 {
     private ArrayList<Wizard> available;
 

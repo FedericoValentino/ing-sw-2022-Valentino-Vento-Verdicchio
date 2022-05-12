@@ -14,10 +14,12 @@ import controller.CharacterController.*;
 public class ActionController
 {
     private String currentPlayer;
+    private int movableStudents;
 
     public ActionController(String Player)
     {
         this.currentPlayer = Player;
+        this.movableStudents = 3;
     }
 
     /** Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
@@ -30,6 +32,7 @@ public class ActionController
     {
         Student s = MainController.findPlayerByName(game, name).getSchool().extractStudent(entrancepos);
         game.getCurrentIslands().getIslands().get(islandId).addStudent(s);
+        this.movableStudents--;
     }
 
     /** Method placeStudentToDiningRoom places the selected student from the entrance to the dining room, and checks
@@ -52,6 +55,7 @@ public class ActionController
         {
             t.updateProfessors();
         }
+        this.movableStudents--;
     }
 
     public void drawFromClouds(int cloudIndex, CurrentGameState game, String name)
@@ -161,5 +165,9 @@ public class ActionController
     public void setCurrentPlayer(String name)
     {
         currentPlayer = name;
+    }
+
+    public int getMovableStudents() {
+        return movableStudents;
     }
 }

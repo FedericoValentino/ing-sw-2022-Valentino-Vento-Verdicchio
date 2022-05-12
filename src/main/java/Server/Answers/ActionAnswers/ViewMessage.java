@@ -1,6 +1,6 @@
 package Server.Answers.ActionAnswers;
 
-public class ViewMessage
+public class ViewMessage implements StandardActionAnswer
 {
     private String jsonView;
 

@@ -3,6 +3,7 @@ package Server;
 import Client.Client;
 import Client.Messages.SetupMessages.GameMode;
 import Client.Messages.SetupMessages.SetupConnection;
+import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.RequestGameInfo;
 import controller.MainController;
 
@@ -25,21 +26,22 @@ public class Server
        this.server = new ServerSocket(PORT);
    }
 
-   public void registerConnection(Socket s, ObjectInputStream in) throws IOException, ClassNotFoundException
+   public void registerConnection(Socket s) throws IOException, ClassNotFoundException
    {
       System.out.println("registering new connection");
       //Receiving Client Nickname
-      SetupConnection message = (SetupConnection) in.readObject();
-      ClientConnection connection = new ClientConnection(s, message.getNickname());
+      ClientConnection connection = new ClientConnection(s);
+      SetupConnection message = (SetupConnection) connection.getInputStream().readObject();
+      connection.setNickname(message.getNickname());
       //adding Client To waiting Lobby
       waitLobby.add(connection);
    }
 
-   public GameMode requestGameInfo(Socket s, ObjectInputStream in, ObjectOutputStream out) throws IOException, ClassNotFoundException {
+   public GameMode requestGameInfo(ClientConnection c) throws IOException, ClassNotFoundException {
       //requesting GameInfo to first client
-      out.writeObject(new RequestGameInfo());
+      c.sendAnswer(new SerializedAnswer(new RequestGameInfo()));
       //receiving GameMode info from first client
-      return (GameMode) in.readObject();
+      return (GameMode) c.getInputStream().readObject();
    }
 
    public void run()
@@ -50,23 +52,23 @@ public class Server
          try
          {
             Socket socket = server.accept();
-            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
             System.out.println("New Connection!");
-            registerConnection(socket, in);
+            registerConnection(socket);
             System.out.println(waitLobby.size());
             if(waitLobby.size() == 1)
             {
-               info = requestGameInfo(socket, in, out);
+               info = requestGameInfo(waitLobby.get(0));
             }
             if(waitLobby.size() == info.getMaxPlayers())
             {
                MainController mc = new MainController(info.getMaxPlayers(), info.isExpertGame());
+               int x = 0;
                for(ClientConnection c : waitLobby)
                {
-                  GameHandler GH = new GameHandler(mc, c, in, out);
+                  GameHandler GH = new GameHandler(mc, c,x%info.getMaxPlayers());
                   mc.getGame().addObserver(GH);
-                  executor.submit(GH);
+                  GH.start();
+                  x++;
                }
                waitLobby.removeAll(waitLobby);
             }

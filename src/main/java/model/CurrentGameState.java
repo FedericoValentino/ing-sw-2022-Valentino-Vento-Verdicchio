@@ -107,7 +107,6 @@ public class CurrentGameState extends Observable {
         {
             for(Player p: t.getPlayers())
             {
-                //da modificare perchè nella modalità a 4 giocatori 2 player non hanno torri
                 if(p.getSchool().getTowerCount() == 0 && p.isTowerOwner())
                 {
                     currentTurnState.updateWinner(t.getColor());

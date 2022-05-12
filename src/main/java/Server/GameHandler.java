@@ -9,8 +9,10 @@ import Client.Messages.SetupMessages.ReadyStatus;
 import Client.Messages.SetupMessages.StandardSetupMessage;
 import Client.Messages.SetupMessages.WizardChoice;
 import Server.Answers.ActionAnswers.*;
+import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.AvailableWizards;
 import Server.Answers.SetupAnswers.GameStarting;
+import Server.Answers.SetupAnswers.InfoMessage;
 import controller.CharacterController;
 import controller.MainController;
 import model.boards.token.GamePhase;
@@ -25,23 +27,26 @@ import java.io.ObjectOutputStream;
 public class GameHandler extends Thread implements Observer
 {
     private ClientConnection socket;
-    private ObjectInputStream in;
-    private ObjectOutputStream out;
     private MainController mainController;
     private boolean ready;
+    private boolean choseWizard;
     private int planning;
+    private int action;
+    private int team;
 
-    public GameHandler(MainController m, ClientConnection s, ObjectInputStream in, ObjectOutputStream out) throws IOException {
+    public GameHandler(MainController m, ClientConnection s, int team) throws IOException {
 
         this.socket = s;
-        this.in = in;
-        this.out = out;
         this.mainController = m;
         this.ready = false;
+        this.choseWizard = false;
         this.planning = 0;
+        this.action = 0;
+        this.team = team;
     }
 
-    public void setupHandler(StandardSetupMessage message) throws IOException {
+    public void setupHandler(StandardSetupMessage message) throws IOException
+    {
         if(message instanceof WizardChoice)
         {
             synchronized (mainController.getAvailableWizards())
@@ -49,8 +54,14 @@ public class GameHandler extends Thread implements Observer
                 Wizard w = ((WizardChoice) message).getWizard();
                 if(mainController.getAvailableWizards().contains(w) && MainController.findPlayerByName(mainController.getGame(), socket.getNickname()) == null)
                 {
-                    mainController.AddPlayer(0, socket.getNickname(), 8, w);
+                    mainController.AddPlayer(team, socket.getNickname(), 8, w);
                     mainController.getAvailableWizards().remove(w);
+                    socket.sendAnswer(new SerializedAnswer(new InfoMessage("Wizard Selected, type [Ready] if you're ready to start!")));
+                    choseWizard = true;
+                }
+                else
+                {
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Sorry, Wizard Already Taken")));
                 }
             }
         }
@@ -62,6 +73,9 @@ public class GameHandler extends Thread implements Observer
                 ready = true;
                 if(mainController.getReadyPlayers() == mainController.getPlayers())
                 {
+                    System.out.println("All players ready!");
+                    mainController.updateTurnState();
+                    mainController.determineNextPlayer();
                     mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
                 }
             }
@@ -100,7 +114,9 @@ public class GameHandler extends Thread implements Observer
         }
     }
 
-    public void actionHandler(StandardActionMessage message) throws IOException {
+    public void actionHandler(StandardActionMessage message) throws IOException
+    {
+
         if(message instanceof MoveStudent)
         {
             if(((MoveStudent) message).isToIsland())
@@ -121,7 +137,7 @@ public class GameHandler extends Thread implements Observer
             }
             else
             {
-                out.writeObject(new ErrorMessage("Too much movement"));
+                socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Too much movement")));
             }
         }
 
@@ -129,7 +145,7 @@ public class GameHandler extends Thread implements Observer
         {
             if(mainController.getActionController().isCloudEmpty(((DrawFromPouch) message).getCloudIndex(), mainController.getGame()))
             {
-                out.writeObject(new ErrorMessage("You selected an empty Cloud"));
+                socket.sendAnswer(new SerializedAnswer(new ErrorMessage("You selected an empty Cloud")));
             }
             else
             {
@@ -187,13 +203,13 @@ public class GameHandler extends Thread implements Observer
         }
         else
         {
-            out.writeObject(new ErrorMessage("Not your turn!"));
+            socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Not your turn!")));
         }
 
     }
 
     public void readMessage() throws IOException, ClassNotFoundException {
-        SerializedMessage input = (SerializedMessage) in.readObject();
+        SerializedMessage input = (SerializedMessage) socket.getInputStream().readObject();
         if(input.getCommand() != null)
         {
             StandardSetupMessage message = input.getCommand();
@@ -213,26 +229,53 @@ public class GameHandler extends Thread implements Observer
         {
             while(isAlive())
             {
-                if(mainController.isGamePhase(GamePhase.SETUP))
+                if(mainController.isGamePhase(GamePhase.SETUP) && !choseWizard)
                 {
-                    out.writeObject(new AvailableWizards(mainController.getAvailableWizards()));
+                    socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
+                }
+                if(choseWizard && ready && mainController.isGamePhase(GamePhase.SETUP))
+                {
+                    boolean x = false;
+                    while(mainController.getReadyPlayers() != mainController.getPlayers())
+                    {
+                        if(!x)
+                        {
+                            System.out.println("Waiting for all clients to be ready");
+                            x = true;
+                        }
+                    }
                 }
                 if(mainController.isGamePhase(GamePhase.GAMEREADY))
                 {
-                    out.writeObject(new GameStarting());
-                    mainController.updateTurnState();
-                    mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
+                    socket.sendAnswer(new SerializedAnswer(new GameStarting()));
+                    //mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
                 }
-                if(mainController.isGamePhase(GamePhase.PLANNING))
+                if(mainController.isGamePhase(GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                 {
-                    out.writeObject(new StartTurn());
+                    socket.sendAnswer(new SerializedAnswer(new StartTurn()));
                     if(planning == 0)
                     {
-                        out.writeObject(new RequestCloud());
+                        socket.sendAnswer(new SerializedAnswer(new RequestCloud("Seleziona nuvola da riempire")));
                     }
                     if(planning == 1)
                     {
-                        out.writeObject(new RequestCard());
+                        socket.sendAnswer(new SerializedAnswer(new RequestCard()));
+                    }
+                }
+                if(mainController.isGamePhase(GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                {
+                    socket.sendAnswer(new SerializedAnswer(new StartTurn()));
+                    if(action >= 0 && action <= 2)
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new RequestMoveStudent(String.valueOf(mainController.getActionController().getMovableStudents()))));
+                    }
+                    if(action == 3)
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new RequestMotherNatureMove(String.valueOf(MainController.findPlayerByName(mainController.getGame(), socket.getNickname()).getMaxMotherMovement()))));
+                    }
+                    if(action == 4)
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new RequestCloud("Seleziona nuvola da svuotare")));
                     }
                 }
                 readMessage();
@@ -255,12 +298,6 @@ public class GameHandler extends Thread implements Observer
     @Override
     public void update(String message)
     {
-        try
-        {
-            out.writeObject(new ViewMessage(message));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        socket.sendAnswer(new SerializedAnswer(new ViewMessage(message)));
     }
 }

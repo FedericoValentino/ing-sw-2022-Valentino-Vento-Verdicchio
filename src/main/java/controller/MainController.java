@@ -173,7 +173,7 @@ public class MainController
         return null;
     }
 
-    public boolean isGamePhase(GamePhase currentGamePhase)
+    public synchronized boolean isGamePhase(GamePhase currentGamePhase)
     {
         return currentGamePhase == game.getCurrentTurnState().getGamePhase();
     }
