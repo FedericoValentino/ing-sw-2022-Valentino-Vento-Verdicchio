@@ -20,14 +20,12 @@ import java.util.Scanner;
 
 public class ClientCLI implements ClientView
 {
-    private String nickname;
-    private int team;
-    private String ServerIP;
+    private ServerConnection main;
     private Scanner stdin = new Scanner(System.in);
-    private Socket socket;
-    private ObjectOutputStream out;
-    private ObjectInputStream in;
     private SerializedAnswer input;
+    private Boolean MyTurn = false;
+    private String currentInput;
+
 
     public void setupHandler(StandardSetupAnswer answer) throws IOException {
         if(answer instanceof RequestGameInfo)
@@ -38,7 +36,9 @@ public class ClientCLI implements ClientView
             gm.setMaxPlayers(stdin.nextInt());
             System.out.println("Expert Mode?");
             gm.setExpertGame(stdin.nextBoolean());
-            out.writeObject(gm);
+            main.getOut().writeObject(gm);
+            main.getOut().flush();
+            main.getOut().reset();
         }
         if(answer instanceof AvailableWizards)
         {
@@ -49,22 +49,21 @@ public class ClientCLI implements ClientView
                 System.out.print(String.valueOf("[" + w.ordinal()) + "] " + w + " ");
             }
             int choice = stdin.nextInt();
-            out.writeObject(new SerializedMessage(new WizardChoice(Wizard.values()[choice])));
+            main.sendMessage(new SerializedMessage(new WizardChoice(Wizard.values()[choice])));
         }
         if(answer instanceof InfoMessage)
         {
             System.out.println(((InfoMessage) answer).getInfo());
             if(stdin.next().equals("Ready"))
             {
-                out.writeObject(new SerializedMessage(new ReadyStatus()));
+                main.sendMessage(new SerializedMessage(new ReadyStatus()));
             }
         }
         if(answer instanceof GameStarting)
         {
             System.out.println("Game Starting!");
         }
-        out.flush();
-        out.reset();
+
     }
 
     public void messageHandler(StandardActionAnswer answer)
@@ -76,11 +75,12 @@ public class ClientCLI implements ClientView
         if(answer instanceof StartTurn)
         {
             System.out.println("Your Turn, start playing!");
+            MyTurn = true;
         }
     }
 
     public void readMessage() throws IOException, ClassNotFoundException {
-        input = (SerializedAnswer) in.readObject();
+        input = (SerializedAnswer) main.getIn().readObject();
         if(input.getCommand() != null)
         {
             StandardSetupAnswer answer = input.getCommand();
@@ -95,28 +95,22 @@ public class ClientCLI implements ClientView
 
     @Override
     public void run() throws IOException, ClassNotFoundException {
-        System.out.println("NickName?");
-        nickname = stdin.next();
-        System.out.println("Team?");
-        team = stdin.nextInt();
-        System.out.println("Server IP?");
-        ServerIP = stdin.next();
 
-        socket = new Socket(ServerIP, 1234);
-        out = new ObjectOutputStream(socket.getOutputStream());
-        in = new ObjectInputStream(socket.getInputStream());
-        SetupConnection setup = new SetupConnection();
-        setup.setNickname(nickname);
-        setup.setTeam(team);
-        out.writeObject(setup);
-        out.flush();
-        out.reset();
+        main = new ServerConnection();
+        SetupConnection setup = new SetupConnection(main.getNickname(), main.getTeam());
+        main.getOut().writeObject(setup);
+        main.getOut().flush();
+        main.getOut().reset();
 
         while(true)
         {
             System.out.println("Waiting for Server...");
             readMessage();
+            if(MyTurn)
+            {
+                currentInput = stdin.next();
 
+            }
         }
 
 

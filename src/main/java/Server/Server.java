@@ -1,6 +1,5 @@
 package Server;
 
-import Client.Client;
 import Client.Messages.SetupMessages.GameMode;
 import Client.Messages.SetupMessages.SetupConnection;
 import Server.Answers.SerializedAnswer;
