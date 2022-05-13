@@ -1,14 +1,18 @@
 package model.boards.token;
 //serve java.utils.random per randomizzare la posizione
+import model.CurrentGameState;
+
 import java.util.Random;
 
 public class MotherNature
 {
     private int idPosition;
+    private CurrentGameState game;
 
     /** Class constructor. The initial position of Mother Nature is randomized */
-    public MotherNature(){
+    public MotherNature(CurrentGameState game){
         //this.id_position
+        this.game = game;
         Random r= new Random();
         this.idPosition=r.nextInt(12);
     }

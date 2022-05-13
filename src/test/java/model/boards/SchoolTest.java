@@ -1,6 +1,8 @@
 package model.boards;
 
 import static org.junit.Assert.*;
+
+import model.CurrentGameState;
 import org.junit.Test;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
@@ -9,9 +11,11 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class SchoolTest{
-    School s=new School(ColTow.BLACK,6);
-    School s2=new School(ColTow.GREY,6);
+public class SchoolTest
+{
+    CurrentGameState game;
+    School s=new School(ColTow.BLACK,6, game);
+    School s2=new School(ColTow.GREY,6, game);
     Student ss1=new Student(Col.YELLOW);
     Student ss2=new Student(Col.GREEN);
 
@@ -25,7 +29,7 @@ public class SchoolTest{
     @Test
     public void testPlaceToken2()
     {
-        School st = new School(ColTow.BLACK,6);
+        School st = new School(ColTow.BLACK,6, game);
         st.getEntrance().removeAll(st.getEntrance());
         ArrayList<Student> ss = new ArrayList<>();
         ss.add(ss1);

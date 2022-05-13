@@ -11,9 +11,10 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class IslandsTest {
-    Islands is=new Islands();
-    Islands is2=new Islands();
-    Islands is3=new Islands();
+    CurrentGameState dummy = new CurrentGameState(2, false);
+    Islands is=new Islands(dummy);
+    Islands is2=new Islands(dummy);
+    Islands is3=new Islands(dummy);
     Student s1=new Student(Col.GREEN);
     Student s12=new Student(Col.RED);
     Student s2=new Student(Col.PINK);
@@ -22,13 +23,13 @@ public class IslandsTest {
 
     @Test
     public void testIdManagment() {
-        Team t3=new Team(ColTow.BLACK);
-        Team t1=new Team(ColTow.GREY);
-        Team t2=new Team(ColTow.WHITE);
+        Team t3=new Team(ColTow.BLACK, dummy);
+        Team t1=new Team(ColTow.GREY, dummy);
+        Team t2=new Team(ColTow.WHITE, dummy);
         CurrentGameState c=new CurrentGameState(2,false);
-        Player p3=new Player("ci", ColTow.BLACK,8, Wizard.WITCH,false);
-        Player p1=new Player("asd", ColTow.GREY,8,Wizard.SENSEI, false);
-        Player p2=new Player("adsd", ColTow.WHITE,8,Wizard.LORD,false);
+        Player p3=new Player("ci", ColTow.BLACK,8, Wizard.WITCH,false, dummy);
+        Player p1=new Player("asd", ColTow.GREY,8,Wizard.SENSEI, false, dummy);
+        Player p2=new Player("adsd", ColTow.WHITE,8,Wizard.LORD,false, dummy);
 
         testIdManagmentCase1(t3,t1,p3,p1,c); // caso1 testing ez
         testIdManagmentCase2(t2,t1,p2,p1,c,p3,t3); //caso 2 un po' più elaborato

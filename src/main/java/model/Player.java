@@ -19,6 +19,7 @@ public class Player
   private int movementValue;
   private int value;
   private boolean TowerOwner;
+  private CurrentGameState game;
 
 
   /** Class constructor
@@ -28,10 +29,11 @@ public class Player
    * @param wizard  the wizard chosen by the player
    * @param expertGame  the game mode chosen by the host: determines whether the player is assigned coins
    */
-  public Player(String nome, ColTow col, int towerAmount, Wizard wizard, boolean expertGame)
+  public Player(String nome, ColTow col, int towerAmount, Wizard wizard, boolean expertGame, CurrentGameState game)
   {
+    this.game = game;
     this.nome = nome;
-    this.school = new School(col, towerAmount);
+    this.school = new School(col, towerAmount, game);
     if(towerAmount != 0)
     {
       this.TowerOwner = true;
@@ -62,6 +64,7 @@ public class Player
     currentAssistantCard = assistantDeck.extractCard(cardPosition);
     MaxMotherMovement = currentAssistantCard.getMovement();
     value = currentAssistantCard.getValue();
+    game.notify(game.modelToJson());
   }
 
   /** Removes the last played Assistant Card from the Current Assistant Card field and places it into the
@@ -88,6 +91,7 @@ public class Player
         }
       }
       updateCoins(gainedCoins);
+      game.notify(game.modelToJson());
       return gainedCoins;
   }
 
@@ -109,7 +113,10 @@ public class Player
   /** Modifies the Maximum Mother Nature Movement by adding to it the desired value
    * @param movement  the desired amount used to increase or decrease the MaxMotherMovement field
    */
-  public void updateMaxMotherMovement(int movement){MaxMotherMovement += movement;}
+  public void updateMaxMotherMovement(int movement)
+  {
+    MaxMotherMovement += movement;
+  }
 
   public AssistantCard getCurrentAssistantCard() {
     return currentAssistantCard;

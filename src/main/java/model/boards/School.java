@@ -1,4 +1,5 @@
 package model.boards;
+import model.CurrentGameState;
 import model.boards.token.ColTow;
 import model.boards.token.Student;
 import model.boards.token.Col;
@@ -13,6 +14,7 @@ public class School extends Board
   private int[] roomCheckpoints;
   private boolean[] professorTable;
   private int towerCount;
+  private CurrentGameState game;
 
     /** Class constructor. Creates a school receiving as inputs the game-mode dependent attributes, such as TeamColor
      and number of Towers. The diningRoom doesn't operate with students, but it is instead an array of int;
@@ -25,8 +27,9 @@ public class School extends Board
      * @param color  the color of the player's team
      * @param towerCount  the number of towers assigned to the player, depending on the number of players present
      */
-    public School(ColTow color, int towerCount)
+    public School(ColTow color, int towerCount, CurrentGameState game)
     {
+        this.game = game;
         this.color = color;
         this.towerCount = towerCount;
         this.diningRoom = new int[5];

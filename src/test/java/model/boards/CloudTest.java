@@ -1,15 +1,19 @@
 package model.boards;
 
+import model.CurrentGameState;
 import org.junit.Test;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Currency;
+
 import static org.junit.Assert.*;
 import model.boards.token.Student;
 import model.boards.token.Col;
 
 public class CloudTest {
-    Cloud c= new Cloud();
-    Cloud c2= new Cloud();
+    CurrentGameState game  = new CurrentGameState(2, false);
+    Cloud c= new Cloud(game);
+    Cloud c2= new Cloud(game);
     ArrayList<Student> stud=new ArrayList<Student>();
     Student st1=new Student(Col.GREEN);
     Student st2=new Student(Col.PINK);
@@ -57,7 +61,7 @@ public class CloudTest {
     @Test
     public void testEmptyCloud()
     {
-        Cloud c1 = new Cloud();
+        Cloud c1 = new Cloud(game);
         Student s1 = new Student(Col.YELLOW);
         Student s2 = new Student(Col.GREEN);
         ArrayList<Student> ss = new ArrayList<>();

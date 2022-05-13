@@ -1,4 +1,5 @@
 package model.boards;
+import model.CurrentGameState;
 import model.Team;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
@@ -17,13 +18,15 @@ public class Island
   public int towerNumber;
   public int[] teamInfluence;
   private boolean noEntry;
+  private CurrentGameState game;
 
 
   /** Class Constructor
    * @param islandId  the ID to assign to the new island
    */
-  public Island(int islandId)
+  public Island(int islandId, CurrentGameState game)
   {
+    this.game = game;
     this.islandId = islandId;
     this.currentStudents = new ArrayList<>();
     this.motherNature = false;
@@ -53,6 +56,7 @@ public class Island
         }
       }
     }
+    game.notify(game.modelToJson());
   }
 
   /** Method updateTeamInfluence updates the teamInfluence array with each team influence on the island
@@ -89,6 +93,7 @@ public class Island
           this.teamInfluence[ownership.ordinal()] += towerNumber;
       }
     }
+    game.notify(game.modelToJson());
   }
 
   /** Method addStudent adds a student to the island
@@ -97,6 +102,7 @@ public class Island
   public void addStudent(Student s)
   {
     currentStudents.add(s);
+    game.notify(game.modelToJson());
   }
 
   /** Method updateNoEntry sets on or off the access of the island to motherNature */
@@ -106,6 +112,7 @@ public class Island
       noEntry = false;
     else
       noEntry = true;
+    game.notify(game.modelToJson());
   }
 
   /** Overload of updateTeamInfluence, only used by CharacterCards which actively modify the influence on an island
@@ -128,6 +135,7 @@ public class Island
     {
       motherNature = true;
     }
+    game.notify(game.modelToJson());
   }
 
   public ArrayList<Student> getCurrentStudents(){

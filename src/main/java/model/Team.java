@@ -11,14 +11,16 @@ public class Team
   private ArrayList<Player> players;
   private int controlledIslands;
   private ArrayList<Col> controlledProfessors;
+  private CurrentGameState game;
 
   /** Class Constructor */
-  public Team(ColTow color)
+  public Team(ColTow color, CurrentGameState game)
   {
     this.color = color;
     this.players = new ArrayList<>();
     this.controlledIslands = 0;
     this.controlledProfessors = new ArrayList<>();
+    this.game = game;
   }
 
 

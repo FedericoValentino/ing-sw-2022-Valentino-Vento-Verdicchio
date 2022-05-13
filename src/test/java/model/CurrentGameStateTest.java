@@ -8,14 +8,15 @@ import java.util.HashMap;
 import static org.junit.Assert.*;
 
 public class CurrentGameStateTest {
+    CurrentGameState dummy = new CurrentGameState(2, false);
     CurrentGameState cg1=new CurrentGameState(2,false);
     CurrentGameState cg2=new CurrentGameState(2,true);
     CurrentGameState cg3=new CurrentGameState(3,false);
     Student s2=new Student(Col.RED);
     Student s5=new Student(Col.BLUE);
 
-    Player p1=new Player("ci", ColTow.WHITE,8, Wizard.DRUID,false);
-    Player p2=new Player("asd", ColTow.GREY,8,Wizard.WITCH,false);
+    Player p1=new Player("ci", ColTow.WHITE,8, Wizard.DRUID,false, dummy);
+    Player p2=new Player("asd", ColTow.GREY,8,Wizard.WITCH,false, dummy);
     HashMap<String, Integer> tO=new HashMap<>();
     HashMap<String, Integer> tOO=new HashMap<>();
 
@@ -23,8 +24,8 @@ public class CurrentGameStateTest {
     @Test
     public void testUpdateBankBalance()
     {
-        Player p11=new Player("ci", ColTow.WHITE,8,Wizard.SENSEI,true);
-        Player p22=new Player("asd", ColTow.BLACK,8,Wizard.LORD,true);
+        Player p11=new Player("ci", ColTow.WHITE,8,Wizard.SENSEI,true, dummy);
+        Player p22=new Player("asd", ColTow.BLACK,8,Wizard.LORD,true, dummy);
 
         int i=p1.getCoinAmount();
         cg1.getCurrentTeams().get(0).addPlayer(p11);
@@ -124,8 +125,8 @@ public void testPlaceToken1()
     @Test
     public void testGiveProfessors()
     {
-        Team t1=new Team(ColTow.WHITE);
-        Team t2=new Team(ColTow.GREY);
+        Team t1=new Team(ColTow.WHITE, dummy);
+        Team t2=new Team(ColTow.GREY, dummy);
         cg1.getCurrentTeams().add(t1);
         cg1.getCurrentTeams().add(t2);
         cg1.getCurrentTeams().get(0).addPlayer(p1);

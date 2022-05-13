@@ -1,4 +1,5 @@
 package model.boards;
+import model.CurrentGameState;
 import model.boards.token.Student;
 
 import java.util.ArrayList;
@@ -6,11 +7,13 @@ import java.util.ArrayList;
 public class Cloud extends Board
 {
   private ArrayList<Student> student;
+  private CurrentGameState game;
 
   /** Class constructor 1*/
-  public Cloud()
+  public Cloud(CurrentGameState game)
   {
     student= new ArrayList<>();
+    this.game = game;
   }
 
   /** Class constructor 2 */
@@ -26,8 +29,10 @@ public class Cloud extends Board
   /** Adds the selected student to the cloud
    * @param s  student to place on the cloud
    */
-  public void placeToken(Student s){
+  public void placeToken(Student s)
+  {
     student.add(s);
+    game.notify(game.modelToJson());
   }
 
   /** remove the last Student of the cloud
@@ -43,6 +48,7 @@ public class Cloud extends Board
     {
       // System.out.println("Error,the student vector is empty");
     }
+    game.notify(game.modelToJson());
   }
 
 
@@ -51,6 +57,7 @@ public class Cloud extends Board
     ArrayList<Student> current = new ArrayList<>();
     current.addAll(student);
     student.removeAll(student);
+    game.notify(game.modelToJson());
     return current;
   }
 

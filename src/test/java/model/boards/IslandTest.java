@@ -12,21 +12,22 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class IslandTest {
-    Island i=new Island(0);
+    CurrentGameState dummy  = new CurrentGameState(2, false);
+    Island i=new Island(0, dummy);
     CurrentGameState c=new CurrentGameState(5,false);
     Student s=new Student(Col.GREEN);
     Student s2=new Student(Col.RED);
     Student s3=new Student(Col.YELLOW);
     Student s4=new Student(Col.PINK);
     Student s5=new Student(Col.BLUE);
-    Team t1=new Team(ColTow.BLACK);
-    Team t2=new Team(ColTow.GREY);
+    Team t1=new Team(ColTow.BLACK, dummy);
+    Team t2=new Team(ColTow.GREY, dummy);
 
-    Player p1=new Player("ci", ColTow.BLACK,8, Wizard.LORD,false);
-    Player p2=new Player("asd", ColTow.GREY,8,Wizard.SENSEI,false);
-    Player p3=new Player("asd", ColTow.BLACK,8,Wizard.WITCH,false);
-    Player p4=new Player("asd", ColTow.GREY,8,Wizard.DRUID,false);
-    Player p5=new Player("asd", ColTow.GREY,8,Wizard.DRUID,false);
+    Player p1=new Player("ci", ColTow.BLACK,8, Wizard.LORD,false, dummy);
+    Player p2=new Player("asd", ColTow.GREY,8,Wizard.SENSEI,false, dummy);
+    Player p3=new Player("asd", ColTow.BLACK,8,Wizard.WITCH,false, dummy);
+    Player p4=new Player("asd", ColTow.GREY,8,Wizard.DRUID,false, dummy);
+    Player p5=new Player("asd", ColTow.GREY,8,Wizard.DRUID,false, dummy);
 
     @Test
     public void testInizializationIsland()

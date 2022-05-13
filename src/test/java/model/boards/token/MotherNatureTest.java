@@ -1,10 +1,12 @@
 package model.boards.token;
 
+import model.CurrentGameState;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MotherNatureTest {
-    MotherNature mother= new MotherNature();
+    CurrentGameState game;
+    MotherNature mother= new MotherNature(game);
 
     @Test
     public void testMove()

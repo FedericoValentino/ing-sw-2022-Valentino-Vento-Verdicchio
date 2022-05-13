@@ -39,27 +39,27 @@ public class CurrentGameState extends Observable {
     public CurrentGameState(int playerNum, boolean expertGame)
     {
        this.currentPouch = new Pouch();
-       this.currentMotherNature = new MotherNature();
-       this.currentIslands = new Islands();
+       this.currentMotherNature = new MotherNature(this);
+       this.currentIslands = new Islands(this);
        this.currentTeams = new ArrayList<>();
        if(playerNum == 2 || playerNum == 4)
        {
            for(int i = 0; i < 2; i++)
            {
-               currentTeams.add(new Team(ColTow.values()[i]));
+               currentTeams.add(new Team(ColTow.values()[i], this));
            }
        }
        else if(playerNum == 3)
        {
            for(int i = 0; i < 3; i++)
            {
-               currentTeams.add(new Team(ColTow.values()[i]));
+               currentTeams.add(new Team(ColTow.values()[i],this));
            }
        }
        this.currentClouds = new Cloud[playerNum];
        for(int i = 0; i < playerNum; i++)
        {
-           currentClouds[i] = new Cloud();
+           currentClouds[i] = new Cloud(this);
        }
        this.currentTurnState = new CurrentTurnState();
        this.currentActiveCharacterCard = new ArrayList<>();
@@ -125,6 +125,7 @@ public class CurrentGameState extends Observable {
         {
             currentTurnState.lastTurn = true;
         }
+        notify(modelToJson());
     }
 
     /** Method updateBankBalance updates the BankBalance everytime a player p gains a coin from its DiningRoom or pays
@@ -148,6 +149,7 @@ public class CurrentGameState extends Observable {
             bankBalance -= coinsToLose;
         else
             bankBalance = 0;
+        notify(modelToJson());
     }
 
 
@@ -192,6 +194,12 @@ public class CurrentGameState extends Observable {
             }
 
         }
+        notify(modelToJson());
+    }
+
+    public String modelToJson()
+    {
+       return "ciao";
     }
 
     public int getBankBalance(){return bankBalance;}

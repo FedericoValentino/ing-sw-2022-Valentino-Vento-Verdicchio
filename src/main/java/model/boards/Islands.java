@@ -1,4 +1,5 @@
 package model.boards;
+import model.CurrentGameState;
 import model.Team;
 import model.boards.token.ColTow;
 import model.boards.token.Student;
@@ -8,16 +9,18 @@ import java.util.ArrayList;
 public class Islands extends Board {
   private ArrayList<Island> islands=new ArrayList<>();
   private int totalGroups;
+  private CurrentGameState game;
 
 
   /** Class Constructor, creates 12 Island and sets the total group to 12 */
-  public Islands()
+  public Islands(CurrentGameState game)
   {
     for(int i = 0; i < 12; i++)
     {
-      islands.add(new Island(i));
+      islands.add(new Island(i, game));
     }
     totalGroups = 12;
+    this.game = game;
   }
 
   /** Method idManagement handles the unification of islands and updates the totalGroup parameter to match
