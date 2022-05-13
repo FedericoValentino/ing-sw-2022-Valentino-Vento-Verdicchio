@@ -199,7 +199,7 @@ public class CurrentGameState extends Observable {
 
     public String modelToJson()
     {
-       return "ciao";
+        return "CIAO";
     }
 
     public int getBankBalance(){return bankBalance;}

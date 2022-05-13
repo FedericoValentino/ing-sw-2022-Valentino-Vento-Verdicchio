@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Doppia reference per tutti + fix ai test per farli funzionare">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Ridefinizione Client">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/LightView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +173,7 @@
       <workItem from="1651417980273" duration="1496000" />
       <workItem from="1652274524881" duration="7998000" />
       <workItem from="1652364117265" duration="13048000" />
-      <workItem from="1652424946921" duration="4626000" />
+      <workItem from="1652424946921" duration="12408000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -434,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652426878585</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Ridefinizione Client">
+      <created>1652437325660</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1652437325660</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +461,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Test ActionController, fix in giro nel codice" />
     <MESSAGE value="Fix a dei test" />
     <MESSAGE value="PlanningControllerTesting 100% line coverage is go" />
     <MESSAGE value="fix" />
@@ -479,7 +485,8 @@
     <MESSAGE value="Fixed non working test in CurrentGameState due to recent changes.&#10;Now only the Character tests need attention" />
     <MESSAGE value="Protocol" />
     <MESSAGE value="Doppia reference per tutti + fix ai test per farli funzionare" />
-    <option name="LAST_COMMIT_MESSAGE" value="Doppia reference per tutti + fix ai test per farli funzionare" />
+    <MESSAGE value="Ridefinizione Client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ridefinizione Client" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -7,4 +7,8 @@ public class RequestCloud implements StandardActionAnswer
     public RequestCloud(String message) {
         this.message = message;
     }
+
+    public String getMessage() {
+        return message;
+    }
 }

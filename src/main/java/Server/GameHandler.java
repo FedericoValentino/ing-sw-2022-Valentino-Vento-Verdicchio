@@ -48,7 +48,8 @@ public class GameHandler extends Thread implements Observer
         this.flag = false;
     }
 
-    public void setupHandler(StandardSetupMessage message) throws IOException, InterruptedException {
+    public void setupHandler(StandardSetupMessage message) throws IOException, InterruptedException
+    {
         if(message instanceof WizardChoice)
         {
             synchronized (mainController.getAvailableWizards())
@@ -64,7 +65,7 @@ public class GameHandler extends Thread implements Observer
                 }
                 else
                 {
-                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Sorry, Wizard Already Taken")));
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Sorry, wrong input or Wizard already taken")));
                 }
             }
         }
@@ -102,13 +103,13 @@ public class GameHandler extends Thread implements Observer
 
     public void planningHandler(StandardActionMessage message)
     {
-        if(message instanceof ChooseCloud)
+        if(message instanceof DrawFromPouch && planning == 0)
         {
             mainController.getPlanningController()
-                    .drawStudentForClouds(mainController.getGame(), ((ChooseCloud) message).getCloudIndex());
+                    .drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
             planning++;
         }
-        if(message instanceof DrawAssistantCard)
+        if(message instanceof DrawAssistantCard && planning == 1)
         {
             mainController.getPlanningController()
                     .drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
