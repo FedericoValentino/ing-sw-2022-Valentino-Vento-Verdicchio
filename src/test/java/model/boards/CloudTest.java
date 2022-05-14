@@ -25,7 +25,7 @@ public class CloudTest {
     {
         stud1.add(st1);
         stud1.add(st2);
-        Cloud c1=new Cloud(stud1);
+        Cloud c1=new Cloud(stud1, false);
         assertEquals(c1.getStudent(1),st2);
     }
     @Test

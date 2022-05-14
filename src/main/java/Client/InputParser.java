@@ -1,7 +1,6 @@
 package Client;
 
 import Client.Messages.ActionMessages.*;
-import Server.Answers.ActionAnswers.StandardActionAnswer;
 import model.boards.token.Col;
 
 import java.util.Scanner;

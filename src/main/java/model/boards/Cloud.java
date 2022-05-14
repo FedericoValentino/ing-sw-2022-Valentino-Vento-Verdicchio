@@ -1,4 +1,5 @@
 package model.boards;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import model.CurrentGameState;
 import model.boards.token.Student;
 
@@ -17,7 +18,8 @@ public class Cloud extends Board
   }
 
   /** Class constructor 2 */
-  public Cloud(ArrayList<Student> st)
+  public Cloud(@JsonProperty("students") ArrayList<Student> st,
+               @JsonProperty("empty") boolean empty)
   {
       student= new ArrayList<>();
       for(int i=0;i<st.size();i++)

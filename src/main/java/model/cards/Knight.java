@@ -7,7 +7,9 @@ import model.Team;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 
-public class Knight extends CharacterCard{
+import java.io.Serializable;
+
+public class Knight extends CharacterCard implements Serializable {
     private int idCard;
 
     /** Class constructor */

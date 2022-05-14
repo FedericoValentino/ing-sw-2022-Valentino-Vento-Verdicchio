@@ -7,6 +7,7 @@ import Client.Messages.SetupMessages.*;
 import Server.Answers.ActionAnswers.*;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import model.boards.token.Wizard;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class ClientCLI implements ClientView
     private SerializedAnswer input;
     private Boolean MyTurn = false;
     private String currentInput;
-    private LightView myView = new LightView();
+    private LightView MyView = new LightView();
 
 
     public void setupHandler(StandardSetupAnswer answer) throws IOException {
@@ -79,8 +80,7 @@ public class ClientCLI implements ClientView
 
     }
 
-    public void messageHandler(StandardActionAnswer answer)
-    {
+    public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
         if(answer instanceof ErrorMessage)
         {
             System.out.println(((ErrorMessage) answer).getError());
@@ -92,7 +92,7 @@ public class ClientCLI implements ClientView
         if(answer instanceof ViewMessage)
         {
             System.out.println("New view!");
-            myView.parse((ViewMessage) answer);
+            MyView.parse((ViewMessage) answer);
         }
         if(answer instanceof RequestCloud)
         {

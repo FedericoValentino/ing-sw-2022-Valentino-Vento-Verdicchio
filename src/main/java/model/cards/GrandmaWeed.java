@@ -3,7 +3,9 @@ package model.cards;
 import model.CurrentGameState;
 import model.boards.token.Col;
 
-public class GrandmaWeed extends CharacterCard{
+import java.io.Serializable;
+
+public class GrandmaWeed extends CharacterCard implements Serializable {
 
     private int noEntry;
     private int idCard;

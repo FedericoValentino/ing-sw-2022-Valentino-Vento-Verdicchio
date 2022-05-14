@@ -2,10 +2,11 @@ package model.cards;
 
 import model.boards.Pouch;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class CharacterDeck
+public class CharacterDeck implements Serializable
 {
   private ArrayList<CharacterCard> deck;
 

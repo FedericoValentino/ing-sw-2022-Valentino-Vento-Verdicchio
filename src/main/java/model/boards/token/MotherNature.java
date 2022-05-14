@@ -1,5 +1,6 @@
 package model.boards.token;
 //serve java.utils.random per randomizzare la posizione
+import com.fasterxml.jackson.annotation.JsonProperty;
 import model.CurrentGameState;
 
 import java.util.Random;
@@ -8,6 +9,12 @@ public class MotherNature
 {
     private int idPosition;
     private CurrentGameState game;
+
+    public MotherNature(@JsonProperty("position") int idPosition)
+    {
+        this.idPosition = idPosition;
+    }
+
 
     /** Class constructor. The initial position of Mother Nature is randomized */
     public MotherNature(CurrentGameState game){

@@ -4,7 +4,9 @@ import controller.MainController;
 import model.CurrentGameState;
 import model.boards.token.Col;
 
-public class Postman extends CharacterCard{
+import java.io.Serializable;
+
+public class Postman extends CharacterCard implements Serializable {
     private int idCard;
 
     /** Class constructor */

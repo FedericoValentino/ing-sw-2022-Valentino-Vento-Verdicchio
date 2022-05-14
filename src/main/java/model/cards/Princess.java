@@ -7,9 +7,10 @@ import model.boards.Pouch;
 import model.boards.token.Col;
 import model.boards.token.Student;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Princess extends CharacterCard {
+public class Princess extends CharacterCard implements Serializable {
 
     private int idCard;
     private ArrayList<Student> students;

@@ -5,7 +5,9 @@ import model.CurrentGameState;
 import model.boards.token.Col;
 import model.boards.token.Student;
 
-public class TruffleHunter extends CharacterCard{
+import java.io.Serializable;
+
+public class TruffleHunter extends CharacterCard implements Serializable {
     private int idCard;
     private Col ChosenColor;
 

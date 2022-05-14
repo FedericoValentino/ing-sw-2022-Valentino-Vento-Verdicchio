@@ -1,7 +1,11 @@
 package model.boards.token;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import model.boards.Board;
-public class Student {
+
+import java.io.Serializable;
+
+public class Student implements Serializable {
 
     private Col color;
 
@@ -9,7 +13,7 @@ public class Student {
     /** Class constructor. Creates a new student given the student color
      * @param StudentColor  the color assigned to the new student
      */
-    public Student(Col StudentColor)
+    public Student(@JsonProperty("color") Col StudentColor)
     {
       this.color = StudentColor;
     }

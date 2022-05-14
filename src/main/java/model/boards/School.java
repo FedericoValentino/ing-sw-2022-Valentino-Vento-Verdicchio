@@ -16,7 +16,23 @@ public class School extends Board
   private int towerCount;
   private CurrentGameState game;
 
-    /** Class constructor. Creates a school receiving as inputs the game-mode dependent attributes, such as TeamColor
+  /** Json class constructor */
+  public School(@JsonProperty("color")ColTow color,
+                @JsonProperty("entrance")ArrayList<Student> entrance,
+                @JsonProperty("diningRoom")int[] diningRoom,
+                @JsonProperty("roomCheckpoints")int[] roomCheckpoints,
+                @JsonProperty("professorTable")boolean[] professorTable,
+                @JsonProperty("towerCount")int towerCount)
+  {
+    this.color = color;
+    this.entrance = entrance;
+    this.diningRoom = diningRoom;
+    this.roomCheckpoints = roomCheckpoints;
+    this.professorTable = professorTable;
+    this.towerCount = towerCount;
+  }
+
+  /** Class constructor. Creates a school receiving as inputs the game-mode dependent attributes, such as TeamColor
      and number of Towers. The diningRoom doesn't operate with students, but it is instead an array of int;
      each index corresponds to the ordinal of the enumeration used to detail students' colors. So it can be manipulated
      through the color of the selected student. The roomCheckpoints array is handled in a similar way, and is used to

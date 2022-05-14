@@ -21,12 +21,10 @@ public class cgSerializer extends StdSerializer<CurrentGameState> {
     @Override
     public void serialize(CurrentGameState cgItem, JsonGenerator jgen, SerializerProvider p) throws IOException, JsonProcessingException {
         jgen.writeStartObject();
-        jgen.writeObjectField("currentCharacterDeck", cgItem.getCurrentCharacterDeck());
         jgen.writeObjectField("currentIslands", cgItem.getCurrentIslands());
         jgen.writeObjectField("currentTeams", cgItem.getCurrentTeams());
         jgen.writeObjectField("currentClouds", cgItem.getCurrentClouds());
         jgen.writeObjectField("currentMotherNature", cgItem.getCurrentMotherNature());
-        jgen.writeObjectField("currentActiveCharacterCard", cgItem.getCurrentActiveCharacterCard());
         jgen.writeNumberField("bankBalance", cgItem.getBankBalance());
 
 
