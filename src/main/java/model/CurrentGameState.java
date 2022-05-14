@@ -2,6 +2,9 @@
 
 package model;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import model.boards.Cloud;
 import model.boards.Islands;
 import model.boards.Pouch;
@@ -15,7 +18,7 @@ import Observer.Observable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
+@JsonSerialize(using = cgSerializer.class)
 public class CurrentGameState extends Observable {
     private CharacterDeck currentCharacterDeck;
     private Pouch currentPouch;
@@ -199,7 +202,13 @@ public class CurrentGameState extends Observable {
 
     public String modelToJson()
     {
-        return "CIAO";
+        String json=null;
+        try {
+            json = new ObjectMapper().writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 
     public int getBankBalance(){return bankBalance;}

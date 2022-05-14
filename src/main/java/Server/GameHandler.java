@@ -321,6 +321,7 @@ public class GameHandler extends Thread implements Observer
     @Override
     public void update(String message)
     {
+        System.out.println(message);
         socket.sendAnswer(new SerializedAnswer(new ViewMessage(message)));
     }
 }
