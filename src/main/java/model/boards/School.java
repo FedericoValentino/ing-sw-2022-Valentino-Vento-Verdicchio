@@ -1,4 +1,5 @@
 package model.boards;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import model.CurrentGameState;
 import model.boards.token.ColTow;
 import model.boards.token.Student;

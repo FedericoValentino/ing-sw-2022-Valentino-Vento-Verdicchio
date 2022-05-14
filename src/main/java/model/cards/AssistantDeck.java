@@ -1,5 +1,6 @@
 package model.cards;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import model.boards.token.Wizard;
 
 import java.util.ArrayList;

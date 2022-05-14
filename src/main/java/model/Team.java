@@ -1,5 +1,6 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 
@@ -12,6 +13,18 @@ public class Team
   private int controlledIslands;
   private ArrayList<Col> controlledProfessors;
   private CurrentGameState game;
+
+  /** Json class constructor */
+  public Team(@JsonProperty("color") ColTow color,
+              @JsonProperty("players") ArrayList<Player> players,
+              @JsonProperty("controlledIslands") int controlledIslands,
+              @JsonProperty("controlledProfessors") ArrayList<Col> controlledProfessors)
+  {
+    this.color = color;
+    this.players = players;
+    this.controlledIslands = controlledIslands;
+    this.controlledProfessors = controlledProfessors;
+  }
 
   /** Class Constructor */
   public Team(ColTow color, CurrentGameState game)
