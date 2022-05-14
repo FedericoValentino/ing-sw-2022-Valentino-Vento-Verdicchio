@@ -4,6 +4,7 @@ import Client.Messages.ActionMessages.StandardActionMessage;
 import Client.Messages.Message;
 import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.*;
+import Observer.Observer;
 import Server.Answers.ActionAnswers.*;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
@@ -22,7 +23,7 @@ public class ClientCLI implements ClientView
     private ServerConnection main;
     private InputParser stdin;
     private SerializedAnswer input;
-    private Boolean MyTurn = false;
+    private Boolean setupState = true;
     private String currentInput;
     private LightView MyView = new LightView();
 
@@ -76,6 +77,7 @@ public class ClientCLI implements ClientView
         if(answer instanceof GameStarting)
         {
             System.out.println("Game Starting!");
+            setupState = false;
         }
 
     }
@@ -85,29 +87,39 @@ public class ClientCLI implements ClientView
         {
             System.out.println(((ErrorMessage) answer).getError());
         }
-        if(answer instanceof StartTurn)
+        else if(answer instanceof StartTurn)
         {
             System.out.println("Your Turn, start playing!");
         }
-        if(answer instanceof ViewMessage)
+        else if(answer instanceof ViewMessage)
         {
-            System.out.println("New view!");
             MyView.parse((ViewMessage) answer);
         }
-        if(answer instanceof RequestCloud)
+        else if(answer instanceof RequestCloud)
         {
             System.out.println(((RequestCloud) answer).getMessage());
-            MyTurn = true;
         }
-        if(answer instanceof RequestCard)
+        else if(answer instanceof RequestCard)
         {
             System.out.println("Choose a Character Card!");
-            MyTurn = true;
+        }
+        else if(answer instanceof RequestMoveStudent)
+        {
+            System.out.println("Move a student from your entrance!");
+        }
+        else if(answer instanceof RequestMotherNatureMove)
+        {
+            System.out.println("Move Mother Nature!");
+        }
+        else if(answer instanceof RequestCloud)
+        {
+            System.out.println(((RequestCloud) answer).getMessage());
         }
     }
 
     public void readMessage() throws IOException, ClassNotFoundException {
         input = (SerializedAnswer) main.getIn().readObject();
+        cls();
         if(input.getCommand() != null)
         {
             StandardSetupAnswer answer = input.getCommand();
@@ -120,43 +132,29 @@ public class ClientCLI implements ClientView
         }
     }
 
+    public void cls()
+    {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     @Override
     public void run() throws IOException, ClassNotFoundException
     {
-
         main = new ServerConnection();
         SetupConnection setup = new SetupConnection(main.getNickname(), main.getTeam());
         main.getOut().writeObject(setup);
         main.getOut().flush();
         main.getOut().reset();
-        this.stdin = new InputParser(main.getNickname());
+        ClientListener Listener = new ClientListener(this);
+        Listener.start();
+        this.stdin = new InputParser(main);
         while(true)
         {
-            System.out.println("Waiting for Server...");
-            readMessage();
-            if(MyTurn)
+            if(!setupState)
             {
-                currentInput = stdin.getParser().next();
-                StandardActionMessage action;
-                do
-                {
-                    action = stdin.parseString(currentInput);
-                    if(action != null)
-                    {
-                        main.sendMessage(new SerializedMessage(action));
-                    }
-                    else
-                    {
-                        System.out.println("Wrong Action");
-                        currentInput = stdin.getParser().next();
-                    }
-                }while(action == null);
-
-
-                MyTurn = false;
+                stdin.newMove();
             }
         }
-
-
     }
 }

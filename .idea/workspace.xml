@@ -4,43 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Input Parser">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="View Sender completo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/ClientListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ViewMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ViewMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/MotherNature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/MotherNature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaWeed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cgSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cgSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/CloudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/boards/CloudTest.java" afterDir="false" />
     </list>
-    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java" afterDir="false" />
-    </list>
+    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,27 +40,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/model/Player.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="23" end1="23" start2="24" end2="47" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/model/boards/School.java">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="17" end1="17" start2="18" end2="34" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="18" end1="19" start2="35" end2="36" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/model/cards/AssistantDeck.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="13" end1="13" start2="14" end2="25" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -222,7 +173,8 @@
       <workItem from="1652274524881" duration="7998000" />
       <workItem from="1652364117265" duration="13048000" />
       <workItem from="1652424946921" duration="12408000" />
-      <workItem from="1652525657976" duration="10333000" />
+      <workItem from="1652525657976" duration="11977000" />
+      <workItem from="1652546613744" duration="7445000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -490,7 +442,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652437325660</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="View Sender completo">
+      <created>1652536929769</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1652536929769</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Json Constructor">
+      <created>1652536980308</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1652536980308</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,8 +476,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix a dei test" />
-    <MESSAGE value="PlanningControllerTesting 100% line coverage is go" />
     <MESSAGE value="fix" />
     <MESSAGE value="Removed prints from controller tests" />
     <MESSAGE value="rimosso codice" />
@@ -535,7 +499,9 @@
     <MESSAGE value="Protocol" />
     <MESSAGE value="Doppia reference per tutti + fix ai test per farli funzionare" />
     <MESSAGE value="Ridefinizione Client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ridefinizione Client" />
+    <MESSAGE value="View Sender completo" />
+    <MESSAGE value="Json Constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Json Constructor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

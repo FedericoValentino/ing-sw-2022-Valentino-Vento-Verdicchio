@@ -81,6 +81,7 @@ public class GameHandler extends Thread implements Observer
                     mainController.updateTurnState();
                     mainController.determineNextPlayer();
                     mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
+                    mainController.Setup();
                     sem.release(mainController.getPlayers()-1);
                     mainController.resetReady();
                     System.out.println(sem.availablePermits());
@@ -101,8 +102,7 @@ public class GameHandler extends Thread implements Observer
 
     }
 
-    public void planningHandler(StandardActionMessage message)
-    {
+    public void planningHandler(StandardActionMessage message) throws InterruptedException {
         if(message instanceof DrawFromPouch && planning == 0)
         {
             mainController.getPlanningController()
@@ -118,10 +118,12 @@ public class GameHandler extends Thread implements Observer
                 mainController.updateTurnState();
                 mainController.determineNextPlayer();
                 mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
+                sem.release(mainController.getPlayers()-1);
             }
             else
             {
                 mainController.determineNextPlayer();
+                sem.acquire();
             }
             planning = 0;
         }
@@ -130,7 +132,7 @@ public class GameHandler extends Thread implements Observer
     public void actionHandler(StandardActionMessage message) throws IOException
     {
 
-        if(message instanceof MoveStudent)
+        if(message instanceof MoveStudent && (action >= 0 && action <= 2))
         {
             if(((MoveStudent) message).isToIsland())
             {
@@ -140,9 +142,16 @@ public class GameHandler extends Thread implements Observer
                                 mainController.getGame(),
                                 socket.getNickname());
             }
-
+            else
+            {
+                mainController.getActionController()
+                        .placeStudentToDiningRoom(((MoveStudent) message).getEntrancePos(),
+                                                    mainController.getGame(),
+                                                    socket.getNickname());
+            }
+            action++;
         }
-        if(message instanceof MoveMN)
+        if(message instanceof MoveMN && action == 3)
         {
             if(mainController.getActionController().possibleMNmove(((MoveMN) message).getAmount(), mainController.getGame()))
             {
@@ -152,20 +161,22 @@ public class GameHandler extends Thread implements Observer
             {
                 socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Too much movement")));
             }
+            action++;
         }
 
-        if(message instanceof DrawFromPouch)
+        if(message instanceof ChooseCloud && action == 4)
         {
-            if(mainController.getActionController().isCloudEmpty(((DrawFromPouch) message).getCloudIndex(), mainController.getGame()))
+            if(mainController.getActionController().isCloudEmpty(((ChooseCloud) message).getCloudIndex(), mainController.getGame()))
             {
                 socket.sendAnswer(new SerializedAnswer(new ErrorMessage("You selected an empty Cloud")));
             }
             else
             {
-                mainController.getActionController().drawFromClouds(((DrawFromPouch) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
+                mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
             }
+            action++;
         }
-        if(message instanceof EndTurn)
+        if(message instanceof EndTurn && action == 5)
         {
             if(mainController.lastPlayer())
             {
@@ -177,6 +188,7 @@ public class GameHandler extends Thread implements Observer
             {
                 mainController.determineNextPlayer();
             }
+            action = 0;
         }
     }
 
@@ -202,7 +214,7 @@ public class GameHandler extends Thread implements Observer
     }
 
 
-    public void messageHandler(StandardActionMessage message) throws IOException {
+    public void messageHandler(StandardActionMessage message) throws IOException, InterruptedException {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
         {
             if(mainController.isGamePhase(GamePhase.PLANNING))
@@ -211,7 +223,14 @@ public class GameHandler extends Thread implements Observer
             }
             if(mainController.isGamePhase(GamePhase.ACTION))
             {
-                actionHandler(message);
+                if(message instanceof PlayCharacter || message instanceof PlayCharacterEffect)
+                {
+                    characterHandler(message);
+                }
+                else
+                {
+                    actionHandler(message);
+                }
             }
         }
         else

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class LightView
 {
     private CharacterDeck currentCharacterDeck;
-    private Islands currentIslands;            //done
+    private Islands currentIslands;
     private ArrayList<Team> currentTeams;
     private MotherNature currentMotherNature;
     private Cloud[] currentClouds;
@@ -37,7 +37,6 @@ public class LightView
         lv = objectMapper.readValue(json, LightView.class);
         lv.currentCharacterDeck = view.getCurrentCharacterDeck();
         updateLightView(lv);
-        System.out.println(json);
     }
 
     public void updateLightView(LightView newView)
@@ -46,6 +45,7 @@ public class LightView
         this.currentTeams = newView.currentTeams;
         this.currentMotherNature = newView.currentMotherNature;
         this.currentClouds = newView.currentClouds;
+        this.currentCharacterDeck = newView.currentCharacterDeck;
 
         System.out.println("Total Islands Groups = " + newView.currentIslands.getTotalGroups());
     }

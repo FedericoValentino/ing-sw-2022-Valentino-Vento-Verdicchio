@@ -1,8 +1,10 @@
 package Client;
 
 import Client.Messages.ActionMessages.*;
+import Client.Messages.SerializedMessage;
 import model.boards.token.Col;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 import static java.lang.Integer.valueOf;
@@ -11,10 +13,12 @@ public class InputParser
 {
     private Scanner parser = new Scanner(System.in).useDelimiter("\\n");
     private String playerName;
+    private ServerConnection socket;
 
-    public InputParser(String name)
+    public InputParser(ServerConnection socket)
     {
-        this.playerName = name;
+        this.playerName = socket.getNickname();
+        this.socket = socket;
     }
 
     public Scanner getParser()
@@ -22,16 +26,15 @@ public class InputParser
         return parser;
     }
 
-    public StandardActionMessage DrawParser(String[] words)
+    public void DrawParser(String[] words)
     {
         if(words[1].equals("assistantcard"))
         {
-            return new DrawAssistantCard(valueOf(words[2]));
+            socket.sendMessage(new SerializedMessage(new DrawAssistantCard(valueOf(words[2]))));
         }
-        return null;
     }
 
-    public StandardActionMessage MoveParser(String[] words)
+    public void MoveParser(String[] words)
     {
         if(words[1].equals("student"))
         {
@@ -39,24 +42,28 @@ public class InputParser
             if(words[3].equals("toisland"))
             {
                 int ISLAND_POS = valueOf(words[4]);
-                return new MoveStudent(STUD_POS, true, ISLAND_POS);
+                socket.sendMessage(new SerializedMessage(new MoveStudent(STUD_POS, true, ISLAND_POS)));
             }
-            if(words[3].equals("toDining"))
+            if(words[3].equals("todining"))
             {
-                return new MoveStudent(STUD_POS, false, 0);
+                socket.sendMessage(new SerializedMessage(new MoveStudent(STUD_POS, false, 0)));
             }
         }
-        return null;
+        if(words[1].equals("mothernature"))
+        {
+            int MN_POS = valueOf(words[2]);
+            socket.sendMessage(new SerializedMessage(new MoveMN(MN_POS)));
+        }
     }
 
-    public StandardActionMessage CharacterParser(String[] words)
+    public void CharacterParser(String[] words)
     {
-        return new PlayCharacter(valueOf(words[1]));
+        socket.sendMessage(new SerializedMessage(new PlayCharacter(valueOf(words[1]))));
     }
 
-    public StandardActionMessage CharacterActivationParser(String[] words)
+    public void CharacterActivationParser(String[] words)
     {
-        return new PlayCharacterEffect(valueOf(words[1]), valueOf(words[2]), valueOf(words[3]), playerName, Col.valueOf(words[4]));
+        socket.sendMessage(new SerializedMessage(new PlayCharacterEffect(valueOf(words[1]), valueOf(words[2]), valueOf(words[3]), playerName, Col.valueOf(words[4]))));
     }
 
     public void printHelp()
@@ -64,7 +71,7 @@ public class InputParser
 
     }
 
-    public StandardActionMessage parseString(String input)
+    public void parseString(String input)
     {
         String[] words = input.split("[\\s']");
         for(String word : words)
@@ -74,27 +81,37 @@ public class InputParser
         switch (words[0])
         {
             case "refill":
-                return new DrawFromPouch(valueOf(words[1]));
-
+                socket.sendMessage(new SerializedMessage(new DrawFromPouch(valueOf(words[1]))));
+                break;
+            case "refillfrom":
+                socket.sendMessage(new SerializedMessage(new ChooseCloud(valueOf(words[1]))));
             case "draw":
-                return DrawParser(words);
-
+                DrawParser(words);
+                break;
             case "activate":
-                return CharacterActivationParser(words);
-
+                CharacterActivationParser(words);
+                break;
             case "move":
-                return MoveParser(words);
-
+                MoveParser(words);
+                break;
             case "play":
-                return CharacterParser(words);
-
+                CharacterParser(words);
+                break;
+            case "endturn":
+                socket.sendMessage(new SerializedMessage(new EndTurn()));
             case "help":
                 printHelp();
-                return null;
+                break;
             default:
-                return null;
-
+                System.out.println("Unrecognized input");
+                break;
         }
+    }
+
+    public void newMove()
+    {
+        String input = parser.next();
+        parseString(input.toLowerCase(Locale.ROOT));
     }
 
 
