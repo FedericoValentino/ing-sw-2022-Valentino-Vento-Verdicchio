@@ -1,7 +1,6 @@
 import Client.ClientCLI;
 import Client.ClientGUI;
 import Client.ClientView;
-import Server.Server;
 
 import java.io.IOException;
 import java.util.Scanner;

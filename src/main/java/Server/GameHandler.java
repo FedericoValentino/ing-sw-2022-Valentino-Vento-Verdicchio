@@ -149,6 +149,7 @@ public class GameHandler extends Thread implements Observer
                                                     socket.getNickname());
             }
             action++;
+            threadSem.release(1);
         }
         if(message instanceof MoveMN && action == 3)
         {
@@ -161,6 +162,7 @@ public class GameHandler extends Thread implements Observer
                 socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Too much movement")));
             }
             action++;
+            threadSem.release(1);
         }
 
         if(message instanceof ChooseCloud && action == 4)
@@ -174,22 +176,24 @@ public class GameHandler extends Thread implements Observer
                 mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
             }
             action++;
+            threadSem.release(1);
         }
         if(message instanceof EndTurn && action == 5)
         {
             if(mainController.lastPlayer())
             {
+                mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
                 mainController.updateTurnState();
                 mainController.determineNextPlayer();
-                mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
             }
             else
             {
                 mainController.determineNextPlayer();
             }
             action = 0;
+            threadSem.release(1);
         }
-        threadSem.release(1);
+
     }
 
     public void characterHandler(StandardActionMessage message) throws  IOException
@@ -273,7 +277,7 @@ public class GameHandler extends Thread implements Observer
                 {
                     socket.sendAnswer(new SerializedAnswer(new GameStarting()));
                     mainController.readyPlayer();
-                    if(mainController.getReadyPlayers() == mainController.getPlayers())
+                    if(mainController.getReadyPlayers() >= mainController.getPlayers())
                     {
                         mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
                         globalSem.release(mainController.getPlayers() - 1);
