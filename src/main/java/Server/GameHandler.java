@@ -32,10 +32,11 @@ public class GameHandler extends Thread implements Observer
     private int planning;
     private int action;
     private int team;
-    private Semaphore sem;
-    private boolean flag;
+    private Semaphore threadSem;
+    private Semaphore globalSem;
 
-    public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem) throws IOException {
+    public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem) throws IOException
+    {
 
         this.socket = s;
         this.mainController = m;
@@ -44,8 +45,8 @@ public class GameHandler extends Thread implements Observer
         this.planning = 0;
         this.action = 0;
         this.team = team;
-        this.sem = sem;
-        this.flag = false;
+        this.globalSem = sem;
+        this.threadSem = new Semaphore(0);
     }
 
     public void setupHandler(StandardSetupMessage message) throws IOException, InterruptedException
@@ -60,12 +61,13 @@ public class GameHandler extends Thread implements Observer
                     mainController.AddPlayer(team, socket.getNickname(), 8, w);
                     mainController.getAvailableWizards().remove(w);
                     socket.sendAnswer(new SerializedAnswer(new InfoMessage("Wizard Selected, type [Ready] if you're ready to start!")));
-                    flag = true;
                     choseWizard = true;
+                    threadSem.release(1);
                 }
                 else
                 {
                     socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Sorry, wrong input or Wizard already taken")));
+                    threadSem.release(1);
                 }
             }
         }
@@ -80,18 +82,13 @@ public class GameHandler extends Thread implements Observer
                     System.out.println("All players ready!");
                     mainController.updateTurnState();
                     mainController.determineNextPlayer();
-                    mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
                     mainController.Setup();
-                    sem.release(mainController.getPlayers()-1);
                     mainController.resetReady();
-                    System.out.println(sem.availablePermits());
-
+                    mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
                 }
                 else
                 {
                     System.out.println("Waiting for all players to be ready");
-                    sem.acquire();
-                    System.out.println(sem.availablePermits());
                 }
             }
         }
@@ -102,12 +99,14 @@ public class GameHandler extends Thread implements Observer
 
     }
 
-    public void planningHandler(StandardActionMessage message) throws InterruptedException {
+    public void planningHandler(StandardActionMessage message) throws InterruptedException
+    {
         if(message instanceof DrawFromPouch && planning == 0)
         {
             mainController.getPlanningController()
                     .drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
             planning++;
+            threadSem.release(1);
         }
         if(message instanceof DrawAssistantCard && planning == 1)
         {
@@ -118,18 +117,17 @@ public class GameHandler extends Thread implements Observer
                 mainController.updateTurnState();
                 mainController.determineNextPlayer();
                 mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
-                sem.release(mainController.getPlayers()-1);
             }
             else
             {
                 mainController.determineNextPlayer();
-                sem.acquire();
+                threadSem.release(1);
             }
             planning = 0;
         }
     }
 
-    public void actionHandler(StandardActionMessage message) throws IOException
+    public void actionHandler(StandardActionMessage message) throws IOException, InterruptedException
     {
 
         if(message instanceof MoveStudent && (action >= 0 && action <= 2))
@@ -190,8 +188,8 @@ public class GameHandler extends Thread implements Observer
             }
             action = 0;
         }
+        threadSem.release(1);
     }
-
 
     public void characterHandler(StandardActionMessage message) throws  IOException
     {
@@ -211,10 +209,11 @@ public class GameHandler extends Thread implements Observer
                 mainController.getCharacterController().playEffect(((PlayCharacterEffect) message).getCharacterId(), mainController.getGame(), ((PlayCharacterEffect) message).getFirst(), ((PlayCharacterEffect) message).getSecond(), ((PlayCharacterEffect) message).getThird(), ((PlayCharacterEffect) message).getStudentColor());
             }
         }
+        threadSem.release(1);
     }
 
-
-    public void messageHandler(StandardActionMessage message) throws IOException, InterruptedException {
+    public void messageHandler(StandardActionMessage message) throws IOException, InterruptedException
+    {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
         {
             if(mainController.isGamePhase(GamePhase.PLANNING))
@@ -240,7 +239,8 @@ public class GameHandler extends Thread implements Observer
 
     }
 
-    public void readMessage() throws IOException, ClassNotFoundException, InterruptedException {
+    public void readMessage() throws IOException, ClassNotFoundException, InterruptedException
+    {
         SerializedMessage input = (SerializedMessage) socket.getInputStream().readObject();
         if(input.getCommand() != null)
         {
@@ -257,30 +257,29 @@ public class GameHandler extends Thread implements Observer
     @Override
     public void run()
     {
-
         try
         {
+            MessageReceiver receiver = new MessageReceiver(this);
+            receiver.start();
             while(isAlive())
             {
                 if(mainController.isGamePhase(GamePhase.SETUP) && !choseWizard)
                 {
                     socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
-                    flag = true;
+                    threadSem.acquire();
                 }
                 else if(mainController.isGamePhase(GamePhase.GAMEREADY))
                 {
                     socket.sendAnswer(new SerializedAnswer(new GameStarting()));
-                    flag = false;
                     mainController.readyPlayer();
                     if(mainController.getReadyPlayers() == mainController.getPlayers())
                     {
                         mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
-                        System.out.println("It's " + mainController.getCurrentPlayer() + " turn");
-                        sem.release(mainController.getPlayers()-1);
+                        globalSem.release(mainController.getPlayers() - 1);
                     }
                     else
                     {
-                        sem.acquire();
+                        globalSem.acquire();
                     }
                 }
                 else if(mainController.isGamePhase(GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
@@ -294,7 +293,7 @@ public class GameHandler extends Thread implements Observer
                     {
                         socket.sendAnswer(new SerializedAnswer(new RequestCard()));
                     }
-                    flag = true;
+                    threadSem.acquire();
                 }
                 else if(mainController.isGamePhase(GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                 {
@@ -311,24 +310,12 @@ public class GameHandler extends Thread implements Observer
                     {
                         socket.sendAnswer(new SerializedAnswer(new RequestCloud("Seleziona nuvola da svuotare")));
                     }
-                    flag = true;
-
-                }
-                if(flag)
-                {
-                    readMessage();
+                    threadSem.acquire();
                 }
 
             }
         }
-        catch(IOException e)
-        {
-
-        }
-        catch(ClassNotFoundException e)
-        {
-
-        } catch (InterruptedException e)
+        catch (InterruptedException e)
         {
 
         }

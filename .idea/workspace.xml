@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="View Sender completo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/ClientListener.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="SemiWorking CLI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/MessageReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
@@ -174,7 +171,8 @@
       <workItem from="1652364117265" duration="13048000" />
       <workItem from="1652424946921" duration="12408000" />
       <workItem from="1652525657976" duration="11977000" />
-      <workItem from="1652546613744" duration="7445000" />
+      <workItem from="1652546613744" duration="7646000" />
+      <workItem from="1652604146433" duration="6643000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -456,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652536980308</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="SemiWorking CLI">
+      <created>1652555633286</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1652555633286</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +481,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix" />
     <MESSAGE value="Removed prints from controller tests" />
     <MESSAGE value="rimosso codice" />
     <MESSAGE value="Character and Planning Tests updated with comments" />
@@ -501,7 +505,8 @@
     <MESSAGE value="Ridefinizione Client" />
     <MESSAGE value="View Sender completo" />
     <MESSAGE value="Json Constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Json Constructor" />
+    <MESSAGE value="SemiWorking CLI" />
+    <option name="LAST_COMMIT_MESSAGE" value="SemiWorking CLI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
