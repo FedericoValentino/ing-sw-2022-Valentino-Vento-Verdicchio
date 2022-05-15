@@ -148,7 +148,6 @@ public class ClientCLI implements ClientView
         main.getOut().reset();
         ClientListener Listener = new ClientListener(this);
         Listener.start();
-        Listener.setPriority(3);
         this.stdin = new InputParser(main);
         while(true)
         {
