@@ -7,7 +7,7 @@ import model.boards.token.GamePhase;
 import model.cards.AssistantCard;
 
 public class Checks {
-    public synchronized boolean isGamePhase(CurrentGameState game, GamePhase currentGamePhase) {
+    public boolean isGamePhase(CurrentGameState game, GamePhase currentGamePhase) {
         return currentGamePhase == game.getCurrentTurnState().getGamePhase();
     }
 

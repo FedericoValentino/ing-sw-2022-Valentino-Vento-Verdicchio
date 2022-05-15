@@ -115,9 +115,10 @@ public class GameHandler extends Thread implements Observer
                     .drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
             if(mainController.lastPlayer())
             {
+                mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
                 mainController.updateTurnState();
                 mainController.determineNextPlayer();
-                mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
+                threadSem.release(1);
             }
             else
             {

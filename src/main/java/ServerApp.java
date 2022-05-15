@@ -13,6 +13,5 @@ public class ServerApp
             System.err.println("Impossible to start the server!\n" + e.getMessage());
             throw new RuntimeException(e);
         }
-
     }
 }
