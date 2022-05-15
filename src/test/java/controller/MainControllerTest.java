@@ -181,7 +181,7 @@ public class MainControllerTest
     @Test
     public void testIsGamePhase()
     {
-        assertEquals(true, controllerTest.isGamePhase(GamePhase.SETUP));
+        assertEquals(true, controllerTest.getChecks().isGamePhase(controllerTest.getGame(), GamePhase.SETUP));
     }
 
     @Test

@@ -15,6 +15,7 @@ import Server.Answers.SetupAnswers.GameStarting;
 import Server.Answers.SetupAnswers.InfoMessage;
 import controller.CharacterController;
 import controller.MainController;
+import controller.Checks;
 import model.boards.token.GamePhase;
 import model.boards.token.Wizard;
 import Observer.Observer;
@@ -216,11 +217,11 @@ public class GameHandler extends Thread implements Observer
     {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
         {
-            if(mainController.isGamePhase(GamePhase.PLANNING))
+            if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING));
             {
                 planningHandler(message);
             }
-            if(mainController.isGamePhase(GamePhase.ACTION))
+            if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION))
             {
                 if(message instanceof PlayCharacter || message instanceof PlayCharacterEffect)
                 {
@@ -263,12 +264,12 @@ public class GameHandler extends Thread implements Observer
             receiver.start();
             while(isAlive())
             {
-                if(mainController.isGamePhase(GamePhase.SETUP) && !choseWizard)
+                if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
                 {
                     socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
                     threadSem.acquire();
                 }
-                else if(mainController.isGamePhase(GamePhase.GAMEREADY))
+                else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.GAMEREADY))
                 {
                     socket.sendAnswer(new SerializedAnswer(new GameStarting()));
                     mainController.readyPlayer();
@@ -282,7 +283,7 @@ public class GameHandler extends Thread implements Observer
                         globalSem.acquire();
                     }
                 }
-                else if(mainController.isGamePhase(GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                 {
                     socket.sendAnswer(new SerializedAnswer(new StartTurn()));
                     if(planning == 0)
@@ -295,7 +296,7 @@ public class GameHandler extends Thread implements Observer
                     }
                     threadSem.acquire();
                 }
-                else if(mainController.isGamePhase(GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                 {
                     socket.sendAnswer(new SerializedAnswer(new StartTurn()));
                     if(action >= 0 && action <= 2)

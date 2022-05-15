@@ -21,6 +21,7 @@ public class MainController
     private ActionController actionController;
     private PlanningController planningController;
     private CharacterController characterController;
+    private Checks checks;
     private boolean expertGame;
     private ArrayList<Wizard> availableWizards;
     private int readyPlayers;
@@ -36,6 +37,7 @@ public class MainController
         this.actionController = new ActionController(currentPlayer);
         this.planningController = new PlanningController();
         this.characterController = new CharacterController();
+        this.checks = new Checks();
         this.expertGame = expert;
         this.availableWizards = new ArrayList<>();
         for(int i = 0; i < 4; i++)
@@ -173,10 +175,6 @@ public class MainController
         return null;
     }
 
-    public synchronized boolean isGamePhase(GamePhase currentGamePhase)
-    {
-        return currentGamePhase == game.getCurrentTurnState().getGamePhase();
-    }
 
     public void resetReady()
     {
@@ -205,6 +203,8 @@ public class MainController
     public PlanningController getPlanningController() {
         return planningController;
     }
+
+    public Checks getChecks(){return checks;}
 
     public boolean isExpertGame() {
         return expertGame;
