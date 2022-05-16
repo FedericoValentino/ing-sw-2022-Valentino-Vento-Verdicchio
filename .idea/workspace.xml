@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Minor corrections">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="LightView Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ViewMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ViewMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/School.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +25,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -57,6 +59,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -67,12 +72,18 @@
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers\SetupAnswers" />
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="model.boards.token" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Client" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChecksTest.testIsAssistantAlreadyPlayed">
+  <component name="RunManager" selected="Application.ClientApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientApp" />
       <module name="softeng-GC61" />
@@ -140,9 +151,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChecksTest.testIsAssistantAlreadyPlayed" />
         <item itemvalue="Application.ClientApp" />
         <item itemvalue="Application.ServerApp" />
+        <item itemvalue="JUnit.ChecksTest.testIsAssistantAlreadyPlayed" />
         <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="JUnit.model.cards in softeng-GC61" />
       </list>
@@ -479,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652703100984</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="LightView Changes">
+      <created>1652705707012</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1652705707012</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,13 +517,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="rimosso codice" />
-    <MESSAGE value="Character and Planning Tests updated with comments" />
-    <MESSAGE value="Character and Planning controllers updated with comments" />
-    <MESSAGE value="Cards in model have now comments on important methods" />
-    <MESSAGE value="Boo (non capisco perché non mi fa updatare)" />
-    <MESSAGE value="Aggiunto modo per determinare il numero di torri da dare al player che si aggiunge" />
-    <MESSAGE value="Primi passi nel mondo del Server" />
     <MESSAGE value="Prima impostazione del server, test con client etc etc" />
     <MESSAGE value="Redone all the comments... again!" />
     <MESSAGE value="isPickable and isEffectPlayable methods ready to go" />
@@ -530,7 +541,8 @@
     <MESSAGE value="Added comments and improvements to the Checks methods" />
     <MESSAGE value="Started testing of Checks" />
     <MESSAGE value="Minor corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thread Tomfoolery" />
+    <MESSAGE value="LightView Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="LightView Changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

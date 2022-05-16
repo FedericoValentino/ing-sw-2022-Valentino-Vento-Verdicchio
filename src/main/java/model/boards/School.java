@@ -69,11 +69,13 @@ public class School extends Board
   public void placeToken(Student student)
   {
       entrance.add(student);
+      game.notify(game.modelToJson());
   }
 
   public void placeToken(ArrayList<Student> students)
   {
       entrance.addAll(students);
+      game.notify(game.modelToJson());
   }
 
     /** Removes the selected student from the entrance and returns it
