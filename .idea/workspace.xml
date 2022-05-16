@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Minor corrections"/>
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Protocol">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -471,6 +472,14 @@
       <updated>1652626128352</updated>
     </task>
     <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00046" summary="Minor corrections">
+      <created>1652703100984</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1652703100984</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,6 +524,13 @@
     <MESSAGE value="Json Constructor" />
     <MESSAGE value="SemiWorking CLI" />
     <MESSAGE value="Thread Tomfoolery" />
+    <MESSAGE value="Reverted thread tomfoolery" />
+    <MESSAGE value="Copleted first iteration of Checks class. Moved some checks from other classes, corrected the references in GameHandler" />
+    <MESSAGE value="Completed first iteration of Checks class. Moved some checks from other classes, corrected the references in GameHandler" />
+    <MESSAGE value="Added comments and improvements to the Checks methods" />
+    <MESSAGE value="Started testing of Checks" />
+    <MESSAGE value="Minor corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor corrections" />
     <option name="LAST_COMMIT_MESSAGE" value="Thread Tomfoolery" />
   </component>
   <component name="XDebuggerManager">
@@ -527,6 +543,9 @@
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="((ChecksTest)this).controllerTest" custom="controller.ChecksTest" />
+      </configuration>
       <configuration name="Application">
         <watch expression="in" />
         <watch expression="in" />
