@@ -115,20 +115,20 @@ public class Checks {
     public boolean isAssistantAlreadyPlayed(CurrentGameState game, String currentPlayer, int cardIndex)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
-        AssistantCard c = player.getAssistantDeck().getDeck().get(cardIndex);
-        for (Team t : game.getCurrentTeams())
+        for (Team team : game.getCurrentTeams())
         {
-            for (Player p: t.getPlayers())
+            for (Player otherPlayer: team.getPlayers())
             {
-                if (!player.getNome().equals(p.getNome()) && p.getCurrentAssistantCard() != null)
+                if (!player.getNome().equals(otherPlayer.getNome()) && otherPlayer.getCurrentAssistantCard() != null)
                 {
-                    if (c.getValue() == p.getValue())
+                    if (player.getAssistantDeck().getDeck().get(cardIndex).getValue() == otherPlayer.getCurrentAssistantCard().getValue())
                         return true;
                 }
             }
         }
         return false;
     }
+
 
 
     /** Has to be called after isAssistantAlreadyPlayed (if true): checks the player's deck and verifies whether
