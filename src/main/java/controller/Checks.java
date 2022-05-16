@@ -4,60 +4,143 @@ import model.CurrentGameState;
 import model.Player;
 import model.Team;
 import model.boards.token.GamePhase;
-import model.cards.AssistantCard;
+import model.cards.*;
 
 public class Checks {
-    public boolean isGamePhase(CurrentGameState game, GamePhase currentGamePhase) {
+
+
+    /** Checks whether the given gamePhase is the current gamePhase
+     * @param game an instance of the game
+     * @param currentGamePhase the given gamePhase
+     * @return true if the game is in the given gamePhase
+     */
+    public boolean isGamePhase(CurrentGameState game, GamePhase currentGamePhase)
+    {
         return currentGamePhase == game.getCurrentTurnState().getGamePhase();
     }
 
-    public boolean isCurrentPlayer(String nickname, String currentPlayer) {
+
+    /** Compares the given player with the currentPlayer
+     * @param nickname  the given player's nickname
+     * @param currentPlayer the current player's nickname
+     * @return true if the nicknames are the same
+     */
+    public boolean isCurrentPlayer(String nickname, String currentPlayer)
+    {
         return nickname.equals(currentPlayer);
     }
 
-    public boolean isDestinationAvailable(CurrentGameState game, String currentPlayer, int playerNumber, int entrancePosition, boolean toIsland, int islandId) {
-        if (!toIsland) {
-            if (playerNumber == 2 || playerNumber == 4) {
-                if (MainController.findPlayerByName(game, currentPlayer).getSchool().getEntrance().size() == 7 || entrancePosition < 0 || entrancePosition > 6)
+
+    /** Checks the validity of the chosen entrancePosition and islandID
+     * @param game an instance of the game
+     * @param currentPlayer the current player's nickname
+     * @param entrancePosition chosen entrance position
+     * @param toIsland indicates whether the student is being moved to an island or to the entrance
+     * @param islandId chosen island
+     * @return true if the entrancePosition refers to an existing position and, in case of moving to an island, if the islandID corresponds to an existing island
+     */
+    public boolean isDestinationAvailable(CurrentGameState game, String currentPlayer, int entrancePosition, boolean toIsland, int islandId)
+    {
+        boolean validEntrance = true;
+        if (entrancePosition < 0 || entrancePosition >= MainController.findPlayerByName(game, currentPlayer).getSchool().getEntrance().size())
+            validEntrance = false;
+        if(!toIsland)
+            return validEntrance;
+        else
+        {
+            if(validEntrance)
+            {
+                if (islandId >= game.getCurrentIslands().getIslands().size() || islandId < 0)
                     return false;
-            } else if (playerNumber == 3) {
-                if (MainController.findPlayerByName(game, currentPlayer).getSchool().getEntrance().size() == 9 || entrancePosition < 0 || entrancePosition > 8)
-                    return false;
+                return true;
             }
-        } else {
-            if (game.getCurrentIslands().getIslands().size() <= islandId || islandId < 0)
+            else
                 return false;
         }
-        return true;
     }
 
-    public boolean isAcceptableMovementAmount(CurrentGameState game, String currentPlayer, int amount) {
-        return amount > 0 && amount <= MainController.findPlayerByName(game, currentPlayer).getMovementValue();
+
+    /** Checks if the Mother Nature Movement value chosen by the player is within an acceptable range
+     * @param game an instance of the game
+     * @param currentPlayer the current player's name
+     * @param amount the chosen movement value
+     * @return true if the chosen movement value sits between 1 and MaxMotherMovement
+     */
+    public boolean isAcceptableMovementAmount(CurrentGameState game, String currentPlayer, int amount)
+    {
+        return amount > 0 && amount <= MainController.findPlayerByName(game, currentPlayer).getMaxMotherMovement();
     }
 
-    public boolean isCloudAvailable(CurrentGameState game, int cloudIndex) {
+
+    /** Checks if the selected cloud exists and if it's not empty
+     * @param game an instance of the game
+     * @param cloudIndex the chosen cloud
+     * @return true if the cloudIndex refers to an existing cloud an if said cloud is not empty
+     */
+    public boolean isCloudAvailable(CurrentGameState game, int cloudIndex)
+    {
         return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && !game.getCurrentClouds()[cloudIndex].isEmpty();
     }
 
-    public boolean isPouchAvailable(CurrentGameState game) {
-        return game.getCurrentPouch().checkEmpty();
+
+    /** Checks if the pouch can be used to extract students
+     * @param game an instance of the game
+     * @return true if the pouch is not empty
+     */
+    public boolean isPouchAvailable(CurrentGameState game)
+    {
+        return !game.getCurrentPouch().checkEmpty();
     }
 
 
-    public boolean isAssistantAlreadyPlayed(CurrentGameState game, String currentPlayer, int cardIndex) {
+    /** Checks whether the given cardIndex is referring to an existing assistant card
+     * @param game an instance of the game
+     * @param currentPlayer the current player's nickname
+     * @param cardIndex the position of the chosen card into the deck
+     * @return ture if the player's deck is not empty and if the index is within an acceptable range
+     */
+    public boolean isAssistantValid(CurrentGameState game, String currentPlayer, int cardIndex)
+    {
+        Player player = MainController.findPlayerByName(game, currentPlayer);
+        return !player.getAssistantDeck().checkEmpty() && cardIndex >= 0 && cardIndex < player.getAssistantDeck().getDeck().size();
+    }
+
+
+    /** Checks if the selected assistant card has already been played by other players
+     * @param game an instance of the game
+     * @param currentPlayer the current player's nickname
+     * @param cardIndex the selected card
+     * @return true if an equivalent assistant card is in other players' currentAssistantCard field
+     */
+    public boolean isAssistantAlreadyPlayed(CurrentGameState game, String currentPlayer, int cardIndex)
+    {
         Player player = MainController.findPlayerByName(game, currentPlayer);
         int counter = 0;
         for (int i = 0; i < game.getCurrentTeams().size(); i++)
-            for (int j = 0; j < game.getCurrentTeams().get(i).getPlayers().size(); j++) {
-                if (!player.getNome().equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome())) {
+        {
+            for (int j = 0; j < game.getCurrentTeams().get(i).getPlayers().size(); j++)
+            {
+                if (!player.getNome().equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome()))
+                {
                     if (player.getAssistantDeck().getDeck().get(cardIndex).equals(game.getCurrentTeams().get(i).getPlayers().get(j).getCurrentAssistantCard()))
                         counter++;
                 }
             }
+        }
         return counter != 0;
     }
 
-    public boolean canCardStillBePlayed(CurrentGameState game, String currentPlayer, int cardIndex) {
+
+    /** Has to be called after isAssistantAlreadyPlayed (if true): checks the player's deck and verifies whether
+     the other cards in player's possession have been already played by others in the current turn. If this happens
+     to be true, then the chosen card can be played
+     * @param game an instance of the game
+     * @param currentPlayer the current player's nickname
+     * @param cardIndex the chosen card
+     * @return true if all the other cards in the player's deck have already been played
+     */
+    public boolean canCardStillBePlayed(CurrentGameState game, String currentPlayer, int cardIndex)
+    {
         Player player = MainController.findPlayerByName(game, currentPlayer);
         int[] cardCounter = new int[player.getAssistantDeck().getDeck().size() - 1];
         int counter = 0;
@@ -66,18 +149,58 @@ public class Checks {
         for (int k = 0; k < player.getAssistantDeck().getDeck().size(); k++)
         {
             if (!player.getAssistantDeck().getDeck().get(k).equals(player.getAssistantDeck().getDeck().get(cardIndex)))
-                for (int i = 0; i < game.getCurrentTeams().size(); i++)
-                    for (int j = 0; j < game.getCurrentTeams().get(i).getPlayers().size(); j++) {
-                        if (!player.getNome().equals(game.getCurrentTeams().get(i).getPlayers().get(j).getNome())) {
-                            if (player.getAssistantDeck().getDeck().get(k).equals(game.getCurrentTeams().get(i).getPlayers().get(j).getCurrentAssistantCard()))
-                                cardCounter[k] = +1;
-                        }
-                    }
+            {
+                if(isAssistantAlreadyPlayed(game, currentPlayer, k))
+                {
+                    cardCounter[k] += 1;
+                }
+            }
         }
         for (int i = 0; i < cardCounter.length; i++)
             if (cardCounter[i] != 0)
                 counter += 1;
         return counter == cardCounter.length;
+    }
+
+
+    /** Checks if the current turn is expiring
+     * @param game an instance of the game
+     * @return true if the current player is indeed the last player of that turn
+     */
+    public boolean isLastPlayer(CurrentGameState game)
+    {
+        return game.getCurrentTurnState().getTurnOrder().size() == 0;
+    }
+
+
+    /** Returns true if there are any influence related character cards present in the Active Characters Deck
+     * @param game  an instance of hte game
+     * @return whether influence based card are currently active
+     */
+    protected static boolean checkForInfluenceCharacter(CurrentGameState game, String currentPlayer)
+    {
+        for(CharacterCard c: game.getCurrentActiveCharacterCard())
+        {
+            if(c instanceof Knight)
+            {
+                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
+                CharacterController.deckManagement(c, game);
+                return  true;
+            }
+            else if(c instanceof TruffleHunter)
+            {
+                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) c).getChosenColor());
+                CharacterController.deckManagement(c, game);
+                return  true;
+            }
+            else if(c instanceof Centaur)
+            {
+                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, null);
+                CharacterController.deckManagement(c, game);
+                return  true;
+            }
+        }
+        return false;
     }
 
 }

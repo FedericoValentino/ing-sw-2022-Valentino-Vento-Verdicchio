@@ -10,12 +10,21 @@ import static org.junit.Assert.*;
 public class ChecksTest {
 
     MainController controllerTest = new MainController(2, true);
+    MainController controllerTestfor3 = new MainController(3, true);
 
     public void setupTest()
     {
         controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
         controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);
         controllerTest.Setup();
+    }
+
+    public void setupTestfor3()
+    {
+        controllerTestfor3.AddPlayer(0, "jack", 6, Wizard.LORD );
+        controllerTestfor3.AddPlayer(1, "fede", 6, Wizard.DRUID);
+        controllerTestfor3.AddPlayer(2,"puddu",6, Wizard.SENSEI);
+        controllerTestfor3.Setup();
     }
 
     @Test
@@ -76,10 +85,7 @@ public class ChecksTest {
     {
         setupTest();
         assertTrue(controllerTest.getChecks().isPouchAvailable(controllerTest.getGame()));
-        System.out.println(controllerTest.getGame().getCurrentPouch().getContent().size());
-        for(int i=0; i<106; i++)
-            controllerTest.getGame().getCurrentPouch().extractStudent();
-        System.out.println(controllerTest.getGame().getCurrentPouch().getContent().size());
+        controllerTest.getGame().getCurrentPouch().getContent().clear();
         assertFalse(controllerTest.getChecks().isPouchAvailable(controllerTest.getGame()));
     }
 
@@ -95,7 +101,12 @@ public class ChecksTest {
     }
 
     @Test
-    public void testIsAssistantAlreadyPlayed() {
+    public void testIsAssistantAlreadyPlayed()
+    {
+        setupTestfor3();
+        controllerTestfor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
+        assertTrue(controllerTestfor3.getChecks().isAssistantAlreadyPlayed(controllerTestfor3.getGame(), "fede", 0));
+        assertFalse(controllerTestfor3.getChecks().isAssistantAlreadyPlayed(controllerTestfor3.getGame(), "fede", 1));
     }
 
     @Test

@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added comments and improvements to the Checks methods">
-      <change afterPath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Started testing of Checks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Checks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,8 +77,8 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChecksTest.testIsAssistantValid">
-    <configuration name="ChecksTest.testIsAcceptableMovementAmount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ChecksTest.testIsAssistantAlreadyPlayed">
+    <configuration name="ChecksTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
@@ -89,7 +88,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
-      <option name="METHOD_NAME" value="testIsAcceptableMovementAmount" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChecksTest.testIsAssistantAlreadyPlayed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
+      <option name="METHOD_NAME" value="testIsAssistantAlreadyPlayed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,22 +141,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChecksTest.testIsDestinationAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
-      <option name="METHOD_NAME" value="testIsDestinationAvailable" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ChecksTest.testIsPouchAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
@@ -160,19 +158,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ChecksTest.testIsDestinationAvailable" />
-      <item itemvalue="JUnit.ChecksTest.testIsAcceptableMovementAmount" />
       <item itemvalue="JUnit.ChecksTest.testIsCloudAvailable" />
       <item itemvalue="JUnit.ChecksTest.testIsPouchAvailable" />
       <item itemvalue="JUnit.ChecksTest.testIsAssistantValid" />
+      <item itemvalue="JUnit.ChecksTest" />
+      <item itemvalue="JUnit.ChecksTest.testIsAssistantAlreadyPlayed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChecksTest.testIsAssistantValid" />
+        <item itemvalue="JUnit.ChecksTest.testIsAssistantAlreadyPlayed" />
         <item itemvalue="JUnit.ChecksTest.testIsPouchAvailable" />
+        <item itemvalue="JUnit.ChecksTest" />
+        <item itemvalue="JUnit.ChecksTest.testIsAssistantValid" />
         <item itemvalue="JUnit.ChecksTest.testIsCloudAvailable" />
-        <item itemvalue="JUnit.ChecksTest.testIsAcceptableMovementAmount" />
-        <item itemvalue="JUnit.ChecksTest.testIsDestinationAvailable" />
       </list>
     </recent_temporary>
   </component>
@@ -514,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652690460242</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Started testing of Checks">
+      <created>1652692911509</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1652692911509</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Boo (non capisco perché non mi fa updatare)" />
     <MESSAGE value="Aggiunto modo per determinare il numero di torri da dare al player che si aggiunge" />
     <MESSAGE value="Primi passi nel mondo del Server" />
     <MESSAGE value="Prima impostazione del server, test con client etc etc" />
@@ -559,7 +563,8 @@
     <MESSAGE value="Copleted first iteration of Checks class. Moved some checks from other classes, corrected the references in GameHandler" />
     <MESSAGE value="Completed first iteration of Checks class. Moved some checks from other classes, corrected the references in GameHandler" />
     <MESSAGE value="Added comments and improvements to the Checks methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments and improvements to the Checks methods" />
+    <MESSAGE value="Started testing of Checks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started testing of Checks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
