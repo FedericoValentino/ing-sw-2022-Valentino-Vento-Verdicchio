@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Completed first iteration of Checks class. Moved some checks from other classes, corrected the references in GameHandler">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added comments and improvements to the Checks methods">
+      <change afterPath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Checks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +24,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -53,6 +55,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -63,84 +67,112 @@
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers\SetupAnswers" />
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="model.boards.token" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="controller" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
-    <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ClientApp" />
+  <component name="RunManager" selected="JUnit.ChecksTest.testIsAssistantValid">
+    <configuration name="ChecksTest.testIsAcceptableMovementAmount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ServerApp" />
-      <module name="softeng-GC61" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PriestTest.effect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model.cards" />
-      <option name="MAIN_CLASS_NAME" value="model.cards.PriestTest" />
-      <option name="METHOD_NAME" value="effect" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
+      <option name="METHOD_NAME" value="testIsAcceptableMovementAmount" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="model.cards in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChecksTest.testIsAssistantValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.cards.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model.cards" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
+      <option name="METHOD_NAME" value="testIsAssistantValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChecksTest.testIsCloudAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
+      <option name="METHOD_NAME" value="testIsCloudAvailable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChecksTest.testIsDestinationAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
+      <option name="METHOD_NAME" value="testIsDestinationAvailable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChecksTest.testIsPouchAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
+      <option name="METHOD_NAME" value="testIsPouchAvailable" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ServerApp" />
-      <item itemvalue="Application.ClientApp" />
-      <item itemvalue="JUnit.PriestTest.effect" />
-      <item itemvalue="JUnit.All in softeng-GC61" />
-      <item itemvalue="JUnit.model.cards in softeng-GC61" />
+      <item itemvalue="JUnit.ChecksTest.testIsDestinationAvailable" />
+      <item itemvalue="JUnit.ChecksTest.testIsAcceptableMovementAmount" />
+      <item itemvalue="JUnit.ChecksTest.testIsCloudAvailable" />
+      <item itemvalue="JUnit.ChecksTest.testIsPouchAvailable" />
+      <item itemvalue="JUnit.ChecksTest.testIsAssistantValid" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientApp" />
-        <item itemvalue="Application.ServerApp" />
-        <item itemvalue="JUnit.All in softeng-GC61" />
-        <item itemvalue="JUnit.model.cards in softeng-GC61" />
-        <item itemvalue="JUnit.PriestTest.effect" />
+        <item itemvalue="JUnit.ChecksTest.testIsAssistantValid" />
+        <item itemvalue="JUnit.ChecksTest.testIsPouchAvailable" />
+        <item itemvalue="JUnit.ChecksTest.testIsCloudAvailable" />
+        <item itemvalue="JUnit.ChecksTest.testIsAcceptableMovementAmount" />
+        <item itemvalue="JUnit.ChecksTest.testIsDestinationAvailable" />
       </list>
     </recent_temporary>
   </component>
@@ -475,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652688126010</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Added comments and improvements to the Checks methods">
+      <created>1652690460242</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1652690460242</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +534,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Cards in model have now comments on important methods" />
     <MESSAGE value="Boo (non capisco perché non mi fa updatare)" />
     <MESSAGE value="Aggiunto modo per determinare il numero di torri da dare al player che si aggiunge" />
     <MESSAGE value="Primi passi nel mondo del Server" />
@@ -520,7 +558,8 @@
     <MESSAGE value="Reverted thread tomfoolery" />
     <MESSAGE value="Copleted first iteration of Checks class. Moved some checks from other classes, corrected the references in GameHandler" />
     <MESSAGE value="Completed first iteration of Checks class. Moved some checks from other classes, corrected the references in GameHandler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed first iteration of Checks class. Moved some checks from other classes, corrected the references in GameHandler" />
+    <MESSAGE value="Added comments and improvements to the Checks methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments and improvements to the Checks methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

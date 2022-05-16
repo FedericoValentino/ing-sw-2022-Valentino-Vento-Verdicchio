@@ -173,9 +173,9 @@ public class MainControllerTest
         setupTest();
         controllerTest.getGame().updateTurnState();
         controllerTest.determineNextPlayer();
-        assert(!controllerTest.lastPlayer());
+        assert(!controllerTest.getChecks().isLastPlayer(controllerTest.getGame()));
         controllerTest.determineNextPlayer();
-        assert(controllerTest.lastPlayer());
+        assert(controllerTest.getChecks().isLastPlayer(controllerTest.getGame()));
     }
 
     @Test
