@@ -50,7 +50,7 @@ public class GameHandler extends Thread implements Observer
         this.threadSem = new Semaphore(0);
     }
 
-    public void setupHandler(StandardSetupMessage message) throws IOException, InterruptedException
+    public void setupHandler(StandardSetupMessage message) throws IOException
     {
         if(message instanceof WizardChoice)
         {
@@ -100,7 +100,7 @@ public class GameHandler extends Thread implements Observer
 
     }
 
-    public void planningHandler(StandardActionMessage message) throws InterruptedException
+    public void planningHandler(StandardActionMessage message)
     {
         if(message instanceof DrawFromPouch && planning == 0)
         {
@@ -129,7 +129,7 @@ public class GameHandler extends Thread implements Observer
         }
     }
 
-    public void actionHandler(StandardActionMessage message) throws IOException, InterruptedException
+    public void actionHandler(StandardActionMessage message)
     {
 
         if(message instanceof MoveStudent && (action >= 0 && action <= 2))
@@ -197,7 +197,7 @@ public class GameHandler extends Thread implements Observer
 
     }
 
-    public void characterHandler(StandardActionMessage message) throws  IOException
+    public void characterHandler(StandardActionMessage message)
     {
         if(message instanceof PlayCharacter)
         {
@@ -218,7 +218,7 @@ public class GameHandler extends Thread implements Observer
         threadSem.release(1);
     }
 
-    public void messageHandler(StandardActionMessage message) throws IOException, InterruptedException
+    public void messageHandler(StandardActionMessage message)
     {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
         {
@@ -325,8 +325,6 @@ public class GameHandler extends Thread implements Observer
         {
 
         }
-
-
     }
 
 
@@ -334,6 +332,6 @@ public class GameHandler extends Thread implements Observer
     public void update(String message)
     {
         System.out.println(message);
-        socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck())));
+        socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck(), mainController.getGame().getCurrentActiveCharacterCard())));
     }
 }

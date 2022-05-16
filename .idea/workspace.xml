@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Minor corrections"/>
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Protocol">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Minor corrections">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ViewMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ViewMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Checks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +38,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -471,7 +472,6 @@
       <option name="project" value="LOCAL" />
       <updated>1652626128352</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
     <task id="LOCAL-00046" summary="Minor corrections">
       <created>1652703100984</created>
       <option name="number" value="00046" />
@@ -530,7 +530,6 @@
     <MESSAGE value="Added comments and improvements to the Checks methods" />
     <MESSAGE value="Started testing of Checks" />
     <MESSAGE value="Minor corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor corrections" />
     <option name="LAST_COMMIT_MESSAGE" value="Thread Tomfoolery" />
   </component>
   <component name="XDebuggerManager">

@@ -11,6 +11,7 @@ import model.Team;
 import model.boards.Cloud;
 import model.boards.Islands;
 import model.boards.token.MotherNature;
+import model.cards.CharacterCard;
 import model.cards.CharacterDeck;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 public class LightView
 {
+    private ArrayList<CharacterCard> currentActiveCharacterCard;
     private CharacterDeck currentCharacterDeck;
     private Islands currentIslands;
     private ArrayList<Team> currentTeams;
@@ -33,9 +35,10 @@ public class LightView
     public void parse(ViewMessage view) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         String json = view.getJsonView();
-        LightView lv = new LightView();
+        LightView lv;
         lv = objectMapper.readValue(json, LightView.class);
         lv.currentCharacterDeck = view.getCurrentCharacterDeck();
+        lv.currentActiveCharacterCard = view.getCurrentActiveCharacterCard();
         updateLightView(lv);
     }
 
@@ -46,6 +49,7 @@ public class LightView
         this.currentMotherNature = newView.currentMotherNature;
         this.currentClouds = newView.currentClouds;
         this.currentCharacterDeck = newView.currentCharacterDeck;
+        this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
 
         System.out.println("Total Islands Groups = " + newView.currentIslands.getTotalGroups());
     }
