@@ -85,7 +85,7 @@ public class GameHandler extends Thread implements Observer
                     mainController.determineNextPlayer();
                     mainController.Setup();
                     mainController.resetReady();
-                    mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.GAMEREADY);
+                    mainController.updateGamePhase(GamePhase.GAMEREADY);
                 }
                 else
                 {
@@ -115,7 +115,7 @@ public class GameHandler extends Thread implements Observer
                     .drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
             if(mainController.getChecks().isLastPlayer(mainController.getGame()))
             {
-                mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
+                mainController.updateGamePhase(GamePhase.ACTION);
                 mainController.updateTurnState();
                 mainController.determineNextPlayer();
                 threadSem.release(1);
@@ -183,7 +183,7 @@ public class GameHandler extends Thread implements Observer
         {
             if(mainController.getChecks().isLastPlayer(mainController.getGame()))
             {
-                mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
+                mainController.updateGamePhase(GamePhase.PLANNING);
                 mainController.updateTurnState();
                 mainController.determineNextPlayer();
             }
@@ -280,7 +280,7 @@ public class GameHandler extends Thread implements Observer
                     mainController.readyPlayer();
                     if(mainController.getReadyPlayers() >= mainController.getPlayers())
                     {
-                        mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
+                        mainController.updateGamePhase(GamePhase.PLANNING);
                         globalSem.release(mainController.getPlayers() - 1);
                     }
                     else

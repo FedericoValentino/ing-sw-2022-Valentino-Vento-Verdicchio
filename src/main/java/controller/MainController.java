@@ -168,6 +168,22 @@ public class MainController
     }
 
 
+    public void updateGamePhase(GamePhase phase)
+    {
+        if(game.getCurrentTurnState().getGamePhase() == GamePhase.ACTION && phase.equals(GamePhase.PLANNING))
+        {
+            for(Team t : game.getCurrentTeams())
+            {
+                for(Player p: t.getPlayers())
+                {
+                    p.Discard();
+                }
+            }
+        }
+        game.getCurrentTurnState().updateGamePhase(phase);
+    }
+
+
     public void resetReady()
     {
         readyPlayers = 0;
