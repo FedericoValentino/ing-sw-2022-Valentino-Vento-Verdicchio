@@ -114,5 +114,4 @@ public class InputParser
         parseString(input.toLowerCase(Locale.ROOT));
     }
 
-
 }

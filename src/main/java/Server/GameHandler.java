@@ -113,7 +113,7 @@ public class GameHandler extends Thread implements Observer
         {
             mainController.getPlanningController()
                     .drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
-            if(mainController.lastPlayer())
+            if(mainController.getChecks().isLastPlayer(mainController.getGame()))
             {
                 mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
                 mainController.updateTurnState();
@@ -154,7 +154,7 @@ public class GameHandler extends Thread implements Observer
         }
         if(message instanceof MoveMN && action == 3)
         {
-            if(mainController.getActionController().possibleMNmove(((MoveMN) message).getAmount(), mainController.getGame()))
+            if(mainController.getChecks().isAcceptableMovementAmount(mainController.getGame(), mainController.getCurrentPlayer(), ((MoveMN) message).getAmount()))
             {
                 mainController.getActionController().MoveMN(((MoveMN) message).getAmount(), mainController.getGame());
             }
@@ -168,7 +168,7 @@ public class GameHandler extends Thread implements Observer
 
         if(message instanceof ChooseCloud && action == 4)
         {
-            if(mainController.getActionController().isCloudEmpty(((ChooseCloud) message).getCloudIndex(), mainController.getGame()))
+            if(!mainController.getChecks().isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex()))
             {
                 socket.sendAnswer(new SerializedAnswer(new ErrorMessage("You selected an empty Cloud")));
             }
@@ -181,7 +181,7 @@ public class GameHandler extends Thread implements Observer
         }
         if(message instanceof EndTurn && action == 5)
         {
-            if(mainController.lastPlayer())
+            if(mainController.getChecks().isLastPlayer(mainController.getGame()))
             {
                 mainController.getGame().getCurrentTurnState().updateGamePhase(GamePhase.PLANNING);
                 mainController.updateTurnState();

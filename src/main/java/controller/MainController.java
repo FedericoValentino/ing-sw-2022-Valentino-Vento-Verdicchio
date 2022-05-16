@@ -102,14 +102,6 @@ public class MainController
         }
     }
 
-    public boolean lastPlayer()
-    {
-        if(game.getCurrentTurnState().getTurnOrder().size() == 0)
-        {
-            return true;
-        }
-        return false;
-    }
 
     /**
      Method determineNextPlayer extracts the next player to play from the CurrentTurnState HashMap

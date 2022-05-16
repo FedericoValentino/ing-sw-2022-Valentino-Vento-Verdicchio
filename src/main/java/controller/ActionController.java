@@ -64,15 +64,6 @@ public class ActionController
     }
 
 
-    public boolean isCloudEmpty(int cloudIndex, CurrentGameState game)
-    {
-        if(game.getCurrentClouds()[cloudIndex].isEmpty())
-        {
-            return true;
-        }
-        return false;
-    }
-
     /** Method moveMN moves mother nature for the specified amount
      * @param amount  amount of spaces mother nature has to move through
      * @param game  an instance of the game
@@ -82,43 +73,13 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
         game.getCurrentMotherNature().move(amount, game.getCurrentIslands().getTotalGroups()-1);
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
-        if(!checkForCharacter(game))
+        if(!Checks.checkForInfluenceCharacter(game, currentPlayer))
         {
             solveEverything(game, game.getCurrentMotherNature().getPosition());
         }
-
-
     }
 
-    /** Returns true if there are any influence related character cards present in the Active Characters Deck
-     * @param game  an instance of hte game
-     * @return whether influence based card are currently active
-     */
-    private boolean checkForCharacter(CurrentGameState game)
-    {
-        for(CharacterCard c: game.getCurrentActiveCharacterCard())
-        {
-            if(c instanceof Knight)
-            {
-                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
-                CharacterController.deckManagement(c, game);
-                return  true;
-            }
-            else if(c instanceof TruffleHunter)
-            {
-                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) c).getChosenColor());
-                CharacterController.deckManagement(c, game);
-                return  true;
-            }
-            else if(c instanceof Centaur)
-            {
-                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, null);
-                CharacterController.deckManagement(c, game);
-                return  true;
-            }
-        }
-        return false;
-    }
+
 
     /** Method solveEverything is responsible for the influence calculation on the desired island, and
      handles the eventual exchange of towers between players' schools and the island
@@ -153,14 +114,6 @@ public class ActionController
         game.getCurrentIslands().idManagement();
     }
 
-    public boolean possibleMNmove(int amount, CurrentGameState game)
-    {
-        if(amount <= MainController.findPlayerByName(game, currentPlayer).getMaxMotherMovement())
-        {
-            return true;
-        }
-        return false;
-    }
 
     public void setCurrentPlayer(String name)
     {
