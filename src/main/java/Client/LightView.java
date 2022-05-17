@@ -60,8 +60,6 @@ public class LightView
         this.currentClouds = newView.currentClouds;
         this.currentCharacterDeck = newView.currentCharacterDeck;
         this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
-
-        System.out.println("Total Islands Groups = " + newView.currentIslands.getTotalGroups());
     }
 
     public String addZero(int X)
