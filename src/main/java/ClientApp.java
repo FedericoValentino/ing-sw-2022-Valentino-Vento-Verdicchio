@@ -1,5 +1,5 @@
-import Client.ClientCLI;
-import Client.ClientGUI;
+import Client.CLI.ClientCLI;
+import Client.GUI.ClientGUI;
 import Client.ClientView;
 
 import java.io.IOException;

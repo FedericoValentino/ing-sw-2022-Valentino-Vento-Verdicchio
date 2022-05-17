@@ -1,10 +1,10 @@
-package Client;
+package Client.CLI;
 
-import Client.Messages.ActionMessages.StandardActionMessage;
-import Client.Messages.Message;
+import Client.ClientView;
+import Client.LightView;
 import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.*;
-import Observer.Observer;
+import Client.ServerConnection;
 import Server.Answers.ActionAnswers.*;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
@@ -12,9 +12,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import model.boards.token.Wizard;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -141,12 +138,20 @@ public class ClientCLI implements ClientView
     @Override
     public void run() throws IOException, ClassNotFoundException
     {
-        main = new ServerConnection();
+        Scanner info = new Scanner(System.in);
+        System.out.println("Nickname?");
+        String nickname = info.next();
+        System.out.println("Team?");
+        int team = info.nextInt();
+        System.out.println("ServerIP?");
+        String IP = info.next();
+
+        ServerConnection main = new ServerConnection(nickname, team, IP);
         SetupConnection setup = new SetupConnection(main.getNickname(), main.getTeam());
         main.getOut().writeObject(setup);
         main.getOut().flush();
         main.getOut().reset();
-        ClientListener Listener = new ClientListener(this);
+        ListenerCLI Listener = new ListenerCLI(this);
         Listener.start();
         this.stdin = new InputParser(main, MyView);
         while(true)

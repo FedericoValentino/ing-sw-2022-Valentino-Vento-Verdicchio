@@ -1,12 +1,12 @@
-package Client;
+package Client.CLI;
 
 import java.io.IOException;
 
-public class ClientListener extends Thread
+public class ListenerCLI extends Thread
 {
     private ClientCLI client;
 
-    public ClientListener(ClientCLI client)
+    public ListenerCLI(ClientCLI client)
     {
         this.client = client;
     }

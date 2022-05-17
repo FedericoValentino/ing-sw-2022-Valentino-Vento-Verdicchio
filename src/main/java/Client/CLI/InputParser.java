@@ -1,7 +1,9 @@
-package Client;
+package Client.CLI;
 
+import Client.LightView;
 import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
+import Client.ServerConnection;
 import model.boards.token.Col;
 
 import java.util.Locale;

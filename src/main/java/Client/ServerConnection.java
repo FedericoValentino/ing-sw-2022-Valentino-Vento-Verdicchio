@@ -20,15 +20,11 @@ public class ServerConnection
     private String ServerIP;
 
 
-    public ServerConnection() throws IOException
+    public ServerConnection(String nickname, int team, String serverIP) throws IOException
     {
-        Scanner stdin = new Scanner(System.in);
-        System.out.println("NickName?");
-        nickname = stdin.next();
-        System.out.println("Team?");
-        Team = stdin.nextInt();
-        System.out.println("Server IP?");
-        ServerIP = stdin.next();
+        this.nickname = nickname;
+        this.Team = team;
+        this.ServerIP = serverIP;
 
         server = new Socket(ServerIP, 1234);
         out = new ObjectOutputStream(server.getOutputStream());
