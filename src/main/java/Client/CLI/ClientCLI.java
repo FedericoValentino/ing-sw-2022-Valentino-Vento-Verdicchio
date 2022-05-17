@@ -146,7 +146,7 @@ public class ClientCLI implements ClientView
         System.out.println("ServerIP?");
         String IP = info.next();
 
-        ServerConnection main = new ServerConnection(nickname, team, IP);
+        main = new ServerConnection(nickname, team, IP);
         SetupConnection setup = new SetupConnection(main.getNickname(), main.getTeam());
         main.getOut().writeObject(setup);
         main.getOut().flush();

@@ -16,13 +16,13 @@ public class InputParser
     private Scanner parser = new Scanner(System.in).useDelimiter("\\n");
     private String playerName;
     private ServerConnection socket;
-    private LightView lightView;
+    private PrinterCLI printer;
 
     public InputParser(ServerConnection socket, LightView lv)
     {
         this.playerName = socket.getNickname();
         this.socket = socket;
-        this.lightView = lv;
+        this.printer = new PrinterCLI(lv);
     }
 
     public Scanner getParser()
@@ -77,61 +77,62 @@ public class InputParser
             case "island": //mostra isole
                 if(words.length == 3)
                 {
-                    lightView.showIsland(valueOf(words[2]));
+                    printer.showIsland(valueOf(words[2]));
+
                 }
                 else
                 {
-                    lightView.showIsland(-1);
+                    printer.showIsland(-1);
                 }
                 break;
             case "school": //mostra scuole
                 if(words.length == 3)
                 {
-                    lightView.showSchool(words[2]);
+                    printer.showSchool(words[2]);
                 }
                 else
                 {
-                    lightView.showSchool("-1");
+                    printer.showSchool("-1");
                 }
                 break;
             case "cloud":  //mostra nuvole
                 if(words.length == 3)
                 {
-                    lightView.showCloud(valueOf(words[2]));
+                    printer.showCloud(valueOf(words[2]));
                 }
                 else
                 {
-                    lightView.showCloud(-1);
+                    printer.showCloud(-1);
                 }
                 break;
             case "assistant": //mostra carte assistente
                 if(words.length == 3)
                 {
-                    lightView.showAssistant(valueOf(words[2]));
+                    printer.showAssistant(valueOf(words[2]));
                 }
                 else
                 {
-                    lightView.showAssistant(-1);
+                    printer.showAssistant(-1);
                 }
                 break;
             case "character": //mostra personaggi attivi e non
                 if(words.length == 3)
                 {
-                    lightView.showCharacter(valueOf(words[2]));
+                    printer.showCharacter(valueOf(words[2]));
                 }
                 else
                 {
-                    lightView.showCharacter(-1);
+                    printer.showCharacter(-1);
                 }
                 break;
             case "player": //mostra status players
                 if(words.length == 3)
                 {
-                    lightView.showPlayer(valueOf(words[2]));
+                    printer.showPlayer(valueOf(words[2]));
                 }
                 else
                 {
-                    lightView.showPlayer(-1);
+                    printer.showPlayer(-1);
                 }
                 break;
         }

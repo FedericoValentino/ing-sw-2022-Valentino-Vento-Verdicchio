@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Removed systemout inutile">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ListenerCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientApp.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Cambi ai packages">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -472,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652787424267</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Cambi ai packages">
+      <created>1652789805561</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1652789805561</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +497,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="rimosso codice" />
     <MESSAGE value="Character and Planning Tests updated with comments" />
     <MESSAGE value="Character and Planning controllers updated with comments" />
     <MESSAGE value="Cards in model have now comments on important methods" />
@@ -516,7 +521,8 @@
     <MESSAGE value="Json Constructor" />
     <MESSAGE value="SemiWorking CLI" />
     <MESSAGE value="Removed systemout inutile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed systemout inutile" />
+    <MESSAGE value="Cambi ai packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambi ai packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
