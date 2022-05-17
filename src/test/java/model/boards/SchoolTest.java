@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class SchoolTest
 {
-    CurrentGameState game;
+    CurrentGameState game = new CurrentGameState(2, true);
     School s=new School(ColTow.BLACK,6, game);
     School s2=new School(ColTow.GREY,6, game);
     Student ss1=new Student(Col.YELLOW);

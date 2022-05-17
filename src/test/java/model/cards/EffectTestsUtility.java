@@ -28,7 +28,7 @@ public class EffectTestsUtility
      */
     public static void setDecks(CharacterCard testCard, CurrentGameState game)
     {
-        game.getCurrentCharacterDeck().getDeck().subList(0, 3).clear();
+        game.getCurrentCharacterDeck().getDeck().clear();
         game.getCurrentCharacterDeck().getDeck().add(testCard);
     }
 

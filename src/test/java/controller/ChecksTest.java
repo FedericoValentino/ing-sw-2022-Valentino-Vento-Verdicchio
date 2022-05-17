@@ -3,6 +3,7 @@ package controller;
 import model.boards.token.GamePhase;
 import model.boards.token.Student;
 import model.boards.token.Wizard;
+import model.cards.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -42,7 +43,7 @@ public class ChecksTest {
         setupTest();
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(3);
-        //controllerTest.getGame().getCurrentTurnState().UpdateTurn();
+        controllerTest.updateTurnState();
         controllerTest.determineNextPlayer();
         assertEquals("jack", controllerTest.getCurrentPlayer());
     }
@@ -110,14 +111,66 @@ public class ChecksTest {
     }
 
     @Test
-    public void testCanCardStillBePlayed() {
+    public void testCanCardStillBePlayed()
+    {
+        setupTestfor3();
+        controllerTestfor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
+        controllerTestfor3.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(1);
+        assertTrue(controllerTestfor3.getChecks().isAssistantAlreadyPlayed(controllerTestfor3.getGame(), "puddu", 0));
+        assertFalse(controllerTestfor3.getChecks().canCardStillBePlayed(controllerTestfor3.getGame(), "puddu", 0));
+        controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).chooseAssistantCard(2);
+        // fede: 1 2 3 4 5 6 7 8 9
+        // jack: 0 2 3 4 5 6 7 8 9
+        // pudd: 0 1 3 4 5 6 7 8 9
+        for(int i=0; i<7; i++)
+            controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().remove(0);
+        assertEquals(9, controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().get(0).getValue());
+        assertEquals(10, controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().get(1).getValue());
+        controllerTestfor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).Discard();
+        controllerTestfor3.getGame().getCurrentTeams().get(1).getPlayers().get(0).Discard();
+        controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).Discard();
+        controllerTestfor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(7);
+        controllerTestfor3.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(8);
+        assertTrue(controllerTestfor3.getChecks().isAssistantAlreadyPlayed(controllerTestfor3.getGame(), "puddu", 0));
+        assertTrue(controllerTestfor3.getChecks().isAssistantAlreadyPlayed(controllerTestfor3.getGame(), "puddu", 1));
+        assertTrue(controllerTestfor3.getChecks().canCardStillBePlayed(controllerTestfor3.getGame(), "puddu", 0));
+        assertTrue(controllerTestfor3.getChecks().canCardStillBePlayed(controllerTestfor3.getGame(), "puddu", 1));
     }
 
     @Test
-    public void testIsLastPlayer() {
+    public void testIsLastPlayer()
+    {
+        setupTest();
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
+        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(1);
+        controllerTest.updateTurnState();
+        controllerTest.determineNextPlayer();
+        assertFalse(controllerTest.getChecks().isLastPlayer(controllerTest.getGame()));
+        controllerTest.determineNextPlayer();
+        assertTrue(controllerTest.getChecks().isLastPlayer(controllerTest.getGame()));
     }
 
     @Test
-    public void testCheckForInfluenceCharacter() {
+    public void checkForInfluenceCharacters()
+    {
+        setupTest();
+
+        Knight knight = new Knight();
+        Centaur centaur = new Centaur();
+        TruffleHunter tHunter = new TruffleHunter();
+        Princess princess = new Princess();
+
+        EffectTestsUtility.setDecks(knight, controllerTest.getGame());
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(10);
+
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+
+        assertTrue(controllerTest.getChecks().checkForInfluenceCharacter(controllerTest.getGame(), "jack"));
+
+        controllerTest.getGame().getCurrentActiveCharacterCard().clear();
+        controllerTest.getGame().getCurrentActiveCharacterCard().add(princess);
+
+        assertFalse(controllerTest.getChecks().checkForInfluenceCharacter(controllerTest.getGame(), "jack"));
     }
+
 }

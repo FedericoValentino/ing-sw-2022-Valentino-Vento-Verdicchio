@@ -6,6 +6,8 @@ import model.Team;
 import model.boards.token.GamePhase;
 import model.cards.*;
 
+import java.util.ArrayList;
+
 public class Checks {
 
 
@@ -142,25 +144,28 @@ public class Checks {
     public boolean canCardStillBePlayed(CurrentGameState game, String currentPlayer, int cardIndex)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
-        int[] cardCounter = new int[player.getAssistantDeck().getDeck().size() - 1];
+        ArrayList<AssistantCard> currentlyPlayedCards = new ArrayList<>();
+        for(Team team: game.getCurrentTeams())
+            for(Player p: team.getPlayers())
+                if(!p.getNome().equals(player.getNome()))
+                    currentlyPlayedCards.add(p.getCurrentAssistantCard());
+        int[] hitCounter = new int[player.getAssistantDeck().getDeck().size()-1];
+        int index = 0;
         int counter = 0;
-        for (int i = 0; i < player.getAssistantDeck().getDeck().size() - 1; i++)
-            cardCounter[i] = 0;
-        for (int k = 0; k < player.getAssistantDeck().getDeck().size(); k++)
-        {
-            if (!player.getAssistantDeck().getDeck().get(k).equals(player.getAssistantDeck().getDeck().get(cardIndex)))
-            {
-                if(isAssistantAlreadyPlayed(game, currentPlayer, k))
-                {
-                    cardCounter[k] += 1;
-                }
-            }
-        }
-        for (int i = 0; i < cardCounter.length; i++)
-            if (cardCounter[i] != 0)
+        for(AssistantCard examinedCard: player.getAssistantDeck().getDeck())
+            if(examinedCard.getValue() != player.getAssistantDeck().getDeck().get(cardIndex).getValue())
+                for(AssistantCard currentCard: currentlyPlayedCards)
+                    if(examinedCard.getValue() == currentCard.getValue())
+                    {
+                        hitCounter[index] += 1;
+                        index +=1;
+                    }
+        for (int i = 0; i < hitCounter.length; i++)
+            if (hitCounter[i] != 0)
                 counter += 1;
-        return counter == cardCounter.length;
+        return counter == hitCounter.length;
     }
+
 
 
     /** Checks if the current turn is expiring
@@ -177,7 +182,7 @@ public class Checks {
      * @param game  an instance of hte game
      * @return whether influence based card are currently active
      */
-    protected static boolean checkForInfluenceCharacter(CurrentGameState game, String currentPlayer)
+    protected boolean checkForInfluenceCharacter(CurrentGameState game, String currentPlayer)
     {
         for(CharacterCard c: game.getCurrentActiveCharacterCard())
         {

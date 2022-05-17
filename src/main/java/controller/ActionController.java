@@ -15,6 +15,7 @@ public class ActionController
 {
     private String currentPlayer;
     private int movableStudents;
+    private Checks checks = new Checks();
 
     public ActionController(String Player)
     {
@@ -73,7 +74,7 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
         game.getCurrentMotherNature().move(amount, game.getCurrentIslands().getTotalGroups()-1);
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
-        if(!Checks.checkForInfluenceCharacter(game, currentPlayer))
+        if(!checks.checkForInfluenceCharacter(game, currentPlayer))
         {
             solveEverything(game, game.getCurrentMotherNature().getPosition());
         }
