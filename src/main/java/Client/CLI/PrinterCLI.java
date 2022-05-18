@@ -241,25 +241,6 @@ public class PrinterCLI
     private String printHasProf(String nome, int tablePosition)
     {
         String output = "";
-        String color = "";
-        switch (tablePosition)
-        {
-            case 0:
-                color += ANSI_GREEN;
-                break;
-            case 1:
-                color += ANSI_RED;
-                break;
-            case 2:
-                color += ANSI_YELLOW;
-                break;
-            case 3:
-                color += ANSI_PURPLE;
-                break;
-            case 4:
-                color += ANSI_BLUE;
-                break;
-        }
         for(Team team: view.getCurrentTeams())
         {
             for(Player player: team.getPlayers())
@@ -267,13 +248,13 @@ public class PrinterCLI
                 if(player.getNome().equals(nome))
                 {
                     if(player.getSchool().getProfessorTable()[tablePosition])
-                        output = color + "P";
+                        output = ANSI_GREEN_BACKGROUND + "P" + ANSI_RESET;
                     else
-                        output = "O";
+                        output = ANSI_RED_BACKGROUND + "O" + ANSI_RESET;
                 }
             }
         }
-        return output + ANSI_RESET;
+        return output;
     }
 
     public String[] printSchool(String[] schools, Player player, String currentPlayer)
