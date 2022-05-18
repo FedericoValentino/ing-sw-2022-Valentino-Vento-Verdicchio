@@ -128,6 +128,8 @@ public class PrinterCLI
             }
         }
     }
+
+
     private String printEntrance(String nome)
     {
         String output = "";
