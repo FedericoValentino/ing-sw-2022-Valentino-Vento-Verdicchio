@@ -80,10 +80,9 @@ public class InputParser
                     printer.showIsland(valueOf(words[2]));
 
                 }
-                else
-                {
-                    printer.showIsland(-1);
-                }
+                break;
+            case "islands":
+                printer.showIsland(-1);
                 break;
             case "school": //mostra scuole
                 if(words.length == 3)

@@ -3,14 +3,10 @@ package Client;
 import Server.Answers.ActionAnswers.ViewMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.Player;
 import model.Team;
 import model.boards.Cloud;
 import model.boards.Islands;
-import model.boards.token.Col;
-import model.boards.token.ColTow;
 import model.boards.token.MotherNature;
-import model.boards.token.Student;
 import model.cards.CharacterCard;
 import model.cards.CharacterDeck;
 

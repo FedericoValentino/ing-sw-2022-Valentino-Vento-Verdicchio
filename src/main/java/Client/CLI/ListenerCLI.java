@@ -2,7 +2,7 @@ package Client.CLI;
 
 import java.io.IOException;
 
-public class ListenerCLI extends Thread
+public class ListenerCLI implements Runnable
 {
     private ClientCLI client;
 
@@ -13,7 +13,7 @@ public class ListenerCLI extends Thread
     @Override
     public void run()
     {
-        while(isAlive())
+        while(true)
         {
             //System.out.println("Waiting for Server...");
             try {

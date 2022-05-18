@@ -24,9 +24,9 @@ public class ClientConnection
     public void sendAnswer(SerializedAnswer answer)
     {
         try {
-            outputStream.reset();
             outputStream.writeObject(answer);
             outputStream.flush();
+            outputStream.reset();
         }
         catch (IOException e)
         {

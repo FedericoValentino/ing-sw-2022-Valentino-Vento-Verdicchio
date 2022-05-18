@@ -14,6 +14,9 @@ import model.boards.token.Wizard;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ClientCLI implements ClientView
 {
@@ -23,7 +26,7 @@ public class ClientCLI implements ClientView
     private Boolean setupState = true;
     private String currentInput;
     private LightView MyView = new LightView();
-
+    private ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public void setupHandler(StandardSetupAnswer answer) throws IOException {
         if(answer instanceof RequestGameInfo)
@@ -152,7 +155,7 @@ public class ClientCLI implements ClientView
         main.getOut().flush();
         main.getOut().reset();
         ListenerCLI Listener = new ListenerCLI(this);
-        Listener.start();
+        executor.execute(Listener);
         this.stdin = new InputParser(main, MyView);
         while(true)
         {

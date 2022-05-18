@@ -35,9 +35,9 @@ public class ServerConnection
     public void sendMessage(SerializedMessage answer)
     {
         try {
-            out.reset();
             out.writeObject(answer);
             out.flush();
+            out.reset();
         }
         catch (IOException e)
         {
