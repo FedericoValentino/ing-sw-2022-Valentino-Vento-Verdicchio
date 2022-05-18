@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="CLI school e island by valentino and vento">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="CLI island and islands by vento and valentino">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ListenerCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ListenerCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientConnection.java" afterDir="false" />
     </list>
-    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor">
+    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Printer Islands">
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,13 +45,22 @@
     <file path="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java">
       <ranges>
         <range start1="5" end1="5" start2="5" end2="6" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="57" end1="57" start2="58" end2="88" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="60" end1="66" start2="91" end2="94" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="67" end1="68" start2="95" end2="96" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="69" end1="83" start2="97" end2="102" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="84" end1="84" start2="103" end2="111" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="85" end1="85" start2="112" end2="129" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="86" end1="86" start2="130" end2="132" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="9" end1="9" start2="10" end2="12" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="12" end1="12" start2="15" end2="16" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="21" end1="21" start2="25" end2="37" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="227" end1="246" start2="243" end2="243" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="253" end1="254" start2="250" end2="251" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="255" end1="256" start2="252" end2="253" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="259" end1="260" start2="256" end2="257" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="262" end1="263" start2="259" end2="260" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="264" end1="265" start2="261" end2="270" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="266" end1="271" start2="271" end2="309" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="272" end1="273" start2="310" end2="319" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="274" end1="286" start2="320" end2="320" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="287" end1="287" start2="321" end2="333" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="289" end1="290" start2="335" end2="368" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="291" end1="291" start2="369" end2="372" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="292" end1="292" start2="373" end2="384" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
       </ranges>
     </file>
   </component>
@@ -195,7 +198,7 @@
       <workItem from="1652546613744" duration="7646000" />
       <workItem from="1652604146433" duration="6643000" />
       <workItem from="1652807385066" duration="459000" />
-      <workItem from="1652878436971" duration="4937000" />
+      <workItem from="1652878436971" duration="12286000" />
     </task>
     <task id="LOCAL-00001" summary="Fatto Knight, aggiunto metodo updateteamsinfluence per overloading in island">
       <created>1648996325464</created>
@@ -498,7 +501,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652789805561</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="CLI island and islands by vento and valentino">
+      <created>1652884523602</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1652884523602</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Printer Islands">
+      <created>1652884552239</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1652884552239</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,8 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Character and Planning Tests updated with comments" />
-    <MESSAGE value="Character and Planning controllers updated with comments" />
     <MESSAGE value="Cards in model have now comments on important methods" />
     <MESSAGE value="Boo (non capisco perché non mi fa updatare)" />
     <MESSAGE value="Aggiunto modo per determinare il numero di torri da dare al player che si aggiunge" />
@@ -539,11 +554,13 @@
     <MESSAGE value="Doppia reference per tutti + fix ai test per farli funzionare" />
     <MESSAGE value="Ridefinizione Client" />
     <MESSAGE value="View Sender completo" />
-    <MESSAGE value="Json Constructor" />
     <MESSAGE value="SemiWorking CLI" />
     <MESSAGE value="Removed systemout inutile" />
     <MESSAGE value="Cambi ai packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambi ai packages" />
+    <MESSAGE value="CLI island and islands by vento and valentino" />
+    <MESSAGE value="Json Constructor" />
+    <MESSAGE value="Printer Islands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Printer Islands" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

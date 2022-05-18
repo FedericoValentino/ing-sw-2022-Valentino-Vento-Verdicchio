@@ -87,22 +87,15 @@ public class InputParser
             case "school": //mostra scuole
                 if(words.length == 3)
                 {
-                    printer.showSchool(words[2]);
+                    printer.showSchool(words[2], socket.getNickname());
                 }
                 else
                 {
-                    printer.showSchool("-1");
+                    printer.showSchool("-1", socket.getNickname());
                 }
                 break;
-            case "cloud":  //mostra nuvole
-                if(words.length == 3)
-                {
-                    printer.showCloud(valueOf(words[2]));
-                }
-                else
-                {
-                    printer.showCloud(-1);
-                }
+            case "clouds":  //mostra nuvole
+                printer.showCloud();
                 break;
             case "assistant": //mostra carte assistente
                 if(words.length == 3)

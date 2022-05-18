@@ -3,13 +3,17 @@ package Client.CLI;
 import Client.LightView;
 import model.Player;
 import model.Team;
+import model.boards.Cloud;
 import model.boards.Island;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 import model.boards.token.Student;
 
+import java.util.ArrayList;
+
 public class PrinterCLI
 {
+    //colore testo
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -19,6 +23,18 @@ public class PrinterCLI
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+
+    //colore background
+    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
+    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
+    public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
+    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
+    public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
+    public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
+    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+
+
     private LightView view;
 
 
@@ -260,36 +276,131 @@ public class PrinterCLI
         return output + ANSI_RESET;
     }
 
-    public void showSchool(String name)
+    public String[] printSchool(String[] schools, Player player, String currentPlayer)
     {
-        if(!name.equals("-1"))
+        String name = player.getNome();
+        if(name.length() > 10)
+            name = name.substring(0,10);
+        if(currentPlayer.length() > 10)
+            currentPlayer = currentPlayer.substring(0,10);
+
+        if(!currentPlayer.equals(name))
+            schools[0] += "This is " + ANSI_CYAN + name + ANSI_RESET + "'s school\t\t\t\t\t\t\t";
+        else
         {
-            Player p = null;
-            for (Team team : view.getCurrentTeams()) {
-                for (Player player : team.getPlayers()) {
-                    if (player.getNome().equals(name)) {
-                        p = player;
-                    }
-                }
-            }
-            System.out.println(name);
-            System.out.println("____________________________________________");
-            System.out.println("|     0  1  2  3  4  5  6  7  8            |");
-            System.out.println("| E:" + printEntrance(name) + ANSI_RESET + "            |");
-            System.out.println("|__________________________________________|");
-            System.out.println("|                                          |");
-            System.out.println("| G:" + printDinnerTable(name, 0) + "  || " + printHasProf(name, 0) + "             |");
-            System.out.println("| R:" + printDinnerTable(name, 1) + "  || " + printHasProf(name, 1) + "             |");
-            System.out.println("| Y:" + printDinnerTable(name, 2) + "  || " + printHasProf(name, 2) + "    TOW " + addZero(p.getSchool().getTowerCount()) + "   |");
-            System.out.println("| P:" + printDinnerTable(name, 3) + "  || " + printHasProf(name, 3) + "             |");
-            System.out.println("| B:" + printDinnerTable(name, 4) + "  || " + printHasProf(name, 4) + "             |");
-            System.out.println("|__________________________________________|");
+            schools[0] += ANSI_GREEN + currentPlayer + ANSI_RESET + ", this is " + ANSI_GREEN + "YOUR school\t\t\t\t\t\t\t" + ANSI_RESET;
         }
+        schools[1] += "____________________________________________\t";
+        schools[2] += "|     0  1  2  3  4  5  6  7  8            |\t";
+        schools[3] += "| E:" + printEntrance(name) + ANSI_RESET + "            |\t";
+        schools[4] += "|__________________________________________|\t";
+        schools[5] += "|                                          |\t";
+        schools[6] += ("| G:" + printDinnerTable(name, 0) + "  || " + printHasProf(name, 0) + "             |\t");
+        schools[7]+= ("| R:" + printDinnerTable(name, 1) + "  || " + printHasProf(name, 1) + "             |\t");
+        schools[8] += ("| Y:" + printDinnerTable(name, 2) + "  || " + printHasProf(name, 2) + "    TOW " + addZero(player.getSchool().getTowerCount()) + "   |\t");
+        schools[9] += ("| P:" + printDinnerTable(name, 3) + "  || " + printHasProf(name, 3) + "             |\t");
+        schools[10] += ("| B:" + printDinnerTable(name, 4) + "  || " + printHasProf(name, 4) + "             |\t");
+        schools[11] += ("|__________________________________________|\t");
+
+        return schools;
     }
 
-    public void showCloud(int id)
-    {
 
+    public void showSchool(String name, String currentPlayer) {
+        String[] schools = new String[12];
+
+        for (int k = 0; k < 12; k++)
+            schools[k] = "";
+
+        int totalSchools = 0;
+
+        for (Team team : view.getCurrentTeams()) {
+            for (Player player : team.getPlayers()) {
+                if (name.equals("-1")) {
+                    totalSchools++;
+                    schools = printSchool(schools, player, currentPlayer);
+                    if (totalSchools == 2) {
+                        for (int i = 0; i < 12; i++) {
+                            System.out.println(schools[i]);
+                            totalSchools = 0;
+                        }
+                        for (int k = 0; k < 12; k++)
+                            schools[k] = "";
+                    }
+                } else if (player.getNome().equals(name)) {
+                    totalSchools++;
+                    schools = printSchool(schools, player, currentPlayer);
+                    for (int i = 0; i < 12; i++) {
+                        System.out.println(schools[i]);
+                        totalSchools = 0;
+                    }
+                }
+
+            }
+        }
+        System.out.println();
+        if(totalSchools > 0)
+        {
+            for (int i = 0; i < 12; i++) {
+                System.out.println(schools[i]);
+                totalSchools = 0;
+            }
+        }
+        if (totalSchools == 0)
+            System.out.println("Sorry, Player not found");
+
+        System.out.println();
+    }
+
+    private String printStudentOnCloud(ArrayList<Student> students)
+    {
+        String output = "";
+        int cloudCount = students.size();
+        for(Student s: students)
+        {
+            switch(s.getColor())
+            {
+                case GREEN:
+                    output += ANSI_GREEN + " X";
+                    break;
+                case RED:
+                    output += ANSI_RED + " X";
+                    break;
+                case YELLOW:
+                    output += ANSI_YELLOW + " X";
+                    break;
+                case PINK:
+                    output += ANSI_PURPLE + " X";
+                    break;
+                case BLUE:
+                    output += ANSI_BLUE + " X";
+                    break;
+            }
+        }
+        for(int i = 0; i < 4 - cloudCount; i++)
+        {
+            output += ANSI_RESET + " O";
+        }
+        return output;
+    }
+
+    public void showCloud()
+    {
+        String[] clouds = new String[5];
+        for (int k = 0; k < 5; k++)
+            clouds[k] = "";
+
+        for(int i = 0; i < view.getCurrentClouds().length; i++)
+        {
+            clouds[0] += " Cloud " + i + "\t ";
+            clouds[1] += " _________ \t ";
+            clouds[2] += "/         \\\t ";
+            clouds[3] += "|" + printStudentOnCloud(view.getCurrentClouds()[i].getStudents()) +" |\t ";
+            clouds[4] += "\\_________/\t ";
+        }
+
+        for (int k = 0; k < 5; k++)
+            System.out.println(clouds[k]);
     }
 
     public void showAssistant(int id)
