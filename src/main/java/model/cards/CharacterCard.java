@@ -23,6 +23,8 @@ public abstract class CharacterCard {
 
     public abstract void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color);
 
+    public abstract String[] description();
+
     public int getBaseCost() {return baseCost;}
     public int getUses() {return uses;}
     public int getCurrentCost() {return currentCost;}

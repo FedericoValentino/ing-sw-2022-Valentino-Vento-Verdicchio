@@ -18,7 +18,7 @@ public class Priest extends CharacterCard implements Serializable {
         super();
         this.baseCost=1;
         this.currentCost=this.baseCost;
-        this.idCard=1;
+        this.idCard=0;
         this.students = new ArrayList<>();
     }
 
@@ -54,6 +54,11 @@ public class Priest extends CharacterCard implements Serializable {
     {
         game.getCurrentIslands().placeToken(getStudent(studentPosition), chosenIsland);
         updateStudents(game.getCurrentPouch());
+    }
+
+    @Override
+    public String[] description() {
+        return new String[0];
     }
 
     public ArrayList<Student> getStudents() {

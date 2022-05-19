@@ -98,24 +98,13 @@ public class InputParser
                 printer.showCloud();
                 break;
             case "assistant": //mostra carte assistente
-                if(words.length == 3)
-                {
-                    printer.showAssistant(valueOf(words[2]));
-                }
-                else
-                {
-                    printer.showAssistant(-1);
-                }
+                printer.showAssistantDeck(socket.getNickname());
+                break;
+            case "playedcards":
+                printer.showPlayedCards();
                 break;
             case "character": //mostra personaggi attivi e non
-                if(words.length == 3)
-                {
-                    printer.showCharacter(valueOf(words[2]));
-                }
-                else
-                {
-                    printer.showCharacter(-1);
-                }
+                printer.showCharacters();
                 break;
             case "player": //mostra status players
                 if(words.length == 3)

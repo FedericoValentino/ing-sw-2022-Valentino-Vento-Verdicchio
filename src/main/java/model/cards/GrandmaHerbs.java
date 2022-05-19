@@ -4,20 +4,21 @@ import model.CurrentGameState;
 import model.boards.token.Col;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
-public class GrandmaWeed extends CharacterCard implements Serializable {
+public class GrandmaHerbs extends CharacterCard implements Serializable {
 
     private int noEntry;
     private int idCard;
 
     /** Class constructor */
-    public GrandmaWeed()
+    public GrandmaHerbs()
     {
         super();
         this.noEntry = 4;
         this.baseCost=2;
         this.currentCost=this.baseCost;
-        this.idCard=5;
+        this.idCard=4;
     }
 
     /** Updates the noEntry tiles using an input that can be positive or negative
@@ -35,6 +36,20 @@ public class GrandmaWeed extends CharacterCard implements Serializable {
     {
         game.getCurrentIslands().getIslands().get(chosenIsland).updateNoEntry();
         updateNoEntry(-1);
+    }
+
+    @Override
+    public String[] description()
+    {
+        String[] grandmaDescription = new String[7];
+        Arrays.fill(grandmaDescription, "");
+        grandmaDescription[0] += "Grandma Herbs has the power to place up to four No Entry tile onto an island of your choice (one per island).";
+        grandmaDescription[1] += "You may ask yourself \"But why would I do that?\". Well, if Mother Nature ends her movement on ";
+        grandmaDescription[2] += "said island, there won't be any influence calculation happening. It's the power of the magical herbs!";
+        grandmaDescription[3] += "Use this ability to prevent your islands from being captured by your foes, but be advised: once ";
+        grandmaDescription[4] += "Mother Nature ends her movement on an island sporting a No Entry tile, said No Entry will be consumed, and thus ";
+        grandmaDescription[5] += "it will return on the Grandma Herbs card.";
+        return grandmaDescription;
     }
 
 

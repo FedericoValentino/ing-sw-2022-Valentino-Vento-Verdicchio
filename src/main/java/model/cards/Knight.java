@@ -8,6 +8,7 @@ import model.boards.token.Col;
 import model.boards.token.ColTow;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Knight extends CharacterCard implements Serializable {
     private int idCard;
@@ -18,7 +19,7 @@ public class Knight extends CharacterCard implements Serializable {
         super();
         this.baseCost=2;
         this.currentCost=this.baseCost;
-        this.idCard=8;
+        this.idCard=7;
     }
 
 
@@ -61,6 +62,18 @@ public class Knight extends CharacterCard implements Serializable {
         game.getCurrentIslands().idManagement();
         game.getCurrentIslands().getIslands().get(chosenIsland).updateTeamInfluence(-2, MainController.getPlayerColor(game, currentPlayer).ordinal());
     }
+
+    @Override
+    public String[] description() {
+        String[] knightDescription = new String[7];
+        Arrays.fill(knightDescription, "");
+        knightDescription[0] += "To arms! This is one of the most offensive character you can even dream to summon. Use the overwhelming strength ";
+        knightDescription[1] += "and might of this companion to gain an important advantage in conquering an island: while this card is active ";
+        knightDescription[2] += "you and your team gain 2 more influence points to aid in the crusade against the enemy!";
+        knightDescription[3] += "Use this card to aid in the conquest of the most well defended outposts!";
+        return knightDescription;
+    }
+
 
     public int getIdCard() {
         return idCard;

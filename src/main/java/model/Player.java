@@ -98,6 +98,7 @@ public class Player
   {
     lastPlayedCard = currentAssistantCard;
     currentAssistantCard = null;
+    game.notify(game.modelToJson());
   }
 
   /** Calculates the amount of coins gained by the players in relation to the "Checkpoints" in his Dining Room
@@ -132,6 +133,7 @@ public class Player
       {
         coinAmount += gain;
       }
+      game.notify(game.modelToJson());
     }
 
   /** Modifies the Maximum Mother Nature Movement by adding to it the desired value
@@ -140,6 +142,7 @@ public class Player
   public void updateMaxMotherMovement(int movement)
   {
     MaxMotherMovement += movement;
+    game.notify(game.modelToJson());
   }
 
   public AssistantCard getCurrentAssistantCard() {

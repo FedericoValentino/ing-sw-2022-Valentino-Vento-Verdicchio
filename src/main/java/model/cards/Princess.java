@@ -20,7 +20,7 @@ public class Princess extends CharacterCard implements Serializable {
     public Princess() {
         super();
         this.baseCost=2;
-        this.idCard=11;
+        this.idCard=10;
         this.currentCost=this.baseCost;
         this.students = new ArrayList<>();
     }
@@ -58,6 +58,11 @@ public class Princess extends CharacterCard implements Serializable {
         color = getStudent(studentPosition).getColor();
         MainController.findPlayerByName(game, currentPlayer).getSchool().placeInDiningRoom(color);
         updateStudents(game.getCurrentPouch());
+    }
+
+    @Override
+    public String[] description() {
+        return new String[0];
     }
 
     public ArrayList<Student> getStudents() {
