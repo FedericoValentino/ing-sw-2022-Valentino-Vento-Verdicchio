@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.IntroController">
+   <children>
+      <ImageView fitHeight="900.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../Images/eryantisMainScreen.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="56.0" layoutY="46.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="700.0" fitWidth="700.0" layoutX="15.0" layoutY="97.0">
+               <image>
+                  <Image url="@../Images/eriantysScatola.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="715.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome in Eryantis">
+               <font>
+                  <Font size="52.0" />
+               </font>
+            </Text>
+            <HBox layoutX="822.0" layoutY="264.0" prefHeight="180.0" prefWidth="411.0">
+               <children>
+                  <VBox prefHeight="180.0" prefWidth="216.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your name:">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chose your Team:">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Server IP:">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Server Port">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="331.0" prefWidth="157.0">
+                     <children>
+                        <TextField text="Your name">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <ChoiceBox prefHeight="26.0" prefWidth="164.0">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </ChoiceBox>
+                        <TextField text="127.0.0.1">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField text="9090">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="1303.0" layoutY="675.0" mnemonicParsing="false" text="Try Connection" />
+            <Button layoutX="1243.0" layoutY="675.0" mnemonicParsing="false" text="Back" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

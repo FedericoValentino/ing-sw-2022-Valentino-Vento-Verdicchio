@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Cambi ai packages">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controller/MainBoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Gui/Controllers/MainBoard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Gui/Images/eryantisMainScreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Gui/Images/island1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Gui/Images/island2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Gui/Images/island3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Gui/MainScreen.fxml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Add GUI's basic components">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CharacterCardsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/EndGameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Intro.fxml" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,9 +52,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="27I0DHTyTwgsFPc6g6bYMh9z33T" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,6 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/GUI/Controllers" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -72,8 +73,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\GUI\Controllers" />
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers\SetupAnswers" />
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\GUI\Controllers" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -497,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652884552239</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Add GUI's basic components">
+      <created>1652946828924</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1652946828924</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +529,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Cards in model have now comments on important methods" />
     <MESSAGE value="Boo (non capisco perché non mi fa updatare)" />
     <MESSAGE value="Aggiunto modo per determinare il numero di torri da dare al player che si aggiunge" />
     <MESSAGE value="Primi passi nel mondo del Server" />
@@ -542,7 +553,8 @@
     <MESSAGE value="CLI island and islands by vento and valentino" />
     <MESSAGE value="Json Constructor" />
     <MESSAGE value="Printer Islands" />
-    <option name="LAST_COMMIT_MESSAGE" value="Printer Islands" />
+    <MESSAGE value="Add GUI's basic components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add GUI's basic components" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

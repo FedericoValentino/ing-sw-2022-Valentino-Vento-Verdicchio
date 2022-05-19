@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.IntroController">
+   <children>
+      <ImageView fitHeight="900.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../Images/eryantisMainScreen.png" />
+         </image>
+      </ImageView>
+
+      <Button fx:id="Start" layoutX="770.0" layoutY="450.0" mnemonicParsing="false" text="Start" onAction="#onClickStart"/>
+      <Button fx:id="Close" layoutX="1163.0" layoutY="450.0" mnemonicParsing="false" onAction="#oncClickExitButton" text="Exit" />
+      <Button fx:id="Story" layoutX="391.0" layoutY="450.0" mnemonicParsing="false" text="Story" />
+   </children>
+</AnchorPane>
