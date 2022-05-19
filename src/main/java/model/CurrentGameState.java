@@ -70,7 +70,7 @@ public class CurrentGameState extends Observable {
        if(expertGame)
        {
            this.bankBalance = 20 - playerNum;
-           this.currentCharacterDeck = new CharacterDeck();
+           this.currentCharacterDeck = new CharacterDeck(this);
            getCurrentPouch().updateSetup(false);
            currentCharacterDeck.SetupCards(getCurrentPouch());
            getCurrentPouch().updateSetup(true);

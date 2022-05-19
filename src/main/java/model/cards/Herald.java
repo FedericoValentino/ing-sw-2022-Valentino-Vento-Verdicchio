@@ -5,6 +5,7 @@ import model.CurrentGameState;
 import model.boards.token.Col;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Herald extends CharacterCard implements Serializable {
     private int idCard;
@@ -15,7 +16,7 @@ public class Herald extends CharacterCard implements Serializable {
         super();
         this.baseCost=3;
         this.currentCost=this.baseCost;
-        this.idCard=3;
+        this.idCard=2;
     }
 
 
@@ -30,6 +31,18 @@ public class Herald extends CharacterCard implements Serializable {
             game.getCurrentIslands().getIslands().get(chosenIsland).updateMotherNature();
         ActionController.solveEverything(game, chosenIsland);
         game.getCurrentIslands().getIslands().get(chosenIsland).updateMotherNature();
+    }
+
+    @Override
+    public String[] description() {
+        String[] heraldDescription = new String[7];
+        Arrays.fill(heraldDescription, "");
+        heraldDescription[0] += "The herald lets you ignore any rules of decency by letting you start the influence calculation ";
+        heraldDescription[1] += "on an island of your choice, even if Mother Nature hasn't ended her movement there. That's right, ";
+        heraldDescription[2] += "you won't need to wait for anyone to make your dreams of conquest come true!";
+        heraldDescription[3] += "Use this effect in combination with Mother Nature to try and conquer more than one island ";
+        heraldDescription[4] += "in just one turn!";
+        return heraldDescription;
     }
 
     public int getIdCard() {

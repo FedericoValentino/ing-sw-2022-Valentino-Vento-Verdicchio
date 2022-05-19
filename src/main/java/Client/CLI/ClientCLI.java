@@ -155,8 +155,8 @@ public class ClientCLI implements ClientView
         main.getOut().flush();
         main.getOut().reset();
         ListenerCLI Listener = new ListenerCLI(this);
-        executor.execute(Listener);
         this.stdin = new InputParser(main, MyView);
+        executor.execute(Listener);
         while(true)
         {
             if(!setupState)

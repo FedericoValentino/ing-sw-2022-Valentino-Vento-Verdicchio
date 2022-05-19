@@ -56,11 +56,11 @@ public class GameHandler extends Thread implements Observer
         {
             synchronized (mainController.getAvailableWizards())
             {
-                Wizard w = ((WizardChoice) message).getWizard();
-                if(mainController.getAvailableWizards().contains(w) && MainController.findPlayerByName(mainController.getGame(), socket.getNickname()) == null)
+                Wizard wizard = ((WizardChoice) message).getWizard();
+                if(mainController.getAvailableWizards().contains(wizard) && MainController.findPlayerByName(mainController.getGame(), socket.getNickname()) == null)
                 {
-                    mainController.AddPlayer(team, socket.getNickname(), 8, w);
-                    mainController.getAvailableWizards().remove(w);
+                    mainController.AddPlayer(team, socket.getNickname(), 8, wizard);
+                    mainController.getAvailableWizards().remove(wizard);
                     socket.sendAnswer(new SerializedAnswer(new InfoMessage("Wizard Selected, type [Ready] if you're ready to start!")));
                     choseWizard = true;
                     threadSem.release(1);

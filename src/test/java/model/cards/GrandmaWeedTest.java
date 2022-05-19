@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class GrandmaWeedTest {
-    GrandmaWeed g=new GrandmaWeed();
+    GrandmaHerbs g=new GrandmaHerbs();
 
 
     @Test
@@ -53,7 +53,7 @@ public class GrandmaWeedTest {
         MainController controllerTest = new MainController(2, true);
 
         setupTest(controllerTest);
-        GrandmaWeed testCard = new GrandmaWeed();
+        GrandmaHerbs testCard = new GrandmaHerbs();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
         int island = (int) ((Math.random()*11));

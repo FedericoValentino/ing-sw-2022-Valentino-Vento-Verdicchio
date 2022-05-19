@@ -16,7 +16,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
     {
         super();
         this.baseCost=3;
-        this.idCard=9;
+        this.idCard=8;
         this.currentCost=this.baseCost;
         this.ChosenColor = null;
     }
@@ -57,6 +57,11 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         {
             game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.add(new Student(color));
         }
+    }
+
+    @Override
+    public String[] description() {
+        return new String[0];
     }
 
 

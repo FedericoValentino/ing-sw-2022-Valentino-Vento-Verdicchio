@@ -15,7 +15,7 @@ public class Postman extends CharacterCard implements Serializable {
         super();
         this.baseCost=1;
         this.currentCost=this.baseCost;
-        this.idCard=4;
+        this.idCard=3;
     }
 
 
@@ -27,6 +27,11 @@ public class Postman extends CharacterCard implements Serializable {
     public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
         MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
+    }
+
+    @Override
+    public String[] description() {
+        return new String[0];
     }
 
 

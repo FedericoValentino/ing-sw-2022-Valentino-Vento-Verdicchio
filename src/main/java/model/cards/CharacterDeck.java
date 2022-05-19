@@ -1,5 +1,6 @@
 package model.cards;
 
+import model.CurrentGameState;
 import model.boards.Pouch;
 
 import java.io.Serializable;
@@ -9,15 +10,17 @@ import java.util.Collections;
 public class CharacterDeck implements Serializable
 {
   private ArrayList<CharacterCard> deck;
+  private CurrentGameState game;
 
   /** Class constructor. Creates every character Object, shuffles the collection, and eliminates 5 of them.
    This ensures a random Character Deck composition for each game instance
    */
-  public CharacterDeck()
+  public CharacterDeck(CurrentGameState game)
   {
+    this.game = game;
     this.deck = new ArrayList<>();
     this.deck.add(new Centaur());
-    this.deck.add(new GrandmaWeed());
+    this.deck.add(new GrandmaHerbs());
     this.deck.add(new Knight());
     this.deck.add(new Herald());
     this.deck.add(new Postman());
@@ -25,10 +28,7 @@ public class CharacterDeck implements Serializable
     this.deck.add(new Princess());
     this.deck.add(new TruffleHunter());
     Collections.shuffle(this.deck);
-    for (int i = 0; i<5; i++)
-    {
-      this.deck.remove(0);
-    }
+    this.deck.subList(0, 5).clear();
   }
 
   /** Checks if the deck is empty
@@ -47,6 +47,7 @@ public class CharacterDeck implements Serializable
     CharacterCard card = getCard(index);
     deck.remove(index);
     card.updateCost();
+    game.notify(game.modelToJson());
     return card;
   }
 

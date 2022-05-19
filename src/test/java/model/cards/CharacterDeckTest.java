@@ -6,7 +6,8 @@ import model.CurrentGameState;
 import org.junit.Test;
 
 public class CharacterDeckTest {
-    CharacterDeck cd = new CharacterDeck();
+    CurrentGameState game = new CurrentGameState(2,true);
+    CharacterDeck cd = new CharacterDeck(game);
     CharacterCard cc;CharacterCard cc1;
 
     @Test
