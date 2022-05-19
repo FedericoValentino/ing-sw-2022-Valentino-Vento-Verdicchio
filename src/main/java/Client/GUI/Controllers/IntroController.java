@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -26,7 +27,17 @@ public class IntroController {
         loader.setLocation(getClass().getResource("/GUI/Controllers/Login.fxml"));
 
         Stage stage=(Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene scene= new Scene(loader.load());
+        Scene scene= new Scene((Parent) loader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void onClickStory(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/GUI/Controllers/Description.fxml"));
+
+        Stage stage=(Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        Scene scene= new Scene((Parent) loader.load());
         stage.setScene(scene);
         stage.show();
     }
