@@ -3,6 +3,7 @@ package Client.CLI;
 import Client.LightView;
 import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
+import Client.Messages.SetupMessages.ReadyStatus;
 import Client.ServerConnection;
 import model.boards.token.Col;
 
@@ -157,6 +158,9 @@ public class InputParser
                 break;
             case "show":
                 showView(words);
+                break;
+            case "ready":
+                socket.sendMessage(new SerializedMessage(new ReadyStatus()));
                 break;
             default:
                 System.out.println("Unrecognized input");

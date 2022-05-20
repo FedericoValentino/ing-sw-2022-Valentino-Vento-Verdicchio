@@ -1,6 +1,7 @@
 package Client;
 
 import Client.Messages.SerializedMessage;
+import Client.Messages.SetupMessages.SetupConnection;
 
 
 import java.io.IOException;
@@ -29,6 +30,13 @@ public class ServerConnection
         server = new Socket(ServerIP, 1234);
         out = new ObjectOutputStream(server.getOutputStream());
         in = new ObjectInputStream(server.getInputStream());
+    }
+
+    public void establishConnection() throws IOException {
+        SetupConnection setup = new SetupConnection(nickname, Team);
+        out.writeObject(setup);
+        out.flush();
+        out.reset();
     }
 
 

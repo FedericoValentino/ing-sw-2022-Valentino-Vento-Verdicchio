@@ -69,15 +69,14 @@ public class ClientCLI implements ClientView
         if(answer instanceof InfoMessage)
         {
             System.out.println(((InfoMessage) answer).getInfo());
-            if(stdin.getParser().next().equals("Ready"))
+            if(setupState)
             {
-                main.sendMessage(new SerializedMessage(new ReadyStatus()));
+                setupState = false;
             }
         }
         if(answer instanceof GameStarting)
         {
             System.out.println("Game Starting!");
-            setupState = false;
         }
 
     }
@@ -119,7 +118,6 @@ public class ClientCLI implements ClientView
 
     public void readMessage() throws IOException, ClassNotFoundException {
         input = (SerializedAnswer) main.getIn().readObject();
-        cls();
         if(input.getCommand() != null)
         {
             StandardSetupAnswer answer = input.getCommand();
@@ -130,12 +128,6 @@ public class ClientCLI implements ClientView
             StandardActionAnswer answer = input.getAction();
             messageHandler(answer);
         }
-    }
-
-    public void cls()
-    {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 
     @Override
@@ -150,10 +142,7 @@ public class ClientCLI implements ClientView
         String IP = info.next();
 
         main = new ServerConnection(nickname, team, IP);
-        SetupConnection setup = new SetupConnection(main.getNickname(), main.getTeam());
-        main.getOut().writeObject(setup);
-        main.getOut().flush();
-        main.getOut().reset();
+        main.establishConnection();
         ListenerCLI Listener = new ListenerCLI(this);
         this.stdin = new InputParser(main, MyView);
         executor.execute(Listener);

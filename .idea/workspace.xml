@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Add an abstract class controller for GUI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ListenerGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/LobbySettings.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
     </list>
-    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
+    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +46,53 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java">
+      <ranges>
+        <range start1="26" end1="28" start2="26" end2="26" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="30" end1="30" start2="28" end2="29" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="71" end1="72" start2="70" end2="71" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="73" end1="74" start2="72" end2="73" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="79" end1="80" start2="78" end2="78" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="84" end1="84" start2="82" end2="83" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="119" end1="119" start2="118" end2="119" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="121" end1="122" start2="121" end2="121" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="133" end1="139" start2="132" end2="132" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="152" end1="156" start2="145" end2="146" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/Server/GameHandler.java">
+      <ranges>
+        <range start1="37" end1="37" start2="37" end2="42" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="54" end1="55" start2="59" end2="60" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="56" end1="98" start2="61" end2="95" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="99" end1="99" start2="96" end2="100" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="104" end1="106" start2="105" end2="106" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="111" end1="113" start2="111" end2="112" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="115" end1="117" start2="114" end2="115" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="121" end1="124" start2="119" end2="120" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="133" end1="138" start2="129" end2="131" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="143" end1="146" start2="136" end2="137" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="148" end1="150" start2="139" end2="141" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="154" end1="158" start2="145" end2="147" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="159" end1="163" start2="148" end2="150" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="168" end1="176" start2="155" end2="159" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="181" end1="185" start2="164" end2="166" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="188" end1="191" start2="169" end2="170" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="196" end1="197" start2="175" end2="176" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="201" end1="204" start2="180" end2="182" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="205" end1="208" start2="183" end2="185" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="210" end1="214" start2="187" end2="189" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="224" end1="225" start2="199" end2="200" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="228" end1="228" start2="203" end2="207" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="239" end1="239" start2="218" end2="222" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="242" end1="243" start2="225" end2="226" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="295" end1="296" start2="278" end2="279" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="316" end1="317" start2="299" end2="300" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="318" end1="318" start2="301" end2="305" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -178,6 +231,7 @@
       <workItem from="1652604146433" duration="6643000" />
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
+      <workItem from="1653063638143" duration="1531000" />
     </task>
     <task id="LOCAL-00002" summary="ops">
       <created>1648996362807</created>
@@ -576,6 +630,11 @@
           <properties class="java.io.WriteAbortedException" package="java.io" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Server/GameHandler.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -598,221 +657,221 @@
     <option name="LAST_COMMIT_MESSAGE" value="Updated all the comments of Controller and Model classes to match the quality of the previous updates" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetWizard.ic" NAME="AssistantDeckTest.testGetWizard Coverage Results" MODIFIED="1648316377464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantCardTest_TestGetMovement.ic" NAME="AssistantCardTest.TestGetMovement Coverage Results" MODIFIED="1648316754096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650894855740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGenericGetter.ic" NAME="PlayerTest.testGenericGetter Coverage Results" MODIFIED="1650407252447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PriestTest_testGetStudent.ic" NAME="PriestTest.testGetStudent Coverage Results" MODIFIED="1649005827473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PouchTest_testExtractStudent.ic" NAME="PouchTest.testExtractStudent Coverage Results" MODIFIED="1649001215029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testUpdateCoins.ic" NAME="PlayerTest.testUpdateCoins Coverage Results" MODIFIED="1649002492808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$model_boards_in_softeng_GC61.ic" NAME="model.boards in softeng-GC61 Coverage Results" MODIFIED="1651576923403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$MainControllerTest.ic" NAME="MainControllerTest Coverage Results" MODIFIED="1650719002063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CharacterDeckTest.ic" NAME="CharacterDeckTest Coverage Results" MODIFIED="1648999165846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$AssistantDeckTest_testGetCard.ic" NAME="AssistantDeckTest.testGetCard Coverage Results" MODIFIED="1648996457751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest.ic" NAME="PlayerTest Coverage Results" MODIFIED="1649002697235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest_testPickCard.ic" NAME="CharacterControllerTest.testPickCard Coverage Results" MODIFIED="1650791161991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CloudTest_testGetPos.ic" NAME="CloudTest.testGetPos Coverage Results" MODIFIED="1649009187634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testUpdateTurnState.ic" NAME="CurrentGameStateTest.testUpdateTurnState Coverage Results" MODIFIED="1650615099174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PrincessTest.ic" NAME="PrincessTest Coverage Results" MODIFIED="1649006056059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testUpdateBankBalance.ic" NAME="CurrentGameStateTest.testUpdateBankBalance Coverage Results" MODIFIED="1650734264318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testCheckEmpty.ic" NAME="PouchTest.testCheckEmpty Coverage Results" MODIFIED="1648317434168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1651579849581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$SchoolTest_testUpdateCheckpoint.ic" NAME="SchoolTest.testUpdateCheckpoint Coverage Results" MODIFIED="1649009934013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PriestTest_getStudents.ic" NAME="PriestTest.getStudents Coverage Results" MODIFIED="1649080161092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest.ic" NAME="IslandsTest Coverage Results" MODIFIED="1650578565066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testGetSetup.ic" NAME="PouchTest.testGetSetup Coverage Results" MODIFIED="1648317551929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGainCoin.ic" NAME="PlayerTest.testGainCoin Coverage Results" MODIFIED="1650530932301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CloudTest_testRemoveToken.ic" NAME="CloudTest.testRemoveToken Coverage Results" MODIFIED="1649008818902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1648992453490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1649067647134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$ActionControllerTest.ic" NAME="ActionControllerTest Coverage Results" MODIFIED="1650808840591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testGetter.ic" NAME="CurrentGameStateTest.testGetter Coverage Results" MODIFIED="1650734260458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1651576836499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest_testTestEffect1.ic" NAME="CharacterControllerTest.testTestEffect1 Coverage Results" MODIFIED="1650792203268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$AssistantDeckTest.ic" NAME="AssistantDeckTest Coverage Results" MODIFIED="1648996607034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandTest_testUpdateNoEntry.ic" NAME="IslandTest.testUpdateNoEntry Coverage Results" MODIFIED="1649010399196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$MotherNatureTest_testMove.ic" NAME="MotherNatureTest.testMove Coverage Results" MODIFIED="1650579124884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.token.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testPlaceToken.ic" NAME="IslandsTest.testPlaceToken Coverage Results" MODIFIED="1650390232803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testIdManagment.ic" NAME="IslandsTest.testIdManagment Coverage Results" MODIFIED="1650390356343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CurrentTurnStateTest_TestUpdateActions.ic" NAME="CurrentTurnStateTest.TestUpdateActions Coverage Results" MODIFIED="1648547436615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PrincessTest_getStudents.ic" NAME="PrincessTest.getStudents Coverage Results" MODIFIED="1649006570923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlanningControllerTest_testDrawStrudentForClouds.ic" NAME="PlanningControllerTest.testDrawStrudentForClouds Coverage Results" MODIFIED="1650791562198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$GrandmaWeedTest_testUpdateNoEntry.ic" NAME="GrandmaWeedTest.testUpdateNoEntry Coverage Results" MODIFIED="1648999368077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$MotherNatureTest_testGetPosition.ic" NAME="MotherNatureTest.testGetPosition Coverage Results" MODIFIED="1650578987212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.token.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$TeamTest_testAddPlayer.ic" NAME="TeamTest.testAddPlayer Coverage Results" MODIFIED="1649016632340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1650734312598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testUpdateMaxMotherNatureMovement.ic" NAME="PlayerTest.testUpdateMaxMotherNatureMovement Coverage Results" MODIFIED="1649020105661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testDiscard.ic" NAME="PlayerTest.testDiscard Coverage Results" MODIFIED="1650406970259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGetPlayerSchool.ic" NAME="PlayerTest.testGetPlayerSchool Coverage Results" MODIFIED="1649019150403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest.ic" NAME="CurrentGameStateTest Coverage Results" MODIFIED="1650648491330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CurrentTurnStateTest_assertFalse.ic" NAME="CurrentTurnStateTest.assertFalse Coverage Results" MODIFIED="1648546994918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$GrandmaWeedTest_checkGetUses.ic" NAME="GrandmaWeedTest.checkGetUses Coverage Results" MODIFIED="1650730805458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantCardTest_TestGetValue.ic" NAME="AssistantCardTest.TestGetValue Coverage Results" MODIFIED="1648316758133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetPlayerName.ic" NAME="AssistantDeckTest.testGetPlayerName Coverage Results" MODIFIED="1648316334838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PlanningControllerTest.ic" NAME="PlanningControllerTest Coverage Results" MODIFIED="1650813203498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$TruffleHunterTest_testSetChooseColor.ic" NAME="TruffleHunterTest.testSetChooseColor Coverage Results" MODIFIED="1650347401230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PrincessTest.ic" NAME="PrincessTest Coverage Results" MODIFIED="1649006056059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testExtractCard.ic" NAME="AssistantDeckTest.testExtractCard Coverage Results" MODIFIED="1648462497107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetWizard.ic" NAME="AssistantDeckTest.testGetWizard Coverage Results" MODIFIED="1648316377464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_ing_sw_2022_Valentino_Vento_Verdicchio.ic" NAME="All in ing-sw-2022-Valentino-Vento-Verdicchio Coverage Results" MODIFIED="1652792364712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest.ic" NAME="CharacterControllerTest Coverage Results" MODIFIED="1651580574424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testGiveProfessors.ic" NAME="CurrentGameStateTest.testGiveProfessors Coverage Results" MODIFIED="1650721805092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$SchoolTest_testPlaceInDiningRoom.ic" NAME="SchoolTest.testPlaceInDiningRoom Coverage Results" MODIFIED="1649010089270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650875083411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$ActionControllerTest_testMoveMN.ic" NAME="ActionControllerTest.testMoveMN Coverage Results" MODIFIED="1650810202781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetDeck.ic" NAME="AssistantDeckTest.testGetDeck Coverage Results" MODIFIED="1648316563612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1650973097723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_boards_in_softeng_GC61.ic" NAME="model.boards in softeng-GC61 Coverage Results" MODIFIED="1650638831053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testGetMax.ic" NAME="IslandsTest.testGetMax Coverage Results" MODIFIED="1650578489611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PriestTest.ic" NAME="PriestTest Coverage Results" MODIFIED="1649080039459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CharacterDeckTest_testDrawCard.ic" NAME="CharacterDeckTest.testDrawCard Coverage Results" MODIFIED="1648999101776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testIdManagment.ic" NAME="IslandsTest.testIdManagment Coverage Results" MODIFIED="1650390356343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.boards.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1650730830758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testChooseAssistantCard.ic" NAME="PlayerTest.testChooseAssistantCard Coverage Results" MODIFIED="1650406693597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetPlayerName.ic" NAME="AssistantDeckTest.testGetPlayerName Coverage Results" MODIFIED="1648316334838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.cards.*</FILTER>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$ActionControllerTest.ic" NAME="ActionControllerTest Coverage Results" MODIFIED="1650808840591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CurrentTurnStateTest_assertFalse.ic" NAME="CurrentTurnStateTest.assertFalse Coverage Results" MODIFIED="1648546994918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.*</FILTER>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$SchoolTest_testUpdateCheckpoint.ic" NAME="SchoolTest.testUpdateCheckpoint Coverage Results" MODIFIED="1649009934013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$SchoolTest.ic" NAME="SchoolTest Coverage Results" MODIFIED="1649010096856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testExtractStudent.ic" NAME="PouchTest.testExtractStudent Coverage Results" MODIFIED="1648317758912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testCheckEmpty.ic" NAME="AssistantDeckTest.testCheckEmpty Coverage Results" MODIFIED="1648312198119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest.ic" NAME="CharacterControllerTest Coverage Results" MODIFIED="1651580574424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantCardTest_TestGetValue.ic" NAME="AssistantCardTest.TestGetValue Coverage Results" MODIFIED="1648316758133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testCheckWinner.ic" NAME="CurrentGameStateTest.testCheckWinner Coverage Results" MODIFIED="1650644031825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_ing_sw_2022_Valentino_Vento_Verdicchio.ic" NAME="All in ing-sw-2022-Valentino-Vento-Verdicchio Coverage Results" MODIFIED="1652792364712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest_testTestEffect1.ic" NAME="CharacterControllerTest.testTestEffect1 Coverage Results" MODIFIED="1650792203268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$TeamTest_testAddPlayer.ic" NAME="TeamTest.testAddPlayer Coverage Results" MODIFIED="1649016632340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1650805113519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testDiscard.ic" NAME="PlayerTest.testDiscard Coverage Results" MODIFIED="1650406970259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1648992453490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testUpdateCoins.ic" NAME="PlayerTest.testUpdateCoins Coverage Results" MODIFIED="1649002492808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGainCoin.ic" NAME="PlayerTest.testGainCoin Coverage Results" MODIFIED="1650530932301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testPlaceToken.ic" NAME="IslandsTest.testPlaceToken Coverage Results" MODIFIED="1650390232803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testGiveProfessors.ic" NAME="CurrentGameStateTest.testGiveProfessors Coverage Results" MODIFIED="1650721805092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CurrentTurnStateTest_TestUpdateActions.ic" NAME="CurrentTurnStateTest.TestUpdateActions Coverage Results" MODIFIED="1648547436615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testGetter.ic" NAME="CurrentGameStateTest.testGetter Coverage Results" MODIFIED="1650734260458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testCheckEmpty.ic" NAME="AssistantDeckTest.testCheckEmpty Coverage Results" MODIFIED="1648312198119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PlanningControllerTest.ic" NAME="PlanningControllerTest Coverage Results" MODIFIED="1650813203498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest.ic" NAME="IslandsTest Coverage Results" MODIFIED="1650578565066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1650730830758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandTest_testUpdateNoEntry.ic" NAME="IslandTest.testUpdateNoEntry Coverage Results" MODIFIED="1649010399196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$GrandmaWeedTest_testUpdateNoEntry.ic" NAME="GrandmaWeedTest.testUpdateNoEntry Coverage Results" MODIFIED="1648999368077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PrincessTest_getStudents.ic" NAME="PrincessTest.getStudents Coverage Results" MODIFIED="1649006570923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1651579849581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest.ic" NAME="PlayerTest Coverage Results" MODIFIED="1649002697235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGetPlayerSchool.ic" NAME="PlayerTest.testGetPlayerSchool Coverage Results" MODIFIED="1649019150403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CloudTest_testRemoveToken.ic" NAME="CloudTest.testRemoveToken Coverage Results" MODIFIED="1649008818902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$AssistantDeckTest_testGetCard.ic" NAME="AssistantDeckTest.testGetCard Coverage Results" MODIFIED="1648996457751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PriestTest_getStudents.ic" NAME="PriestTest.getStudents Coverage Results" MODIFIED="1649080161092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGenericGetter.ic" NAME="PlayerTest.testGenericGetter Coverage Results" MODIFIED="1650407252447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650894855740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$MotherNatureTest_testGetPosition.ic" NAME="MotherNatureTest.testGetPosition Coverage Results" MODIFIED="1650578987212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.token.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlanningControllerTest_testDrawStrudentForClouds.ic" NAME="PlanningControllerTest.testDrawStrudentForClouds Coverage Results" MODIFIED="1650791562198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testCheckEmpty.ic" NAME="PouchTest.testCheckEmpty Coverage Results" MODIFIED="1648317434168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$controller_in_softeng_GC61.ic" NAME="controller in softeng-GC61 Coverage Results" MODIFIED="1650814833395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PROG_ING_GIT$SchoolTest.ic" NAME="SchoolTest Coverage Results" MODIFIED="1649010096856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$MainControllerTest.ic" NAME="MainControllerTest Coverage Results" MODIFIED="1650719002063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650875083411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testUpdateTurnState.ic" NAME="CurrentGameStateTest.testUpdateTurnState Coverage Results" MODIFIED="1650615099174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_boards_in_softeng_GC61.ic" NAME="model.boards in softeng-GC61 Coverage Results" MODIFIED="1650638831053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CharacterDeckTest_testDrawCard.ic" NAME="CharacterDeckTest.testDrawCard Coverage Results" MODIFIED="1648999101776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testUpdateBankBalance.ic" NAME="CurrentGameStateTest.testUpdateBankBalance Coverage Results" MODIFIED="1650734264318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$model_boards_in_softeng_GC61.ic" NAME="model.boards in softeng-GC61 Coverage Results" MODIFIED="1651576923403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$AssistantDeckTest.ic" NAME="AssistantDeckTest Coverage Results" MODIFIED="1648996607034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PriestTest_testGetStudent.ic" NAME="PriestTest.testGetStudent Coverage Results" MODIFIED="1649005827473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testUpdateMaxMotherNatureMovement.ic" NAME="PlayerTest.testUpdateMaxMotherNatureMovement Coverage Results" MODIFIED="1649020105661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1649067647134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$SchoolTest_testPlaceInDiningRoom.ic" NAME="SchoolTest.testPlaceInDiningRoom Coverage Results" MODIFIED="1649010089270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testExtractCard.ic" NAME="AssistantDeckTest.testExtractCard Coverage Results" MODIFIED="1648462497107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PriestTest.ic" NAME="PriestTest Coverage Results" MODIFIED="1649080039459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$TruffleHunterTest_testSetChooseColor.ic" NAME="TruffleHunterTest.testSetChooseColor Coverage Results" MODIFIED="1650347401230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CloudTest_testGetPos.ic" NAME="CloudTest.testGetPos Coverage Results" MODIFIED="1649009187634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantCardTest_TestGetMovement.ic" NAME="AssistantCardTest.TestGetMovement Coverage Results" MODIFIED="1648316754096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest_testCheckWinner.ic" NAME="CurrentGameStateTest.testCheckWinner Coverage Results" MODIFIED="1650644031825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$CloudTest_testConstructor.ic" NAME="CloudTest.testConstructor Coverage Results" MODIFIED="1649008133965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$PouchTest_testGetSetup.ic" NAME="PouchTest.testGetSetup Coverage Results" MODIFIED="1648317551929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1650734312598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CurrentGameStateTest.ic" NAME="CurrentGameStateTest Coverage Results" MODIFIED="1650648491330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testGetDeck.ic" NAME="AssistantDeckTest.testGetDeck Coverage Results" MODIFIED="1648316563612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1650973097723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testGetMaxMotherMovement.ic" NAME="PlayerTest.testGetMaxMotherMovement Coverage Results" MODIFIED="1649002802256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$PouchTest_testExtractStudent.ic" NAME="PouchTest.testExtractStudent Coverage Results" MODIFIED="1649001215029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.boards.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest_testPickCard.ic" NAME="CharacterControllerTest.testPickCard Coverage Results" MODIFIED="1650791161991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PROG_ING_GIT$CharacterDeckTest.ic" NAME="CharacterDeckTest Coverage Results" MODIFIED="1648999165846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.cards.*</FILTER>
     </SUITE>
   </component>
 </project>

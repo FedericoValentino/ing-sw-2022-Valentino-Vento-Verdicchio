@@ -29,6 +29,7 @@ public class CharacterController
         which is how much the card cost when it was played  */
         int gain = pickedCard.getCurrentCost() - 1;
         game.updateBankBalance(player, gain);
+        game.notify(game.modelToJson());
     }
 
 
