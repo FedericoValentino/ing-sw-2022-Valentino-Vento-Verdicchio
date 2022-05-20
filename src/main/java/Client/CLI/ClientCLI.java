@@ -24,10 +24,9 @@ public class ClientCLI implements ClientView
     private InputParser stdin;
     private SerializedAnswer input;
     private Boolean setupState = true;
-    private String currentInput;
-    private LightView MyView = new LightView();
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
+    @Override
     public void setupHandler(StandardSetupAnswer answer) throws IOException {
         if(answer instanceof RequestGameInfo)
         {
@@ -81,6 +80,7 @@ public class ClientCLI implements ClientView
 
     }
 
+    @Override
     public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
         if(answer instanceof ErrorMessage)
         {
@@ -116,6 +116,7 @@ public class ClientCLI implements ClientView
         }
     }
 
+    @Override
     public void readMessage() throws IOException, ClassNotFoundException {
         input = (SerializedAnswer) main.getIn().readObject();
         if(input.getCommand() != null)

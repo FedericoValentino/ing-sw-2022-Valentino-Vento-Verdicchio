@@ -36,6 +36,11 @@ public class GameHandler extends Thread implements Observer
     private Semaphore threadSem;
     private Semaphore globalSem;
 
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
+
     public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem) throws IOException
     {
 
@@ -217,7 +222,7 @@ public class GameHandler extends Thread implements Observer
         }
         else
         {
-            socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Not your turn!")));
+            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Not your turn!" + ANSI_RESET)));
         }
 
     }
@@ -270,7 +275,7 @@ public class GameHandler extends Thread implements Observer
                     socket.sendAnswer(new SerializedAnswer(new StartTurn()));
                     if(planning == 0)
                     {
-                        socket.sendAnswer(new SerializedAnswer(new RequestCloud("Seleziona nuvola da riempire")));
+                        socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to fill")));
                     }
                     if(planning == 1)
                     {
@@ -291,7 +296,7 @@ public class GameHandler extends Thread implements Observer
                     }
                     if(action == 4)
                     {
-                        socket.sendAnswer(new SerializedAnswer(new RequestCloud("Seleziona nuvola da svuotare")));
+                        socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to empty")));
                     }
                     if(action == 5)
                     {
