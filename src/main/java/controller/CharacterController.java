@@ -75,17 +75,13 @@ public class CharacterController
     }
 
     /** Finds the card that has been used in the ActiveCharDeck, removes it from there,
-     and places it, with updated values, in the CharacterDeck.
-     * @param card  reference to the used card
+     and places it, with updated values, in the CharacterDe
      * @param game  an instance of the game
      */
-    public static void deckManagement(CharacterCard card, CurrentGameState game)
+    public static void deckManagement(CurrentGameState game)
     {
-        for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
-        {
-            if(card.getIdCard() == game.getCurrentActiveCharacterCard().get(i).getIdCard())
-                game.getCurrentActiveCharacterCard().remove(i);
-        }
+        CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
+        game.getCurrentActiveCharacterCard().clear();
         game.getCurrentCharacterDeck().getDeck().add(card);
     }
 
@@ -95,7 +91,7 @@ public class CharacterController
         {
             CharacterCard card = getCardByID(game, cardID);
             card.effect(game, studentPosition, chosenIsland, currentPlayer, color);
-            deckManagement(card, game);
+            deckManagement(game);
         }
     }
 
