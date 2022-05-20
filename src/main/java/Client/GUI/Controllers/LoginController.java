@@ -1,5 +1,9 @@
 package Client.GUI.Controllers;
 
+import Client.CLI.InputParser;
+import Client.CLI.ListenerCLI;
+import Client.GUI.ClientGUI;
+import Client.GUI.ListenerGui;
 import Client.Messages.SetupMessages.SetupConnection;
 import Client.ServerConnection;
 import javafx.event.ActionEvent;
@@ -18,7 +22,7 @@ public class LoginController extends Controller{
     @FXML public TextField Port;
     @FXML public Button TryConn;
     @FXML public Button Back;
-    @FXML public ChoiceBox teamChoice;
+    @FXML public ChoiceBox <String>teamChoice;
 
     ServerConnection sv;
 
@@ -53,7 +57,22 @@ public class LoginController extends Controller{
 
         //a questo punto devo capire se è il primo o meno
 
-        //cioè mi creo il mio listener e se è il primo mi va a chiamare un metodo
+        //cioè mi creo il mio listener e se è il primo mi va a chiamare un metodo che mi carica la lobby
+
+        /*parte copiataaaaaaaaaa
+        ClientGUI cgTemp=new ClientGUI();
+        ListenerGui Listener = new ListenerGui(cgTemp.getCLientGUi());
+
+        this.stdin = new InputParser(main, MyView);
+        executor.execute(Listener);
+        while(true)
+        {
+            if(!setupState)
+            {
+                stdin.newMove();
+            }
+        }*/
+
     }
 
 }

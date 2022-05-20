@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:controller="Client.GUI.Controllers.LobbyController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="900.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../Images/eryantisMainScreen.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="50.0" layoutY="50.0" prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="700.0" fitWidth="700.0" layoutX="15.0" layoutY="97.0">
+               <image>
+                  <Image url="@../Images/eriantysScatola.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="822.0" layoutY="264.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the number of players">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose difficulty">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ChoiceBox fx:id="playersChoice" layoutX="20.0" prefHeight="26.0" prefWidth="164.0" />
+                        <ChoiceBox fx:id="difficultyChoice" prefHeight="26.0" prefWidth="164.0">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </ChoiceBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Text fx:id="title" layoutX="822.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Setting the game">
+               <font>
+                  <Font size="52.0" />
+               </font>
+            </Text>
+            <Button fx:id="SendChoice" layoutX="1339.0" layoutY="682.0" mnemonicParsing="false" onAction="#onClickTryConnection" text="SendChoice" />
+            <Button fx:id="Back" layoutX="1266.0" layoutY="682.0" mnemonicParsing="false" onAction="#onClickBack" text="Back" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
