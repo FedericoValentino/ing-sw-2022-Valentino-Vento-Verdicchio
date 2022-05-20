@@ -189,7 +189,7 @@ public class Checks {
             if(c instanceof Knight)
             {
                 c.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
-                CharacterController.deckManagement(c, game);
+                CharacterController.deckManagement(game);
                 return  true;
             }
             else if(c instanceof TruffleHunter)

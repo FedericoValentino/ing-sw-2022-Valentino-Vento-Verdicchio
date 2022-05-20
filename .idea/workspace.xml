@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Add an abstract class controller for GUI">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Changes to client and such by valentino and vento">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
     </list>
-    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Wonderful colors">
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,53 +38,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java">
-      <ranges>
-        <range start1="26" end1="28" start2="26" end2="26" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="30" end1="30" start2="28" end2="29" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="71" end1="72" start2="70" end2="71" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="73" end1="74" start2="72" end2="73" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="79" end1="80" start2="78" end2="78" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="84" end1="84" start2="82" end2="83" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="119" end1="119" start2="118" end2="119" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="121" end1="122" start2="121" end2="121" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="133" end1="139" start2="132" end2="132" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="152" end1="156" start2="145" end2="146" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/Server/GameHandler.java">
-      <ranges>
-        <range start1="37" end1="37" start2="37" end2="42" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="54" end1="55" start2="59" end2="60" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="56" end1="98" start2="61" end2="95" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="99" end1="99" start2="96" end2="100" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="104" end1="106" start2="105" end2="106" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="111" end1="113" start2="111" end2="112" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="115" end1="117" start2="114" end2="115" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="121" end1="124" start2="119" end2="120" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="133" end1="138" start2="129" end2="131" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="143" end1="146" start2="136" end2="137" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="148" end1="150" start2="139" end2="141" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="154" end1="158" start2="145" end2="147" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="159" end1="163" start2="148" end2="150" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="168" end1="176" start2="155" end2="159" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="181" end1="185" start2="164" end2="166" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="188" end1="191" start2="169" end2="170" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="196" end1="197" start2="175" end2="176" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="201" end1="204" start2="180" end2="182" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="205" end1="208" start2="183" end2="185" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="210" end1="214" start2="187" end2="189" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="224" end1="225" start2="199" end2="200" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="228" end1="228" start2="203" end2="207" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="239" end1="239" start2="218" end2="222" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="242" end1="243" start2="225" end2="226" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="295" end1="296" start2="278" end2="279" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="316" end1="317" start2="299" end2="300" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="318" end1="318" start2="301" end2="305" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -130,7 +75,7 @@
       <recent name="model.boards.token" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
+  <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientApp" />
       <module name="softeng-GC61" />
@@ -151,14 +96,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in ing-sw-2022-Valentino-Vento-Verdicchio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <option name="PACKAGE_NAME" value="" />
@@ -167,8 +104,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChecksTest.testCanCardStillBePlayed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+    <configuration name="CharacterControllerTest.isPickable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="controller.*" />
@@ -176,8 +113,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
-      <option name="METHOD_NAME" value="testCanCardStillBePlayed" />
+      <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="isPickable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterControllerTest.playEffect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="playEffect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,16 +140,16 @@
       <item itemvalue="Application.ServerApp" />
       <item itemvalue="Application.ClientApp" />
       <item itemvalue="JUnit.All in softeng-GC61" />
-      <item itemvalue="JUnit.ChecksTest.testCanCardStillBePlayed" />
-      <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <item itemvalue="JUnit.CharacterControllerTest.isPickable" />
+      <item itemvalue="JUnit.CharacterControllerTest.playEffect" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in softeng-GC61" />
+        <item itemvalue="JUnit.CharacterControllerTest.playEffect" />
+        <item itemvalue="JUnit.CharacterControllerTest.isPickable" />
         <item itemvalue="Application.ClientApp" />
         <item itemvalue="Application.ServerApp" />
-        <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
-        <item itemvalue="JUnit.ChecksTest.testCanCardStillBePlayed" />
-        <item itemvalue="JUnit.All in softeng-GC61" />
       </list>
     </recent_temporary>
   </component>
@@ -231,21 +184,7 @@
       <workItem from="1652604146433" duration="6643000" />
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
-      <workItem from="1653063638143" duration="1531000" />
-    </task>
-    <task id="LOCAL-00002" summary="ops">
-      <created>1648996362807</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1648996362807</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Controller Completato, inseriti metodi di update di alcuni parametri che mancavano e molta altra roba">
-      <created>1649067581517</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1649067581517</updated>
+      <workItem from="1653063638143" duration="2884000" />
     </task>
     <task id="LOCAL-00004" summary="Piccolo change ad un for">
       <created>1649083498867</created>
@@ -576,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653051886477</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Changes to client and such by valentino and vento">
+      <created>1653065324329</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1653065324330</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Wonderful colors">
+      <created>1653065354243</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1653065354243</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,8 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="isPickable and isEffectPlayable methods ready to go" />
-    <MESSAGE value="Added TODOs and implemented ExecutorService" />
     <MESSAGE value="Fixed the setup of Princess and Priest card and of the characterDeck in general" />
     <MESSAGE value="Ignore this, WIP" />
     <MESSAGE value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement" />
@@ -621,7 +572,9 @@
     <MESSAGE value="Changes in Gui" />
     <MESSAGE value="Changes in Gui (insert new beginning description)" />
     <MESSAGE value="Add an abstract class controller for GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add an abstract class controller for GUI" />
+    <MESSAGE value="Changes to client and such by valentino and vento" />
+    <MESSAGE value="Wonderful colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wonderful colors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -630,11 +583,6 @@
           <properties class="java.io.WriteAbortedException" package="java.io" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/GameHandler.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -823,10 +771,10 @@
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$PlayerTest_testUpdateMaxMotherNatureMovement.ic" NAME="PlayerTest.testUpdateMaxMotherNatureMovement Coverage Results" MODIFIED="1649020105661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1649067647134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$SchoolTest_testPlaceInDiningRoom.ic" NAME="SchoolTest.testPlaceInDiningRoom Coverage Results" MODIFIED="1649010089270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1653065392884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testExtractCard.ic" NAME="AssistantDeckTest.testExtractCard Coverage Results" MODIFIED="1648462497107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
