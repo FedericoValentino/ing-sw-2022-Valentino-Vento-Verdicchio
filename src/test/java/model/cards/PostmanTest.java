@@ -28,7 +28,7 @@ public class PostmanTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(p.getIdCard(),4);
+        assertEquals(p.getIdCard(),3);
     }
 
     @Test
@@ -42,6 +42,8 @@ public class PostmanTest {
 
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
         int island = (int) ((Math.random()*11));
 
         //It gives starting values to maxMovementMovement to both players
@@ -50,9 +52,9 @@ public class PostmanTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, 0, "jack", null);
-        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
 
-        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+
 
         //Checks if the player who has called the effect has had its maxMotherMovement increased by 2
         assertEquals(8, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getMaxMotherMovement());

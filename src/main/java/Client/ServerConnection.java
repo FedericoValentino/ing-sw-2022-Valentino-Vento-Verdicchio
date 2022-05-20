@@ -56,6 +56,10 @@ public class ServerConnection
         return in;
     }
 
+    public ObjectOutputStream getOut() {
+        return out;
+    }
+
     public String getNickname() {
         return nickname;
     }
@@ -68,7 +72,5 @@ public class ServerConnection
         return ServerIP;
     }
 
-    public ObjectOutputStream getOut() {
-        return out;
-    }
+
 }

@@ -27,7 +27,7 @@ public class KnightTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(k.getIdCard(),8);
+        assertEquals(k.getIdCard(),7);
     }
 
     @Test
@@ -41,6 +41,8 @@ public class KnightTest {
         Knight testCard = new Knight();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
         int island = EffectTestsUtility.basicIslandSetup(controllerTest.getGame());
 
         if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature)
@@ -48,9 +50,9 @@ public class KnightTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, "fede", null);
-        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
 
-        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+
 
         /*Checks if the winning team is the WHITE team, after the effect has boosted its influence on the island
         (without the effect, the GREY team would have won).

@@ -31,7 +31,7 @@ public class PrincessTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(p.getIdCard(),11);
+        assertEquals(p.getIdCard(),10);
     }
 
     @Test
@@ -56,6 +56,8 @@ public class PrincessTest {
         setupTest(controllerTest);
         Princess testCard = new Princess();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
         int island = (int) ((Math.random()*11));
 
 
@@ -69,9 +71,9 @@ public class PrincessTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, 0, "fede", null);
-        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
 
-        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+
 
         //Checks if a new student has been added to the card after the effect
         assertEquals(4, testCard.getStudents().size());

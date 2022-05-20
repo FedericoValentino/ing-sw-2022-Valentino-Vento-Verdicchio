@@ -29,7 +29,7 @@ public class GrandmaWeedTest {
     @Test
     public void checkIdCard()
     {
-        Assert.assertEquals(g.getIdCard(),5);
+        Assert.assertEquals(g.getIdCard(),4);
     }
 
     @Test
@@ -56,13 +56,14 @@ public class GrandmaWeedTest {
         GrandmaHerbs testCard = new GrandmaHerbs();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
         int island = (int) ((Math.random()*11));
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
-        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
 
-        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
 
         /*It checks if the noEntry has been placed on the chosen island and if the counter on
         GWeed has been updated accordingly */

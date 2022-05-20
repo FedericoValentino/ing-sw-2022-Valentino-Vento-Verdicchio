@@ -1,3 +1,5 @@
+//TODO controllare se le robe funzionano per numero player diverso da 2
+
 package controller;
 
 import model.CurrentGameState;

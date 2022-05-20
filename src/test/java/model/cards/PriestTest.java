@@ -34,7 +34,7 @@ public class PriestTest {
     @Test
     public void getIdCard()
     {
-        assertEquals(p.getIdCard(),1);
+        assertEquals(p.getIdCard(),0);
     }
 
     @Test
@@ -60,6 +60,8 @@ public class PriestTest {
             setupTest(controllerTest);
             Priest testCard = new Priest();
             EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+            EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
             int island = (int) ((Math.random()*11));
 
         /*fills the Priest card with 4 students chosen randomly from the pouch,
@@ -70,9 +72,9 @@ public class PriestTest {
 
             controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
             testCard.effect(controllerTest.getGame(), 0, island, null, null);
-            controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
 
-            EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+
 
 
             //Checks if a new student has been added to the card after the effect

@@ -122,7 +122,7 @@ public class ChecksTest {
         // fede: 1 2 3 4 5 6 7 8 9
         // jack: 0 2 3 4 5 6 7 8 9
         // pudd: 0 1 3 4 5 6 7 8 9
-        for(int i=0; i<7; i++)
+        for(int i = 0; i < 7; i++)
             controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().remove(0);
         assertEquals(9, controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().get(0).getValue());
         assertEquals(10, controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().get(1).getValue());

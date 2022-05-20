@@ -28,7 +28,7 @@ public class HeraldTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(h.getIdCard(),3);
+        assertEquals(h.getIdCard(),2);
     }
 
     @Test
@@ -42,13 +42,15 @@ public class HeraldTest {
         Herald testCard = new Herald();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
         int island = EffectTestsUtility.basicIslandSetup(controllerTest.getGame());
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
-        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
 
-        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+
 
         /*After the influence calculation, the first team should control the selected island: fisrt it checks if
         the teamInfluence structure in the island has the correct values, then it checks that the winning team

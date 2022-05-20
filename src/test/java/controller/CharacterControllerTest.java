@@ -66,10 +66,10 @@ public class CharacterControllerTest {
             controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         CharacterCard card = controllerTest.getGame().getCurrentActiveCharacterCard().get(0);
-        controllerTest.getCharacterController().deckManagement(controllerTest.getGame().getCurrentActiveCharacterCard().get(0), controllerTest.getGame());
+        controllerTest.getCharacterController().deckManagement(controllerTest.getGame());
 
         //Checks if the sizes of the decks have been handled correctly (2 cards in the Active, on in the Char)
-        assertEquals(2, controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
         assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
 
         //Checks if the correct Card has been acted upon by comparing the IDs of the cards in the Active and in the CharDeck.
@@ -125,7 +125,7 @@ public class CharacterControllerTest {
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         assertTrue(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), 2));
-        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
+        controllerTest.getCharacterController().deckManagement(controllerTest.getGame());
 
         assertFalse(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), 3));
     }
@@ -144,9 +144,9 @@ public class CharacterControllerTest {
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0));
 
-        CharacterCard resultCard = controllerTest.getCharacterController().getCardByID(controllerTest.getGame(), 8);
+        CharacterCard resultCard = controllerTest.getCharacterController().getCardByID(controllerTest.getGame(), 7);
 
-        assertNull(controllerTest.getCharacterController().getCardByID(controllerTest.getGame(), 5));
+        assertNull(controllerTest.getCharacterController().getCardByID(controllerTest.getGame(), 6));
         assert(resultCard instanceof Knight);
         assert(!(resultCard instanceof Herald));
     }
@@ -161,13 +161,12 @@ public class CharacterControllerTest {
 
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        controllerTest.getCharacterController().playEffect(3, controllerTest.getGame(), -1, 3, null, null);
+        controllerTest.getCharacterController().playEffect(2, controllerTest.getGame(), -1, 3, null, null);
 
-        //Checks if the sizes of the decks have been handled correctly (2 cards in the Active, 1 in the Char)
         assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
         assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
 
 
-        assertEquals(3, controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getIdCard());
+        assertEquals(2, controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getIdCard());
     }
 }

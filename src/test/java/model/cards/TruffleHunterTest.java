@@ -30,7 +30,7 @@ public class TruffleHunterTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(t.getIdCard(),9);
+        assertEquals(t.getIdCard(),8);
     }
 
     @Test
@@ -50,6 +50,8 @@ public class TruffleHunterTest {
         TruffleHunter testCard = new TruffleHunter();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
         int island = EffectTestsUtility.basicIslandSetup(controllerTest.getGame());
 
         /*Adds two students of a colour controlled by WHITE on the island: White has the higher influence now,
@@ -65,10 +67,10 @@ public class TruffleHunterTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, Col.BLUE);
-        controllerTest.getCharacterController().deckManagement(testCard, controllerTest.getGame());
 
 
-        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+
 
         //Checks if GREY has won the island and if the eliminated students have been re-added on it
         EffectTestsUtility.checksAfterInfluenceCalculation(controllerTest.getGame(), 0, island);
