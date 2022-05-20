@@ -11,16 +11,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DescriptionController {
+public class DescriptionController extends Controller{
     @FXML public Button buttonBack;
 
     public void onClickBackToIntro(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/GUI/Controllers/Intro.fxml"));
-
-        Stage stage=(Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene scene= new Scene((Parent) loader.load());
-        stage.setScene(scene);
-        stage.show();
+        String path="/GUI/Controllers/Intro.fxml";
+        loadNewScreen(path,actionEvent);
     }
 }

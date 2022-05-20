@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Changes in Gui">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/DescriptionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Description.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Images/description.png" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Changes in Gui (insert new beginning description)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/DescriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/DescriptionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Intro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Intro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Login.fxml" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +77,7 @@
       <recent name="model.boards.token" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
+  <component name="RunManager" selected="Application.ServerApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientApp" />
       <module name="softeng-GC61" />
@@ -140,8 +139,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientApp" />
         <item itemvalue="Application.ServerApp" />
+        <item itemvalue="Application.ClientApp" />
         <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
         <item itemvalue="JUnit.ChecksTest.testCanCardStillBePlayed" />
         <item itemvalue="JUnit.All in softeng-GC61" />
@@ -516,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652971116125</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Changes in Gui (insert new beginning description)">
+      <created>1652996229832</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1652996229832</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +542,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Prima impostazione del server, test con client etc etc" />
     <MESSAGE value="Redone all the comments... again!" />
     <MESSAGE value="isPickable and isEffectPlayable methods ready to go" />
     <MESSAGE value="Added TODOs and implemented ExecutorService" />
@@ -561,7 +566,8 @@
     <MESSAGE value="Add footprints of the all classes of Gui and add the intro and lobby functionality" />
     <MESSAGE value="Add footprints of other classes" />
     <MESSAGE value="Changes in Gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in Gui" />
+    <MESSAGE value="Changes in Gui (insert new beginning description)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in Gui (insert new beginning description)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
