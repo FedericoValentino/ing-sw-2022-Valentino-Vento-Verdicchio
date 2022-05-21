@@ -18,7 +18,7 @@ public class CharacterDeckTest {
     @Test
     public void testDrawCard() {
         cc1=cd.getCard(0);
-        cc=cd.drawCard(0);
+        cc=cd.drawCard(cc1);
         assertEquals(cc1,cc);
         assertEquals(cc.getBaseCost()+1,cc.getCurrentCost());
     }

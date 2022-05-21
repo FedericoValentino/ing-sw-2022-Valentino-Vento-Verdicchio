@@ -3,6 +3,7 @@ package model.cards;
 import controller.MainController;
 import model.CurrentGameState;
 import model.boards.Pouch;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.Student;
 import model.boards.token.Wizard;
@@ -34,7 +35,7 @@ public class PriestTest {
     @Test
     public void getIdCard()
     {
-        assertEquals(p.getIdCard(),0);
+        assertEquals(p.getCharacterName(), CharacterName.PRIEST);
     }
 
     @Test
@@ -70,7 +71,7 @@ public class PriestTest {
                 testCard.updateStudents(controllerTest.getGame().getCurrentPouch());
             Col color = testCard.getStudents().get(0).getColor();
 
-            controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+            controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.PRIEST, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
             testCard.effect(controllerTest.getGame(), 0, island, null, null);
 
 

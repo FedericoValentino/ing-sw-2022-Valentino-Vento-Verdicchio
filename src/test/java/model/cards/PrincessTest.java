@@ -2,6 +2,7 @@ package model.cards;
 
 import controller.MainController;
 import model.boards.Pouch;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.Student;
 import org.junit.Test;
@@ -31,7 +32,7 @@ public class PrincessTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(p.getIdCard(),10);
+        assertEquals(p.getCharacterName(), CharacterName.PRINCESS);
     }
 
     @Test
@@ -69,7 +70,7 @@ public class PrincessTest {
         Col color = testCard.getStudents().get(0).getColor();
         int index = color.ordinal();
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.PRINCESS, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, 0, "fede", null);
 
 

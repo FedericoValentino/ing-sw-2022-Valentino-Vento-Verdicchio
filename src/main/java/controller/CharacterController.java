@@ -6,6 +6,8 @@ import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.cards.*;
 
+import java.util.ArrayList;
+
 public class CharacterController
 {
     private CharacterCard pickedCard;
@@ -20,7 +22,7 @@ public class CharacterController
     public void pickCard(CurrentGameState game, CharacterName characterName, Player player)
     {
         //drawCard updates the cost and the uses of the selected card
-        pickedCard = getCardByName(game, characterName);
+        pickedCard = game.getCurrentCharacterDeck().drawCard(getCardByName( characterName, game.getCurrentCharacterDeck().getDeck()));
         game.getCurrentActiveCharacterCard().add(pickedCard);
 
         /*Updates player balance and bank balance using the currentCost-1 of the card,
@@ -64,11 +66,11 @@ public class CharacterController
         return false;
     }
 
-    public CharacterCard getCardByName(CurrentGameState game, CharacterName characterName)
+    public CharacterCard getCardByName(CharacterName characterName, ArrayList<CharacterCard> deck)
     {
-        for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
-            if(game.getCurrentActiveCharacterCard().get(i).getCharacterName() == characterName)
-                return game.getCurrentActiveCharacterCard().get(i);
+        for(int i=0; i<deck.size(); i++)
+            if(deck.get(i).getCharacterName() == characterName)
+                return deck.get(i);
         return null;
     }
 
@@ -79,7 +81,7 @@ public class CharacterController
     public static void deckManagement(CurrentGameState game)
     {
         CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
-        game.getCurrentActiveCharacterCard().clear();
+        game.getCurrentActiveCharacterCard().remove(0);
         game.getCurrentCharacterDeck().getDeck().add(card);
     }
 
@@ -87,7 +89,7 @@ public class CharacterController
     {
         if(isEffectPlayable(game, characterName))
         {
-            CharacterCard card = getCardByName(game, characterName);
+            CharacterCard card = getCardByName(characterName, game.getCurrentActiveCharacterCard());
             card.effect(game, studentPosition, chosenIsland, currentPlayer, color);
             deckManagement(game);
         }

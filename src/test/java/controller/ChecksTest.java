@@ -1,5 +1,6 @@
 package controller;
 
+import model.boards.token.CharacterName;
 import model.boards.token.GamePhase;
 import model.boards.token.Student;
 import model.boards.token.Wizard;
@@ -163,7 +164,7 @@ public class ChecksTest {
         EffectTestsUtility.setDecks(knight, controllerTest.getGame());
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(10);
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         assertTrue(controllerTest.getChecks().checkForInfluenceCharacter(controllerTest.getGame(), "jack"));
 

@@ -18,6 +18,7 @@ public class Knight extends CharacterCard implements Serializable {
     {
         super();
         this.baseCost=2;
+        this.currentCost = this.baseCost;
         this.name = CharacterName.KNIGHT;
     }
 

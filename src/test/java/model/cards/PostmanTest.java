@@ -1,6 +1,7 @@
 package model.cards;
 
 import controller.MainController;
+import model.boards.token.CharacterName;
 import org.junit.Test;
 
 import static controller.CharacterControllerTest.setupTest;
@@ -28,7 +29,7 @@ public class PostmanTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(p.getIdCard(),3);
+        assertEquals(p.getCharacterName(), CharacterName.POSTMAN);
     }
 
     @Test
@@ -50,7 +51,7 @@ public class PostmanTest {
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateMaxMotherMovement(6);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateMaxMotherMovement(2);
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.POSTMAN, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, 0, "jack", null);
 
 

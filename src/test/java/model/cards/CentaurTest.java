@@ -1,6 +1,7 @@
 package model.cards;
 
 import controller.MainController;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.Student;
 import org.junit.Test;
@@ -30,7 +31,7 @@ public class CentaurTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(c.getIdCard(),5);
+        assertEquals(c.getCharacterName(), CharacterName.CENTAUR);
     }
 
     @Test
@@ -66,7 +67,7 @@ public class CentaurTest {
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s6);
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s7);
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.CENTAUR, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
 
 

@@ -42,11 +42,11 @@ public class CharacterControllerTest {
         int baseInitialCost = card.getBaseCost();
 
         //picks the card
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), card.getCharacterName(), controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         //Initially it checks if the decks have been manipulated correctly
         assertEquals(2, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
-        assertEquals(card.getIdCard(), controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getIdCard());
+        assertEquals(card.getCharacterName(), controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getCharacterName());
         assertEquals(1, controllerTest.getGame().getCurrentActiveCharacterCard().size());
 
         //Then it checks if the card values and the economy have been updated correctly
@@ -61,21 +61,26 @@ public class CharacterControllerTest {
     {
         setupTest(controllerTest);
 
+        CharacterName cardName1 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getCharacterName();
+        CharacterName cardName2 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(1).getCharacterName();
+        CharacterName cardName3 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(2).getCharacterName();
+
         //Picks all three cards in the CharDeck
-        for(int i=0; i<3; i++)
-            controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), cardName1, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), cardName2, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), cardName3, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         CharacterCard card = controllerTest.getGame().getCurrentActiveCharacterCard().get(0);
         controllerTest.getCharacterController().deckManagement(controllerTest.getGame());
 
-        //Checks if the sizes of the decks have been handled correctly (2 cards in the Active, on in the Char)
-        assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        //Checks if the sizes of the decks have been handled correctly (2 cards in the Active, one in the Char)
+        assertEquals(2, controllerTest.getGame().getCurrentActiveCharacterCard().size());
         assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
 
         //Checks if the correct Card has been acted upon by comparing the IDs of the cards in the Active and in the CharDeck.
         for(int i=0; i<controllerTest.getGame().getCurrentActiveCharacterCard().size(); i++)
-            assertNotEquals(card.getIdCard(), controllerTest.getGame().getCurrentActiveCharacterCard().get(i).getIdCard());
-        assertEquals(card.getIdCard(), controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getIdCard());
+            assertNotEquals(card.getCharacterName(), controllerTest.getGame().getCurrentActiveCharacterCard().get(i).getCharacterName());
+        assertEquals(card.getCharacterName(), controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getCharacterName());
     }
 
     @Test
@@ -87,11 +92,11 @@ public class CharacterControllerTest {
         Knight testCard = new Knight();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         CharacterCard card = controllerTest.getCharacterController().getPickedCard();
 
         //Verifies if the method returns the right card by comparing the correct ID with the dummy's ID
-        assertEquals(7, card.getIdCard());
+        assertEquals(CharacterName.KNIGHT, card.getCharacterName());
     }
 
     @Test
@@ -104,12 +109,12 @@ public class CharacterControllerTest {
 
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
-        assertTrue(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), 2, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
+        assertTrue(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
 
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(-3);
         System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
-        assertFalse(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), 2, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
+        assertFalse(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
     }
 
     @Test
@@ -122,16 +127,16 @@ public class CharacterControllerTest {
 
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
-        assertTrue(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), 2));
+        assertTrue(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), CharacterName.HERALD));
         controllerTest.getCharacterController().deckManagement(controllerTest.getGame());
 
-        assertFalse(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), 3));
+        assertFalse(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), CharacterName.HERALD));
     }
 
     @Test
-    public void getCardByID()
+    public void getCardByName()
     {
         setupTest(controllerTest);
 
@@ -141,14 +146,23 @@ public class CharacterControllerTest {
 
         controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard2);
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0));
 
-        CharacterCard resultCard = controllerTest.getCharacterController().getCardByID(controllerTest.getGame(), 7);
+        CharacterCard resultCard1 = controllerTest.getCharacterController().getCardByName(CharacterName.KNIGHT, controllerTest.getGame().getCurrentActiveCharacterCard());
+        assert(resultCard1 instanceof Knight);
 
-        assertNull(controllerTest.getCharacterController().getCardByID(controllerTest.getGame(), 6));
-        assert(resultCard instanceof Knight);
-        assert(!(resultCard instanceof Herald));
+        CharacterCard resultCard2 = controllerTest.getCharacterController().getCardByName(CharacterName.HERALD, controllerTest.getGame().getCurrentActiveCharacterCard());
+        assert(resultCard2 instanceof Herald);
+
+        for(int i=0; i<2; i++)
+            controllerTest.getCharacterController().deckManagement(controllerTest.getGame());
+
+        CharacterCard resultCard3 = controllerTest.getCharacterController().getCardByName(CharacterName.KNIGHT, controllerTest.getGame().getCurrentCharacterDeck().getDeck());
+        assert(resultCard3 instanceof Knight);
+
+        CharacterCard resultCard4 = controllerTest.getCharacterController().getCardByName(CharacterName.HERALD, controllerTest.getGame().getCurrentCharacterDeck().getDeck());
+        assert(resultCard4 instanceof Herald);
     }
 
     @Test
@@ -160,13 +174,13 @@ public class CharacterControllerTest {
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
 
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        controllerTest.getCharacterController().playEffect(2, controllerTest.getGame(), -1, 3, null, null);
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().playEffect(CharacterName.HERALD, controllerTest.getGame(), -1, 3, null, null);
 
         assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
         assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
 
 
-        assertEquals(2, controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getIdCard());
+        assertEquals(CharacterName.HERALD, controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getCharacterName());
     }
 }

@@ -4,23 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="IsAssistant changed because i like it more my way">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Replacing CharacterID with CharacterName for all characters and relative methods. Tests still undergoing updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacterEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacterEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/token/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/token/CharacterName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaHerbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaHerbs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/CentaurTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/CentaurTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/CharacterDeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/CharacterDeckTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/EffectTestsUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/EffectTestsUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/GrandmaWeedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/GrandmaHerbsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/HeraldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/HeraldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/KnightTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/KnightTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/PostmanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/PostmanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/PriestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/PriestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/PrincessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/PrincessTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/cards/TruffleHunterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/cards/TruffleHunterTest.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,8 +106,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterControllerTest.getCardByID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
+    <configuration name="CharacterControllerTest.deckManagement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="controller.*" />
@@ -114,14 +116,30 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
-      <option name="METHOD_NAME" value="getCardByID" />
+      <option name="METHOD_NAME" value="deckManagement" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterControllerTest.playEffect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
+    <configuration name="CharacterControllerTest.getCardByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="getCardByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterControllerTest.playEffect (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="controller.*" />
@@ -136,36 +154,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChecksTest.testCanCardStillBePlayed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
-      <option name="METHOD_NAME" value="testCanCardStillBePlayed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.All in softeng-GC61" />
-      <item itemvalue="JUnit.CharacterControllerTest.playEffect" />
-      <item itemvalue="JUnit.CharacterControllerTest.getCardByID" />
-      <item itemvalue="JUnit.ChecksTest.testCanCardStillBePlayed" />
       <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
+      <item itemvalue="JUnit.CharacterControllerTest.playEffect (1)" />
+      <item itemvalue="JUnit.CharacterControllerTest.getCardByName" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
+        <item itemvalue="JUnit.CharacterControllerTest.getCardByName" />
+        <item itemvalue="JUnit.CharacterControllerTest.playEffect (1)" />
+        <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
         <item itemvalue="JUnit.All in softeng-GC61" />
-        <item itemvalue="JUnit.ChecksTest.testCanCardStillBePlayed" />
-        <item itemvalue="JUnit.CharacterControllerTest.playEffect" />
-        <item itemvalue="JUnit.CharacterControllerTest.getCardByID" />
       </list>
     </recent_temporary>
   </component>
@@ -201,13 +203,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00004" summary="Piccolo change ad un for">
-      <created>1649083498867</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1649083498867</updated>
     </task>
     <task id="LOCAL-00005" summary="Aggiunti commenti alle mie classi+fix a qualche metodo">
       <created>1649149990077</created>
@@ -545,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653065354243</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Replacing CharacterID with CharacterName for all characters and relative methods. Tests still undergoing updates">
+      <created>1653143088604</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1653143088605</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,8 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed the setup of Princess and Priest card and of the characterDeck in general" />
-    <MESSAGE value="Ignore this, WIP" />
     <MESSAGE value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement" />
     <MESSAGE value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement. Tests to be adapted" />
     <MESSAGE value="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
@@ -589,7 +589,9 @@
     <MESSAGE value="Add an abstract class controller for GUI" />
     <MESSAGE value="Changes to client and such by valentino and vento" />
     <MESSAGE value="Wonderful colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wonderful colors" />
+    <MESSAGE value="Replacing CharacterID with CharacterName for all characters and relativa methods. Tests still undergoing updates" />
+    <MESSAGE value="Replacing CharacterID with CharacterName for all characters and relative methods. Tests still undergoing updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replacing CharacterID with CharacterName for all characters and relative methods. Tests still undergoing updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

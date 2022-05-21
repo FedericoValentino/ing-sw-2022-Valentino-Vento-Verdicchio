@@ -1,6 +1,7 @@
 package model.cards;
 
 import controller.MainController;
+import model.boards.token.CharacterName;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,7 +9,7 @@ import static controller.CharacterControllerTest.setupTest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class GrandmaWeedTest {
+public class GrandmaHerbsTest {
     GrandmaHerbs g=new GrandmaHerbs();
 
 
@@ -29,7 +30,7 @@ public class GrandmaWeedTest {
     @Test
     public void checkIdCard()
     {
-        Assert.assertEquals(g.getIdCard(),4);
+        Assert.assertEquals(g.getCharacterName(), CharacterName.GRANDMA_HERBS);
     }
 
     @Test
@@ -60,7 +61,7 @@ public class GrandmaWeedTest {
 
         int island = (int) ((Math.random()*11));
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.GRANDMA_HERBS, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
 
 

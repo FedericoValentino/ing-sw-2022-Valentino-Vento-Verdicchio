@@ -1,6 +1,7 @@
 package model.cards;
 
 import controller.MainController;
+import model.boards.token.CharacterName;
 import org.junit.Test;
 
 import static controller.CharacterControllerTest.setupTest;
@@ -19,7 +20,7 @@ public class KnightTest {
     {
 
         assertEquals(k.getBaseCost(),2);
-        assertEquals(k.currentCost,k.getBaseCost());
+        assertEquals(k.currentCost, k.getBaseCost());
         k.updateCost();
         assertEquals(k.getCurrentCost(),(k.getUses()+k.getBaseCost()));
     }
@@ -27,7 +28,7 @@ public class KnightTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(k.getIdCard(),7);
+        assertEquals(k.getCharacterName(), CharacterName.KNIGHT);
     }
 
     @Test
@@ -48,7 +49,7 @@ public class KnightTest {
         if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature)
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, "fede", null);
 
 

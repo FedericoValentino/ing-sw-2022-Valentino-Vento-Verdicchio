@@ -5,6 +5,7 @@ import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.ReadyStatus;
 import Client.ServerConnection;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 import java.util.Locale;
@@ -63,12 +64,12 @@ public class InputParser
 
     public void CharacterParser(String[] words)
     {
-        socket.sendMessage(new SerializedMessage(new PlayCharacter(valueOf(words[1]))));
+        socket.sendMessage(new SerializedMessage(new PlayCharacter(CharacterName.valueOf(words[1]))));
     }
 
     public void CharacterActivationParser(String[] words)
     {
-        socket.sendMessage(new SerializedMessage(new PlayCharacterEffect(valueOf(words[1]), valueOf(words[2]), valueOf(words[3]), playerName, Col.valueOf(words[4]))));
+        socket.sendMessage(new SerializedMessage(new PlayCharacterEffect(CharacterName.valueOf(words[1]), valueOf(words[2]), valueOf(words[3]), playerName, Col.valueOf(words[4]))));
     }
 
     public void showView(String[] words)

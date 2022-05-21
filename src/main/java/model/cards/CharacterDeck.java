@@ -37,13 +37,12 @@ public class CharacterDeck implements Serializable
 
   /** Gets the card "ready" for its further activation: removes it from
    the CharacterDeck, updates its cost (and with is its uses) and returns it
-   * @param index  the position of the selected card in the Character Deck
+   * @param card the selected card in the Character Deck
    * @return the desired card
    */
-  public CharacterCard drawCard(int index)
+  public CharacterCard drawCard(CharacterCard card)
   {
-    CharacterCard card = getCard(index);
-    deck.remove(index);
+    deck.remove(card);
     card.updateCost();
     return card;
   }

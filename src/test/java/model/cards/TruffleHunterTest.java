@@ -1,6 +1,7 @@
 package model.cards;
 
 import controller.MainController;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.Student;
 import org.junit.Test;
@@ -30,7 +31,7 @@ public class TruffleHunterTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(t.getIdCard(),8);
+        assertEquals(t.getCharacterName(), CharacterName.TRUFFLE_HUNTER);
     }
 
     @Test
@@ -65,7 +66,7 @@ public class TruffleHunterTest {
         if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature)
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.TRUFFLE_HUNTER, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, Col.BLUE);
 
 

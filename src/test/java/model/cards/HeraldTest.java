@@ -1,6 +1,7 @@
 package model.cards;
 
 import controller.MainController;
+import model.boards.token.CharacterName;
 import org.junit.Test;
 
 import static controller.CharacterControllerTest.setupTest;
@@ -28,7 +29,7 @@ public class HeraldTest {
     @Test
     public void checkIdCard()
     {
-        assertEquals(h.getIdCard(),2);
+        assertEquals(h.getCharacterName(), CharacterName.HERALD);
     }
 
     @Test
@@ -46,7 +47,7 @@ public class HeraldTest {
 
         int island = EffectTestsUtility.basicIslandSetup(controllerTest.getGame());
 
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), 0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
 
 
