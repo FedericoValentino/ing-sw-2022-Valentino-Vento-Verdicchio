@@ -179,14 +179,14 @@ public class GameHandler extends Thread implements Observer
     {
         if (message instanceof PlayCharacter) {
             if (CharacterController.isPickable(mainController.getGame(),
-                    ((PlayCharacter) message).getCharacterId(),
+                    ((PlayCharacter) message).getCharacterName(),
                     MainController.findPlayerByName(mainController.getGame(), socket.getNickname()))) {
-                mainController.getCharacterController().pickCard(mainController.getGame(), ((PlayCharacter) message).getCharacterId(), MainController.findPlayerByName(mainController.getGame(), socket.getNickname()));
+                mainController.getCharacterController().pickCard(mainController.getGame(), ((PlayCharacter) message).getCharacterName(), MainController.findPlayerByName(mainController.getGame(), socket.getNickname()));
             }
         }
         if (message instanceof PlayCharacterEffect) {
-            if (mainController.getCharacterController().isEffectPlayable(mainController.getGame(), ((PlayCharacterEffect) message).getCharacterId())) {
-                mainController.getCharacterController().playEffect(((PlayCharacterEffect) message).getCharacterId(), mainController.getGame(), ((PlayCharacterEffect) message).getFirst(), ((PlayCharacterEffect) message).getSecond(), ((PlayCharacterEffect) message).getThird(), ((PlayCharacterEffect) message).getStudentColor());
+            if (mainController.getCharacterController().isEffectPlayable(mainController.getGame(), ((PlayCharacterEffect) message).getCharacterName())) {
+                mainController.getCharacterController().playEffect(((PlayCharacterEffect) message).getCharacterName(), mainController.getGame(), ((PlayCharacterEffect) message).getFirst(), ((PlayCharacterEffect) message).getSecond(), ((PlayCharacterEffect) message).getThird(), ((PlayCharacterEffect) message).getStudentColor());
             }
         }
         threadSem.release(1);

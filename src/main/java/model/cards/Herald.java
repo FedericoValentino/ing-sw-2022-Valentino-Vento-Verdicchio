@@ -2,13 +2,13 @@ package model.cards;
 
 import controller.ActionController;
 import model.CurrentGameState;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 import java.io.Serializable;
 import java.util.Arrays;
 
 public class Herald extends CharacterCard implements Serializable {
-    private int idCard;
 
     /** Class constructor */
     public Herald()
@@ -16,7 +16,7 @@ public class Herald extends CharacterCard implements Serializable {
         super();
         this.baseCost=3;
         this.currentCost=this.baseCost;
-        this.idCard=2;
+        this.name = CharacterName.HERALD;
     }
 
 
@@ -45,7 +45,4 @@ public class Herald extends CharacterCard implements Serializable {
         return heraldDescription;
     }
 
-    public int getIdCard() {
-        return idCard;
-    }
 }

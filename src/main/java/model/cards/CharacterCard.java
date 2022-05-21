@@ -1,10 +1,11 @@
 package model.cards;
 
 import model.CurrentGameState;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 public abstract class CharacterCard {
-    protected int idCard;
+    protected CharacterName name;
     protected int baseCost;
     protected int uses;
     protected int currentCost;
@@ -28,5 +29,5 @@ public abstract class CharacterCard {
     public int getBaseCost() {return baseCost;}
     public int getUses() {return uses;}
     public int getCurrentCost() {return currentCost;}
-    public abstract int getIdCard();
+    public CharacterName getCharacterName() {return name;}
 }

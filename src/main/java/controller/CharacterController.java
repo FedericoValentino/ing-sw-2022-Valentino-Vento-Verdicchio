@@ -2,10 +2,8 @@ package controller;
 
 import model.CurrentGameState;
 import model.Player;
-import model.Team;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
-import model.boards.token.ColTow;
-import model.boards.token.Student;
 import model.cards.*;
 
 public class CharacterController
@@ -17,12 +15,12 @@ public class CharacterController
      handles the economy related to this action
      * @param game  an instance of the game
      * @param player   the player interacting with the card
-     * @param position  the position of the chosen card in the deck
+     * @param characterName  the type of the chosen card in the deck
      */
-    public void pickCard(CurrentGameState game, int position, Player player)
+    public void pickCard(CurrentGameState game, CharacterName characterName, Player player)
     {
         //drawCard updates the cost and the uses of the selected card
-        pickedCard = game.getCurrentCharacterDeck().drawCard(position);
+        pickedCard = getCardByName(game, characterName);
         game.getCurrentActiveCharacterCard().add(pickedCard);
 
         /*Updates player balance and bank balance using the currentCost-1 of the card,
@@ -35,14 +33,14 @@ public class CharacterController
 
     /** Checks if the desired card can be picked, by comparing its ID with the cards in the CharacterDeck
      * @param game  an instance of the game
-     * @param characterID  the ID of the desired card
+     * @param characterName  the type of the desired card
      * @param player  the player responsible for the action
      * @return ture if the card is present, false if not
      */
-    public static boolean isPickable(CurrentGameState game, int characterID, Player player)
+    public static boolean isPickable(CurrentGameState game, CharacterName characterName, Player player)
     {
         for(int i=0; i<game.getCurrentCharacterDeck().getDeck().size(); i++)
-            if(game.getCurrentCharacterDeck().getDeck().get(i).getIdCard() == characterID)
+            if(game.getCurrentCharacterDeck().getDeck().get(i).getCharacterName() == characterName)
             {
                 CharacterCard card = game.getCurrentCharacterDeck().getDeck().get(i);
                 if(player.getCoinAmount() >= card.getCurrentCost())
@@ -55,21 +53,21 @@ public class CharacterController
     /** Checks if the effect of the desired card can be activated, by comparing the ID of the card with
      the cards into the CurrentActiveCharacterCard list
      * @param game  an instance of the game
-     * @param characterID  the ID of the desired card
+     * @param characterName the type of the desired card
      * @return true if the card is present, false if not
      */
-    public boolean isEffectPlayable(CurrentGameState game, int characterID)
+    public boolean isEffectPlayable(CurrentGameState game, CharacterName characterName)
     {
         for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
-            if(game.getCurrentActiveCharacterCard().get(i).getIdCard() == characterID)
+            if(game.getCurrentActiveCharacterCard().get(i).getCharacterName() == characterName)
                 return true;
         return false;
     }
 
-    public CharacterCard getCardByID(CurrentGameState game, int characterID)
+    public CharacterCard getCardByName(CurrentGameState game, CharacterName characterName)
     {
         for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
-            if(game.getCurrentActiveCharacterCard().get(i).getIdCard() == characterID)
+            if(game.getCurrentActiveCharacterCard().get(i).getCharacterName() == characterName)
                 return game.getCurrentActiveCharacterCard().get(i);
         return null;
     }
@@ -85,11 +83,11 @@ public class CharacterController
         game.getCurrentCharacterDeck().getDeck().add(card);
     }
 
-    public void playEffect(int cardID, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    public void playEffect(CharacterName characterName, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
-        if(isEffectPlayable(game, cardID))
+        if(isEffectPlayable(game, characterName))
         {
-            CharacterCard card = getCardByID(game, cardID);
+            CharacterCard card = getCardByName(game, characterName);
             card.effect(game, studentPosition, chosenIsland, currentPlayer, color);
             deckManagement(game);
         }

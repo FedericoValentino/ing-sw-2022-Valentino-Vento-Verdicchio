@@ -4,6 +4,7 @@ import controller.MainController;
 import model.CurrentGameState;
 import model.Player;
 import model.Team;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 
@@ -11,15 +12,13 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 public class Knight extends CharacterCard implements Serializable {
-    private int idCard;
 
     /** Class constructor */
     public Knight()
     {
         super();
         this.baseCost=2;
-        this.currentCost=this.baseCost;
-        this.idCard=7;
+        this.name = CharacterName.KNIGHT;
     }
 
 
@@ -74,8 +73,4 @@ public class Knight extends CharacterCard implements Serializable {
         return knightDescription;
     }
 
-
-    public int getIdCard() {
-        return idCard;
-    }
 }

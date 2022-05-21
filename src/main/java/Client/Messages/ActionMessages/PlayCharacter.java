@@ -1,19 +1,20 @@
 package Client.Messages.ActionMessages;
 
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 public class PlayCharacter implements StandardActionMessage
 {
-    private int characterId;
+    private CharacterName name;
 
 
-    public PlayCharacter(int characterId) {
-        this.characterId = characterId;
+    public PlayCharacter(CharacterName name) {
+        this.name = name;
 
     }
 
-    public int getCharacterId() {
-        return characterId;
+    public CharacterName getCharacterName() {
+        return name;
     }
 
 }

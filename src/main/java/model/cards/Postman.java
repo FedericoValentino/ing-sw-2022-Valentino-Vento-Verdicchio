@@ -2,12 +2,12 @@ package model.cards;
 
 import controller.MainController;
 import model.CurrentGameState;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 import java.io.Serializable;
 
 public class Postman extends CharacterCard implements Serializable {
-    private int idCard;
 
     /** Class constructor */
     public Postman()
@@ -15,7 +15,7 @@ public class Postman extends CharacterCard implements Serializable {
         super();
         this.baseCost=1;
         this.currentCost=this.baseCost;
-        this.idCard=3;
+        this.name = CharacterName.POSTMAN;
     }
 
 
@@ -35,7 +35,4 @@ public class Postman extends CharacterCard implements Serializable {
     }
 
 
-    public int getIdCard() {
-        return idCard;
-    }
 }

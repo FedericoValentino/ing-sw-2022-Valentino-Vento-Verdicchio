@@ -2,6 +2,7 @@ package model.cards;
 
 import model.CurrentGameState;
 import model.boards.Pouch;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.Student;
 
@@ -10,7 +11,6 @@ import java.util.ArrayList;
 
 public class Priest extends CharacterCard implements Serializable {
 
-    private int idCard;
     private ArrayList<Student> students;
 
     /** Class constructor */
@@ -18,7 +18,7 @@ public class Priest extends CharacterCard implements Serializable {
         super();
         this.baseCost=1;
         this.currentCost=this.baseCost;
-        this.idCard=0;
+        this.name = CharacterName.PRIEST;
         this.students = new ArrayList<>();
     }
 
@@ -63,9 +63,5 @@ public class Priest extends CharacterCard implements Serializable {
 
     public ArrayList<Student> getStudents() {
         return students;
-    }
-
-    public int getIdCard() {
-        return idCard;
     }
 }

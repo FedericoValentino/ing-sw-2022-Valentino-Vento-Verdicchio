@@ -4,7 +4,7 @@ import Client.LightView;
 import model.Player;
 import model.Team;
 import model.boards.Island;
-import model.boards.token.Character;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 import model.boards.token.Student;
@@ -521,7 +521,7 @@ public class PrinterCLI
         if(card instanceof Princess)
         {
             character[0] += "____________________";
-            character[1] += "|  " + Character.values()[card.getIdCard()] + "  |";
+            character[1] += "|  " + card.getCharacterName() + "  |";
             character[2] += "|       ID: " + addZero(index) + "     |";
             character[3] += "|                  |";
             character[4] += "| Current Cost: "+ addZero(card.getCurrentCost()) + " |";
@@ -532,7 +532,7 @@ public class PrinterCLI
         else if(card instanceof Priest)
         {
             character[0] += "____________________";
-            character[1] += "|  " + Character.values()[card.getIdCard()] + "  |";
+            character[1] += "|  " + card.getCharacterName() + "  |";
             character[2] += "|       ID: " + addZero(index) + "     |";
             character[3] += "|                  |";
             character[4] += "| Current Cost: "+ addZero(card.getCurrentCost()) + " |";
@@ -543,7 +543,7 @@ public class PrinterCLI
         else if (card instanceof GrandmaHerbs)
         {
             character[0] += "____________________";
-            character[1] += "|  " + Character.values()[card.getIdCard()] + "  |";
+            character[1] += "|  " + card.getCharacterName() + "  |";
             character[2] += "|       ID: " + addZero(index) + "     |";
             character[3] += "|                  |";
             character[4] += "| Current Cost: "+ addZero(card.getCurrentCost()) + " |";
@@ -559,7 +559,7 @@ public class PrinterCLI
         else
         {
             character[0] += "____________________";
-            character[1] += "|  " + Character.values()[card.getIdCard()] + "  |";
+            character[1] += "|  " + card.getCharacterName() + "  |";
             character[2] += "|       ID: " + addZero(index) + "     |";
             character[3] += "|                  |";
             character[4] += "| Current Cost: "+ addZero(card.getCurrentCost()) + " |";

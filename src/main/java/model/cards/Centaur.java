@@ -2,13 +2,14 @@ package model.cards;
 
 import controller.ActionController;
 import model.CurrentGameState;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 import java.io.Serializable;
 import java.util.Arrays;
 
 public class Centaur extends CharacterCard implements Serializable {
-    private int idCard;
+
 
     /** Class constructor */
     public Centaur()
@@ -16,7 +17,7 @@ public class Centaur extends CharacterCard implements Serializable {
         super();
         super.baseCost=3;
         super.currentCost=this.baseCost;
-        this.idCard=5;
+        this.name = CharacterName.CENTAUR;
     }
 
 
@@ -44,8 +45,4 @@ public class Centaur extends CharacterCard implements Serializable {
         return centaurDescription;
     }
 
-
-    public int getIdCard() {
-        return idCard;
-    }
 }

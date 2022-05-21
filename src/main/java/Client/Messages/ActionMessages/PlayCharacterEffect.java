@@ -1,25 +1,26 @@
 package Client.Messages.ActionMessages;
 
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 public class PlayCharacterEffect implements StandardActionMessage
 {
-    private int characterId;
+    private CharacterName name;
     private int student;
     private int island;
     private String currentPlayer;
     private Col studentColor;
 
-    public PlayCharacterEffect(int characterId, int student, int island, String currentPlayer, Col studentColor) {
-        this.characterId = characterId;
+    public PlayCharacterEffect(CharacterName name, int student, int island, String currentPlayer, Col studentColor) {
+        this.name = name;
         this.student = student;
         this.island = island;
         this.currentPlayer = currentPlayer;
         this.studentColor = studentColor;
     }
 
-    public int getCharacterId() {
-        return characterId;
+    public CharacterName getCharacterName() {
+        return name;
     }
 
     public int getFirst() {

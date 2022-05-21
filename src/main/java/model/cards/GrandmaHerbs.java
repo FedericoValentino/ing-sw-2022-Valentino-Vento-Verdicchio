@@ -1,6 +1,7 @@
 package model.cards;
 
 import model.CurrentGameState;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 import java.io.Serializable;
@@ -9,7 +10,6 @@ import java.util.Arrays;
 public class GrandmaHerbs extends CharacterCard implements Serializable {
 
     private int noEntry;
-    private int idCard;
 
     /** Class constructor */
     public GrandmaHerbs()
@@ -18,7 +18,7 @@ public class GrandmaHerbs extends CharacterCard implements Serializable {
         this.noEntry = 4;
         this.baseCost=2;
         this.currentCost=this.baseCost;
-        this.idCard=4;
+        this.name = CharacterName.GRANDMA_HERBS;
     }
 
     /** Updates the noEntry tiles using an input that can be positive or negative
@@ -52,9 +52,5 @@ public class GrandmaHerbs extends CharacterCard implements Serializable {
         return grandmaDescription;
     }
 
-
-    public int getIdCard() {
-        return idCard;
-    }
     public int getNoEntry(){return noEntry;}
 }

@@ -2,13 +2,13 @@ package model.cards;
 
 import controller.ActionController;
 import model.CurrentGameState;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.Student;
 
 import java.io.Serializable;
 
 public class TruffleHunter extends CharacterCard implements Serializable {
-    private int idCard;
     private Col ChosenColor;
 
     /** Class constructor */
@@ -16,7 +16,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
     {
         super();
         this.baseCost=3;
-        this.idCard=8;
+        this.name = CharacterName.TRUFFLE_HUNTER;
         this.currentCost=this.baseCost;
         this.ChosenColor = null;
     }
@@ -70,7 +70,4 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         return ChosenColor;
     }
 
-    public int getIdCard() {
-        return idCard;
-    }
 }

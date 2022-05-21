@@ -4,6 +4,7 @@ package model.cards;
 import controller.MainController;
 import model.CurrentGameState;
 import model.boards.Pouch;
+import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.Student;
 
@@ -12,7 +13,6 @@ import java.util.ArrayList;
 
 public class Princess extends CharacterCard implements Serializable {
 
-    private int idCard;
     private ArrayList<Student> students;
 
 
@@ -20,7 +20,7 @@ public class Princess extends CharacterCard implements Serializable {
     public Princess() {
         super();
         this.baseCost=2;
-        this.idCard=10;
+        this.name = CharacterName.PRINCESS;
         this.currentCost=this.baseCost;
         this.students = new ArrayList<>();
     }
@@ -69,7 +69,4 @@ public class Princess extends CharacterCard implements Serializable {
         return students;
     }
 
-    public int getIdCard() {
-        return idCard;
-    }
 }
