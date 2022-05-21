@@ -141,7 +141,18 @@ public class ActionControllerTest
         assert(x + 3 == MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size());
     }
 
+    @Test
+    public void testGetMovableStudents()
+    {
+        setupTest();
+        assertEquals(3, controllerTest.getActionController().getMovableStudents());
 
+        for(int i = 0; i< 2; i++)
+            controllerTest.getActionController().placeStudentToDiningRoom(0, controllerTest.getGame(), "jack");
+        controllerTest.getActionController().placeStudentToIsland(0, 1, controllerTest.getGame(), "jack");
+
+        assertEquals(0, controllerTest.getActionController().getMovableStudents());
+    }
 
 
 

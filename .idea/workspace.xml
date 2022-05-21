@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Corrected all tests and redone a couple of methods,notably draw card in CharDeck and getCardByName in CharController">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Started updating tests to reach more satisfying coverages and to cover newly introduced methods">
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" afterDir="false" />
     </list>
     <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Json Constructor" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +72,7 @@
       <recent name="model.boards.token" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
+  <component name="RunManager" selected="JUnit.ActionControllerTest.testGetMovableStudents">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientApp" />
       <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
@@ -89,7 +87,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChecksTest.testIsCurrentPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ActionControllerTest.testGetMovableStudents" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
       <extension name="coverage">
         <pattern>
@@ -98,9 +96,17 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ChecksTest" />
-      <option name="METHOD_NAME" value="testIsCurrentPlayer" />
+      <option name="MAIN_CLASS_NAME" value="controller.ActionControllerTest" />
+      <option name="METHOD_NAME" value="testGetMovableStudents" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in ing-sw-2022-Valentino-Vento-Verdicchio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,36 +127,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainControllerTest.resetReady" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.MainControllerTest" />
-      <option name="METHOD_NAME" value="resetReady" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.MainControllerTest.resetReady" />
-      <item itemvalue="JUnit.ChecksTest.testIsCurrentPlayer" />
       <item itemvalue="JUnit.ChecksTest.testIsDestinationAvailable" />
       <item itemvalue="Application.ServerApp" />
       <item itemvalue="Application.ClientApp" />
+      <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <item itemvalue="JUnit.ActionControllerTest.testGetMovableStudents" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ActionControllerTest.testGetMovableStudents" />
+        <item itemvalue="JUnit.All in ing-sw-2022-Valentino-Vento-Verdicchio" />
         <item itemvalue="Application.ClientApp" />
         <item itemvalue="Application.ServerApp" />
         <item itemvalue="JUnit.ChecksTest.testIsDestinationAvailable" />
-        <item itemvalue="JUnit.ChecksTest.testIsCurrentPlayer" />
-        <item itemvalue="JUnit.MainControllerTest.resetReady" />
       </list>
     </recent_temporary>
   </component>
@@ -186,13 +176,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00006" summary="FIX pudduh">
-      <created>1650624622625</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1650624622625</updated>
     </task>
     <task id="LOCAL-00007" summary="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi">
       <created>1650707643245</created>
@@ -530,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653148055429</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Started updating tests to reach more satisfying coverages and to cover newly introduced methods">
+      <created>1653149714786</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1653149714786</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement. Tests to be adapted" />
     <MESSAGE value="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
     <MESSAGE value="Fixed non working test in PlanningControllerTest due to recent changes" />
     <MESSAGE value="Fixed non working test in CurrentGameState due to recent changes.&#10;Now only the Character tests need attention" />
@@ -574,7 +563,8 @@
     <MESSAGE value="Replacing CharacterID with CharacterName for all characters and relativa methods. Tests still undergoing updates" />
     <MESSAGE value="Replacing CharacterID with CharacterName for all characters and relative methods. Tests still undergoing updates" />
     <MESSAGE value="Corrected all tests and redone a couple of methods,notably draw card in CharDeck and getCardByName in CharController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected all tests and redone a couple of methods,notably draw card in CharDeck and getCardByName in CharController" />
+    <MESSAGE value="Started updating tests to reach more satisfying coverages and to cover newly introduced methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started updating tests to reach more satisfying coverages and to cover newly introduced methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

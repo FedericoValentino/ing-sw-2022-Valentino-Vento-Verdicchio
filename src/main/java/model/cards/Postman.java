@@ -6,6 +6,7 @@ import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Postman extends CharacterCard implements Serializable {
 
@@ -30,7 +31,12 @@ public class Postman extends CharacterCard implements Serializable {
     }
 
     @Override
-    public String[] description() {
+    public String[] description()
+    {
+        String[] postmanDescription = new String[7];
+        Arrays.fill(postmanDescription, "");
+        postmanDescription[0] += "";
+
         return new String[0];
     }
 
