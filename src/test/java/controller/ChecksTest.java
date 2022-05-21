@@ -46,7 +46,7 @@ public class ChecksTest {
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(3);
         controllerTest.updateTurnState();
         controllerTest.determineNextPlayer();
-        assertEquals("jack", controllerTest.getCurrentPlayer());
+        assertTrue(controllerTest.getChecks().isCurrentPlayer("jack", controllerTest.getCurrentPlayer()));
     }
 
     @Test
@@ -59,6 +59,7 @@ public class ChecksTest {
         assertFalse(controllerTest.getChecks().isDestinationAvailable(controllerTest.getGame(), "jack", 4, true, 13 ));
         assertTrue(controllerTest.getChecks().isDestinationAvailable(controllerTest.getGame(), "jack", 3, false, 13 ));
         assertTrue(controllerTest.getChecks().isDestinationAvailable(controllerTest.getGame(), "jack", 2, true, 5 ));
+        assertFalse(controllerTest.getChecks().isDestinationAvailable(controllerTest.getGame(), "jack", 10, false, 2));
     }
 
     @Test

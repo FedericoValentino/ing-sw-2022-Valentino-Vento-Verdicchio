@@ -136,6 +136,34 @@ public class MainControllerTest
     }
 
     @Test
+    public void testUpdateGamePhase()
+    {
+        setupTest();
+        controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
+        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(1);
+        controllerTest.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
+
+        controllerTest.updateGamePhase(GamePhase.PLANNING);
+
+        assertEquals(GamePhase.PLANNING, controllerTest.getGame().getCurrentTurnState().getGamePhase());
+        assertNull(controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCurrentAssistantCard());
+        assertNull(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCurrentAssistantCard());
+
+        assertEquals(1, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getLastPlayedCard().getValue());
+        assertEquals(2, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getLastPlayedCard().getValue());
+    }
+
+    @Test
+    public void resetReady()
+    {
+        setupTest();
+        controllerTest.readyPlayer();
+        assertEquals(1, controllerTest.getReadyPlayers());
+        controllerTest.resetReady();
+        assertEquals(0, controllerTest.getReadyPlayers());
+    }
+
+    @Test
     public void testGetGame()
     {
         setupTest();
