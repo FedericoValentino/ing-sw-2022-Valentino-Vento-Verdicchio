@@ -24,7 +24,9 @@ public class IntroController extends Controller{
 
     public void onClickStart(ActionEvent actionEvent) throws IOException {
         String path="/GUI/Controllers/Login.fxml";
-        loadNewScreen(path,actionEvent);
+        FXMLLoader loader=loadNewScreen(path,actionEvent);
+        LoginController controller = loader.getController();
+        controller.setGuiMainStarter(guiMainStarter);
     }
 
     public void onClickStory(ActionEvent actionEvent) throws IOException {

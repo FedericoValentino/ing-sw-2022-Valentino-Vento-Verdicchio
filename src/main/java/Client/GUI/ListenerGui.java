@@ -15,7 +15,7 @@ public class ListenerGui implements Runnable{
     {
         while(true)
         {
-            //System.out.println("Waiting for Server...");
+            System.out.println("Waiting for Server...");
             try {
                 client.readMessage();
             } catch (IOException e) {

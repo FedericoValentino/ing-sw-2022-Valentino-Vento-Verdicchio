@@ -1,17 +1,43 @@
 package Client.GUI;
 import Client.GUI.Controllers.IntroController;
+import Client.GUI.Controllers.LobbyController;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class GuiMainStarter extends Application {
     private Stage mainStage;
+    protected static ClientGUI ClientGUI;
+    private ExecutorService executor = Executors.newSingleThreadExecutor();
+
+    public GuiMainStarter(){
+    }
 
     public static void main(){
         launch();
+    }
+
+/**It's a method to get my reference to CLientGUI, otherwise I'll lose it**/
+    public static void setClientGUI(ClientGUI clientGUI)
+    {
+        GuiMainStarter.ClientGUI=clientGUI;
+    }
+    public ClientGUI getClientGUI()
+    {
+        return ClientGUI;
+    }
+    public ExecutorService getExecutor()
+    {
+        return executor;
     }
 
     @Override
@@ -28,16 +54,12 @@ public class GuiMainStarter extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/GUI/Controllers/Intro.fxml"));
 
-        this.mainStage.setScene(new Scene( (AnchorPane)loader.load()));
+        this.mainStage.setScene(new Scene(loader.load()));
         this.mainStage.show();
 
-
-/*
-        FXMLLoader fxmlLoader = new FXMLLoader(getResource("Gui/Controllers/MainBoard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.show();
-*/
+        IntroController controller = loader.getController();
+        controller.setGuiMainStarter(this);
     }
+
 }
 

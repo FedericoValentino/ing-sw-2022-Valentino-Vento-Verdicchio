@@ -1,9 +1,13 @@
 package Client.GUI.Controllers;
 
+import Client.Messages.SetupMessages.GameMode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+
+import java.io.IOException;
 
 public class LobbyController extends Controller{
 
@@ -19,13 +23,23 @@ public class LobbyController extends Controller{
         playersChoice.setValue(2);
 
         difficultyChoice.getItems().addAll(true,false);
-        //playersChoice.setValue(true);
+        difficultyChoice.setValue(true);
 
     }
 
-    public void onClickTryConnection(ActionEvent actionEvent) {
+    public void onClickTryConnection(ActionEvent actionEvent) throws IOException {
+        GameMode gm = new GameMode();
+        gm.setMaxPlayers(playersChoice.getValue());
+
+        while(gm.getMaxPlayers() > 4 || gm.getMaxPlayers() < 2)
+        {
+            /*controllo da fare?*/
+        }
+        gm.setExpertGame(difficultyChoice.getValue());
+        guiMainStarter.getClientGUI().getServerConnection().getOut().writeObject(gm);
+        guiMainStarter.getClientGUI().getServerConnection().getOut().flush();
+        guiMainStarter.getClientGUI().getServerConnection().getOut().reset();
+
     }
 
-    public void onClickBack(ActionEvent actionEvent) {
-    }
 }

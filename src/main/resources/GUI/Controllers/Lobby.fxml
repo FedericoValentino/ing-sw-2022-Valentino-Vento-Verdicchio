@@ -67,7 +67,6 @@
                </font>
             </Text>
             <Button fx:id="SendChoice" layoutX="1339.0" layoutY="682.0" mnemonicParsing="false" onAction="#onClickTryConnection" text="SendChoice" />
-            <Button fx:id="Back" layoutX="1266.0" layoutY="682.0" mnemonicParsing="false" onAction="#onClickBack" text="Back" />
          </children>
       </Pane>
    </children>

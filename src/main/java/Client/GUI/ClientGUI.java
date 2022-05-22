@@ -1,49 +1,106 @@
 package Client.GUI;
 
-import Client.CLI.InputParser;
 import Client.ClientView;
-import Client.LightView;
-import Client.Messages.SerializedMessage;
-import Client.Messages.SetupMessages.GameMode;
-import Client.Messages.SetupMessages.ReadyStatus;
-import Client.Messages.SetupMessages.WizardChoice;
+import Client.Messages.SetupMessages.SetupConnection;
 import Client.ServerConnection;
-import Server.Answers.ActionAnswers.*;
+import Server.Answers.ActionAnswers.StandardActionAnswer;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import model.boards.token.Wizard;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ClientGUI implements ClientView
 {
+
+    private SerializedAnswer input;
+    private ServerConnection serverConnection;
+    private Boolean setupState = true;
+    private ExecutorService executor = Executors.newSingleThreadExecutor();
+    private ListenerGui listenerGui;
+    private GuiMainStarter gm;
+    private int setuPHandlerAnswerID;
+
     @Override
     public void run() {
-        GuiMainStarter.main();
+        gm=new GuiMainStarter();
+        gm.setClientGUI(this);
+        gm.main();
+    }
+    @Override
+    public void setupHandler(StandardSetupAnswer answer) throws IOException {
+        if(answer instanceof RequestGameInfo)
+        {
+            setuPHandlerAnswerID=0;
+        }
+        if(answer instanceof AvailableWizards)
+        {
+            setuPHandlerAnswerID=1;
+            System.out.println("instance of Avaiable Wizz");
+        }
+        if(answer instanceof InfoMessage)
+        {
+            setuPHandlerAnswerID=2;
+            System.out.println(((InfoMessage) answer).getInfo());
+            if(setupState)
+            {
+                setupState = false;
+            }
+        }
+        if(answer instanceof GameStarting)
+        {
+            setuPHandlerAnswerID=3;
+            System.out.println("Game Starting!");
+        }
+    }
+    @Override
+    public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
+    }
+    public Boolean getSetupState() {
+        return setupState;
     }
 
-    public ClientGUI getCLientGUi()
+
+    public void setServerConnection(String nickname,int team,String IP) throws IOException {
+        serverConnection= new ServerConnection(nickname,team,IP);
+    }
+    public ServerConnection getServerConnection()
     {
-        return this;
+        return serverConnection;
+    }
+
+    public void connection() throws IOException {
+        serverConnection.establishConnection();
+        listenerGui = new ListenerGui(this);
+        executor.execute(listenerGui);
+
+        System.out.println("Connessione stabilita riga 69");
     }
 
 
 
+    @Override
+    public void readMessage() throws IOException, ClassNotFoundException {
+        input = (SerializedAnswer) serverConnection.getIn().readObject();
+        if(input.getCommand() != null)
+        {
+            System.out.println("Intro nel read message in comando standard setup");
+            StandardSetupAnswer answer = input.getCommand();
+            setupHandler(answer);
+        }
+        if(input.getAction() != null)
+        {
+            StandardActionAnswer answer = input.getAction();
+            messageHandler(answer);
+        }
 
+    }
 
-
-
-
-
-
-
-
-
-
+    public int getSetuPHandlerAnswerID() {
+        return setuPHandlerAnswerID;
+    }
 
 
 
@@ -64,33 +121,9 @@ public class ClientGUI implements ClientView
 
     /*cose copiate e incollate
 
-     */
 
 
-
-
-    private ServerConnection main;
-    private InputParser stdin;
-    private SerializedAnswer input;
-    private Boolean setupState = true;
-    private String currentInput;
-    private LightView MyView = new LightView();
-    private ExecutorService executor = Executors.newSingleThreadExecutor();
-
-    public void readMessage() throws IOException, ClassNotFoundException {
-        input = (SerializedAnswer) main.getIn().readObject();
-        if(input.getCommand() != null)
-        {
-            StandardSetupAnswer answer = input.getCommand();
-            setupHandler(answer);
-        }
-        if(input.getAction() != null)
-        {
-            StandardActionAnswer answer = input.getAction();
-            messageHandler(answer);
-        }
-    }
-
+    @Override
     public void setupHandler(StandardSetupAnswer answer) throws IOException {
         if(answer instanceof RequestGameInfo)
         {
@@ -132,19 +165,19 @@ public class ClientGUI implements ClientView
         if(answer instanceof InfoMessage)
         {
             System.out.println(((InfoMessage) answer).getInfo());
-            if(stdin.getParser().next().equals("Ready"))
+            if(setupState)
             {
-                main.sendMessage(new SerializedMessage(new ReadyStatus()));
+                setupState = false;
             }
         }
         if(answer instanceof GameStarting)
         {
             System.out.println("Game Starting!");
-            setupState = false;
         }
 
     }
 
+    @Override
     public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
         if(answer instanceof ErrorMessage)
         {
@@ -178,7 +211,7 @@ public class ClientGUI implements ClientView
         {
             System.out.println(((RequestCloud) answer).getMessage());
         }
-    }
+    }*/
 
 
 
