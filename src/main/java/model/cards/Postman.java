@@ -14,9 +14,9 @@ public class Postman extends CharacterCard implements Serializable {
     public Postman()
     {
         super();
-        this.baseCost=1;
-        this.currentCost=this.baseCost;
-        this.name = CharacterName.POSTMAN;
+        super.baseCost=1;
+        super.currentCost = super.baseCost;
+        super.name = CharacterName.POSTMAN;
     }
 
 

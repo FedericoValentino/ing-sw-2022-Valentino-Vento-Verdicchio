@@ -4,35 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Enumeration for server messages, cascade changes in clientCLI to adapt to it">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/ACTIONMESSAGETYPE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SETUPMESSAGETYPE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Match.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Enumeration for CLIENT messages, cascade changes in GAMEHANDLER to adapt to it by valentino und vento">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/ChooseCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/ChooseCloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/DrawAssistantCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/DrawAssistantCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/DrawFromPouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/DrawFromPouch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/EndTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/EndTurn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/MoveMN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/MoveMN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/MoveStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/MoveStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacterEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/PlayCharacterEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/StandardActionMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/StandardActionMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/WizardChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/WizardChoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
-    </list>
-    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Wonderful colors">
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/Disconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/Disconnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/GameMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/GameMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/ReadyStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/ReadyStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/StandardSetupMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/StandardSetupMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/WizardChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/WizardChoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Priest.java" afterDir="false" />
+    </list>
+    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Wonderful enumeration">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaHerbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/GrandmaHerbs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Postman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Princess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,30 +53,32 @@
     </file-type-list>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/WizardChoice.java">
+    <file path="$PROJECT_DIR$/src/main/java/model/cards/Postman.java">
       <ranges>
-        <range start1="4" end1="5" start2="4" end2="5" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="11" end1="11" start2="11" end2="12" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="16" end1="19" start2="16" end2="19" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="39" end1="40" start2="39" end2="40" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/src/main/java/Server/GameHandler.java">
+    <file path="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java">
       <ranges>
-        <range start1="6" end1="10" start2="6" end2="7" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="45" end1="46" start2="42" end2="42" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="61" end1="94" start2="57" end2="93" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="105" end1="124" start2="104" end2="130" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="129" end1="153" start2="135" end2="198" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="154" end1="175" start2="199" end2="199" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="179" end1="185" start2="203" end2="217" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="186" end1="191" start2="218" end2="218" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="192" end1="192" start2="219" end2="220" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="193" end1="193" start2="221" end2="222" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="198" end1="199" start2="227" end2="228" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="200" end1="201" start2="229" end2="235" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="204" end1="211" start2="238" end2="244" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="214" end1="215" start2="247" end2="248" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="217" end1="221" start2="250" end2="252" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="224" end1="225" start2="255" end2="256" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="198" end1="199" start2="198" end2="199" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="523" end1="526" start2="523" end2="526" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="527" end1="528" start2="527" end2="528" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="529" end1="531" start2="529" end2="536" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="534" end1="537" start2="539" end2="542" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="538" end1="539" start2="543" end2="544" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="540" end1="542" start2="545" end2="552" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="545" end1="548" start2="555" end2="558" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="549" end1="550" start2="559" end2="560" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="551" end1="552" start2="561" end2="562" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="554" end1="555" start2="564" end2="565" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="556" end1="558" start2="566" end2="572" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="561" end1="564" start2="575" end2="583" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="565" end1="566" start2="584" end2="585" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="568" end1="569" start2="587" end2="588" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="577" end1="578" start2="596" end2="597" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="585" end1="585" start2="604" end2="605" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="588" end1="589" start2="608" end2="609" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
       </ranges>
     </file>
   </component>
@@ -108,6 +99,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ing-sw-2021-pantaleone-parlati-naldi-main" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -230,20 +222,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00005" summary="Aggiunti commenti alle mie classi+fix a qualche metodo">
-      <created>1649149990077</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1649149990077</updated>
-    </task>
-    <task id="LOCAL-00006" summary="FIX pudduh">
-      <created>1650624622625</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1650624622625</updated>
     </task>
     <task id="LOCAL-00007" summary="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi">
       <created>1650707643245</created>
@@ -574,7 +552,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653218037976</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Enumeration for CLIENT messages, cascade changes in GAMEHANDLER to adapt to it by valentino und vento">
+      <created>1653233525668</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1653233525668</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Wonderful enumeration">
+      <created>1653233555824</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1653233555824</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +609,9 @@
     <MESSAGE value="Wonderful colors" />
     <MESSAGE value="Correction of login structure and adds of lobby functionality" />
     <MESSAGE value="Enumeration for server messages, cascade changes in clientCLI to adapt to it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enumeration for server messages, cascade changes in clientCLI to adapt to it" />
+    <MESSAGE value="Enumeration for CLIENT messages, cascade changes in GAMEHANDLER to adapt to it by valentino und vento" />
+    <MESSAGE value="Wonderful enumeration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wonderful enumeration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -631,19 +625,9 @@
           <option name="timeStamp" value="16" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/Match.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/Match.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/Match.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/src/main/java/Server/GameHandler.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

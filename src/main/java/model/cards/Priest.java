@@ -16,9 +16,9 @@ public class Priest extends CharacterCard implements Serializable {
     /** Class constructor */
     public Priest() {
         super();
-        this.baseCost=1;
-        this.currentCost=this.baseCost;
-        this.name = CharacterName.PRIEST;
+        super.baseCost=1;
+        super.currentCost=super.baseCost;
+        super.name = CharacterName.PRIEST;
         this.students = new ArrayList<>();
     }
 

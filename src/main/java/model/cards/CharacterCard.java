@@ -4,7 +4,9 @@ import model.CurrentGameState;
 import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
-public abstract class CharacterCard {
+import java.io.Serializable;
+
+public abstract class CharacterCard implements Serializable {
     protected CharacterName name;
     protected int baseCost;
     protected int uses;
