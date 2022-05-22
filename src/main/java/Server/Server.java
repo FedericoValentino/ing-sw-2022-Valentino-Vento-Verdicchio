@@ -19,7 +19,7 @@ public class Server
    private static final int PORT = 1234;
    private ServerSocket server;
    private ArrayList<ClientConnection> waitLobby = new ArrayList<>();
-   private ExecutorService executor = Executors.newFixedThreadPool(128);
+   private ArrayList<Match> matches = new ArrayList<>();
 
    public Server() throws IOException
    {
@@ -55,23 +55,19 @@ public class Server
             Socket socket = server.accept();
             System.out.println("New Connection!");
             registerConnection(socket);
-            System.out.println(waitLobby.size());
             if(waitLobby.size() == 1)
             {
                info = requestGameInfo(waitLobby.get(0));
             }
             if(waitLobby.size() == info.getMaxPlayers())
             {
-               MainController mc = new MainController(info.getMaxPlayers(), info.isExpertGame());
-               Semaphore sem = new Semaphore(0);
-               int x = 0;
-               for(ClientConnection c : waitLobby)
+               Match match = new Match(info.getMaxPlayers(), info.isExpertGame(), matches.size());
+               for(ClientConnection client : waitLobby)
                {
-                  GameHandler GH = new GameHandler(mc, c, c.getTeam(), sem);
-                  mc.getGame().addObserver(GH);
-                  GH.start();
-                  x++;
+                  match.addClient(client);
                }
+               match.startGame();
+               matches.add(match);
                waitLobby.removeAll(waitLobby);
             }
          } catch (IOException e) {

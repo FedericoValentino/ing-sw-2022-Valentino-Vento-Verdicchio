@@ -1,7 +1,6 @@
 package Client.CLI;
 
 import Client.ClientView;
-import Client.LightView;
 import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.*;
 import Client.ServerConnection;
@@ -14,7 +13,6 @@ import model.boards.token.Wizard;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

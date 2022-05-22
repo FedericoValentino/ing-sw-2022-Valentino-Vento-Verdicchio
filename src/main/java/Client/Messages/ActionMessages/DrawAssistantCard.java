@@ -1,12 +1,13 @@
 package Client.Messages.ActionMessages;
 
-public class DrawAssistantCard implements StandardActionMessage
+public class DrawAssistantCard extends StandardActionMessage
 {
     public int cardIndex;
 
     public DrawAssistantCard(int cardIndex)
     {
         this.cardIndex = cardIndex;
+        super.type = ACTIONMESSAGETYPE.DRAW_CHOICE;
     }
 
     public int getCardIndex()

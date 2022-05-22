@@ -9,6 +9,7 @@ public class WizardChoice implements StandardSetupMessage
     public WizardChoice(Wizard w)
     {
         this.wizard = w;
+        super.type = SETUPMESSAGETYPE.WIZARD_CHOICE;
     }
 
     public Wizard getWizard() {
