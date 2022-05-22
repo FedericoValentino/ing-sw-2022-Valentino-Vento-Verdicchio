@@ -298,10 +298,10 @@ public class PrinterCLI
         String currentPlayerTrimmed = nameTrimmer(currentPlayer);
 
         if(!currentPlayer.equals(name))
-            schools[0] += "This is " + ANSI_CYAN + "[" + nameTrimmed + "]" + ANSI_RESET + "'s school                       \t";
+            schools[0] += "This is " + ANSI_CYAN + "[" + nameTrimmed + "]" + ANSI_RESET + "'s school                       ";
         else
         {
-            schools[0] += ANSI_GREEN + "[" + currentPlayerTrimmed + "]" + ANSI_RESET + ", this is " + ANSI_GREEN + "Your school               \t" + ANSI_RESET;
+            schools[0] += ANSI_GREEN + "[" + currentPlayerTrimmed + "]" + ANSI_RESET + ", this is " + ANSI_GREEN + "Your school               " + ANSI_RESET;
         }
         schools[1] += "____________________________________________\t";
         schools[2] += "|     0  1  2  3  4  5  6  7  8            |\t";
@@ -335,6 +335,7 @@ public class PrinterCLI
                     if (totalSchools == 2) {
                         for (int i = 0; i < 12; i++) {
                             System.out.println(schools[i]);
+                            System.out.println("");
                             totalSchools = 0;
                         }
                         Arrays.fill(schools, "");

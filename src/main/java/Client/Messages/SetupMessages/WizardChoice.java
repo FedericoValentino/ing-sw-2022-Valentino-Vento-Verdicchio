@@ -2,7 +2,7 @@ package Client.Messages.SetupMessages;
 
 import model.boards.token.Wizard;
 
-public class WizardChoice implements StandardSetupMessage
+public class WizardChoice extends StandardSetupMessage
 {
     private Wizard wizard;
 

@@ -4,10 +4,7 @@ package Server;
 
 import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
-import Client.Messages.SetupMessages.Disconnect;
-import Client.Messages.SetupMessages.ReadyStatus;
-import Client.Messages.SetupMessages.StandardSetupMessage;
-import Client.Messages.SetupMessages.WizardChoice;
+import Client.Messages.SetupMessages.*;
 import Server.Answers.ActionAnswers.*;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.AvailableWizards;
@@ -223,6 +220,7 @@ public class GameHandler extends Thread implements Observer
 
     }
 
+
     public void messageHandler(StandardActionMessage message)
     {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
@@ -238,27 +236,24 @@ public class GameHandler extends Thread implements Observer
             }
             else
             {
-                socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase" + ANSI_RESET)));
-            }
-            if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION))
-            {
-                if(message instanceof PlayCharacter || message instanceof PlayCharacterEffect)
+                if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION))
                 {
-                    characterHandler(message);
+                    if(message.type == ACTIONMESSAGETYPE.CHARACTER_PLAY || message.type == ACTIONMESSAGETYPE.CHARACTER_ACTIVATE)
+                        characterHandler(message);
+                    else
+                        actionHandler(message);
                 }
                 else
                 {
-                    actionHandler(message);
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase, you are in Planning Phase!" + ANSI_RESET)));
                 }
             }
-            else
-            {
-                socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase" + ANSI_RESET)));
-            }
+
+
         }
         else
         {
-            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Not your turn!" + ANSI_RESET)));
+            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wait for your turn!" + ANSI_RESET)));
         }
 
     }

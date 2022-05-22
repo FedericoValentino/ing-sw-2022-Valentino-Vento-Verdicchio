@@ -1,6 +1,6 @@
 package Client.Messages.SetupMessages;
 
-public class SetupConnection implements StandardSetupMessage
+public class SetupConnection extends StandardSetupMessage
 {
     private String nickname;
     private int team;
@@ -8,6 +8,7 @@ public class SetupConnection implements StandardSetupMessage
     public SetupConnection(String nickname, int team) {
         this.nickname = nickname;
         this.team = team;
+        super.type = SETUPMESSAGETYPE.CONNECTION_SETUP;
     }
 
     public String getNickname() {
