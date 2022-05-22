@@ -1,4 +1,4 @@
 package Server.Answers.SetupAnswers;
 
-public class RejectConnection implements StandardSetupAnswer {
+public class RejectConnection extends StandardSetupAnswer {
 }

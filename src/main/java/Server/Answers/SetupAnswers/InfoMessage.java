@@ -1,12 +1,12 @@
 package Server.Answers.SetupAnswers;
 
-public class InfoMessage implements StandardSetupAnswer
-{
+public class InfoMessage extends StandardSetupAnswer {
     private String info;
 
     public InfoMessage(String input)
     {
         this.info = input;
+        super.type = SETUPANSWERTYPE.GAME_NFO;
     }
 
     public String getInfo() {

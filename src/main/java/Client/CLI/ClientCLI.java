@@ -28,92 +28,84 @@ public class ClientCLI implements ClientView
 
     @Override
     public void setupHandler(StandardSetupAnswer answer) throws IOException {
-        if(answer instanceof RequestGameInfo)
+        switch(answer.getType())
         {
-            GameMode gm = new GameMode();
-            System.out.println("First Client, what gamemode would you like to play?");
-            System.out.println("Player number?[2][3][4]");
-            gm.setMaxPlayers(stdin.getParser().nextInt());
-            while(gm.getMaxPlayers() > 4 || gm.getMaxPlayers() < 2)
-            {
-                System.out.println("Wrong input");
+            case GAME_NFO_REQ:
+                GameMode gm = new GameMode();
+                System.out.println("First Client, what gamemode would you like to play?");
                 System.out.println("Player number?[2][3][4]");
                 gm.setMaxPlayers(stdin.getParser().nextInt());
-            }
+                while(gm.getMaxPlayers() > 4 || gm.getMaxPlayers() < 2)
+                {
+                    System.out.println("Wrong input");
+                    System.out.println("Player number?[2][3][4]");
+                    gm.setMaxPlayers(stdin.getParser().nextInt());
+                }
 
-            System.out.println("Expert Mode?[true][false]");
-            gm.setExpertGame(stdin.getParser().nextBoolean());
-            System.out.println(gm.isExpertGame());
-            main.getOut().writeObject(gm);
-            main.getOut().flush();
-            main.getOut().reset();
+                System.out.println("Expert Mode?[true][false]");
+                gm.setExpertGame(stdin.getParser().nextBoolean());
+                System.out.println(gm.isExpertGame());
+                main.getOut().writeObject(gm);
+                main.getOut().flush();
+                main.getOut().reset();
+                break;
+            case WIZARDS:
+                ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
+                System.out.println("Which wizard are you playing with?");
+                for(Wizard w : available)
+                {
+                    System.out.print("[" + w.ordinal() + "] " + w + " ");
+                }
+                System.out.println();
+                int choice = stdin.getParser().nextInt();
+                while(choice > 4 || choice < 0)
+                {
+                    System.out.println("You must enter a number between 0 and 4");
+                    choice = stdin.getParser().nextInt();
+                }
+                main.sendMessage(new SerializedMessage(new WizardChoice(Wizard.values()[choice])));
+                break;
+            case GAME_NFO:
+                System.out.println(((InfoMessage) answer).getInfo());
+                if(setupState)
+                {
+                    setupState = false;
+                }
+                break;
+            case GAME_START:
+                System.out.println("Game Starting!");
+                break;
         }
-        if(answer instanceof AvailableWizards)
-        {
-            ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
-            System.out.println("Which wizard are you playing with?");
-            for(Wizard w : available)
-            {
-                System.out.print(String.valueOf("[" + w.ordinal()) + "] " + w + " ");
-            }
-            System.out.println();
-            int choice = stdin.getParser().nextInt();
-            while(choice > 4 || choice < 0)
-            {
-                System.out.println("You must enter a number between 0 and 4");
-                choice = stdin.getParser().nextInt();
-            }
-            main.sendMessage(new SerializedMessage(new WizardChoice(Wizard.values()[choice])));
-        }
-        if(answer instanceof InfoMessage)
-        {
-            System.out.println(((InfoMessage) answer).getInfo());
-            if(setupState)
-            {
-                setupState = false;
-            }
-        }
-        if(answer instanceof GameStarting)
-        {
-            System.out.println("Game Starting!");
-        }
-
     }
 
     @Override
     public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
-        if(answer instanceof ErrorMessage)
+
+        switch(answer.getType())
         {
-            System.out.println(((ErrorMessage) answer).getError());
+            case ERROR:
+                System.out.println(((ErrorMessage) answer).getError());
+                break;
+            case START_NFO:
+                System.out.println("Your Turn, start playing!");
+                break;
+            case VIEW:
+                MyView.parse((ViewMessage) answer);
+                break;
+            case CLOUD_REQ:
+                System.out.println(((RequestCloud) answer).getMessage());
+                break;
+            case CARD_REQ:
+                System.out.println("Choose a Character Card!");
+                break;
+            case STUD_REQ:
+                System.out.println("Move a student from your entrance!");
+                break;
+            case MN_REQ:
+                System.out.println("Move Mother Nature!");
+                break;
         }
-        else if(answer instanceof StartTurn)
-        {
-            System.out.println("Your Turn, start playing!");
-        }
-        else if(answer instanceof ViewMessage)
-        {
-            MyView.parse((ViewMessage) answer);
-        }
-        else if(answer instanceof RequestCloud)
-        {
-            System.out.println(((RequestCloud) answer).getMessage());
-        }
-        else if(answer instanceof RequestCard)
-        {
-            System.out.println("Choose a Character Card!");
-        }
-        else if(answer instanceof RequestMoveStudent)
-        {
-            System.out.println("Move a student from your entrance!");
-        }
-        else if(answer instanceof RequestMotherNatureMove)
-        {
-            System.out.println("Move Mother Nature!");
-        }
-        else if(answer instanceof RequestCloud)
-        {
-            System.out.println(((RequestCloud) answer).getMessage());
-        }
+
     }
 
     @Override

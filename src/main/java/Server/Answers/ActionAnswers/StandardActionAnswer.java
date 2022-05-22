@@ -2,5 +2,11 @@ package Server.Answers.ActionAnswers;
 
 import Server.Answers.Answer;
 
-public interface StandardActionAnswer extends Answer {
+public abstract class StandardActionAnswer implements Answer
+{
+    public ACTIONANSWERTYPE type;
+
+    public ACTIONANSWERTYPE getType() {
+        return type;
+    }
 }

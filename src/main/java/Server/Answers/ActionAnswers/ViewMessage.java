@@ -5,8 +5,9 @@ import model.cards.CharacterDeck;
 
 import java.util.ArrayList;
 
-public class ViewMessage implements StandardActionAnswer
+public class ViewMessage extends StandardActionAnswer
 {
+
     private String jsonView;
     private CharacterDeck CurrentCharacterDeck;
     private ArrayList<CharacterCard> CurrentActiveCharacterCard;
@@ -15,6 +16,7 @@ public class ViewMessage implements StandardActionAnswer
         this.jsonView = jsonView;
         this.CurrentCharacterDeck = CD;
         this.CurrentActiveCharacterCard = CACD;
+        super.type = ACTIONANSWERTYPE.VIEW;
     }
 
     public String getJsonView() {

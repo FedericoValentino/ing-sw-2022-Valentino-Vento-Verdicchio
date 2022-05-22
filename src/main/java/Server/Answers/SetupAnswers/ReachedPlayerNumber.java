@@ -1,4 +1,4 @@
 package Server.Answers.SetupAnswers;
 
-public class ReachedPlayerNumber implements StandardSetupAnswer {
+public class ReachedPlayerNumber extends StandardSetupAnswer {
 }

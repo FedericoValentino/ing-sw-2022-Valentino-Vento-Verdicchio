@@ -1,6 +1,12 @@
 package Server.Answers.SetupAnswers;
 
+import Server.Answers.ActionAnswers.ACTIONANSWERTYPE;
 import Server.Answers.Answer;
 
-public interface StandardSetupAnswer extends Answer {
+public abstract class StandardSetupAnswer implements Answer {
+    public SETUPANSWERTYPE type;
+
+    public SETUPANSWERTYPE getType() {
+        return type;
+    }
 }
