@@ -37,7 +37,7 @@ public class Postman extends CharacterCard implements Serializable {
         Arrays.fill(postmanDescription, "");
         postmanDescription[0] += "";
 
-        return new String[0];
+        return postmanDescription;
     }
 
 

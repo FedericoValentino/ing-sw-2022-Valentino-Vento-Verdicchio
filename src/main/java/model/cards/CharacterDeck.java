@@ -52,10 +52,12 @@ public class CharacterDeck implements Serializable
     for(int i=0; i< deck.size(); i++)
     {
       if(deck.get(i) instanceof Priest)
-        ((Priest) deck.get(i)).updateStudents(pouch);
+        for(int j = 0; j < 4; j++)
+          ((Priest) deck.get(i)).updateStudents(pouch);
       else if(deck.get(i) instanceof Princess)
-        ((Princess) deck.get(i)).updateStudents(pouch);
-      i++;
+        for(int j = 0; j < 4; j++)
+          ((Princess) deck.get(i)).updateStudents(pouch);
+
     }
   }
 

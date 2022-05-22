@@ -15,9 +15,9 @@ public class Centaur extends CharacterCard implements Serializable {
     public Centaur()
     {
         super();
-        super.baseCost=3;
-        super.currentCost=this.baseCost;
-        this.name = CharacterName.CENTAUR;
+        super.baseCost = 3;
+        super.currentCost = super.baseCost;
+        super.name = CharacterName.CENTAUR;
     }
 
 

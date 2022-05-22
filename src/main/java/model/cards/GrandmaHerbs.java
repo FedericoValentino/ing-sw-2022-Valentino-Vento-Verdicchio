@@ -16,9 +16,9 @@ public class GrandmaHerbs extends CharacterCard implements Serializable {
     {
         super();
         this.noEntry = 4;
-        this.baseCost=2;
-        this.currentCost=this.baseCost;
-        this.name = CharacterName.GRANDMA_HERBS;
+        super.baseCost=2;
+        super.currentCost=super.baseCost;
+        super.name = CharacterName.GRANDMA_HERBS;
     }
 
     /** Updates the noEntry tiles using an input that can be positive or negative
