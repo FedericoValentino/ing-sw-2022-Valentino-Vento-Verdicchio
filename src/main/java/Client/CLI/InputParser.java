@@ -119,10 +119,6 @@ public class InputParser
     public void parseString(String input)
     {
         String[] words = input.split("[\\s']");
-        for(String word : words)
-        {
-            System.out.println(word);
-        }
         switch (words[0])
         {
             case "refill":
