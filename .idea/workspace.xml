@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Correction of login structure and adds of lobby functionality">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Update and correction (but there is also a problem that I have to solve)">
       <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ACTIONANSWERTYPE.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/SETUPANSWERTYPE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ErrorMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCloud.java" afterDir="false" />
@@ -54,36 +53,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/model/cards/Postman.java">
-      <ranges>
-        <range start1="16" end1="19" start2="16" end2="19" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="39" end1="40" start2="39" end2="40" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java">
-      <ranges>
-        <range start1="198" end1="199" start2="198" end2="199" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="523" end1="526" start2="523" end2="526" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="527" end1="528" start2="527" end2="528" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="529" end1="531" start2="529" end2="536" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="534" end1="537" start2="539" end2="542" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="538" end1="539" start2="543" end2="544" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="540" end1="542" start2="545" end2="552" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="545" end1="548" start2="555" end2="558" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="549" end1="550" start2="559" end2="560" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="551" end1="552" start2="561" end2="562" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="554" end1="555" start2="564" end2="565" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="556" end1="558" start2="566" end2="572" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="561" end1="564" start2="575" end2="583" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="565" end1="566" start2="584" end2="585" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="568" end1="569" start2="587" end2="588" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="577" end1="578" start2="596" end2="597" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-        <range start1="585" end1="585" start2="604" end2="605" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="588" end1="589" start2="608" end2="609" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
