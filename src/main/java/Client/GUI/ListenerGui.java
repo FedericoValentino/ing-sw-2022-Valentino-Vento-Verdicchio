@@ -17,11 +17,13 @@ public class ListenerGui implements Runnable{
         {
             System.out.println("Waiting for Server...");
             try {
+                System.out.println("Try ");
                 client.readMessage();
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
+                System.out.println("cazzz");
             }
         }
     }

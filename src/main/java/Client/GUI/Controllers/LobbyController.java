@@ -40,6 +40,16 @@ public class LobbyController extends Controller{
         guiMainStarter.getClientGUI().getServerConnection().getOut().flush();
         guiMainStarter.getClientGUI().getServerConnection().getOut().reset();
 
+        //se corretta la connessione carico una schermata di caricamento
+        String path="/GUI/Controllers/Waiting.fxml";
+        FXMLLoader loader =loadNewScreen(path,actionEvent);
+
+        System.out.println("Waiting SCREEN");
+        WaitingController controller = loader.getController();
+        controller.setGuiMainStarter(guiMainStarter);
+        controller.setActionEvent(actionEvent);
+
+        //mi metto in pausa finché non arriva il wizard choice
     }
 
 }

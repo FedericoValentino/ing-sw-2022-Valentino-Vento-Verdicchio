@@ -12,22 +12,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:controller="Client.GUI.Controllers.LobbyController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.LobbyController">
    <children>
       <ImageView fitHeight="900.0" fitWidth="1600.0">
          <image>
             <Image url="@../Images/eryantisMainScreen.png" />
          </image>
       </ImageView>
-      <Pane layoutX="50.0" layoutY="50.0" prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: white;">
+      <Pane layoutX="500.0" layoutY="290.0" prefHeight="350.0" prefWidth="600.0" style="-fx-background-color: white;">
          <children>
-            <ImageView fitHeight="700.0" fitWidth="700.0" layoutX="15.0" layoutY="97.0">
-               <image>
-                  <Image url="@../Images/eriantysScatola.png" />
-               </image>
-            </ImageView>
-            <HBox layoutX="822.0" layoutY="264.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0">
+            <HBox layoutX="38.0" layoutY="144.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0">
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
@@ -61,12 +55,15 @@
                   </VBox>
                </children>
             </HBox>
-            <Text fx:id="title" layoutX="822.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Setting the game">
+            <Text fx:id="title" layoutX="139.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lobby settings">
                <font>
                   <Font size="52.0" />
                </font>
             </Text>
-            <Button fx:id="SendChoice" layoutX="1339.0" layoutY="682.0" mnemonicParsing="false" onAction="#onClickTryConnection" text="SendChoice" />
+            <Button fx:id="SendChoice" layoutX="443.0" layoutY="279.0" mnemonicParsing="false" onAction="#onClickTryConnection" text="SendChoice">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></Button>
          </children>
       </Pane>
    </children>

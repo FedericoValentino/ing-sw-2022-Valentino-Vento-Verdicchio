@@ -1,14 +1,15 @@
 package Client.GUI;
 
 import Client.ClientView;
-import Client.Messages.SetupMessages.SetupConnection;
 import Client.ServerConnection;
 import Server.Answers.ActionAnswers.StandardActionAnswer;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import model.boards.token.Wizard;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -20,65 +21,14 @@ public class ClientGUI implements ClientView
     private Boolean setupState = true;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ListenerGui listenerGui;
-    private GuiMainStarter gm;
-    private int setuPHandlerAnswerID;
+    private int setuPHandlerAnswerID=0;
+    private ArrayList<Wizard> available;
 
     @Override
     public void run() {
-        gm=new GuiMainStarter();
-        gm.setClientGUI(this);
-        gm.main();
+        GuiMainStarter.setClientGUI(this);
+        GuiMainStarter.main();
     }
-    @Override
-    public void setupHandler(StandardSetupAnswer answer) throws IOException {
-        if(answer instanceof RequestGameInfo)
-        {
-            setuPHandlerAnswerID=0;
-        }
-        if(answer instanceof AvailableWizards)
-        {
-            setuPHandlerAnswerID=1;
-            System.out.println("instance of Avaiable Wizz");
-        }
-        if(answer instanceof InfoMessage)
-        {
-            setuPHandlerAnswerID=2;
-            System.out.println(((InfoMessage) answer).getInfo());
-            if(setupState)
-            {
-                setupState = false;
-            }
-        }
-        if(answer instanceof GameStarting)
-        {
-            setuPHandlerAnswerID=3;
-            System.out.println("Game Starting!");
-        }
-    }
-    @Override
-    public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
-    }
-    public Boolean getSetupState() {
-        return setupState;
-    }
-
-
-    public void setServerConnection(String nickname,int team,String IP) throws IOException {
-        serverConnection= new ServerConnection(nickname,team,IP);
-    }
-    public ServerConnection getServerConnection()
-    {
-        return serverConnection;
-    }
-
-    public void connection() throws IOException {
-        serverConnection.establishConnection();
-        listenerGui = new ListenerGui(this);
-        executor.execute(listenerGui);
-
-        System.out.println("Connessione stabilita riga 69");
-    }
-
 
 
     @Override
@@ -95,13 +45,69 @@ public class ClientGUI implements ClientView
             StandardActionAnswer answer = input.getAction();
             messageHandler(answer);
         }
-
     }
+
+    @Override
+    public void setupHandler(StandardSetupAnswer answer) throws IOException {
+        if(answer instanceof RequestGameInfo)
+        {
+            setuPHandlerAnswerID=1;
+            System.out.println("Setup handler --> game info 1° player");
+            //executor.execute();
+        }
+        if(answer instanceof AvailableWizards)
+        {
+            setuPHandlerAnswerID=2;
+            ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
+            System.out.println("instance of Avaiable Wizz");
+        }
+        if(answer instanceof InfoMessage)
+        {
+            setuPHandlerAnswerID=3;
+            System.out.println(((InfoMessage) answer).getInfo());
+            if(setupState)
+            {
+                setupState = false;
+            }
+        }
+        if(answer instanceof GameStarting)
+        {
+            setuPHandlerAnswerID=4;
+            System.out.println("Game Starting!");
+        }
+    }
+    @Override
+    public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
+    }
+    public Boolean getSetupState() {
+        return setupState;
+    }
+
+
+    public void setServerConnection(String nickname,int team,String IP) throws IOException {
+        serverConnection= new ServerConnection(nickname,team,IP);
+        connection();
+    }
+    public ServerConnection getServerConnection()
+    {
+        return serverConnection;
+    }
+
+    private void connection() throws IOException {
+        serverConnection.establishConnection();
+        listenerGui = new ListenerGui(this);
+        executor.execute(listenerGui);
+    }
+
 
     public int getSetuPHandlerAnswerID() {
         return setuPHandlerAnswerID;
     }
+    public void resetSetuPHandlerAnswerID(){setuPHandlerAnswerID=0;}
 
+    public ArrayList<Wizard> getAvailable() {
+        return available;
+    }
 
 
 

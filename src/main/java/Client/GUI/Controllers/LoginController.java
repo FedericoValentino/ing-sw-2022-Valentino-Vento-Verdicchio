@@ -1,5 +1,7 @@
 package Client.GUI.Controllers;
 
+import Client.GUI.GuiMainStarter;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,24 +27,40 @@ public class LoginController extends Controller{
         teamChoice.setValue("Black");
     }
 
-    public void onClickTryConnection(ActionEvent actionEvent) throws IOException {
-        //se non è il primo prendo i parametri e mando la connection
-        //se è il primo devo salvare i messaggi e caricare la seconda schermata
+    public void onClickTryConnection(ActionEvent actionEvent) throws IOException, InterruptedException {
 
         guiMainStarter.getClientGUI().setServerConnection(nickname.toString(), 1, IP.getText());
-        guiMainStarter.getClientGUI().connection();
 
-        showNextPane(actionEvent);
+       showNextPane(actionEvent);
+
     }
 
-    public void showNextPane(ActionEvent actionEventc) throws IOException {
-        if(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
+    public void showNextPane(ActionEvent actionEvent) throws IOException, InterruptedException {
+        while(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
+        {
+            Thread currThread=Thread.currentThread();
+            currThread.sleep(500);
+            System.out.println("Sto aspettando 500");
+        }
+        if(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==1)
         {
             String path="/GUI/Controllers/Lobby.fxml";
-            FXMLLoader loader =loadNewScreen(path,actionEventc);
+            FXMLLoader loader =loadNewScreen(path,actionEvent);
             LobbyController controller = loader.getController();
             controller.setGuiMainStarter(guiMainStarter);
             System.out.println("FineShowPane");
+
+            guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();
+        }
+        else if(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==2)
+        {
+            String path="/GUI/Controllers/WizardChoice.fxml";
+            FXMLLoader loader =loadNewScreen(path,actionEvent);
+            WizardController controller = loader.getController();
+            controller.setGuiMainStarter(this.getGuiMainStarter());
+            System.out.println("Wizard Choice");
+
+            guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();
         }
     }
 
