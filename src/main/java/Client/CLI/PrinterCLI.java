@@ -622,7 +622,7 @@ public class PrinterCLI
         Player player = getPlayerByName(name);
         Team team = getPlayerTeam(name);
         System.out.println(ANSI_CYAN +  name + ANSI_RESET + "'s information:");
-        System.out.println(team.getColor() + "Team");
+        System.out.println(team.getColor() + " Team");
         if(team.getControlledIslands() != 0) {
             if (team.getControlledIslands() == 1)
                 System.out.println(ANSI_CYAN + name + ANSI_RESET + " and their team control " + team.getControlledIslands() + ANSI_GREEN + " island" + ANSI_RESET + ", (" + ANSI_YELLOW + controlledIslands(team) + ANSI_RESET + ")");
@@ -632,24 +632,24 @@ public class PrinterCLI
         else
             System.out.println(ANSI_CYAN + name + ANSI_RESET + " and their team control no " + ANSI_GREEN + "islands" + ANSI_RESET + " yet");
 
-        if(team.getControlledProfessors() != null)
+        if(team.getControlledProfessors().size() != 0)
             System.out.println(ANSI_CYAN + name + ANSI_RESET + " and their team control these " + ANSI_RED + "professors" + ANSI_RESET + ":" + team.getControlledProfessors());
         else
-            System.out.println(ANSI_CYAN + name + ANSI_RESET + " and" + " their team control no " + ANSI_RED + "professors" + ANSI_RESET + " at the moment");
+            System.out.println(ANSI_CYAN + name + ANSI_RESET + " and their team control no " + ANSI_RED + "professors" + ANSI_RESET + " at the moment");
 
         if(player.isTowerOwner())
         {
             if(player.getSchool().getTowerCount() < 3) {
                 if (player.getSchool().getTowerCount() == 1)
-                    System.out.println(ANSI_CYAN + name + ANSI_RESET + "and their team have" + player.getSchool().getTowerCount() + ANSI_BLUE + "tower" + ANSI_RESET + " left. They are getting close!");
+                    System.out.println(ANSI_CYAN + name + ANSI_RESET + " and their team have " + player.getSchool().getTowerCount() + ANSI_BLUE + " tower" + ANSI_RESET + " left. They are getting close!");
                 else
-                    System.out.println(ANSI_CYAN + name + ANSI_RESET + "and their team have" + player.getSchool().getTowerCount() + ANSI_BLUE + "towers" + ANSI_RESET + " left. They are getting close!");
+                    System.out.println(ANSI_CYAN + name + ANSI_RESET + " and their team have " + player.getSchool().getTowerCount() + ANSI_BLUE + " towers" + ANSI_RESET + " left. They are getting close!");
             }
             else{
                 if(player.getSchool().getTowerCount() == 1)
-                    System.out.println(ANSI_CYAN + ANSI_RESET + name + "and their team have" + player.getSchool().getTowerCount() + ANSI_BLUE + "tower" + ANSI_RESET + " left");
+                    System.out.println(ANSI_CYAN + ANSI_RESET + name + " and their team have " + player.getSchool().getTowerCount() + ANSI_BLUE + " tower" + ANSI_RESET + " left");
                 else
-                    System.out.println(ANSI_CYAN + ANSI_RESET + name + "and their team have" + player.getSchool().getTowerCount() + ANSI_BLUE + "towers" + ANSI_RESET + " left");
+                    System.out.println(ANSI_CYAN + ANSI_RESET + name + " and their team have " + player.getSchool().getTowerCount() + ANSI_BLUE + " towers" + ANSI_RESET + " left");
             }
 
         }
@@ -657,6 +657,7 @@ public class PrinterCLI
             System.out.println(ANSI_CYAN + name + ANSI_RESET + " hasn't played an assistant card yet!");
         else
             System.out.println(ANSI_CYAN + name + ANSI_RESET + " can move " + ANSI_GREEN + "Mother Nature" + ANSI_RESET + " up to " + player.getMaxMotherMovement() + " spaces");
+        System.out.println();
         //Team color, Coins, isole controllate, professori controllati, torri rimanenti(solo se towerHolder), MaxMotherMovement
     }
 
