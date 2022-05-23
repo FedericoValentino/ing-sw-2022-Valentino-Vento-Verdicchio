@@ -673,7 +673,7 @@ public class PrinterCLI
     }
 
     public void showHelp()
-    {
+    {//yo
         System.out.println("Welcome to Eryantis! The game automatically displays on your screen the " + ANSI_GREEN + "Game Board" + ANSI_RESET + ", which comprises:");
         System.out.println("> The " + ANSI_CYAN + "Clouds" + ANSI_RESET + " and the students they contain");
         System.out.println("> The " + ANSI_YELLOW + "Island" + ANSI_RESET + " tiles, on which you can see the island id, the contained students, the number of towers, the team that eventually controls the island and whether mother nature is currently present");
