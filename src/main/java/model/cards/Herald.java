@@ -14,9 +14,9 @@ public class Herald extends CharacterCard implements Serializable {
     public Herald()
     {
         super();
-        this.baseCost=3;
-        this.currentCost=this.baseCost;
-        this.name = CharacterName.HERALD;
+        super.baseCost=3;
+        super.currentCost=super.baseCost;
+        super.name = CharacterName.HERALD;
     }
 
 

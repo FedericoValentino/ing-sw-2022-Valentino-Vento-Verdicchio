@@ -4,10 +4,7 @@ package Server;
 
 import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
-import Client.Messages.SetupMessages.Disconnect;
-import Client.Messages.SetupMessages.ReadyStatus;
-import Client.Messages.SetupMessages.StandardSetupMessage;
-import Client.Messages.SetupMessages.WizardChoice;
+import Client.Messages.SetupMessages.*;
 import Server.Answers.ActionAnswers.*;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.AvailableWizards;
@@ -43,7 +40,6 @@ public class GameHandler extends Thread implements Observer
 
     public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem) throws IOException
     {
-
         this.socket = s;
         this.mainController = m;
         this.ready = false;
@@ -59,39 +55,42 @@ public class GameHandler extends Thread implements Observer
     {
         if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP))
         {
-            if (message instanceof WizardChoice) {
-                synchronized (mainController.getAvailableWizards()) {
-                    Wizard wizard = ((WizardChoice) message).getWizard();
-                    if (mainController.getAvailableWizards().contains(wizard) && MainController.findPlayerByName(mainController.getGame(), socket.getNickname()) == null) {
-                        mainController.AddPlayer(team, socket.getNickname(), 8, wizard);
-                        mainController.getAvailableWizards().remove(wizard);
-                        socket.sendAnswer(new SerializedAnswer(new InfoMessage("Wizard Selected, type " + ANSI_GREEN + "[Ready] " + ANSI_RESET + "if you're ready to start!")));
-                        choseWizard = true;
-                        threadSem.release(1);
-                    } else {
-                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage( ANSI_RED_BACKGROUND + "Sorry, wrong input or Wizard already taken" + ANSI_RESET)));
-                        threadSem.release(1);
+            switch(message.type)
+            {
+                case WIZARD_CHOICE:
+                    synchronized (mainController.getAvailableWizards()) {
+                        Wizard wizard = ((WizardChoice) message).getWizard();
+                        if (mainController.getAvailableWizards().contains(wizard) && MainController.findPlayerByName(mainController.getGame(), socket.getNickname()) == null) {
+                            mainController.AddPlayer(team, socket.getNickname(), 8, wizard);
+                            mainController.getAvailableWizards().remove(wizard);
+                            socket.sendAnswer(new SerializedAnswer(new InfoMessage("Wizard Selected, type " + ANSI_GREEN + "[Ready] " + ANSI_RESET + "if you're ready to start!")));
+                            choseWizard = true;
+                            threadSem.release(1);
+                        } else {
+                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage( ANSI_RED_BACKGROUND + "Sorry, wrong input or Wizard already taken" + ANSI_RESET)));
+                            threadSem.release(1);
+                        }
                     }
-                }
-            }
-            if (message instanceof ReadyStatus) {
-                if (!ready) {
-                    mainController.readyPlayer();
-                    ready = true;
-                    if (mainController.getReadyPlayers() == mainController.getPlayers()) {
-                        System.out.println("All players ready!");
-                        mainController.updateTurnState();
-                        mainController.determineNextPlayer();
-                        mainController.Setup();
-                        mainController.resetReady();
-                        mainController.updateGamePhase(GamePhase.GAMEREADY);
-                    } else {
-                        System.out.println("Waiting for all players to be ready");
+                    break;
+                case READINESS:
+                    if (!ready) {
+                        mainController.readyPlayer();
+                        ready = true;
+                        if (mainController.getReadyPlayers() == mainController.getPlayers()) {
+                            System.out.println("All players ready!");
+                            mainController.updateTurnState();
+                            mainController.determineNextPlayer();
+                            mainController.Setup();
+                            mainController.resetReady();
+                            mainController.updateGamePhase(GamePhase.GAMEREADY);
+                        } else {
+                            System.out.println("Waiting for all players to be ready");
+                        }
                     }
-                }
-            }
-            if (message instanceof Disconnect) {
-                socket.getClient().close();
+                    break;
+                case DISCONNECTION:
+                    socket.getClient().close();
+                    break;
             }
         }
         else
@@ -103,126 +102,158 @@ public class GameHandler extends Thread implements Observer
 
     public void planningHandler(StandardActionMessage message)
     {
-        if (message instanceof DrawFromPouch && planning == 0) {
-            mainController.getPlanningController()
-                    .drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
-            planning++;
-            threadSem.release(1);
-        }
-        if (message instanceof DrawAssistantCard && planning == 1) {
-            mainController.getPlanningController()
-                    .drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
-            if (mainController.getChecks().isLastPlayer(mainController.getGame())) {
-                mainController.updateGamePhase(GamePhase.ACTION);
-                mainController.updateTurnState();
-                mainController.determineNextPlayer();
-                threadSem.release(1);
-            } else {
-                mainController.determineNextPlayer();
-                threadSem.release(1);
-            }
-            planning = 0;
+        switch(message.type)
+        {
+            case CLOUD_CHOICE:
+                if (planning == 0) {
+                    mainController.getPlanningController()
+                            .drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
+                    planning++;
+                    threadSem.release(1);
+                }
+                break;
+            case DRAW_CHOICE:
+                if (planning == 1) {
+                    mainController.getPlanningController()
+                            .drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
+                    if (mainController.getChecks().isLastPlayer(mainController.getGame())) {
+                        mainController.updateGamePhase(GamePhase.ACTION);
+                        mainController.updateTurnState();
+                        mainController.determineNextPlayer();
+                        threadSem.release(1);
+                    } else {
+                        mainController.determineNextPlayer();
+                        threadSem.release(1);
+                    }
+                    planning = 0;
+                }
+                break;
         }
     }
 
     public void actionHandler(StandardActionMessage message)
     {
-        if (message instanceof MoveStudent && (action >= 0 && action <= 2)) {
-            if (((MoveStudent) message).isToIsland()) {
-                mainController.getActionController()
-                        .placeStudentToIsland(((MoveStudent) message).getEntrancePos(),
-                                ((MoveStudent) message).getIslandId(),
-                                mainController.getGame(),
-                                socket.getNickname());
-            } else {
-                mainController.getActionController()
-                        .placeStudentToDiningRoom(((MoveStudent) message).getEntrancePos(),
-                                mainController.getGame(),
-                                socket.getNickname());
-            }
-            action++;
-            threadSem.release(1);
-        }
-        if (message instanceof MoveMN && action == 3) {
-            if (mainController.getChecks().isAcceptableMovementAmount(mainController.getGame(), mainController.getCurrentPlayer(), ((MoveMN) message).getAmount())) {
-                mainController.getActionController().MoveMN(((MoveMN) message).getAmount(), mainController.getGame());
-            } else {
-                socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Too much movement" + ANSI_RESET)));
-            }
-            action++;
-            threadSem.release(1);
-        }
-        if (message instanceof ChooseCloud && action == 4) {
-            if (!mainController.getChecks().isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
-                socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "You selected an empty Cloud" + ANSI_RESET)));
-            } else {
-                mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
-            }
-            action++;
-            threadSem.release(1);
-        }
-        if (message instanceof EndTurn && action == 5) {
-            if (mainController.getChecks().isLastPlayer(mainController.getGame())) {
-                mainController.updateGamePhase(GamePhase.PLANNING);
-                mainController.updateTurnState();
-                mainController.determineNextPlayer();
-            } else {
-                mainController.determineNextPlayer();
-            }
-            action = 0;
-            threadSem.release(1);
-        }
+        switch(message.type)
+        {
+            case STUD_MOVE:
+                if (action >= 0 && action <= 2) {
+                    if (((MoveStudent) message).isToIsland()) {
+                        mainController.getActionController()
+                                .placeStudentToIsland(((MoveStudent) message).getEntrancePos(),
+                                        ((MoveStudent) message).getIslandId(),
+                                        mainController.getGame(),
+                                        socket.getNickname());
+                    } else {
+                        mainController.getActionController()
+                                .placeStudentToDiningRoom(((MoveStudent) message).getEntrancePos(),
+                                        mainController.getGame(),
+                                        socket.getNickname());
+                    }
+                    action++;
+                    threadSem.release(1);
+                }
+                break;
 
+
+            case MN_MOVE:
+                if (action == 3)
+                {
+                    if (mainController.getChecks().isAcceptableMovementAmount(mainController.getGame(), mainController.getCurrentPlayer(), ((MoveMN) message).getAmount())) {
+                        mainController.getActionController().MoveMN(((MoveMN) message).getAmount(), mainController.getGame());
+                    } else {
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Too much movement" + ANSI_RESET)));
+                    }
+                    action++;
+                    threadSem.release(1);
+                }
+                break;
+
+
+            case DRAW_POUCH:
+                if (action == 4) {
+                    if (!mainController.getChecks().isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "You selected an empty Cloud" + ANSI_RESET)));
+                    } else {
+                        mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
+                    }
+                    action++;
+                    threadSem.release(1);
+                }
+                break;
+
+
+            case TURN_END:
+                if (action == 5) {
+                    if (mainController.getChecks().isLastPlayer(mainController.getGame())) {
+                        mainController.updateGamePhase(GamePhase.PLANNING);
+                        mainController.updateTurnState();
+                        mainController.determineNextPlayer();
+                    } else {
+                        mainController.determineNextPlayer();
+                    }
+                    action = 0;
+                    threadSem.release(1);
+                }
+                break;
+
+        }
     }
 
     public void characterHandler(StandardActionMessage message)
     {
-        if (message instanceof PlayCharacter) {
-            if (CharacterController.isPickable(mainController.getGame(),
-                    ((PlayCharacter) message).getCharacterName(),
-                    MainController.findPlayerByName(mainController.getGame(), socket.getNickname()))) {
-                mainController.getCharacterController().pickCard(mainController.getGame(), ((PlayCharacter) message).getCharacterName(), MainController.findPlayerByName(mainController.getGame(), socket.getNickname()));
-            }
-        }
-        if (message instanceof PlayCharacterEffect) {
-            if (mainController.getCharacterController().isEffectPlayable(mainController.getGame(), ((PlayCharacterEffect) message).getCharacterName())) {
-                mainController.getCharacterController().playEffect(((PlayCharacterEffect) message).getCharacterName(), mainController.getGame(), ((PlayCharacterEffect) message).getFirst(), ((PlayCharacterEffect) message).getSecond(), ((PlayCharacterEffect) message).getThird(), ((PlayCharacterEffect) message).getStudentColor());
-            }
+        switch(message.type)
+        {
+            case CHARACTER_PLAY:
+                if (CharacterController.isPickable(mainController.getGame(),
+                        ((PlayCharacter) message).getCharacterName(),
+                        MainController.findPlayerByName(mainController.getGame(), socket.getNickname()))) {
+                    mainController.getCharacterController().pickCard(mainController.getGame(), ((PlayCharacter) message).getCharacterName(), MainController.findPlayerByName(mainController.getGame(), socket.getNickname()));
+                }
+                break;
+            case CHARACTER_ACTIVATE:
+                if (mainController.getCharacterController().isEffectPlayable(mainController.getGame(), ((PlayCharacterEffect) message).getCharacterName())) {
+                    mainController.getCharacterController().playEffect(((PlayCharacterEffect) message).getCharacterName(), mainController.getGame(), ((PlayCharacterEffect) message).getFirst(), ((PlayCharacterEffect) message).getSecond(), ((PlayCharacterEffect) message).getThird(), ((PlayCharacterEffect) message).getStudentColor());
+                }
+                break;
         }
         threadSem.release(1);
+
     }
+
 
     public void messageHandler(StandardActionMessage message)
     {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
         {
-            if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING))
+            if(message.type == ACTIONMESSAGETYPE.CLOUD_CHOICE || message.type == ACTIONMESSAGETYPE.DRAW_CHOICE)
             {
-                planningHandler(message);
+                if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING))
+                        planningHandler(message);
+                else
+                {
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase, you are in Action Phase!" + ANSI_RESET)));
+                }
             }
             else
             {
-                socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase" + ANSI_RESET)));
-            }
-            if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION))
-            {
-                if(message instanceof PlayCharacter || message instanceof PlayCharacterEffect)
+                if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION))
                 {
-                    characterHandler(message);
+                    if(message.type == ACTIONMESSAGETYPE.CHARACTER_PLAY || message.type == ACTIONMESSAGETYPE.CHARACTER_ACTIVATE)
+                        characterHandler(message);
+                    else
+                        actionHandler(message);
                 }
                 else
                 {
-                    actionHandler(message);
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase, you are in Planning Phase!" + ANSI_RESET)));
                 }
             }
-            else
-            {
-                socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase" + ANSI_RESET)));
-            }
+
+
         }
         else
         {
-            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Not your turn!" + ANSI_RESET)));
+            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wait for your turn!" + ANSI_RESET)));
         }
 
     }

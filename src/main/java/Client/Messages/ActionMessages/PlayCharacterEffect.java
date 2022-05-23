@@ -3,7 +3,7 @@ package Client.Messages.ActionMessages;
 import model.boards.token.CharacterName;
 import model.boards.token.Col;
 
-public class PlayCharacterEffect implements StandardActionMessage
+public class PlayCharacterEffect extends StandardActionMessage
 {
     private CharacterName name;
     private int student;
@@ -17,6 +17,7 @@ public class PlayCharacterEffect implements StandardActionMessage
         this.island = island;
         this.currentPlayer = currentPlayer;
         this.studentColor = studentColor;
+        super.type = ACTIONMESSAGETYPE.CHARACTER_ACTIVATE;
     }
 
     public CharacterName getCharacterName() {

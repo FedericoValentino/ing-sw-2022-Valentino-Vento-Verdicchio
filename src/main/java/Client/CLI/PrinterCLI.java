@@ -196,7 +196,7 @@ public class PrinterCLI
                     break;
             }
         }
-        return output;
+        return output + ANSI_RESET;
     }
 
 
@@ -298,10 +298,10 @@ public class PrinterCLI
         String currentPlayerTrimmed = nameTrimmer(currentPlayer);
 
         if(!currentPlayer.equals(name))
-            schools[0] += "This is " + ANSI_CYAN + "[" + nameTrimmed + "]" + ANSI_RESET + "'s school                       \t";
+            schools[0] += "This is " + ANSI_CYAN + "[" + nameTrimmed + "]" + ANSI_RESET + "'s school                       ";
         else
         {
-            schools[0] += ANSI_GREEN + "[" + currentPlayerTrimmed + "]" + ANSI_RESET + ", this is " + ANSI_GREEN + "Your school               \t" + ANSI_RESET;
+            schools[0] += ANSI_GREEN + "[" + currentPlayerTrimmed + "]" + ANSI_RESET + ", this is " + ANSI_GREEN + "Your school               " + ANSI_RESET;
         }
         schools[1] += "____________________________________________\t";
         schools[2] += "|     0  1  2  3  4  5  6  7  8            |\t";
@@ -335,6 +335,7 @@ public class PrinterCLI
                     if (totalSchools == 2) {
                         for (int i = 0; i < 12; i++) {
                             System.out.println(schools[i]);
+                            System.out.println("");
                             totalSchools = 0;
                         }
                         Arrays.fill(schools, "");
@@ -520,52 +521,71 @@ public class PrinterCLI
 
         if(card instanceof Princess)
         {
-            character[0] += "____________________";
-            character[1] += "|  " + card.getCharacterName() + "  |";
-            character[2] += "|       ID: " + addZero(index) + "     |";
+            character[0] += ANSI_YELLOW + "____________________";
+            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "        |" ;
+            character[2] += "|       " + ANSI_RESET +"ID: " + addZero(index) + ANSI_YELLOW + "     |";
             character[3] += "|                  |";
-            character[4] += "| Current Cost: "+ addZero(card.getCurrentCost()) + " |";
+            character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |";
             character[5] += "|                  |";
-            character[6] += "|  " + printStudent(((Princess) card).getStudents(), 2) + "    |";
-            character[7] += "|__________________|\n";
+            character[6] += "|  " + ANSI_RESET + printStudent(((Princess) card).getStudents(), 2);
+            for(int i = 0; i < 4 - ((Princess) card).getStudents().size(); i++)
+            {
+                character[6] += "  O";
+            }
+            character[6] += ANSI_YELLOW + "    |";
+            character[7] += "|__________________|\n" + ANSI_RESET;
         }
         else if(card instanceof Priest)
         {
-            character[0] += "____________________";
-            character[1] += "|  " + card.getCharacterName() + "  |";
-            character[2] += "|       ID: " + addZero(index) + "     |";
+            character[0] += ANSI_YELLOW + "____________________";
+            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "          |";
+            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |";
             character[3] += "|                  |";
-            character[4] += "| Current Cost: "+ addZero(card.getCurrentCost()) + " |";
+            character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |";
             character[5] += "|                  |";
-            character[6] += "|  " + printStudent(((Priest) card).getStudents(), 2) + "    |";
-            character[7] += "|__________________|\n";
+            character[6] += "|  " + ANSI_RESET + printStudent(((Priest) card).getStudents(), 2);
+            for(int i = 0; i < 4 - ((Priest) card).getStudents().size(); i++)
+            {
+                character[6] += "  O";
+            }
+            character[6] += ANSI_YELLOW + "    |";
+            character[7] += "|__________________|\n" + ANSI_RESET;
         }
         else if (card instanceof GrandmaHerbs)
         {
-            character[0] += "____________________";
-            character[1] += "|  " + card.getCharacterName() + "  |";
-            character[2] += "|       ID: " + addZero(index) + "     |";
+            character[0] += ANSI_YELLOW + "____________________";
+            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "   |";
+            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |";
             character[3] += "|                  |";
-            character[4] += "| Current Cost: "+ addZero(card.getCurrentCost()) + " |";
+            character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |";
             character[5] += "|                  |";
-            character[6] += "|  ";
+            character[6] += "|  " + ANSI_RESET;
             for(int i = 0; i < ((GrandmaHerbs) card).getNoEntry(); i++)
             {
-                character[6] += "  X";
+                character[6] += ANSI_RED_BACKGROUND + "  !" + ANSI_RESET;
             }
-            character[6] += "    |";
-            character[7] += "|__________________|\n";
+            for(int i = 0; i < 4 - ((GrandmaHerbs) card).getNoEntry(); i++)
+            {
+                character[6] += "  O";
+            }
+            character[6] += ANSI_YELLOW + "    |";
+            character[7] += "|__________________|\n" + ANSI_RESET;
         }
         else
         {
-            character[0] += "____________________";
-            character[1] += "|  " + card.getCharacterName() + "  |";
-            character[2] += "|       ID: " + addZero(index) + "     |";
+            character[0] += ANSI_YELLOW + "____________________";
+            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW;
+            for(int i = 0; i < "TRUFFLE_HUNTER".length() - card.getCharacterName().toString().length(); i++)
+            {
+                character[1] += " ";
+            }
+            character[1] += "  |";
+            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |";
             character[3] += "|                  |";
-            character[4] += "| Current Cost: "+ addZero(card.getCurrentCost()) + " |";
+            character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |";
             character[5] += "|                  |";
             character[6] += "|                  |";
-            character[7] += "|__________________|\n";
+            character[7] += "|__________________|\n" + ANSI_RESET;
         }
         return character;
     }
@@ -574,7 +594,7 @@ public class PrinterCLI
     {
         String[] inactiveCharacter = new String[8];
         Arrays.fill(inactiveCharacter, "");
-        System.out.println("Inactive Cards:");
+        System.out.println( ANSI_GREEN + "Inactive Cards:" + ANSI_RESET);
         for(int i = 0; i < view.getCurrentCharacterDeck().getDeck().size(); i++)
         {
             inactiveCharacter = printCharacter(view.getCurrentCharacterDeck().getCard(i), inactiveCharacter, i);
@@ -582,10 +602,11 @@ public class PrinterCLI
             {
                 System.out.println(inactiveCharacter[j]);
             }
+            Arrays.fill(inactiveCharacter, "");
         }
 
         Arrays.fill(inactiveCharacter, "");
-        System.out.println("Active Card");
+        System.out.println(ANSI_RED + "Active Card" + ANSI_RESET);
         for(int i = 0; i < view.getCurrentActiveCharacterCard().size(); i++)
         {
             inactiveCharacter = printCharacter(view.getCurrentActiveCharacterCard().get(i), inactiveCharacter, i);

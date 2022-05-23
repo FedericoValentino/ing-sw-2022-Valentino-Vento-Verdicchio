@@ -19,9 +19,9 @@ public class Princess extends CharacterCard implements Serializable {
     /** Class constructor */
     public Princess() {
         super();
-        this.baseCost=2;
-        this.name = CharacterName.PRINCESS;
-        this.currentCost=this.baseCost;
+        super.baseCost = 2;
+        super.name = CharacterName.PRINCESS;
+        super.currentCost = super.baseCost;
         this.students = new ArrayList<>();
     }
 

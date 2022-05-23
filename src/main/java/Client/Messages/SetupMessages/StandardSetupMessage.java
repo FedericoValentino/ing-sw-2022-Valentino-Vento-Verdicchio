@@ -3,5 +3,9 @@ package Client.Messages.SetupMessages;
 import Client.Messages.Message;
 
 
-public interface StandardSetupMessage extends Message {
+public abstract class StandardSetupMessage implements Message
+{
+    public SETUPMESSAGETYPE type;
+
+    public SETUPMESSAGETYPE getType(){return type;}
 }

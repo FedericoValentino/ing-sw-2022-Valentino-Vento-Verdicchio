@@ -1,9 +1,14 @@
 package Client.Messages.SetupMessages;
 
-public class GameMode implements StandardSetupMessage
+public class GameMode extends StandardSetupMessage
 {
     private int maxPlayers;
     private boolean expertGame;
+
+    public GameMode()
+    {
+        super.type = SETUPMESSAGETYPE.MODE;
+    }
 
     public int getMaxPlayers() {
         return maxPlayers;

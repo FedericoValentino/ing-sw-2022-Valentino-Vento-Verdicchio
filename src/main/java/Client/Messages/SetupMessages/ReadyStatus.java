@@ -1,4 +1,8 @@
 package Client.Messages.SetupMessages;
 
-public class ReadyStatus implements StandardSetupMessage{
+public class ReadyStatus extends StandardSetupMessage{
+    public ReadyStatus()
+    {
+        super.type = SETUPMESSAGETYPE.READINESS;
+    }
 }

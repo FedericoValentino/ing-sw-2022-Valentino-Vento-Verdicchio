@@ -15,9 +15,9 @@ public class TruffleHunter extends CharacterCard implements Serializable {
     public TruffleHunter()
     {
         super();
-        this.baseCost=3;
-        this.name = CharacterName.TRUFFLE_HUNTER;
-        this.currentCost=this.baseCost;
+        super.baseCost=3;
+        super.name = CharacterName.TRUFFLE_HUNTER;
+        super.currentCost=super.baseCost;
         this.ChosenColor = null;
     }
 

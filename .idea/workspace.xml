@@ -5,26 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Correction of login structure and adds of lobby functionality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WaitingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Waiting.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/WizardChoice.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Images/mago1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Images/mago2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Images/mago3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GUI/Images/mago4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ACTIONANSWERTYPE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/SETUPANSWERTYPE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ListenerGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ListenerGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Lobby.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Lobby.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ErrorMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestCloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestMotherNatureMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestMotherNatureMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestMoveStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/RequestMoveStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/StandardActionAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/StandardActionAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/StartTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/StartTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ViewMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/ViewMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/WinMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/ActionAnswers/WinMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/AvailableWizards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/AvailableWizards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/GameStarting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/GameStarting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/InfoMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/InfoMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/ReachedPlayerNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/ReachedPlayerNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/RejectConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/RejectConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/RequestGameInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/RequestGameInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/StandardSetupAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/StandardSetupAnswer.java" afterDir="false" />
     </list>
-    <list id="ee02c5e5-569a-492f-b919-0b633e61c400" name="Changes by enric" comment="Wonderful colors" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -52,6 +54,36 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/model/cards/Postman.java">
+      <ranges>
+        <range start1="16" end1="19" start2="16" end2="19" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="39" end1="40" start2="39" end2="40" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java">
+      <ranges>
+        <range start1="198" end1="199" start2="198" end2="199" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="523" end1="526" start2="523" end2="526" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="527" end1="528" start2="527" end2="528" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="529" end1="531" start2="529" end2="536" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="534" end1="537" start2="539" end2="542" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="538" end1="539" start2="543" end2="544" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="540" end1="542" start2="545" end2="552" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="545" end1="548" start2="555" end2="558" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="549" end1="550" start2="559" end2="560" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="551" end1="552" start2="561" end2="562" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="554" end1="555" start2="564" end2="565" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="556" end1="558" start2="566" end2="572" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="561" end1="564" start2="575" end2="583" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="565" end1="566" start2="584" end2="585" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="568" end1="569" start2="587" end2="588" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="577" end1="578" start2="596" end2="597" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+        <range start1="585" end1="585" start2="604" end2="605" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="588" end1="589" start2="608" end2="609" changelist="ee02c5e5-569a-492f-b919-0b633e61c400" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,6 +102,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ing-sw-2021-pantaleone-parlati-naldi-main" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -196,6 +229,13 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
+    </task>
+    <task id="LOCAL-00004" summary="Piccolo change ad un for">
+      <created>1649083498867</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649083498867</updated>
     </task>
     <task id="LOCAL-00005" summary="Aggiunti commenti alle mie classi+fix a qualche metodo">
       <created>1649149990077</created>
@@ -533,14 +573,7 @@
       <option name="project" value="LOCAL" />
       <updated>1653065354243</updated>
     </task>
-    <task id="LOCAL-00053" summary="Correction of login structure and adds of lobby functionality">
-      <created>1653215938599</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1653215938599</updated>
-    </task>
-    <option name="localTasksCounter" value="54" />
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +615,10 @@
     <MESSAGE value="Changes to client and such by valentino and vento" />
     <MESSAGE value="Wonderful colors" />
     <MESSAGE value="Correction of login structure and adds of lobby functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction of login structure and adds of lobby functionality" />
+    <MESSAGE value="Enumeration for server messages, cascade changes in clientCLI to adapt to it" />
+    <MESSAGE value="Enumeration for CLIENT messages, cascade changes in GAMEHANDLER to adapt to it by valentino und vento" />
+    <MESSAGE value="Wonderful enumeration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wonderful enumeration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -595,6 +631,11 @@
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="16" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Server/GameHandler.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

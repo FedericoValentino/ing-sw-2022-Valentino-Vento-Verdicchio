@@ -1,6 +1,6 @@
 package Client.Messages.ActionMessages;
 
-public class MoveStudent implements StandardActionMessage
+public class MoveStudent extends StandardActionMessage
 {
     private int entrancePos;
     private boolean toIsland;
@@ -11,6 +11,7 @@ public class MoveStudent implements StandardActionMessage
         this.entrancePos = entrancePos;
         this.toIsland = toIsland;
         this.islandId = islandId;
+        super.type = ACTIONMESSAGETYPE.STUD_MOVE;
     }
 
     public int getEntrancePos()
