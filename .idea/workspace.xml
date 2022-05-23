@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Cli changes">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added character descriptions in the printer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,13 +180,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00009" summary="Ending CurrentGameStateTest">
-      <created>1650734398158</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1650734398158</updated>
     </task>
     <task id="LOCAL-00010" summary="Test ActionController, fix in giro nel codice">
       <created>1650804761244</created>
@@ -525,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653322853230</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Added character descriptions in the printer">
+      <created>1653323744339</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1653323744339</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +544,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Ridefinizione Client" />
     <MESSAGE value="View Sender completo" />
     <MESSAGE value="SemiWorking CLI" />
     <MESSAGE value="Removed systemout inutile" />
@@ -570,7 +568,8 @@
     <MESSAGE value="CLI updates" />
     <MESSAGE value="Added some colors to the CLI" />
     <MESSAGE value="Cli changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cli changes" />
+    <MESSAGE value="Added character descriptions in the printer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added character descriptions in the printer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
