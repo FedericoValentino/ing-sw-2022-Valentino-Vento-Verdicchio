@@ -153,7 +153,7 @@ public class InputParser
                 resetScreen();
             case "help":
                 printer.showHelp();
-                resetScreen();
+                printView = false;
                 break;
             case "show":
                 showView(words);
