@@ -672,6 +672,45 @@ public class PrinterCLI
         }
     }
 
+    public void showHelp()
+    {
+        System.out.println("Welcome to Eryantis! The game automatically displays on your screen the Game Board, which comprises:");
+        System.out.println("> The Clouds and the students they contain");
+        System.out.println("> The Island tiles, on which you can see the island id, the contained students, the number of towers, the team that eventually controls the island and whether mother nature is currently present");
+        System.out.println("  If Mother nature is on the Island, you will se an X next to the MN field; you will see an O in the other case");
+        System.out.println("> The players' schools, on which you can see the students in the entrance and in the dining room, the controlled professors and the remaining towers");
+        System.out.println();
+        System.out.println("COMMANDS");
+        System.out.println("To give a command simply type the command you want to give and then press the [Enter] key on your keyboard.");
+        System.out.println("Here follows a list of the accepted commands.");
+        System.out.println();
+        System.out.println("Action commands");
+        System.out.println("> move");
+        System.out.println("  >> student");
+        System.out.println("     >> toisland [X]\t moves a student from your entrance to the desired island");
+        System.out.println("     >> todining\t moves a student from your entrance to your dining room");
+        System.out.println("  >> mothernature [X]\t\t where X is an integer number, moves mother nature of the desired number of spaces");
+        System.out.println("> draw assistantcard [X]\t\t lets you play the assistant card at the X index in your deck, where X is an integer number");
+        System.out.println("> refill [X]\t\t lets you refill the selected cloud (must be empty) of students: X is an integer and identifies the cloud to refill");
+        System.out.println("> refillfrom [X]\t\t use the cloud specified by the X integer to refill your entrance of students");
+        System.out.println("> play [X]\t\t choose the character card specified by the index (the X integer) and pay its cost");
+        System.out.println("> activate\t\t activate the effect of the character card you have previously played");
+        System.out.println("> endturn\t\t write this to end your turn");
+        System.out.println();
+        System.out.println("Info commands");
+        System.out.println("> show");
+        System.out.println("  >> island [X]\t\t displays the selected island");
+        System.out.println("  >> islands\t\t displays all islands");
+        System.out.println("  >> school [playerName]\t displays the specified player's school");
+        System.out.println("  >> schools\t\t displays all schools");
+        System.out.println("  >> clouds\t\t displays all clouds");
+        System.out.println("  >> assistants\t\t displays your assistant deck");
+        System.out.println("  >> playedcards\t\t displays the assistant cards currently active and the last assistant cards played");
+        System.out.println("  >> characters\t\t shows active and inactive character cards");
+        System.out.println("  >> player [playerName]\t displays the desired player's game info");
+        System.out.println("  >> players\t\t shows all players' game info");
+    }
+
 
     private ArrayList<String> controlledIslands(Team team)
     {
