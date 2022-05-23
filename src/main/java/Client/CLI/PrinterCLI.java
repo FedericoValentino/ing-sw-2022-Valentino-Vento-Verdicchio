@@ -335,9 +335,9 @@ public class PrinterCLI
                     if (totalSchools == 2) {
                         for (int i = 0; i < 12; i++) {
                             System.out.println(schools[i]);
-                            System.out.println();
                             totalSchools = 0;
                         }
+                        System.out.println();
                         Arrays.fill(schools, "");
                     }
                 }

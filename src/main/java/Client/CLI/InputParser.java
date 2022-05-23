@@ -161,7 +161,7 @@ public class InputParser
                 break;
             case "ready":
                 socket.sendMessage(new SerializedMessage(new ReadyStatus()));
-                resetScreen();
+                printer.cls();
                 break;
             default:
                 System.out.println("Unrecognized input");
@@ -171,17 +171,17 @@ public class InputParser
 
     public void newMove()
     {
-        if(printView)
-        {
-            printer.showCloud();
-            System.out.println();
-            printer.showIsland(-1);
-            System.out.println();
-            printer.showSchool("-1", socket.getNickname());
-            System.out.println();
-        }
         String input = parser.next();
         parseString(input.toLowerCase(Locale.ROOT));
+    }
+    public void printGame()
+    {
+        printer.showCloud();
+        System.out.println();
+        printer.showIsland(-1);
+        System.out.println();
+        printer.showSchool("-1", socket.getNickname());
+        System.out.println();
     }
 
     public void setPrintView(boolean t)
@@ -196,6 +196,6 @@ public class InputParser
     private void resetScreen()
     {
         printer.cls();
-        printView = true;
+        printGame();
     }
 }

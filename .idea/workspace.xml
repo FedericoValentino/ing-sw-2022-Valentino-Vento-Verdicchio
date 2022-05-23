@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Update and correction (but there is also a problem that I have to solve)">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="CLI almost ended, still need to add winner condition&#10;valentino and vento">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
     </list>
-    <list id="88385e38-a294-469a-be60-39b82f75d80e" name="Changes by enric" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
-    </list>
+    <list id="88385e38-a294-469a-be60-39b82f75d80e" name="Changes by enric" comment="Wonderful changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,47 +40,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java">
-      <ranges>
-        <range start1="21" end1="21" start2="21" end2="22" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="82" end1="83" start2="83" end2="83" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="90" end1="91" start2="90" end2="90" changelist="88385e38-a294-469a-be60-39b82f75d80e" />
-        <range start1="92" end1="97" start2="91" end2="91" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="98" end1="98" start2="92" end2="95" changelist="88385e38-a294-469a-be60-39b82f75d80e" />
-        <range start1="101" end1="102" start2="98" end2="99" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="107" end1="108" start2="104" end2="105" changelist="88385e38-a294-469a-be60-39b82f75d80e" />
-        <range start1="113" end1="114" start2="110" end2="111" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="115" end1="119" start2="112" end2="112" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="120" end1="120" start2="113" end2="115" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="122" end1="127" start2="117" end2="117" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="139" end1="139" start2="129" end2="130" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="142" end1="142" start2="133" end2="134" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="144" end1="144" start2="136" end2="137" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="147" end1="147" start2="140" end2="141" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="150" end1="150" start2="144" end2="145" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="153" end1="153" start2="148" end2="149" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="156" end1="156" start2="152" end2="153" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="157" end1="158" start2="154" end2="156" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="161" end1="161" start2="159" end2="160" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="164" end1="164" start2="163" end2="164" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="173" end1="173" start2="173" end2="182" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="177" end1="177" start2="186" end2="200" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java">
-      <ranges>
-        <range start1="337" end1="338" start2="337" end2="338" changelist="88385e38-a294-469a-be60-39b82f75d80e" />
-        <range start1="368" end1="369" start2="368" end2="369" changelist="88385e38-a294-469a-be60-39b82f75d80e" />
-        <range start1="496" end1="497" start2="496" end2="497" changelist="88385e38-a294-469a-be60-39b82f75d80e" />
-        <range start1="511" end1="512" start2="511" end2="512" changelist="88385e38-a294-469a-be60-39b82f75d80e" />
-        <range start1="619" end1="620" start2="619" end2="620" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="621" end1="621" start2="621" end2="638" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="622" end1="622" start2="639" end2="660" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="623" end1="623" start2="661" end2="755" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -229,20 +185,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00004" summary="Piccolo change ad un for">
-      <created>1649083498867</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1649083498867</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Aggiunti commenti alle mie classi+fix a qualche metodo">
-      <created>1649149990077</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1649149990077</updated>
     </task>
     <task id="LOCAL-00006" summary="FIX pudduh">
       <created>1650624622625</created>
@@ -573,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653065354243</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="CLI almost ended, still need to add winner condition&#10;valentino and vento">
+      <created>1653316318601</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1653316318602</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Wonderful changes">
+      <created>1653316334204</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1653316334204</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,8 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)" />
-    <MESSAGE value="Fixed non working test in PlanningControllerTest due to recent changes" />
     <MESSAGE value="Fixed non working test in CurrentGameState due to recent changes.&#10;Now only the Character tests need attention" />
     <MESSAGE value="Protocol" />
     <MESSAGE value="Doppia reference per tutti + fix ai test per farli funzionare" />
@@ -618,7 +572,9 @@
     <MESSAGE value="Enumeration for server messages, cascade changes in clientCLI to adapt to it" />
     <MESSAGE value="Enumeration for CLIENT messages, cascade changes in GAMEHANDLER to adapt to it by valentino und vento" />
     <MESSAGE value="Wonderful enumeration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wonderful enumeration" />
+    <MESSAGE value="CLI almost ended, still need to add winner condition&#10;valentino and vento" />
+    <MESSAGE value="Wonderful changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wonderful changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
