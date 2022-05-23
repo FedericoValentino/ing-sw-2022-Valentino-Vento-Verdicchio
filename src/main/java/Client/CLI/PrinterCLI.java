@@ -647,9 +647,9 @@ public class PrinterCLI
             }
             else{
                 if(player.getSchool().getTowerCount() == 1)
-                    System.out.println(ANSI_CYAN + ANSI_RESET + name + " and their team have " + player.getSchool().getTowerCount() + ANSI_BLUE + " tower" + ANSI_RESET + " left");
+                    System.out.println(ANSI_CYAN +  name + ANSI_RESET + " and their team have " + player.getSchool().getTowerCount() + ANSI_BLUE + " tower" + ANSI_RESET + " left");
                 else
-                    System.out.println(ANSI_CYAN + ANSI_RESET + name + " and their team have " + player.getSchool().getTowerCount() + ANSI_BLUE + " towers" + ANSI_RESET + " left");
+                    System.out.println(ANSI_CYAN + name + ANSI_RESET + " and their team have " + player.getSchool().getTowerCount() + ANSI_BLUE + " towers" + ANSI_RESET + " left");
             }
 
         }
@@ -682,34 +682,34 @@ public class PrinterCLI
         System.out.println("> The players' " + ANSI_RED + "Schools" + ANSI_RESET + ", on which you can see the students in the entrance and in the dining room, the controlled professors and the remaining towers");
         System.out.println();
         System.out.println("COMMANDS");
-        System.out.println("To give a command simply type the command you want to give and then press the [Enter] key on your keyboard.");
+        System.out.println("To give a command simply type the command you want to give and then press the " + ANSI_GREEN + "[Enter]" + ANSI_RESET + " key on your keyboard.");
         System.out.println("Here follows a list of the accepted commands.");
         System.out.println();
         System.out.println(ANSI_GREEN + "Action" + ANSI_RESET + " commands");
         System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " move");
         System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " student");
-        System.out.println(ANSI_PURPLE + "     >>" + ANSI_RESET + " toisland " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t moves a student from your entrance to the desired island");
-        System.out.println(ANSI_PURPLE + "     >>" + ANSI_RESET + " todining\t moves a student from your entrance to your dining room");
+        System.out.println(ANSI_PURPLE + "     >>" + ANSI_RESET + " toisland " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t moves a student from your entrance to the desired island");
+        System.out.println(ANSI_PURPLE + "     >>" + ANSI_RESET + " todining\t\t\t moves a student from your entrance to your dining room");
         System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " mothernature " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t where X is an integer number, moves mother nature of the desired number of spaces");
-        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " draw assistantcard " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t lets you play the assistant card at the X index in your deck, where X is an integer number");
-        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " refill " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t lets you refill the selected cloud (must be empty) of students: X is an integer and identifies the cloud to refill");
-        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " refillfrom " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t use the cloud specified by the X integer to refill your entrance of students");
-        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " play " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t choose the character card specified by the index (the X integer) and pay its cost");
-        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " activate\t\t activate the effect of the character card you have previously played");
-        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " endturn\t\t write this to end your turn");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " draw assistantcard " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t lets you play the assistant card at the X index in your deck, where X is an integer number");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " refill " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t\t\t lets you refill the selected cloud (must be empty) of students: X is an integer and identifies the cloud to refill");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " refillfrom " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t\t use the cloud specified by the X integer to refill your entrance of students");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " play " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t\t\t\t choose the character card specified by the index (the X integer) and pay its cost");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " activate\t\t\t\t\t activate the effect of the character card you have previously played");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " endturn\t\t\t\t\t write this to end your turn");
         System.out.println();
         System.out.println(ANSI_CYAN + "Info" + ANSI_RESET + " commands");
         System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + "show");
-        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " island " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t displays the selected island");
-        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " islands\t\t displays all islands");
+        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " island " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t\t\t displays the selected island");
+        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " islands\t\t\t\t displays all islands");
         System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " school " + ANSI_CYAN + "[playerName]" + ANSI_RESET + "\t displays the specified player's school");
-        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " schools\t\t displays all schools");
-        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " clouds\t\t displays all clouds");
-        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " assistants\t\t displays your assistant deck");
-        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " playedcards\t\t displays the assistant cards currently active and the last assistant cards played");
-        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " characters\t\t shows active and inactive character cards");
+        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " schools\t\t\t\t displays all schools");
+        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " clouds\t\t\t\t\t displays all clouds");
+        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " assistants\t\t\t\t displays your assistant deck");
+        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " playedcards\t\t\t displays the assistant cards currently active and the last assistant cards played");
+        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " characters\t\t\t\t shows active and inactive character cards");
         System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " player " + ANSI_CYAN + "[playerName]" + ANSI_RESET + "\t displays the desired player's game info");
-        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " players\t\t shows all players' game info");
+        System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " players\t\t\t\t shows all players' game info");
     }
 
 
