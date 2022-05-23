@@ -33,7 +33,7 @@ public class WizardController extends Controller{
     @FXML public Pane lord;
     @FXML public Pane sensei;
 
-    private ArrayList<Wizard> available;
+    private ArrayList<Wizard> available=new ArrayList<Wizard>();
     private ArrayList<Pane> paneWizard=new ArrayList<Pane>();
     ToggleGroup group = new ToggleGroup();
 
@@ -44,8 +44,10 @@ public class WizardController extends Controller{
         rb2.setToggleGroup(group);
         rb3.setToggleGroup(group);
         rb4.setToggleGroup(group);
-        available= guiMainStarter.getClientGUI().getAvailable();
-
+    }
+    public void setOpacityStart()
+    {
+        available= this.guiMainStarter.getClientGUI().getAvailable();
         paneWizard.add(druid);
         paneWizard.add(sensei);
         paneWizard.add(lord);
@@ -98,6 +100,7 @@ public class WizardController extends Controller{
 
 
     public void onClickSendChoice(ActionEvent actionEvent) throws InterruptedException {
+        System.out.println("Entrato in onclickSendChoice del wizard");
         String wizardTemp = null;
         if(group.getSelectedToggle()==rb1){wizardTemp=druid.toString().toUpperCase();}
         else if(group.getSelectedToggle()==rb2)

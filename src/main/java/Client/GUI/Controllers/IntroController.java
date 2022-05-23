@@ -26,11 +26,13 @@ public class IntroController extends Controller{
         String path="/GUI/Controllers/Login.fxml";
         FXMLLoader loader=loadNewScreen(path,actionEvent);
         LoginController controller = loader.getController();
-        controller.setGuiMainStarter(guiMainStarter);
+        controller.setGuiMainStarter(this.guiMainStarter);
     }
 
     public void onClickStory(ActionEvent actionEvent) throws IOException {
         String path="/GUI/Controllers/Description.fxml";
-        loadNewScreen(path,actionEvent);
+        FXMLLoader loader=loadNewScreen(path,actionEvent);
+        DescriptionController controller = loader.getController();
+        controller.setGuiMainStarter(this.guiMainStarter);
     }
 }

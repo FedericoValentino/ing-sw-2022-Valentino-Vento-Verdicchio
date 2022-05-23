@@ -1,6 +1,7 @@
 package Client.GUI.Controllers;
 
 import Client.Messages.SetupMessages.GameMode;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +28,7 @@ public class LobbyController extends Controller{
 
     }
 
-    public void onClickTryConnection(ActionEvent actionEvent) throws IOException {
+    public void onClickTryConnection(ActionEvent actionEvent) throws IOException, InterruptedException {
         GameMode gm = new GameMode();
         gm.setMaxPlayers(playersChoice.getValue());
 
@@ -41,13 +42,17 @@ public class LobbyController extends Controller{
         guiMainStarter.getClientGUI().getServerConnection().getOut().reset();
 
         //se corretta la connessione carico una schermata di caricamento
+
+        //watinig
         String path="/GUI/Controllers/Waiting.fxml";
         FXMLLoader loader =loadNewScreen(path,actionEvent);
 
         System.out.println("Waiting SCREEN");
         WaitingController controller = loader.getController();
-        controller.setGuiMainStarter(guiMainStarter);
+        controller.setGuiMainStarter(this.guiMainStarter);
         controller.setActionEvent(actionEvent);
+
+        //guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();
 
         //mi metto in pausa finché non arriva il wizard choice
     }
