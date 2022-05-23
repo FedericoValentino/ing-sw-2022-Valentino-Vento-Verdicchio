@@ -335,7 +335,7 @@ public class PrinterCLI
                     if (totalSchools == 2) {
                         for (int i = 0; i < 12; i++) {
                             System.out.println(schools[i]);
-                            System.out.println("");
+                            System.out.println();
                             totalSchools = 0;
                         }
                         Arrays.fill(schools, "");
@@ -366,7 +366,7 @@ public class PrinterCLI
         }
 
         if(playerNotFoundCounter == view.getCurrentTeams().size() * view.getCurrentTeams().get(0).getPlayers().size())
-            System.out.println( ANSI_RED + "ERROR: " + ANSI_RESET + "sorry, player not found. Are you sure the spelling was correct?");
+            System.out.println( ANSI_RED_BACKGROUND + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
 
         System.out.println();
     }
@@ -494,7 +494,7 @@ public class PrinterCLI
                 System.out.println(currentlyPlayed[i]);
             }
         }
-        System.out.println("");
+        System.out.println();
 
         System.out.println(ANSI_RED+ "Last played" + ANSI_RESET + " assistant cards");
 
@@ -509,7 +509,7 @@ public class PrinterCLI
                 System.out.println("Ops! Nothing to show yet!");
         }
 
-        System.out.println("");
+        System.out.println();
     }
 
 

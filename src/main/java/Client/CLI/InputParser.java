@@ -88,8 +88,10 @@ public class InputParser
                 break;
             case "school": //mostra scuole
                 if(words.length == 3)
-                {
                     printer.showSchool(words[2], socket.getNickname());
+                break;
+            case "schools":
+                printer.showSchool("-1", socket.getNickname());
                 break;
             case "clouds":  //mostra nuvole
                 printer.showCloud();
@@ -100,7 +102,7 @@ public class InputParser
             case "playedcards":
                 printer.showPlayedCards();
                 break;
-            case "character": //mostra personaggi attivi e non
+            case "characters": //mostra personaggi attivi e non
                 printer.showCharacters();
                 break;
             case "player": //mostra status players
