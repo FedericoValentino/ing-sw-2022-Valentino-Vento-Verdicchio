@@ -521,44 +521,44 @@ public class PrinterCLI
 
         if(card instanceof Princess)
         {
-            character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "        |" ;
-            character[2] += "|       " + ANSI_RESET +"ID: " + addZero(index) + ANSI_YELLOW + "     |";
-            character[3] += "|                  |";
-            character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |";
-            character[5] += "|                  |";
+            character[0] += ANSI_YELLOW + "____________________" + description[0];
+            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "        |  " + description[1];
+            character[2] += "|       " + ANSI_RESET +"ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[2];
+            character[3] += "|                  |  " + description[3];
+            character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[4];
+            character[5] += "|                  |  " + description[5];
             character[6] += "|  " + ANSI_RESET + printStudent(((Princess) card).getStudents(), 2);
             for(int i = 0; i < 4 - ((Princess) card).getStudents().size(); i++)
             {
                 character[6] += "  O";
             }
-            character[6] += ANSI_YELLOW + "    |";
-            character[7] += "|__________________|\n" + ANSI_RESET;
+            character[6] += ANSI_YELLOW + "    |  " + description[6];
+            character[7] += "|__________________|  " + ANSI_RESET + description[7] + "\n";
         }
         else if(card instanceof Priest)
         {
-            character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "          |";
-            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |";
-            character[3] += "|                  |";
-            character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |";
-            character[5] += "|                  |";
+            character[0] += ANSI_YELLOW + "____________________  " + description[0];
+            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "          |  " + description[1];
+            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[2];
+            character[3] += "|                  |  " + description[3];
+            character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[4];
+            character[5] += "|                  |  " + description[5];
             character[6] += "|  " + ANSI_RESET + printStudent(((Priest) card).getStudents(), 2);
             for(int i = 0; i < 4 - ((Priest) card).getStudents().size(); i++)
             {
                 character[6] += "  O";
             }
-            character[6] += ANSI_YELLOW + "    |";
-            character[7] += "|__________________|\n" + ANSI_RESET;
+            character[6] += ANSI_YELLOW + "    |  " + description[6];
+            character[7] += "|__________________|  " + ANSI_RESET + description[7] + "\n";
         }
         else if (card instanceof GrandmaHerbs)
         {
-            character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "   |";
-            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |";
-            character[3] += "|                  |";
-            character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |";
-            character[5] += "|                  |";
+            character[0] += ANSI_YELLOW + "____________________  " + description[0];
+            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "   |  " + description[1];
+            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[2];
+            character[3] += "|                  |  " + description[3];
+            character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[4];
+            character[5] += "|                  |  " + description[5];
             character[6] += "|  " + ANSI_RESET;
             for(int i = 0; i < ((GrandmaHerbs) card).getNoEntry(); i++)
             {
@@ -568,24 +568,24 @@ public class PrinterCLI
             {
                 character[6] += "  O";
             }
-            character[6] += ANSI_YELLOW + "    |";
-            character[7] += "|__________________|\n" + ANSI_RESET;
+            character[6] += ANSI_YELLOW + "    |  " + description[6];
+            character[7] += "|__________________|  " + ANSI_RESET + description[7] + "\n";
         }
         else
         {
-            character[0] += ANSI_YELLOW + "____________________";
+            character[0] += ANSI_YELLOW + "____________________  " + description[0];
             character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW;
             for(int i = 0; i < "TRUFFLE_HUNTER".length() - card.getCharacterName().toString().length(); i++)
             {
                 character[1] += " ";
             }
-            character[1] += "  |";
-            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |";
-            character[3] += "|                  |";
-            character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |";
-            character[5] += "|                  |";
-            character[6] += "|                  |";
-            character[7] += "|__________________|\n" + ANSI_RESET;
+            character[1] += "  |  " + description[1];
+            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[2];
+            character[3] += "|                  |  " + description[3];
+            character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[4];
+            character[5] += "|                  |  " + description[5];
+            character[6] += "|                  |  " + description[6];
+            character[7] += "|__________________|  " + ANSI_RESET + description[7] + "\n";
         }
         return character;
     }
@@ -676,10 +676,10 @@ public class PrinterCLI
     public void showHelp()
     {//yo
         System.out.println("Welcome to Eryantis! The game automatically displays on your screen the " + ANSI_GREEN + "Game Board" + ANSI_RESET + ", which comprises:");
-        System.out.println("> The " + ANSI_CYAN + "Clouds" + ANSI_RESET + " and the students they contain");
-        System.out.println("> The " + ANSI_YELLOW + "Island" + ANSI_RESET + " tiles, on which you can see the island id, the contained students, the number of towers, the team that eventually controls the island and whether mother nature is currently present");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " The " + ANSI_CYAN + "Clouds" + ANSI_RESET + " and the students they contain");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " The " + ANSI_YELLOW + "Island" + ANSI_RESET + " tiles, on which you can see the island id, the contained students, the number of towers, the team that eventually controls the island and whether mother nature is currently present");
         System.out.println("  If Mother nature is on the Island, you will se an X next to the MN field; you will see an O in the other case");
-        System.out.println("> The players' " + ANSI_RED + "Schools" + ANSI_RESET + ", on which you can see the students in the entrance and in the dining room, the controlled professors and the remaining towers");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " The players' " + ANSI_RED + "Schools" + ANSI_RESET + ", on which you can see the students in the entrance and in the dining room, the controlled professors and the remaining towers");
         System.out.println();
         System.out.println("COMMANDS");
         System.out.println("To give a command simply type the command you want to give and then press the " + ANSI_GREEN + "[Enter]" + ANSI_RESET + " key on your keyboard.");
@@ -699,7 +699,7 @@ public class PrinterCLI
         System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " endturn\t\t\t\t\t write this to end your turn");
         System.out.println();
         System.out.println(ANSI_CYAN + "Info" + ANSI_RESET + " commands");
-        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + "show");
+        System.out.println(ANSI_YELLOW + ">" + ANSI_RESET + " show");
         System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " island " + ANSI_CYAN + "[X]" + ANSI_RESET + "\t\t\t\t displays the selected island");
         System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " islands\t\t\t\t displays all islands");
         System.out.println(ANSI_RED + "  >>" + ANSI_RESET + " school " + ANSI_CYAN + "[playerName]" + ANSI_RESET + "\t displays the specified player's school");

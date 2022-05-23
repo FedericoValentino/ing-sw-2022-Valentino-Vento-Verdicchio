@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added some colors to the CLI">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Cli changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,13 +181,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00008" summary="Reloaded version with all the changes">
-      <created>1650731045638</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1650731045638</updated>
     </task>
     <task id="LOCAL-00009" summary="Ending CurrentGameStateTest">
       <created>1650734398158</created>
@@ -524,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653321305619</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Cli changes">
+      <created>1653322853230</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1653322853230</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Doppia reference per tutti + fix ai test per farli funzionare" />
     <MESSAGE value="Ridefinizione Client" />
     <MESSAGE value="View Sender completo" />
     <MESSAGE value="SemiWorking CLI" />
@@ -569,7 +569,8 @@
     <MESSAGE value="Wonderful changes" />
     <MESSAGE value="CLI updates" />
     <MESSAGE value="Added some colors to the CLI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some colors to the CLI" />
+    <MESSAGE value="Cli changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cli changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
