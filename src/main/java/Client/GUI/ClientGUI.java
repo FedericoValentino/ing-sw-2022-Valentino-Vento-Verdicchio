@@ -1,6 +1,7 @@
 package Client.GUI;
 
 import Client.ClientView;
+import Client.GUI.Controllers.WaitingController;
 import Client.ServerConnection;
 import Server.Answers.ActionAnswers.StandardActionAnswer;
 import Server.Answers.SerializedAnswer;
@@ -22,6 +23,7 @@ public class ClientGUI implements ClientView
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ListenerGui listenerGui;
     private int setuPHandlerAnswerID=0;
+
     private ArrayList<Wizard> available= new ArrayList<Wizard>();
 
     @Override
@@ -103,7 +105,7 @@ public class ClientGUI implements ClientView
     public int getSetuPHandlerAnswerID() {
         return setuPHandlerAnswerID;
     }
-    public void resetSetuPHandlerAnswerID(){setuPHandlerAnswerID=0;}
+    public void setSetuPHandlerAnswerID(int s){setuPHandlerAnswerID=s;}
 
     public ArrayList<Wizard> getAvailable() {
         return available;

@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added character descriptions in the printer">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Update and correction (but there is also a problem that I have to solve)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WaitingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WaitingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +187,27 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
+    </task>
+    <task id="LOCAL-00007" summary="Cambiato gestione coin in CurrGame e Player, ora considera correttamente sia spese legate alla scuola sia alle carte. Urge correzione dei test relativi">
+      <created>1650707643245</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650707643245</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Reloaded version with all the changes">
+      <created>1650731045638</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650731045638</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ending CurrentGameStateTest">
+      <created>1650734398158</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650734398158</updated>
     </task>
     <task id="LOCAL-00010" summary="Test ActionController, fix in giro nel codice">
       <created>1650804761244</created>
@@ -503,28 +531,7 @@
       <option name="project" value="LOCAL" />
       <updated>1653317756558</updated>
     </task>
-    <task id="LOCAL-00056" summary="Added some colors to the CLI">
-      <created>1653321305619</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1653321305619</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Cli changes">
-      <created>1653322853230</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1653322853230</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Added character descriptions in the printer">
-      <created>1653323744339</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1653323744339</updated>
-    </task>
-    <option name="localTasksCounter" value="59" />
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,6 +551,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Protocol" />
+    <MESSAGE value="Doppia reference per tutti + fix ai test per farli funzionare" />
+    <MESSAGE value="Ridefinizione Client" />
     <MESSAGE value="View Sender completo" />
     <MESSAGE value="SemiWorking CLI" />
     <MESSAGE value="Removed systemout inutile" />
@@ -566,10 +576,7 @@
     <MESSAGE value="CLI almost ended, still need to add winner condition&#10;valentino and vento" />
     <MESSAGE value="Wonderful changes" />
     <MESSAGE value="CLI updates" />
-    <MESSAGE value="Added some colors to the CLI" />
-    <MESSAGE value="Cli changes" />
-    <MESSAGE value="Added character descriptions in the printer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added character descriptions in the printer" />
+    <option name="LAST_COMMIT_MESSAGE" value="CLI updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

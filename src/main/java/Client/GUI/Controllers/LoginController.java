@@ -34,12 +34,14 @@ public class LoginController extends Controller{
     }
 
     public void showNextPane(ActionEvent actionEvent) throws IOException, InterruptedException {
-        while(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
+        //do il tempo al thread di vedere se nel clientGUI è arrivato un messaggio
+        if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
         {
             Thread currThread=Thread.currentThread();
             currThread.sleep(500);
             System.out.println("Sto aspettando 500");
         }
+        //adesso faccio una serie di if per vedere se è il primo, uno nel mezzo o l'ultimo player a joinare
         if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==1)
         {
             String path="/GUI/Controllers/Lobby.fxml";
@@ -52,16 +54,29 @@ public class LoginController extends Controller{
         }
         else if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==2)
         {
+
             //wizard
             String path="/GUI/Controllers/WizardChoice.fxml";
             FXMLLoader loader =loadNewScreen(path,actionEvent);
-            WizardController controller = loader.getController();
+                WizardController controller = loader.getController();
             controller.setGuiMainStarter(this.guiMainStarter);
             controller.setOpacityStart();
 
             System.out.println("Wizard Choice");
 
-            guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();
+            //guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();*/
+        }
+        else
+        {
+            this.guiMainStarter.getClientGUI().setSetuPHandlerAnswerID(5);
+            String path="/GUI/Controllers/Waiting.fxml";
+            FXMLLoader loader =loadNewScreen(path,actionEvent);
+
+            WaitingController controller = loader.getController();
+            controller.setGuiMainStarter(this.guiMainStarter);
+            controller.setActionEvent(actionEvent);
+            System.out.println("Passo a waiting and show");
+            controller.waitingAndShow();
         }
     }
 

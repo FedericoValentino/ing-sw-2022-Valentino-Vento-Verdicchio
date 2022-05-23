@@ -12,26 +12,32 @@ public class WaitingController extends Controller{
         this.actionEvent = actionEvent;
     }
 
-    public void waitingAndShow() throws IOException, InterruptedException {
+    public Runnable waitingAndShow() throws IOException, InterruptedException {
+
+        //mi metto in pausa finché non arriva il wizard choice
+        System.out.println("Waiting SCREEN");
         while(true)
         {
-            if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
+            System.out.println("Waiting SCREEN-->while");
+            if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0 ||this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==1)
             {
-                System.out.println("Sto aspettando 500 nel waiting chiamato da waiting controller");
+                System.out.println("Sto aspettando 2000 nel waiting chiamato da waiting controller");
                 Thread currThread=Thread.currentThread();
-                currThread.sleep(500);
+                currThread.sleep(2000);
             }
             else if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==2)
             {
                 System.out.println("Entrato in waiting and show e nel id=2");
+
                 String path="/GUI/Controllers/WizardChoice.fxml";
                 FXMLLoader loader =loadNewScreen(path,actionEvent);
                 WizardController controller = loader.getController();
                 controller.setGuiMainStarter(this.guiMainStarter);
-                controller.setOpacityStart();
+               // controller.setOpacityStart();
+
                 System.out.println("Wizard Choice");
 
-                guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();
+                guiMainStarter.getClientGUI().setSetuPHandlerAnswerID(0);
             }
 
         }

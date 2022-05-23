@@ -17,15 +17,12 @@ public class LobbyController extends Controller{
     @FXML public ChoiceBox <Boolean>difficultyChoice;
     @FXML public Button SendChoice;
 
-
     public void initialize()
     {
         playersChoice.getItems().addAll(2,3,4);
         playersChoice.setValue(2);
-
         difficultyChoice.getItems().addAll(true,false);
         difficultyChoice.setValue(true);
-
     }
 
     public void onClickTryConnection(ActionEvent actionEvent) throws IOException, InterruptedException {
@@ -42,19 +39,23 @@ public class LobbyController extends Controller{
         guiMainStarter.getClientGUI().getServerConnection().getOut().reset();
 
         //se corretta la connessione carico una schermata di caricamento
+        showNextPane(actionEvent);
+    }
 
-        //watinig
+    public void showNextPane(ActionEvent actionEvent) throws InterruptedException, IOException {
+        Thread currThread=Thread.currentThread();
+        currThread.sleep(1000);
+        System.out.println("Sto aspettando");
+
         String path="/GUI/Controllers/Waiting.fxml";
         FXMLLoader loader =loadNewScreen(path,actionEvent);
 
-        System.out.println("Waiting SCREEN");
         WaitingController controller = loader.getController();
         controller.setGuiMainStarter(this.guiMainStarter);
         controller.setActionEvent(actionEvent);
+        System.out.println("Passo a waiting and show");
 
-        //guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();
-
-        //mi metto in pausa finché non arriva il wizard choice
+        System.out.println("stage: "+guiMainStarter.getMainStage());
+        controller.waitingAndShow();
     }
-
 }

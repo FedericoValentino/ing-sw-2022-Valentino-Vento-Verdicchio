@@ -51,24 +51,12 @@ public class GuiMainStarter extends Application {
 
         IntroController controller = loader.getController();
         controller.setGuiMainStarter(this);
+        System.out.println("MAIN STAGE : "+mainStage);
     }
-
-
-
-
-    public void callWaitService(Callable<Boolean> condition, Runnable viewToLoad, int delay){
-        ScheduledExecutorService waitService = Executors.newSingleThreadScheduledExecutor();
-        waitService.scheduleAtFixedRate(() -> {
-            try {
-                if(condition.call()){
-                    Platform.runLater(viewToLoad);
-                    waitService.shutdown();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }, delay, delay, TimeUnit.MILLISECONDS);
+//Creata solo per un test, poi va eliminata
+    public Stage getMainStage()
+    {
+        return mainStage;
     }
-
 }
 
