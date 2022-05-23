@@ -84,6 +84,11 @@ public class Checks {
         return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && !game.getCurrentClouds()[cloudIndex].isEmpty();
     }
 
+    public boolean isCloudFillable(CurrentGameState game, int cloudIndex)
+    {
+        return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && game.getCurrentClouds()[cloudIndex].isEmpty();
+    }
+
 
     /** Checks if the pouch can be used to extract students
      * @param game an instance of the game

@@ -105,15 +105,22 @@ public class GameHandler extends Thread implements Observer
         switch(message.type)
         {
             case CLOUD_CHOICE:
-                if (planning == 0) {
+                if (planning == 0 && mainController.getChecks().isCloudFillable(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
                     mainController.getPlanningController()
                             .drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
                     planning++;
                     threadSem.release(1);
                 }
+                else
+                {
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Cloud is not empty or wrong index")));
+                }
                 break;
             case DRAW_CHOICE:
-                if (planning == 1) {
+                if (planning == 1 &&
+                        mainController.getChecks().isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()) &&
+                        !mainController.getChecks().isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()) &&
+                        mainController.getChecks().canCardStillBePlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex())) {
                     mainController.getPlanningController()
                             .drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
                     if (mainController.getChecks().isLastPlayer(mainController.getGame())) {
@@ -126,6 +133,10 @@ public class GameHandler extends Thread implements Observer
                         threadSem.release(1);
                     }
                     planning = 0;
+                }
+                else
+                {
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Wrong Card!")));
                 }
                 break;
         }
