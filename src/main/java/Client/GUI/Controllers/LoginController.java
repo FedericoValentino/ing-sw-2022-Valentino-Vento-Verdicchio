@@ -34,28 +34,31 @@ public class LoginController extends Controller{
     }
 
     public void showNextPane(ActionEvent actionEvent) throws IOException, InterruptedException {
-        while(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
+        while(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
         {
             Thread currThread=Thread.currentThread();
             currThread.sleep(500);
             System.out.println("Sto aspettando 500");
         }
-        if(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==1)
+        if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==1)
         {
             String path="/GUI/Controllers/Lobby.fxml";
             FXMLLoader loader =loadNewScreen(path,actionEvent);
             LobbyController controller = loader.getController();
-            controller.setGuiMainStarter(guiMainStarter);
+            controller.setGuiMainStarter(this.guiMainStarter);
+
             System.out.println("FineShowPane");
 
-            guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();
         }
-        else if(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==2)
+        else if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==2)
         {
+            //wizard
             String path="/GUI/Controllers/WizardChoice.fxml";
             FXMLLoader loader =loadNewScreen(path,actionEvent);
             WizardController controller = loader.getController();
-            controller.setGuiMainStarter(this.getGuiMainStarter());
+            controller.setGuiMainStarter(this.guiMainStarter);
+            controller.setOpacityStart();
+
             System.out.println("Wizard Choice");
 
             guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();

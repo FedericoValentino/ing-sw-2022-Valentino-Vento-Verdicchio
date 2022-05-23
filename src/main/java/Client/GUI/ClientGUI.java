@@ -22,7 +22,7 @@ public class ClientGUI implements ClientView
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ListenerGui listenerGui;
     private int setuPHandlerAnswerID=0;
-    private ArrayList<Wizard> available;
+    private ArrayList<Wizard> available= new ArrayList<Wizard>();
 
     @Override
     public void run() {

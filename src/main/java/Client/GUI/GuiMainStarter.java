@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.util.concurrent.*;
 
 public class GuiMainStarter extends Application {
-    private Stage mainStage;
+    private static Stage mainStage;
     protected static ClientGUI ClientGUI;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
