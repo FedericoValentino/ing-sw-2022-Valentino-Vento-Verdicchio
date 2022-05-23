@@ -8,6 +8,7 @@ import model.boards.token.Student;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Priest extends CharacterCard implements Serializable {
 
@@ -58,7 +59,13 @@ public class Priest extends CharacterCard implements Serializable {
 
     @Override
     public String[] description() {
-        return new String[0];
+        String[] priestDescription = new String[7];
+        Arrays.fill(priestDescription, "");
+        priestDescription[0] += "The priest lives with his apprentices in a secluded convent, located amongst the hills of an unspecified island.";
+        priestDescription[1] += "For a small fee, he will instruct one of his students to do your bidding for the rest of the game. You could order him to make ";
+        priestDescription[2] += "some delicious coffee; or you could send him to an island of your choice (which actually is what you should make him do regardless).";
+        priestDescription[3] += "Use this card to help you gain some critical influence on contested islands.";
+        return priestDescription;
     }
 
     public ArrayList<Student> getStudents() {

@@ -7,6 +7,7 @@ import model.boards.token.Col;
 import model.boards.token.Student;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class TruffleHunter extends CharacterCard implements Serializable {
     private Col ChosenColor;
@@ -61,7 +62,16 @@ public class TruffleHunter extends CharacterCard implements Serializable {
 
     @Override
     public String[] description() {
-        return new String[0];
+        String[] truffleHunterDescription = new String[7];
+        Arrays.fill(truffleHunterDescription, "");
+        truffleHunterDescription[0] += "This peculiar individual, as the name might imply, is a mushroom enthusiast, his \"hunting\" sessions consisting ";
+        truffleHunterDescription[1] += "of slow paced walks in the woods, looking under every fern and heap of grass to find another example to add to his prized possessions.";
+        truffleHunterDescription[2] += "What on earth could this man offer to you? Well, for a significant cost, he will bring \"hunting\" with him all the students of ";
+        truffleHunterDescription[3] += "the selected color that he will find on the island on which mother nature has ended her movement, ensuring that they do not count ";
+        truffleHunterDescription[4] += "towards the influence calculation.";
+        truffleHunterDescription[5] += "Use this character to help you mitigate your incompetence in gaining control of professors, or just to demonstrate that ";
+        truffleHunterDescription[6] += "you too, like the Knight, can conquer a well defended island, albeit with a little help.";
+        return truffleHunterDescription;
     }
 
 
