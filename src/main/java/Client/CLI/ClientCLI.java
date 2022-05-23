@@ -89,6 +89,10 @@ public class ClientCLI implements ClientView
                 break;
             case VIEW:
                 MyView.parse((ViewMessage) answer);
+                if(!stdin.getPrintView())
+                {
+                    stdin.setPrintView(true);
+                }
                 break;
             case CLOUD_REQ:
                 System.out.println(((RequestCloud) answer).getMessage());

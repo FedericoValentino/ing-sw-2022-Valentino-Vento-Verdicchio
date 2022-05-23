@@ -617,8 +617,102 @@ public class PrinterCLI
         }
     }
 
-    public void showPlayer(int id)
+    public void showPlayer(String name)
     {
+        Player player = getPlayerByName(name);
+        Team team = getPlayerTeam(name);
+        System.out.println( name + "'s information:");
+        System.out.println(team.getColor() + "Team");
+        if(team.getControlledIslands() != 0) {
+            if (team.getControlledIslands() == 1)
+                System.out.println(name + " and their team control " + team.getControlledIslands() + " island, (" + controlledIslands(team) + ")");
+            else
+                System.out.println(name + " and their team control " + team.getControlledIslands() + " islands, (" + controlledIslands(team) + ")");
+        }
+        else
+            System.out.println( name + " and their team control no islands yet");
 
+        if(team.getControlledProfessors() != null)
+            System.out.println( name + " and their team control these professors:" + team.getControlledProfessors());
+        else
+            System.out.println( name + " and" + " their team control no professors at the moment");
+
+        if(player.isTowerOwner())
+        {
+            if(player.getSchool().getTowerCount() < 3) {
+                if (player.getSchool().getTowerCount() == 1)
+                    System.out.println(name + "and their team have" + player.getSchool().getTowerCount() + "tower left. They are getting close!");
+                else
+                    System.out.println(name + "and their team have" + player.getSchool().getTowerCount() + "towers left. They are getting close!");
+            }
+            else{
+                if(player.getSchool().getTowerCount() == 1)
+                    System.out.println(name + "and their team have" + player.getSchool().getTowerCount() + "tower left");
+                else
+                    System.out.println(name + "and their team have" + player.getSchool().getTowerCount() + "towers left");
+            }
+
+        }
+        if(player.getMaxMotherMovement() == 0)
+            System.out.println( name + " hasn't played an assistant card yet!");
+        else
+            System.out.println( name + " can move Mother Nature up to " + player.getMaxMotherMovement() + " spaces");
+        //Team color, Coins, isole controllate, professori controllati, torri rimanenti(solo se towerHolder), MaxMotherMovement
+    }
+
+
+    public void showPlayers()
+    {
+        for(Team team: view.getCurrentTeams())
+        {
+            for(Player player: team.getPlayers())
+            {
+                showPlayer(player.getNome());
+            }
+        }
+    }
+
+
+    private ArrayList<String> controlledIslands(Team team)
+    {
+        ArrayList<String> islands = new ArrayList<>();
+        for(Island island : view.getCurrentIslands().getIslands())
+        {
+            if(island.getOwnership().equals(team.getColor()))
+                islands.add(addZero(island.getIslandId()));
+        }
+        return islands;
+    }
+
+    private Player getPlayerByName(String name)
+    {
+        for(Team team: view.getCurrentTeams())
+        {
+            for(Player player: team.getPlayers())
+            {
+                if(player.getNome().equals(name))
+                {
+                    return player;
+                }
+            }
+        }
+        System.out.println( ANSI_RED_BACKGROUND + "sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
+        return null;
+    }
+
+    private Team getPlayerTeam(String name)
+    {
+        for(Team team: view.getCurrentTeams())
+        {
+            for(Player player: team.getPlayers())
+            {
+                if(player.getNome().equals(name))
+                {
+                    return team;
+                }
+            }
+        }
+        System.out.println( ANSI_RED_BACKGROUND + "sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
+        return null;
     }
 }

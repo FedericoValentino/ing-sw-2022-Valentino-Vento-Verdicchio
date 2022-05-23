@@ -98,6 +98,7 @@ public class Player
   {
     lastPlayedCard = currentAssistantCard;
     currentAssistantCard = null;
+    this.MaxMotherMovement = 0;
     game.notify(game.modelToJson());
   }
 

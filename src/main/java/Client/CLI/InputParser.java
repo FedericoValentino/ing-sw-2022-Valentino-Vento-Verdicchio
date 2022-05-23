@@ -19,6 +19,7 @@ public class InputParser
     private String playerName;
     private ServerConnection socket;
     private PrinterCLI printer;
+    private Boolean printView = false;
 
     public InputParser(ServerConnection socket, LightView lv)
     {
@@ -80,7 +81,6 @@ public class InputParser
                 if(words.length == 3)
                 {
                     printer.showIsland(valueOf(words[2]));
-
                 }
                 break;
             case "islands":
@@ -90,16 +90,11 @@ public class InputParser
                 if(words.length == 3)
                 {
                     printer.showSchool(words[2], socket.getNickname());
-                }
-                else
-                {
-                    printer.showSchool("-1", socket.getNickname());
-                }
                 break;
             case "clouds":  //mostra nuvole
                 printer.showCloud();
                 break;
-            case "assistant": //mostra carte assistente
+            case "assistants": //mostra carte assistente
                 printer.showAssistantDeck(socket.getNickname());
                 break;
             case "playedcards":
@@ -111,19 +106,12 @@ public class InputParser
             case "player": //mostra status players
                 if(words.length == 3)
                 {
-                    printer.showPlayer(valueOf(words[2]));
-                }
-                else
-                {
-                    printer.showPlayer(-1);
+                    printer.showPlayer(words[2]);
                 }
                 break;
+            case "players":
+                printer.showPlayers();
         }
-    }
-
-    public void printHelp()
-    {
-
     }
 
     public void parseString(String input)
@@ -137,31 +125,41 @@ public class InputParser
         {
             case "refill":
                 socket.sendMessage(new SerializedMessage(new DrawFromPouch(valueOf(words[1]))));
+                resetScreen();
                 break;
             case "refillfrom":
                 socket.sendMessage(new SerializedMessage(new ChooseCloud(valueOf(words[1]))));
+                resetScreen();
             case "draw":
                 DrawParser(words);
+                resetScreen();
                 break;
             case "activate":
                 CharacterActivationParser(words);
+                resetScreen();
                 break;
             case "move":
                 MoveParser(words);
+                resetScreen();
                 break;
             case "play":
                 CharacterParser(words);
+                resetScreen();
                 break;
             case "endturn":
                 socket.sendMessage(new SerializedMessage(new EndTurn()));
+                resetScreen();
             case "help":
-                printHelp();
+                printer.showHelp();
+                resetScreen();
                 break;
             case "show":
                 showView(words);
+                printView = false;
                 break;
             case "ready":
                 socket.sendMessage(new SerializedMessage(new ReadyStatus()));
+                resetScreen();
                 break;
             default:
                 System.out.println("Unrecognized input");
@@ -171,8 +169,31 @@ public class InputParser
 
     public void newMove()
     {
+        if(printView)
+        {
+            printer.showCloud();
+            System.out.println();
+            printer.showIsland(-1);
+            System.out.println();
+            printer.showSchool("-1", socket.getNickname());
+            System.out.println();
+        }
         String input = parser.next();
         parseString(input.toLowerCase(Locale.ROOT));
     }
 
+    public void setPrintView(boolean t)
+    {
+        this.printView = t;
+    }
+
+    public Boolean getPrintView() {
+        return printView;
+    }
+
+    private void resetScreen()
+    {
+        printer.cls();
+        printView = true;
+    }
 }
