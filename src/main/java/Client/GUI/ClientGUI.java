@@ -51,10 +51,12 @@ public class ClientGUI implements ClientView
 
     @Override
     public void setupHandler(StandardSetupAnswer answer) throws IOException {
+        System.out.println(Thread.currentThread());
         if(answer instanceof RequestGameInfo)
         {
             setuPHandlerAnswerID=1;
             System.out.println("Setup handler --> game info 1° player");
+            Thread.interrupt();
             //executor.execute();
         }
         if(answer instanceof AvailableWizards)

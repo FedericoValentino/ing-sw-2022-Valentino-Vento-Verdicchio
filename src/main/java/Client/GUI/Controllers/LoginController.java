@@ -18,13 +18,14 @@ public class LoginController extends Controller{
     @FXML public Button TryConn;
     @FXML public ChoiceBox <String>teamChoice;
 
-
+/**It's call every time logiController.fxml is load as the new scene
+ * In this method I set the initial value of the team choice that we can select**/
     public void initialize()
     {
         teamChoice.getItems().addAll("Grey","White","Black");
         teamChoice.setValue("Black");
     }
-
+/**This method send all the attributes for the construction of the connection with the server **/
     public void onClickTryConnection(ActionEvent actionEvent) throws IOException, InterruptedException {
 
         guiMainStarter.getClientGUI().setServerConnection(nickname.toString(), 1, IP.getText());
@@ -32,7 +33,10 @@ public class LoginController extends Controller{
        showNextPane(actionEvent);
 
     }
-
+/**
+ * This method change the screen. The new screen is choose due too the value of getSetuPHandlerAnswerID()
+ * If it's 0 we wait, if it's 1 we load the lobby.fxml, if 2 we load Wizard.fxml and else Waiting.fxml
+ * **/
     public void showNextPane(ActionEvent actionEvent) throws IOException, InterruptedException {
         //do il tempo al thread di vedere se nel clientGUI è arrivato un messaggio
         if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)

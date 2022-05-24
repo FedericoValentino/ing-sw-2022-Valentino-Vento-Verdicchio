@@ -23,7 +23,6 @@ public class ListenerGui implements Runnable{
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
-                System.out.println("cazzz");
             }
         }
     }

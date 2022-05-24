@@ -24,7 +24,7 @@ public abstract class Controller {
         Stage stage=(Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         Scene scene= new Scene(loader.load());
         stage.setScene(scene);
-        stage.show();
+        //stage.show();
         return loader;
     }
 
