@@ -549,7 +549,7 @@ public class PrinterCLI
                 character[6] += "  O";
             }
             character[6] += ANSI_YELLOW + "    |  " + description[5];
-            character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
+            character[7] += "|__________________|  " +  description[6] + ANSI_RESET + "\n";
         }
         else if (card instanceof GrandmaHerbs)
         {
