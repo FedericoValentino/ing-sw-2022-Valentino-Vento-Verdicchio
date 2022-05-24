@@ -37,6 +37,10 @@ public class WizardController extends Controller{
     private ArrayList<Pane> paneWizard=new ArrayList<Pane>();
     ToggleGroup group = new ToggleGroup();
 
+
+    /**It's call every time logiController.fxml is load as the new scene
+     * In this method I set the initial value of the all the radio button
+     * **/
     public void initialize()
     {
         rb1.setSelected(true);
@@ -45,6 +49,8 @@ public class WizardController extends Controller{
         rb3.setToggleGroup(group);
         rb4.setToggleGroup(group);
     }
+
+    /**In this method I set the opacity as 0.3 and then if a wizard is avaiable i set it to 1**/
     public void setOpacityStart()
     {
         available= this.guiMainStarter.getClientGUI().getAvailable();

@@ -32,6 +32,10 @@ public class GuiMainStarter extends Application {
         return executor;
     }
 
+
+/** Start is the method that run when it's called GuiMainStarter.launch() in main
+ * This method set all the initial stage and load the intro.fxml file that's the first scene we use
+ * **/
     @Override
     public void start(Stage stage) throws Exception {
 
