@@ -152,7 +152,7 @@ public class Checks {
         ArrayList<AssistantCard> currentlyPlayedCards = new ArrayList<>();
         for(Team team: game.getCurrentTeams())
             for(Player p: team.getPlayers())
-                if(!p.getNome().equals(player.getNome()))
+                if(!p.getNome().equals(player.getNome()) && p.getCurrentAssistantCard() != null)
                     currentlyPlayedCards.add(p.getCurrentAssistantCard());
         int[] hitCounter = new int[player.getAssistantDeck().getDeck().size()-1];
         int index = 0;

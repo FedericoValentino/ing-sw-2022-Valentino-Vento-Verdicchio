@@ -117,18 +117,27 @@ public class GameHandler extends Thread implements Observer
                 }
                 break;
             case DRAW_CHOICE:
-                if (planning == 1 &&
-                        mainController.getChecks().isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()) &&
-                        !mainController.getChecks().isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()) &&
-                        mainController.getChecks().canCardStillBePlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex())) {
-                    mainController.getPlanningController()
-                            .drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
-                    if (mainController.getChecks().isLastPlayer(mainController.getGame())) {
+                if (planning == 1 && mainController.getChecks().isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                {
+                    if(!mainController.getChecks().isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                        mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
+                    else
+                    {
+                        if(mainController.getChecks().canCardStillBePlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                        {
+                            mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
+                        }
+                    }
+
+                    if (mainController.getChecks().isLastPlayer(mainController.getGame()))
+                    {
                         mainController.updateGamePhase(GamePhase.ACTION);
                         mainController.updateTurnState();
                         mainController.determineNextPlayer();
                         threadSem.release(1);
-                    } else {
+                    }
+                    else
+                    {
                         mainController.determineNextPlayer();
                         threadSem.release(1);
                     }
