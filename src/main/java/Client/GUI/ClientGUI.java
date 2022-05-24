@@ -56,7 +56,7 @@ public class ClientGUI implements ClientView
         {
             setuPHandlerAnswerID=1;
             System.out.println("Setup handler --> game info 1° player");
-            Thread.interrupt();
+            //Thread.interrupt();
             //executor.execute();
         }
         if(answer instanceof AvailableWizards)
