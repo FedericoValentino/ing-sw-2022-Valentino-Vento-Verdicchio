@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PrinterCLI
-{
+{   //wop
     //colore testo
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
@@ -549,7 +549,7 @@ public class PrinterCLI
                 character[6] += "  O";
             }
             character[6] += ANSI_YELLOW + "    |  " + description[5];
-            character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
+            character[7] += "|__________________|  " +  description[6] + ANSI_RESET + "\n";
         }
         else if (card instanceof GrandmaHerbs)
         {
