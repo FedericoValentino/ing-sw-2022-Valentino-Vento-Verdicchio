@@ -79,7 +79,7 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="Port" text="9090">
+                        <TextField fx:id="Port" text="1234">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>

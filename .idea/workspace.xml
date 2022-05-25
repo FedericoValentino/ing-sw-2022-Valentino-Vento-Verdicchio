@@ -4,40 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="A single line changed">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/DashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Observer/ObserverLightView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Description.fxml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="A big change in all GUI functionalities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/DescriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/DescriptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WaitingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WaitingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Observer/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Observer/Observable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Description.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Intro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Intro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Lobby.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Lobby.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/Waiting.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Waiting.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Controllers/WizardChoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Wizard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/description.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/description.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/eriantysScatola.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/eriantysScatola.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/eryantisMainScreen.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/eryantisMainScreen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/island1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/island2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/island3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/mago1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/mago2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/mago3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Images/mago4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago4.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,13 +188,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00009" summary="Ending CurrentGameStateTest">
-      <created>1650734398158</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1650734398158</updated>
     </task>
     <task id="LOCAL-00010" summary="Test ActionController, fix in giro nel codice">
       <created>1650804761244</created>
@@ -561,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653403430654</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="A big change in all GUI functionalities">
+      <created>1653483492119</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1653483492119</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Ridefinizione Client" />
     <MESSAGE value="View Sender completo" />
     <MESSAGE value="SemiWorking CLI" />
     <MESSAGE value="Removed systemout inutile" />
@@ -606,7 +576,8 @@
     <MESSAGE value="CLI updates" />
     <MESSAGE value="Update for the lab" />
     <MESSAGE value="A single line changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="A single line changed" />
+    <MESSAGE value="A big change in all GUI functionalities" />
+    <option name="LAST_COMMIT_MESSAGE" value="A big change in all GUI functionalities" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -794,7 +765,7 @@
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$AssistantDeckTest_testExtractCard.ic" NAME="AssistantDeckTest.testExtractCard Coverage Results" MODIFIED="1648462497107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.cards.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$ClientApp.ic" NAME="ClientApp Coverage Results" MODIFIED="1653470007090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$ClientApp.ic" NAME="ClientApp Coverage Results" MODIFIED="1653484187500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_ing_sw_2022_Valentino_Vento_Verdicchio.ic" NAME="All in ing-sw-2022-Valentino-Vento-Verdicchio Coverage Results" MODIFIED="1651584066844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$CharacterControllerTest.ic" NAME="CharacterControllerTest Coverage Results" MODIFIED="1651580574424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>

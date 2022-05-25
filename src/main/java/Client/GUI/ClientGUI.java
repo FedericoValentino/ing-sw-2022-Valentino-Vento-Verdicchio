@@ -59,8 +59,6 @@ public class ClientGUI implements ClientView
         {
             case GAME_NFO_REQ:
                 setupHandlerAnswerID=1;
-                System.out.println("Setup handler --> game info 1° player");
-                //Platform.runLater(GuiMainStarter.loadLobby());
                 Platform.runLater(()->
                         {
                             String path= "/Client/GUI/Controllers/Lobby.fxml";
@@ -81,15 +79,15 @@ public class ClientGUI implements ClientView
             case GAME_NFO:
                 setupHandlerAnswerID=3;
                 System.out.println(((InfoMessage) answer).getInfo());
+                System.out.println("Scelta fatta");
                 if(setupState)
                 {
                     setupState = false;
                 }
                 Platform.runLater(()->
                 {
-                    //devo capire quale screen proiettare
-                    //String path="/GUI/Controllers/Wizard.fxml";
-                    //changeScene(path);
+                    String path= "/Client/GUI/Controllers/Waiting.fxml";
+                    changeScene(path);
                 });
                 break;
             case GAME_START:
@@ -123,7 +121,6 @@ public class ClientGUI implements ClientView
             e.printStackTrace();
         }
         GuiMainStarter.getMainStage().setScene(scene);
-
     }
 
 

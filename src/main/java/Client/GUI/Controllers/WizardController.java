@@ -50,9 +50,14 @@ public class WizardController extends Controller{
     }
 
     /**In this method I set the opacity as 0.3 and then if a wizard is avaiable i set it to 1**/
-    public void setOpacityStart()
+    public void updateOpacity()
     {
-        available= this.guiMainStarter.getClientGUI().getAvailable();
+        available= GuiMainStarter.getClientGUI().getAvailable();
+
+        for(Wizard w: available)
+        {
+            System.out.println("Wizard av "+w);
+        }
         paneWizard.add(druid);
         paneWizard.add(sensei);
         paneWizard.add(lord);
@@ -66,15 +71,16 @@ public class WizardController extends Controller{
         //cerco se ci sono maghi avaiable li metto a opacità 1
         for(Wizard w : available)
         {
+            System.out.println("wiz ava "+w);
             for(Pane p: paneWizard)
             {
-                if(w.toString().toLowerCase()==p.toString())
+                if(w.toString().toLowerCase().equals(p.toString()))
                 {
                     p.setOpacity(1);
                 }
             }
-
         }
+
     }
 
     public void onClickRb1(ActionEvent actionEvent) {
@@ -106,36 +112,20 @@ public class WizardController extends Controller{
 
     public void onClickSendChoice(ActionEvent actionEvent) throws InterruptedException {
         System.out.println("Entrato in onclickSendChoice del wizard");
-        String wizardTemp = null;
-        if(group.getSelectedToggle()==rb1){wizardTemp=druid.toString().toUpperCase();}
+       Wizard wizardTemp=null;
+        int wizTemp=0;
+        if(group.getSelectedToggle()==rb1){wizardTemp=Wizard.DRUID;}
         else if(group.getSelectedToggle()==rb2)
-        {wizardTemp=witch.toString().toUpperCase();}
+        {wizardTemp=Wizard.WITCH;;}
         else if(group.getSelectedToggle()==rb3)
-        {wizardTemp=lord.toString().toUpperCase();}
+        {wizardTemp=Wizard.LORD;}
         else if(group.getSelectedToggle()==rb4)
-        {wizardTemp=sensei.toString().toUpperCase();}
+        {wizardTemp=Wizard.SENSEI;}
 
-        if(!available.contains(wizardTemp))
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Game Error");
-            alert.setHeaderText("Error!");
-            alert.setContentText("You have chosen one of the wizard that's already choose");
-        }
-        else
-        {
-            guiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new WizardChoice(Wizard.valueOf(wizardTemp))));
+        updateOpacity();
 
-            /*while(guiMainStarter.getClientGUI().getSetupHandlerAnswerID()==0)
-            {
-                System.out.println("Sto aspettando 1000");
-                Thread currThread=Thread.currentThread();
-                currThread.sleep(1000);
-            }*/
-            if(guiMainStarter.getClientGUI().getSetupHandlerAnswerID()==1)
-            {
+        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(
+                new SerializedMessage(new WizardChoice(wizardTemp)));
 
-            }
-        }
     }
 }

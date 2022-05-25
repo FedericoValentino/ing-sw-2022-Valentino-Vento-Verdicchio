@@ -47,13 +47,14 @@ public class GuiMainStarter extends Application {
         loader.setLocation(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
         mainStage=stage;
         //mainStage.setFullScreen(true);
+        mainStage.setAlwaysOnTop(true);
         mainStage.setTitle("Eryantis");
         mainStage.setMinHeight(900);
         mainStage.setMinWidth(1600);
-        //this.mainStage.setMaximized(true);
         mainStage.getIcons().add(new Image("/Client/GUI/Images/eriantysScatola.png"));
         mainStage.setScene(new Scene(loader.load()));
         mainStage.show();
+        mainStage.setAlwaysOnTop(false);
         IntroController controller = loader.getController();
         //controller.setGuiMainStarter(this);
     }

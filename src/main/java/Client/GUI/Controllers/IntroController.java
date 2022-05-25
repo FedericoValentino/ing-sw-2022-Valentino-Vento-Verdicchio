@@ -25,10 +25,6 @@ public class IntroController extends Controller{
         FXMLLoader loader=loadNewScreen(path);
         LoginController controller = loader.getController();
         controller.setGuiMainStarter(guiMainStarter);
-
-        System.out.println("Isantanza dalla start: "+controller);
-        System.out.println("set gui main"+ this.guiMainStarter);
-        System.out.println("gui main dot "+ guiMainStarter.getClientGUI());
     }
 
     public void onClickStory(ActionEvent actionEvent) throws IOException {
