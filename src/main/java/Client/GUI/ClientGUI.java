@@ -2,7 +2,10 @@ package Client.GUI;
 
 import Client.ClientView;
 import Client.ServerConnection;
+import Server.Answers.ActionAnswers.ErrorMessage;
+import Server.Answers.ActionAnswers.RequestCloud;
 import Server.Answers.ActionAnswers.StandardActionAnswer;
+import Server.Answers.ActionAnswers.ViewMessage;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -80,24 +83,23 @@ public class ClientGUI implements ClientView
                 setupHandlerAnswerID=3;
                 System.out.println(((InfoMessage) answer).getInfo());
                 System.out.println("Scelta fatta");
+                Platform.runLater(()->
+                {
+                    String path= "/Client/GUI/Controllers/Ready.fxml";
+                    changeScene(path);
+                });
                 if(setupState)
                 {
                     setupState = false;
                 }
-                Platform.runLater(()->
-                {
-                    String path= "/Client/GUI/Controllers/Waiting.fxml";
-                    changeScene(path);
-                });
                 break;
             case GAME_START:
                 setupHandlerAnswerID=4;
                 System.out.println("Game Starting!");
                 Platform.runLater(()->
                 {
-                    //devo capire quale screen proiettare
-                    //String path="/GUI/Controllers/Wizard.fxml";
-                    //changeScene(path);
+                    String path="/GUI/Controllers/MainBoard.fxml";
+                    changeScene(path);
                 });
                 break;
             default:
@@ -124,42 +126,59 @@ public class ClientGUI implements ClientView
     }
 
 
-
-
-
     @Override
     public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
+
+        switch(answer.getType())
+        {
+            case ERROR:
+                System.out.println(((ErrorMessage) answer).getError());
+                break;
+            case START_NFO:
+                System.out.println("Your Turn, start playing!");
+                break;
+            case VIEW:
+                MyView.parse((ViewMessage) answer);
+                //showwwwwww view
+                break;
+            case CLOUD_REQ:
+                System.out.println(((RequestCloud) answer).getMessage());
+                break;
+            case CARD_REQ:
+                System.out.println("Choose a Character Card!");
+                break;
+            case STUD_REQ:
+                System.out.println("Move a student from your entrance!");
+                break;
+            case MN_REQ:
+                System.out.println("Move Mother Nature!");
+                break;
+        }
+
     }
-    public Boolean getSetupState() {
-        return setupState;
-    }
+
 
 
     public void setServerConnection(String nickname,int team,String IP) throws IOException {
         serverConnection= new ServerConnection(nickname,team,IP);
-        connection();
+        serverConnection.establishConnection();
+        listenerGui = new ListenerGui(this);
+        executor.execute(listenerGui);
     }
     public ServerConnection getServerConnection()
     {
         return serverConnection;
     }
-
-    private void connection() throws IOException {
-        serverConnection.establishConnection();
-        listenerGui = new ListenerGui(this);
-        executor.execute(listenerGui);
-    }
-
-
     public int getSetupHandlerAnswerID() {
         return setupHandlerAnswerID;
     }
     public void setSetupHandlerAnswerID(int s){setupHandlerAnswerID=s;}
-
     public ArrayList<Wizard> getAvailable() {
         return available;
     }
-
+    public Boolean getSetupState() {
+        return setupState;
+    }
 
 
 

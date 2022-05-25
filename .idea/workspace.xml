@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="A big change in all GUI functionalities">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Changes in wizardChoice (A little step fro human, a big step for eriantys)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/ReadyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Ready.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../-----progetti-----/Prove Varie/demo1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -65,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Controllers" />
       <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\GUI\Controllers" />
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers\SetupAnswers" />
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers" />
@@ -188,13 +190,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00010" summary="Test ActionController, fix in giro nel codice">
-      <created>1650804761244</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1650804761244</updated>
     </task>
     <task id="LOCAL-00011" summary="Fix a dei test">
       <created>1650805100125</created>
@@ -532,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653483492119</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Changes in wizardChoice (A little step fro human, a big step for eriantys)">
+      <created>1653489785130</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1653489785130</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +554,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="View Sender completo" />
     <MESSAGE value="SemiWorking CLI" />
     <MESSAGE value="Removed systemout inutile" />
     <MESSAGE value="Cambi ai packages" />
@@ -577,7 +578,8 @@
     <MESSAGE value="Update for the lab" />
     <MESSAGE value="A single line changed" />
     <MESSAGE value="A big change in all GUI functionalities" />
-    <option name="LAST_COMMIT_MESSAGE" value="A big change in all GUI functionalities" />
+    <MESSAGE value="Changes in wizardChoice (A little step fro human, a big step for eriantys)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in wizardChoice (A little step fro human, a big step for eriantys)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

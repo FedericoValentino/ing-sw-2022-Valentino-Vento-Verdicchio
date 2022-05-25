@@ -3,6 +3,8 @@ package Client.GUI.Controllers;
 import Client.GUI.GuiMainStarter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -31,7 +33,20 @@ public class LoginController extends Controller{
         GuiMainStarter.getClientGUI().setServerConnection(nickname.getText(), 1, IP.getText());
        //showNextPane(actionEvent);
 
+        /*da cercare di implementare il caso in cui non ci siano server attivi per quella connesione lì
+        * perché non voglio che stia fermo li a caso*/
+
+        String path= "/Client/GUI/Controllers/Waiting.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        Scene scene= null;
+        try {
+            scene = new Scene(loader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        GuiMainStarter.getMainStage().setScene(scene);
     }
+
 
 
 
