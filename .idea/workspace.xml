@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Changes in wizardChoice (A little step fro human, a big step for eriantys)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/ReadyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Ready.fxml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="All ok in all the actual views">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/ReadyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/ReadyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Ready.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Ready.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Wizard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Wizard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +85,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
+  <component name="RunManager" selected="Application.ServerApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -190,13 +192,6 @@
       <workItem from="1652807385066" duration="459000" />
       <workItem from="1652878436971" duration="12286000" />
       <workItem from="1653063638143" duration="2884000" />
-    </task>
-    <task id="LOCAL-00011" summary="Fix a dei test">
-      <created>1650805100125</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1650805100125</updated>
     </task>
     <task id="LOCAL-00012" summary="PlanningControllerTesting 100% line coverage is go">
       <created>1650813316365</created>
@@ -534,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653489785130</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="All ok in all the actual views">
+      <created>1653498001876</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1653498001876</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +556,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="SemiWorking CLI" />
     <MESSAGE value="Removed systemout inutile" />
     <MESSAGE value="Cambi ai packages" />
     <MESSAGE value="CLI island and islands by vento and valentino" />
@@ -579,7 +580,8 @@
     <MESSAGE value="A single line changed" />
     <MESSAGE value="A big change in all GUI functionalities" />
     <MESSAGE value="Changes in wizardChoice (A little step fro human, a big step for eriantys)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in wizardChoice (A little step fro human, a big step for eriantys)" />
+    <MESSAGE value="All ok in all the actual views" />
+    <option name="LAST_COMMIT_MESSAGE" value="All ok in all the actual views" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

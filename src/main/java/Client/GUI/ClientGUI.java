@@ -1,6 +1,7 @@
 package Client.GUI;
 
 import Client.ClientView;
+import Client.GUI.Controllers.WizardController;
 import Client.ServerConnection;
 import Server.Answers.ActionAnswers.ErrorMessage;
 import Server.Answers.ActionAnswers.RequestCloud;
@@ -27,8 +28,6 @@ public class ClientGUI implements ClientView
     private Boolean setupState = true;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ListenerGui listenerGui;
-    private int setupHandlerAnswerID=0;
-    private ArrayList<Wizard> available= new ArrayList<Wizard>();
 
     @Override
     public void run() {
@@ -61,7 +60,6 @@ public class ClientGUI implements ClientView
         switch(answer.getType())
         {
             case GAME_NFO_REQ:
-                setupHandlerAnswerID=1;
                 Platform.runLater(()->
                         {
                             String path= "/Client/GUI/Controllers/Lobby.fxml";
@@ -69,18 +67,18 @@ public class ClientGUI implements ClientView
                         });
                 break;
             case WIZARDS:
-                setupHandlerAnswerID=2;
-                ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
-                System.out.println("instance of Avaiable Wizz");
                 Platform.runLater(()->
                 {
+                    ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
+                    System.out.println("avaiable 0 "+available.get(0));
                     String path= "/Client/GUI/Controllers/Wizard.fxml";
-                    changeScene(path);
+                    FXMLLoader load=changeScene(path);
+                    WizardController wz=load.getController();
+                    wz.updateOpacity(available);
                 });
 
                 break;
             case GAME_NFO:
-                setupHandlerAnswerID=3;
                 System.out.println(((InfoMessage) answer).getInfo());
                 System.out.println("Scelta fatta");
                 Platform.runLater(()->
@@ -94,11 +92,10 @@ public class ClientGUI implements ClientView
                 }
                 break;
             case GAME_START:
-                setupHandlerAnswerID=4;
                 System.out.println("Game Starting!");
                 Platform.runLater(()->
                 {
-                    String path="/GUI/Controllers/MainBoard.fxml";
+                    String path= "/Client/GUI/Controllers/MainBoard.fxml";
                     changeScene(path);
                 });
                 break;
@@ -113,7 +110,7 @@ public class ClientGUI implements ClientView
         }
     }
 
-    public void changeScene(String path)
+    public FXMLLoader changeScene(String path)
     {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         Scene scene= null;
@@ -123,6 +120,7 @@ public class ClientGUI implements ClientView
             e.printStackTrace();
         }
         GuiMainStarter.getMainStage().setScene(scene);
+        return loader;
     }
 
 
@@ -169,123 +167,8 @@ public class ClientGUI implements ClientView
     {
         return serverConnection;
     }
-    public int getSetupHandlerAnswerID() {
-        return setupHandlerAnswerID;
-    }
-    public void setSetupHandlerAnswerID(int s){setupHandlerAnswerID=s;}
-    public ArrayList<Wizard> getAvailable() {
-        return available;
-    }
     public Boolean getSetupState() {
         return setupState;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*cose copiate e incollate
-
-
-
-    @Override
-    public void setupHandler(StandardSetupAnswer answer) throws IOException {
-        if(answer instanceof RequestGameInfo)
-        {
-            GameMode gm = new GameMode();
-            System.out.println("First Client, what gamemode would you like to play?");
-            System.out.println("Player number?[2][3][4]");
-            gm.setMaxPlayers(stdin.getParser().nextInt());
-            while(gm.getMaxPlayers() > 4 || gm.getMaxPlayers() < 2)
-            {
-                System.out.println("Wrong input");
-                System.out.println("Player number?[2][3][4]");
-                gm.setMaxPlayers(stdin.getParser().nextInt());
-            }
-
-            System.out.println("Expert Mode?[true][false]");
-            gm.setExpertGame(stdin.getParser().nextBoolean());
-            System.out.println(gm.isExpertGame());
-            main.getOut().writeObject(gm);
-            main.getOut().flush();
-            main.getOut().reset();
-        }
-        if(answer instanceof AvailableWizards)
-        {
-            ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
-            System.out.println("Which wizard are you playing with?");
-            for(Wizard w : available)
-            {
-                System.out.print(String.valueOf("[" + w.ordinal()) + "] " + w + " ");
-            }
-            System.out.println();
-            int choice = stdin.getParser().nextInt();
-            while(choice > 4 || choice < 0)
-            {
-                System.out.println("You must enter a number between 0 and 4");
-                choice = stdin.getParser().nextInt();
-            }
-            main.sendMessage(new SerializedMessage(new WizardChoice(Wizard.values()[choice])));
-        }
-        if(answer instanceof InfoMessage)
-        {
-            System.out.println(((InfoMessage) answer).getInfo());
-            if(setupState)
-            {
-                setupState = false;
-            }
-        }
-        if(answer instanceof GameStarting)
-        {
-            System.out.println("Game Starting!");
-        }
-
-    }
-
-    @Override
-    public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
-        if(answer instanceof ErrorMessage)
-        {
-            System.out.println(((ErrorMessage) answer).getError());
-        }
-        else if(answer instanceof StartTurn)
-        {
-            System.out.println("Your Turn, start playing!");
-        }
-        else if(answer instanceof ViewMessage)
-        {
-            MyView.parse((ViewMessage) answer);
-        }
-        else if(answer instanceof RequestCloud)
-        {
-            System.out.println(((RequestCloud) answer).getMessage());
-        }
-        else if(answer instanceof RequestCard)
-        {
-            System.out.println("Choose a Character Card!");
-        }
-        else if(answer instanceof RequestMoveStudent)
-        {
-            System.out.println("Move a student from your entrance!");
-        }
-        else if(answer instanceof RequestMotherNatureMove)
-        {
-            System.out.println("Move Mother Nature!");
-        }
-        else if(answer instanceof RequestCloud)
-        {
-            System.out.println(((RequestCloud) answer).getMessage());
-        }
-    }*/
-
-
 
 }

@@ -1,5 +1,8 @@
 package Client.GUI.Controllers;
 
+import Client.GUI.GuiMainStarter;
+import Client.Messages.SerializedMessage;
+import Client.Messages.SetupMessages.ReadyStatus;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -23,6 +26,7 @@ public class ReadyController extends Controller{
         tickPane.getChildren().add(nI);
 
         //invio ready da aggiungere
+        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new ReadyStatus()));
     }
 
 }

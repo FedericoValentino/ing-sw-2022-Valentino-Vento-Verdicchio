@@ -25,7 +25,7 @@
                   <Font size="21.0" />
                </font>
             </Text>
-            <HBox layoutX="25.0" layoutY="63.0" prefHeight="231.0" prefWidth="561.0">
+            <HBox layoutX="20.0" layoutY="51.0" prefHeight="231.0" prefWidth="561.0">
                <children>
                   <Pane fx:id="druid" prefHeight="100.0" prefWidth="140.0">
                      <children>
@@ -82,7 +82,11 @@
                   </Pane>
                </children>
             </HBox>
-            <Button fx:id="sendChoice" layoutX="505.0" layoutY="300.0" mnemonicParsing="false" onAction="#onClickSendChoice" text="Send Chioce" />
+            <Button fx:id="sendChoice" layoutX="504.0" layoutY="311.0" mnemonicParsing="false" onAction="#onClickSendChoice" text="Send Chioce" />
+            <Text fx:id="alreadyChoose1" fill="RED" layoutX="40.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
+            <Text fx:id="alreadyChoose4" fill="RED" layoutX="475.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
+            <Text fx:id="alreadyChoose3" fill="RED" layoutX="332.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
+            <Text fx:id="alreadyChoose2" fill="RED" layoutX="191.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
          </children>
       </Pane>
    </children>

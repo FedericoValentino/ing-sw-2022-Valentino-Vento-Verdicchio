@@ -33,8 +33,14 @@ public class WizardController extends Controller{
     @FXML public Pane lord;
     @FXML public Pane sensei;
 
-    private ArrayList<Wizard> available=new ArrayList<Wizard>();
+    @FXML public Text alreadyChoose1;
+    @FXML public Text alreadyChoose2;
+    @FXML public Text alreadyChoose3;
+    @FXML public Text alreadyChoose4;
+
+    //private ArrayList<Wizard> available=new ArrayList<Wizard>();
     private ArrayList<Pane> paneWizard=new ArrayList<Pane>();
+    private ArrayList<Text> textAvaiable=new ArrayList<>();
     ToggleGroup group = new ToggleGroup();
 
     /**It's call every time logiController.fxml is load as the new scene
@@ -47,40 +53,6 @@ public class WizardController extends Controller{
         rb2.setToggleGroup(group);
         rb3.setToggleGroup(group);
         rb4.setToggleGroup(group);
-    }
-
-    /**In this method I set the opacity as 0.3 and then if a wizard is avaiable i set it to 1**/
-    public void updateOpacity()
-    {
-        available= GuiMainStarter.getClientGUI().getAvailable();
-
-        for(Wizard w: available)
-        {
-            System.out.println("Wizard av "+w);
-        }
-        paneWizard.add(druid);
-        paneWizard.add(sensei);
-        paneWizard.add(lord);
-        paneWizard.add(witch);
-
-        for(Pane p: paneWizard)
-        {
-            p.setOpacity(0.3);
-        }
-
-        //cerco se ci sono maghi avaiable li metto a opacità 1
-        for(Wizard w : available)
-        {
-            System.out.println("wiz ava "+w);
-            for(Pane p: paneWizard)
-            {
-                if(w.toString().toLowerCase().equals(p.toString()))
-                {
-                    p.setOpacity(1);
-                }
-            }
-        }
-
     }
 
     public void onClickRb1(ActionEvent actionEvent) {
@@ -122,10 +94,60 @@ public class WizardController extends Controller{
         else if(group.getSelectedToggle()==rb4)
         {wizardTemp=Wizard.SENSEI;}
 
-        updateOpacity();
-
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(
                 new SerializedMessage(new WizardChoice(wizardTemp)));
 
     }
+
+    /**In this method I set the opacity as 0.3 and then if a wizard is avaiable i set it to 1**/
+    public void updateOpacity(ArrayList<Wizard> available)
+    {
+        //System.out.println("updateOpacity "+available.get(0));
+
+        for(Wizard w: available)
+        {
+            System.out.println("Wizard av "+w);
+        }
+        paneWizard.add(druid);
+        paneWizard.add(sensei);
+        paneWizard.add(lord);
+        paneWizard.add(witch);
+
+        for(Pane p: paneWizard)
+        {
+            p.setOpacity(0.3);
+        }
+
+        int pos=0;
+        //cerco se ci sono maghi avaiable li metto a opacità 1
+
+        textAvaiable.add(alreadyChoose1);textAvaiable.get(0).setVisible(true);
+        textAvaiable.add(alreadyChoose2);textAvaiable.get(1).setVisible(true);
+        textAvaiable.add(alreadyChoose3);textAvaiable.get(2).setVisible(true);
+        textAvaiable.add(alreadyChoose4);textAvaiable.get(3).setVisible(true);
+        /**vado a calcolare quale mago non è già stato scelto e vado a togliere il print di mago già scelto e setto l'opacità
+         * delle carte a 1**/
+        for(Wizard w : available)
+        {
+            System.out.println("wiz ava "+w);
+            for(Pane p: paneWizard)
+            {
+                System.out.println("w  : "+w.toString().toLowerCase());
+                System.out.println("p  : "+p.getId());
+                if(w.toString().toLowerCase().equals(p.getId()))
+                {
+                    System.out.println("entered with : "+w.toString()+" "+p.getId());
+                    p.setOpacity(1);
+                    textAvaiable.get(w.ordinal()).setVisible(false);
+
+                }
+            }
+        }
+
+
+/*//w.ordinal()
+//                    pos=Integer.parseInt()p.getId()
+                    textAvaiable.get(i).equals(w.ordinal())*/
+    }
+
 }
