@@ -1,17 +1,17 @@
 package Client.GUI;
 import Client.GUI.Controllers.IntroController;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.concurrent.*;
 
 public class GuiMainStarter extends Application {
     private static Stage mainStage;
-    protected static ClientGUI ClientGUI;
+    private static ClientGUI clientGUI;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public static void main(){
@@ -21,15 +21,19 @@ public class GuiMainStarter extends Application {
 /**It's a method to get my reference to CLientGUI, otherwise I'll lose it**/
     public static void setClientGUI(ClientGUI clientGUI)
     {
-        GuiMainStarter.ClientGUI=clientGUI;
+        GuiMainStarter.clientGUI=clientGUI;
     }
-    public ClientGUI getClientGUI()
+    public static ClientGUI getClientGUI()
     {
-        return ClientGUI;
+        return clientGUI;
     }
     public ExecutorService getExecutor()
     {
         return executor;
+    }
+    public static Stage getMainStage()
+    {
+        return mainStage;
     }
 
 
@@ -39,28 +43,28 @@ public class GuiMainStarter extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        this.mainStage=stage;
-        //this.mainStage.setFullScreen(true);
-        this.mainStage.setTitle("Eryantis");
-        this.mainStage.setMinHeight(900);
-        this.mainStage.setMinWidth(1600);
-        //this.mainStage.setMaximized(true);
-        this.mainStage.getIcons().add(new Image("/GUI/Images/eriantysScatola.png"));
-
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/GUI/Controllers/Intro.fxml"));
-
-        this.mainStage.setScene(new Scene(loader.load()));
-        this.mainStage.show();
-
+        loader.setLocation(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
+        mainStage=stage;
+        //mainStage.setFullScreen(true);
+        mainStage.setTitle("Eryantis");
+        mainStage.setMinHeight(900);
+        mainStage.setMinWidth(1600);
+        //this.mainStage.setMaximized(true);
+        mainStage.getIcons().add(new Image("/Client/GUI/Images/eriantysScatola.png"));
+        mainStage.setScene(new Scene(loader.load()));
+        mainStage.show();
         IntroController controller = loader.getController();
-        controller.setGuiMainStarter(this);
-        System.out.println("MAIN STAGE : "+mainStage);
+        //controller.setGuiMainStarter(this);
     }
 //Creata solo per un test, poi va eliminata
-    public Stage getMainStage()
-    {
-        return mainStage;
+
+    public void loadLobby() throws IOException {
+        String path= "/Client/GUI/Controllers/Lobby.fxml";
+        FXMLLoader loader = new FXMLLoader(GuiMainStarter.class.getResource(path));
+        Scene scene= new Scene(loader.load());
+        this.getMainStage().setScene(scene);
     }
+
 }
 

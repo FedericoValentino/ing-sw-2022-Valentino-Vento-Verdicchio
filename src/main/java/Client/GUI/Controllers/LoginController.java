@@ -1,8 +1,8 @@
 package Client.GUI.Controllers;
 
+import Client.GUI.GuiMainStarter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -26,17 +26,21 @@ public class LoginController extends Controller{
         teamChoice.setValue("Black");
     }
 /**This method send all the attributes for the construction of the connection with the server **/
-    public void onClickTryConnection(ActionEvent actionEvent) throws IOException, InterruptedException {
+    public void onClickTryConnection(ActionEvent actionEvent) throws IOException{
 
-        guiMainStarter.getClientGUI().setServerConnection(nickname.toString(), 1, IP.getText());
-
-       showNextPane(actionEvent);
+        GuiMainStarter.getClientGUI().setServerConnection(nickname.getText(), 1, IP.getText());
+       //showNextPane(actionEvent);
 
     }
-/**
+
+
+
+    /**
  * This method change the screen. The new screen is choose due too the value of getSetuPHandlerAnswerID()
  * If it's 0 we wait, if it's 1 we load the lobby.fxml, if 2 we load Wizard.fxml and else Waiting.fxml
  * **/
+
+    /*
     public void showNextPane(ActionEvent actionEvent) throws IOException, InterruptedException {
         //do il tempo al thread di vedere se nel clientGUI è arrivato un messaggio
         if(this.guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
@@ -60,7 +64,7 @@ public class LoginController extends Controller{
         {
 
             //wizard
-            String path="/GUI/Controllers/WizardChoice.fxml";
+            String path="/GUI/Controllers/Wizard.fxml";
             FXMLLoader loader =loadNewScreen(path,actionEvent);
                 WizardController controller = loader.getController();
             controller.setGuiMainStarter(this.guiMainStarter);
@@ -68,7 +72,7 @@ public class LoginController extends Controller{
 
             System.out.println("Wizard Choice");
 
-            //guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();*/
+            //guiMainStarter.getClientGUI().resetSetuPHandlerAnswerID();
         }
         else
         {
@@ -84,5 +88,5 @@ public class LoginController extends Controller{
         }
     }
 
-
+*/
 }

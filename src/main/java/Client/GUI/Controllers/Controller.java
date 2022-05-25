@@ -18,13 +18,17 @@ public abstract class Controller {
 
 
     /*Funzione che fa il load di una nuova schermata associandoci il controller specifico*/
-    public FXMLLoader loadNewScreen(String path, ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+    public FXMLLoader loadNewScreen(String path) throws IOException {
 
-        Stage stage=(Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene scene= new Scene(loader.load());
-        stage.setScene(scene);
-        //stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        Scene scene= null;
+        try {
+            scene = new Scene(loader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        GuiMainStarter.getMainStage().setScene(scene);
+
         return loader;
     }
 

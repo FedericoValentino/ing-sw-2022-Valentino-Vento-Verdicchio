@@ -1,5 +1,6 @@
 package Client;
 
+import Observer.Observable;
 import Server.Answers.ActionAnswers.ViewMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +14,7 @@ import model.cards.CharacterDeck;
 import java.util.ArrayList;
 
 
-public class LightView
+public class LightView extends Observable
 {
     private ArrayList<CharacterCard> currentActiveCharacterCard;
     private CharacterDeck currentCharacterDeck;
@@ -46,6 +47,7 @@ public class LightView
         this.currentClouds = newView.currentClouds;
         this.currentCharacterDeck = newView.currentCharacterDeck;
         this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
+        notifyLight(this);
     }
 
 

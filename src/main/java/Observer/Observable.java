@@ -8,10 +8,16 @@ import java.util.List;
 public class Observable {
 
     private final List<Observer> observers = new ArrayList<>();
+    private final List<ObserverLightView> observer1s = new ArrayList<>();
 
     public void addObserver(Observer observer){
         synchronized (observers) {
             observers.add(observer);
+        }
+    }
+    public void addObserverLight(ObserverLightView observer){
+        synchronized (observer1s) {
+            observer1s.add(observer);
         }
     }
 
@@ -28,5 +34,11 @@ public class Observable {
             }
         }
     }
-
+    public void notifyLight(Object o){
+        synchronized (observer1s) {
+            for(ObserverLightView observer : observer1s){
+                observer.update(o);
+            }
+        }
+    }
 }

@@ -37,7 +37,6 @@ public class WizardController extends Controller{
     private ArrayList<Pane> paneWizard=new ArrayList<Pane>();
     ToggleGroup group = new ToggleGroup();
 
-
     /**It's call every time logiController.fxml is load as the new scene
      * In this method I set the initial value of the all the radio button
      * **/
@@ -127,13 +126,13 @@ public class WizardController extends Controller{
         {
             guiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new WizardChoice(Wizard.valueOf(wizardTemp))));
 
-            while(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==0)
+            /*while(guiMainStarter.getClientGUI().getSetupHandlerAnswerID()==0)
             {
                 System.out.println("Sto aspettando 1000");
                 Thread currThread=Thread.currentThread();
                 currThread.sleep(1000);
-            }
-            if(guiMainStarter.getClientGUI().getSetuPHandlerAnswerID()==1)
+            }*/
+            if(guiMainStarter.getClientGUI().getSetupHandlerAnswerID()==1)
             {
 
             }

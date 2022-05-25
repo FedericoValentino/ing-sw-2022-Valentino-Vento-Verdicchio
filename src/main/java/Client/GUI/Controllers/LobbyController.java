@@ -1,5 +1,7 @@
 package Client.GUI.Controllers;
 
+import Client.GUI.ClientGUI;
+import Client.GUI.GuiMainStarter;
 import Client.Messages.SetupMessages.GameMode;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -42,14 +44,18 @@ public class LobbyController extends Controller{
         guiMainStarter.getClientGUI().getServerConnection().getOut().flush();
         guiMainStarter.getClientGUI().getServerConnection().getOut().reset();
 
+        String path= "/Client/GUI/Controllers/Waiting.fxml";
+        GuiMainStarter.getClientGUI().changeScene(path);
+
+
         //se corretta la connessione carico una schermata di caricamento
-        showNextPane(actionEvent);
+        //showNextPane(actionEvent);
     }
     /**This method change the screen. The new screen is choose due too the value of getSetuPHandlerAnswerID()
      * It set the current view as waiting.fxml and then run the waitingAndShow method in waitingController
      * There is also a call to setActionEvent to have a reference to the stage in the waiting controller
      * **/
-    public void showNextPane(ActionEvent actionEvent) throws InterruptedException, IOException {
+    /*public void showNextPane(ActionEvent actionEvent) throws InterruptedException, IOException {
         Thread currThread=Thread.currentThread();
         currThread.sleep(1000);
         System.out.println("Sto aspettando");
@@ -70,7 +76,7 @@ public class LobbyController extends Controller{
         while(!hasData)
             currThread.sleep(1000);
 
-        hasData = false*/
+        hasData = false
         Platform.runLater(controller.waitingAndShow());
         System.out.println("Cutrr tre2"+ currThread);
         currThread=Thread.currentThread();

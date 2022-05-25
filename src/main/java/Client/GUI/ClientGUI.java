@@ -1,12 +1,14 @@
 package Client.GUI;
 
 import Client.ClientView;
-import Client.GUI.Controllers.WaitingController;
 import Client.ServerConnection;
 import Server.Answers.ActionAnswers.StandardActionAnswer;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import model.boards.token.Wizard;
 
 import java.io.IOException;
@@ -16,18 +18,19 @@ import java.util.concurrent.Executors;
 
 public class ClientGUI implements ClientView
 {
-
+    private GuiMainStarter guiMainStarter;
     private SerializedAnswer input;
     private ServerConnection serverConnection;
     private Boolean setupState = true;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ListenerGui listenerGui;
-    private int setuPHandlerAnswerID=0;
-
+    private int setupHandlerAnswerID=0;
     private ArrayList<Wizard> available= new ArrayList<Wizard>();
 
     @Override
     public void run() {
+
+
         GuiMainStarter.setClientGUI(this);
         GuiMainStarter.main();
     }
@@ -52,34 +55,81 @@ public class ClientGUI implements ClientView
     @Override
     public void setupHandler(StandardSetupAnswer answer) throws IOException {
         System.out.println(Thread.currentThread());
-        if(answer instanceof RequestGameInfo)
+        switch(answer.getType())
         {
-            setuPHandlerAnswerID=1;
-            System.out.println("Setup handler --> game info 1° player");
-            //Thread.interrupt();
-            //executor.execute();
-        }
-        if(answer instanceof AvailableWizards)
-        {
-            setuPHandlerAnswerID=2;
-            ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
-            System.out.println("instance of Avaiable Wizz");
-        }
-        if(answer instanceof InfoMessage)
-        {
-            setuPHandlerAnswerID=3;
-            System.out.println(((InfoMessage) answer).getInfo());
-            if(setupState)
-            {
-                setupState = false;
-            }
-        }
-        if(answer instanceof GameStarting)
-        {
-            setuPHandlerAnswerID=4;
-            System.out.println("Game Starting!");
+            case GAME_NFO_REQ:
+                setupHandlerAnswerID=1;
+                System.out.println("Setup handler --> game info 1° player");
+                //Platform.runLater(GuiMainStarter.loadLobby());
+                Platform.runLater(()->
+                        {
+                            String path= "/Client/GUI/Controllers/Lobby.fxml";
+                            changeScene(path);
+                        });
+                break;
+            case WIZARDS:
+                setupHandlerAnswerID=2;
+                ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
+                System.out.println("instance of Avaiable Wizz");
+                Platform.runLater(()->
+                {
+                    String path= "/Client/GUI/Controllers/Wizard.fxml";
+                    changeScene(path);
+                });
+
+                break;
+            case GAME_NFO:
+                setupHandlerAnswerID=3;
+                System.out.println(((InfoMessage) answer).getInfo());
+                if(setupState)
+                {
+                    setupState = false;
+                }
+                Platform.runLater(()->
+                {
+                    //devo capire quale screen proiettare
+                    //String path="/GUI/Controllers/Wizard.fxml";
+                    //changeScene(path);
+                });
+                break;
+            case GAME_START:
+                setupHandlerAnswerID=4;
+                System.out.println("Game Starting!");
+                Platform.runLater(()->
+                {
+                    //devo capire quale screen proiettare
+                    //String path="/GUI/Controllers/Wizard.fxml";
+                    //changeScene(path);
+                });
+                break;
+            default:
+                System.out.println("Waiting");
+                Platform.runLater(()->
+                {
+                    String path= "/Client/GUI/Controllers/Waiting.fxml";
+                    changeScene(path);
+                });
+
         }
     }
+
+    public void changeScene(String path)
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        Scene scene= null;
+        try {
+            scene = new Scene(loader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        GuiMainStarter.getMainStage().setScene(scene);
+
+    }
+
+
+
+
+
     @Override
     public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
     }
@@ -104,17 +154,14 @@ public class ClientGUI implements ClientView
     }
 
 
-    public int getSetuPHandlerAnswerID() {
-        return setuPHandlerAnswerID;
+    public int getSetupHandlerAnswerID() {
+        return setupHandlerAnswerID;
     }
-    public void setSetuPHandlerAnswerID(int s){setuPHandlerAnswerID=s;}
+    public void setSetupHandlerAnswerID(int s){setupHandlerAnswerID=s;}
 
     public ArrayList<Wizard> getAvailable() {
         return available;
     }
-
-
-
 
 
 
