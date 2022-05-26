@@ -26,7 +26,7 @@ public class ClientCLI implements ClientView
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
     @Override
-    public void setupHandler(StandardSetupAnswer answer) throws IOException {
+    public void setupHandler(StandardSetupAnswer answer){
         switch(answer.getType())
         {
             case GAME_NFO_REQ:
@@ -44,9 +44,17 @@ public class ClientCLI implements ClientView
                 System.out.println("Expert Mode?[true][false]");
                 gm.setExpertGame(stdin.getParser().nextBoolean());
                 System.out.println(gm.isExpertGame());
-                main.getOut().writeObject(gm);
-                main.getOut().flush();
-                main.getOut().reset();
+                try
+                {
+                    main.getOut().writeObject(gm);
+                    main.getOut().flush();
+                    main.getOut().reset();
+                }
+                catch(IOException e)
+                {
+                    System.out.println("Server unreachable");
+                }
+
                 break;
             case WIZARDS:
                 ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
@@ -89,7 +97,7 @@ public class ClientCLI implements ClientView
     }
 
     @Override
-    public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
+    public void messageHandler(StandardActionAnswer answer) {
 
         switch(answer.getType())
         {

@@ -84,5 +84,6 @@ public class ServerConnection
         return ServerIP;
     }
 
+    public boolean getConnected(){return connected;}
 
 }

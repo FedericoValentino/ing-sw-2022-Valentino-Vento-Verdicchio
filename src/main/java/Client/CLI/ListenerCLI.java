@@ -1,6 +1,5 @@
 package Client.CLI;
 
-import java.io.IOException;
 
 public class ListenerCLI implements Runnable
 {
@@ -13,7 +12,7 @@ public class ListenerCLI implements Runnable
     @Override
     public void run()
     {
-        while(true)
+        while(client.getMain().getConnected())
         {
             client.readMessage();
         }

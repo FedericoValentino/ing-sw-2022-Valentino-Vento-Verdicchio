@@ -26,7 +26,7 @@ public class Server
        this.server = new ServerSocket(PORT);
    }
 
-   public void registerConnection(Socket s) throws IOException, ClassNotFoundException
+   public void registerConnection(Socket s)
    {
 
       try
