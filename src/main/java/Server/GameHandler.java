@@ -38,6 +38,7 @@ public class GameHandler extends Thread implements Observer
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 
     public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem, Match match)
@@ -70,7 +71,7 @@ public class GameHandler extends Thread implements Observer
                             choseWizard = true;
                             threadSem.release(1);
                         } else {
-                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage( ANSI_RED_BACKGROUND + "Sorry, wrong input or Wizard already taken" + ANSI_RESET)));
+                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, wrong input or Wizard already taken" + ANSI_RESET)));
                             threadSem.release(1);
                         }
                     }
@@ -98,7 +99,7 @@ public class GameHandler extends Thread implements Observer
         }
         else
         {
-            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase" + ANSI_RESET)));
+            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wrong Phase" + ANSI_RESET)));
         }
 
     }
@@ -184,7 +185,7 @@ public class GameHandler extends Thread implements Observer
                     if (mainController.getChecks().isAcceptableMovementAmount(mainController.getGame(), mainController.getCurrentPlayer(), ((MoveMN) message).getAmount())) {
                         mainController.getActionController().MoveMN(((MoveMN) message).getAmount(), mainController.getGame());
                     } else {
-                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Too much movement" + ANSI_RESET)));
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Too much movement" + ANSI_RESET)));
                     }
                     action++;
                     threadSem.release(1);
@@ -195,7 +196,7 @@ public class GameHandler extends Thread implements Observer
             case DRAW_POUCH:
                 if (action == 4) {
                     if (!mainController.getChecks().isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
-                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "You selected an empty Cloud" + ANSI_RESET)));
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "You selected an empty Cloud" + ANSI_RESET)));
                     } else {
                         mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
                     }
@@ -254,7 +255,7 @@ public class GameHandler extends Thread implements Observer
                         planningHandler(message);
                 else
                 {
-                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase, you are in Action Phase!" + ANSI_RESET)));
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wrong Phase, you are in Action Phase!" + ANSI_RESET)));
                 }
             }
             else
@@ -268,7 +269,7 @@ public class GameHandler extends Thread implements Observer
                 }
                 else
                 {
-                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wrong Phase, you are in Planning Phase!" + ANSI_RESET)));
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wrong Phase, you are in Planning Phase!" + ANSI_RESET)));
                 }
             }
 
@@ -276,7 +277,7 @@ public class GameHandler extends Thread implements Observer
         }
         else
         {
-            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + "Wait for your turn!" + ANSI_RESET)));
+            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wait for your turn!" + ANSI_RESET)));
         }
 
     }

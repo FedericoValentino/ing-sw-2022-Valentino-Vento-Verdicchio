@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Replaced creation of Charcater cards in Character Deck with a factory method">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Found the only active Print instruction in the test classes, removed it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/CharacterDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CharacterControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
     </list>
     <list id="e37afdbc-5132-4e80-961e-f40ebc8db39e" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,26 +200,12 @@
       <workItem from="1653063638143" duration="2884000" />
       <workItem from="1653572806589" duration="7717000" />
     </task>
-    <task id="LOCAL-00014" summary="rimosso codice">
-      <created>1650886202912</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1650886202912</updated>
-    </task>
     <task id="LOCAL-00015" summary="Updated all the comments of Controller and Model classes to match the quality of the previous updates">
       <created>1651006642725</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
       <updated>1651006642725</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Character and Planning controllers updated with comments">
-      <created>1650895496212</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1650895496212</updated>
     </task>
     <task id="LOCAL-00017" summary="Cards in model have now comments on important methods">
       <created>1650896736057</created>
@@ -543,7 +529,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653582645684</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Corrected a stupid mistake in char deck constructor, now everything works">
+      <created>1653583787729</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1653583787729</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Found the only active Print instruction in the test classes, removed it">
+      <created>1653583981531</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1653583981531</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,8 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CLI island and islands by vento and valentino" />
-    <MESSAGE value="Json Constructor" />
     <MESSAGE value="Printer Islands" />
     <MESSAGE value="Add GUI's basic components" />
     <MESSAGE value="Add footprints of the all classes of Gui and add the intro and lobby functionality" />
@@ -588,7 +586,9 @@
     <MESSAGE value="All ok in all the actual views" />
     <MESSAGE value="Update in wizard opacity function&#10;and other changes in client gui ecc..." />
     <MESSAGE value="Replaced creation of Charcater cards in Character Deck with a factory method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced creation of Charcater cards in Character Deck with a factory method" />
+    <MESSAGE value="Corrected a stupid mistake in char deck constructor, now everything works" />
+    <MESSAGE value="Found the only active Print instruction in the test classes, removed it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Found the only active Print instruction in the test classes, removed it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

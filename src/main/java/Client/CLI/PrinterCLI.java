@@ -282,9 +282,9 @@ public class PrinterCLI
                 if(player.getNome().equals(nome))
                 {
                     if(player.getSchool().getProfessorTable()[tablePosition])
-                        output = ANSI_GREEN_BACKGROUND + "P" + ANSI_RESET;
+                        output = ANSI_GREEN_BACKGROUND + ANSI_BLACK + "P" + ANSI_RESET;
                     else
-                        output = ANSI_RED_BACKGROUND + "O" + ANSI_RESET;
+                        output = ANSI_RED_BACKGROUND + ANSI_BLACK + "O" + ANSI_RESET;
                 }
             }
         }
@@ -366,7 +366,7 @@ public class PrinterCLI
         }
 
         if(playerNotFoundCounter == view.getCurrentTeams().size() * view.getCurrentTeams().get(0).getPlayers().size())
-            System.out.println( ANSI_RED_BACKGROUND + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
+            System.out.println( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
 
         System.out.println();
     }
@@ -562,7 +562,7 @@ public class PrinterCLI
             character[6] += "|  " + ANSI_RESET;
             for(int i = 0; i < ((GrandmaHerbs) card).getNoEntry(); i++)
             {
-                character[6] += ANSI_RED_BACKGROUND + "  !" + ANSI_RESET;
+                character[6] += ANSI_RED_BACKGROUND + ANSI_BLACK + "  !" + ANSI_RESET;
             }
             for(int i = 0; i < 4 - ((GrandmaHerbs) card).getNoEntry(); i++)
             {
@@ -736,7 +736,7 @@ public class PrinterCLI
                 }
             }
         }
-        System.out.println( ANSI_RED_BACKGROUND + "sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
+        System.out.println( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
         return null;
     }
 
@@ -752,7 +752,7 @@ public class PrinterCLI
                 }
             }
         }
-        System.out.println( ANSI_RED_BACKGROUND + "sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
+        System.out.println( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
         return null;
     }
 }
