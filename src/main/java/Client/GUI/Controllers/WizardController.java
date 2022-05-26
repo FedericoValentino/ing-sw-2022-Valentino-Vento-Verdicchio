@@ -143,11 +143,6 @@ public class WizardController extends Controller{
                 }
             }
         }
-
-
-/*//w.ordinal()
-//                    pos=Integer.parseInt()p.getId()
-                    textAvaiable.get(i).equals(w.ordinal())*/
     }
 
 }
