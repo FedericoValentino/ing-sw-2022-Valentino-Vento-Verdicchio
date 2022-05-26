@@ -2,6 +2,7 @@ package model.cards;
 
 import model.CurrentGameState;
 import model.boards.Pouch;
+import model.boards.token.CharacterName;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,16 +18,14 @@ public class CharacterDeck implements Serializable
   public CharacterDeck(CurrentGameState game)
   {
     this.deck = new ArrayList<>();
-    this.deck.add(new Centaur());
-    this.deck.add(new GrandmaHerbs());
-    this.deck.add(new Knight());
-    this.deck.add(new Herald());
-    this.deck.add(new Postman());
-    this.deck.add(new Priest());
-    this.deck.add(new Princess());
-    this.deck.add(new TruffleHunter());
-    Collections.shuffle(this.deck);
-    this.deck.subList(0, 5).clear();
+    ArrayList<Integer> cardOrdinals = new ArrayList<>();
+    for(int i = 0; i < 8; i++)
+      cardOrdinals.add(i);
+    Collections.shuffle(cardOrdinals);
+    for(int i = 0; i < 3; i++)
+    {
+      deck.add(CharacterCreator.getCharacter(CharacterName.values()[cardOrdinals.get(0)]));
+    }
   }
 
   /** Checks if the deck is empty
@@ -49,14 +48,13 @@ public class CharacterDeck implements Serializable
 
   public void SetupCards(Pouch pouch)
   {
-    for(int i=0; i< deck.size(); i++)
-    {
-      if(deck.get(i) instanceof Priest)
-        for(int j = 0; j < 4; j++)
-          ((Priest) deck.get(i)).updateStudents(pouch);
-      else if(deck.get(i) instanceof Princess)
-        for(int j = 0; j < 4; j++)
-          ((Princess) deck.get(i)).updateStudents(pouch);
+    for (CharacterCard characterCard : deck) {
+      if (characterCard instanceof Priest)
+        for (int j = 0; j < 4; j++)
+          ((Priest) characterCard).updateStudents(pouch);
+      else if (characterCard instanceof Princess)
+        for (int j = 0; j < 4; j++)
+          ((Princess) characterCard).updateStudents(pouch);
 
     }
   }
