@@ -14,6 +14,7 @@ public class Match
     private ArrayList<GameHandler> clients = new ArrayList<>();
     private HashMap<String, String> moves = new HashMap<>();
     private Semaphore gameSemaphore = new Semaphore(0);
+    private boolean running = false;
 
     public Match(int playerNumber, boolean expert, int matchID)
     {
@@ -22,17 +23,25 @@ public class Match
     }
 
     public void addClient(ClientConnection client) throws IOException {
-        GameHandler gameHandler = new GameHandler(mainController, client, client.getTeam(), gameSemaphore);
+        GameHandler gameHandler = new GameHandler(mainController, client, client.getTeam(), gameSemaphore,this);
         clients.add(gameHandler);
     }
 
     public void startGame()
     {
+        running = true;
         for(GameHandler client : clients)
         {
             mainController.getGame().addObserver(client);
             client.start();
         }
     }
+
+    public void end()
+    {
+        running = false;
+    }
+
+    public boolean getRunning(){return running;}
 
 }

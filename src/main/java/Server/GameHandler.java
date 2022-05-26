@@ -30,6 +30,8 @@ public class GameHandler extends Thread implements Observer
     private int planning;
     private int action;
     private int team;
+    private Boolean connected = true;
+    private Match currentMatch;
     private Semaphore threadSem;
     private Semaphore globalSem;
 
@@ -38,7 +40,7 @@ public class GameHandler extends Thread implements Observer
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 
-    public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem) throws IOException
+    public GameHandler(MainController m, ClientConnection s, int team, Semaphore sem, Match match)
     {
         this.socket = s;
         this.mainController = m;
@@ -47,6 +49,7 @@ public class GameHandler extends Thread implements Observer
         this.planning = 0;
         this.action = 0;
         this.team = team;
+        this.currentMatch = match;
         this.globalSem = sem;
         this.threadSem = new Semaphore(0);
     }
@@ -278,19 +281,34 @@ public class GameHandler extends Thread implements Observer
 
     }
 
-    public void readMessage() throws IOException, ClassNotFoundException, InterruptedException
+    public void readMessage()
     {
-        SerializedMessage input = (SerializedMessage) socket.getInputStream().readObject();
-        if(input.getCommand() != null)
+        try
         {
-            StandardSetupMessage message = input.getCommand();
-            setupHandler(message);
+            SerializedMessage input = (SerializedMessage) socket.getInputStream().readObject();
+            if(input.getCommand() != null)
+            {
+                StandardSetupMessage message = input.getCommand();
+                setupHandler(message);
+            }
+            if(input.getAction() != null)
+            {
+                StandardActionMessage message = input.getAction();
+                messageHandler(message);
+            }
         }
-        if(input.getAction() != null)
+        catch (IOException e)
         {
-            StandardActionMessage message = input.getAction();
-            messageHandler(message);
+            System.out.println(socket.getNickname() + "disconnected");
+            connected = false;
+            threadSem.release();
         }
+        catch(ClassNotFoundException e)
+        {
+            System.out.println("Couldn't understand what " + socket.getNickname() + " was saying...");
+            threadSem.release(1);
+        }
+
     }
 
     @Override
@@ -302,58 +320,71 @@ public class GameHandler extends Thread implements Observer
             receiver.start();
             while(isAlive())
             {
-                if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
+                if(connected)
                 {
-                    socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
-                    threadSem.acquire();
+
+                    if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
+                        threadSem.acquire();
+                    }
+                    else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.GAMEREADY))
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new GameStarting()));
+                        mainController.readyPlayer();
+                        if(mainController.getReadyPlayers() >= mainController.getPlayers())
+                        {
+                            mainController.updateGamePhase(GamePhase.PLANNING);
+                            globalSem.release(mainController.getPlayers() - 1);
+                        }
+                        else
+                        {
+                            globalSem.acquire();
+                        }
+                    }
+                    else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new StartTurn()));
+                        if(planning == 0)
+                        {
+                            socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to fill")));
+                        }
+                        if(planning == 1)
+                        {
+                            socket.sendAnswer(new SerializedAnswer(new RequestCard()));
+                        }
+                        threadSem.acquire();
+                    }
+                    else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new StartTurn()));
+                        if(action >= 0 && action <= 2)
+                        {
+                            socket.sendAnswer(new SerializedAnswer(new RequestMoveStudent(String.valueOf(mainController.getActionController().getMovableStudents()))));
+                        }
+                        if(action == 3)
+                        {
+                            socket.sendAnswer(new SerializedAnswer(new RequestMotherNatureMove(String.valueOf(MainController.findPlayerByName(mainController.getGame(), socket.getNickname()).getMaxMotherMovement()))));
+                        }
+                        if(action == 4)
+                        {
+                            socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to empty")));
+                        }
+                        if(action == 5)
+                        {
+                            socket.sendAnswer(new SerializedAnswer(new InfoMessage("End your turn " + ANSI_GREEN + "[EndTurn]" + ANSI_RESET)));
+                        }
+                        threadSem.acquire();
+                    }
                 }
-                else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.GAMEREADY))
+                else
                 {
-                    socket.sendAnswer(new SerializedAnswer(new GameStarting()));
-                    mainController.readyPlayer();
-                    if(mainController.getReadyPlayers() >= mainController.getPlayers())
-                    {
-                        mainController.updateGamePhase(GamePhase.PLANNING);
-                        globalSem.release(mainController.getPlayers() - 1);
-                    }
-                    else
-                    {
-                        globalSem.acquire();
-                    }
+                    currentMatch.end();
                 }
-                else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                if(!currentMatch.getRunning())
                 {
-                    socket.sendAnswer(new SerializedAnswer(new StartTurn()));
-                    if(planning == 0)
-                    {
-                        socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to fill")));
-                    }
-                    if(planning == 1)
-                    {
-                        socket.sendAnswer(new SerializedAnswer(new RequestCard()));
-                    }
-                    threadSem.acquire();
-                }
-                else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
-                {
-                    socket.sendAnswer(new SerializedAnswer(new StartTurn()));
-                    if(action >= 0 && action <= 2)
-                    {
-                        socket.sendAnswer(new SerializedAnswer(new RequestMoveStudent(String.valueOf(mainController.getActionController().getMovableStudents()))));
-                    }
-                    if(action == 3)
-                    {
-                        socket.sendAnswer(new SerializedAnswer(new RequestMotherNatureMove(String.valueOf(MainController.findPlayerByName(mainController.getGame(), socket.getNickname()).getMaxMotherMovement()))));
-                    }
-                    if(action == 4)
-                    {
-                        socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to empty")));
-                    }
-                    if(action == 5)
-                    {
-                        socket.sendAnswer(new SerializedAnswer(new InfoMessage("End your turn " + ANSI_GREEN + "[EndTurn]" + ANSI_RESET)));
-                    }
-                    threadSem.acquire();
+                    socket.sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
+                    socket.sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
                 }
 
             }
@@ -370,5 +401,9 @@ public class GameHandler extends Thread implements Observer
     {
         System.out.println(message);
         socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck(), mainController.getGame().getCurrentActiveCharacterCard())));
+    }
+
+    public Boolean getConnected() {
+        return connected;
     }
 }

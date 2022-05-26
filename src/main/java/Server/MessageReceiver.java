@@ -13,17 +13,9 @@ public class MessageReceiver extends Thread
     @Override
     public void run()
     {
-        while(isAlive())
+        while(game.getConnected())
         {
-            try {
-                game.readMessage();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            game.readMessage();
         }
     }
 }

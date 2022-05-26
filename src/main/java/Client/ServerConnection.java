@@ -19,6 +19,7 @@ public class ServerConnection
     private String nickname;
     private int Team;
     private String ServerIP;
+    private boolean connected = false;
 
 
     public ServerConnection(String nickname, int team, String serverIP) throws IOException
@@ -26,17 +27,18 @@ public class ServerConnection
         this.nickname = nickname;
         this.Team = team;
         this.ServerIP = serverIP;
-
-        server = new Socket(ServerIP, 1234);
-        out = new ObjectOutputStream(server.getOutputStream());
-        in = new ObjectInputStream(server.getInputStream());
     }
 
     public void establishConnection() throws IOException {
+        server = new Socket(ServerIP, 1234);
+        out = new ObjectOutputStream(server.getOutputStream());
+        in = new ObjectInputStream(server.getInputStream());
+
         SetupConnection setup = new SetupConnection(nickname, Team);
         out.writeObject(setup);
         out.flush();
         out.reset();
+        connected = true;
     }
 
 
@@ -50,6 +52,16 @@ public class ServerConnection
         catch (IOException e)
         {
         }
+    }
+
+    public void disconnect()
+    {
+        this.connected = false;
+    }
+
+    public void nicknameChange(String input)
+    {
+        this.nickname = input;
     }
 
     public ObjectInputStream getIn() {

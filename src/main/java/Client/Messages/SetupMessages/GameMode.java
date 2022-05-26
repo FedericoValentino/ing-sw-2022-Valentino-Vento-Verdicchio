@@ -8,6 +8,7 @@ public class GameMode extends StandardSetupMessage
     public GameMode()
     {
         super.type = SETUPMESSAGETYPE.MODE;
+        this.maxPlayers = 99;
     }
 
     public int getMaxPlayers() {

@@ -3,16 +3,15 @@ package Server;
 import Client.Messages.SetupMessages.GameMode;
 import Client.Messages.SetupMessages.SetupConnection;
 import Server.Answers.SerializedAnswer;
+import Server.Answers.SetupAnswers.RejectConnection;
 import Server.Answers.SetupAnswers.RequestGameInfo;
-import controller.MainController;
+
+
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
 
 public class Server
 {
@@ -20,6 +19,7 @@ public class Server
    private ServerSocket server;
    private ArrayList<ClientConnection> waitLobby = new ArrayList<>();
    private ArrayList<Match> matches = new ArrayList<>();
+   private Boolean isGameSet = false;
 
    public Server() throws IOException
    {
@@ -28,21 +28,60 @@ public class Server
 
    public void registerConnection(Socket s) throws IOException, ClassNotFoundException
    {
-      System.out.println("registering new connection");
-      //Receiving Client Nickname
-      ClientConnection connection = new ClientConnection(s);
-      SetupConnection message = (SetupConnection) connection.getInputStream().readObject();
-      connection.setNickname(message.getNickname());
-      connection.setTeam(message.getTeam());
-      //adding Client To waiting Lobby
-      waitLobby.add(connection);
+
+      try
+      {
+         System.out.println("registering new connection");
+         //Receiving Client Nickname
+         ClientConnection connection = new ClientConnection(s);
+         SetupConnection message = (SetupConnection) connection.getInputStream().readObject();
+         connection.setNickname(message.getNickname());
+         for(ClientConnection C : waitLobby)
+         {
+            if(C.getNickname().equals(connection.getNickname()))
+            {
+               connection.sendAnswer(new SerializedAnswer(new RejectConnection()));
+               connection.getClient().close();
+               return;
+            }
+         }
+         connection.setTeam(message.getTeam());
+         //adding Client To waiting Lobby
+         waitLobby.add(connection);
+      }
+      catch(IOException e)
+      {
+         System.out.println("Client disconnected during connection registering");
+      }
+      catch(ClassNotFoundException e)
+      {
+         System.out.println("Couldn't understand client");
+      }
    }
 
-   public GameMode requestGameInfo(ClientConnection c) throws IOException, ClassNotFoundException {
-      //requesting GameInfo to first client
-      c.sendAnswer(new SerializedAnswer(new RequestGameInfo()));
-      //receiving GameMode info from first client
-      return (GameMode) c.getInputStream().readObject();
+   public GameMode requestGameInfo(ClientConnection client)
+   {
+      try
+      {
+
+         //requesting GameInfo to first client
+         client.sendAnswer(new SerializedAnswer(new RequestGameInfo()));
+         //receiving GameMode info from first client
+         GameMode info =(GameMode) client.getInputStream().readObject();
+         isGameSet = true;
+         return info;
+      }
+      catch(IOException e)
+      {
+         System.out.println("Client disconnected");
+         waitLobby.remove(client);
+      }
+      catch(ClassNotFoundException e)
+      {
+         System.out.println("Couldn't understand client");
+         waitLobby.remove(client);
+      }
+      return new GameMode();
    }
 
    public void run()
@@ -55,9 +94,10 @@ public class Server
             Socket socket = server.accept();
             System.out.println("New Connection!");
             registerConnection(socket);
-            if(waitLobby.size() == 1)
+            if(waitLobby.size() == 1 && !isGameSet)
             {
                info = requestGameInfo(waitLobby.get(0));
+
             }
             if(waitLobby.size() == info.getMaxPlayers())
             {
@@ -69,10 +109,9 @@ public class Server
                match.startGame();
                matches.add(match);
                waitLobby.removeAll(waitLobby);
+               isGameSet = false;
             }
          } catch (IOException e) {
-            throw new RuntimeException(e);
-         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
          }
       }

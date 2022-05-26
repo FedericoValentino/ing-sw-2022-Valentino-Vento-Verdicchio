@@ -22,6 +22,7 @@ public class ClientCLI implements ClientView
     private InputParser stdin;
     private SerializedAnswer input;
     private Boolean setupState = true;
+    private Scanner info = new Scanner(System.in);
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
     @Override
@@ -73,6 +74,17 @@ public class ClientCLI implements ClientView
             case GAME_START:
                 System.out.println("Game Starting!");
                 break;
+            case REJECT:
+                System.out.println(((RejectConnection)answer).getRejectionInfo());
+                main.nicknameChange(info.next());
+                try
+                {
+                    main.establishConnection();
+                }
+                catch(IOException e)
+                {
+                    System.out.println("Server unreachable");
+                }
         }
     }
 
@@ -88,8 +100,15 @@ public class ClientCLI implements ClientView
                 System.out.println("Your Turn, start playing!");
                 break;
             case VIEW:
-                MyView.parse((ViewMessage) answer);
-                stdin.printGame();
+                try
+                {
+                    MyView.parse((ViewMessage) answer);
+                    stdin.printGame();
+                }
+                catch(JsonProcessingException e)
+                {
+                    System.out.println("Error in processing view, show commands aren't available");
+                }
                 break;
             case CLOUD_REQ:
                 System.out.println(((RequestCloud) answer).getMessage());
@@ -103,42 +122,71 @@ public class ClientCLI implements ClientView
             case MN_REQ:
                 System.out.println("Move Mother Nature!");
                 break;
+            case WIN:
+                System.out.println(((WinMessage) answer).getWinningTeam());
+                System.exit(0);
+                break;
         }
 
     }
 
     @Override
-    public void readMessage() throws IOException, ClassNotFoundException {
-        input = (SerializedAnswer) main.getIn().readObject();
-        if(input.getCommand() != null)
+    public void readMessage(){
+        try
         {
-            StandardSetupAnswer answer = input.getCommand();
-            setupHandler(answer);
+            input = (SerializedAnswer) main.getIn().readObject();
+            if(input.getCommand() != null)
+            {
+                StandardSetupAnswer answer = input.getCommand();
+                setupHandler(answer);
+            }
+            if(input.getAction() != null)
+            {
+                StandardActionAnswer answer = input.getAction();
+                messageHandler(answer);
+            }
         }
-        if(input.getAction() != null)
+        catch(IOException e)
         {
-            StandardActionAnswer answer = input.getAction();
-            messageHandler(answer);
+            main.disconnect();
+            System.exit(0);
         }
+        catch(ClassNotFoundException e)
+        {
+            System.out.println("Client couldn't understand Server");
+        }
+
     }
 
     @Override
-    public void run() throws IOException, ClassNotFoundException
+    public void run()
     {
-        Scanner info = new Scanner(System.in);
         System.out.println("Nickname?");
         String nickname = info.next();
         System.out.println("Team?");
         int team = info.nextInt();
+        while(team < 0 || team > 2)
+        {
+            System.out.println("ERROR: No such Team exists");
+            team = info.nextInt();
+        }
         System.out.println("ServerIP?");
         String IP = info.next();
 
-        main = new ServerConnection(nickname, team, IP);
-        main.establishConnection();
+        try
+        {
+            main = new ServerConnection(nickname, team, IP);
+            main.establishConnection();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Server unreachable or non existent");
+            return;
+        }
         ListenerCLI Listener = new ListenerCLI(this);
         this.stdin = new InputParser(main, MyView);
         executor.execute(Listener);
-        while(true)
+        while(main.getConnected())
         {
             if(!setupState)
             {
@@ -146,4 +194,10 @@ public class ClientCLI implements ClientView
             }
         }
     }
+
+    public ServerConnection getMain() {
+        return main;
+    }
 }
+
+

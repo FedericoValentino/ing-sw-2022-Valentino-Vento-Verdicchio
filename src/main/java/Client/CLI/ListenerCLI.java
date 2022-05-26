@@ -15,14 +15,7 @@ public class ListenerCLI implements Runnable
     {
         while(true)
         {
-            //System.out.println("Waiting for Server...");
-            try {
-                client.readMessage();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            client.readMessage();
         }
     }
 }
