@@ -82,7 +82,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CharacterControllerTest.deckManagement">
+  <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -158,8 +158,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
         <item itemvalue="JUnit.All in softeng-GC61" />
+        <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.ServerApp" />
         <item itemvalue="JUnit.CharacterControllerTest.playEffect" />

@@ -112,7 +112,7 @@ public class CharacterControllerTest {
         assertTrue(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
 
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(-3);
-        System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
+        //System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
         assertFalse(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
     }
