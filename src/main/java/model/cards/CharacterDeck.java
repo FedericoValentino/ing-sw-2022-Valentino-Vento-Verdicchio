@@ -25,6 +25,7 @@ public class CharacterDeck implements Serializable
     for(int i = 0; i < 3; i++)
     {
       deck.add(CharacterCreator.getCharacter(CharacterName.values()[cardOrdinals.get(0)]));
+      cardOrdinals.remove(0);
     }
   }
 
