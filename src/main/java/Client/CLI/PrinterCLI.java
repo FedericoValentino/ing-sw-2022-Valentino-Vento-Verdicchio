@@ -594,6 +594,11 @@ public class PrinterCLI
     {
         String[] inactiveCharacter = new String[8];
         Arrays.fill(inactiveCharacter, "");
+        if(view.getCurrentCharacterDeck() == null)
+        {
+            System.out.println("You're not playing with expert mode");
+            return;
+        }
         System.out.println( ANSI_GREEN + "Inactive Cards:" + ANSI_RESET);
         for(int i = 0; i < view.getCurrentCharacterDeck().getDeck().size(); i++)
         {

@@ -213,4 +213,37 @@ public class Checks {
         return false;
     }
 
+    public void checkWinnerForTowers(CurrentGameState game)
+    {
+        for(Team t: game.getCurrentTeams())
+        {
+            for(Player p: t.getPlayers())
+            {
+                if(p.getSchool().getTowerCount() == 0 && p.isTowerOwner())
+                {
+                    game.getCurrentTurnState().updateWinner(t.getColor());
+                }
+            }
+        }
+    }
+
+    public void checkWinnerForIsland(CurrentGameState game)
+    {
+        if(game.getCurrentIslands().getTotalGroups() <= 3)
+        {
+            game.getCurrentTurnState().updateWinner(game.getCurrentIslands().getMaxCol(game.getCurrentTeams()));
+        }
+    }
+
+    public boolean checkLastTurnDueToAssistants(CurrentGameState game, String currentPlayer)
+    {
+        Player player = MainController.findPlayerByName(game, currentPlayer);
+        return player.getAssistantDeck().checkEmpty();
+    }
+
+    public boolean isThereAWinner(CurrentGameState game)
+    {
+        return game.getCurrentTurnState().getWinningTeam() != null;
+    }
+
 }

@@ -88,39 +88,6 @@ public void testPlaceToken1()
         assertEquals(2, cg2.getCurrentIslands().getTotalGroups());
     }
 
-    @Test
-    public void testCheckWinner()
-    {
-        //checking the first if
-        testUpdateTurnState();
-        p1.getSchool().updateTowerCount(-8);
-        cg2.checkWinner();
-        p1.isTowerOwner();
-        assertEquals(ColTow.WHITE,cg2.getCurrentTurnState().getWinningTeam());
-        //checking the second if
-        while(!cg2.getCurrentTeams().get(0).getPlayers().get(0).getAssistantDeck().getDeck().isEmpty())
-        {
-            cg2.getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
-            cg2.getCurrentTeams().get(0).getPlayers().get(0).Discard();
-        }
-        assertTrue(cg2.getCurrentTeams().get(0).getPlayers().get(0).getAssistantDeck().checkEmpty());
-        cg2.checkWinner();
-        assertTrue(cg2.getCurrentTurnState().lastTurn);
-
-        //checking the 3° if total groups<=3
-        testPlaceToken1();
-        p1.getSchool().updateTowerCount(8);
-        cg2.checkWinner();
-
-        //checking the 4° if pouch empty
-        // while(!cg3.getCurrentPouch().checkEmpty())
-        cg3.getCurrentPouch().updateSetup(false);
-        while(!cg3.getCurrentPouch().checkEmpty())
-            cg3.getCurrentPouch().extractStudent();
-        assertTrue(cg3.getCurrentPouch().checkEmpty());
-        cg3.checkWinner();
-        assertTrue(cg3.getCurrentTurnState().lastTurn);
-    }
 
     @Test
     public void testGiveProfessors()

@@ -54,6 +54,32 @@ public class GameHandler extends Thread implements Observer
         this.threadSem = new Semaphore(0);
     }
 
+
+    public void updateLastPlayer(GamePhase phase)
+    {
+        if(mainController.getChecks().isLastTurn(mainController.getGame()) && mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION))
+        {
+            mainController.selectWinner();
+            socket.sendAnswer(new SerializedAnswer(new WinMessage(String.valueOf(mainController.getGame().getCurrentTurnState().getWinningTeam()) + "is the Winner!")));
+            try
+            {
+                socket.getClient().close();
+            }
+            catch(IOException e)
+            {
+                System.out.println("Couldn't close connection");
+            }
+            currentMatch.end();
+        }
+        else
+        {
+            mainController.updateGamePhase(phase);
+            mainController.updateTurnState();
+            mainController.determineNextPlayer();
+        }
+
+    }
+
     public void setupHandler(StandardSetupMessage message) throws IOException
     {
         if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP))
@@ -123,20 +149,28 @@ public class GameHandler extends Thread implements Observer
                 if (planning == 1 && mainController.getChecks().isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                 {
                     if(!mainController.getChecks().isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                    {
                         mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
+                        if(mainController.getChecks().checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
+                        {
+                            mainController.lastTurn();
+                        }
+                    }
                     else
                     {
                         if(mainController.getChecks().canCardStillBePlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                         {
                             mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
+                            if(mainController.getChecks().checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
+                            {
+                                mainController.lastTurn();
+                            }
                         }
                     }
 
                     if (mainController.getChecks().isLastPlayer(mainController.getGame()))
                     {
-                        mainController.updateGamePhase(GamePhase.ACTION);
-                        mainController.updateTurnState();
-                        mainController.determineNextPlayer();
+                        updateLastPlayer(GamePhase.ACTION);
                         threadSem.release(1);
                     }
                     else
@@ -208,9 +242,7 @@ public class GameHandler extends Thread implements Observer
             case TURN_END:
                 if (action == 5) {
                     if (mainController.getChecks().isLastPlayer(mainController.getGame())) {
-                        mainController.updateGamePhase(GamePhase.PLANNING);
-                        mainController.updateTurnState();
-                        mainController.determineNextPlayer();
+                        updateLastPlayer(GamePhase.PLANNING);
                     } else {
                         mainController.determineNextPlayer();
                     }
@@ -271,8 +303,6 @@ public class GameHandler extends Thread implements Observer
                     socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wrong Phase, you are in Planning Phase!" + ANSI_RESET)));
                 }
             }
-
-
         }
         else
         {
@@ -322,8 +352,20 @@ public class GameHandler extends Thread implements Observer
             {
                 if(connected)
                 {
-
-                    if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
+                    if(mainController.getChecks().isThereAWinner(mainController.getGame()))
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new WinMessage(String.valueOf(mainController.getGame().getCurrentTurnState().getWinningTeam()) + "is the Winner!")));
+                        try
+                        {
+                            socket.getClient().close();
+                        }
+                        catch(IOException e)
+                        {
+                            System.out.println("Couldn't close connection");
+                        }
+                        currentMatch.end();
+                    }
+                    else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
                     {
                         socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
                         threadSem.acquire();
@@ -345,11 +387,16 @@ public class GameHandler extends Thread implements Observer
                     else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                     {
                         socket.sendAnswer(new SerializedAnswer(new StartTurn()));
+                        if(!mainController.getChecks().isPouchAvailable(mainController.getGame()))
+                        {
+                            planning = 1;
+                            mainController.lastTurn();
+                        }
                         if(planning == 0)
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to fill")));
                         }
-                        if(planning == 1)
+                        else if(planning == 1)
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCard()));
                         }
@@ -366,6 +413,11 @@ public class GameHandler extends Thread implements Observer
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestMotherNatureMove(String.valueOf(MainController.findPlayerByName(mainController.getGame(), socket.getNickname()).getMaxMotherMovement()))));
                         }
+                        if(action == 4 && !mainController.getChecks().isPouchAvailable(mainController.getGame()))
+                        {
+                            action = 5;
+                            mainController.lastTurn();
+                        }
                         if(action == 4)
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to empty")));
@@ -381,7 +433,7 @@ public class GameHandler extends Thread implements Observer
                 {
                     currentMatch.end();
                 }
-                if(!currentMatch.getRunning())
+                if(!currentMatch.getRunning() && !mainController.getChecks().isThereAWinner(mainController.getGame()))
                 {
                     socket.sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
                     socket.sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));

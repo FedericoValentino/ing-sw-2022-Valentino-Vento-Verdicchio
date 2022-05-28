@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="softeng-GC61:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Server and Client Exception Handling&#10;&#10;Valentino Vento">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="JANSI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Checks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ActionControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CurrentGameStateTest.java" afterDir="false" />
     </list>
-    <list id="e37afdbc-5132-4e80-961e-f40ebc8db39e" name="Changes by enric" comment="" />
+    <list id="e37afdbc-5132-4e80-961e-f40ebc8db39e" name="Changes by enric" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Checks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Centaur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/Herald.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cards/TruffleHunter.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +59,21 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/controller/Checks.java">
+      <ranges>
+        <range start1="183" end1="183" start2="183" end2="187" changelist="e37afdbc-5132-4e80-961e-f40ebc8db39e" />
+        <range start1="191" end1="192" start2="195" end2="196" changelist="e37afdbc-5132-4e80-961e-f40ebc8db39e" />
+        <range start1="193" end1="194" start2="197" end2="198" changelist="e37afdbc-5132-4e80-961e-f40ebc8db39e" />
+        <range start1="195" end1="196" start2="199" end2="200" changelist="e37afdbc-5132-4e80-961e-f40ebc8db39e" />
+        <range start1="199" end1="200" start2="203" end2="204" changelist="e37afdbc-5132-4e80-961e-f40ebc8db39e" />
+        <range start1="201" end1="202" start2="205" end2="206" changelist="e37afdbc-5132-4e80-961e-f40ebc8db39e" />
+        <range start1="205" end1="206" start2="209" end2="210" changelist="e37afdbc-5132-4e80-961e-f40ebc8db39e" />
+        <range start1="207" end1="208" start2="211" end2="212" changelist="e37afdbc-5132-4e80-961e-f40ebc8db39e" />
+        <range start1="214" end1="214" start2="218" end2="251" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -52,13 +86,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -83,7 +118,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main">
+  <component name="RunManager" selected="Application.ServerApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -159,8 +194,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
         <item itemvalue="Application.ServerApp" />
+        <item itemvalue="Application.main" />
         <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
         <item itemvalue="JUnit.CharacterControllerTest.playEffect" />
@@ -202,6 +237,7 @@
       <workItem from="1653572806589" duration="7717000" />
       <workItem from="1653729341766" duration="366000" />
       <workItem from="1653745525649" duration="449000" />
+      <workItem from="1653745992014" duration="5710000" />
     </task>
     <task id="LOCAL-00015" summary="Updated all the comments of Controller and Model classes to match the quality of the previous updates">
       <created>1651006642725</created>
@@ -209,13 +245,6 @@
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
       <updated>1651006642725</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Cards in model have now comments on important methods">
-      <created>1650896736057</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1650896736057</updated>
     </task>
     <task id="LOCAL-00018" summary="Boo (non capisco perché non mi fa updatare)">
       <created>1651007322037</created>
@@ -546,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653583981531</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="JANSI">
+      <created>1653746115994</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1653746115994</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Printer Islands" />
     <MESSAGE value="Add GUI's basic components" />
     <MESSAGE value="Add footprints of the all classes of Gui and add the intro and lobby functionality" />
     <MESSAGE value="Add footprints of other classes" />
@@ -591,7 +626,8 @@
     <MESSAGE value="Replaced creation of Charcater cards in Character Deck with a factory method" />
     <MESSAGE value="Corrected a stupid mistake in char deck constructor, now everything works" />
     <MESSAGE value="Found the only active Print instruction in the test classes, removed it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Found the only active Print instruction in the test classes, removed it" />
+    <MESSAGE value="JANSI" />
+    <option name="LAST_COMMIT_MESSAGE" value="JANSI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

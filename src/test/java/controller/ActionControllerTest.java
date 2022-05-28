@@ -93,7 +93,7 @@ public class ActionControllerTest
         }
         assertEquals(true, MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getProfessorTable()[Col.PINK.ordinal()]);
         controllerTest.getGame().getCurrentIslands().getIslands().get(0).motherNature = true;
-        ActionController.solveEverything(controllerTest.getGame(), 0);
+        controllerTest.getGame().solveEverything( 0);
         assertEquals(MainController.getPlayerColor(controllerTest.getGame(), controllerTest.getCurrentPlayer()),  controllerTest.getGame().getCurrentIslands().getIslands().get(0).getOwnership());
         controllerTest.determineNextPlayer();
 
@@ -125,7 +125,7 @@ public class ActionControllerTest
         }
         assertEquals(true, MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getProfessorTable()[Col.RED.ordinal()]);
         controllerTest.getGame().getCurrentIslands().getIslands().get(0).motherNature = true;
-        ActionController.solveEverything(controllerTest.getGame(), 0);
+        controllerTest.getGame().solveEverything(0);
         assertEquals(MainController.getPlayerColor(controllerTest.getGame(), controllerTest.getCurrentPlayer()),  controllerTest.getGame().getCurrentIslands().getIslands().get(0).getOwnership());
     /*fgetc(stdin);*/
     }

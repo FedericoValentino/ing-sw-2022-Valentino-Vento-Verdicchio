@@ -185,6 +185,16 @@ public class MainController
         game.getCurrentTurnState().updateGamePhase(phase);
     }
 
+    public void lastTurn()
+    {
+        game.getCurrentTurnState().setLastTurn();
+    }
+
+    public void selectWinner()
+    {
+        game.getCurrentTurnState().updateWinner(game.getCurrentIslands().getMaxCol(game.getCurrentTeams()));
+    }
+
 
     public void resetReady()
     {
@@ -200,6 +210,7 @@ public class MainController
     {
         return game;
     }
+
     public CharacterController getCharacterController() {return characterController;}
 
     public String getCurrentPlayer() {

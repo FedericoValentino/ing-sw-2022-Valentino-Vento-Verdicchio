@@ -76,44 +76,12 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
         if(!checks.checkForInfluenceCharacter(game, currentPlayer))
         {
-            solveEverything(game, game.getCurrentMotherNature().getPosition());
+            game.solveEverything(game.getCurrentMotherNature().getPosition());
+            checks.checkWinnerForTowers(game);
+            checks.checkWinnerForIsland(game);
         }
     }
 
-
-
-    /** Method solveEverything is responsible for the influence calculation on the desired island, and
-     handles the eventual exchange of towers between players' schools and the island
-     * @param game  an instance of the game
-     * @param pos  the island on which the influence calculation has to be called
-     */
-    public static void solveEverything(CurrentGameState game, int pos)
-    {
-        ColTow previousOwner = game.getCurrentIslands().getIslands().get(pos).getOwnership();
-        game.getCurrentIslands().getIslands().get(pos).updateTeamInfluence(game.getCurrentTeams());
-        game.getCurrentIslands().getIslands().get(pos).calculateOwnership();
-        ColTow currentOwner = game.getCurrentIslands().getIslands().get(pos).getOwnership();
-        if(previousOwner != currentOwner)
-        {
-            for(Team t: game.getCurrentTeams())
-            {
-                for(Player p: t.getPlayers())
-                {
-                    if(p.isTowerOwner() && t.getColor() == previousOwner)
-                    {
-                        p.getSchool().updateTowerCount(game.getCurrentIslands().getIslands().get(pos).getTowerNumber());
-                        t.updateControlledIslands(-1);
-                    }
-                    if(p.isTowerOwner() && t.getColor() == currentOwner)
-                    {
-                        p.getSchool().updateTowerCount(-(game.getCurrentIslands().getIslands().get(pos).getTowerNumber()));
-                        t.updateControlledIslands(1);
-                    }
-                }
-            }
-        }
-        game.getCurrentIslands().idManagement();
-    }
 
 
     public void setCurrentPlayer(String name)

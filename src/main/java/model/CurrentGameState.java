@@ -103,34 +103,6 @@ public class CurrentGameState extends Observable {
     }
 
 
-    /** Method checkWinner checks if a winner is found and updates the CurrentTurnState */
-    public void checkWinner()
-    {
-        for(Team t: currentTeams)
-        {
-            for(Player p: t.getPlayers())
-            {
-                if(p.getSchool().getTowerCount() == 0 && p.isTowerOwner())
-                {
-                    currentTurnState.updateWinner(t.getColor());
-                }
-                if(p.getAssistantDeck().checkEmpty())
-                {
-                    currentTurnState.lastTurn = true;
-                }
-            }
-        }
-        if(currentIslands.getTotalGroups() <= 3)
-        {
-            currentTurnState.updateWinner(currentIslands.getMaxCol(currentTeams));
-        }
-        else if (currentPouch.checkEmpty())
-        {
-            currentTurnState.lastTurn = true;
-        }
-        notify(modelToJson());
-    }
-
     /** Method updateBankBalance updates the BankBalance everytime a player p gains a coin from its DiningRoom or pays
      for a Character Card
      * @param p  the player to check
@@ -198,6 +170,39 @@ public class CurrentGameState extends Observable {
 
         }
         notify(modelToJson());
+    }
+
+
+    /** Method solveEverything is responsible for the influence calculation on the desired island, and
+     handles the eventual exchange of towers between players' schools and the island
+     * @param pos  the island on which the influence calculation has to be called
+     */
+    public void solveEverything(int pos)
+    {
+        ColTow previousOwner = currentIslands.getIslands().get(pos).getOwnership();
+        currentIslands.getIslands().get(pos).updateTeamInfluence(getCurrentTeams());
+        currentIslands.getIslands().get(pos).calculateOwnership();
+        ColTow currentOwner = currentIslands.getIslands().get(pos).getOwnership();
+        if(previousOwner != currentOwner)
+        {
+            for(Team t: getCurrentTeams())
+            {
+                for(Player p: t.getPlayers())
+                {
+                    if(p.isTowerOwner() && t.getColor() == previousOwner)
+                    {
+                        p.getSchool().updateTowerCount(getCurrentIslands().getIslands().get(pos).getTowerNumber());
+                        t.updateControlledIslands(-1);
+                    }
+                    if(p.isTowerOwner() && t.getColor() == currentOwner)
+                    {
+                        p.getSchool().updateTowerCount(-(getCurrentIslands().getIslands().get(pos).getTowerNumber()));
+                        t.updateControlledIslands(1);
+                    }
+                }
+            }
+        }
+        currentIslands.idManagement();
     }
 
     public String modelToJson()
