@@ -12,7 +12,6 @@ import Server.Answers.SetupAnswers.GameStarting;
 import Server.Answers.SetupAnswers.InfoMessage;
 import controller.CharacterController;
 import controller.MainController;
-import controller.Checks;
 import model.boards.token.GamePhase;
 import model.boards.token.Wizard;
 import Observer.Observer;
