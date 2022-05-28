@@ -13,7 +13,7 @@ public class CurrentTurnState
     private boolean gameEnded;
     private ColTow WinningTeam;
     private GamePhase gamePhase;
-    public boolean lastTurn;
+    private boolean lastTurn;
 
     /** Class constructor. Uses a HashMap to model in which order the players have to play for that turn */
     public CurrentTurnState()
@@ -60,6 +60,8 @@ public class CurrentTurnState
         gamePhase = newPhase;
     }
 
+    public void setLastTurn(){lastTurn = true;}
+
     public GamePhase getGamePhase() {
         return gamePhase;
     }
@@ -75,6 +77,7 @@ public class CurrentTurnState
     public int getTurn() {
         return turn;
     }
+    public boolean getLastTurn(){ return  lastTurn; }
 
     public HashMap<String, Integer> getTurnOrder() {
         return turnOrder;

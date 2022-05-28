@@ -125,13 +125,13 @@ public class ClientCLI implements ClientView
                 System.out.println(((RequestCloud) answer).getMessage());
                 break;
             case CARD_REQ:
-                System.out.println("Choose a Character Card!");
+                System.out.println("Choose an Assistant Card");
                 break;
             case STUD_REQ:
-                System.out.println("Move a student from your entrance!");
+                System.out.println("Move a student from your entrance");
                 break;
             case MN_REQ:
-                System.out.println("Move Mother Nature!");
+                System.out.println("Move Mother Nature");
                 break;
             case WIN:
                 System.out.println(((WinMessage) answer).getWinningTeam());

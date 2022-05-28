@@ -182,6 +182,10 @@ public class Checks {
         return game.getCurrentTurnState().getTurnOrder().size() == 0;
     }
 
+    public boolean isLastTurn(CurrentGameState game){
+        return game.getCurrentTurnState().getLastTurn();
+    }
+
 
     /** Returns true if there are any influence related character cards present in the Active Characters Deck
      * @param game  an instance of hte game
@@ -189,23 +193,23 @@ public class Checks {
      */
     protected boolean checkForInfluenceCharacter(CurrentGameState game, String currentPlayer)
     {
-        for(CharacterCard c: game.getCurrentActiveCharacterCard())
+        for(CharacterCard card: game.getCurrentActiveCharacterCard())
         {
-            if(c instanceof Knight)
+            if(card instanceof Knight)
             {
-                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
+                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
                 CharacterController.deckManagement(game);
                 return  true;
             }
-            else if(c instanceof TruffleHunter)
+            else if(card instanceof TruffleHunter)
             {
-                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) c).getChosenColor());
+                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) card).getChosenColor());
                 CharacterController.deckManagement(game);
                 return  true;
             }
-            else if(c instanceof Centaur)
+            else if(card instanceof Centaur)
             {
-                c.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, null);
+                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, null);
                 CharacterController.deckManagement(game);
                 return  true;
             }
