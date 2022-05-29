@@ -16,6 +16,7 @@ public class PlanningController
         {
             game.getCurrentClouds()[position].placeToken(game.getCurrentPouch().extractStudent());
         }
+        game.getCurrentTurnState().UpdateMoves();
     }
 
     /** It finds the currentPlayer by its name and it plays the desired AssistantCard, identified in
@@ -27,5 +28,6 @@ public class PlanningController
     public void drawAssistantCard(CurrentGameState game, String currentPlayer, int cardPosition)
     {
         MainController.findPlayerByName(game, currentPlayer).chooseAssistantCard(cardPosition);
+        game.getCurrentTurnState().UpdateMoves();
     }
 }

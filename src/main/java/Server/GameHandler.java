@@ -13,6 +13,7 @@ import Server.Answers.SetupAnswers.InfoMessage;
 import controller.CharacterController;
 import controller.Checks;
 import controller.MainController;
+import controller.MovesChecks;
 import model.boards.token.GamePhase;
 import model.boards.token.Wizard;
 import Observer.Observer;
@@ -27,8 +28,6 @@ public class GameHandler extends Thread implements Observer
     private MainController mainController;
     private boolean ready;
     private boolean choseWizard;
-    private int planning;
-    private int action;
     private int team;
     private Boolean connected = true;
     private Match currentMatch;
@@ -47,8 +46,6 @@ public class GameHandler extends Thread implements Observer
         this.mainController = m;
         this.ready = false;
         this.choseWizard = false;
-        this.planning = 0;
-        this.action = 0;
         this.team = team;
         this.currentMatch = match;
         this.globalSem = sem;
@@ -135,10 +132,9 @@ public class GameHandler extends Thread implements Observer
         switch(message.type)
         {
             case CLOUD_CHOICE:
-                if (planning == 0 && Checks.isCloudFillable(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
+                if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type) && Checks.isCloudFillable(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
                     mainController.getPlanningController()
                             .drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
-                    planning++;
                     threadSem.release(1);
                 }
                 else
@@ -147,7 +143,7 @@ public class GameHandler extends Thread implements Observer
                 }
                 break;
             case DRAW_CHOICE:
-                if (planning == 1 && Checks.isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type) && Checks.isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                 {
                     if(!Checks.isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                     {
@@ -179,7 +175,6 @@ public class GameHandler extends Thread implements Observer
                         mainController.determineNextPlayer();
                         threadSem.release(1);
                     }
-                    planning = 0;
                 }
                 else
                 {
@@ -194,7 +189,7 @@ public class GameHandler extends Thread implements Observer
         switch(message.type)
         {
             case STUD_MOVE:
-                if (action >= 0 && action <= 2) {
+                if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type)) {
                     if (((MoveStudent) message).isToIsland()) {
                         mainController.getActionController()
                                 .placeStudentToIsland(((MoveStudent) message).getEntrancePos(),
@@ -207,47 +202,44 @@ public class GameHandler extends Thread implements Observer
                                         mainController.getGame(),
                                         socket.getNickname());
                     }
-                    action++;
                     threadSem.release(1);
                 }
                 break;
 
 
             case MN_MOVE:
-                if (action == 3)
+                if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type))
                 {
                     if (Checks.isAcceptableMovementAmount(mainController.getGame(), mainController.getCurrentPlayer(), ((MoveMN) message).getAmount())) {
                         mainController.getActionController().MoveMN(((MoveMN) message).getAmount(), mainController.getGame());
                     } else {
                         socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Too much movement" + ANSI_RESET)));
                     }
-                    action++;
                     threadSem.release(1);
                 }
                 break;
 
 
             case DRAW_POUCH:
-                if (action == 4) {
+                if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type)) {
                     if (!Checks.isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
                         socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "You selected an empty Cloud" + ANSI_RESET)));
                     } else {
                         mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
                     }
-                    action++;
                     threadSem.release(1);
                 }
                 break;
 
 
             case TURN_END:
-                if (action == 5) {
+                if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type))
+                {
                     if (Checks.isLastPlayer(mainController.getGame())) {
                         updateLastPlayer(GamePhase.PLANNING);
                     } else {
                         mainController.determineNextPlayer();
                     }
-                    action = 0;
                     threadSem.release(1);
                 }
                 break;
@@ -387,45 +379,51 @@ public class GameHandler extends Thread implements Observer
                     }
                     else if(Checks.isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                     {
+                        boolean skipToEnd = false;
                         socket.sendAnswer(new SerializedAnswer(new StartTurn()));
                         if(!Checks.isPouchAvailable(mainController.getGame()))
                         {
-                            planning = 1;
+                            skipToEnd = true;
                             mainController.lastTurn();
                         }
-                        if(planning == 0)
+                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.CLOUD_CHOICE) && !skipToEnd)
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to fill")));
                         }
-                        else if(planning == 1)
+                        else if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.DRAW_CHOICE))
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCard()));
+                            if(skipToEnd)
+                                skipToEnd = false;
                         }
                         threadSem.acquire();
                     }
                     else if(Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                     {
+                        boolean skipToEnd = false;
                         socket.sendAnswer(new SerializedAnswer(new StartTurn()));
-                        if(action >= 0 && action <= 2)
+                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.STUD_MOVE))
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestMoveStudent(String.valueOf(mainController.getActionController().getMovableStudents()))));
                         }
-                        if(action == 3)
+                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.MN_MOVE))
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestMotherNatureMove(String.valueOf(MainController.findPlayerByName(mainController.getGame(), socket.getNickname()).getMaxMotherMovement()))));
                         }
-                        if(action == 4 && !Checks.isPouchAvailable(mainController.getGame()))
+                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.DRAW_POUCH) && !Checks.isPouchAvailable(mainController.getGame()))
                         {
-                            action = 5;
+                            skipToEnd = true;
                             mainController.lastTurn();
                         }
-                        if(action == 4)
+                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.DRAW_POUCH) && !skipToEnd)
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to empty")));
                         }
-                        if(action == 5)
+                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.TURN_END))
                         {
                             socket.sendAnswer(new SerializedAnswer(new InfoMessage("End your turn " + ANSI_GREEN + "[EndTurn]" + ANSI_RESET)));
+                            if(skipToEnd)
+                                skipToEnd = false;
                         }
                         threadSem.acquire();
                     }

@@ -43,9 +43,7 @@ public final class Checks {
      */
     public static boolean isDestinationAvailable(CurrentGameState game, String currentPlayer, int entrancePosition, boolean toIsland, int islandId)
     {
-        boolean validEntrance = true;
-        if (entrancePosition < 0 || entrancePosition >= MainController.findPlayerByName(game, currentPlayer).getSchool().getEntrance().size())
-            validEntrance = false;
+        boolean validEntrance = entrancePosition >= 0 && entrancePosition < MainController.findPlayerByName(game, currentPlayer).getSchool().getEntrance().size();
         if(!toIsland)
             return validEntrance;
         else

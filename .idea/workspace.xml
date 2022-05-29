@@ -9,14 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Minor graphic changes">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Made Checks &quot;static&quot; and changed the method calls accordingly">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MovesChecks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Checks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ChecksTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MainControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
     </list>
     <list id="e37afdbc-5132-4e80-961e-f40ebc8db39e" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +93,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main">
+  <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -168,9 +169,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.ServerApp" />
-        <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
         <item itemvalue="JUnit.CharacterControllerTest.playEffect" />
       </list>
@@ -212,13 +213,6 @@
       <workItem from="1653729341766" duration="366000" />
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
-    </task>
-    <task id="LOCAL-00015" summary="Updated all the comments of Controller and Model classes to match the quality of the previous updates">
-      <created>1651006642725</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1651006642725</updated>
     </task>
     <task id="LOCAL-00018" summary="Boo (non capisco perché non mi fa updatare)">
       <created>1651007322037</created>
@@ -556,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653746115994</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Made Checks &quot;static&quot; and changed the method calls accordingly">
+      <created>1653837146789</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1653837146789</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add GUI's basic components" />
     <MESSAGE value="Add footprints of the all classes of Gui and add the intro and lobby functionality" />
     <MESSAGE value="Add footprints of other classes" />
     <MESSAGE value="Changes in Gui" />
@@ -601,7 +601,8 @@
     <MESSAGE value="Corrected a stupid mistake in char deck constructor, now everything works" />
     <MESSAGE value="Found the only active Print instruction in the test classes, removed it" />
     <MESSAGE value="JANSI" />
-    <option name="LAST_COMMIT_MESSAGE" value="JANSI" />
+    <MESSAGE value="Made Checks &quot;static&quot; and changed the method calls accordingly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made Checks &quot;static&quot; and changed the method calls accordingly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

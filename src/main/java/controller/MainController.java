@@ -26,12 +26,12 @@ public class MainController
 
 
 
-    public MainController(int n, boolean expert)
+    public MainController(int playerNumber, boolean expert)
     {
 
-        this.game = new CurrentGameState(n, expert);
+        this.game = new CurrentGameState(playerNumber, expert);
         this.currentPlayer = null;
-        this.actionController = new ActionController(currentPlayer);
+        this.actionController = new ActionController(currentPlayer, playerNumber);
         this.planningController = new PlanningController();
         this.characterController = new CharacterController();
         //this.checks = new Checks();
@@ -42,7 +42,7 @@ public class MainController
             this.availableWizards.add(Wizard.values()[i]);
         }
         this.readyPlayers = 0;
-        this.players = n;
+        this.players = playerNumber;
     }
 
 
