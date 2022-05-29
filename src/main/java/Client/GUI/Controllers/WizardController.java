@@ -84,8 +84,8 @@ public class WizardController extends Controller{
 
     public void onClickSendChoice(ActionEvent actionEvent) throws InterruptedException {
         System.out.println("Entrato in onclickSendChoice del wizard");
-       Wizard wizardTemp=null;
-        int wizTemp=0;
+        Wizard wizardTemp=null;
+
         if(group.getSelectedToggle()==rb1){wizardTemp=Wizard.DRUID;}
         else if(group.getSelectedToggle()==rb2)
         {wizardTemp=Wizard.WITCH;;}
@@ -96,6 +96,7 @@ public class WizardController extends Controller{
 
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(
                 new SerializedMessage(new WizardChoice(wizardTemp)));
+        System.out.println("Conne "+GuiMainStarter.getClientGUI().getServerConnection().getTeam() );
 
     }
 
@@ -104,10 +105,7 @@ public class WizardController extends Controller{
     {
         //System.out.println("updateOpacity "+available.get(0));
 
-        for(Wizard w: available)
-        {
-            System.out.println("Wizard av "+w);
-        }
+
         paneWizard.add(druid);
         paneWizard.add(sensei);
         paneWizard.add(lord);
@@ -129,14 +127,11 @@ public class WizardController extends Controller{
          * delle carte a 1**/
         for(Wizard w : available)
         {
-            System.out.println("wiz ava "+w);
+
             for(Pane p: paneWizard)
             {
-                System.out.println("w  : "+w.toString().toLowerCase());
-                System.out.println("p  : "+p.getId());
                 if(w.toString().toLowerCase().equals(p.getId()))
                 {
-                    System.out.println("entered with : "+w.toString()+" "+p.getId());
                     p.setOpacity(1);
                     textAvaiable.get(w.ordinal()).setVisible(false);
 

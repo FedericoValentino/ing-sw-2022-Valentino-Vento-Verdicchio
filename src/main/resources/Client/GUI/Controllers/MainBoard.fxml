@@ -65,7 +65,7 @@
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Pane prefHeight="200.0" prefWidth="750.0" style="-fx-background-color: pink;" />
-                        <Pane fx:id="carachterCard" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
+                        <Pane fx:id="characterCard" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
                      </children>
                   </HBox>
                </children></VBox>
