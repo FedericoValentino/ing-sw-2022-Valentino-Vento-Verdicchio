@@ -9,16 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Made Checks &quot;static&quot; and changed the method calls accordingly">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MovesChecks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Checks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
-    </list>
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Removed the planning and action counters in GameHandler. Introduced a &quot;moves&quot; counter in CurrentTurnState, with methods to increment and reset said counter. Increments and resets called in proper functions of ActionController and PlanningController. Introduced a new &quot;static&quot; Checks class (MovesChecks) to help the GameHandler understand if the client is making the move we are expecting him to make." />
     <list id="e37afdbc-5132-4e80-961e-f40ebc8db39e" name="Changes by enric" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,13 +204,6 @@
       <workItem from="1653729341766" duration="366000" />
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
-    </task>
-    <task id="LOCAL-00018" summary="Boo (non capisco perché non mi fa updatare)">
-      <created>1651007322037</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1651007322037</updated>
     </task>
     <task id="LOCAL-00019" summary="Aggiunto modo per determinare il numero di torri da dare al player che si aggiunge">
       <created>1651013301367</created>
@@ -557,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653837146789</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Removed the planning and action counters in GameHandler. Introduced a &quot;moves&quot; counter in CurrentTurnState, with methods to increment and reset said counter. Increments and resets called in proper functions of ActionController and PlanningController. Introduced a new &quot;static&quot; Checks class (MovesChecks) to help the GameHandler understand if the client is making the move we are expecting him to make.">
+      <created>1653841387460</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1653841387460</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add footprints of the all classes of Gui and add the intro and lobby functionality" />
     <MESSAGE value="Add footprints of other classes" />
     <MESSAGE value="Changes in Gui" />
     <MESSAGE value="Changes in Gui (insert new beginning description)" />
@@ -602,7 +592,8 @@
     <MESSAGE value="Found the only active Print instruction in the test classes, removed it" />
     <MESSAGE value="JANSI" />
     <MESSAGE value="Made Checks &quot;static&quot; and changed the method calls accordingly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made Checks &quot;static&quot; and changed the method calls accordingly" />
+    <MESSAGE value="Removed the planning and action counters in GameHandler. Introduced a &quot;moves&quot; counter in CurrentTurnState, with methods to increment and reset said counter. Increments and resets called in proper functions of ActionController and PlanningController. Introduced a new &quot;static&quot; Checks class (MovesChecks) to help the GameHandler understand if the client is making the move we are expecting him to make." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed the planning and action counters in GameHandler. Introduced a &quot;moves&quot; counter in CurrentTurnState, with methods to increment and reset said counter. Increments and resets called in proper functions of ActionController and PlanningController. Introduced a new &quot;static&quot; Checks class (MovesChecks) to help the GameHandler understand if the client is making the move we are expecting him to make." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -13,9 +13,8 @@ public class CurrentTurnStateTest {
 
 
     @Test
-    public void TestGetActionsAndTurn() {
+    public void TestGetTurn() {
 
-        curTurnObj.getActions();
         curTurnObj.getTurn();
         //assertNull(currentTurnStateObj.getIsGameEnded());
         //curTurnObj.getIsActionPhase();
@@ -40,13 +39,6 @@ public class CurrentTurnStateTest {
         assertTrue(t == curTurnObj.getTurn());
     }
 
-    @Test
-    public void TestUpdateActions() {
-        int actions = curTurnObj.getActions();
-        curTurnObj.UpdateActions();
-        actions++;
-        assertTrue(actions == curTurnObj.getActions());
-    }
 
     @Test
     public void TestUpdateANDGetWinner() {
