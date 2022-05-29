@@ -8,10 +8,6 @@ import model.Team;
 import model.boards.token.ColTow;
 import model.boards.token.GamePhase;
 import model.boards.token.Wizard;
-import model.cards.CharacterCard;
-import model.cards.CharacterDeck;
-import model.cards.Priest;
-import model.cards.Princess;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -23,7 +19,6 @@ public class MainController
     private ActionController actionController;
     private PlanningController planningController;
     private CharacterController characterController;
-    private Checks checks;
     private boolean expertGame;
     private ArrayList<Wizard> availableWizards;
     private int readyPlayers;
@@ -39,7 +34,7 @@ public class MainController
         this.actionController = new ActionController(currentPlayer);
         this.planningController = new PlanningController();
         this.characterController = new CharacterController();
-        this.checks = new Checks();
+        //this.checks = new Checks();
         this.expertGame = expert;
         this.availableWizards = new ArrayList<>();
         for(int i = 0; i < 4; i++)
@@ -224,8 +219,6 @@ public class MainController
     public PlanningController getPlanningController() {
         return planningController;
     }
-
-    public Checks getChecks(){return checks;}
 
     public boolean isExpertGame() {
         return expertGame;

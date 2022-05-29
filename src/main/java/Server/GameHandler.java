@@ -11,6 +11,7 @@ import Server.Answers.SetupAnswers.AvailableWizards;
 import Server.Answers.SetupAnswers.GameStarting;
 import Server.Answers.SetupAnswers.InfoMessage;
 import controller.CharacterController;
+import controller.Checks;
 import controller.MainController;
 import model.boards.token.GamePhase;
 import model.boards.token.Wizard;
@@ -57,7 +58,7 @@ public class GameHandler extends Thread implements Observer
 
     public void updateLastPlayer(GamePhase phase)
     {
-        if(mainController.getChecks().isLastTurn(mainController.getGame()) && mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION))
+        if(Checks.isLastTurn(mainController.getGame()) && Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION))
         {
             mainController.selectWinner();
             socket.sendAnswer(new SerializedAnswer(new WinMessage(String.valueOf(mainController.getGame().getCurrentTurnState().getWinningTeam()) + "is the Winner!")));
@@ -82,7 +83,7 @@ public class GameHandler extends Thread implements Observer
 
     public void setupHandler(StandardSetupMessage message) throws IOException
     {
-        if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP))
+        if(Checks.isGamePhase(mainController.getGame(), GamePhase.SETUP))
         {
             switch(message.type)
             {
@@ -134,7 +135,7 @@ public class GameHandler extends Thread implements Observer
         switch(message.type)
         {
             case CLOUD_CHOICE:
-                if (planning == 0 && mainController.getChecks().isCloudFillable(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
+                if (planning == 0 && Checks.isCloudFillable(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
                     mainController.getPlanningController()
                             .drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
                     planning++;
@@ -146,29 +147,29 @@ public class GameHandler extends Thread implements Observer
                 }
                 break;
             case DRAW_CHOICE:
-                if (planning == 1 && mainController.getChecks().isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                if (planning == 1 && Checks.isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                 {
-                    if(!mainController.getChecks().isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                    if(!Checks.isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                     {
                         mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
-                        if(mainController.getChecks().checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
+                        if(Checks.checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
                         {
                             mainController.lastTurn();
                         }
                     }
                     else
                     {
-                        if(mainController.getChecks().canCardStillBePlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                        if(Checks.canCardStillBePlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                         {
                             mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
-                            if(mainController.getChecks().checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
+                            if(Checks.checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
                             {
                                 mainController.lastTurn();
                             }
                         }
                     }
 
-                    if (mainController.getChecks().isLastPlayer(mainController.getGame()))
+                    if (Checks.isLastPlayer(mainController.getGame()))
                     {
                         updateLastPlayer(GamePhase.ACTION);
                         threadSem.release(1);
@@ -215,7 +216,7 @@ public class GameHandler extends Thread implements Observer
             case MN_MOVE:
                 if (action == 3)
                 {
-                    if (mainController.getChecks().isAcceptableMovementAmount(mainController.getGame(), mainController.getCurrentPlayer(), ((MoveMN) message).getAmount())) {
+                    if (Checks.isAcceptableMovementAmount(mainController.getGame(), mainController.getCurrentPlayer(), ((MoveMN) message).getAmount())) {
                         mainController.getActionController().MoveMN(((MoveMN) message).getAmount(), mainController.getGame());
                     } else {
                         socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Too much movement" + ANSI_RESET)));
@@ -228,7 +229,7 @@ public class GameHandler extends Thread implements Observer
 
             case DRAW_POUCH:
                 if (action == 4) {
-                    if (!mainController.getChecks().isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
+                    if (!Checks.isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
                         socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "You selected an empty Cloud" + ANSI_RESET)));
                     } else {
                         mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
@@ -241,7 +242,7 @@ public class GameHandler extends Thread implements Observer
 
             case TURN_END:
                 if (action == 5) {
-                    if (mainController.getChecks().isLastPlayer(mainController.getGame())) {
+                    if (Checks.isLastPlayer(mainController.getGame())) {
                         updateLastPlayer(GamePhase.PLANNING);
                     } else {
                         mainController.determineNextPlayer();
@@ -282,7 +283,7 @@ public class GameHandler extends Thread implements Observer
         {
             if(message.type == ACTIONMESSAGETYPE.CLOUD_CHOICE || message.type == ACTIONMESSAGETYPE.DRAW_CHOICE)
             {
-                if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING))
+                if(Checks.isGamePhase(mainController.getGame(), GamePhase.PLANNING))
                         planningHandler(message);
                 else
                 {
@@ -291,7 +292,7 @@ public class GameHandler extends Thread implements Observer
             }
             else
             {
-                if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION))
+                if(Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION))
                 {
                     if(message.type == ACTIONMESSAGETYPE.CHARACTER_PLAY || message.type == ACTIONMESSAGETYPE.CHARACTER_ACTIVATE)
                         characterHandler(message);
@@ -352,7 +353,7 @@ public class GameHandler extends Thread implements Observer
             {
                 if(connected)
                 {
-                    if(mainController.getChecks().isThereAWinner(mainController.getGame()))
+                    if(Checks.isThereAWinner(mainController.getGame()))
                     {
                         socket.sendAnswer(new SerializedAnswer(new WinMessage(String.valueOf(mainController.getGame().getCurrentTurnState().getWinningTeam()) + "is the Winner!")));
                         try
@@ -365,12 +366,12 @@ public class GameHandler extends Thread implements Observer
                         }
                         currentMatch.end();
                     }
-                    else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
+                    else if(Checks.isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
                     {
                         socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
                         threadSem.acquire();
                     }
-                    else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.GAMEREADY))
+                    else if(Checks.isGamePhase(mainController.getGame(), GamePhase.GAMEREADY))
                     {
                         socket.sendAnswer(new SerializedAnswer(new GameStarting()));
                         mainController.readyPlayer();
@@ -384,10 +385,10 @@ public class GameHandler extends Thread implements Observer
                             globalSem.acquire();
                         }
                     }
-                    else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                    else if(Checks.isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                     {
                         socket.sendAnswer(new SerializedAnswer(new StartTurn()));
-                        if(!mainController.getChecks().isPouchAvailable(mainController.getGame()))
+                        if(!Checks.isPouchAvailable(mainController.getGame()))
                         {
                             planning = 1;
                             mainController.lastTurn();
@@ -402,7 +403,7 @@ public class GameHandler extends Thread implements Observer
                         }
                         threadSem.acquire();
                     }
-                    else if(mainController.getChecks().isGamePhase(mainController.getGame(), GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
+                    else if(Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                     {
                         socket.sendAnswer(new SerializedAnswer(new StartTurn()));
                         if(action >= 0 && action <= 2)
@@ -413,7 +414,7 @@ public class GameHandler extends Thread implements Observer
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestMotherNatureMove(String.valueOf(MainController.findPlayerByName(mainController.getGame(), socket.getNickname()).getMaxMotherMovement()))));
                         }
-                        if(action == 4 && !mainController.getChecks().isPouchAvailable(mainController.getGame()))
+                        if(action == 4 && !Checks.isPouchAvailable(mainController.getGame()))
                         {
                             action = 5;
                             mainController.lastTurn();
@@ -433,7 +434,7 @@ public class GameHandler extends Thread implements Observer
                 {
                     currentMatch.end();
                 }
-                if(!currentMatch.getRunning() && !mainController.getChecks().isThereAWinner(mainController.getGame()))
+                if(!currentMatch.getRunning() && !Checks.isThereAWinner(mainController.getGame()))
                 {
                     socket.sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
                     socket.sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));

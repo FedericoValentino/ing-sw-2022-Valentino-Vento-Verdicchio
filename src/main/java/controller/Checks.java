@@ -8,7 +8,7 @@ import model.cards.*;
 
 import java.util.ArrayList;
 
-public class Checks {
+public final class Checks {
 
 
     /** Checks whether the given gamePhase is the current gamePhase
@@ -16,7 +16,7 @@ public class Checks {
      * @param currentGamePhase the given gamePhase
      * @return true if the game is in the given gamePhase
      */
-    public boolean isGamePhase(CurrentGameState game, GamePhase currentGamePhase)
+    public static boolean isGamePhase(CurrentGameState game, GamePhase currentGamePhase)
     {
         return currentGamePhase == game.getCurrentTurnState().getGamePhase();
     }
@@ -27,7 +27,7 @@ public class Checks {
      * @param currentPlayer the current player's nickname
      * @return true if the nicknames are the same
      */
-    public boolean isCurrentPlayer(String nickname, String currentPlayer)
+    public static boolean isCurrentPlayer(String nickname, String currentPlayer)
     {
         return nickname.equals(currentPlayer);
     }
@@ -41,7 +41,7 @@ public class Checks {
      * @param islandId chosen island
      * @return true if the entrancePosition refers to an existing position and, in case of moving to an island, if the islandID corresponds to an existing island
      */
-    public boolean isDestinationAvailable(CurrentGameState game, String currentPlayer, int entrancePosition, boolean toIsland, int islandId)
+    public static boolean isDestinationAvailable(CurrentGameState game, String currentPlayer, int entrancePosition, boolean toIsland, int islandId)
     {
         boolean validEntrance = true;
         if (entrancePosition < 0 || entrancePosition >= MainController.findPlayerByName(game, currentPlayer).getSchool().getEntrance().size())
@@ -68,7 +68,7 @@ public class Checks {
      * @param amount the chosen movement value
      * @return true if the chosen movement value sits between 1 and MaxMotherMovement
      */
-    public boolean isAcceptableMovementAmount(CurrentGameState game, String currentPlayer, int amount)
+    public static boolean isAcceptableMovementAmount(CurrentGameState game, String currentPlayer, int amount)
     {
         return amount > 0 && amount <= MainController.findPlayerByName(game, currentPlayer).getMaxMotherMovement();
     }
@@ -79,12 +79,12 @@ public class Checks {
      * @param cloudIndex the chosen cloud
      * @return true if the cloudIndex refers to an existing cloud an if said cloud is not empty
      */
-    public boolean isCloudAvailable(CurrentGameState game, int cloudIndex)
+    public static boolean isCloudAvailable(CurrentGameState game, int cloudIndex)
     {
         return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && !game.getCurrentClouds()[cloudIndex].isEmpty();
     }
 
-    public boolean isCloudFillable(CurrentGameState game, int cloudIndex)
+    public static boolean isCloudFillable(CurrentGameState game, int cloudIndex)
     {
         return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && game.getCurrentClouds()[cloudIndex].isEmpty();
     }
@@ -94,7 +94,7 @@ public class Checks {
      * @param game an instance of the game
      * @return true if the pouch is not empty
      */
-    public boolean isPouchAvailable(CurrentGameState game)
+    public static boolean isPouchAvailable(CurrentGameState game)
     {
         return !game.getCurrentPouch().checkEmpty();
     }
@@ -106,7 +106,7 @@ public class Checks {
      * @param cardIndex the position of the chosen card into the deck
      * @return ture if the player's deck is not empty and if the index is within an acceptable range
      */
-    public boolean isAssistantValid(CurrentGameState game, String currentPlayer, int cardIndex)
+    public static boolean isAssistantValid(CurrentGameState game, String currentPlayer, int cardIndex)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
         return !player.getAssistantDeck().checkEmpty() && cardIndex >= 0 && cardIndex < player.getAssistantDeck().getDeck().size();
@@ -119,7 +119,7 @@ public class Checks {
      * @param cardIndex the selected card
      * @return true if an equivalent assistant card is in other players' currentAssistantCard field
      */
-    public boolean isAssistantAlreadyPlayed(CurrentGameState game, String currentPlayer, int cardIndex)
+    public static boolean isAssistantAlreadyPlayed(CurrentGameState game, String currentPlayer, int cardIndex)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
         for (Team team : game.getCurrentTeams())
@@ -146,7 +146,7 @@ public class Checks {
      * @param cardIndex the chosen card
      * @return true if all the other cards in the player's deck have already been played
      */
-    public boolean canCardStillBePlayed(CurrentGameState game, String currentPlayer, int cardIndex)
+    public static boolean canCardStillBePlayed(CurrentGameState game, String currentPlayer, int cardIndex)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
         ArrayList<AssistantCard> currentlyPlayedCards = new ArrayList<>();
@@ -177,12 +177,12 @@ public class Checks {
      * @param game an instance of the game
      * @return true if the current player is indeed the last player of that turn
      */
-    public boolean isLastPlayer(CurrentGameState game)
+    public static boolean isLastPlayer(CurrentGameState game)
     {
         return game.getCurrentTurnState().getTurnOrder().size() == 0;
     }
 
-    public boolean isLastTurn(CurrentGameState game){
+    public static boolean isLastTurn(CurrentGameState game){
         return game.getCurrentTurnState().getLastTurn();
     }
 
@@ -191,7 +191,7 @@ public class Checks {
      * @param game  an instance of hte game
      * @return whether influence based card are currently active
      */
-    protected boolean checkForInfluenceCharacter(CurrentGameState game, String currentPlayer)
+    protected static boolean checkForInfluenceCharacter(CurrentGameState game, String currentPlayer)
     {
         for(CharacterCard card: game.getCurrentActiveCharacterCard())
         {
@@ -217,7 +217,7 @@ public class Checks {
         return false;
     }
 
-    public void checkWinnerForTowers(CurrentGameState game)
+    public static void checkWinnerForTowers(CurrentGameState game)
     {
         for(Team t: game.getCurrentTeams())
         {
@@ -231,7 +231,7 @@ public class Checks {
         }
     }
 
-    public void checkWinnerForIsland(CurrentGameState game)
+    public static void checkWinnerForIsland(CurrentGameState game)
     {
         if(game.getCurrentIslands().getTotalGroups() <= 3)
         {
@@ -239,13 +239,13 @@ public class Checks {
         }
     }
 
-    public boolean checkLastTurnDueToAssistants(CurrentGameState game, String currentPlayer)
+    public static boolean checkLastTurnDueToAssistants(CurrentGameState game, String currentPlayer)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
         return player.getAssistantDeck().checkEmpty();
     }
 
-    public boolean isThereAWinner(CurrentGameState game)
+    public static boolean isThereAWinner(CurrentGameState game)
     {
         return game.getCurrentTurnState().getWinningTeam() != null;
     }

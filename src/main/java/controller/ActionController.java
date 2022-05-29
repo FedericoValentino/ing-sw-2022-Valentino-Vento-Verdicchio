@@ -3,19 +3,13 @@ package controller;
 import model.CurrentGameState;
 import model.Player;
 import model.Team;
-import model.boards.token.ColTow;
 import model.boards.token.Student;
-import model.cards.Centaur;
-import model.cards.CharacterCard;
-import model.cards.Knight;
-import model.cards.TruffleHunter;
-import controller.CharacterController.*;
+
 
 public class ActionController
 {
     private String currentPlayer;
     private int movableStudents;
-    private Checks checks = new Checks();
 
     public ActionController(String Player)
     {
@@ -74,11 +68,11 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
         game.getCurrentMotherNature().move(amount, game.getCurrentIslands().getTotalGroups()-1);
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
-        if(!checks.checkForInfluenceCharacter(game, currentPlayer))
+        if(Checks.checkForInfluenceCharacter(game, currentPlayer))
         {
             game.solveEverything(game.getCurrentMotherNature().getPosition());
-            checks.checkWinnerForTowers(game);
-            checks.checkWinnerForIsland(game);
+            Checks.checkWinnerForTowers(game);
+            Checks.checkWinnerForIsland(game);
         }
     }
 

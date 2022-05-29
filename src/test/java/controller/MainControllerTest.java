@@ -201,15 +201,15 @@ public class MainControllerTest
         setupTest();
         controllerTest.getGame().updateTurnState();
         controllerTest.determineNextPlayer();
-        assert(!controllerTest.getChecks().isLastPlayer(controllerTest.getGame()));
+        assert(!Checks.isLastPlayer(controllerTest.getGame()));
         controllerTest.determineNextPlayer();
-        assert(controllerTest.getChecks().isLastPlayer(controllerTest.getGame()));
+        assert(Checks.isLastPlayer(controllerTest.getGame()));
     }
 
     @Test
     public void testIsGamePhase()
     {
-        assertEquals(true, controllerTest.getChecks().isGamePhase(controllerTest.getGame(), GamePhase.SETUP));
+        assertEquals(true, Checks.isGamePhase(controllerTest.getGame(), GamePhase.SETUP));
     }
 
     @Test
