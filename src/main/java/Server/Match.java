@@ -1,5 +1,7 @@
 package Server;
 
+import Server.Answers.SerializedAnswer;
+import Server.Answers.SetupAnswers.GameStarting;
 import controller.MainController;
 
 import java.io.IOException;
@@ -13,7 +15,6 @@ public class Match
     private MainController mainController;
     private ArrayList<GameHandler> clients = new ArrayList<>();
     private HashMap<String, String> moves = new HashMap<>();
-    private Semaphore gameSemaphore = new Semaphore(0);
     private boolean running = false;
 
     public Match(int playerNumber, boolean expert, int matchID)
@@ -23,7 +24,7 @@ public class Match
     }
 
     public void addClient(ClientConnection client) throws IOException {
-        GameHandler gameHandler = new GameHandler(mainController, client, client.getTeam(), gameSemaphore,this);
+        GameHandler gameHandler = new GameHandler(mainController, client, client.getTeam(),this);
         clients.add(gameHandler);
     }
 
@@ -34,6 +35,14 @@ public class Match
         {
             mainController.getGame().addObserver(client);
             client.start();
+        }
+    }
+
+    public void announceGameReady()
+    {
+        for(GameHandler GH : clients)
+        {
+            GH.getSocket().sendAnswer(new SerializedAnswer(new GameStarting()));
         }
     }
 

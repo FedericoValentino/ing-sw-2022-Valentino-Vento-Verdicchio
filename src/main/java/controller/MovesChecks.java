@@ -11,13 +11,7 @@ public final class MovesChecks
             return game.getCurrentTurnState().getMoves() == 0;
         else if(planningPhase.equals(ACTIONMESSAGETYPE.DRAW_CHOICE))
         {
-            if(game.getCurrentTurnState().getMoves() == 1)
-            {
-                game.getCurrentTurnState().ResetMoves();
-                return true;
-            }
-            else
-                return false;
+            return game.getCurrentTurnState().getMoves() == 1;
         }
         return false;
     }
@@ -44,11 +38,9 @@ public final class MovesChecks
         else if(actionPhase.equals(ACTIONMESSAGETYPE.DRAW_POUCH))
         {
             if(threePlayerGame && moves == 5) {
-                game.getCurrentTurnState().ResetMoves();
                 return true;
             }
             else if(!threePlayerGame && moves == 4) {
-                game.getCurrentTurnState().ResetMoves();
                 return true;
             }
 

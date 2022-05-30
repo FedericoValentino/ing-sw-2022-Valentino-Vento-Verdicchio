@@ -178,6 +178,7 @@ public class MainController
             }
         }
         game.getCurrentTurnState().updateGamePhase(phase);
+        game.getCurrentTurnState().ResetMoves();
     }
 
     public void lastTurn()
