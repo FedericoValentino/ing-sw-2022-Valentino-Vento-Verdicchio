@@ -121,6 +121,7 @@ public class ClientCLI implements ClientView
                 {
                     MyView.parse((ViewMessage) answer);
                     stdin.printGame();
+                    System.out.println(MyView.getInformations().informationCreator(MyView.getCurrentTurnState(), MyView.getCurrentTeams()));
                 }
                 catch(JsonProcessingException e)
                 {
