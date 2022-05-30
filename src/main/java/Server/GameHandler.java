@@ -94,12 +94,9 @@ public class GameHandler extends Thread implements Observer
                         if (mainController.getAvailableWizards().contains(wizard) && MainController.findPlayerByName(mainController.getGame(), socket.getNickname()) == null) {
                             mainController.AddPlayer(team, socket.getNickname(), 8, wizard);
                             mainController.getAvailableWizards().remove(wizard);
-                            socket.sendAnswer(new SerializedAnswer(new InfoMessage("Wizard Selected, type " + ANSI_GREEN + "[Ready] " + ANSI_RESET + "if you're ready to start!")));
                             choseWizard = true;
-                            threadSem.release(1);
                         } else {
                             socket.sendAnswer(new SerializedAnswer(new ErrorMessage( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, wrong input or Wizard already taken" + ANSI_RESET)));
-                            threadSem.release(1);
                         }
                     }
                     break;
@@ -272,7 +269,6 @@ public class GameHandler extends Thread implements Observer
 
     }
 
-
     public void messageHandler(StandardActionMessage message)
     {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
@@ -343,8 +339,6 @@ public class GameHandler extends Thread implements Observer
     {
         try
         {
-            MessageReceiver receiver = new MessageReceiver(this);
-            receiver.start();
             while(isAlive())
             {
                 if(connected)
@@ -365,7 +359,10 @@ public class GameHandler extends Thread implements Observer
                     else if(Checks.isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
                     {
                         socket.sendAnswer(new SerializedAnswer(new AvailableWizards(mainController.getAvailableWizards())));
-                        threadSem.acquire();
+                    }
+                    else if(Checks.isGamePhase(mainController.getGame(), GamePhase.SETUP) && choseWizard && !ready)
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new InfoMessage("Wizard Selected, type " + ANSI_GREEN + "[Ready] " + ANSI_RESET + "if you're ready to start!")));
                     }
                     else if(Checks.isGamePhase(mainController.getGame(), GamePhase.GAMEREADY))
                     {
@@ -381,6 +378,43 @@ public class GameHandler extends Thread implements Observer
                             globalSem.acquire();
                         }
                     }
+                    readMessage();
+                }
+                else
+                {
+                    currentMatch.end();
+                }
+                if(!currentMatch.getRunning() && !Checks.isThereAWinner(mainController.getGame()))
+                {
+                    socket.sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
+                    socket.sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
+                }
+
+            }
+        }
+        catch (InterruptedException e)
+        {
+
+        }
+    }
+
+
+    @Override
+    public void update(String message)
+    {
+        System.out.println(message);
+        socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck(), mainController.getGame().getCurrentActiveCharacterCard())));
+    }
+
+    public Boolean getConnected() {
+        return connected;
+    }
+}
+
+
+
+
+/*
                     else if(Checks.isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
                     {
                         boolean skipToEnd = false;
@@ -431,34 +465,4 @@ public class GameHandler extends Thread implements Observer
                         }
                         threadSem.acquire();
                     }
-                }
-                else
-                {
-                    currentMatch.end();
-                }
-                if(!currentMatch.getRunning() && !Checks.isThereAWinner(mainController.getGame()))
-                {
-                    socket.sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
-                    socket.sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
-                }
-
-            }
-        }
-        catch (InterruptedException e)
-        {
-
-        }
-    }
-
-
-    @Override
-    public void update(String message)
-    {
-        System.out.println(message);
-        socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck(), mainController.getGame().getCurrentActiveCharacterCard())));
-    }
-
-    public Boolean getConnected() {
-        return connected;
-    }
-}
+ */
