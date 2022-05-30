@@ -17,4 +17,9 @@ public class LightCharDeck
     public ArrayList<CharacterCard> getLightCharDeck() {
         return lightCharDeck;
     }
+
+    public CharacterCard getCard(int index)
+    {
+       return lightCharDeck.get(index);
+    }
 }

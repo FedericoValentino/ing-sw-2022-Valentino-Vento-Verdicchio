@@ -205,9 +205,9 @@ public class PrinterCLI
     {
         String output = "";
         int entranceCount = 0;
-        for(Team team: view.getCurrentTeams())
+        for(LightTeam team: view.getCurrentTeams())
         {
-            for(Player player: team.getPlayers())
+            for(LightPlayer player: team.getPlayers())
             {
                 if(player.getNome().equals(nome))
                 {
@@ -276,9 +276,9 @@ public class PrinterCLI
     private String printHasProf(String nome, int tablePosition)
     {
         String output = "";
-        for(Team team: view.getCurrentTeams())
+        for(LightTeam team: view.getCurrentTeams())
         {
-            for(Player player: team.getPlayers())
+            for(LightPlayer player: team.getPlayers())
             {
                 if(player.getNome().equals(nome))
                 {
@@ -327,8 +327,8 @@ public class PrinterCLI
         int totalSchools = 0;
         int playerNotFoundCounter = 0;
 
-        for (Team team : view.getCurrentTeams()) {
-            for (Player player : team.getPlayers()) {
+        for (LightTeam team : view.getCurrentTeams()) {
+            for (LightPlayer player : team.getPlayers()) {
                 if (name.equals("-1"))
                 {
                     totalSchools++;

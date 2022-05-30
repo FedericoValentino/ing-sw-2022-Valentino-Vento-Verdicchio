@@ -14,5 +14,7 @@ public class LightActiveDeck
     }
 
 
-
+    public ArrayList<CharacterCard> getLightActiveDeck() {
+        return lightActiveDeck;
+    }
 }

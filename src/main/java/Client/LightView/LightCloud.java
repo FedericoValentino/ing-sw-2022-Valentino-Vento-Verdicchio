@@ -7,19 +7,19 @@ import java.util.ArrayList;
 
 public class LightCloud
 {
-    private ArrayList<Student> student;
+    private ArrayList<Student> students;
 
     public LightCloud(@JsonProperty("students") ArrayList<Student> st,
                       @JsonProperty("empty") boolean empty)
     {
-        student= new ArrayList<>();
+        students= new ArrayList<>();
         for(int i=0;i<st.size();i++)
         {
-            this.student.add(i, st.get(i));
+            this.students.add(i, st.get(i));
         }
     }
 
-    public ArrayList<Student> getStudent() {
-        return student;
+    public ArrayList<Student> getStudents() {
+        return students;
     }
 }

@@ -60,7 +60,7 @@ public class LightView extends Observable
         this.currentTeams = currentTeams;
     }
 
-    public void setCurrentMotherNature(MotherNature currentMotherNature) {
+    public void setCurrentMotherNature(LightMotherNature currentMotherNature) {
         this.currentMotherNature = currentMotherNature;
     }
 
