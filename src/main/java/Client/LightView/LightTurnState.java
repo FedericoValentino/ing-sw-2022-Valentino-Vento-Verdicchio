@@ -18,9 +18,9 @@ public class LightTurnState
     public LightTurnState(@JsonProperty("turnOrder") HashMap<String, Integer> turnOrder,
                           @JsonProperty("turn") int turn,
                           @JsonProperty("moves")int moves,
-                          @JsonProperty("gameEnded")boolean gameEnded,
+                          @JsonProperty("isGameEnded")boolean gameEnded,
                           @JsonProperty("winningTeam") ColTow winningTeam,
-                          @JsonProperty("GamePhase") GamePhase gamePhase,
+                          @JsonProperty("gamePhase") GamePhase gamePhase,
                           @JsonProperty("lastTurn") boolean lastTurn)
     {
         this.turnOrder = turnOrder;

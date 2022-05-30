@@ -12,12 +12,6 @@ public class Islands extends Board {
   private int totalGroups;
   private CurrentGameState game;
 
-  public Islands(@JsonProperty("islands") ArrayList<Island> islands,
-                 @JsonProperty("totalGroups") int totalGroups)
-  {
-    this.islands = islands;
-    this.totalGroups = totalGroups;
-  }
 
   /** Class Constructor, creates 12 Island and sets the total group to 12 */
   public Islands(CurrentGameState game)

@@ -12,20 +12,13 @@
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="LightView">
       <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightTurnState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MovesChecks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MovesChecks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cgSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cgSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Islands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/School.java" afterDir="false" />
     </list>
-    <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
-    </list>
+    <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,21 +47,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java">
-      <ranges>
-        <range start1="24" end1="24" start2="24" end2="25" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="49" end1="49" start2="50" end2="51" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="98" end1="98" start2="100" end2="105" changelist="d716b638-73d3-42fc-84bc-8894e5e54209" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/Server/GameHandler.java">
-      <ranges>
-        <range start1="392" end1="393" start2="392" end2="393" changelist="d716b638-73d3-42fc-84bc-8894e5e54209" />
-        <range start1="396" end1="397" start2="396" end2="397" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -233,20 +211,6 @@
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
       <workItem from="1653914986973" duration="1816000" />
-    </task>
-    <task id="LOCAL-00021" summary="Prima impostazione del server, test con client etc etc">
-      <created>1651070255521</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1651070255521</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Redone all the comments... again!">
-      <created>1651251682821</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1651251682821</updated>
     </task>
     <task id="LOCAL-00023" summary="isPickable and isEffectPlayable methods ready to go">
       <created>1651253327811</created>
@@ -577,7 +541,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653917854827</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="LightView">
+      <created>1653920214716</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1653920214716</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Changes by enric">
+      <created>1653920224978</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1653920224978</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,6 +626,51 @@
           <url>file://$PROJECT_DIR$/src/main/java/controller/MovesChecks.java</url>
           <line>29</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

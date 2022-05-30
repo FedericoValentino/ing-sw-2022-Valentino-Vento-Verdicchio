@@ -14,18 +14,6 @@ public class Team
   private ArrayList<Col> controlledProfessors;
   private CurrentGameState game;
 
-  /** Json class constructor */
-  public Team(@JsonProperty("color") ColTow color,
-              @JsonProperty("players") ArrayList<Player> players,
-              @JsonProperty("controlledIslands") int controlledIslands,
-              @JsonProperty("controlledProfessors") ArrayList<Col> controlledProfessors)
-  {
-    this.color = color;
-    this.players = players;
-    this.controlledIslands = controlledIslands;
-    this.controlledProfessors = controlledProfessors;
-  }
-
   /** Class Constructor */
   public Team(ColTow color, CurrentGameState game)
   {

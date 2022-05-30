@@ -22,29 +22,6 @@ public class Player
   private boolean TowerOwner;
   private CurrentGameState game;
 
-  /** Json class constructor */
-  public Player(@JsonProperty("nome") String nome,
-                @JsonProperty("coinAmount")int coinAmount,
-                @JsonProperty("currentAssistantCard")AssistantCard currentAssistantCard,
-                @JsonProperty("lastPlayedCard")AssistantCard lastPlayedCard,
-                @JsonProperty("assistantDeck")AssistantDeck assistantDeck,
-                @JsonProperty("school")School school,
-                @JsonProperty("maxMotherMovement")int maxMotherMovement,
-                @JsonProperty("movementValue")int movementValue,
-                @JsonProperty("value")int value,
-                @JsonProperty("towerOwner")boolean towerOwner)
-  {
-    this.nome = nome;
-    this.coinAmount = coinAmount;
-    this.currentAssistantCard = currentAssistantCard;
-    this.lastPlayedCard = lastPlayedCard;
-    this.assistantDeck = assistantDeck;
-    this.school = school;
-    MaxMotherMovement = maxMotherMovement;
-    this.movementValue = movementValue;
-    this.value = value;
-    TowerOwner = towerOwner;
-  }
 
   /** Class constructor
    * @param nome  the chosen nickname of the player

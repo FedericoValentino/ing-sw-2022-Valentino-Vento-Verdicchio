@@ -1,5 +1,6 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import model.boards.token.ColTow;
 import model.boards.token.GamePhase;
 
