@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class LightIslands
 {
-    private ArrayList<Island> islands=new ArrayList<>();
+    private ArrayList<Island> islands;
 
     public LightIslands(@JsonProperty("islands") ArrayList<Island> islands,
                         @JsonProperty("totalGroups") int totalGroups)

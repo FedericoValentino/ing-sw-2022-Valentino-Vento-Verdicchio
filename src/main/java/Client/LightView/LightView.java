@@ -16,12 +16,12 @@ import java.util.ArrayList;
 
 public class LightView extends Observable
 {
-    private ArrayList<CharacterCard> currentActiveCharacterCard;
-    private CharacterDeck currentCharacterDeck;
-    private Islands currentIslands;
-    private ArrayList<Team> currentTeams;
-    private MotherNature currentMotherNature;
-    private Cloud[] currentClouds;
+    private LightActiveDeck currentActiveCharacterCard;
+    private LightCharDeck currentCharacterDeck;
+    private LightIslands currentIslands;
+    private ArrayList<LightTeam> currentTeams;
+    private LightMotherNature currentMotherNature;
+    private LightCloud[] currentClouds;
     private int bankBalance;
 
     public LightView()
@@ -34,8 +34,8 @@ public class LightView extends Observable
         String json = view.getJsonView();
         LightView lv;
         lv = objectMapper.readValue(json, LightView.class);
-        lv.currentCharacterDeck = view.getCurrentCharacterDeck();
-        lv.currentActiveCharacterCard = view.getCurrentActiveCharacterCard();
+        lv.currentCharacterDeck = new LightCharDeck(view.getCurrentCharacterDeck().getDeck());
+        lv.currentActiveCharacterCard = new LightActiveDeck(view.getCurrentActiveCharacterCard());
         updateLightView(lv);
     }
 
@@ -52,11 +52,11 @@ public class LightView extends Observable
 
 
 
-    public void setCurrentIslands(Islands currentIslands) {
+    public void setCurrentIslands(LightIslands currentIslands) {
         this.currentIslands = currentIslands;
     }
 
-    public void setCurrentTeams(ArrayList<Team> currentTeams) {
+    public void setCurrentTeams(ArrayList<LightTeam> currentTeams) {
         this.currentTeams = currentTeams;
     }
 
@@ -64,7 +64,7 @@ public class LightView extends Observable
         this.currentMotherNature = currentMotherNature;
     }
 
-    public void setCurrentClouds(Cloud[] currentClouds) {
+    public void setCurrentClouds(LightCloud[] currentClouds) {
         this.currentClouds = currentClouds;
     }
 
@@ -73,27 +73,27 @@ public class LightView extends Observable
     }
 
 
-    public ArrayList<CharacterCard> getCurrentActiveCharacterCard() {
+    public LightActiveDeck getCurrentActiveCharacterCard() {
         return currentActiveCharacterCard;
     }
 
-    public CharacterDeck getCurrentCharacterDeck() {
+    public LightCharDeck getCurrentCharacterDeck() {
         return currentCharacterDeck;
     }
 
-    public Islands getCurrentIslands() {
+    public LightIslands getCurrentIslands() {
         return currentIslands;
     }
 
-    public ArrayList<Team> getCurrentTeams() {
+    public ArrayList<LightTeam> getCurrentTeams() {
         return currentTeams;
     }
 
-    public MotherNature getCurrentMotherNature() {
+    public LightMotherNature getCurrentMotherNature() {
         return currentMotherNature;
     }
 
-    public Cloud[] getCurrentClouds() {
+    public LightCloud[] getCurrentClouds() {
         return currentClouds;
     }
 

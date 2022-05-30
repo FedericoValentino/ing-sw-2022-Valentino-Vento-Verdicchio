@@ -6,11 +6,13 @@ import java.util.ArrayList;
 
 public class LightActiveDeck
 {
-    public ArrayList<CharacterCard> getLightActiveDeck() {
-        return lightActiveDeck;
+    private ArrayList<CharacterCard> lightActiveDeck;
+
+    public LightActiveDeck(ArrayList<CharacterCard> cards)
+    {
+        lightActiveDeck = cards;
     }
 
-    private ArrayList<CharacterCard> lightActiveDeck;
 
 
 }

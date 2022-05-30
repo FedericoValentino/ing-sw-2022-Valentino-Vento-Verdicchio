@@ -1,5 +1,7 @@
 package Client.CLI;
 
+import Client.LightView.LightPlayer;
+import Client.LightView.LightTeam;
 import Client.LightView.LightView;
 import model.Player;
 import model.Team;
@@ -244,9 +246,9 @@ public class PrinterCLI
                 break;
         }
         output += color;
-        for(Team team: view.getCurrentTeams())
+        for(LightTeam team: view.getCurrentTeams())
         {
-            for(Player player: team.getPlayers())
+            for(LightPlayer player: team.getPlayers())
             {
                 if(player.getNome().equals(nome))
                 {
@@ -290,7 +292,7 @@ public class PrinterCLI
         return output;
     }
 
-    public String[] printSchool(String[] schools, Player player, String currentPlayer)
+    public String[] printSchool(String[] schools, LightPlayer player, String currentPlayer)
     {
         String name = player.getNome();
         String nameTrimmed = nameTrimmer(name);
@@ -405,10 +407,10 @@ public class PrinterCLI
         String[] deck = new String[7];
         Arrays.fill(deck, "");
 
-        Player p = null;
-        for (Team team : view.getCurrentTeams())
+        LightPlayer p = null;
+        for (LightTeam team : view.getCurrentTeams())
         {
-            for (Player player : team.getPlayers())
+            for (LightPlayer player : team.getPlayers())
             {
                 if(player.getNome().equals(nickname))
                 {
@@ -444,9 +446,9 @@ public class PrinterCLI
         int lastCardCounter = 0;
 
 
-        for(Team t: view.getCurrentTeams())
+        for(LightTeam t: view.getCurrentTeams())
         {
-            for(Player p: t.getPlayers())
+            for(LightPlayer p: t.getPlayers())
             {
                 String name = p.getNome();
                 String nameTrimmed = nameTrimmer(name);
@@ -599,7 +601,7 @@ public class PrinterCLI
             return;
         }
         System.out.println( ANSI_GREEN + "Inactive Cards:" + ANSI_RESET);
-        for(int i = 0; i < view.getCurrentCharacterDeck().getDeck().size(); i++)
+        for(int i = 0; i < view.getCurrentCharacterDeck().getLightCharDeck().size(); i++)
         {
             inactiveCharacter = printCharacter(view.getCurrentCharacterDeck().getCard(i), inactiveCharacter, i);
             for(int j = 0; j < 8; j++)
@@ -611,9 +613,9 @@ public class PrinterCLI
 
         Arrays.fill(inactiveCharacter, "");
         System.out.println(ANSI_RED + "Active Card" + ANSI_RESET);
-        for(int i = 0; i < view.getCurrentActiveCharacterCard().size(); i++)
+        for(int i = 0; i < view.getCurrentActiveCharacterCard().getLightActiveDeck().size(); i++)
         {
-            inactiveCharacter = printCharacter(view.getCurrentActiveCharacterCard().get(i), inactiveCharacter, i);
+            inactiveCharacter = printCharacter(view.getCurrentActiveCharacterCard().getLightActiveDeck().get(i), inactiveCharacter, i);
             for(int j = 0; j < 8; j++)
             {
                 System.out.println(inactiveCharacter[j]);
@@ -623,8 +625,8 @@ public class PrinterCLI
 
     public void showPlayer(String name)
     {
-        Player player = getPlayerByName(name);
-        Team team = getPlayerTeam(name);
+        LightPlayer player = getPlayerByName(name);
+        LightTeam team = getPlayerTeam(name);
         System.out.println(ANSI_CYAN +  name + ANSI_RESET + "'s information:");
         System.out.println(team.getColor() + " Team");
         if(team.getControlledIslands() != 0) {
@@ -668,9 +670,9 @@ public class PrinterCLI
 
     public void showPlayers()
     {
-        for(Team team: view.getCurrentTeams())
+        for(LightTeam team: view.getCurrentTeams())
         {
-            for(Player player: team.getPlayers())
+            for(LightPlayer player: team.getPlayers())
             {
                 showPlayer(player.getNome());
             }
@@ -717,7 +719,7 @@ public class PrinterCLI
     }
 
 
-    private ArrayList<String> controlledIslands(Team team)
+    private ArrayList<String> controlledIslands(LightTeam team)
     {
         ArrayList<String> islands = new ArrayList<>();
         for(Island island : view.getCurrentIslands().getIslands())
@@ -728,11 +730,11 @@ public class PrinterCLI
         return islands;
     }
 
-    private Player getPlayerByName(String name)
+    private LightPlayer getPlayerByName(String name)
     {
-        for(Team team: view.getCurrentTeams())
+        for(LightTeam team: view.getCurrentTeams())
         {
-            for(Player player: team.getPlayers())
+            for(LightPlayer player: team.getPlayers())
             {
                 if(player.getNome().equals(name))
                 {
@@ -744,11 +746,11 @@ public class PrinterCLI
         return null;
     }
 
-    private Team getPlayerTeam(String name)
+    private LightTeam getPlayerTeam(String name)
     {
-        for(Team team: view.getCurrentTeams())
+        for(LightTeam team: view.getCurrentTeams())
         {
-            for(Player player: team.getPlayers())
+            for(LightPlayer player: team.getPlayers())
             {
                 if(player.getNome().equals(name))
                 {

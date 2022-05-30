@@ -8,6 +8,10 @@ public class LightCharDeck
 {
     private ArrayList<CharacterCard> lightCharDeck;
 
+    public LightCharDeck(ArrayList<CharacterCard> cards)
+    {
+        lightCharDeck = cards;
+    }
 
 
     public ArrayList<CharacterCard> getLightCharDeck() {
