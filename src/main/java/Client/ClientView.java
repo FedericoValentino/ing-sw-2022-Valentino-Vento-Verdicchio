@@ -1,5 +1,6 @@
 package Client;
 
+import Client.LightView.LightView;
 import Server.Answers.ActionAnswers.StandardActionAnswer;
 import Server.Answers.SetupAnswers.StandardSetupAnswer;
 import com.fasterxml.jackson.core.JsonProcessingException;

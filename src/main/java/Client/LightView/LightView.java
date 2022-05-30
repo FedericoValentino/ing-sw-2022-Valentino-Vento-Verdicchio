@@ -1,4 +1,4 @@
-package Client;
+package Client.LightView;
 
 import Observer.Observable;
 import Server.Answers.ActionAnswers.ViewMessage;

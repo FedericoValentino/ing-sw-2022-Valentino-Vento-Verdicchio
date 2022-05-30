@@ -1,6 +1,6 @@
 package Client.CLI;
 
-import Client.LightView;
+import Client.LightView.LightView;
 import Client.Messages.ActionMessages.*;
 import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.ReadyStatus;
@@ -167,7 +167,8 @@ public class InputParser
 
     public void newMove()
     {
-        String input = parser.next();
+        System.out.println("Type your move");
+        String input = parser.nextLine();
         parseString(input.toLowerCase(Locale.ROOT));
     }
     public void printGame()

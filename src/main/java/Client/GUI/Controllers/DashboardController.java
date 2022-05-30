@@ -1,7 +1,6 @@
 package Client.GUI.Controllers;
 
-import Client.GUI.GuiMainStarter;
-import Client.LightView;
+import Client.LightView.LightView;
 import Observer.ObserverLightView;
 
 public class DashboardController extends Controller implements ObserverLightView {

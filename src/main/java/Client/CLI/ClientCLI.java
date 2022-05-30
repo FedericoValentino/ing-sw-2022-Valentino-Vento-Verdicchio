@@ -1,5 +1,6 @@
 //TODO rimandare in caso di reject connection al menù di scelta con IP e Team
 //TODO Scelta team up to server
+//TODO sincronizzare su setupState
 
 package Client.CLI;
 
@@ -25,6 +26,7 @@ public class ClientCLI implements ClientView
     private InputParser stdin;
     private SerializedAnswer input;
     private Boolean setupState = true;
+    private Object setupLock = new Object();
     private Scanner info = new Scanner(System.in);
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
@@ -36,16 +38,16 @@ public class ClientCLI implements ClientView
                 GameMode gm = new GameMode();
                 System.out.println("First Client, what gamemode would you like to play?");
                 System.out.println("Player number?[2][3][4]");
-                gm.setMaxPlayers(stdin.getParser().nextInt());
+                gm.setMaxPlayers(Integer.parseInt(stdin.getParser().nextLine()));
                 while(gm.getMaxPlayers() > 4 || gm.getMaxPlayers() < 2)
                 {
                     System.out.println("Wrong input");
                     System.out.println("Player number?[2][3][4]");
-                    gm.setMaxPlayers(stdin.getParser().nextInt());
+                    gm.setMaxPlayers(Integer.parseInt(stdin.getParser().nextLine()));
                 }
 
                 System.out.println("Expert Mode?[true][false]");
-                gm.setExpertGame(stdin.getParser().nextBoolean());
+                gm.setExpertGame(Boolean.parseBoolean(stdin.getParser().nextLine()));
                 System.out.println(gm.isExpertGame());
                 try
                 {
@@ -67,19 +69,23 @@ public class ClientCLI implements ClientView
                     System.out.print("[" + w.ordinal() + "] " + w + " ");
                 }
                 System.out.println();
-                int choice = stdin.getParser().nextInt();
+                int choice = Integer.parseInt(stdin.getParser().nextLine());
                 while(choice > 4 || choice < 0)
                 {
                     System.out.println("You must enter a number between 0 and 4");
-                    choice = stdin.getParser().nextInt();
+                    choice = Integer.parseInt(stdin.getParser().nextLine());
                 }
                 main.sendMessage(new SerializedMessage(new WizardChoice(Wizard.values()[choice])));
                 break;
             case GAME_NFO:
                 System.out.println(((InfoMessage) answer).getInfo());
-                if(setupState)
+                if(getSetupState())
                 {
                     setupState = false;
+                    synchronized (setupLock)
+                    {
+                        setupLock.notify();
+                    }
                 }
                 break;
             case GAME_START:
@@ -170,19 +176,18 @@ public class ClientCLI implements ClientView
     }
 
     @Override
-    public void run()
-    {
+    public void run(){
         System.out.println("Nickname?");
-        String nickname = info.next();
+        String nickname = info.nextLine();
         System.out.println("Team?");
-        int team = info.nextInt();
+        int team = Integer.parseInt(info.nextLine());
         while(team < 0 || team > 2)
         {
             System.out.println("ERROR: No such Team exists");
-            team = info.nextInt();
+            team = Integer.parseInt(info.nextLine());
         }
         System.out.println("ServerIP?");
-        String IP = info.next();
+        String IP = info.nextLine();
 
         try
         {
@@ -199,7 +204,20 @@ public class ClientCLI implements ClientView
         executor.execute(Listener);
         while(main.getConnected())
         {
-            if(!setupState)
+            System.out.println("Hello");
+            synchronized (setupLock)
+            {
+                while(getSetupState())
+                {
+                    try {
+                        setupLock.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            if(!getSetupState())
             {
                 stdin.newMove();
             }
@@ -208,6 +226,10 @@ public class ClientCLI implements ClientView
 
     public ServerConnection getMain() {
         return main;
+    }
+
+    public synchronized boolean getSetupState(){
+        return setupState;
     }
 }
 

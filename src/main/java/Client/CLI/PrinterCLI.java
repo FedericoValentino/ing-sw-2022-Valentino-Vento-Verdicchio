@@ -1,10 +1,9 @@
 package Client.CLI;
 
-import Client.LightView;
+import Client.LightView.LightView;
 import model.Player;
 import model.Team;
 import model.boards.Island;
-import model.boards.token.CharacterName;
 import model.boards.token.Col;
 import model.boards.token.ColTow;
 import model.boards.token.Student;
