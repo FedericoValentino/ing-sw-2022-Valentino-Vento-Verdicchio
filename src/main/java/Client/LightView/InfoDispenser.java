@@ -15,30 +15,30 @@ public class InfoDispenser {
             }
         }
         if (state.getGamePhase().equals(GamePhase.PLANNING)) {
-            switch (state.getMoves()) {
+            switch (state.getPlanningMoves()) {
                 case 0:
                     return new InternalMessage("Choose which cloud to refill!");
                 case 1:
                     return new InternalMessage("Choose an assistant card to play!");
                 default:
-                    throw new IllegalStateException("Unexpected value: " + state.getMoves());
+                    throw new IllegalStateException("Unexpected value: " + state.getPlanningMoves());
             }
         } else if (state.getGamePhase().equals(GamePhase.ACTION)) {
             boolean threePlayerGame = players == 3;
-            if (state.getMoves() == 0) {
+            if (state.getActionMoves() == 0) {
                 if (threePlayerGame)
                     return new InternalMessage("Move four students from your entrance");
                 else
                     return new InternalMessage("Move three students from your entrance");
-            } else if (state.getMoves() == 3) {
+            } else if (state.getActionMoves() == 3) {
                 if (!threePlayerGame)
                     return new InternalMessage("Move Mother Nature");
-            } else if (state.getMoves() == 4) {
+            } else if (state.getActionMoves() == 4) {
                 if (threePlayerGame)
                     return new InternalMessage("Move Mother Nature");
                 else
                     return new InternalMessage("Choose an island to refill your entrance");
-            } else if (state.getMoves() == 5) {
+            } else if (state.getActionMoves() == 5) {
                 if (threePlayerGame)
                     return new InternalMessage("Choose an island to refill your entrance");
                 else

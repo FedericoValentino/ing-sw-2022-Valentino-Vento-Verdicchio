@@ -8,17 +8,17 @@ public final class MovesChecks
     public static boolean isExpectedPlanningMove(CurrentGameState game, ACTIONMESSAGETYPE planningPhase)
     {
         if(planningPhase.equals(ACTIONMESSAGETYPE.CLOUD_CHOICE))
-            return game.getCurrentTurnState().getMoves() == 0;
+            return game.getCurrentTurnState().getPlanningMoves() == 0;
         else if(planningPhase.equals(ACTIONMESSAGETYPE.DRAW_CHOICE))
         {
-            return game.getCurrentTurnState().getMoves() == 1;
+            return game.getCurrentTurnState().getPlanningMoves() == 1;
         }
         return false;
     }
 
     public static boolean isExpectedActionMove(CurrentGameState game, int playerNumber, ACTIONMESSAGETYPE actionPhase)
     {
-        int moves = game.getCurrentTurnState().getMoves();
+        int moves = game.getCurrentTurnState().getActionMoves();
         boolean threePlayerGame;
         threePlayerGame = playerNumber == 3;
         if(actionPhase.equals(ACTIONMESSAGETYPE.STUD_MOVE))

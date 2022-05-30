@@ -31,7 +31,7 @@ public class ActionController
         Student s = MainController.findPlayerByName(game, name).getSchool().extractStudent(entrancepos);
         game.getCurrentIslands().getIslands().get(islandId).addStudent(s);
         this.movableStudents--;
-        game.getCurrentTurnState().UpdateMoves();
+        game.getCurrentTurnState().UpdateActionMoves();
     }
 
     /** Method placeStudentToDiningRoom places the selected student from the entrance to the dining room, and checks
@@ -55,7 +55,7 @@ public class ActionController
             t.updateProfessors();
         }
         this.movableStudents--;
-        game.getCurrentTurnState().UpdateMoves();
+        game.getCurrentTurnState().UpdateActionMoves();
     }
 
     public void drawFromClouds(int cloudIndex, CurrentGameState game, String name)
@@ -79,7 +79,7 @@ public class ActionController
             Checks.checkWinnerForTowers(game);
             Checks.checkWinnerForIsland(game);
         }
-        game.getCurrentTurnState().UpdateMoves();
+        game.getCurrentTurnState().UpdateActionMoves();
     }
 
 

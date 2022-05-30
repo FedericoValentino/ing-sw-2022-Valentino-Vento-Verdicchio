@@ -10,7 +10,8 @@ public class CurrentTurnState
 {
     private HashMap<String, Integer> turnOrder;
     private int turn;
-    private int moves;
+    private int planningMoves;
+    private int actionMoves;
     private boolean gameEnded;
     private ColTow WinningTeam;
     private GamePhase gamePhase;
@@ -21,7 +22,8 @@ public class CurrentTurnState
     {
         this.turnOrder = new HashMap<>();
         this.turn = 1;
-        this.moves = 0;
+        this.actionMoves = 0;
+        this.planningMoves = 0;
         this.gameEnded = false;
         this.WinningTeam = null;
         this.gamePhase = GamePhase.SETUP;
@@ -34,12 +36,18 @@ public class CurrentTurnState
     }
 
     /** Iterates the actions that have been taken in a single turn */
-    public void UpdateMoves()
+    public void UpdateActionMoves()
     {
-        moves++;
+        actionMoves++;
     }
 
-    public void ResetMoves(){ moves = 0;}
+    public void UpdatePlanningMoves(){planningMoves++;}
+
+    public void ResetMoves()
+    {
+        actionMoves = 0;
+        planningMoves = 0;
+    }
 
     /** Signals that the game is ended and defines the winning team
      * @param t  the team that has won the game
@@ -56,6 +64,7 @@ public class CurrentTurnState
     public void updateTurn(HashMap<String, Integer> map)
     {
         this.turnOrder = map;
+        ResetMoves();
     }
 
     public void updateGamePhase(GamePhase newPhase)
@@ -74,7 +83,8 @@ public class CurrentTurnState
     public boolean getIsGameEnded() {
         return gameEnded;
     }
-    public int getMoves(){return moves;}
+    public int getActionMoves(){return actionMoves;}
+    public int getPlanningMoves(){return planningMoves;}
     public int getTurn() {
         return turn;
     }
