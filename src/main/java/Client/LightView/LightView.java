@@ -99,6 +99,11 @@ public class LightView extends Observable
         return currentClouds;
     }
 
+    public LightTurnState getCurrentTurnState()
+    {
+        return currentTurnState;
+    }
+
     public int getBankBalance() {
         return bankBalance;
     }

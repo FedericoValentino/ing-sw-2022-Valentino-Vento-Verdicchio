@@ -390,7 +390,7 @@ public class GameHandler extends Thread implements Observer
                             skipToEnd = true;
                             mainController.lastTurn();
                         }
-                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.CLOUD_CHOICE) && !skipToEnd)
+                        if(MovesChecks.isExpectedPlanningMove(mainController.getGame(), ACTIONMESSAGETYPE.CLOUD_CHOICE) && !skipToEnd)
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to fill")));
                         }

@@ -19,7 +19,7 @@ public class CurrentTurnState
     public CurrentTurnState()
     {
         this.turnOrder = new HashMap<>();
-        this.turn = 0;
+        this.turn = 1;
         this.moves = 0;
         this.gameEnded = false;
         this.WinningTeam = null;

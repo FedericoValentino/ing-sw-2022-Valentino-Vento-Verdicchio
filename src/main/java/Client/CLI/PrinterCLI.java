@@ -2,6 +2,7 @@ package Client.CLI;
 
 import Client.LightView.LightPlayer;
 import Client.LightView.LightTeam;
+import Client.LightView.LightTurnState;
 import Client.LightView.LightView;
 import model.Player;
 import model.Team;
@@ -760,5 +761,9 @@ public class PrinterCLI
         }
         System.out.println( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
         return null;
+    }
+
+    public void printTurn(){
+        System.out.println( ANSI_GREEN + "Turn " + ANSI_RESET + view.getCurrentTurnState().getTurn());
     }
 }
