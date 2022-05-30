@@ -258,7 +258,7 @@ public class GameHandler extends Thread implements Observer
                 }
                 break;
         }
-        threadSem.release(1);
+
 
     }
 
@@ -317,12 +317,11 @@ public class GameHandler extends Thread implements Observer
         {
             System.out.println(socket.getNickname() + "disconnected");
             connected = false;
-            threadSem.release();
+
         }
         catch(ClassNotFoundException e)
         {
             System.out.println("Couldn't understand what " + socket.getNickname() + " was saying...");
-            threadSem.release(1);
         }
 
     }
