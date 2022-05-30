@@ -394,7 +394,7 @@ public class GameHandler extends Thread implements Observer
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to fill")));
                         }
-                        else if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.DRAW_CHOICE))
+                        else if(MovesChecks.isExpectedPlanningMove(mainController.getGame(), ACTIONMESSAGETYPE.DRAW_CHOICE))
                         {
                             socket.sendAnswer(new SerializedAnswer(new RequestCard()));
                             if(skipToEnd)

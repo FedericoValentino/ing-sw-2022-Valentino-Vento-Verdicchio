@@ -8,10 +8,10 @@ public final class MovesChecks
     public static boolean isExpectedPlanningMove(CurrentGameState game, ACTIONMESSAGETYPE planningPhase)
     {
         if(planningPhase.equals(ACTIONMESSAGETYPE.CLOUD_CHOICE))
-            return game.getCurrentTurnState().getMoves() == 1;
+            return game.getCurrentTurnState().getMoves() == 0;
         else if(planningPhase.equals(ACTIONMESSAGETYPE.DRAW_CHOICE))
         {
-            if(game.getCurrentTurnState().getMoves() == 2)
+            if(game.getCurrentTurnState().getMoves() == 1)
             {
                 game.getCurrentTurnState().ResetMoves();
                 return true;

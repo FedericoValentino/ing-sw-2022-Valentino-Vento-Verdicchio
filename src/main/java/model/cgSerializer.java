@@ -25,6 +25,7 @@ public class cgSerializer extends StdSerializer<CurrentGameState> {
         jgen.writeObjectField("currentTeams", cgItem.getCurrentTeams());
         jgen.writeObjectField("currentClouds", cgItem.getCurrentClouds());
         jgen.writeObjectField("currentMotherNature", cgItem.getCurrentMotherNature());
+        jgen.writeObjectField("currentTurnState", cgItem.getCurrentTurnState());
         jgen.writeNumberField("bankBalance", cgItem.getBankBalance());
 
 

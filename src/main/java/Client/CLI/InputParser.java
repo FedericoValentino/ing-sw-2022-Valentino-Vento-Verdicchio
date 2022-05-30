@@ -167,7 +167,6 @@ public class InputParser
 
     public void newMove()
     {
-        System.out.println("Type your move");
         String input = parser.nextLine();
         parseString(input.toLowerCase(Locale.ROOT));
     }
@@ -179,6 +178,7 @@ public class InputParser
         System.out.println();
         printer.showSchool("-1", socket.getNickname());
         System.out.println();
+        printer.printTurn();
     }
 
     public void setPrintView(boolean t)

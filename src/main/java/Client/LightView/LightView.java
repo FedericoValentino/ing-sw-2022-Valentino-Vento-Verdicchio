@@ -22,6 +22,7 @@ public class LightView extends Observable
     private ArrayList<LightTeam> currentTeams;
     private LightMotherNature currentMotherNature;
     private LightCloud[] currentClouds;
+    private LightTurnState currentTurnState;
     private int bankBalance;
 
     public LightView()
@@ -47,6 +48,7 @@ public class LightView extends Observable
         this.currentClouds = newView.currentClouds;
         this.currentCharacterDeck = newView.currentCharacterDeck;
         this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
+        this.currentTurnState = newView.currentTurnState;
         notifyLight(this);
     }
 
