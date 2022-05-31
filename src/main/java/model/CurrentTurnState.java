@@ -82,6 +82,7 @@ public class CurrentTurnState
     public void updateGamePhase(GamePhase newPhase)
     {
         gamePhase = newPhase;
+
     }
 
     public void setLastTurn(){lastTurn = true;}

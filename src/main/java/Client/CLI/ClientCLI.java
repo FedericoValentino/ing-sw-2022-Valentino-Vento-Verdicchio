@@ -13,6 +13,7 @@ import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import model.boards.token.Wizard;
+import org.fusesource.jansi.AnsiConsole;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -78,7 +79,7 @@ public class ClientCLI implements ClientView
                 main.sendMessage(new SerializedMessage(new WizardChoice(Wizard.values()[choice])));
                 break;
             case GAME_NFO:
-                System.out.println(((InfoMessage) answer).getInfo());
+                AnsiConsole.out().println(((InfoMessage) answer).getInfo());
                 if(getSetupState())
                 {
                     setupState = false;
@@ -111,7 +112,7 @@ public class ClientCLI implements ClientView
         switch(answer.getType())
         {
             case ERROR:
-                System.out.println(((ErrorMessage) answer).getError());
+                AnsiConsole.out().println(((ErrorMessage) answer).getError());
                 break;
             case START_NFO:
                 System.out.println("Your Turn, start playing!");
@@ -181,6 +182,7 @@ public class ClientCLI implements ClientView
 
     @Override
     public void run(){
+        AnsiConsole.systemInstall();
         System.out.println("Nickname?");
         String nickname = info.nextLine();
         System.out.println("Team?");
