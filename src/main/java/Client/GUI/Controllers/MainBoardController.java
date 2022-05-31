@@ -1,22 +1,64 @@
 package Client.GUI.Controllers;
 
+import Client.GUI.GuiMainStarter;
+import Client.LightView.LightPlayer;
+import Client.LightView.LightTeam;
+import Client.LightView.LightView;
+import Observer.ObserverLightView;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
+import model.Player;
+import model.Team;
 
-public class MainBoardController extends Controller{
+import java.io.IOException;
 
+
+public class MainBoardController extends Controller implements ObserverLightView {
     public AnchorPane mainAnchorPane;
-    public HBox mainHBox;
-    public VBox VBox1;
-    public TabPane OtherSchoolArea;
+    public AnchorPane tabAnchorPane;
+    public Circle sferaIsola;
+    private LightView lightView;
 
-    public Pane characterCardArea;
-    public VBox VBox2;
-    public Pane islandsBoard;
-    public Pane MineSchoolArea;
-    public Pane buttonArea;
+    public void initialize()
+    {
+        //lightView=
+    }
+
+    public void initialSetupOtherSchool(LightView lightView) throws IOException {
+        lightView.addObserverLight(this);
+        String path= "/Client/GUI/Controllers/OtherSchool.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        tabAnchorPane.getChildren().clear();
+        TabPane tabOtherSchool=new TabPane();
+        Tab tab;
+        int c=0;
+        //da vedere se usare il parametro oppure la reference con la client
+        for(LightTeam team: GuiMainStarter.getClientGUI().getLightView().getCurrentTeams())
+        {
+            for(LightPlayer player: team.getPlayers()) {
+                tab=new Tab();
+                c++;
+                tab.setText(player.getNome());
+                tab.setId("pSchool"+c);
+                System.out.println("pschool numero + "+ c +" nome "+player.getNome());
+                // qui dovrò fare una cosa tipo  tab.getChidlren e aggiungerci la tab precaricata se riesco
+                //poi chiamo il setupattuale di quel singolo tab in TabController passandogli qualcosa per identificarlo immagino
+                tabOtherSchool.getTabs().add(tab);
+            }
+        }
+        tabAnchorPane.getChildren().add(loader.load());
+        tabAnchorPane.getChildren().add(tabOtherSchool);
+
+
+    }
+
+    @Override
+    public void update(Object o) {
+        lightView = (LightView) o;
+        //setupOtherSchool();
+        //setup varii
+    }
 }

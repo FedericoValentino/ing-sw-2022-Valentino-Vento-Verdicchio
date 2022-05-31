@@ -7,14 +7,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
 public abstract class Controller {
 
     /**that's the link to the gui **/
-    protected GuiMainStarter guiMainStarter;
+    protected static GuiMainStarter guiMainStarter;
 
 
     /*Funzione che fa il load di una nuova schermata associandoci il controller specifico*/
@@ -32,9 +35,23 @@ public abstract class Controller {
         return loader;
     }
 
+    protected void showError(String title, String header){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.initStyle(StageStyle.UNDECORATED);
+        alert.initModality(Modality.APPLICATION_MODAL);
+        alert.initOwner(GuiMainStarter.getMainStage());
+
+        alert.setHeaderText(title);
+        alert.setContentText(header);
+
+        alert.showAndWait();
+    }
+
+
+
     public void setGuiMainStarter(GuiMainStarter gms)
     {
-        this.guiMainStarter=gms;
+        guiMainStarter=gms;
     }
     public GuiMainStarter getGuiMainStarter()
     {

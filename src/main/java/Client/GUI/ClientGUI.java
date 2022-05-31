@@ -1,7 +1,11 @@
 package Client.GUI;
 
 import Client.ClientView;
+import Client.GUI.Controllers.LobbyController;
+import Client.GUI.Controllers.MainBoardController;
+import Client.GUI.Controllers.ReadyController;
 import Client.GUI.Controllers.WizardController;
+import Client.LightView.LightView;
 import Client.ServerConnection;
 import Server.Answers.ActionAnswers.ErrorMessage;
 import Server.Answers.ActionAnswers.RequestCloud;
@@ -11,6 +15,7 @@ import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import model.boards.token.Wizard;
@@ -28,13 +33,14 @@ public class ClientGUI implements ClientView
     private Boolean setupState = true;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ListenerGui listenerGui;
+    private LightView lightView;
 
     @Override
     public void run() {
-
-
-        GuiMainStarter.setClientGUI(this);
-        GuiMainStarter.main();
+        guiMainStarter=new GuiMainStarter();
+        lightView=MyView;
+        guiMainStarter.setClientGUI(this);
+        guiMainStarter.main();
     }
 
 
@@ -61,10 +67,12 @@ public class ClientGUI implements ClientView
         {
             case GAME_NFO_REQ:
                 Platform.runLater(()->
-                        {
-                            String path= "/Client/GUI/Controllers/Lobby.fxml";
-                            changeScene(path);
-                        });
+                {
+                    String path= "/Client/GUI/Controllers/Lobby.fxml";
+                    FXMLLoader load=changeScene(path);
+                    LobbyController lc=load.getController();
+                    lc.setGuiMainStarter(guiMainStarter);
+                });
                 break;
             case WIZARDS:
                 Platform.runLater(()->
@@ -73,8 +81,9 @@ public class ClientGUI implements ClientView
                     System.out.println("avaiable 0 "+available.get(0));
                     String path= "/Client/GUI/Controllers/Wizard.fxml";
                     FXMLLoader load=changeScene(path);
-                    WizardController wz=load.getController();
-                    wz.updateOpacity(available);
+                    WizardController wc=load.getController();
+                    wc.setGuiMainStarter(guiMainStarter);
+                    wc.updateOpacity(available);
                 });
 
                 break;
@@ -84,7 +93,9 @@ public class ClientGUI implements ClientView
                 Platform.runLater(()->
                 {
                     String path= "/Client/GUI/Controllers/Ready.fxml";
-                    changeScene(path);
+                    FXMLLoader load=changeScene(path);
+                    ReadyController rc=load.getController();
+                    rc.setGuiMainStarter(guiMainStarter);
                 });
                 if(setupState)
                 {
@@ -96,16 +107,24 @@ public class ClientGUI implements ClientView
                 Platform.runLater(()->
                 {
                     String path= "/Client/GUI/Controllers/MainBoard.fxml";
-                    changeScene(path);
+                    FXMLLoader fxml=changeScene(path);
+                    MainBoardController mbc=fxml.getController();
+                    mbc.setGuiMainStarter(guiMainStarter);
+                    try {
+                        mbc.initialSetupOtherSchool(lightView);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                 });
                 break;
-            default:
+            /*default:
                 System.out.println("Waiting");
                 Platform.runLater(()->
                 {
                     String path= "/Client/GUI/Controllers/Waiting.fxml";
                     changeScene(path);
-                });
+                });*/
 
         }
     }
@@ -171,4 +190,7 @@ public class ClientGUI implements ClientView
         return setupState;
     }
 
+    public LightView getLightView() {
+        return lightView;
+    }
 }

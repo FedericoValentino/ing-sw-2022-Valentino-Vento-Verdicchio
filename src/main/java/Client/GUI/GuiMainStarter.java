@@ -1,5 +1,6 @@
 package Client.GUI;
 import Client.GUI.Controllers.IntroController;
+import Client.LightView.LightView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,11 +15,12 @@ public class GuiMainStarter extends Application {
     private static ClientGUI clientGUI;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
+
     public static void main(){
         launch();
     }
 
-/**It's a method to get my reference to CLientGUI, otherwise I'll lose it**/
+    /**It's a method to get my reference to CLientGUI, otherwise I'll lose it**/
     public static void setClientGUI(ClientGUI clientGUI)
     {
         GuiMainStarter.clientGUI=clientGUI;
@@ -37,9 +39,9 @@ public class GuiMainStarter extends Application {
     }
 
 
-/** Start is the method that run when it's called GuiMainStarter.launch() in main
- * This method set all the initial stage and load the intro.fxml file that's the first scene we use
- * **/
+    /** Start is the method that run when it's called GuiMainStarter.launch() in main
+     * This method set all the initial stage and load the intro.fxml file that's the first scene we use
+     * **/
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -56,15 +58,16 @@ public class GuiMainStarter extends Application {
         mainStage.show();
         mainStage.setAlwaysOnTop(false);
         IntroController controller = loader.getController();
-        //controller.setGuiMainStarter(this);
+        controller.setGuiMainStarter(this);
     }
-//Creata solo per un test, poi va eliminata
 
+
+    //Creata solo per un test, poi va eliminata
     public void loadLobby() throws IOException {
         String path= "/Client/GUI/Controllers/Lobby.fxml";
         FXMLLoader loader = new FXMLLoader(GuiMainStarter.class.getResource(path));
         Scene scene= new Scene(loader.load());
-        this.getMainStage().setScene(scene);
+        getMainStage().setScene(scene);
     }
 
 }
