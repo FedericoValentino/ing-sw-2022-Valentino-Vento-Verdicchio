@@ -35,6 +35,7 @@ public class ClientGUI implements ClientView
     private ListenerGui listenerGui;
     private LightView lightView;
 
+
     @Override
     public void run() {
         guiMainStarter=new GuiMainStarter();
@@ -112,6 +113,7 @@ public class ClientGUI implements ClientView
                     mbc.setGuiMainStarter(guiMainStarter);
                     try {
                         mbc.initialSetupOtherSchool(lightView);
+                        //altri setup      mbc.;
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
