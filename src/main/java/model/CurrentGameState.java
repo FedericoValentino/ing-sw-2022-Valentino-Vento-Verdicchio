@@ -64,7 +64,7 @@ public class CurrentGameState extends Observable {
        {
            currentClouds[i] = new Cloud(this);
        }
-       this.currentTurnState = new CurrentTurnState();
+       this.currentTurnState = new CurrentTurnState(this);
        this.currentActiveCharacterCard = new ArrayList<>();
        //this.currentExtractedStudents = new ArrayList<>();
        if(expertGame)
@@ -124,7 +124,6 @@ public class CurrentGameState extends Observable {
             bankBalance -= coinsToLose;
         else
             bankBalance = 0;
-        notify(modelToJson());
     }
 
 
@@ -169,7 +168,6 @@ public class CurrentGameState extends Observable {
             }
 
         }
-        notify(modelToJson());
     }
 
 

@@ -76,7 +76,6 @@ public class Island
         }
       }
     }
-    game.notify(game.modelToJson());
   }
 
   /** Method updateTeamInfluence updates the teamInfluence array with each team influence on the island
@@ -113,7 +112,6 @@ public class Island
           this.teamInfluence[ownership.ordinal()] += towerNumber;
       }
     }
-    game.notify(game.modelToJson());
   }
 
   /** Method addStudent adds a student to the island
@@ -122,7 +120,6 @@ public class Island
   public void addStudent(Student s)
   {
     currentStudents.add(s);
-    game.notify(game.modelToJson());
   }
 
   /** Method updateNoEntry sets on or off the access of the island to motherNature */
@@ -132,7 +129,6 @@ public class Island
       noEntry = false;
     else
       noEntry = true;
-    game.notify(game.modelToJson());
   }
 
   /** Overload of updateTeamInfluence, only used by CharacterCards which actively modify the influence on an island
@@ -155,7 +151,6 @@ public class Island
     {
       motherNature = true;
     }
-    game.notify(game.modelToJson());
   }
 
   public ArrayList<Student> getCurrentStudents(){

@@ -65,7 +65,6 @@ public class Player
     currentAssistantCard = assistantDeck.extractCard(cardPosition);
     MaxMotherMovement = currentAssistantCard.getMovement();
     value = currentAssistantCard.getValue();
-    game.notify(game.modelToJson());
   }
 
   /** Removes the last played Assistant Card from the Current Assistant Card field and places it into the
@@ -76,7 +75,6 @@ public class Player
     lastPlayedCard = currentAssistantCard;
     currentAssistantCard = null;
     this.MaxMotherMovement = 0;
-    game.notify(game.modelToJson());
   }
 
   /** Calculates the amount of coins gained by the players in relation to the "Checkpoints" in his Dining Room
@@ -94,7 +92,6 @@ public class Player
         }
       }
       updateCoins(gainedCoins);
-      game.notify(game.modelToJson());
       return gainedCoins;
   }
 
@@ -111,7 +108,6 @@ public class Player
       {
         coinAmount += gain;
       }
-      game.notify(game.modelToJson());
     }
 
   /** Modifies the Maximum Mother Nature Movement by adding to it the desired value
@@ -120,7 +116,6 @@ public class Player
   public void updateMaxMotherMovement(int movement)
   {
     MaxMotherMovement += movement;
-    game.notify(game.modelToJson());
   }
 
   public AssistantCard getCurrentAssistantCard() {

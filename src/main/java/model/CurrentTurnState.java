@@ -17,9 +17,10 @@ public class CurrentTurnState
     private ColTow WinningTeam;
     private GamePhase gamePhase;
     private boolean lastTurn;
+    private CurrentGameState game;
 
     /** Class constructor. Uses a HashMap to model in which order the players have to play for that turn */
-    public CurrentTurnState()
+    public CurrentTurnState(CurrentGameState game)
     {
         this.turnOrder = new HashMap<>();
         this.turn = 1;
@@ -28,6 +29,7 @@ public class CurrentTurnState
         this.gameEnded = false;
         this.WinningTeam = null;
         this.gamePhase = GamePhase.SETUP;
+        this.game = game;
     }
 
     /** Iterates the Turn of the game */
@@ -40,14 +42,20 @@ public class CurrentTurnState
     public void UpdateActionMoves()
     {
         actionMoves++;
+        game.notify(game.modelToJson());
     }
 
-    public void UpdatePlanningMoves(){planningMoves++;}
+    public void UpdatePlanningMoves()
+    {
+        planningMoves++;
+        game.notify(game.modelToJson());
+    }
 
     public void ResetMoves()
     {
         actionMoves = 0;
         planningMoves = 0;
+        game.notify(game.modelToJson());
     }
 
     /** Signals that the game is ended and defines the winning team

@@ -34,7 +34,6 @@ public class Cloud extends Board
   public void placeToken(Student s)
   {
     student.add(s);
-    game.notify(game.modelToJson());
   }
 
   /** remove the last Student of the cloud
@@ -50,7 +49,6 @@ public class Cloud extends Board
     {
       // System.out.println("Error,the student vector is empty");
     }
-    game.notify(game.modelToJson());
   }
 
 
@@ -59,7 +57,6 @@ public class Cloud extends Board
     ArrayList<Student> current = new ArrayList<>();
     current.addAll(student);
     student.removeAll(student);
-    game.notify(game.modelToJson());
     return current;
   }
 

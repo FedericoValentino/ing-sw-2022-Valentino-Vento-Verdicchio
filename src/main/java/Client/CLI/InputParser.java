@@ -146,7 +146,7 @@ public class InputParser
                 break;
             case "endturn":
                 socket.sendMessage(new SerializedMessage(new EndTurn()));
-                resetScreen();
+                break;
             case "help":
                 printer.showHelp();
                 printView = false;

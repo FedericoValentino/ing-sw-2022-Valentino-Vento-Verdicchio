@@ -28,5 +28,6 @@ public class PlanningController
     public void drawAssistantCard(CurrentGameState game, String currentPlayer, int cardPosition)
     {
         MainController.findPlayerByName(game, currentPlayer).chooseAssistantCard(cardPosition);
+        game.getCurrentTurnState().UpdatePlanningMoves();
     }
 }

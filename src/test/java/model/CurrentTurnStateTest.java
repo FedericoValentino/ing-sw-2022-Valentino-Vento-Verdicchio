@@ -8,7 +8,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CurrentTurnStateTest {
-    CurrentTurnState curTurnObj = new CurrentTurnState();
+    CurrentGameState cg1 = new CurrentGameState(2, true);
+    CurrentTurnState curTurnObj = new CurrentTurnState(cg1);
     ColTow cW=ColTow.GREY;
 
 

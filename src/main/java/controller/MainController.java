@@ -97,6 +97,7 @@ public class MainController
                 }
             }
         }
+        game.notify(game.modelToJson());
     }
 
 
