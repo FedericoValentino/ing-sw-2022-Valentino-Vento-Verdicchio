@@ -76,7 +76,6 @@ public class CurrentTurnState
     public void updateTurn(HashMap<String, Integer> map)
     {
         this.turnOrder = map;
-        ResetMoves();
     }
 
     public void updateGamePhase(GamePhase newPhase)

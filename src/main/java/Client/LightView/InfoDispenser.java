@@ -45,6 +45,6 @@ public class InfoDispenser {
                     return new InternalMessage("End your turn");
             }
         }
-        return  null;
+        return new InternalMessage("");
     }
 }

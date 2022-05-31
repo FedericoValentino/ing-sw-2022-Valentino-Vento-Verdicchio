@@ -146,6 +146,7 @@ public class InputParser
                 break;
             case "endturn":
                 socket.sendMessage(new SerializedMessage(new EndTurn()));
+                resetScreen();
                 break;
             case "help":
                 printer.showHelp();
@@ -157,7 +158,7 @@ public class InputParser
                 break;
             case "ready":
                 socket.sendMessage(new SerializedMessage(new ReadyStatus()));
-                printer.cls();
+                resetScreen();
                 break;
             default:
                 System.out.println("Unrecognized input");
@@ -193,6 +194,5 @@ public class InputParser
     private void resetScreen()
     {
         printer.cls();
-        printGame();
     }
 }

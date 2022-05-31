@@ -49,7 +49,6 @@ public class ClientCLI implements ClientView
 
                 System.out.println("Expert Mode?[true][false]");
                 gm.setExpertGame(Boolean.parseBoolean(stdin.getParser().nextLine()));
-                System.out.println(gm.isExpertGame());
                 try
                 {
                     main.getOut().writeObject(gm);
@@ -122,6 +121,7 @@ public class ClientCLI implements ClientView
                 {
                     MyView.parse((ViewMessage) answer);
                     stdin.printGame();
+                    System.out.println(MyView.getCurrentTurnState().getGamePhase());
                     if(main.getNickname().equals(MyView.getCurrentTurnState().getCurrentPlayer()))
                     {
                         System.out.println(MyView.getInformations().informationCreator(MyView.getCurrentTurnState(), MyView.getCurrentTeams()).getInfoMessage());
@@ -210,7 +210,6 @@ public class ClientCLI implements ClientView
         executor.execute(Listener);
         while(main.getConnected())
         {
-            System.out.println("Hello");
             synchronized (setupLock)
             {
                 while(getSetupState())
