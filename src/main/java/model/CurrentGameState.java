@@ -1,5 +1,3 @@
-//TODO (el mundo) possibile ottimizzazione sulle notify usando currentExtractedStudents
-
 package model;
 
 import com.fasterxml.jackson.core.JsonProcessingException;

@@ -293,7 +293,6 @@ public class GameHandler extends Thread implements Observer
         {
             socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wait for your turn!" + ANSI_RESET)));
         }
-
     }
 
     public void readMessage()
@@ -316,13 +315,12 @@ public class GameHandler extends Thread implements Observer
         {
             System.out.println(socket.getNickname() + "disconnected");
             connected = false;
-
+            return;
         }
         catch(ClassNotFoundException e)
         {
             System.out.println("Couldn't understand what " + socket.getNickname() + " was saying...");
         }
-
     }
 
     @Override
@@ -334,15 +332,6 @@ public class GameHandler extends Thread implements Observer
             {
                 if(Checks.isThereAWinner(mainController.getGame()))
                 {
-                    socket.sendAnswer(new SerializedAnswer(new WinMessage(String.valueOf(mainController.getGame().getCurrentTurnState().getWinningTeam()) + "is the Winner!")));
-                    try
-                    {
-                        socket.getClient().close();
-                    }
-                    catch(IOException e)
-                    {
-                        System.out.println("Couldn't close connection");
-                    }
                     currentMatch.end();
                 }
                 else if(Checks.isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
@@ -358,11 +347,6 @@ public class GameHandler extends Thread implements Observer
             else
             {
                 currentMatch.end();
-            }
-            if(!currentMatch.getRunning() && !Checks.isThereAWinner(mainController.getGame()))
-            {
-                socket.sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
-                socket.sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
             }
 
         }
@@ -385,59 +369,3 @@ public class GameHandler extends Thread implements Observer
         return socket;
     }
 }
-
-
-
-
-/*
-                    else if(Checks.isGamePhase(mainController.getGame(), GamePhase.PLANNING) && mainController.getCurrentPlayer().equals(socket.getNickname()))
-                    {
-                        boolean skipToEnd = false;
-                        socket.sendAnswer(new SerializedAnswer(new StartTurn()));
-                        if(!Checks.isPouchAvailable(mainController.getGame()))
-                        {
-                            skipToEnd = true;
-                            mainController.lastTurn();
-                        }
-                        if(MovesChecks.isExpectedPlanningMove(mainController.getGame(), ACTIONMESSAGETYPE.CLOUD_CHOICE) && !skipToEnd)
-                        {
-                            socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to fill")));
-                        }
-                        else if(MovesChecks.isExpectedPlanningMove(mainController.getGame(), ACTIONMESSAGETYPE.DRAW_CHOICE))
-                        {
-                            socket.sendAnswer(new SerializedAnswer(new RequestCard()));
-                            if(skipToEnd)
-                                skipToEnd = false;
-                        }
-                        threadSem.acquire();
-                    }
-                    else if(Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION) && mainController.getCurrentPlayer().equals(socket.getNickname()))
-                    {
-                        boolean skipToEnd = false;
-                        socket.sendAnswer(new SerializedAnswer(new StartTurn()));
-                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.STUD_MOVE))
-                        {
-                            socket.sendAnswer(new SerializedAnswer(new RequestMoveStudent(String.valueOf(mainController.getActionController().getMovableStudents()))));
-                        }
-                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.MN_MOVE))
-                        {
-                            socket.sendAnswer(new SerializedAnswer(new RequestMotherNatureMove(String.valueOf(MainController.findPlayerByName(mainController.getGame(), socket.getNickname()).getMaxMotherMovement()))));
-                        }
-                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.DRAW_POUCH) && !Checks.isPouchAvailable(mainController.getGame()))
-                        {
-                            skipToEnd = true;
-                            mainController.lastTurn();
-                        }
-                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.DRAW_POUCH) && !skipToEnd)
-                        {
-                            socket.sendAnswer(new SerializedAnswer(new RequestCloud("Choose " + ANSI_CYAN + "cloud " + ANSI_RESET + "to empty")));
-                        }
-                        if(MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), ACTIONMESSAGETYPE.TURN_END))
-                        {
-                            socket.sendAnswer(new SerializedAnswer(new InfoMessage("End your turn " + ANSI_GREEN + "[EndTurn]" + ANSI_RESET)));
-                            if(skipToEnd)
-                                skipToEnd = false;
-                        }
-                        threadSem.acquire();
-                    }
- */

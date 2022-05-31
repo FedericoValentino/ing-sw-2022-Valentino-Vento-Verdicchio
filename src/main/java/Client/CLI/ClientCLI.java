@@ -1,6 +1,5 @@
 //TODO rimandare in caso di reject connection al menù di scelta con IP e Team
 //TODO Scelta team up to server
-//TODO sincronizzare su setupState
 
 package Client.CLI;
 

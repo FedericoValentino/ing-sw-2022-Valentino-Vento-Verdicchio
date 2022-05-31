@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ing-sw-2022-Valentino-Vento-Verdicchio:jar" />
+      <artifact name="softeng-GC61:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="LightView">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Good Morning Vietnam 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/InfoDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/InfoDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +76,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerApp">
+  <component name="RunManager" selected="Application.main">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -91,7 +90,7 @@
     </configuration>
     <configuration name="ServerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ServerApp" />
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <module name="softeng-GC61" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,8 +152,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerApp" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.ServerApp" />
         <item itemvalue="JUnit.Client.LightView in softeng-GC61" />
         <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
@@ -198,13 +197,6 @@
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
       <workItem from="1653914986973" duration="1816000" />
-    </task>
-    <task id="LOCAL-00025" summary="Fixed the setup of Princess and Priest card and of the characterDeck in general">
-      <created>1651497846049</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1651497846049</updated>
     </task>
     <task id="LOCAL-00026" summary="Ignore this, WIP">
       <created>1651502387185</created>
@@ -542,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653983956187</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Good Morning Vietnam 4">
+      <created>1653995915558</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1653995915558</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add an abstract class controller for GUI" />
     <MESSAGE value="Changes to client and such by valentino and vento" />
     <MESSAGE value="Wonderful colors" />
     <MESSAGE value="Correction of login structure and adds of lobby functionality" />
@@ -586,7 +584,8 @@
     <MESSAGE value="Changes by enric" />
     <MESSAGE value="LightView" />
     <MESSAGE value="Good Morning Vietnam 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Good Morning Vietnam 2" />
+    <MESSAGE value="Good Morning Vietnam 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Good Morning Vietnam 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

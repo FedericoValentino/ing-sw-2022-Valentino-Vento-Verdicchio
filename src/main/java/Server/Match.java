@@ -1,7 +1,10 @@
 package Server;
 
+import Server.Answers.ActionAnswers.WinMessage;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.GameStarting;
+import Server.Answers.SetupAnswers.InfoMessage;
+import controller.Checks;
 import controller.MainController;
 
 import java.io.IOException;
@@ -49,6 +52,30 @@ public class Match
     public void end()
     {
         running = false;
+        if(!Checks.isThereAWinner(mainController.getGame()))
+        {
+            for(GameHandler GameHandler: clients)
+            {
+                GameHandler.getSocket().sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
+                GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
+            }
+        }
+        else
+        {
+            for(GameHandler GameHandler: clients)
+            {
+                GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage(String.valueOf(mainController.getGame().getCurrentTurnState().getWinningTeam()) + "is the Winner!")));
+                try
+                {
+                    GameHandler.getSocket().getClient().close();
+                }
+                catch(IOException e)
+                {
+                    System.out.println("Couldn't close connection");
+                }
+            }
+        }
+
     }
 
     public boolean getRunning(){return running;}
