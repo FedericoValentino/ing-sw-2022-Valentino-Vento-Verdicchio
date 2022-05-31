@@ -14,7 +14,7 @@ public class LightTurnState
     private int actionMoves;
     private GamePhase gamePhase;
     private boolean lastTurn;
-    private String CurrentPlayer;
+    private String currentPlayer;
 
 
     public LightTurnState(@JsonProperty("turnOrder") HashMap<String, Integer> turnOrder,
@@ -25,9 +25,9 @@ public class LightTurnState
                           @JsonProperty("winningTeam") ColTow winningTeam,
                           @JsonProperty("gamePhase") GamePhase gamePhase,
                           @JsonProperty("lastTurn") boolean lastTurn,
-                          @JsonProperty("CurrentPlayer") String CurrentPlayer)
+                          @JsonProperty("currentPlayer") String currentPlayer)
     {
-        this.CurrentPlayer = CurrentPlayer;
+        this.currentPlayer = currentPlayer;
         this.turnOrder = turnOrder;
         this.turn = turn;
         this.actionMoves = actionMoves;
@@ -60,6 +60,6 @@ public class LightTurnState
 
     public String getCurrentPlayer()
     {
-        return CurrentPlayer;
+        return currentPlayer;
     }
 }
