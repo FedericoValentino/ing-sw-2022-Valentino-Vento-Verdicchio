@@ -42,20 +42,23 @@ public class CurrentTurnState
     public void UpdateActionMoves()
     {
         actionMoves++;
-        game.notify(game.modelToJson());
+        if(gamePhase == GamePhase.PLANNING || gamePhase == GamePhase.ACTION)
+            game.notify(game.modelToJson());
     }
 
     public void UpdatePlanningMoves()
     {
         planningMoves++;
-        game.notify(game.modelToJson());
+        if(gamePhase == GamePhase.PLANNING || gamePhase == GamePhase.ACTION)
+            game.notify(game.modelToJson());
     }
 
     public void ResetMoves()
     {
         actionMoves = 0;
         planningMoves = 0;
-        game.notify(game.modelToJson());
+        if(gamePhase == GamePhase.PLANNING || gamePhase == GamePhase.ACTION)
+            game.notify(game.modelToJson());
     }
 
     /** Signals that the game is ended and defines the winning team

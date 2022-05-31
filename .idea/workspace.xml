@@ -9,18 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="LightView">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Good Morning Vietnam 2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlanningController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentTurnState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/CurrentTurnStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CurrentTurnStateTest.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,20 +57,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Controllers" />
@@ -96,7 +83,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerApp">
+  <component name="RunManager" selected="Application.main">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -110,7 +97,7 @@
     </configuration>
     <configuration name="ServerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ServerApp" />
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <module name="softeng-GC61" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,7 +106,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main" />
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <module name="softeng-GC61" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,8 +159,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerApp" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.ServerApp" />
         <item itemvalue="JUnit.Client.LightView in softeng-GC61" />
         <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
@@ -217,13 +204,6 @@
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
       <workItem from="1653914986973" duration="1816000" />
-    </task>
-    <task id="LOCAL-00024" summary="Added TODOs and implemented ExecutorService">
-      <created>1651418958450</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1651418958450</updated>
     </task>
     <task id="LOCAL-00025" summary="Fixed the setup of Princess and Priest card and of the characterDeck in general">
       <created>1651497846049</created>
@@ -561,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653921101543</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Good Morning Vietnam 2">
+      <created>1653983956186</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1653983956187</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes in Gui (insert new beginning description)" />
     <MESSAGE value="Add an abstract class controller for GUI" />
     <MESSAGE value="Changes to client and such by valentino and vento" />
     <MESSAGE value="Wonderful colors" />
@@ -605,7 +591,8 @@
     <MESSAGE value="Removed the planning and action counters in GameHandler. Introduced a &quot;moves&quot; counter in CurrentTurnState, with methods to increment and reset said counter. Increments and resets called in proper functions of ActionController and PlanningController. Introduced a new &quot;static&quot; Checks class (MovesChecks) to help the GameHandler understand if the client is making the move we are expecting him to make." />
     <MESSAGE value="Changes by enric" />
     <MESSAGE value="LightView" />
-    <option name="LAST_COMMIT_MESSAGE" value="LightView" />
+    <MESSAGE value="Good Morning Vietnam 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Good Morning Vietnam 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -622,6 +609,11 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="17" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
