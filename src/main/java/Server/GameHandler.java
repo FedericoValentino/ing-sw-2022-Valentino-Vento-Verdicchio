@@ -134,8 +134,7 @@ public class GameHandler extends Thread implements Observer
         {
             case CLOUD_CHOICE:
                 if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type) && Checks.isCloudFillable(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
-                    mainController.getPlanningController()
-                            .drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
+                    mainController.getPlanningController().drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
                 }
                 else
                 {

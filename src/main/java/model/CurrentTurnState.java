@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 public class CurrentTurnState
 {
+    private String currentPlayer;
     private HashMap<String, Integer> turnOrder;
     private int turn;
     private int planningMoves;
@@ -74,6 +75,13 @@ public class CurrentTurnState
 
     public void setLastTurn(){lastTurn = true;}
 
+    public void setCurrentPlayer(String player){
+        this.currentPlayer = player;
+    }
+
+    public String getCurrentPlayer(){
+        return currentPlayer;
+    }
     public GamePhase getGamePhase() {
         return gamePhase;
     }
