@@ -3,15 +3,568 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="APotherSChool" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.OtherSchoolController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane fx:id="greenPane0" prefHeight="27.0" prefWidth="44.0" />
-      <ImageView fitHeight="600.0" fitWidth="300.0">
+      <ImageView fitHeight="600.0" fitWidth="275.0">
          <image>
             <Image url="@../Images/School.jpg" />
          </image>
       </ImageView>
+      <HBox layoutX="32.0" layoutY="147.0" prefHeight="31.0" prefWidth="217.0" spacing="14.0">
+         <children>
+            <Pane prefHeight="31.0" prefWidth="31.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="31.0">
+                     <image>
+                        <Image url="@../Images/Teacher/teacher_green.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="31.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="31.0">
+                     <image>
+                        <Image url="@../Images/Teacher/teacher_red.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane layoutX="41.0" layoutY="10.0" prefHeight="31.0" prefWidth="31.0">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="31.0">
+                     <image>
+                        <Image url="@../Images/Teacher/teacher_yellow.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane layoutX="72.0" layoutY="10.0" prefHeight="31.0" prefWidth="31.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="31.0">
+                     <image>
+                        <Image url="@../Images/Teacher/teacher_pink.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane layoutX="103.0" layoutY="10.0" prefHeight="31.0" prefWidth="31.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="-1.0">
+                     <image>
+                        <Image url="@../Images/Teacher/teacher_blue.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+         </children>
+      </HBox>
+      <GridPane layoutX="63.0" layoutY="29.0" prefHeight="62.0" prefWidth="141.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="103.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.5" minWidth="10.0" prefWidth="97.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.5" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.5" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="29.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.5" minHeight="10.0" prefHeight="32.5" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Pane layoutX="34.0" layoutY="519.0" prefHeight="26.0" prefWidth="27.0" />
+      <Pane layoutX="78.0" layoutY="519.0" prefHeight="26.0" prefWidth="27.0" />
+      <Pane layoutX="79.0" layoutY="555.0" prefHeight="26.0" prefWidth="27.0" />
+      <Pane layoutX="124.0" layoutY="554.0" prefHeight="26.0" prefWidth="27.0" />
+      <Pane layoutX="123.0" layoutY="520.0" prefHeight="25.0" prefWidth="27.0" />
+      <Pane layoutX="168.0" layoutY="520.0" prefHeight="25.0" prefWidth="27.0" />
+      <Pane layoutX="168.0" layoutY="555.0" prefHeight="25.0" prefWidth="27.0" />
+      <Pane layoutX="214.0" layoutY="520.0" prefHeight="25.0" prefWidth="27.0" />
+      <Pane layoutX="214.0" layoutY="554.0" prefHeight="25.0" prefWidth="27.0" />
+      <HBox layoutX="32.0" layoutY="202.0" prefHeight="290.0" prefWidth="209.0" spacing="13.0">
+         <children>
+            <VBox prefHeight="290.0" prefWidth="31.0">
+               <children>
+                  <Pane prefHeight="33.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="30.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_green.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <VBox prefHeight="290.0" prefWidth="31.0">
+               <children>
+                  <Pane prefHeight="33.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="2.0" layoutY="2.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="3.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="3.0" layoutY="2.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="4.0" layoutY="2.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="30.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_red.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <VBox prefHeight="290.0" prefWidth="31.0">
+               <children>
+                  <Pane prefHeight="33.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="30.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_yellow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <VBox prefHeight="290.0" prefWidth="31.0">
+               <children>
+                  <Pane prefHeight="33.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="30.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_pink.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <VBox prefHeight="290.0" prefWidth="31.0">
+               <children>
+                  <Pane prefHeight="33.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="28.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="27.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="30.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="29.0" prefWidth="31.0">
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../Images/Student/student_blue.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
