@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="APotherSChool" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.OtherSchoolController">
+   <children>
+      <Pane fx:id="greenPane0" prefHeight="27.0" prefWidth="44.0" />
+      <ImageView fitHeight="600.0" fitWidth="300.0">
+         <image>
+            <Image url="@../Images/School.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

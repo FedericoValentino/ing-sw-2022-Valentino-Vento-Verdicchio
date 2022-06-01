@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="900.0" minWidth="1600.0" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.MainBoardController">
    <children>
@@ -14,7 +15,7 @@
          <children>
             <VBox fx:id="VBox1" prefHeight="850.0" prefWidth="275.0" style="-fx-background-color: lightgreen;">
                <children>
-                  <AnchorPane fx:id="tabAnchorPane" prefHeight="600.0" prefWidth="175.0">
+                  <AnchorPane fx:id="otherSchoolAnchorPane" prefHeight="600.0" prefWidth="175.0">
                      <children>
                         <ImageView fitHeight="550.0" fitWidth="250.0" layoutX="15.0" layoutY="25.0">
                            <image>
@@ -22,7 +23,7 @@
                            </image>
                         </ImageView>
                      </children></AnchorPane>
-                  <AnchorPane fx:id="characterAnchorPane" prefHeight="250.0" prefWidth="200.0" />
+                  <AnchorPane fx:id="characterAnchorPane" prefHeight="250.0" prefWidth="200.0" style="-fx-background-color: brown;" />
                </children>
             </VBox>
             <VBox fx:id="VBox2" prefHeight="200.0" prefWidth="950.0" style="-fx-background-color: white;">
@@ -76,20 +77,20 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: pink;">
                      <children>
-                        <Pane prefHeight="200.0" prefWidth="750.0" style="-fx-background-color: pink;" />
-                        <Pane fx:id="carachterCard" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
+                        <AnchorPane fx:id="assistantCardAnchorPane" prefHeight="200.0" prefWidth="200.0" />
                      </children>
                   </HBox>
                </children></VBox>
             <VBox fx:id="VBox3" prefHeight="900.0" prefWidth="275.0" style="-fx-background-color: yellow;">
                <children>
-                  <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: green;" />
+                  <AnchorPane fx:id="mineSchoolAnchorPane" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: green;" />
                   <AnchorPane fx:id="buttonAreaAnchorPane" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="exit" layoutX="233.0" layoutY="142.0" mnemonicParsing="false" text="Exit" />
                         <Button fx:id="nextTurn" layoutX="47.0" layoutY="142.0" mnemonicParsing="false" text="Next Turn" />
+                        <Text layoutX="82.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show here the messages " />
                      </children>
                   </AnchorPane>
                </children></VBox>

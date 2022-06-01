@@ -28,7 +28,7 @@ public class LoginController extends Controller{
     public void initialize()
     {
         teamChoice.getItems().addAll("Grey","White","Black");
-        teamChoice.setValue("Black");
+        teamChoice.setValue("Grey");
     }
 /**This method send all the attributes for the construction of the connection with the server **/
     public void onClickTryConnection(ActionEvent actionEvent) throws IOException{
@@ -43,7 +43,6 @@ public class LoginController extends Controller{
         }
 
         GuiMainStarter.getClientGUI().setServerConnection(nickname.getText(), team, IP.getText());
-
         /*da cercare di implementare il caso in cui non ci siano server attivi per quella connesione lì
         * perché non voglio che stia fermo li a caso nel login senza capire che deve cambiare parametri*/
 
