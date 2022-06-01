@@ -34,6 +34,7 @@ public class ClientGUI implements ClientView
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ListenerGui listenerGui;
     private LightView lightView;
+    private Boolean firstView = false;
 
 
     @Override
@@ -107,19 +108,8 @@ public class ClientGUI implements ClientView
                 System.out.println("Game Starting!");
                 Platform.runLater(()->
                 {
-                    String path= "/Client/GUI/Controllers/MainBoard.fxml";
-                    FXMLLoader fxml=changeScene(path);
-                    MainBoardController mbc=fxml.getController();
-                    mbc.setGuiMainStarter(guiMainStarter);
-                    try {
-                        mbc.initialSetupOtherSchool(lightView);
-                        mbc.initialSetupAssistantCard();
-                        mbc.initialSetupIsland();
-                        //altri setup      mbc.;
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
+                    String path= "/Client/GUI/Controllers/WaitingGameStart.fxml";
+                    changeScene(path);
                 });
                 break;
             /*default:
@@ -160,7 +150,26 @@ public class ClientGUI implements ClientView
                 break;
             case VIEW:
                 MyView.parse((ViewMessage) answer);
-                //showwwwwww view
+                if(!firstView)
+                {
+                    Platform.runLater(()->
+                    {
+                        String path= "/Client/GUI/Controllers/MainBoard.fxml";
+                        FXMLLoader fxml=changeScene(path);
+                        MainBoardController mbc=fxml.getController();
+                        mbc.setGuiMainStarter(guiMainStarter);
+                        try {
+                            mbc.initialSetupOtherSchool(lightView);
+                            mbc.initialSetupAssistantCard();
+                            mbc.initialSetupIsland(lightView.getCurrentIslands());
+                            //altri setup      mbc.;
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    });
+                    firstView = true;
+                }
                 break;
             case CLOUD_REQ:
                 System.out.println(((RequestCloud) answer).getMessage());
