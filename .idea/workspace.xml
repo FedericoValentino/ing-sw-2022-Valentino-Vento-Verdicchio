@@ -9,27 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Main fxml pattern association">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/black_tower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/grey_tower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mother_nature.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/pouch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_pink.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_yellow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_pink.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_yellow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/white_tower.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Adding resources">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Wizard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Wizard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_blue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_green.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_green.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_pink.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_red.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_red.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_yellow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_blue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_green.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_green.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_pink.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_red.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_red.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_yellow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Islands/island1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Islands/island2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Islands/island3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Wizard/mago1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Wizard/mago2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Wizard/mago3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Wizard/mago4.png" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -227,13 +232,6 @@
       <workItem from="1653729341766" duration="366000" />
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
-    </task>
-    <task id="LOCAL-00022" summary="Redone all the comments... again!">
-      <created>1651251682821</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1651251682821</updated>
     </task>
     <task id="LOCAL-00023" summary="isPickable and isEffectPlayable methods ready to go">
       <created>1651253327811</created>
@@ -571,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654090612380</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Adding resources">
+      <created>1654094825727</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1654094825727</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +596,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add an abstract class controller for GUI" />
     <MESSAGE value="Changes to client and such by valentino and vento" />
     <MESSAGE value="Wonderful colors" />
     <MESSAGE value="Correction of login structure and adds of lobby functionality" />
@@ -616,7 +620,8 @@
     <MESSAGE value="Little changes" />
     <MESSAGE value="Added hierarchy to the MainBoard setup method's" />
     <MESSAGE value="Main fxml pattern association" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main fxml pattern association" />
+    <MESSAGE value="Adding resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding resources" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
