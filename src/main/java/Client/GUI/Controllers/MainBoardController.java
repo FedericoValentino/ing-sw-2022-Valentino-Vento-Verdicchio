@@ -40,10 +40,10 @@ public class MainBoardController extends Controller {
         contr.setup(islandAnchorPane);
     }
     public void initialSetupAssistantCard() {
-        String path= "/Client/GUI/Controllers/OtherSchool.fxml";
+        String path= "/Client/GUI/Controllers/Assistants.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-        OtherSchoolController oC= loader.getController();
-        oC.nomeFunzione(otherSchoolAnchorPane);
+        OtherSchoolController assistantController= loader.getController();
+        //assistantController.setup(assistantCardAnchorPane);
 
     }
     public void initialSetupCharactherCard() {
