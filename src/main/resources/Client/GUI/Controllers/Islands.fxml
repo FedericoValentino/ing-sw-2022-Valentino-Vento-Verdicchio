@@ -40,7 +40,7 @@
                <children>
                   <ImageView fitHeight="135.0" fitWidth="125.0">
                      <image>
-                        <Image url="@../Images/Clouds/Cloud4.png" />
+                        <Image url="@../Images/Clouds/Cloud2.png" />
                      </image>
                   </ImageView>
                </children>
@@ -49,7 +49,7 @@
                <children>
                   <ImageView fitHeight="127.0" fitWidth="127.0">
                      <image>
-                        <Image url="@../Images/Clouds/Cloud5.png" />
+                        <Image url="@../Images/Clouds/Cloud4.png" />
                      </image>
                   </ImageView>
                </children>
@@ -58,12 +58,12 @@
       </AnchorPane>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="376.0" layoutY="-25.0">
          <image>
-            <Image url="@../Images/Islands/island3.png" />
+            <Image url="@../Images/Islands/island1.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="547.0" layoutY="-8.0">
          <image>
-            <Image url="@../Images/Islands/island1.png" />
+            <Image url="@../Images/Islands/island2.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="732.0" layoutY="265.0">
@@ -73,7 +73,7 @@
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="685.0" layoutY="97.0">
          <image>
-            <Image url="@../Images/Islands/island1.png" />
+            <Image url="@../Images/Islands/island3.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="384.0" layoutY="502.0">
@@ -83,12 +83,12 @@
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="549.0" layoutY="492.0">
          <image>
-            <Image url="@../Images/Islands/island1.png" />
+            <Image url="@../Images/Islands/island2.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="713.0" layoutY="413.0">
          <image>
-            <Image url="@../Images/Islands/island1.png" />
+            <Image url="@../Images/Islands/island3.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="210.0" layoutY="490.0">
