@@ -9,12 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Main fxml pattern association">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/black_tower.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/grey_tower.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mother_nature.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/pouch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_pink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/student_yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_pink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/teacher_yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/white_tower.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -212,13 +227,6 @@
       <workItem from="1653729341766" duration="366000" />
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
-    </task>
-    <task id="LOCAL-00021" summary="Prima impostazione del server, test con client etc etc">
-      <created>1651070255521</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1651070255521</updated>
     </task>
     <task id="LOCAL-00022" summary="Redone all the comments... again!">
       <created>1651251682821</created>
@@ -556,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654015084538</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Main fxml pattern association">
+      <created>1654090612380</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1654090612380</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +591,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes in Gui (insert new beginning description)" />
     <MESSAGE value="Add an abstract class controller for GUI" />
     <MESSAGE value="Changes to client and such by valentino and vento" />
     <MESSAGE value="Wonderful colors" />
@@ -601,7 +615,8 @@
     <MESSAGE value="Removed the planning and action counters in GameHandler. Introduced a &quot;moves&quot; counter in CurrentTurnState, with methods to increment and reset said counter. Increments and resets called in proper functions of ActionController and PlanningController. Introduced a new &quot;static&quot; Checks class (MovesChecks) to help the GameHandler understand if the client is making the move we are expecting him to make." />
     <MESSAGE value="Little changes" />
     <MESSAGE value="Added hierarchy to the MainBoard setup method's" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added hierarchy to the MainBoard setup method's" />
+    <MESSAGE value="Main fxml pattern association" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main fxml pattern association" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

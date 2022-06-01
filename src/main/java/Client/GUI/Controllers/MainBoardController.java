@@ -34,6 +34,10 @@ public class MainBoardController extends Controller {
 
 
     public void initialSetupIsland() {
+        String path= "/Client/GUI/Controllers/Islands.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        IslandsController contr= loader.getController();
+        contr.setup(islandAnchorPane);
     }
     public void initialSetupAssistantCard() {
         String path= "/Client/GUI/Controllers/OtherSchool.fxml";
