@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane fx:id="AssistantsAcnhorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox fx:id="Box" prefHeight="100.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(2).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(3).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(4).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(5).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(6).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(7).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(8).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(9).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="95.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="95.0">
+                     <image>
+                        <Image url="@../Images/Assistants/Assistente(10).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
