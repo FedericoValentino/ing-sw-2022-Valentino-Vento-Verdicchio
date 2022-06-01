@@ -113,6 +113,7 @@ public class ClientGUI implements ClientView
                     mbc.setGuiMainStarter(guiMainStarter);
                     try {
                         mbc.initialSetupOtherSchool(lightView);
+                        mbc.initialSetupAssistantCard();
                         //altri setup      mbc.;
                     } catch (IOException e) {
                         e.printStackTrace();

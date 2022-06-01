@@ -17,8 +17,9 @@ import model.Team;
 import java.io.IOException;
 
 
-public class MainBoardController extends Controller implements ObserverLightView {
+public class MainBoardController extends Controller {
     @FXML public AnchorPane mainAnchorPane;
+
     @FXML public AnchorPane otherSchoolAnchorPane;
     @FXML public AnchorPane characterAnchorPane;
 
@@ -35,6 +36,11 @@ public class MainBoardController extends Controller implements ObserverLightView
     public void initialSetupIsland() {
     }
     public void initialSetupAssistantCard() {
+        String path= "/Client/GUI/Controllers/OtherSchool.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        OtherSchoolController oC= loader.getController();
+        oC.nomeFunzione(otherSchoolAnchorPane);
+
     }
     public void initialSetupCharactherCard() {
     }
@@ -46,16 +52,23 @@ public class MainBoardController extends Controller implements ObserverLightView
 
 
     public void initialSetupOtherSchool(LightView lightView) throws IOException {
-        lightView.addObserverLight(this);
+
+
+
+
         String path= "/Client/GUI/Controllers/OtherSchool.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         otherSchoolAnchorPane.getChildren().clear();
+
+
         TabPane tabOtherSchool=new TabPane();
         Tab tab;
         int c=0;
         String tempOwner=GuiMainStarter.getClientGUI().getServerConnection().getNickname();
         System.out.println("temp pwmer "+ tempOwner);
         //da vedere se usare il parametro oppure la reference con la client
+
+
         for(LightTeam team: GuiMainStarter.getClientGUI().getLightView().getCurrentTeams())
         {
             for(LightPlayer player: team.getPlayers()) {
@@ -80,10 +93,4 @@ public class MainBoardController extends Controller implements ObserverLightView
 
     }
 
-    @Override
-    public void update(Object o) {
-        lightView = (LightView) o;
-        //setupOtherSchool();
-        //setup varii
-    }
 }

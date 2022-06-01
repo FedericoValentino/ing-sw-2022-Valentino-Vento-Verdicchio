@@ -1,4 +1,5 @@
 package Client.GUI.Controllers;
 
-public class AssistantCardsController {
+public class AssistantCardsController extends Controller {
+
 }
