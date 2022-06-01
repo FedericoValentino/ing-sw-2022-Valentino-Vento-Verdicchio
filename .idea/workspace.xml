@@ -9,32 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Adding resources">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Wizard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Wizard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Cloud5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Clouds/Cloud5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_green.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_pink.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_red.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/StudentFolder/student_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Student/student_yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_green.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_pink.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_red.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/TeacherFolder/teacher_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Teacher/teacher_yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Islands/island1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Islands/island2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/island3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Islands/island3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Wizard/mago1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Wizard/mago2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Wizard/mago3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/mago4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Wizard/mago4.png" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Refactor resource's folder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/black_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/black_tower.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/grey_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/grey_tower.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/white_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/white_tower.png" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,8 +78,11 @@
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client" />
-      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\GUI\Controllers" />
+      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\Wizard" />
+      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\IslandsFolder" />
+      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\CloudsFolder" />
+      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\TeacherFolder" />
+      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\StudentFolder" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -232,13 +214,6 @@
       <workItem from="1653729341766" duration="366000" />
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
-    </task>
-    <task id="LOCAL-00023" summary="isPickable and isEffectPlayable methods ready to go">
-      <created>1651253327811</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1651253327811</updated>
     </task>
     <task id="LOCAL-00024" summary="Added TODOs and implemented ExecutorService">
       <created>1651418958450</created>
@@ -576,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654094825727</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Refactor resource's folder">
+      <created>1654094978938</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1654094978939</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +578,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes to client and such by valentino and vento" />
     <MESSAGE value="Wonderful colors" />
     <MESSAGE value="Correction of login structure and adds of lobby functionality" />
     <MESSAGE value="Enumeration for server messages, cascade changes in clientCLI to adapt to it" />
@@ -621,7 +602,8 @@
     <MESSAGE value="Added hierarchy to the MainBoard setup method's" />
     <MESSAGE value="Main fxml pattern association" />
     <MESSAGE value="Adding resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding resources" />
+    <MESSAGE value="Refactor resource's folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor resource's folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
