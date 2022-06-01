@@ -1,12 +1,13 @@
 package Client.LightView;
 
+import Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import model.boards.token.ColTow;
 import model.boards.token.GamePhase;
 
 import java.util.HashMap;
 
-public class LightTurnState
+public class LightTurnState extends Observable
 {
     private HashMap<String, Integer> turnOrder;
     private int turn;
@@ -34,6 +35,26 @@ public class LightTurnState
         this.planningMoves = planningMoves;
         this.gamePhase = gamePhase;
         this.lastTurn = lastTurn;
+    }
+
+
+    public void updateTurn(LightTurnState light)
+    {
+        if(light.equals(this))
+        {
+            return;
+        }
+        else
+        {
+            this.currentPlayer = light.getCurrentPlayer();
+            this.turnOrder = light.getTurnOrder();
+            this.turn = light.getTurn();
+            this.actionMoves = light.getActionMoves();
+            this.planningMoves = light.getPlanningMoves();
+            this.gamePhase = light.getGamePhase();
+            this.lastTurn = light.isLastTurn();
+            notifyLight(this);
+        }
     }
 
     public HashMap<String, Integer> getTurnOrder() {

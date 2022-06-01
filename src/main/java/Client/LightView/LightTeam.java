@@ -1,5 +1,6 @@
 package Client.LightView;
 
+import Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import model.Player;
 import model.boards.token.Col;
@@ -7,7 +8,7 @@ import model.boards.token.ColTow;
 
 import java.util.ArrayList;
 
-public class LightTeam
+public class LightTeam extends Observable
 {
     private final ColTow color;
     private ArrayList<LightPlayer> players;
@@ -24,6 +25,21 @@ public class LightTeam
         this.players = players;
         this.controlledIslands = controlledIslands;
         this.controlledProfessors = controlledProfessors;
+    }
+
+    public void updateTeam(LightTeam light)
+    {
+        if(light.equals(this))
+        {
+            return;
+        }
+        else
+        {
+            this.players = light.getPlayers();
+            this.controlledIslands = light.getControlledIslands();
+            this.controlledProfessors = light.getControlledProfessors();
+            notifyLight(this);
+        }
     }
 
     public ColTow getColor() {

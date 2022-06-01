@@ -1,11 +1,12 @@
 package Client.LightView;
 
+import Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import model.boards.School;
 import model.cards.AssistantCard;
 import model.cards.AssistantDeck;
 
-public class LightPlayer
+public class LightPlayer extends Observable
 {
     private String nome;
     private int coinAmount;
@@ -39,6 +40,30 @@ public class LightPlayer
         this.movementValue = movementValue;
         this.value = value;
         TowerOwner = towerOwner;
+    }
+
+
+
+    public void updatePlayer(LightPlayer light)
+    {
+        if(light.equals(this))
+        {
+            return;
+        }
+        else
+        {
+            this.nome = light.getNome();
+            this.coinAmount = light.getCoinAmount();
+            this.currentAssistantCard = light.getCurrentAssistantCard();
+            this.lastPlayedCard = light.getLastPlayedCard();
+            this.assistantDeck = light.getAssistantDeck();
+            this.school = light.getSchool();
+            this.MaxMotherMovement = light.getMaxMotherMovement();
+            this.movementValue = light.getMovementValue();
+            this.value = light.getValue();
+            this.TowerOwner = light.isTowerOwner();
+            notifyLight(this);
+        }
     }
 
 
