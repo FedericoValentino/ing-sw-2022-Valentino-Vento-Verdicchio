@@ -35,7 +35,6 @@ public class GameHandler extends Thread implements Observer
     private int team;
     private Boolean connected = true;
     private Match currentMatch;
-    private Semaphore globalSem;
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_GREEN = "\u001B[32m";

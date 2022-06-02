@@ -50,9 +50,18 @@ public class LightView extends Observable
         this.currentCharacterDeck = newView.currentCharacterDeck;
         this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
         this.currentTurnState = newView.currentTurnState;
+        addNameToSchools();
         notifyLight(this);
     }
 
+    public void addNameToSchools()
+    {
+        for(LightTeam t: currentTeams)
+            for(LightPlayer p: t.getPlayers())
+            {
+                p.getSchool().updateName(p.getNome());
+            }
+    }
 
 
     public void setCurrentIslands(LightIslands currentIslands) {

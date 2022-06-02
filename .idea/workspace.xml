@@ -9,10 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Observable">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="OtherSchool code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightSchool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/OtherSchool.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/OtherSchool.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/School.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/School.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/black_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/black_tower.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/grey_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/grey_tower.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/white_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/white_tower.png" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,11 +73,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="profiler.jvm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -91,7 +101,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
+  <component name="RunManager" selected="Application.ServerApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -99,6 +109,26 @@
       <option name="MAIN_CLASS_NAME" value="ClientApp" />
       <module name="softeng-GC61" />
       <option name="VM_PARAMETERS" value="--module-path=&quot;C:\--Ufficio--\JDK\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GenericRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GenericRunner" />
+      <module name="softeng-GC61" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GuiMainStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.GUI.GuiMainStarter" />
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,30 +147,6 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main" />
       <module name="softeng-GC61" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CharacterControllerTest.deckManagement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.CharacterControllerTest" />
-      <option name="METHOD_NAME" value="deckManagement" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,16 +170,16 @@
       <item itemvalue="Application.ServerApp" />
       <item itemvalue="Application.main" />
       <item itemvalue="JUnit.Client.LightView in softeng-GC61" />
-      <item itemvalue="JUnit.All in softeng-GC61" />
-      <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
+      <item itemvalue="Application.GuiMainStarter" />
+      <item itemvalue="Application.GenericRunner" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerApp" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.ServerApp" />
+        <item itemvalue="Application.GenericRunner" />
+        <item itemvalue="Application.GuiMainStarter" />
         <item itemvalue="JUnit.Client.LightView in softeng-GC61" />
-        <item itemvalue="JUnit.All in softeng-GC61" />
-        <item itemvalue="JUnit.CharacterControllerTest.deckManagement" />
       </list>
     </recent_temporary>
   </component>
@@ -213,20 +219,7 @@
       <workItem from="1653729341766" duration="366000" />
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
-    </task>
-    <task id="LOCAL-00025" summary="Fixed the setup of Princess and Priest card and of the characterDeck in general">
-      <created>1651497846049</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1651497846049</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Ignore this, WIP">
-      <created>1651502387185</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1651502387185</updated>
+      <workItem from="1654173385235" duration="18558000" />
     </task>
     <task id="LOCAL-00027" summary="Moved all Character Effects in their model classes; there were problems with playing the effects and the solutions were too complex to implement. Tests to be adapted">
       <created>1651506893929</created>
@@ -557,7 +550,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654095575456</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="OtherSchool.fxml">
+      <created>1654097434546</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1654097434546</updated>
+    </task>
+    <task id="LOCAL-00075" summary="OtherSchool code">
+      <created>1654100584844</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1654100584844</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,8 +584,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correction of login structure and adds of lobby functionality" />
-    <MESSAGE value="Enumeration for server messages, cascade changes in clientCLI to adapt to it" />
     <MESSAGE value="Enumeration for CLIENT messages, cascade changes in GAMEHANDLER to adapt to it by valentino und vento" />
     <MESSAGE value="Wonderful enumeration" />
     <MESSAGE value="CLI almost ended, still need to add winner condition&#10;valentino and vento" />
@@ -602,7 +607,9 @@
     <MESSAGE value="Adding resources" />
     <MESSAGE value="Refactor resource's folder" />
     <MESSAGE value="Assistants fxml added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assistants fxml added" />
+    <MESSAGE value="OtherSchool.fxml" />
+    <MESSAGE value="OtherSchool code" />
+    <option name="LAST_COMMIT_MESSAGE" value="OtherSchool code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -614,10 +621,6 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="16" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.RuntimeException" package="java.lang" />
-          <option name="timeStamp" value="17" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -631,14 +634,6 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
-    <MESSAGE value="Update of Team, Island and solveEverything to better account for influence calculation when ownership == null and to add the updateControlledIslands functionality in Team" />
-    <MESSAGE value="centaurTest completed" />
-    <MESSAGE value="centaurTest completed and replaced a couple of for cycle with list.clean commands" />
-    <MESSAGE value="All my classes now with comments; minor correction to extractStudent in Pouch (no need to randomize the extraction in the setup phase when the setupBag is already shuffled)" />
-    <MESSAGE value="Controller updated with fancy comments" />
-    <MESSAGE value="Comments in the controller classes updated to match the format of javadocs, way fancier than before" />
-    <MESSAGE value="Updated all the comments of Controller and Model classes to match the quality of the previous updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated all the comments of Controller and Model classes to match the quality of the previous updates" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio_2$model_in_softeng_GC61.ic" NAME="model in softeng-GC61 Coverage Results" MODIFIED="1651576836499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

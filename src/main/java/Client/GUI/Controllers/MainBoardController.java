@@ -8,6 +8,7 @@ import Client.LightView.LightView;
 import Observer.ObserverLightView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -18,6 +19,7 @@ import model.Player;
 import model.Team;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class MainBoardController extends Controller {
@@ -36,9 +38,11 @@ public class MainBoardController extends Controller {
     private LightView lightView;
 
 
-    public void initialSetupIsland(LightIslands lightIslands) {
+    public void initialSetupIsland(LightIslands lightIslands) throws IOException {
         String path= "/Client/GUI/Controllers/Islands.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        islandAnchorPane.getChildren().clear();
+        islandAnchorPane.getChildren().add(loader.load());
         IslandsController contr= loader.getController();
         contr.setup(islandAnchorPane, lightIslands);
     }
@@ -49,7 +53,7 @@ public class MainBoardController extends Controller {
         //assistantController.setup(assistantCardAnchorPane);
 
     }
-    public void initialSetupCharactherCard() {
+    public void initialSetupCharacterCard() {
     }
     public void initialSetupClouds() {
     }
@@ -58,39 +62,37 @@ public class MainBoardController extends Controller {
     }
 
 
-    public void initialSetupOtherSchool(LightView lightView) throws IOException {
+    public void initialSetupOtherSchool(ArrayList<LightTeam> lightTeams) throws IOException {
 
         String path= "/Client/GUI/Controllers/OtherSchool.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-        otherSchoolAnchorPane.getChildren().clear();
+
+
         HBox otherPlayers = new HBox();
         otherPlayers.setSpacing(6);
 
         int c=0;
         String tempOwner=GuiMainStarter.getClientGUI().getServerConnection().getNickname();
-        System.out.println("temp owmer "+ tempOwner);
-        //da vedere se usare il parametro oppure la reference con la client
-
-
-        for(LightTeam team: GuiMainStarter.getClientGUI().getLightView().getCurrentTeams())
+        for(LightTeam team: lightTeams)
         {
-            for(LightPlayer player: team.getPlayers()) {
+            for(LightPlayer player: team.getPlayers())
+            {
                 if(!player.getNome().equals(tempOwner))
                 {
-                    System.out.println("plat "+player.getNome());
-                    Button tab = new Button(player.getNome());
-                    otherPlayers.getChildren().add(tab);
+                    Button playerSwitch = new Button(player.getNome());
+                    otherPlayers.getChildren().add(playerSwitch);
                     c++;
-                    tab.setId("pSchool"+c);
-                    // qui dovrò fare una cosa tipo  tab.getChidlren e aggiungerci la tab precaricata se riesco
-                    //poi chiamo il setup attuale di quel singolo tab in TabController passandogli qualcosa per identificarlo immagino
-
-
+                    playerSwitch.setId("pSchool"+c);
                 }
             }
         }
-        otherSchoolAnchorPane.getChildren().add(otherPlayers);
-        otherSchoolAnchorPane.getChildren().add(loader.load());
+        otherSchoolAnchorPane.getChildren().clear();
+        otherSchoolAnchorPane.getChildren().add(0, loader.load());
+        otherSchoolAnchorPane.getChildren().add(1, otherPlayers);
+
+
+        OtherSchoolController controller = loader.getController();
+        controller.setup(lightTeams, otherSchoolAnchorPane);
     }
 
 }

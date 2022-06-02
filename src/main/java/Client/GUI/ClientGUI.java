@@ -159,7 +159,7 @@ public class ClientGUI implements ClientView
                         MainBoardController mbc=fxml.getController();
                         mbc.setGuiMainStarter(guiMainStarter);
                         try {
-                            mbc.initialSetupOtherSchool(lightView);
+                            mbc.initialSetupOtherSchool(lightView.getCurrentTeams());
                             mbc.initialSetupAssistantCard();
                             mbc.initialSetupIsland(lightView.getCurrentIslands());
                             //altri setup      mbc.;

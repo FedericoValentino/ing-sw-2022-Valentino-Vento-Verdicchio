@@ -56,7 +56,14 @@ public class MainController
     {
         if(game.getCurrentTeams().get(team).getPlayers().size() == 0)
         {
-            this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, Wizard, this.expertGame, game));
+            if(players == 3)
+            {
+                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 6, Wizard, this.expertGame, game));
+            }
+            else
+            {
+                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, Wizard, this.expertGame, game));
+            }
         }
         else
         {

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class LightSchool extends Observable
 {
+    private String owner;
     private final ColTow color;
     private ArrayList<Student> entrance;
     private int[] diningRoom;
@@ -44,6 +45,15 @@ public class LightSchool extends Observable
             this.towerCount = light.getTowerCount();
             notifyLight(this);
         }
+    }
+
+    public void updateName(String name)
+    {
+        this.owner = name;
+    }
+
+    public String getOwner(){
+        return owner;
     }
 
     public ColTow getColor() {

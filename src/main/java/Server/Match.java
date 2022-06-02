@@ -58,6 +58,7 @@ public class Match
             {
                 GameHandler.getSocket().sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
                 GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
+                GameHandler.interrupt();
             }
         }
         else
@@ -68,6 +69,7 @@ public class Match
                 try
                 {
                     GameHandler.getSocket().getClient().close();
+                    GameHandler.interrupt();
                 }
                 catch(IOException e)
                 {
@@ -75,6 +77,7 @@ public class Match
                 }
             }
         }
+
 
     }
 
