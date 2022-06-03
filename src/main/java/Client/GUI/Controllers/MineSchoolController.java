@@ -4,6 +4,7 @@ import Client.LightView.LightPlayer;
 import Client.LightView.LightSchool;
 import Client.LightView.LightTeam;
 import Observer.ObserverLightView;
+import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
@@ -96,49 +97,49 @@ public class MineSchoolController implements ObserverLightView
     @Override
     public void update(Object o)
     {
-        LightSchool school = (LightSchool) o;
-        String TowerColorPath = getSchoolColorPath(school);
-        //Updating Entrance
-        for(int i = 0; i < school.getEntrance().size(); i++)
-        {
-            int finalI = i;
-            Pane entrance_pos = (Pane)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
-            entrance_pos.getChildren().clear();
-            ImageView nImage=new ImageView(getRightColorPath(school.getEntrance().get(i)));
-            nImage.setFitHeight(27);
-            nImage.setFitWidth(27);
-            entrance_pos.getChildren().add(nImage);
-        }
-        //Updating Dining
-        HBox diningRoom = (HBox)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("DiningRoom")).collect(Collectors.toList()).get(0);
-        for(int i = 0; i < 5; i++)
-        {
-            for(int j = 9; j >= school.getDiningRoom()[i]; j--)
+        Platform.runLater(()->{
+            LightSchool school = (LightSchool) o;
+            String TowerColorPath = getSchoolColorPath(school);
+            //Updating Entrance
+            for(int i = 0; i < school.getEntrance().size(); i++)
             {
-                ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(false);
+                int finalI = i;
+                Pane entrance_pos = (Pane)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
+                entrance_pos.getChildren().clear();
+                ImageView nImage=new ImageView(getRightColorPath(school.getEntrance().get(i)));
+                nImage.setFitHeight(27);
+                nImage.setFitWidth(27);
+                entrance_pos.getChildren().add(nImage);
             }
-        }
-        //Updating Prof
-        HBox profTable = (HBox)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("ProfTable")).collect(Collectors.toList()).get(0);
-        for(int i = 0; i < 5; i++)
-        {
-            profTable.getChildren().get(i).setVisible(school.getProfessorTable()[i]);
-        }
-        //Updating Towers
-        GridPane towers = (GridPane)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Towers")).collect(Collectors.toList()).get(0);
-        int tempTowers = school.getTowerCount();
-
-        for(int i = 0; i < 2 && tempTowers > 0; i++)
-        {
-            for(int j = 0; j < 4 && tempTowers > 0; j++)
+            //Updating Dining
+            HBox diningRoom = (HBox)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("DiningRoom")).collect(Collectors.toList()).get(0);
+            for(int i = 0; i < 5; i++)
             {
-                Pane cell = getCellFromGridPane(towers, j, i);
-                cell.getChildren().clear();
-                cell.getChildren().add(new ImageView(TowerColorPath));
-                tempTowers--;
+                for(int j = 9; j >= school.getDiningRoom()[i]; j--)
+                {
+                    ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(false);
+                }
             }
-        }
+            //Updating Prof
+            HBox profTable = (HBox)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("ProfTable")).collect(Collectors.toList()).get(0);
+            for(int i = 0; i < 5; i++)
+            {
+                profTable.getChildren().get(i).setVisible(school.getProfessorTable()[i]);
+            }
+            //Updating Towers
+            GridPane towers = (GridPane)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Towers")).collect(Collectors.toList()).get(0);
+            int tempTowers = school.getTowerCount();
 
-
+            for(int i = 0; i < 2 && tempTowers > 0; i++)
+            {
+                for(int j = 0; j < 4 && tempTowers > 0; j++)
+                {
+                    Pane cell = getCellFromGridPane(towers, j, i);
+                    cell.getChildren().clear();
+                    cell.getChildren().add(new ImageView(TowerColorPath));
+                    tempTowers--;
+                }
+            }
+        });
     }
 }

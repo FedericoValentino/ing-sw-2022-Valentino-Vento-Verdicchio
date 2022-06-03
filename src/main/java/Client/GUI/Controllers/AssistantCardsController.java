@@ -3,6 +3,7 @@ package Client.GUI.Controllers;
 import Client.LightView.LightPlayer;
 import Client.LightView.LightTeam;
 import Observer.ObserverLightView;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -68,48 +69,51 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     @Override
     public void update(Object o)
     {
-        LightPlayer player = (LightPlayer) o;
-        boolean endTurn = played.size() == players.size();
-        if(player.getLastPlayedCard() != null)
-        {
+        Platform.runLater(()-> {
+            LightPlayer player = (LightPlayer) o;
+            boolean endTurn = played.size() == players.size();
+            if(player.getLastPlayedCard() != null)
+            {
+                if(endTurn)
+                    played.clear();
+                played.add(player.getLastPlayedCard());
+            }
+            System.out.println(played.size());
+
+            if(player.getNome().equals(currentPlayer))
+            {
+                HBox cards = (HBox) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Box")).collect(Collectors.toList()).get(0);
+                cards.getChildren().clear();
+                for(AssistantCard card: player.getAssistantDeck().getDeck())
+                {
+                    Pane cardPane = new Pane();
+                    cardPane.getChildren().clear();
+                    ImageView cardImage = new ImageView(getAssistantPath(card));
+                    cardImage.setFitHeight(100);
+                    cardImage.setFitWidth(86);
+                    cardPane.getChildren().add(cardImage);
+                    cards.getChildren().add(cardPane);
+                }
+            }
+
+            int tempPlayedCards = played.size();
+            GridPane playedCards = (GridPane) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedPane")).collect(Collectors.toList()).get(0);
+
             if(endTurn)
-                played.clear();
-            played.add(player.getLastPlayedCard());
-        }
+                playedCards.getChildren().clear();
 
-        if(player.getNome().equals(currentPlayer))
-        {
-            HBox cards = (HBox) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Box")).collect(Collectors.toList()).get(0);
-            cards.getChildren().clear();
-            for(AssistantCard card: player.getAssistantDeck().getDeck())
-            {
-                Pane cardPane = new Pane();
-                cardPane.getChildren().clear();
-                ImageView cardImage = new ImageView(getAssistantPath(card));
-                cardImage.setFitHeight(100);
-                cardImage.setFitWidth(86);
-                cardPane.getChildren().add(cardImage);
-                cards.getChildren().add(cardPane);
-            }
-        }
-
-        int tempPlayedCards = played.size();
-        GridPane playedCards = (GridPane) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedPane")).collect(Collectors.toList()).get(0);
-
-        if(endTurn)
-            playedCards.getChildren().clear();
-
-        for(int i = 0; i < 2 && tempPlayedCards > 0 ; i++)
-            for(int j = 0; j < 2; j++)
-            {
-                Pane cell = getCellFromGridPane(playedCards, j, i);
-                cell.getChildren().clear();
-                ImageView cardImage = new ImageView(getAssistantPath(played.get(tempPlayedCards - 1)));
-                cardImage.setFitHeight(160);
-                cardImage.setFitWidth(100);
-                cell.getChildren().add(cardImage);
-                cell.getChildren().add(new Text(player.getNome()));
-            }
+            for(int i = 0; i < 2 && tempPlayedCards > 0 ; i++)
+                for(int j = 0; j < 2; j++)
+                {
+                    Pane cell = getCellFromGridPane(playedCards, j, i);
+                    cell.getChildren().clear();
+                    ImageView cardImage = new ImageView(getAssistantPath(played.get(tempPlayedCards - 1)));
+                    cardImage.setFitHeight(160);
+                    cardImage.setFitWidth(100);
+                    cell.getChildren().add(cardImage);
+                    cell.getChildren().add(new Text(player.getNome()));
+                }
+        });
     }
 
     public String getAssistantPath(AssistantCard card)

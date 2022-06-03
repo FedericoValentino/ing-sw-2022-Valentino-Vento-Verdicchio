@@ -66,9 +66,9 @@ public class LightView extends Observable
 //
         this.currentTurnState = newView.currentTurnState;
         addNameToSchools();
-        notifyLight(this);
         if(firstUpdate)
         {
+            notifyLight(this);
             firstUpdate = false;
         }
     }
