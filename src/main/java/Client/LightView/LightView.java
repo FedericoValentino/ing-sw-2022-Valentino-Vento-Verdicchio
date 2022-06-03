@@ -38,32 +38,32 @@ public class LightView extends Observable
 
     public void updateLightView(LightView newView)
     {
-        currentIslands.updateIslands(newView.currentIslands);
+
         if(!firstUpdate)
         {
+            currentIslands.updateIslands(newView.currentIslands);
             for(int i = 0; i < currentTeams.size(); i++)
             {
                 currentTeams.get(i).updateTeam(newView.currentTeams.get(i));
             }
-        }
-        else
-        {
-            this.currentTeams = newView.currentTeams;
-        }
-        currentMotherNature.updateMother(newView.currentMotherNature);
-        if(!firstUpdate)
-        {
             for(int i = 0; i < currentTeams.size(); i++)
             {
                 currentClouds[i].updateCloud(newView.currentClouds[i]);
             }
+            currentMotherNature.updateMother(newView.currentMotherNature);
+            currentCharacterDeck.updateCharDeck(newView.currentCharacterDeck);
+            currentActiveCharacterCard.updateActive(newView.currentActiveCharacterCard);
         }
         else
         {
+            this.currentIslands = newView.currentIslands;
+            this.currentTeams = newView.currentTeams;
             this.currentClouds = newView.currentClouds;
+            this.currentMotherNature = newView.currentMotherNature;
+            this.currentCharacterDeck = newView.currentCharacterDeck;
+            this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
         }
-        currentCharacterDeck.updateCharDeck(newView.currentCharacterDeck);
-        currentActiveCharacterCard.updateActive(newView.currentActiveCharacterCard);
+//
         this.currentTurnState = newView.currentTurnState;
         addNameToSchools();
         notifyLight(this);
