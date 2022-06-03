@@ -45,9 +45,9 @@ public class MainBoardController extends Controller {
         islandAnchorPane.getChildren().clear();
         islandAnchorPane.getChildren().add(loader.load());
         IslandsController contr= loader.getController();
-        contr.setup(islandAnchorPane, lightIslands);
+        //contr.setup(islandAnchorPane, lightIslands);
     }
-    public void initialSetupAssistantCard(ArrayList<LightTeam> teams) {
+   public void initialSetupAssistantCard(ArrayList<LightTeam> teams) {
         String path= "/Client/GUI/Controllers/Assistants.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         AssistantCardsController assistantController= loader.getController();
@@ -81,6 +81,7 @@ public class MainBoardController extends Controller {
 
         HBox otherPlayers = new HBox();
         otherPlayers.setSpacing(6);
+
 
         int c=0;
         String tempOwner=GuiMainStarter.getClientGUI().getServerConnection().getNickname();

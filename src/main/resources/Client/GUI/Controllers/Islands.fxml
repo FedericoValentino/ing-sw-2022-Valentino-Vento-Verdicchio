@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.IslandsController">
+<AnchorPane fx:id="mainIslandBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.IslandsController">
    <children>
       <AnchorPane fx:id="cloudsAnchorPane" layoutX="325.0" layoutY="200.0" prefHeight="300.0" prefWidth="300.0">
          <children>
@@ -56,7 +56,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is1" layoutX="376.0" layoutY="-25.0">
+      <AnchorPane fx:id="is1" layoutX="375.0" layoutY="5.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -65,7 +65,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is2" layoutX="547.0" layoutY="-8.0">
+      <AnchorPane fx:id="is2" layoutX="547.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -74,7 +74,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is4" layoutX="732.0" layoutY="265.0">
+      <AnchorPane fx:id="is4" layoutX="763.0" layoutY="265.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -83,7 +83,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is3" layoutX="685.0" layoutY="97.0">
+      <AnchorPane fx:id="is3" layoutX="706.0" layoutY="81.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -92,7 +92,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is7" layoutX="384.0" layoutY="502.0">
+      <AnchorPane fx:id="is7" layoutX="385.0" layoutY="523.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -101,7 +101,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is6" layoutX="549.0" layoutY="492.0">
+      <AnchorPane fx:id="is6" layoutX="547.0" layoutY="523.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -110,16 +110,16 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is5" layoutX="718.0" layoutY="411.0">
+      <AnchorPane fx:id="is5" layoutX="706.0" layoutY="433.0">
          <children>
-            <ImageView fx:id="is5" fitHeight="200.0" fitWidth="200.0">
+            <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
                   <Image url="@../Images/Islands/island3.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is8" layoutX="210.0" layoutY="490.0">
+      <AnchorPane fx:id="is8" layoutX="209.0" layoutY="523.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -137,7 +137,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is10" layoutX="14.0" layoutY="240.0">
+      <AnchorPane fx:id="is10" layoutX="-18.0" layoutY="250.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -146,7 +146,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is11" layoutX="44.0" layoutY="83.0">
+      <AnchorPane fx:id="is11" layoutX="28.0" layoutY="81.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -155,7 +155,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="195.0" layoutY="5.0">
+      <AnchorPane fx:id="is12" layoutX="195.0" layoutY="5.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
