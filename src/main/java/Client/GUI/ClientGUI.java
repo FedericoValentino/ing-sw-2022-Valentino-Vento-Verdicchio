@@ -162,6 +162,7 @@ public class ClientGUI implements ClientView
                             mbc.initialSetupOtherSchool(lightView.getCurrentTeams());
                             mbc.initialSetupAssistantCard();
                             mbc.initialSetupIsland(lightView.getCurrentIslands());
+                            mbc.initialSetupMineSchool(lightView.getCurrentTeams());
                             //altri setup      mbc.;
                         } catch (IOException e) {
                             e.printStackTrace();

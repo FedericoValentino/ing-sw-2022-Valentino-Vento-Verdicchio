@@ -9,8 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="OtherSchool visualization done">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="MineSchool.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MineSchool.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MineSchool.fxml" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -69,6 +73,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Controllers" />
       <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Controllers" />
       <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\GUI\Controllers" />
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers\SetupAnswers" />
@@ -89,7 +94,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerApp">
+  <component name="RunManager" selected="Application.ClientApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -208,14 +213,9 @@
       <workItem from="1653745525649" duration="449000" />
       <workItem from="1653745992014" duration="5710000" />
       <workItem from="1654173385235" duration="18980000" />
-      <workItem from="1654251448618" duration="1569000" />
-    </task>
-    <task id="LOCAL-00028" summary="Removed actionPhase from CurrentTurnState and replaced it with GamePhase; moved the relative enum in the model.token package. Corrected all the affected methods, didn't fix the test. Created new method to cycle through the game phases, rewrote the commands in the GamePhase handler in the server package accordingly. Moved the character tests in the model test classes and created a utility class to help test the effects: the tests don't work as of now, need to investigate)">
-      <created>1651512145821</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1651512145821</updated>
+      <workItem from="1654251448618" duration="4214000" />
+      <workItem from="1654259198754" duration="961000" />
+      <workItem from="1654263660220" duration="2904000" />
     </task>
     <task id="LOCAL-00029" summary="Fixed non working test in PlanningControllerTest due to recent changes">
       <created>1651512326245</created>
@@ -553,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654192274908</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="MineSchool.fxml">
+      <created>1654253181293</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1654253181294</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Wonderful enumeration" />
     <MESSAGE value="CLI almost ended, still need to add winner condition&#10;valentino and vento" />
     <MESSAGE value="Wonderful changes" />
     <MESSAGE value="CLI updates" />
@@ -598,7 +604,8 @@
     <MESSAGE value="OtherSchool.fxml" />
     <MESSAGE value="OtherSchool code" />
     <MESSAGE value="OtherSchool visualization done" />
-    <option name="LAST_COMMIT_MESSAGE" value="OtherSchool visualization done" />
+    <MESSAGE value="MineSchool.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="MineSchool.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

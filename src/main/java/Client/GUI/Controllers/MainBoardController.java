@@ -15,6 +15,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import model.Player;
 import model.Team;
 
@@ -58,7 +59,16 @@ public class MainBoardController extends Controller {
     public void initialSetupClouds() {
     }
 
-    public void initialSetupMineSchool() {
+    public void initialSetupMineSchool(ArrayList<LightTeam> lightTeams) throws IOException {
+        String path= "/Client/GUI/Controllers/MineSchool.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        mineSchoolAnchorPane.getChildren().clear();
+        mineSchoolAnchorPane.getChildren().add(0,loader.load());
+        mineSchoolAnchorPane.getChildren().add(new Text("Your School"));
+        MineSchoolController controller = loader.getController();
+        String player=GuiMainStarter.getClientGUI().getServerConnection().getNickname();
+
+        controller.setup(lightTeams, player, mineSchoolAnchorPane);
     }
 
 
