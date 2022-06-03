@@ -27,7 +27,7 @@ public class IslandsController extends Controller implements ObserverLightView {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
 
             int finalI = i+1;
-            AnchorPane isola=(AnchorPane) mainIslandBoard.getChildren().stream().filter(
+            AnchorPane isola=(AnchorPane) ((AnchorPane) mainIslandBoard.getChildren().get(0)).getChildren().stream().filter(
                             node -> node.getId().equals("is"+ finalI))
                     .collect(Collectors.toList()).get(0);
 

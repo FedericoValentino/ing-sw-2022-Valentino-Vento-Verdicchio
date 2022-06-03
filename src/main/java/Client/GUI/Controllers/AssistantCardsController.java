@@ -35,7 +35,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
 
     private void onClick(MouseEvent event)
     {
-        GridPane playedCards = (GridPane) AssistantsAnchorPane.getChildren().stream().filter(node -> node.getId().equals("LastPlayedPane")).collect(Collectors.toList()).get(0);
+        GridPane playedCards = (GridPane) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedPane")).collect(Collectors.toList()).get(0);
         Button button = (Button) event.getSource();
         if(button.getText().equals("Active\nAssistants")) {
             playedCards.setVisible(true);
@@ -58,7 +58,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                 players.add(player);
             }
         }
-        Button lastPlayed = (Button) AssistantsPane.getChildren().stream().filter(node -> node.getId().equals("LastPlayedButton")).collect(Collectors.toList()).get(0);
+        Button lastPlayed = (Button) ((AnchorPane) AssistantsPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedButton")).collect(Collectors.toList()).get(0);
         lastPlayed.setOnMouseClicked(this::onClick);
         for(LightPlayer player: players)
             update(player);
@@ -79,19 +79,22 @@ public class AssistantCardsController extends Controller implements ObserverLigh
 
         if(player.getNome().equals(currentPlayer))
         {
-            HBox cards = (HBox) AssistantsAnchorPane.getChildren().stream().filter(node -> node.getId().equals("Box")).collect(Collectors.toList()).get(0);
+            HBox cards = (HBox) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Box")).collect(Collectors.toList()).get(0);
             cards.getChildren().clear();
             for(AssistantCard card: player.getAssistantDeck().getDeck())
             {
                 Pane cardPane = new Pane();
                 cardPane.getChildren().clear();
-                cardPane.getChildren().add(new ImageView(getAssistantPath(card)));
+                ImageView cardImage = new ImageView(getAssistantPath(card));
+                cardImage.setFitHeight(100);
+                cardImage.setFitWidth(86);
+                cardPane.getChildren().add(cardImage);
                 cards.getChildren().add(cardPane);
             }
         }
 
         int tempPlayedCards = played.size();
-        GridPane playedCards = (GridPane) AssistantsAnchorPane.getChildren().stream().filter(node -> node.getId().equals("LastPlayedPane")).collect(Collectors.toList()).get(0);
+        GridPane playedCards = (GridPane) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedPane")).collect(Collectors.toList()).get(0);
 
         if(endTurn)
             playedCards.getChildren().clear();
@@ -101,7 +104,10 @@ public class AssistantCardsController extends Controller implements ObserverLigh
             {
                 Pane cell = getCellFromGridPane(playedCards, j, i);
                 cell.getChildren().clear();
-                cell.getChildren().add(new ImageView(getAssistantPath(played.get(tempPlayedCards - 1))));
+                ImageView cardImage = new ImageView(getAssistantPath(played.get(tempPlayedCards - 1)));
+                cardImage.setFitHeight(160);
+                cardImage.setFitWidth(100);
+                cell.getChildren().add(cardImage);
                 cell.getChildren().add(new Text(player.getNome()));
             }
     }
