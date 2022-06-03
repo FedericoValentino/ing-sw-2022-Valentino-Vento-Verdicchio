@@ -10,7 +10,7 @@
       <AnchorPane fx:id="cloudsAnchorPane" layoutX="325.0" layoutY="200.0" prefHeight="300.0" prefWidth="300.0">
          <children>
             <Pane fx:id="pouch" layoutX="127.0" layoutY="129.0" prefHeight="42.0" prefWidth="45.0">
-               <children>
+               <children>  
                   <ImageView fitHeight="49.0" fitWidth="53.0" layoutX="-5.0" layoutY="-2.0">
                      <image>
                         <Image url="@../Images/pouch.png" />
@@ -22,7 +22,7 @@
                <children>
                   <ImageView fitHeight="126.0" fitWidth="125.0">
                      <image>
-                        <Image url="@../Images/Clouds/Cloud1.png" />
+                        <Image url="@../Images/Clouds/cloud4Student.png" />
                      </image>
                   </ImageView>
                </children>
@@ -56,65 +56,113 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="376.0" layoutY="-25.0">
-         <image>
-            <Image url="@../Images/Islands/island1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="547.0" layoutY="-8.0">
-         <image>
-            <Image url="@../Images/Islands/island2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="732.0" layoutY="265.0">
-         <image>
-            <Image url="@../Images/Islands/island1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="685.0" layoutY="97.0">
-         <image>
-            <Image url="@../Images/Islands/island3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="384.0" layoutY="502.0">
-         <image>
-            <Image url="@../Images/Islands/island3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="549.0" layoutY="492.0">
-         <image>
-            <Image url="@../Images/Islands/island2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="713.0" layoutY="413.0">
-         <image>
-            <Image url="@../Images/Islands/island3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="210.0" layoutY="490.0">
-         <image>
-            <Image url="@../Images/Islands/island3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="69.0" layoutY="397.0">
-         <image>
-            <Image url="@../Images/Islands/island3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="240.0">
-         <image>
-            <Image url="@../Images/Islands/island3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="44.0" layoutY="83.0">
-         <image>
-            <Image url="@../Images/Islands/island3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="195.0" layoutY="5.0">
-         <image>
-            <Image url="@../Images/Islands/island3.png" />
-         </image>
-      </ImageView>
+      <AnchorPane fx:id="is1" layoutX="376.0" layoutY="-25.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is2" layoutX="547.0" layoutY="-8.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is4" layoutX="732.0" layoutY="265.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is3" layoutX="685.0" layoutY="97.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is7" layoutX="384.0" layoutY="502.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is6" layoutX="549.0" layoutY="492.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is5" layoutX="718.0" layoutY="411.0">
+         <children>
+            <ImageView fx:id="is5" fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is8" layoutX="210.0" layoutY="490.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is9" layoutX="69.0" layoutY="397.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is10" layoutX="14.0" layoutY="240.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="is11" layoutX="44.0" layoutY="83.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="195.0" layoutY="5.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../Images/Islands/island3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
