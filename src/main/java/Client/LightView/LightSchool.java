@@ -1,5 +1,5 @@
 package Client.LightView;
-
+//
 import Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import model.boards.token.ColTow;

@@ -1,5 +1,5 @@
 package Client.LightView;
-
+//
 import Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import model.boards.School;
@@ -57,7 +57,7 @@ public class LightPlayer extends Observable
             this.currentAssistantCard = light.getCurrentAssistantCard();
             this.lastPlayedCard = light.getLastPlayedCard();
             this.assistantDeck = light.getAssistantDeck();
-            this.school = light.getSchool();
+            school.updateSchool(light.getSchool());
             this.MaxMotherMovement = light.getMaxMotherMovement();
             this.movementValue = light.getMovementValue();
             this.value = light.getValue();

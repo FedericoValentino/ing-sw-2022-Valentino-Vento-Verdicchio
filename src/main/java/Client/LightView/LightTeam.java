@@ -1,5 +1,5 @@
 package Client.LightView;
-
+//
 import Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import model.Player;
@@ -35,7 +35,10 @@ public class LightTeam extends Observable
         }
         else
         {
-            this.players = light.getPlayers();
+            for(int i = 0; i < players.size(); i++)
+            {
+                players.get(i).updatePlayer(light.getPlayers().get(i));
+            }
             this.controlledIslands = light.getControlledIslands();
             this.controlledProfessors = light.getControlledProfessors();
             notifyLight(this);

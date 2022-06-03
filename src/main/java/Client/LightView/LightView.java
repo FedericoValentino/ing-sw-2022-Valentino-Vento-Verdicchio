@@ -4,18 +4,13 @@ import Observer.Observable;
 import Server.Answers.ActionAnswers.ViewMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.Team;
-import model.boards.Cloud;
-import model.boards.Islands;
-import model.boards.token.MotherNature;
-import model.cards.CharacterCard;
-import model.cards.CharacterDeck;
 
 import java.util.ArrayList;
 
 
 public class LightView extends Observable
 {
+    private Boolean firstUpdate = true;
     private LightActiveDeck currentActiveCharacterCard;
     private LightCharDeck currentCharacterDeck;
     private LightIslands currentIslands;
@@ -43,15 +38,39 @@ public class LightView extends Observable
 
     public void updateLightView(LightView newView)
     {
-        this.currentIslands = newView.currentIslands;
-        this.currentTeams = newView.currentTeams;
-        this.currentMotherNature = newView.currentMotherNature;
-        this.currentClouds = newView.currentClouds;
-        this.currentCharacterDeck = newView.currentCharacterDeck;
-        this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
+        currentIslands.updateIslands(newView.currentIslands);
+        if(!firstUpdate)
+        {
+            for(int i = 0; i < currentTeams.size(); i++)
+            {
+                currentTeams.get(i).updateTeam(newView.currentTeams.get(i));
+            }
+        }
+        else
+        {
+            this.currentTeams = newView.currentTeams;
+        }
+        currentMotherNature.updateMother(newView.currentMotherNature);
+        if(!firstUpdate)
+        {
+            for(int i = 0; i < currentTeams.size(); i++)
+            {
+                currentClouds[i].updateCloud(newView.currentClouds[i]);
+            }
+        }
+        else
+        {
+            this.currentClouds = newView.currentClouds;
+        }
+        currentCharacterDeck.updateCharDeck(newView.currentCharacterDeck);
+        currentActiveCharacterCard.updateActive(newView.currentActiveCharacterCard);
         this.currentTurnState = newView.currentTurnState;
         addNameToSchools();
         notifyLight(this);
+        if(firstUpdate)
+        {
+            firstUpdate = false;
+        }
     }
 
     public void addNameToSchools()
