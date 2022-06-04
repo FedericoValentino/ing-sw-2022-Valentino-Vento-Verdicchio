@@ -1,10 +1,7 @@
 package Client.GUI.Controllers;
 
 import Client.GUI.GuiMainStarter;
-import Client.LightView.LightIslands;
-import Client.LightView.LightPlayer;
-import Client.LightView.LightTeam;
-import Client.LightView.LightView;
+import Client.LightView.*;
 import Observer.ObserverLightView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,11 +41,11 @@ public class MainBoardController extends Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         islandAnchorPane.getChildren().clear();
         islandAnchorPane.getChildren().add(loader.load());
-        IslandsController contr= loader.getController();
+        IslandsController contr = loader.getController();
         //contr.setup(islandAnchorPane, lightIslands);
     }
    public void initialSetupAssistantCard(ArrayList<LightTeam> teams) throws IOException {
-        String path= "/Client/GUI/Controllers/Assistants.fxml";
+        String path = "/Client/GUI/Controllers/Assistants.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         assistantCardAnchorPane.getChildren().clear();
         assistantCardAnchorPane.getChildren().add(loader.load());
@@ -57,8 +54,17 @@ public class MainBoardController extends Controller {
         assistantController.setup(player, teams, assistantCardAnchorPane);
 
     }
-    public void initialSetupCharacterCard() {
+    public void initialSetupCharacterCard(LightCharDeck charDeck, LightActiveDeck activeDeck) throws IOException
+    {
+        String path = "/Client/GUI/Controllers/Character.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        characterAnchorPane.getChildren().clear();
+        characterAnchorPane.getChildren().add(loader.load());
+        CharacterCardsController characterController = loader.getController();
+
+        characterController.setup(characterAnchorPane, charDeck, activeDeck);
     }
+
     public void initialSetupClouds() {
     }
 

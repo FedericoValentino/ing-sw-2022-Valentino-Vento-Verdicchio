@@ -24,7 +24,7 @@ public class LightActiveDeck extends Observable
         {
             this.lightActiveDeck = light.getLightActiveDeck();
             System.out.println("Updated LightActiveCharDeck");
-            notifyLight(this);
+            notifyLight(lightActiveDeck.get(0));
         }
     }
 
