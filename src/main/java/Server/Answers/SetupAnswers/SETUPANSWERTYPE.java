@@ -2,6 +2,7 @@ package Server.Answers.SetupAnswers;
 
 public enum SETUPANSWERTYPE {
     WIZARDS,
+    TEAMS,
     GAME_START,
     GAME_NFO,
     GAME_NFO_REQ,

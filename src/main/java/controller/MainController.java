@@ -21,6 +21,7 @@ public class MainController
     private CharacterController characterController;
     private boolean expertGame;
     private ArrayList<Wizard> availableWizards;
+    private int[] availableTeams;
     private int readyPlayers;
     private int players;
 
@@ -40,6 +41,25 @@ public class MainController
         for(int i = 0; i < 4; i++)
         {
             this.availableWizards.add(Wizard.values()[i]);
+        }
+        this.availableTeams = new int[3];
+        if(playerNumber == 2)
+        {
+            availableTeams[0] = 1;
+            availableTeams[1] = 1;
+            availableTeams[2] = 0;
+        }
+        else if(playerNumber == 3)
+        {
+            availableTeams[0] = 1;
+            availableTeams[1] = 1;
+            availableTeams[2] = 1;
+        }
+        else if(playerNumber == 4)
+        {
+            availableTeams[0] = 2;
+            availableTeams[1] = 2;
+            availableTeams[2] = 0;
         }
         this.readyPlayers = 0;
         this.players = playerNumber;
@@ -200,6 +220,11 @@ public class MainController
         game.getCurrentTurnState().updateWinner(game.getCurrentIslands().getMaxCol(game.getCurrentTeams()));
     }
 
+    public void removeSlotFromTeam(int teamChoice)
+    {
+        availableTeams[teamChoice]--;
+    }
+
 
     public void resetReady()
     {
@@ -245,4 +270,10 @@ public class MainController
     public int getPlayers() {
         return players;
     }
+
+    public synchronized int[] getAvailableTeams() {
+        return availableTeams;
+    }
+
+
 }

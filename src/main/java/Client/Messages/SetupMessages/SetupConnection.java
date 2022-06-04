@@ -5,9 +5,8 @@ public class SetupConnection extends StandardSetupMessage
     private String nickname;
     private int team;
 
-    public SetupConnection(String nickname, int team) {
+    public SetupConnection(String nickname) {
         this.nickname = nickname;
-        this.team = team;
         super.type = SETUPMESSAGETYPE.CONNECTION_SETUP;
     }
 

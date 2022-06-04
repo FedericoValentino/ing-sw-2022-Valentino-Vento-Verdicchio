@@ -27,7 +27,7 @@ public class Match
     }
 
     public void addClient(ClientConnection client) throws IOException {
-        GameHandler gameHandler = new GameHandler(mainController, client, client.getTeam(),this);
+        GameHandler gameHandler = new GameHandler(mainController, client, this);
         clients.add(gameHandler);
     }
 

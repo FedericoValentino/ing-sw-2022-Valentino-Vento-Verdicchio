@@ -96,7 +96,6 @@ public class WizardController extends Controller{
 
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(
                 new SerializedMessage(new WizardChoice(wizardTemp)));
-        System.out.println("Conne "+GuiMainStarter.getClientGUI().getServerConnection().getTeam() );
 
     }
 

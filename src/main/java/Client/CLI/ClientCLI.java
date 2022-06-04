@@ -12,6 +12,7 @@ import Server.Answers.ActionAnswers.*;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import model.boards.token.ColTow;
 import model.boards.token.Wizard;
 import org.fusesource.jansi.AnsiConsole;
 
@@ -60,6 +61,22 @@ public class ClientCLI implements ClientView
                     System.out.println("Server unreachable");
                 }
 
+                break;
+            case TEAMS:
+                int[] availableTeams = ((AvailableTeams) answer).getAvailableTeams();
+                System.out.println("What Team are you playing in?");
+                for(int i = 0; i < 3; i++)
+                {
+                    System.out.print("[" + i + "] " + ColTow.values()[i] + ": " + availableTeams[i] + " Slots ");
+                }
+                System.out.println();
+                int teamChoice = Integer.parseInt(stdin.getParser().nextLine());
+                while(teamChoice > 2 || teamChoice < 0)
+                {
+                    System.out.println("You must enter a number between 0 and 2");
+                    teamChoice = Integer.parseInt(stdin.getParser().nextLine());
+                }
+                main.sendMessage(new SerializedMessage(new TeamChoice(teamChoice)));
                 break;
             case WIZARDS:
                 ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
@@ -185,19 +202,11 @@ public class ClientCLI implements ClientView
         AnsiConsole.systemInstall();
         System.out.println("Nickname?");
         String nickname = info.nextLine();
-        System.out.println("Team?");
-        int team = Integer.parseInt(info.nextLine());
-        while(team < 0 || team > 2)
-        {
-            System.out.println("ERROR: No such Team exists");
-            team = Integer.parseInt(info.nextLine());
-        }
         System.out.println("ServerIP?");
         String IP = info.nextLine();
-
         try
         {
-            main = new ServerConnection(nickname, team, IP);
+            main = new ServerConnection(nickname, IP);
             main.establishConnection();
         }
         catch(IOException e)

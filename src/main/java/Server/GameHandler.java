@@ -11,6 +11,7 @@ import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.*;
 import Server.Answers.ActionAnswers.*;
 import Server.Answers.SerializedAnswer;
+import Server.Answers.SetupAnswers.AvailableTeams;
 import Server.Answers.SetupAnswers.AvailableWizards;
 import Server.Answers.SetupAnswers.GameStarting;
 import Server.Answers.SetupAnswers.InfoMessage;
@@ -32,6 +33,7 @@ public class GameHandler extends Thread implements Observer
     private MainController mainController;
     private boolean ready;
     private boolean choseWizard;
+    private boolean choseTeam;
     private int team;
     private Boolean connected = true;
     private Match currentMatch;
@@ -42,13 +44,13 @@ public class GameHandler extends Thread implements Observer
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 
-    public GameHandler(MainController m, ClientConnection s, int team, Match match)
+    public GameHandler(MainController m, ClientConnection s, Match match)
     {
         this.socket = s;
         this.mainController = m;
         this.ready = false;
         this.choseWizard = false;
-        this.team = team;
+        this.choseTeam = false;
         this.currentMatch = match;
     }
 
@@ -84,6 +86,22 @@ public class GameHandler extends Thread implements Observer
         {
             switch(message.type)
             {
+                case TEAM_CHOICE:
+                    synchronized (mainController.getAvailableTeams())
+                    {
+                        int teamChoice = ((TeamChoice) message).getTeam();
+                        if(mainController.getAvailableTeams()[teamChoice] > 0)
+                        {
+                            this.team = teamChoice;
+                            mainController.removeSlotFromTeam(teamChoice);
+                            choseTeam = true;
+                        }
+                        else
+                        {
+                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, wrong input or Team already full" + ANSI_RESET)));
+                        }
+                    }
+                    break;
                 case WIZARD_CHOICE:
                     synchronized (mainController.getAvailableWizards()) {
                         Wizard wizard = ((WizardChoice) message).getWizard();
@@ -332,6 +350,10 @@ public class GameHandler extends Thread implements Observer
                 if(Checks.isThereAWinner(mainController.getGame()))
                 {
                     currentMatch.end();
+                }
+                else if (Checks.isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseTeam)
+                {
+                    socket.sendAnswer(new SerializedAnswer(new AvailableTeams(mainController.getAvailableTeams())));
                 }
                 else if(Checks.isGamePhase(mainController.getGame(), GamePhase.SETUP) && !choseWizard)
                 {

@@ -1,10 +1,7 @@
 package Client.GUI;
 
 import Client.ClientView;
-import Client.GUI.Controllers.LobbyController;
-import Client.GUI.Controllers.MainBoardController;
-import Client.GUI.Controllers.ReadyController;
-import Client.GUI.Controllers.WizardController;
+import Client.GUI.Controllers.*;
 import Client.LightView.LightView;
 import Client.ServerConnection;
 import Server.Answers.ActionAnswers.ErrorMessage;
@@ -74,6 +71,17 @@ public class ClientGUI implements ClientView
                     FXMLLoader load=changeScene(path);
                     LobbyController lc=load.getController();
                     lc.setGuiMainStarter(guiMainStarter);
+                });
+                break;
+            case TEAMS:
+                Platform.runLater(()->
+                {
+                    int[] availableTeams = ((AvailableTeams) answer).getAvailableTeams();
+                    String path = "/Client/GUI/Controllers/Teams.fxml";
+                    FXMLLoader load = changeScene(path);
+                    TeamController tc = load.getController();
+                    tc.setGuiMainStarter(guiMainStarter);
+                    tc.init(availableTeams);
                 });
                 break;
             case WIZARDS:
@@ -190,8 +198,8 @@ public class ClientGUI implements ClientView
 
 
 
-    public void setServerConnection(String nickname,int team,String IP) throws IOException {
-        serverConnection= new ServerConnection(nickname,team,IP);
+    public void setServerConnection(String nickname, String IP) throws IOException {
+        serverConnection= new ServerConnection(nickname,IP);
         serverConnection.establishConnection();
         listenerGui = new ListenerGui(this);
         executor.execute(listenerGui);

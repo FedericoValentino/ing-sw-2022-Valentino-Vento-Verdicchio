@@ -9,12 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Updates">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Platform run laters for Update functions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/TeamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/TeamChoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/AvailableTeams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Teams.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SETUPMESSAGETYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SETUPMESSAGETYPE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/SetupMessages/SetupConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/SETUPANSWERTYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Answers/SetupAnswers/SETUPANSWERTYPE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Login.fxml" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -218,13 +232,8 @@
       <workItem from="1654259198754" duration="961000" />
       <workItem from="1654263660220" duration="2904000" />
       <workItem from="1654275584927" duration="2802000" />
-    </task>
-    <task id="LOCAL-00031" summary="Protocol">
-      <created>1652366268447</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1652366268447</updated>
+      <workItem from="1654278404429" duration="45000" />
+      <workItem from="1654337651099" duration="4950000" />
     </task>
     <task id="LOCAL-00032" summary="Protocol">
       <created>1652367367589</created>
@@ -562,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654273878640</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Platform run laters for Update functions">
+      <created>1654278444565</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1654278444566</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +598,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CLI almost ended, still need to add winner condition&#10;valentino and vento" />
     <MESSAGE value="Wonderful changes" />
     <MESSAGE value="CLI updates" />
     <MESSAGE value="Update for the lab" />
@@ -607,7 +622,8 @@
     <MESSAGE value="OtherSchool visualization done" />
     <MESSAGE value="Modified pixel of students in the entrance" />
     <MESSAGE value="AssistantController done and updated the Assistants fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="AssistantController done and updated the Assistants fxml" />
+    <MESSAGE value="Platform run laters for Update functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Platform run laters for Update functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

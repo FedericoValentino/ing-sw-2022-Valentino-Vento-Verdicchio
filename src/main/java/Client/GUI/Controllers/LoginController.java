@@ -19,7 +19,6 @@ public class LoginController extends Controller{
     @FXML public TextField IP;
     @FXML public TextField Port;
     @FXML public Button TryConn;
-    @FXML public ChoiceBox <String>teamChoice;
 
     private int team;
 
@@ -27,22 +26,12 @@ public class LoginController extends Controller{
  * In this method I set the initial value of the team choice that we can select**/
     public void initialize()
     {
-        teamChoice.getItems().addAll("Grey","White","Black");
-        teamChoice.setValue("Grey");
+
     }
 /**This method send all the attributes for the construction of the connection with the server **/
     public void onClickTryConnection(ActionEvent actionEvent) throws IOException{
 
-        //I find the correct team and I send it in the connection
-        for(ColTow c: ColTow.values())
-        {
-            if(teamChoice.getValue().toUpperCase().equals(c.toString()))
-            {
-                team=c.ordinal();
-            }
-        }
-
-        GuiMainStarter.getClientGUI().setServerConnection(nickname.getText(), team, IP.getText());
+        GuiMainStarter.getClientGUI().setServerConnection(nickname.getText(), IP.getText());
         /*da cercare di implementare il caso in cui non ci siano server attivi per quella connesione lì
         * perché non voglio che stia fermo li a caso nel login senza capire che deve cambiare parametri*/
 

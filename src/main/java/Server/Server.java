@@ -45,7 +45,6 @@ public class Server
                return;
             }
          }
-         connection.setTeam(message.getTeam());
          //adding Client To waiting Lobby
          waitLobby.add(connection);
       }
@@ -97,7 +96,6 @@ public class Server
             if(waitLobby.size() == 1 && !isGameSet)
             {
                info = requestGameInfo(waitLobby.get(0));
-
             }
             if(waitLobby.size() == info.getMaxPlayers())
             {
