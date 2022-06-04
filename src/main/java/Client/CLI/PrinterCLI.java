@@ -768,4 +768,9 @@ public class PrinterCLI
     public void printTurn(){
         AnsiConsole.out().println( ANSI_GREEN + "Turn " + ANSI_RESET + view.getCurrentTurnState().getTurn());
     }
+
+    public LightView getView()
+    {
+        return view;
+    }
 }

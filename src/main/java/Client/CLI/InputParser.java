@@ -133,7 +133,32 @@ public class InputParser
                 resetScreen();
                 break;
             case "activate":
-                CharacterActivationParser(words);
+                if (words.length == 1)
+                {
+                    CharacterActivationParser character =
+                            new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getCharacterName());
+                    socket.sendMessage(new SerializedMessage(character.buildMessage()));
+                }
+                else if(words.length == 2)
+                {
+                    CharacterActivationParser character =
+                            new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getCharacterName(), Integer.parseInt(words[1]));
+                    socket.sendMessage(new SerializedMessage(character.buildMessage()));
+                }
+                else if(words.length == 3)
+                {
+                    try
+                    {
+                        CharacterActivationParser character =
+                                new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getCharacterName(), Integer.parseInt(words[1]), Integer.parseInt(words[2]));
+                        socket.sendMessage(new SerializedMessage(character.buildMessage()));
+                    }
+                    catch (NumberFormatException e) {
+                        CharacterActivationParser character =
+                                new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getCharacterName(), Integer.parseInt(words[1]), Col.valueOf(words[2]));
+                        socket.sendMessage(new SerializedMessage(character.buildMessage()));
+                    }
+                }
                 resetScreen();
                 break;
             case "move":
