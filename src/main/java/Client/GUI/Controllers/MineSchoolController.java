@@ -1,14 +1,19 @@
 package Client.GUI.Controllers;
 
+import Client.GUI.GuiMainStarter;
 import Client.LightView.LightPlayer;
 import Client.LightView.LightSchool;
 import Client.LightView.LightTeam;
+import Client.Messages.ActionMessages.MoveStudent;
+import Client.Messages.SerializedMessage;
 import Observer.ObserverLightView;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import model.boards.token.Student;
 
@@ -17,8 +22,41 @@ import java.util.stream.Collectors;
 
 public class MineSchoolController implements ObserverLightView
 {
+    @FXML public Pane studentChoice;
+    @FXML public ChoiceBox islands;
+    @FXML public Button toDining;
+    @FXML public Button toIsland;
+
     private AnchorPane MySchool;
     private String PlayerName;
+    private int studentEntrancePos;
+
+    public void entranceClick(MouseEvent event)
+    {
+        if(!studentChoice.isVisible())
+        {
+            studentChoice.setVisible(true);
+            studentEntrancePos = Integer.parseInt(((Node)event.getSource()).getId().replace("entrance_", ""));
+        }
+        else
+        {
+            if(studentEntrancePos == Integer.parseInt(((Node)event.getSource()).getId().replace("entrance_", "")))
+            {
+                studentChoice.setVisible(false);
+            }
+            studentEntrancePos = Integer.parseInt(((Node)event.getSource()).getId().replace("entrance_", ""));
+        }
+    }
+
+    public void sendDining(MouseEvent event)
+    {
+        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, false, 0)));
+    }
+
+    public void sendIsland(MouseEvent event)
+    {
+        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, true, Integer.parseInt((String)islands.getValue()))));
+    }
 
     public void setup(ArrayList<LightTeam> Teams,String PlayerName, AnchorPane School)
     {
@@ -35,14 +73,18 @@ public class MineSchoolController implements ObserverLightView
                     {
                         int finalI = i;
                         Pane entrance_pos = (Pane)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
-                        entrance_pos.setOnMouseClicked((event) -> {
-                            //lambda definition
-                        });
+                        entrance_pos.setOnMouseClicked(this::entranceClick);
                     }
                     update(p.getSchool());
                 }
             }
         }
+        for(int i = 0; i < 12; i++)
+        {
+            islands.getItems().add(Integer.toString(i));
+        }
+        toDining.setOnMouseClicked(this::sendDining);
+        toIsland.setOnMouseClicked(this::sendIsland);
     }
 
 

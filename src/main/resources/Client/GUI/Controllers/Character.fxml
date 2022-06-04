@@ -4,18 +4,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="characterAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.CharacterCardsController">
+<AnchorPane fx:id="characterAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="275.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.CharacterCardsController">
    <children>
-      <Button fx:id="PreviousButton" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="22.0" text="&lt;">
+      <Button fx:id="PreviousButton" layoutX="14.0" layoutY="88.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="22.0" text="&lt;">
          <font>
             <Font size="11.0" />
          </font></Button>
-      <Button fx:id="NextButton" layoutX="172.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="22.0" text="&gt;">
+      <Button fx:id="NextButton" layoutX="237.0" layoutY="88.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="22.0" text="&gt;">
          <font>
             <Font size="11.0" />
          </font></Button>
-      <Pane fx:id="mainPane" layoutX="-369.0" layoutY="336.0" prefHeight="258.0" prefWidth="259.0" />
-      <Button fx:id="ActivateButton" layoutX="110.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
-      <Button fx:id="PlayEffectButton" layoutX="148.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
+      <Button fx:id="ActivateButton" layoutX="41.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
+      <Button fx:id="PlayEffectButton" layoutX="213.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
+      <StackPane fx:id="mainPane" layoutX="41.0" prefHeight="160.0" prefWidth="194.0" />
    </children>
 </AnchorPane>

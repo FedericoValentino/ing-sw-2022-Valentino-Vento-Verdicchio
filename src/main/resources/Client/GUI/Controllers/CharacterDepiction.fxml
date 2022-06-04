@@ -4,12 +4,18 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<Pane fx:id="mainPane" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="mainPane" prefHeight="160.0" prefWidth="194.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Circle fx:id="CharacterStatusIndicator" fill="#ff1f1f" layoutX="134.0" layoutY="28.0" radius="11.0" stroke="#1a8000" strokeType="INSIDE" />
-      <Pane fx:id="CharacterImage" layoutX="24.0" layoutY="18.0" prefHeight="167.0" prefWidth="70.0" />
-      <Text fx:id="StatusDescriptor" layoutX="143.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="52.13671875" />
-      <Text fx:id="Description" layoutX="110.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="83.13671875" />
-      <Text fx:id="Parameters" layoutX="108.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parameters" wrappingWidth="70.13671875" />
+      <Circle fx:id="CharacterStatusIndicator" fill="#ff1f1f" layoutX="51.0" layoutY="146.0" radius="9.0" stroke="#1a8000" strokeType="INSIDE" />
+      <Pane fx:id="CharacterImage" layoutX="44.0" layoutY="22.0" prefHeight="113.0" prefWidth="106.0" />
+      <Text fx:id="StatusDescriptor" layoutX="51.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" textAlignment="CENTER" wrappingWidth="91.13671875" />
+      <Text fx:id="Description" layoutX="87.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" visible="false" wrappingWidth="70.13671875">
+         <font>
+            <Font size="5.0" />
+         </font></Text>
+      <Text fx:id="Parameters" layoutX="70.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parameters" textAlignment="CENTER" wrappingWidth="118.0">
+         <font>
+            <Font size="11.0" />
+         </font></Text>
    </children>
 </Pane>
