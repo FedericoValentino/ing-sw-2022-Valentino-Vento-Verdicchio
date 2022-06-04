@@ -9,11 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Server side teamChoice. CLI e GUI ready for change">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/CharacterActivationParser.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Character Parameter Pattern">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ListenerGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ListenerGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightActiveDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightActiveDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightCharDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightCharDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightCloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightIslands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightIslands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightMotherNature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightMotherNature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightSchool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <option name="SHOW_DIALOG" value="false" />
@@ -218,14 +227,7 @@
       <workItem from="1654263660220" duration="2904000" />
       <workItem from="1654275584927" duration="2802000" />
       <workItem from="1654278404429" duration="45000" />
-      <workItem from="1654337651099" duration="7513000" />
-    </task>
-    <task id="LOCAL-00033" summary="Protocol">
-      <created>1652367715797</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1652367715797</updated>
+      <workItem from="1654337651099" duration="9120000" />
     </task>
     <task id="LOCAL-00034" summary="Protocol">
       <created>1652367883930</created>
@@ -563,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654343345042</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Character Parameter Pattern">
+      <created>1654345898462</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1654345898462</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +592,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CLI updates" />
     <MESSAGE value="Update for the lab" />
     <MESSAGE value="A single line changed" />
     <MESSAGE value="A big change in all GUI functionalities" />
@@ -608,7 +616,8 @@
     <MESSAGE value="AssistantController done and updated the Assistants fxml" />
     <MESSAGE value="Platform run laters for Update functions" />
     <MESSAGE value="Server side teamChoice. CLI e GUI ready for change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server side teamChoice. CLI e GUI ready for change" />
+    <MESSAGE value="Character Parameter Pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Character Parameter Pattern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

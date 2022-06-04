@@ -23,6 +23,7 @@ public class LightCharDeck extends Observable
         else
         {
             this.lightCharDeck = light.getLightCharDeck();
+            System.out.println("Updated LightCharDeck");
             notifyLight(this);
         }
     }

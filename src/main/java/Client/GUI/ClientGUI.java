@@ -88,7 +88,6 @@ public class ClientGUI implements ClientView
                 Platform.runLater(()->
                 {
                     ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
-                    System.out.println("avaiable 0 "+available.get(0));
                     String path= "/Client/GUI/Controllers/Wizard.fxml";
                     FXMLLoader load=changeScene(path);
                     WizardController wc=load.getController();
@@ -98,8 +97,6 @@ public class ClientGUI implements ClientView
 
                 break;
             case GAME_NFO:
-                System.out.println(((InfoMessage) answer).getInfo());
-                System.out.println("Scelta fatta");
                 Platform.runLater(()->
                 {
                     String path= "/Client/GUI/Controllers/Ready.fxml";
@@ -113,7 +110,6 @@ public class ClientGUI implements ClientView
                 }
                 break;
             case GAME_START:
-                System.out.println("Game Starting!");
                 Platform.runLater(()->
                 {
                     String path= "/Client/GUI/Controllers/WaitingGameStart.fxml";

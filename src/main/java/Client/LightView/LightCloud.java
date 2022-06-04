@@ -29,6 +29,7 @@ public class LightCloud extends Observable
         else
         {
             this.students = light.getStudents();
+            System.out.println("Updated LightCloud");
             notifyLight(this);
         }
     }

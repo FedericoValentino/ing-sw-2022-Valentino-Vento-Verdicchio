@@ -253,7 +253,6 @@ public class GameHandler extends Thread implements Observer
                     }
                 }
                 break;
-
         }
     }
 
@@ -274,8 +273,6 @@ public class GameHandler extends Thread implements Observer
                 }
                 break;
         }
-
-
     }
 
     public void messageHandler(StandardActionMessage message)

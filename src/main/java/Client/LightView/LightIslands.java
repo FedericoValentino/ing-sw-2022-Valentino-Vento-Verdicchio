@@ -25,6 +25,7 @@ public class LightIslands extends Observable
         else
         {
             this.islands = light.getIslands();
+            System.out.println("Updated LightIslands");
             notifyLight(this);
         }
     }

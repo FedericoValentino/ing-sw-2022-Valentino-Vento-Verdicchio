@@ -78,7 +78,6 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                     played.clear();
                 played.add(player.getLastPlayedCard());
             }
-            System.out.println(played.size());
 
             if(player.getNome().equals(currentPlayer))
             {

@@ -21,6 +21,7 @@ public class LightMotherNature extends Observable
         else
         {
             this.idPosition = light.getIdPosition();
+            System.out.println("Updated LightMN");
             notifyLight(this);
         }
     }
