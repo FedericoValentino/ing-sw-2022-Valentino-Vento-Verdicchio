@@ -1,7 +1,9 @@
 package Client.GUI.Controllers;
 
+import Client.LightView.LightCloud;
 import Client.LightView.LightIslands;
 import Client.LightView.LightSchool;
+import Client.LightView.LightTurnState;
 import Observer.ObserverLightView;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,11 +14,25 @@ import java.util.stream.Collectors;
 
 public class IslandsController extends Controller implements ObserverLightView {
 
-    //public AnchorPane cloudsAnchorPane;
+    public AnchorPane cloudsAnchorPane;
     public AnchorPane mainIslandBoard;
 
-    public void setup(AnchorPane anchorPane, LightIslands lightIslands)
-    {
+    public void setup(AnchorPane anchorPane, LightIslands lightIslands, LightCloud[] clouds, LightTurnState turn) throws IOException {
+        //Cloud Controller Setup
+        String cloudPanePath = "/Client/GUI/Controllers/Clouds.fxml";
+        FXMLLoader cloudLoader = new FXMLLoader(getClass().getResource(cloudPanePath));
+        cloudsAnchorPane.getChildren().clear();
+        cloudsAnchorPane.getChildren().add(cloudLoader.load());
+        CloudController cloudController = cloudLoader.getController();
+        cloudController.setGuiMainStarter(guiMainStarter);
+        cloudController.setup(clouds, turn);
+
+
+
+
+
+
+        /*
         lightIslands.addObserverLight(this);
         //Con il mio anchor pane  poi vado a settare la
         this.mainIslandBoard=anchorPane;
@@ -37,10 +53,8 @@ public class IslandsController extends Controller implements ObserverLightView {
             islandController.setGuiMainStarter(guiMainStarter);
             islandController.randomImage();
         }
-
         update(lightIslands);
-
-        
+        */
     }
 
     @Override

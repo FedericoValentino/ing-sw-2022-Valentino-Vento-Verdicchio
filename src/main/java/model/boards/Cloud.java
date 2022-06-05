@@ -7,19 +7,23 @@ import java.util.ArrayList;
 
 public class Cloud extends Board
 {
+  private int cloudNumber;
+  private static int cloudID;
   private ArrayList<Student> student;
   private CurrentGameState game;
 
   /** Class constructor 1*/
   public Cloud(CurrentGameState game)
   {
+    cloudNumber = cloudID++;
     student= new ArrayList<>();
     this.game = game;
   }
 
   /** Class constructor 2 */
   public Cloud(@JsonProperty("students") ArrayList<Student> st,
-               @JsonProperty("empty") boolean empty)
+               @JsonProperty("empty") boolean empty,
+               @JsonProperty("CloudID") int id)
   {
       student= new ArrayList<>();
       for(int i=0;i<st.size();i++)
@@ -88,5 +92,10 @@ public class Cloud extends Board
   public ArrayList<Student> getStudents()
   {
     return student;
+  }
+
+  public int getCloudID()
+  {
+    return cloudNumber;
   }
 }

@@ -36,13 +36,13 @@ public class MainBoardController extends Controller {
     private LightView lightView;
 
 
-    public void initialSetupIsland(LightIslands lightIslands) throws IOException {
+    public void initialSetupIsland(LightView view) throws IOException {
         String path= "/Client/GUI/Controllers/Islands.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         islandAnchorPane.getChildren().clear();
         islandAnchorPane.getChildren().add(loader.load());
         IslandsController contr = loader.getController();
-        //contr.setup(islandAnchorPane, lightIslands);
+        contr.setup(islandAnchorPane,view.getCurrentIslands(), view.getCurrentClouds(), view.getCurrentTurnState());
     }
    public void initialSetupAssistantCard(ArrayList<LightTeam> teams) throws IOException {
         String path = "/Client/GUI/Controllers/Assistants.fxml";

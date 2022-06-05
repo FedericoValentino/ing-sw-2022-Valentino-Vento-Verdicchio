@@ -12,7 +12,6 @@ import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import javafx.application.Platform;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import model.boards.token.Wizard;
@@ -165,7 +164,7 @@ public class ClientGUI implements ClientView
                         try {
                             mbc.initialSetupOtherSchool(lightView.getCurrentTeams());
                             mbc.initialSetupAssistantCard(lightView.getCurrentTeams());
-                            mbc.initialSetupIsland(lightView.getCurrentIslands());
+                            mbc.initialSetupIsland(lightView);
                             mbc.initialSetupMineSchool(lightView.getCurrentTeams());
                             mbc.initialSetupCharacterCard(lightView.getCurrentCharacterDeck(), lightView.getCurrentActiveCharacterCard());
                             //altri setup      mbc.;

@@ -20,7 +20,7 @@ public class LightActiveDeck extends Observable
         {
             return;
         }
-        else
+        else if (lightActiveDeck.size() != 0)
         {
             this.lightActiveDeck = light.getLightActiveDeck();
             System.out.println("Updated LightActiveCharDeck");

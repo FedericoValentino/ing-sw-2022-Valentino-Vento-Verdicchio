@@ -22,7 +22,7 @@
                <children>
                   <ImageView fitHeight="126.0" fitWidth="125.0">
                      <image>
-                        <Image url="@../Images/Clouds/cloud4Student.png" />
+                        <Image url="@../Images/Clouds/Cloud4.png" />
                      </image>
                   </ImageView>
                </children>

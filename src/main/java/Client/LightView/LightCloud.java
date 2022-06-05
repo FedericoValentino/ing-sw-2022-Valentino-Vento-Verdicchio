@@ -8,11 +8,14 @@ import java.util.ArrayList;
 
 public class LightCloud extends Observable
 {
+    public int cloudID = 0;
     private ArrayList<Student> students;
 
     public LightCloud(@JsonProperty("students") ArrayList<Student> st,
-                      @JsonProperty("empty") boolean empty)
+                      @JsonProperty("empty") boolean empty,
+                      @JsonProperty("CloudID") int id)
     {
+        cloudID = id;
         students= new ArrayList<>();
         for(int i=0;i<st.size();i++)
         {
@@ -36,5 +39,10 @@ public class LightCloud extends Observable
 
     public ArrayList<Student> getStudents() {
         return students;
+    }
+
+    public int getCloudID()
+    {
+        return cloudID;
     }
 }
