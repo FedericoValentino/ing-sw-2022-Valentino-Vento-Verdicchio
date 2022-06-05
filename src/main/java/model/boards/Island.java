@@ -21,26 +21,6 @@ public class Island
   private boolean noEntry;
   private CurrentGameState game;
 
-  /** Json class constructor */
-  public Island(@JsonProperty("islandId") int islandId,
-                @JsonProperty("motherNature")boolean motherNature,
-                @JsonProperty("group")boolean group,
-                @JsonProperty("currentStudents") ArrayList<Student> currentStudents,
-                @JsonProperty("ownership")ColTow ownership,
-                @JsonProperty("towerNumber")int towerNumber,
-                @JsonProperty("teamInfluence")int[] teamInfluence,
-                @JsonProperty("noEntry")boolean noEntry)
-  {
-    this.islandId = islandId;
-    this.motherNature = motherNature;
-    Group = group;
-    this.currentStudents = currentStudents;
-    this.ownership = ownership;
-    this.towerNumber = towerNumber;
-    this.teamInfluence = teamInfluence;
-    this.noEntry = noEntry;
-  }
-
   /** Class Constructor
    * @param islandId  the ID to assign to the new island
    */

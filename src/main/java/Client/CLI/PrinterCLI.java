@@ -1,9 +1,6 @@
 package Client.CLI;
 
-import Client.LightView.LightPlayer;
-import Client.LightView.LightTeam;
-import Client.LightView.LightTurnState;
-import Client.LightView.LightView;
+import Client.LightView.*;
 import model.Player;
 import model.Team;
 import model.boards.Island;
@@ -104,7 +101,7 @@ public class PrinterCLI
 
     public String printMN(int id)
     {
-        if(view.getCurrentIslands().getIslands().get(id).getMotherNature())
+        if(view.getCurrentIslands().getIslands().get(id).isMotherNature())
             return "X";
         else
             return "O";
@@ -113,7 +110,7 @@ public class PrinterCLI
     public String[] printIsland(String[] islands, int id)
     {
         int StudentNumber;
-        Island island = view.getCurrentIslands().getIslands().get(id);
+        LightIsland island = view.getCurrentIslands().getIslands().get(id);
         islands[0] += "____________________  ";
         islands[1] += "|   Island n: " + addZero(island.getIslandId()) +"   |  ";
         islands[2] += "|       MN: " + printMN(island.getIslandId()) + "      |  ";
@@ -725,7 +722,7 @@ public class PrinterCLI
     private ArrayList<String> controlledIslands(LightTeam team)
     {
         ArrayList<String> islands = new ArrayList<>();
-        for(Island island : view.getCurrentIslands().getIslands())
+        for(LightIsland island : view.getCurrentIslands().getIslands())
         {
             if(island.getOwnership().equals(team.getColor()))
                 islands.add(addZero(island.getIslandId()));

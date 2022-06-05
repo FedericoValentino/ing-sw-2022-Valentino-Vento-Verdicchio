@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="mainIslandBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.IslandsController">
+<AnchorPane fx:id="mainIslandBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.IslandsController">
    <children>
-      <AnchorPane fx:id="cloudsAnchorPane" layoutX="325.0" layoutY="200.0" prefHeight="300.0" prefWidth="300.0">
+      <AnchorPane fx:id="cloudsAnchorPane" layoutX="325.0" layoutY="215.0" prefHeight="300.0" prefWidth="300.0">
          <children>
             <Pane fx:id="pouch" layoutX="127.0" layoutY="129.0" prefHeight="42.0" prefWidth="45.0">
                <children>  

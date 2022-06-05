@@ -2,15 +2,14 @@ package Client.LightView;
 
 import Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import model.boards.Island;
 
 import java.util.ArrayList;
 
 public class LightIslands extends Observable
 {
-    private ArrayList<Island> islands;
+    private ArrayList<LightIsland> islands;
 
-    public LightIslands(@JsonProperty("islands") ArrayList<Island> islands,
+    public LightIslands(@JsonProperty("islands") ArrayList<LightIsland> islands,
                         @JsonProperty("totalGroups") int totalGroups)
     {
         this.islands = islands;
@@ -31,7 +30,7 @@ public class LightIslands extends Observable
     }
 
 
-    public ArrayList<Island> getIslands() {
+    public ArrayList<LightIsland> getIslands() {
         return islands;
     }
 }
