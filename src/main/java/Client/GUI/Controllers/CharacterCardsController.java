@@ -64,6 +64,8 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             pane.getChildren().clear();
             pane.getChildren().add(loader.load());
 
+            pane.setOnMouseClicked(this:: showOnClick);
+
             ImageView cardImage = new ImageView(getCardPath(sceneCards.get(i).getCharacterName()));
             cardImage.setFitWidth(106);
             cardImage.setFitHeight(113);
@@ -71,9 +73,6 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             Pane characterImage = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterImage")).collect(Collectors.toList()).get(0);
             characterImage.getChildren().clear();
             characterImage.getChildren().add(cardImage);
-
-            Text description = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Description")).collect(Collectors.toList()).get(0);
-            description.setText(Arrays.toString(sceneCards.get(i).description()));
 
             Circle statusIndicator = (Circle) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
             statusIndicator.setFill(Paint.valueOf("FF1F1F"));
@@ -84,6 +83,18 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             Text parameters = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Parameters")).collect(Collectors.toList()).get(0);
             parameters.setText("Uses: " + characterDeck.getCard(0).getUses() + "\nCurrent Cost: " + sceneCards.get(i).getCurrentCost());
 
+            Pane details = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Details")).collect(Collectors.toList()).get(0);
+
+            Text description = (Text) (details.getChildren().stream().filter(node -> node.getId().equals("Description")).collect(Collectors.toList()).get(0));
+            description.setText(Arrays.toString(sceneCards.get(i).description()));
+
+            Text statusDescriptor1 = (Text) (details.getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor1")).collect(Collectors.toList()).get(0));
+            statusDescriptor1.setText(sceneCards.get(i).getCharacterName().toString());
+
+            Button back = (Button) (details.getChildren().stream().filter(node -> node.getId().equals("Back")).collect(Collectors.toList()).get(0));
+            back.setOnMouseClicked(this:: hideOnCLick);
+
+            details.setVisible(false);
             pane.setVisible(false);
             mainPane.getChildren().add(pane);
         }
@@ -113,6 +124,24 @@ public class CharacterCardsController extends Controller implements ObserverLigh
         NextNode.setVisible(true);
         NextNode.toFront();
     }
+
+    private void showOnClick(MouseEvent mouseEvent)
+    {
+        Pane pane = (Pane) mainPane.getChildren().get(2);
+        Pane details = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Details")).collect(Collectors.toList()).get(0);
+        details.toFront();
+        details.setVisible(true);
+    }
+
+    private void hideOnCLick(MouseEvent mouseEvent)
+    {
+        Pane pane = (Pane) mainPane.getChildren().get(2);
+        Pane details = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Details")).collect(Collectors.toList()).get(0);
+        details.toBack();
+        details.setVisible(false);
+    }
+
+
 
 
     @Override

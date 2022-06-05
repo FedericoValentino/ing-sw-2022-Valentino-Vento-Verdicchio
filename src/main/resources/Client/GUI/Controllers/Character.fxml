@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="characterAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="275.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.CharacterCardsController">
+<AnchorPane fx:id="characterAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="275.0" style="-fx-background-color: #F4EA94;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.CharacterCardsController">
    <children>
       <Button fx:id="PreviousButton" layoutX="14.0" layoutY="88.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="22.0" text="&lt;">
          <font>
@@ -14,8 +14,8 @@
          <font>
             <Font size="11.0" />
          </font></Button>
-      <Button fx:id="ActivateButton" layoutX="41.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
-      <Button fx:id="PlayEffectButton" layoutX="213.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
+      <Button fx:id="ActivateButton" layoutX="10.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Choose" />
+      <Button fx:id="PlayEffectButton" layoutX="187.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Effect" />
       <StackPane fx:id="mainPane" layoutX="41.0" prefHeight="160.0" prefWidth="194.0" />
    </children>
 </AnchorPane>
