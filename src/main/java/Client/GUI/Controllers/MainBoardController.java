@@ -64,8 +64,6 @@ public class MainBoardController extends Controller {
         characterController.setup(characterAnchorPane, charDeck, activeDeck, this);
     }
 
-    public void initialSetupClouds() {
-    }
 
     public void initialSetupMineSchool(ArrayList<LightTeam> lightTeams) throws IOException {
         String path= "/Client/GUI/Controllers/MineSchool.fxml";
