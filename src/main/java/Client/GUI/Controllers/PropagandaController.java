@@ -5,6 +5,7 @@ import Client.LightView.InfoDispenser;
 import Client.LightView.LightView;
 import Client.Messages.ActionMessages.EndTurn;
 import Client.Messages.SerializedMessage;
+import Observer.ObserverLightView;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -13,7 +14,7 @@ import javafx.scene.text.Text;
 
 import java.util.stream.Collectors;
 
-public class PropagandaController extends Controller
+public class PropagandaController extends Controller implements ObserverLightView
 {
 
     public AnchorPane Propaganda;
@@ -32,6 +33,8 @@ public class PropagandaController extends Controller
 
         this.infoGenerator = infoDispenser;
         this.view = view;
+
+        view.getCurrentTurnState().addObserverLight(this);
     }
 
     public void hintGeneration()
@@ -52,5 +55,11 @@ public class PropagandaController extends Controller
     private void endTurnOnClick(MouseEvent mouseEvent)
     {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new EndTurn()));
+    }
+
+    @Override
+    public void update(Object o)
+    {
+        hintGeneration();
     }
 }
