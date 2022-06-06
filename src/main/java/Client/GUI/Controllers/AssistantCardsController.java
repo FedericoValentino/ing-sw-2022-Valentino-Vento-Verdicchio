@@ -43,12 +43,14 @@ public class AssistantCardsController extends Controller implements ObserverLigh
         Button button = (Button) event.getSource();
         if(button.getText().equals("Active\nAssistants")) {
             playedCards.setVisible(true);
+            playedCards.toFront();
             button.setText("Hide");
         }
         else
         {
             button.setText("Active\nAssistants");
             playedCards.setVisible(false);
+            playedCards.toBack();
         }
     }
 
