@@ -164,7 +164,7 @@ public class MineSchoolController implements ObserverLightView
             HBox diningRoom = (HBox)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("DiningRoom")).collect(Collectors.toList()).get(0);
             for(int i = 0; i < 5; i++)
             {
-                for(int j = 9; j >= school.getDiningRoom()[i]; j--)
+                for(int j = 9; j >= 0; j--)
                 {
                     ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(true);
                 }

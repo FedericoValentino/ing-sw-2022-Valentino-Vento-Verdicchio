@@ -122,6 +122,7 @@ public class ClientGUI implements ClientView
                     FXMLLoader load = changeScene(path);
                     RejectionController controller = load.getController();
                     controller.setGuiMainStarter(guiMainStarter);
+                    controller.setup();
                 });
 
         }

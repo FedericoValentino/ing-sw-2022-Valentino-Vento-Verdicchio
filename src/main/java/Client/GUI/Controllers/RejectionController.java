@@ -13,28 +13,8 @@ import java.io.IOException;
 
 public class RejectionController extends Controller
 {
-    public TextField newNickname;
     public Button BackToMenu;
-    public Button Reconnect;
 
-
-    public void OnClickReconnect(MouseEvent event)
-    {
-        GuiMainStarter.getClientGUI().getServerConnection().nicknameChange(newNickname.getText());
-        try
-        {
-            GuiMainStarter.getClientGUI().getServerConnection().establishConnection();
-        }
-        catch(IOException e)
-        {
-            Platform.runLater(() -> {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
-                reloadMenu(loader);
-                IntroController intro = loader.getController();
-                intro.setGuiMainStarter(guiMainStarter);
-            });
-        }
-    }
 
     public void reloadMenu(FXMLLoader loader)
     {
@@ -61,6 +41,5 @@ public class RejectionController extends Controller
     public void setup()
     {
         BackToMenu.setOnMouseClicked(this::OnClickMenu);
-        Reconnect.setOnMouseClicked(this::OnClickReconnect);
     }
 }

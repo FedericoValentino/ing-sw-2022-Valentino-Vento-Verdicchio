@@ -9,10 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Fix School">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="minor correction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/RejectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/RejectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/RejectConnection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/RejectConnection.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,13 +222,6 @@
       <workItem from="1654278404429" duration="45000" />
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
-    </task>
-    <task id="LOCAL-00040" summary="Json Constructor">
-      <created>1652536980308</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1652536980308</updated>
     </task>
     <task id="LOCAL-00041" summary="SemiWorking CLI">
       <created>1652555633286</created>
@@ -563,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654550289058</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="minor correction">
+      <created>1654550609000</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1654550609000</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Replaced creation of Charcater cards in Character Deck with a factory method" />
     <MESSAGE value="Corrected a stupid mistake in char deck constructor, now everything works" />
     <MESSAGE value="Found the only active Print instruction in the test classes, removed it" />
     <MESSAGE value="JANSI" />
@@ -608,7 +610,8 @@
     <MESSAGE value="ToFront and ToBack to played assistants, to be tested" />
     <MESSAGE value="Minor Correction" />
     <MESSAGE value="Fix School" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix School" />
+    <MESSAGE value="minor correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor correction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

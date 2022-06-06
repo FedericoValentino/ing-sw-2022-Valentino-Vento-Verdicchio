@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,14 +22,12 @@
                   <Font size="52.0" />
                </font>
             </Text>
-            <Text fx:id="title1" layoutX="37.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The nickname you chose isn't available. Please change it an try to connect again">
+            <Text fx:id="title1" layoutX="30.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The nickname you chose isn't available. Please change it and try to connect again" wrappingWidth="540.6640625">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="newNickname" layoutX="226.0" layoutY="150.0" />
-            <Button fx:id="Reconnect" layoutX="339.0" layoutY="215.0" mnemonicParsing="false" text="Reconnect" />
-            <Button fx:id="BackToMenu" layoutX="203.0" layoutY="215.0" mnemonicParsing="false" text="Menù" />
+            <Button fx:id="BackToMenu" layoutX="277.0" layoutY="163.0" mnemonicParsing="false" text="Menù" />
          </children>
       </Pane>
    </children>
