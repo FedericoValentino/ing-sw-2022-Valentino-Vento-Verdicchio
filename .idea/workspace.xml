@@ -9,18 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="GUI Clouds">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightIsland.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/deny_island_icon.png" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="GUI Islands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/CLI/PrinterCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightIslands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightIslands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Island.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Island.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,13 +223,7 @@
       <workItem from="1654275584927" duration="2802000" />
       <workItem from="1654278404429" duration="45000" />
       <workItem from="1654337651099" duration="9120000" />
-    </task>
-    <task id="LOCAL-00035" summary="Protocol">
-      <created>1652370789655</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1652370789655</updated>
+      <workItem from="1654505833010" duration="2842000" />
     </task>
     <task id="LOCAL-00036" summary="Protocol">
       <created>1652388590579</created>
@@ -573,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654457715506</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="GUI Islands">
+      <created>1654466921466</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1654466921466</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +588,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="A single line changed" />
     <MESSAGE value="A big change in all GUI functionalities" />
     <MESSAGE value="Changes in wizardChoice (A little step fro human, a big step for eriantys)" />
     <MESSAGE value="All ok in all the actual views" />
@@ -618,7 +612,8 @@
     <MESSAGE value="Server side teamChoice. CLI e GUI ready for change" />
     <MESSAGE value="Character Parameter Pattern" />
     <MESSAGE value="GUI Clouds" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI Clouds" />
+    <MESSAGE value="GUI Islands" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI Islands" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
