@@ -3,6 +3,7 @@ package Client.GUI.Controllers;
 import Client.GUI.GuiMainStarter;
 import Client.LightView.InfoDispenser;
 import Client.LightView.LightPlayer;
+import Client.LightView.LightTurnState;
 import Client.LightView.LightView;
 import Client.Messages.ActionMessages.EndTurn;
 import Client.Messages.SerializedMessage;
@@ -10,10 +11,7 @@ import Observer.ObserverLightView;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import model.CurrentTurnState;
-
 import java.util.stream.Collectors;
 
 public class PropagandaController extends Controller implements ObserverLightView
@@ -64,7 +62,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
     @Override
     public void update(Object o)
     {
-        CurrentTurnState state = (CurrentTurnState) o;
+        LightTurnState state = (LightTurnState) o;
 
         hintGeneration();
         Text turn = (Text) (Propaganda.getChildren().stream().filter(node -> node.getId().equals("Turn")).collect(Collectors.toList()).get(0));
