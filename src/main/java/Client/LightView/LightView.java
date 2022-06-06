@@ -53,6 +53,7 @@ public class LightView extends Observable
             currentMotherNature.updateMother(newView.currentMotherNature);
             currentCharacterDeck.updateCharDeck(newView.currentCharacterDeck);
             currentActiveCharacterCard.updateActive(newView.currentActiveCharacterCard);
+            currentTurnState.updateTurn(newView.getCurrentTurnState());
         }
         else
         {
@@ -62,9 +63,10 @@ public class LightView extends Observable
             this.currentMotherNature = newView.currentMotherNature;
             this.currentCharacterDeck = newView.currentCharacterDeck;
             this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
+            this.currentTurnState = newView.currentTurnState;
         }
 //
-        this.currentTurnState = newView.currentTurnState;
+
         addNameToSchools();
         if(firstUpdate)
         {
