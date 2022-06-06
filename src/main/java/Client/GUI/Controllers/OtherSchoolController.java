@@ -137,6 +137,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                     nImage.setFitHeight(27);
                     nImage.setFitWidth(27);
                     entrance_pos.getChildren().add(nImage);
+                    entrance_pos.setVisible(true);
                 }
                 //Updating Dining
                 HBox diningRoom = (HBox)((AnchorPane)APotherSChool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("DiningRoom")).collect(Collectors.toList()).get(0);
