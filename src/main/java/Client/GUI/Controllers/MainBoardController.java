@@ -42,7 +42,7 @@ public class MainBoardController extends Controller {
         islandAnchorPane.getChildren().clear();
         islandAnchorPane.getChildren().add(loader.load());
         IslandsController contr = loader.getController();
-        contr.setup(islandAnchorPane,view.getCurrentIslands(), view.getCurrentClouds(), view.getCurrentTurnState());
+        contr.setup(islandAnchorPane, view);
     }
    public void initialSetupAssistantCard(ArrayList<LightTeam> teams) throws IOException {
         String path = "/Client/GUI/Controllers/Assistants.fxml";
