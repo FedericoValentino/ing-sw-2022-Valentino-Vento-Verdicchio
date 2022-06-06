@@ -7,7 +7,7 @@ public class ChooseCloud extends StandardActionMessage
     public ChooseCloud(int cloudIndex)
     {
         this.cloudIndex = cloudIndex;
-        super.type = ACTIONMESSAGETYPE.CLOUD_CHOICE;
+        super.type = ACTIONMESSAGETYPE.DRAW_POUCH;
     }
 
     public int getCloudIndex()

@@ -9,12 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="GUI Islands">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Character cards visually complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CharacterCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CharacterCardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/CharacterDepiction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/CharacterDepiction.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WizardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/ChooseCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Messages/ActionMessages/ChooseCloud.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,13 +221,6 @@
       <workItem from="1654278404429" duration="45000" />
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
-    </task>
-    <task id="LOCAL-00036" summary="Protocol">
-      <created>1652388590579</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1652388590579</updated>
     </task>
     <task id="LOCAL-00037" summary="Doppia reference per tutti + fix ai test per farli funzionare">
       <created>1652426878585</created>
@@ -565,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654466921466</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Character cards visually complete">
+      <created>1654546763719</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1654546763720</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +585,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="A big change in all GUI functionalities" />
     <MESSAGE value="Changes in wizardChoice (A little step fro human, a big step for eriantys)" />
     <MESSAGE value="All ok in all the actual views" />
     <MESSAGE value="Update in wizard opacity function&#10;and other changes in client gui ecc..." />
@@ -610,7 +609,8 @@
     <MESSAGE value="Character Parameter Pattern" />
     <MESSAGE value="GUI Clouds" />
     <MESSAGE value="GUI Islands" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI Islands" />
+    <MESSAGE value="Character cards visually complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Character cards visually complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

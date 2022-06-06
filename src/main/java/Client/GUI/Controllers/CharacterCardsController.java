@@ -20,7 +20,6 @@ import model.cards.CharacterCard;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class CharacterCardsController extends Controller implements ObserverLightView

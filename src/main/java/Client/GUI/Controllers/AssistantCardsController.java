@@ -1,7 +1,10 @@
 package Client.GUI.Controllers;
 
+import Client.GUI.GuiMainStarter;
 import Client.LightView.LightPlayer;
 import Client.LightView.LightTeam;
+import Client.Messages.ActionMessages.DrawAssistantCard;
+import Client.Messages.SerializedMessage;
 import Observer.ObserverLightView;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -83,8 +86,10 @@ public class AssistantCardsController extends Controller implements ObserverLigh
             {
                 HBox cards = (HBox) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Box")).collect(Collectors.toList()).get(0);
                 cards.getChildren().clear();
+                int cardIndex = 0;
                 for(AssistantCard card: player.getAssistantDeck().getDeck())
                 {
+                    int sugmaindex = cardIndex;
                     Pane cardPane = new Pane();
                     cardPane.getChildren().clear();
                     ImageView cardImage = new ImageView(getAssistantPath(card));
@@ -92,6 +97,12 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                     cardImage.setFitWidth(86);
                     cardPane.getChildren().add(cardImage);
                     cards.getChildren().add(cardPane);
+                    cardPane.setOnMouseClicked(MouseEvent -> {
+                        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new DrawAssistantCard(sugmaindex)));
+                        cardPane.setVisible(false);
+                        cardPane.setMouseTransparent(true);
+                    });
+                    cardIndex++;
                 }
             }
 
@@ -114,6 +125,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                 }
         });
     }
+
 
     public String getAssistantPath(AssistantCard card)
     {

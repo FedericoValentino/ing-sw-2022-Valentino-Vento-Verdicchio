@@ -115,7 +115,7 @@ public class WizardController extends Controller{
             p.setOpacity(0.3);
         }
 
-        int pos=0;
+        int pos = 0;
         //cerco se ci sono maghi avaiable li metto a opacità 1
 
         textAvaiable.add(alreadyChoose1);textAvaiable.get(0).setVisible(true);
