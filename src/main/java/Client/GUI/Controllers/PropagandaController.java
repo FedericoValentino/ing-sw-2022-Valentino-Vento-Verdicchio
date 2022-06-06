@@ -39,7 +39,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
 
     public void hintGeneration()
     {
-        Text hint = (Text) (Propaganda.getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor")).collect(Collectors.toList()).get(0));
+        Text hint = (Text) (Propaganda.getChildren().stream().filter(node -> node.getId().equals("Hints")).collect(Collectors.toList()).get(0));
         hint.setText("");
         hint.setText(infoGenerator.informationCreator(view.getCurrentTurnState(), view.getCurrentTeams()).getInfoMessage());
     }
