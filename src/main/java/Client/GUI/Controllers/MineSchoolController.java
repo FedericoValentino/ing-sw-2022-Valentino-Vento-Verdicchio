@@ -143,6 +143,12 @@ public class MineSchoolController implements ObserverLightView
             LightSchool school = (LightSchool) o;
             String TowerColorPath = getSchoolColorPath(school);
             //Updating Entrance
+            for(int i = 0; i < 9; i++)
+            {
+                int finalI = i;
+                Pane entrance_pos = (Pane)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
+                entrance_pos.setVisible(false);
+            }
             for(int i = 0; i < school.getEntrance().size(); i++)
             {
                 int finalI = i;
@@ -155,6 +161,13 @@ public class MineSchoolController implements ObserverLightView
             }
             //Updating Dining
             HBox diningRoom = (HBox)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("DiningRoom")).collect(Collectors.toList()).get(0);
+            for(int i = 0; i < 5; i++)
+            {
+                for(int j = 9; j >= school.getDiningRoom()[i]; j--)
+                {
+                    ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(true);
+                }
+            }
             for(int i = 0; i < 5; i++)
             {
                 for(int j = 9; j >= school.getDiningRoom()[i]; j--)
