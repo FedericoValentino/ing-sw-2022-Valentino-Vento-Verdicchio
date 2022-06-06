@@ -43,7 +43,8 @@ public class CloudController extends Controller implements ObserverLightView
             {
                 cell.setVisible(false);
             }
-            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new ChooseCloud(Integer.parseInt(((StackPane)event.getSource()).getId().replace("stack_", "")))));
+            int cloudIndex = Integer.parseInt(((StackPane)event.getSource()).getId().replace("stack_", ""));
+            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new ChooseCloud(cloudIndex)));
         }
     }
 

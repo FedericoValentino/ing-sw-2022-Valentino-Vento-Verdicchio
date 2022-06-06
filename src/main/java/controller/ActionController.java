@@ -62,6 +62,7 @@ public class ActionController
     public void drawFromClouds(int cloudIndex, CurrentGameState game, String name)
     {
         MainController.findPlayerByName(game, name).getSchool().placeToken(game.getCurrentClouds()[cloudIndex].EmptyCloud());
+        game.getCurrentTurnState().UpdateActionMoves();
     }
 
 

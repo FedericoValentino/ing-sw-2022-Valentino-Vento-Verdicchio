@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="yaawn">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MineSchoolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Corrections">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CloudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CloudController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,20 +218,6 @@
       <workItem from="1654278404429" duration="45000" />
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
-    </task>
-    <task id="LOCAL-00047" summary="Add footprints of the all classes of Gui and add the intro and lobby functionality">
-      <created>1652971026290</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1652971026290</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Add footprints of other classes">
-      <created>1652971116125</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1652971116125</updated>
     </task>
     <task id="LOCAL-00049" summary="Changes in Gui (insert new beginning description)">
       <created>1652996229832</created>
@@ -563,7 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654553167431</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Cloud corrections">
+      <created>1654555283224</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1654555283224</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Corrections">
+      <created>1654555502946</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1654555502946</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,8 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added hierarchy to the MainBoard setup method's" />
-    <MESSAGE value="Main fxml pattern association" />
     <MESSAGE value="Adding resources" />
     <MESSAGE value="Assistants fxml added" />
     <MESSAGE value="OtherSchool.fxml" />
@@ -608,7 +605,9 @@
     <MESSAGE value="Now it should work (infos)" />
     <MESSAGE value="ugh" />
     <MESSAGE value="yaawn" />
-    <option name="LAST_COMMIT_MESSAGE" value="yaawn" />
+    <MESSAGE value="Cloud corrections" />
+    <MESSAGE value="Corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrections" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -629,6 +628,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="18" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CloudController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
