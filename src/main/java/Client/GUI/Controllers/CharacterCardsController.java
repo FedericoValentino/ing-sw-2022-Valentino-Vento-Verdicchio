@@ -26,11 +26,11 @@ import java.util.stream.Collectors;
 public class CharacterCardsController extends Controller implements ObserverLightView
 {
     public AnchorPane CharacterPane;
-    public ArrayList<Pane> characters = new ArrayList<>();
     public LightCharDeck characterDeck;
     public LightActiveDeck activeCharDeck;
     public ArrayList<CharacterCard> sceneCards = new ArrayList<>();
-    public int currentPane = 0;
+    public int currentlyShowedCard = 2;
+    public MainBoardController mainController;
 
 
     @FXML public StackPane mainPane;
@@ -39,10 +39,11 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     @FXML public Button ActivateButton;
     @FXML public Button PlayEffectButton;
 
-    public void setup(AnchorPane characterPane, LightCharDeck inactiveCharacters, LightActiveDeck activeCharacters) throws IOException {
+    public void setup(AnchorPane characterPane, LightCharDeck inactiveCharacters, LightActiveDeck activeCharacters, MainBoardController controller) throws IOException {
         this.CharacterPane = characterPane;
         this.characterDeck = inactiveCharacters;
         this.activeCharDeck = activeCharacters;
+        this.mainController = controller;
 
         sceneCards.addAll(inactiveCharacters.getLightCharDeck());
 
@@ -83,18 +84,6 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             Text parameters = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Parameters")).collect(Collectors.toList()).get(0);
             parameters.setText("Uses: " + characterDeck.getCard(0).getUses() + "\nCurrent Cost: " + sceneCards.get(i).getCurrentCost());
 
-            Pane details = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Details")).collect(Collectors.toList()).get(0);
-
-            Text description = (Text) (details.getChildren().stream().filter(node -> node.getId().equals("Description")).collect(Collectors.toList()).get(0));
-            description.setText(Arrays.toString(sceneCards.get(i).description()));
-
-            Text statusDescriptor1 = (Text) (details.getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor1")).collect(Collectors.toList()).get(0));
-            statusDescriptor1.setText(sceneCards.get(i).getCharacterName().toString());
-
-            Button back = (Button) (details.getChildren().stream().filter(node -> node.getId().equals("Back")).collect(Collectors.toList()).get(0));
-            back.setOnMouseClicked(this:: hideOnCLick);
-
-            details.setVisible(false);
             pane.setVisible(false);
             mainPane.getChildren().add(pane);
         }
@@ -114,6 +103,9 @@ public class CharacterCardsController extends Controller implements ObserverLigh
         FrontNode.setVisible(false);
         FrontNode.toBack();
         NextNode.setVisible(true);
+        currentlyShowedCard--;
+        if (currentlyShowedCard < 0)
+            currentlyShowedCard = 2;
     }
 
     private void previousOnClick(MouseEvent mouseEvent)
@@ -123,25 +115,17 @@ public class CharacterCardsController extends Controller implements ObserverLigh
         FrontNode.setVisible(false);
         NextNode.setVisible(true);
         NextNode.toFront();
+        currentlyShowedCard++;
+        if(currentlyShowedCard > 2)
+            currentlyShowedCard = 0;
     }
 
     private void showOnClick(MouseEvent mouseEvent)
     {
-        Pane pane = (Pane) mainPane.getChildren().get(2);
-        Pane details = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Details")).collect(Collectors.toList()).get(0);
-        details.toFront();
-        details.setVisible(true);
+        CharacterCard card = sceneCards.get(currentlyShowedCard);
+        String path = getCardPath(card.getCharacterName());
+        mainController.displayCharInfo(card, path);
     }
-
-    private void hideOnCLick(MouseEvent mouseEvent)
-    {
-        Pane pane = (Pane) mainPane.getChildren().get(2);
-        Pane details = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Details")).collect(Collectors.toList()).get(0);
-        details.toBack();
-        details.setVisible(false);
-    }
-
-
 
 
     @Override

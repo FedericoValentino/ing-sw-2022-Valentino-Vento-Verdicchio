@@ -2,22 +2,21 @@ package Client.GUI.Controllers;
 
 import Client.GUI.GuiMainStarter;
 import Client.LightView.*;
-import Observer.ObserverLightView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.shape.Circle;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import model.Player;
-import model.Team;
+import model.cards.CharacterCard;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 
 public class MainBoardController extends Controller {
@@ -33,7 +32,7 @@ public class MainBoardController extends Controller {
     @FXML public AnchorPane buttonAreaAnchorPane;
     @FXML public AnchorPane mineSchoolAnchorPane;
 
-    private LightView lightView;
+    public static Pane CharDescription;
 
 
     public void initialSetupIsland(LightView view) throws IOException {
@@ -62,7 +61,7 @@ public class MainBoardController extends Controller {
         characterAnchorPane.getChildren().add(loader.load());
         CharacterCardsController characterController = loader.getController();
 
-        characterController.setup(characterAnchorPane, charDeck, activeDeck);
+        characterController.setup(characterAnchorPane, charDeck, activeDeck, this);
     }
 
     public void initialSetupClouds() {
@@ -113,6 +112,41 @@ public class MainBoardController extends Controller {
 
         OtherSchoolController controller = loader.getController();
         controller.setup(lightTeams, otherSchoolAnchorPane);
+    }
+
+    public void displayCharInfo(CharacterCard card, String path)
+    {
+        Pane charDescription = (Pane) (mainAnchorPane.getChildren().stream().filter(node -> node.getId().equals("CharDescription")).collect(Collectors.toList()).get(0));
+
+        Pane charImage = (Pane) charDescription.getChildren().stream().filter(node -> node.getId().equals("CharImage")).collect(Collectors.toList()).get(0);
+        charImage.getChildren().clear();
+
+        ImageView image = new ImageView(path);
+        image.setFitHeight(358);
+        image.setFitWidth(244);
+        charImage.getChildren().add(image);
+
+        Text name = (Text) charDescription.getChildren().stream().filter(node -> node.getId().equals("Name")).collect(Collectors.toList()).get(0);
+        name.setText("");
+        name.setText(card.getCharacterName().toString());
+
+        Text description = (Text) charDescription.getChildren().stream().filter(node -> node.getId().equals("Description")).collect(Collectors.toList()).get(0);
+        description.setText("");
+        description.setText(Arrays.toString(card.description()));
+
+        Button back = (Button) (charDescription.getChildren().stream().filter(node -> node.getId().equals("BackButton")).collect(Collectors.toList()).get(0));
+        back.setOnMouseClicked(this:: hideCharacterInfo);
+
+        charDescription.setVisible(true);
+        charDescription.setMouseTransparent(false);
+    }
+
+    public void hideCharacterInfo(MouseEvent mouseEvent)
+    {
+        Pane charDescription = (Pane) mainAnchorPane.getChildren().stream().filter(node -> node.getId().equals("CharDescription")).collect(Collectors.toList()).get(0);
+
+        charDescription.setVisible(false);
+        charDescription.setMouseTransparent(true);
     }
 
 }
