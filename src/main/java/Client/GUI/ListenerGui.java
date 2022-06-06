@@ -13,7 +13,7 @@ public class ListenerGui implements Runnable{
     @Override
     public void run()
     {
-        while(true)
+        while(client.getServerConnection().getConnected())
         {
             try {
                 client.readMessage();

@@ -47,7 +47,6 @@ public class ClientGUI implements ClientView
         input = (SerializedAnswer) serverConnection.getIn().readObject();
         if(input.getCommand() != null)
         {
-            System.out.println("Intro nel read message in comando standard setup");
             StandardSetupAnswer answer = input.getCommand();
             setupHandler(answer);
         }
@@ -115,13 +114,15 @@ public class ClientGUI implements ClientView
                     changeScene(path);
                 });
                 break;
-            /*default:
-                System.out.println("Waiting");
-                Platform.runLater(()->
+            case REJECT:
+                serverConnection.disconnect();
+                Platform.runLater(() ->
                 {
-                    String path= "/Client/GUI/Controllers/Waiting.fxml";
-                    changeScene(path);
-                });*/
+                    String path = "/Client/GUI/Controllers/RejectConnection.fxml";
+                    FXMLLoader load = changeScene(path);
+                    RejectionController controller = load.getController();
+                    controller.setGuiMainStarter(guiMainStarter);
+                });
 
         }
     }

@@ -232,7 +232,7 @@ public class GameHandler extends Thread implements Observer
                 break;
 
 
-            case DRAW_POUCH:
+            case ENTRANCE_REFILL:
                 if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type)) {
                     if (!Checks.isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
                         socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "You selected an empty Cloud" + ANSI_RESET)));
