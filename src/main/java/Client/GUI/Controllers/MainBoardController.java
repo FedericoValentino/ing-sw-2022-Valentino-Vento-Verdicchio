@@ -32,10 +32,6 @@ public class MainBoardController extends Controller {
     @FXML public AnchorPane buttonAreaAnchorPane;
     @FXML public AnchorPane mineSchoolAnchorPane;
 
-    private InfoDispenser infosGenerator;
-    private LightView view;
-
-
 
     public void initialSetupIsland(LightView view) throws IOException {
         String path= "/Client/GUI/Controllers/Islands.fxml";
@@ -79,7 +75,7 @@ public class MainBoardController extends Controller {
         controller.setup(lightTeams, player, mineSchoolAnchorPane);
     }
 
-    public void initialSetupPropaganda() throws IOException
+    public void initialSetupPropaganda(LightView view, InfoDispenser infos) throws IOException
     {
         String path = "/Client/GUI/Controllers/PropagandaController.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
@@ -87,7 +83,7 @@ public class MainBoardController extends Controller {
         buttonAreaAnchorPane.getChildren().add(0,loader.load());
         PropagandaController propagandaController = loader.getController();
 
-        propagandaController.setup(infosGenerator, view);
+        propagandaController.setup(infos, view);
     }
 
 

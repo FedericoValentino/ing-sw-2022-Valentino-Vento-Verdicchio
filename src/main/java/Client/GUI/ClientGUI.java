@@ -2,6 +2,7 @@ package Client.GUI;
 
 import Client.ClientView;
 import Client.GUI.Controllers.*;
+import Client.LightView.InfoDispenser;
 import Client.LightView.LightView;
 import Client.ServerConnection;
 import Server.Answers.ActionAnswers.ErrorMessage;
@@ -169,7 +170,7 @@ public class ClientGUI implements ClientView
                             mbc.initialSetupIsland(lightView);
                             mbc.initialSetupMineSchool(lightView.getCurrentTeams());
                             mbc.initialSetupCharacterCard(lightView.getCurrentCharacterDeck(), lightView.getCurrentActiveCharacterCard());
-                            mbc.initialSetupPropaganda();
+                            mbc.initialSetupPropaganda(lightView, lightView.getInformations());
                             //altri setup      mbc.;
                         } catch (IOException e) {
                             e.printStackTrace();

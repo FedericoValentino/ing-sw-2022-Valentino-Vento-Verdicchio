@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Should now work">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="init added">
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,13 +218,6 @@
       <workItem from="1654278404429" duration="45000" />
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
-    </task>
-    <task id="LOCAL-00043" summary="Cambi ai packages">
-      <created>1652789805561</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1652789805561</updated>
     </task>
     <task id="LOCAL-00044" summary="CLI island and islands by vento and valentino">
       <created>1652884523602</created>
@@ -561,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654552515268</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="init added">
+      <created>1654552708300</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1654552708300</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="JANSI" />
     <MESSAGE value="Made Checks &quot;static&quot; and changed the method calls accordingly" />
     <MESSAGE value="Removed the planning and action counters in GameHandler. Introduced a &quot;moves&quot; counter in CurrentTurnState, with methods to increment and reset said counter. Increments and resets called in proper functions of ActionController and PlanningController. Introduced a new &quot;static&quot; Checks class (MovesChecks) to help the GameHandler understand if the client is making the move we are expecting him to make." />
     <MESSAGE value="Little changes" />
@@ -606,7 +606,8 @@
     <MESSAGE value="minor correction" />
     <MESSAGE value="Informations and end turn button implemented" />
     <MESSAGE value="Should now work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Should now work" />
+    <MESSAGE value="init added" />
+    <option name="LAST_COMMIT_MESSAGE" value="init added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
