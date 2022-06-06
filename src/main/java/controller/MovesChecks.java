@@ -35,7 +35,7 @@ public final class MovesChecks
             else
                 return moves == 3;
         }
-        else if(actionPhase.equals(ACTIONMESSAGETYPE.DRAW_POUCH))
+        else if(actionPhase.equals(ACTIONMESSAGETYPE.ENTRANCE_REFILL))
         {
             if(threePlayerGame && moves == 5) {
                 return true;
