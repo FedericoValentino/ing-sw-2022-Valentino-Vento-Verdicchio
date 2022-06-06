@@ -145,14 +145,14 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                 {
                     for(int j = 9; j >= 0; j--)
                     {
-                        ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(true);
+                        ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(false);
                     }
                 }
                 for(int i = 0; i < 5; i++)
                 {
                     for(int j = 9; j > 9 - school.getDiningRoom()[i]; j--)
                     {
-                        ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(false);
+                        ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(true);
                     }
                 }
                 //Updating Prof

@@ -39,7 +39,7 @@ public class CloudController extends Controller implements ObserverLightView
         }
         else if(turn.getGamePhase() == GamePhase.ACTION)
         {
-            for(Node cell : ((GridPane)event.getSource()).getChildren())
+            for(Node cell : ((GridPane)((StackPane)event.getSource()).getChildren().get(1)).getChildren())
             {
                 cell.setVisible(false);
             }
