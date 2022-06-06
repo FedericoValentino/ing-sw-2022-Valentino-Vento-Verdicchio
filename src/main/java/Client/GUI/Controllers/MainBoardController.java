@@ -77,7 +77,7 @@ public class MainBoardController extends Controller {
 
     public void initialSetupPropaganda(LightView view, InfoDispenser infos) throws IOException
     {
-        String path = "/Client/GUI/Controllers/PropagandaController.fxml";
+        String path = "/Client/GUI/Controllers/Propaganda.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         buttonAreaAnchorPane.getChildren().clear();
         buttonAreaAnchorPane.getChildren().add(0,loader.load());
