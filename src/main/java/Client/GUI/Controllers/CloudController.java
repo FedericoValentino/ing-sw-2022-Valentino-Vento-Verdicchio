@@ -39,10 +39,6 @@ public class CloudController extends Controller implements ObserverLightView
         }
         else if(turn.getGamePhase() == GamePhase.ACTION)
         {
-            for(Node cell : ((GridPane)((StackPane)event.getSource()).getChildren().get(1)).getChildren())
-            {
-                cell.setVisible(false);
-            }
             int cloudIndex = Integer.parseInt(((StackPane)event.getSource()).getId().replace("stack_", ""));
             GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new ChooseCloud(cloudIndex)));
         }
@@ -106,6 +102,14 @@ public class CloudController extends Controller implements ObserverLightView
     public void fill(GridPane fillable, LightCloud filler)
     {
         int temp = filler.getStudents().size();
+        for(int i = 0; i < 2; i++)
+        {
+            for(int j = 0; j < 2; j++)
+            {
+                Pane cell = (Pane)getCellFromGridPane(fillable, j, i);
+                cell.setVisible(false);
+            }
+        }
         for(int i = 0; i < 2 && temp > 0; i++)
         {
             for(int j = 0; j < 2 && temp > 0; j++)

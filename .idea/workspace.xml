@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Corrections">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CloudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CloudController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ActionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MovesChecks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MovesChecks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,13 +219,6 @@
       <workItem from="1654278404429" duration="45000" />
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
-    </task>
-    <task id="LOCAL-00049" summary="Changes in Gui (insert new beginning description)">
-      <created>1652996229832</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1652996229832</updated>
     </task>
     <task id="LOCAL-00050" summary="Add an abstract class controller for GUI">
       <created>1653051886477</created>
@@ -562,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654555502946</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Corrections">
+      <created>1654555916234</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1654555916234</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,9 +630,9 @@
           <option name="timeStamp" value="18" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/CloudController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/src/main/java/Server/GameHandler.java</url>
+          <line>239</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

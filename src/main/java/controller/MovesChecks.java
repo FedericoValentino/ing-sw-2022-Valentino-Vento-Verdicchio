@@ -46,10 +46,21 @@ public final class MovesChecks
 
         }
         else if(actionPhase.equals(ACTIONMESSAGETYPE.TURN_END))
-            if(moves == 0)
-                return true;
-            else
-                return false;
+            if(threePlayerGame)
+            {
+                if(moves == 6)
+                    return true;
+                else
+                    return false;
+            }
+        else
+            {
+                if(moves == 5)
+                    return true;
+                else
+                    return false;
+            }
+
         return false;
     }
 }
