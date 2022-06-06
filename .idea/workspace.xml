@@ -9,8 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="ugh">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="yaawn">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/PropagandaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/PropagandaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/LightView/LightView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Propaganda.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Propaganda.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,13 +220,6 @@
       <workItem from="1654278404429" duration="45000" />
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
-    </task>
-    <task id="LOCAL-00046" summary="Add GUI's basic components">
-      <created>1652946828924</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1652946828924</updated>
     </task>
     <task id="LOCAL-00047" summary="Add footprints of the all classes of Gui and add the intro and lobby functionality">
       <created>1652971026290</created>
@@ -561,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654553061952</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="yaawn">
+      <created>1654553167431</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1654553167431</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +584,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Little changes" />
     <MESSAGE value="Added hierarchy to the MainBoard setup method's" />
     <MESSAGE value="Main fxml pattern association" />
     <MESSAGE value="Adding resources" />
@@ -606,7 +608,8 @@
     <MESSAGE value="init added" />
     <MESSAGE value="Now it should work (infos)" />
     <MESSAGE value="ugh" />
-    <option name="LAST_COMMIT_MESSAGE" value="ugh" />
+    <MESSAGE value="yaawn" />
+    <option name="LAST_COMMIT_MESSAGE" value="yaawn" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

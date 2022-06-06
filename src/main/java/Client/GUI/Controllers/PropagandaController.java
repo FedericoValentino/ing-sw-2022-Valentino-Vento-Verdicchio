@@ -2,6 +2,7 @@ package Client.GUI.Controllers;
 
 import Client.GUI.GuiMainStarter;
 import Client.LightView.InfoDispenser;
+import Client.LightView.LightPlayer;
 import Client.LightView.LightView;
 import Client.Messages.ActionMessages.EndTurn;
 import Client.Messages.SerializedMessage;
@@ -11,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import model.CurrentTurnState;
 
 import java.util.stream.Collectors;
 
@@ -35,6 +37,8 @@ public class PropagandaController extends Controller implements ObserverLightVie
         this.view = view;
 
         view.getCurrentTurnState().addObserverLight(this);
+
+        update(view.getCurrentTurnState());
     }
 
     public void hintGeneration()
@@ -60,6 +64,16 @@ public class PropagandaController extends Controller implements ObserverLightVie
     @Override
     public void update(Object o)
     {
+        CurrentTurnState state = (CurrentTurnState) o;
+
         hintGeneration();
+        Text turn = (Text) (Propaganda.getChildren().stream().filter(node -> node.getId().equals("Turn")).collect(Collectors.toList()).get(0));
+        turn.setText("");
+        turn.setText("It's " + state.getCurrentPlayer() + "'s turn");
+        LightPlayer currentPlayer = view.findPlayerByName(view.getCurrentTeams(), GuiMainStarter.getClientGUI().getServerConnection().getNickname());
+
+        Text coins = (Text) (Propaganda.getChildren().stream().filter(node -> node.getId().equals("Coins")).collect(Collectors.toList()).get(0));
+        coins.setText("");
+        coins.setText("Your coins: " + currentPlayer.getCoinAmount());
     }
 }

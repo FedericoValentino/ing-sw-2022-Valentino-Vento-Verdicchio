@@ -4,6 +4,9 @@ import Observer.Observable;
 import Server.Answers.ActionAnswers.ViewMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import model.CurrentGameState;
+import model.Player;
+import model.Team;
 
 import java.util.ArrayList;
 
@@ -82,6 +85,21 @@ public class LightView extends Observable
             {
                 p.getSchool().updateName(p.getNome());
             }
+    }
+
+    public LightPlayer findPlayerByName(ArrayList<LightTeam> currentTeams, String player)
+    {
+        for(LightTeam t: currentTeams)
+        {
+            for(LightPlayer p: t.getPlayers())
+            {
+                if(p.getNome().equals(player))
+                {
+                    return p;
+                }
+            }
+        }
+        return null;
     }
 
 
