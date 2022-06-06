@@ -9,8 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Character cards visually complete">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="ToFront and ToBack to played assistants, to be tested">
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/AssistantCardsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,13 +217,6 @@
       <workItem from="1654278404429" duration="45000" />
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
-    </task>
-    <task id="LOCAL-00037" summary="Doppia reference per tutti + fix ai test per farli funzionare">
-      <created>1652426878585</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1652426878585</updated>
     </task>
     <task id="LOCAL-00038" summary="Ridefinizione Client">
       <created>1652437325660</created>
@@ -562,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654546763720</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="ToFront and ToBack to played assistants, to be tested">
+      <created>1654549674277</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1654549674277</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes in wizardChoice (A little step fro human, a big step for eriantys)" />
     <MESSAGE value="All ok in all the actual views" />
     <MESSAGE value="Update in wizard opacity function&#10;and other changes in client gui ecc..." />
     <MESSAGE value="Replaced creation of Charcater cards in Character Deck with a factory method" />
@@ -607,7 +605,8 @@
     <MESSAGE value="GUI Clouds" />
     <MESSAGE value="GUI Islands" />
     <MESSAGE value="Character cards visually complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Character cards visually complete" />
+    <MESSAGE value="ToFront and ToBack to played assistants, to be tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="ToFront and ToBack to played assistants, to be tested" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

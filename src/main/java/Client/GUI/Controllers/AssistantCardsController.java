@@ -7,8 +7,6 @@ import Client.Messages.ActionMessages.DrawAssistantCard;
 import Client.Messages.SerializedMessage;
 import Observer.ObserverLightView;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -65,6 +63,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
             }
         }
         Button lastPlayed = (Button) ((AnchorPane) AssistantsPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedButton")).collect(Collectors.toList()).get(0);
+        lastPlayed.setText("Active\nAssistants");
         lastPlayed.setOnMouseClicked(this::onClick);
         for(LightPlayer player: players)
             update(player);
