@@ -32,7 +32,9 @@ public class MainBoardController extends Controller {
     @FXML public AnchorPane buttonAreaAnchorPane;
     @FXML public AnchorPane mineSchoolAnchorPane;
 
-    public static Pane CharDescription;
+    private InfoDispenser infosGenerator;
+    private LightView view;
+
 
 
     public void initialSetupIsland(LightView view) throws IOException {
@@ -75,6 +77,17 @@ public class MainBoardController extends Controller {
         String player=GuiMainStarter.getClientGUI().getServerConnection().getNickname();
 
         controller.setup(lightTeams, player, mineSchoolAnchorPane);
+    }
+
+    public void initialSetupPropaganda() throws IOException
+    {
+        String path = "/Client/GUI/Controllers/PropagandaController.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        buttonAreaAnchorPane.getChildren().clear();
+        buttonAreaAnchorPane.getChildren().add(0,loader.load());
+        PropagandaController propagandaController = loader.getController();
+
+        propagandaController.setup(infosGenerator, view);
     }
 
 
