@@ -16,16 +16,9 @@ public class LightActiveDeck extends Observable
 
     public void updateActive(LightActiveDeck light)
     {
-        if(light.equals(this))
-        {
-            return;
-        }
-        else if (lightActiveDeck.size() != 0)
-        {
-            this.lightActiveDeck = light.getLightActiveDeck();
-            System.out.println("Updated LightActiveCharDeck");
-            notifyLight(lightActiveDeck.get(0));
-        }
+        this.lightActiveDeck = light.getLightActiveDeck();
+        System.out.println("Updated LightActiveCharDeck");
+        notifyLight(lightActiveDeck.get(0));
     }
 
     public ArrayList<CharacterCard> getLightActiveDeck() {

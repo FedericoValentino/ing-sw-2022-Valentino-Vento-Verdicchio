@@ -16,16 +16,9 @@ public class LightCharDeck extends Observable
 
     public void updateCharDeck(LightCharDeck light)
     {
-        if(light.equals(this))
-        {
-            return;
-        }
-        else
-        {
-            this.lightCharDeck = light.getLightCharDeck();
-            System.out.println("Updated LightCharDeck");
-            notifyLight(this);
-        }
+        this.lightCharDeck = light.getLightCharDeck();
+        System.out.println("Updated LightCharDeck");
+        notifyLight(this);
     }
 
 

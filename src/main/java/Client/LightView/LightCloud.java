@@ -25,16 +25,9 @@ public class LightCloud extends Observable
 
     public void updateCloud(LightCloud light)
     {
-        if(light.equals(this))
-        {
-            return;
-        }
-        else
-        {
-            this.students = light.getStudents();
-            System.out.println("Updated LightCloud");
-            notifyLight(this);
-        }
+        this.students = light.getStudents();
+        System.out.println("Updated LightCloud");
+        notifyLight(this);
     }
 
     public ArrayList<Student> getStudents() {

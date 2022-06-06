@@ -46,25 +46,18 @@ public class LightPlayer extends Observable
 
     public void updatePlayer(LightPlayer light)
     {
-        if(light.equals(this))
-        {
-            return;
-        }
-        else
-        {
-            this.nome = light.getNome();
-            this.coinAmount = light.getCoinAmount();
-            this.currentAssistantCard = light.getCurrentAssistantCard();
-            this.lastPlayedCard = light.getLastPlayedCard();
-            this.assistantDeck = light.getAssistantDeck();
-            school.updateSchool(light.getSchool());
-            this.MaxMotherMovement = light.getMaxMotherMovement();
-            this.movementValue = light.getMovementValue();
-            this.value = light.getValue();
-            this.TowerOwner = light.isTowerOwner();
-            System.out.println("Updated Lightplayer");
-            notifyLight(this);
-        }
+        this.nome = light.getNome();
+        this.coinAmount = light.getCoinAmount();
+        this.currentAssistantCard = light.getCurrentAssistantCard();
+        this.lastPlayedCard = light.getLastPlayedCard();
+        this.assistantDeck = light.getAssistantDeck();
+        school.updateSchool(light.getSchool());
+        this.MaxMotherMovement = light.getMaxMotherMovement();
+        this.movementValue = light.getMovementValue();
+        this.value = light.getValue();
+        this.TowerOwner = light.isTowerOwner();
+        System.out.println("Updated Lightplayer");
+        notifyLight(this);
     }
 
 

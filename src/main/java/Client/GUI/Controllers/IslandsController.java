@@ -56,6 +56,7 @@ public class IslandsController extends Controller implements ObserverLightView {
             islands.removeAll(islands);
             islandControllers.removeAll((islandControllers));
             AnchorPane islandContainer = new AnchorPane();
+            islandContainer.setId("is"+id);
             islandContainer.getChildren().clear();
             try
             {

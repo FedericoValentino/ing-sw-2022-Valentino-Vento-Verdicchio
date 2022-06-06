@@ -29,12 +29,24 @@ public class LightIsland {
     {
         this.islandId = islandId;
         this.motherNature = motherNature;
-        Group = group;
+        this.Group = group;
         this.currentStudents = currentStudents;
         this.ownership = ownership;
         this.towerNumber = towerNumber;
         this.teamInfluence = teamInfluence;
         this.noEntry = noEntry;
+    }
+
+    public void updateIsland(LightIsland island)
+    {
+        this.islandId = island.getIslandId();
+        this.motherNature = island.isMotherNature();
+        this.Group = island.isGroup();
+        this.currentStudents = island.getCurrentStudents();
+        this.ownership = island.getOwnership();
+        this.towerNumber = island.getTowerNumber();
+        this.teamInfluence = island.getTeamInfluence();
+        this.noEntry = island.isNoEntry();
     }
 
 

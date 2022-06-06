@@ -40,21 +40,14 @@ public class LightTurnState extends Observable
 
     public void updateTurn(LightTurnState light)
     {
-        if(light.equals(this))
-        {
-            return;
-        }
-        else
-        {
-            this.currentPlayer = light.getCurrentPlayer();
-            this.turnOrder = light.getTurnOrder();
-            this.turn = light.getTurn();
-            this.actionMoves = light.getActionMoves();
-            this.planningMoves = light.getPlanningMoves();
-            this.gamePhase = light.getGamePhase();
-            this.lastTurn = light.isLastTurn();
-            notifyLight(this);
-        }
+        this.currentPlayer = light.getCurrentPlayer();
+        this.turnOrder = light.getTurnOrder();
+        this.turn = light.getTurn();
+        this.actionMoves = light.getActionMoves();
+        this.planningMoves = light.getPlanningMoves();
+        this.gamePhase = light.getGamePhase();
+        this.lastTurn = light.isLastTurn();
+        notifyLight(this);
     }
 
     public HashMap<String, Integer> getTurnOrder() {

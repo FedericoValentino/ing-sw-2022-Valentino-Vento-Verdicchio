@@ -33,19 +33,12 @@ public class LightSchool extends Observable
 
     public void updateSchool(LightSchool light)
     {
-        if(light.equals(this))
-        {
-            return;
-        }
-        else
-        {
-            this.entrance = light.getEntrance();
-            this.diningRoom = light.getDiningRoom();
-            this.professorTable = light.getProfessorTable();
-            this.towerCount = light.getTowerCount();
-            System.out.println("Updated LightSchool");
-            notifyLight(this);
-        }
+        this.entrance = light.getEntrance();
+        this.diningRoom = light.getDiningRoom();
+        this.professorTable = light.getProfessorTable();
+        this.towerCount = light.getTowerCount();
+        System.out.println("Updated LightSchool");
+        notifyLight(this);
     }
 
     public void updateName(String name)

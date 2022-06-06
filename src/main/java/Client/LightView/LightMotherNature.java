@@ -14,16 +14,9 @@ public class LightMotherNature extends Observable
 
     public void updateMother(LightMotherNature light)
     {
-        if(light.equals(this))
-        {
-            return;
-        }
-        else
-        {
-            this.idPosition = light.getIdPosition();
-            System.out.println("Updated LightMN");
-            notifyLight(this);
-        }
+        this.idPosition = light.getIdPosition();
+        System.out.println("Updated LightMN");
+        notifyLight(this);
     }
 
     public int getIdPosition() {

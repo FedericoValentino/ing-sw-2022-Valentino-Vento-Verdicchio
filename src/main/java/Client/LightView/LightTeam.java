@@ -29,21 +29,14 @@ public class LightTeam extends Observable
 
     public void updateTeam(LightTeam light)
     {
-        if(light.equals(this))
+        for(int i = 0; i < players.size(); i++)
         {
-            return;
+            players.get(i).updatePlayer(light.getPlayers().get(i));
         }
-        else
-        {
-            for(int i = 0; i < players.size(); i++)
-            {
-                players.get(i).updatePlayer(light.getPlayers().get(i));
-            }
-            this.controlledIslands = light.getControlledIslands();
-            this.controlledProfessors = light.getControlledProfessors();
-            System.out.println("Updated LightTeam");
-            notifyLight(this);
-        }
+        this.controlledIslands = light.getControlledIslands();
+        this.controlledProfessors = light.getControlledProfessors();
+        System.out.println("Updated LightTeam");
+        notifyLight(this);
     }
 
     public ColTow getColor() {

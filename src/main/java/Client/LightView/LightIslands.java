@@ -17,16 +17,12 @@ public class LightIslands extends Observable
 
     public void updateIslands(LightIslands light)
     {
-        if(light.equals(this))
+        for(int i = 0; i < islands.size(); i++)
         {
-            return;
+            islands.get(i).updateIsland(light.getIslands().get(i));
         }
-        else
-        {
-            this.islands = light.getIslands();
-            System.out.println("Updated LightIslands");
-            notifyLight(this);
-        }
+        System.out.println("Updated LightIslands");
+        notifyLight(this);
     }
 
 
