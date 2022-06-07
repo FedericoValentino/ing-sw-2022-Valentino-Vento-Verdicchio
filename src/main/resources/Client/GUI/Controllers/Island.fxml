@@ -71,5 +71,7 @@
             <Font size="11.0" />
          </font>
       </Text>
+      <Pane fx:id="ownerShip" layoutX="110.0" layoutY="18.0" prefHeight="21.0" prefWidth="21.0" />
+      <Text fx:id="towerNumber" layoutX="114.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
    </children>
 </AnchorPane>
