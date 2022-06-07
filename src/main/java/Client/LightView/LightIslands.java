@@ -17,7 +17,6 @@ public class LightIslands extends Observable
 
     public void updateIslands(LightIslands light)
     {
-        islands.clear();
         int temp = 0;
         for(int i = 0; i < light.getIslands().size(); i++)
         {

@@ -166,8 +166,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
         <item itemvalue="Application.ServerApp" />
+        <item itemvalue="Application.main" />
         <item itemvalue="Application.GenericRunner" />
         <item itemvalue="Application.GuiMainStarter" />
         <item itemvalue="JUnit.Client.LightView in softeng-GC61" />
@@ -219,13 +219,6 @@
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
-    </task>
-    <task id="LOCAL-00053" summary="CLI almost ended, still need to add winner condition&#10;valentino and vento">
-      <created>1653316318601</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1653316318602</updated>
     </task>
     <task id="LOCAL-00054" summary="Wonderful changes">
       <created>1653316334204</created>
@@ -563,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654637692234</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="minor correction">
+      <created>1654638360707</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1654638360707</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
