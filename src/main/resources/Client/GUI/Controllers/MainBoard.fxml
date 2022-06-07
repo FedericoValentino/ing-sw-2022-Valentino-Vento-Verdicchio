@@ -92,7 +92,7 @@
             <Pane fx:id="CharImage" layoutX="27.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="244.0" />
          </children>
       </Pane>
-      <GridPane fx:id="PlayedAssistants" layoutX="950.0" layoutY="350.0" mouseTransparent="true" prefHeight="370.0" prefWidth="300.0" visible="false">
+      <GridPane fx:id="PlayedAssistants" layoutX="950.0" layoutY="350.0" mouseTransparent="true" prefHeight="370.0" prefWidth="300.0" style="-fx-background-color: pink;" visible="false">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -102,10 +102,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="15.0" translateY="-80.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" />
+            <Pane fx:id="Image0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="140.0" translateX="4.5" translateY="12.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Pane fx:id="Image2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="140.0" translateX="4.5" translateY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Pane fx:id="Image1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="140.0" translateX="4.5" translateY="12.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Pane fx:id="Image3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="140.0" translateX="4.5" translateY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>
