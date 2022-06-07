@@ -113,6 +113,10 @@ public class Islands extends Board {
       Island I = islands.get(i);
       I.islandId = i;
       islands.set(i, I);
+      if(islands.get(i).getMotherNature())
+      {
+        game.getCurrentMotherNature().updatePositionAfterMerge(i);
+      }
     }
     totalGroups = islands.size();
   }
