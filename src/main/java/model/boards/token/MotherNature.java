@@ -30,15 +30,12 @@ public class MotherNature
      */
     public void move(int value,int maxIdIsland)
     {
-        if(maxIdIsland>=0 && maxIdIsland<=11)
+        int temp = idPosition + value;
+        if(temp > maxIdIsland)
         {
-            int temp = idPosition + value;
-            if(temp > maxIdIsland)
-            {
-                temp = temp - (maxIdIsland+1);
-            }
-            idPosition = temp;
+            temp = temp - (maxIdIsland+1);
         }
+        idPosition = temp;
     }
 
     public void updatePositionAfterMerge(int position)
