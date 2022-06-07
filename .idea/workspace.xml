@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Exception handling GUI">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Island.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Island.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Island" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -220,13 +216,6 @@
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
-    </task>
-    <task id="LOCAL-00051" summary="Changes to client and such by valentino and vento">
-      <created>1653065324329</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1653065324330</updated>
     </task>
     <task id="LOCAL-00052" summary="Wonderful colors">
       <created>1653065354243</created>
@@ -564,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654556662714</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Island">
+      <created>1654636357743</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1654636357743</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Assistants fxml added" />
     <MESSAGE value="OtherSchool.fxml" />
     <MESSAGE value="OtherSchool code" />
     <MESSAGE value="OtherSchool visualization done" />
@@ -609,7 +604,8 @@
     <MESSAGE value="Cloud corrections" />
     <MESSAGE value="Corrections" />
     <MESSAGE value="Corrections 1:04" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrections 1:04" />
+    <MESSAGE value="Island" />
+    <option name="LAST_COMMIT_MESSAGE" value="Island" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -75,7 +75,7 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
         game.getCurrentMotherNature().move(amount, game.getCurrentIslands().getTotalGroups()-1);
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
-        if(Checks.checkForInfluenceCharacter(game, currentPlayer))
+        if(!Checks.checkForInfluenceCharacter(game, currentPlayer))
         {
             game.solveEverything(game.getCurrentMotherNature().getPosition());
             Checks.checkWinnerForTowers(game);
