@@ -1,7 +1,10 @@
 package Client.GUI.Controllers;
 
+import Client.GUI.GuiMainStarter;
 import Client.LightView.LightActiveDeck;
 import Client.LightView.LightCharDeck;
+import Client.Messages.ActionMessages.PlayCharacter;
+import Client.Messages.SerializedMessage;
 import Observer.ObserverLightView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -90,10 +93,15 @@ public class CharacterCardsController extends Controller implements ObserverLigh
         mainPane.getChildren().get(2).setVisible(true);
     }
 
-    private void playOnClick(MouseEvent mouseEvent) {
+    private void playOnClick(MouseEvent mouseEvent)
+    {
     }
 
-    private void activateOnClick(MouseEvent mouseEvent) {
+    private void activateOnClick(MouseEvent mouseEvent)
+    {
+        Pane frontPane = (Pane) mainPane.getChildren().get(2);
+        Text charName = (Text)  frontPane.getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor")).collect(Collectors.toList()).get(0);
+        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new PlayCharacter(CharacterName.valueOf(charName.getText()))));
     }
 
     private void nextOnClick(MouseEvent mouseEvent)
@@ -155,9 +163,9 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     public Pane getCorrectPane(CharacterCard card)
     {
         CharacterName name = card.getCharacterName();
-        for(Node node1: mainPane.getChildren())
+        for(Node correct: mainPane.getChildren())
         {
-            Pane pane = (Pane)node1;
+            Pane pane = (Pane)correct;
             Text statusDescriptor = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor")).collect(Collectors.toList()).get(0);
             if(CharacterName.valueOf(statusDescriptor.getText()).equals(name))
                 return pane;
