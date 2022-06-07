@@ -4,10 +4,12 @@ import Client.GUI.GuiMainStarter;
 import Client.LightView.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -33,6 +35,13 @@ public class MainBoardController extends Controller {
     @FXML public AnchorPane mineSchoolAnchorPane;
 
 
+    public GridPane PlayedAssistants;
+    public Text FirstPlayer;
+    public Text SecondPlayer;
+    public Text ThirdPlayer;
+    public Text FourthPlayer;
+
+
     public void initialSetupIsland(LightView view) throws IOException {
         String path= "/Client/GUI/Controllers/Islands.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
@@ -48,7 +57,7 @@ public class MainBoardController extends Controller {
         assistantCardAnchorPane.getChildren().add(loader.load());
         AssistantCardsController assistantController= loader.getController();
         String player=GuiMainStarter.getClientGUI().getServerConnection().getNickname();
-        assistantController.setup(player, teams, assistantCardAnchorPane);
+        assistantController.setup(player, teams, assistantCardAnchorPane, this);
 
     }
     public void initialSetupCharacterCard(LightCharDeck charDeck, LightActiveDeck activeDeck) throws IOException
@@ -154,6 +163,47 @@ public class MainBoardController extends Controller {
 
         charDescription.setVisible(false);
         charDescription.setMouseTransparent(true);
+    }
+
+    public void showPlayedAssistants(String path, int column, int row, LightPlayer player, boolean hide, int iteration)
+    {
+        if(!hide)
+        {
+            Pane cell = getCellFromGridPane(PlayedAssistants, column, row);
+            cell.getChildren().clear();
+            Text name = new Text(player.getNome());
+            cell.getChildren().add(name);
+            name.translateXProperty().add(-15);
+            name.translateYProperty().add(85);
+
+            Pane assImage = (Pane) PlayedAssistants.getChildren().stream().filter(node -> node.getId().equals("Image" + iteration)).collect(Collectors.toList()).get(0);
+            ImageView image = new ImageView(path);
+            image.setFitWidth(140);
+            image.setFitHeight(150);
+            assImage.getChildren().add(image);
+            PlayedAssistants.setVisible(true);
+            PlayedAssistants.setMouseTransparent(false);
+        }
+        else
+        {
+            PlayedAssistants.setVisible(false);
+            PlayedAssistants.setMouseTransparent(true);
+        }
+    }
+
+
+    public Pane getCellFromGridPane(GridPane matrix, int column, int row)
+    {
+        for(Node N : matrix.getChildren())
+        {
+            int rowN = GridPane.getRowIndex(N);
+            int columnN = GridPane.getColumnIndex(N);
+            if(rowN == row && columnN == column)
+            {
+                return (Pane)N;
+            }
+        }
+        return null;
     }
 
 }

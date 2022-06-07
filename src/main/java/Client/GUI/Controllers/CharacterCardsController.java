@@ -27,10 +27,11 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     public AnchorPane CharacterPane;
     public LightCharDeck characterDeck;
     public LightActiveDeck activeCharDeck;
+
     public ArrayList<CharacterCard> sceneCards = new ArrayList<>();
     public int currentlyShowedCard = 2;
-    public MainBoardController mainController;
 
+    public MainBoardController mainController;
 
     @FXML public StackPane mainPane;
     @FXML public Button PreviousButton;

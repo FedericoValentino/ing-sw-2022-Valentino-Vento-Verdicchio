@@ -3,6 +3,7 @@ package Client.GUI.Controllers;
 import Client.GUI.GuiMainStarter;
 import Client.LightView.LightPlayer;
 import Client.LightView.LightTeam;
+import Client.LightView.LightView;
 import Client.Messages.ActionMessages.DrawAssistantCard;
 import Client.Messages.SerializedMessage;
 import Observer.ObserverLightView;
@@ -34,28 +35,38 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     public ArrayList<AssistantCard> played = new ArrayList<>();
     public String currentPlayer;
 
+    public Button LastPlayedButton;
 
-    private void onClick(MouseEvent event)
+    private MainBoardController mainController;
+
+
+    private void assistantsOnClick(MouseEvent event)
     {
-        GridPane playedCards = (GridPane) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedPane")).collect(Collectors.toList()).get(0);
-        Button button = (Button) event.getSource();
-        if(button.getText().equals("Active\nAssistants")) {
-            playedCards.setVisible(true);
-            playedCards.toFront();
-            button.setText("Hide");
-        }
-        else
+        int iteration = 0;
+        if(LastPlayedButton.getText().equals("Active\nAssistants"))
         {
-            button.setText("Active\nAssistants");
-            playedCards.setVisible(false);
-            playedCards.toBack();
+            for (int i = 0; i < teams.size(); i++)
+                for (int j = 0; j < teams.get(i).getPlayers().size(); j++) {
+                    LightPlayer player = teams.get(i).getPlayers().get(j);
+                    if (player.getCurrentAssistantCard() != null) {
+                        String path = getAssistantPath(player.getCurrentAssistantCard());
+                        mainController.showPlayedAssistants(path, j, i, player, false, iteration);
+                        iteration++;
+                    }
+                }
+            LastPlayedButton.setText("Back");
+        }
+        else {
+            mainController.showPlayedAssistants("", -1, -1, null, true, -1);
+            LastPlayedButton.setText("Active\nAssistants");
         }
     }
 
-    public void setup(String currentPlayer, ArrayList<LightTeam> teams, AnchorPane AssistantsPane) {
+    public void setup(String currentPlayer, ArrayList<LightTeam> teams, AnchorPane AssistantsPane, MainBoardController controller) {
         this.teams = teams;
         this.AssistantsAnchorPane = AssistantsPane;
         this.currentPlayer = currentPlayer;
+        this.mainController = controller;
         for (LightTeam team : teams) {
             for (LightPlayer player : team.getPlayers()) {
                 player.addObserverLight(this);
@@ -64,7 +75,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
         }
         Button lastPlayed = (Button) ((AnchorPane) AssistantsPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedButton")).collect(Collectors.toList()).get(0);
         lastPlayed.setText("Active\nAssistants");
-        lastPlayed.setOnMouseClicked(this::onClick);
+        lastPlayed.setOnMouseClicked(this:: assistantsOnClick);
         for(LightPlayer player: players)
             update(player);
     }
@@ -75,13 +86,6 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     {
         Platform.runLater(()-> {
             LightPlayer player = (LightPlayer) o;
-            boolean endTurn = played.size() == players.size();
-            if(player.getLastPlayedCard() != null)
-            {
-                if(endTurn)
-                    played.clear();
-                played.add(player.getLastPlayedCard());
-            }
 
             if(player.getNome().equals(currentPlayer))
             {
@@ -106,24 +110,6 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                     cardIndex++;
                 }
             }
-
-            int tempPlayedCards = played.size();
-            GridPane playedCards = (GridPane) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedPane")).collect(Collectors.toList()).get(0);
-
-            if(endTurn)
-                playedCards.getChildren().clear();
-
-            for(int i = 0; i < 2 && tempPlayedCards > 0 ; i++)
-                for(int j = 0; j < 2; j++)
-                {
-                    Pane cell = getCellFromGridPane(playedCards, j, i);
-                    cell.getChildren().clear();
-                    ImageView cardImage = new ImageView(getAssistantPath(played.get(tempPlayedCards - 1)));
-                    cardImage.setFitHeight(160);
-                    cardImage.setFitWidth(100);
-                    cell.getChildren().add(cardImage);
-                    cell.getChildren().add(new Text(player.getNome()));
-                }
         });
     }
 
@@ -155,20 +141,6 @@ public class AssistantCardsController extends Controller implements ObserverLigh
             default:
                 return "";
         }
-    }
-
-    public Pane getCellFromGridPane(GridPane matrix, int column, int row)
-    {
-        for(Node N : matrix.getChildren())
-        {
-            int rowN = GridPane.getRowIndex(N);
-            int columnN = GridPane.getColumnIndex(N);
-            if(rowN == row && columnN == column)
-            {
-                return (Pane)N;
-            }
-        }
-        return null;
     }
 
 

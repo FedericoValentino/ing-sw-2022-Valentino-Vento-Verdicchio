@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="AssistantsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.AssistantCardsController">
+<AnchorPane fx:id="AssistantsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.GUI.Controllers.AssistantCardsController">
    <children>
       <HBox fx:id="Box" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="862.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="0.0" />
       <Button fx:id="LastPlayedButton" alignment="BASELINE_CENTER" layoutX="871.0" layoutY="13.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="71.0" text="Active&#10;Assistants&#10;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
@@ -15,15 +16,5 @@
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor></Button>
-      <GridPane fx:id="LastPlayedPane" layoutX="750.0" layoutY="-334.0" prefHeight="179.0" prefWidth="200.0" visible="false">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="160.0" minHeight="160.0" percentHeight="0.0" prefHeight="160.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="160.0" minHeight="160.0" prefHeight="160.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-      </GridPane>
    </children>
 </AnchorPane>
