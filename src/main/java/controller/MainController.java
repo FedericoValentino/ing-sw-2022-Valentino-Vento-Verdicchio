@@ -1,4 +1,5 @@
 //TODO controllare se le robe funzionano per numero player diverso da 2
+//TODO rimuove parametro torri da addPlayer
 
 package controller;
 

@@ -8,14 +8,13 @@ import java.util.ArrayList;
 public class Cloud extends Board
 {
   private int cloudNumber;
-  private static int cloudID;
   private ArrayList<Student> student;
   private CurrentGameState game;
 
   /** Class constructor 1*/
-  public Cloud(CurrentGameState game)
+  public Cloud(CurrentGameState game, int identifier)
   {
-    cloudNumber = cloudID++;
+    cloudNumber = identifier;
     student= new ArrayList<>();
     this.game = game;
   }

@@ -9,10 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="tower Showing">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Testing IslandPositioning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IslandsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/OtherSchoolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CurrentGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/CloudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/boards/CloudTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,13 +223,6 @@
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
-    </task>
-    <task id="LOCAL-00060" summary="All ok in all the actual views">
-      <created>1653498001876</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1653498001876</updated>
     </task>
     <task id="LOCAL-00061" summary="Update in wizard opacity function&#10;and other changes in client gui ecc...">
       <created>1653519047356</created>
@@ -564,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654641858384</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Testing IslandPositioning">
+      <created>1654643052911</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1654643052911</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +587,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="AssistantController done and updated the Assistants fxml" />
     <MESSAGE value="Platform run laters for Update functions" />
     <MESSAGE value="Server side teamChoice. CLI e GUI ready for change" />
     <MESSAGE value="Character Parameter Pattern" />
@@ -609,7 +611,8 @@
     <MESSAGE value="influence calculation fix" />
     <MESSAGE value="assistants corrections" />
     <MESSAGE value="tower Showing" />
-    <option name="LAST_COMMIT_MESSAGE" value="tower Showing" />
+    <MESSAGE value="Testing IslandPositioning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing IslandPositioning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

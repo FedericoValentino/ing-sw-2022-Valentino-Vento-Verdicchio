@@ -60,7 +60,7 @@ public class CurrentGameState extends Observable {
        this.currentClouds = new Cloud[playerNum];
        for(int i = 0; i < playerNum; i++)
        {
-           currentClouds[i] = new Cloud(this);
+           currentClouds[i] = new Cloud(this, i);
        }
        this.currentTurnState = new CurrentTurnState(this);
        this.currentActiveCharacterCard = new ArrayList<>();

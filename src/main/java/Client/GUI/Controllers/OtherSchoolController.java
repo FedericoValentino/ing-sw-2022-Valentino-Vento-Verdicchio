@@ -26,7 +26,6 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
     public void onClick(ActionEvent event)
     {
         this.lookedPlayer = ((Button)event.getSource()).getText();
-        System.out.println(lookedPlayer);
         update(getSchoolByName(lookedPlayer));
     }
 
