@@ -36,10 +36,6 @@ public class MainBoardController extends Controller {
 
 
     public GridPane PlayedAssistants;
-    public Pane Image0;
-    public Pane Image1;
-    public Pane Image2;
-    public Pane Image3;
 
 
     public void initialSetupIsland(LightView view) throws IOException {
@@ -174,7 +170,7 @@ public class MainBoardController extends Controller {
             Text name = new Text(player.getNome());
             cell.getChildren().add(name);
             name.translateXProperty().add(-15);
-            name.translateYProperty().add(85);
+            name.translateYProperty().add(70);
 
 
             ImageView image = new ImageView(path);
