@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Island" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="minor correction">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,13 +218,6 @@
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
-    </task>
-    <task id="LOCAL-00052" summary="Wonderful colors">
-      <created>1653065354243</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1653065354243</updated>
     </task>
     <task id="LOCAL-00053" summary="CLI almost ended, still need to add winner condition&#10;valentino and vento">
       <created>1653316318601</created>
@@ -560,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654636357743</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="minor correction">
+      <created>1654636855705</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1654636855705</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +596,6 @@
     <MESSAGE value="ToFront and ToBack to played assistants, to be tested" />
     <MESSAGE value="Minor Correction" />
     <MESSAGE value="Fix School" />
-    <MESSAGE value="minor correction" />
     <MESSAGE value="Informations and end turn button implemented" />
     <MESSAGE value="Should now work" />
     <MESSAGE value="init added" />
@@ -605,7 +606,8 @@
     <MESSAGE value="Corrections" />
     <MESSAGE value="Corrections 1:04" />
     <MESSAGE value="Island" />
-    <option name="LAST_COMMIT_MESSAGE" value="Island" />
+    <MESSAGE value="minor correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor correction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
