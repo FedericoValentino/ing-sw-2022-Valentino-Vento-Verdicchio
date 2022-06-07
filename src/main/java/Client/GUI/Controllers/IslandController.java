@@ -85,6 +85,7 @@ public class IslandController extends Controller{
             ownershipImage.setFitWidth(21);
             ownershipImage.setFitHeight(21);
             ownerShip.getChildren().add(ownershipImage);
+            ownerShip.setVisible(true);
             towerNumber.setText(Integer.toString(island.getTowerNumber()));
             towerNumber.setVisible(true);
         }
