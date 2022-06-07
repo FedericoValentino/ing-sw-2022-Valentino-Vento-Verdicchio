@@ -102,8 +102,6 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                     cards.getChildren().add(cardPane);
                     cardPane.setOnMouseClicked(MouseEvent -> {
                         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new DrawAssistantCard(sugmaindex)));
-                        cardPane.setVisible(false);
-                        cardPane.setMouseTransparent(true);
                     });
                     cardIndex++;
                 }
