@@ -41,19 +41,28 @@ public class Island
   public void calculateOwnership()
   {
     int max = 0;
+    int team = 0;
     if(motherNature)
     {
       for(int i = 0; i < 3; i++)
       {
-        if(this.teamInfluence[i] > max)
+        if(teamInfluence[i] > max)
         {
-          if(towerNumber == 0)
-          {
-            towerNumber = 1;
-          }
-          max = this.teamInfluence[i];
-          this.ownership = ColTow.values()[i];
+          max = teamInfluence[i];
+          team = i;
         }
+      }
+      for(int i = 0; i < 3; i++)
+      {
+        if(i != team && max == teamInfluence[i])
+        {
+          return;
+        }
+      }
+      ownership = ColTow.values()[team];
+      if(towerNumber == 0)
+      {
+        towerNumber = 1;
       }
     }
   }
