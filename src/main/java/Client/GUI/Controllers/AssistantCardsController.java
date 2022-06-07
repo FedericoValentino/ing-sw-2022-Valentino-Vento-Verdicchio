@@ -42,7 +42,6 @@ public class AssistantCardsController extends Controller implements ObserverLigh
 
     private void assistantsOnClick(MouseEvent event)
     {
-        int iteration = 0;
         if(LastPlayedButton.getText().equals("Active\nAssistants"))
         {
             for (int i = 0; i < teams.size(); i++)
@@ -50,14 +49,13 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                     LightPlayer player = teams.get(i).getPlayers().get(j);
                     if (player.getCurrentAssistantCard() != null) {
                         String path = getAssistantPath(player.getCurrentAssistantCard());
-                        mainController.showPlayedAssistants(path, j, i, player, false, iteration);
-                        iteration++;
+                        mainController.showPlayedAssistants(path, j, i, player, false);
                     }
                 }
-            LastPlayedButton.setText("Back");
+            LastPlayedButton.setText("Hide");
         }
         else {
-            mainController.showPlayedAssistants("", -1, -1, null, true, -1);
+            mainController.showPlayedAssistants("", -1, -1, null, true);
             LastPlayedButton.setText("Active\nAssistants");
         }
     }

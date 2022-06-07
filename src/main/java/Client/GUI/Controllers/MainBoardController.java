@@ -36,10 +36,10 @@ public class MainBoardController extends Controller {
 
 
     public GridPane PlayedAssistants;
-    public Text FirstPlayer;
-    public Text SecondPlayer;
-    public Text ThirdPlayer;
-    public Text FourthPlayer;
+    public Pane Image0;
+    public Pane Image1;
+    public Pane Image2;
+    public Pane Image3;
 
 
     public void initialSetupIsland(LightView view) throws IOException {
@@ -165,7 +165,7 @@ public class MainBoardController extends Controller {
         charDescription.setMouseTransparent(true);
     }
 
-    public void showPlayedAssistants(String path, int column, int row, LightPlayer player, boolean hide, int iteration)
+    public void showPlayedAssistants(String path, int column, int row, LightPlayer player, boolean hide)
     {
         if(!hide)
         {
@@ -176,11 +176,11 @@ public class MainBoardController extends Controller {
             name.translateXProperty().add(-15);
             name.translateYProperty().add(85);
 
-            Pane assImage = (Pane) PlayedAssistants.getChildren().stream().filter(node -> node.getId().equals("Image" + iteration)).collect(Collectors.toList()).get(0);
+
             ImageView image = new ImageView(path);
             image.setFitWidth(140);
             image.setFitHeight(150);
-            assImage.getChildren().add(image);
+            cell.getChildren().add(image);
             PlayedAssistants.setVisible(true);
             PlayedAssistants.setMouseTransparent(false);
         }
