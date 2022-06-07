@@ -2,13 +2,12 @@ package Client.GUI;
 
 import Client.ClientView;
 import Client.GUI.Controllers.*;
-import Client.LightView.InfoDispenser;
 import Client.LightView.LightView;
 import Client.ServerConnection;
 import Server.Answers.ActionAnswers.ErrorMessage;
-import Server.Answers.ActionAnswers.RequestCloud;
 import Server.Answers.ActionAnswers.StandardActionAnswer;
 import Server.Answers.ActionAnswers.ViewMessage;
+import Server.Answers.ActionAnswers.WinMessage;
 import Server.Answers.SerializedAnswer;
 import Server.Answers.SetupAnswers.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -34,6 +33,10 @@ public class ClientGUI implements ClientView
     private Boolean firstView = false;
 
 
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+
+
     @Override
     public void run() {
         guiMainStarter=new GuiMainStarter();
@@ -42,32 +45,61 @@ public class ClientGUI implements ClientView
         guiMainStarter.main();
     }
 
-
-    @Override
-    public void readMessage() throws IOException, ClassNotFoundException {
-        input = (SerializedAnswer) serverConnection.getIn().readObject();
-        if(input.getCommand() != null)
-        {
-            StandardSetupAnswer answer = input.getCommand();
-            setupHandler(answer);
+    public void changeScene(FXMLLoader loader)
+    {
+        Scene scene= null;
+        try {
+            scene = new Scene(loader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        if(input.getAction() != null)
-        {
-            StandardActionAnswer answer = input.getAction();
-            messageHandler(answer);
-        }
+        GuiMainStarter.getMainStage().setScene(scene);
     }
 
     @Override
-    public void setupHandler(StandardSetupAnswer answer) throws IOException {
-        System.out.println(Thread.currentThread());
+    public void readMessage()
+    {
+        try
+        {
+            input = (SerializedAnswer) serverConnection.getIn().readObject();
+            if(input.getCommand() != null)
+            {
+                StandardSetupAnswer answer = input.getCommand();
+                setupHandler(answer);
+            }
+            if(input.getAction() != null)
+            {
+                StandardActionAnswer answer = input.getAction();
+                messageHandler(answer);
+            }
+        }
+        catch(IOException e)
+        {
+            Platform.runLater(() -> {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
+                changeScene(loader);
+                IntroController intro = loader.getController();
+                intro.setGuiMainStarter(guiMainStarter);
+            });
+        }
+        catch(ClassNotFoundException e)
+        {
+
+        }
+
+    }
+
+    @Override
+    public void setupHandler(StandardSetupAnswer answer)
+    {
         switch(answer.getType())
         {
             case GAME_NFO_REQ:
                 Platform.runLater(()->
                 {
                     String path= "/Client/GUI/Controllers/Lobby.fxml";
-                    FXMLLoader load=changeScene(path);
+                    FXMLLoader load = new FXMLLoader(getClass().getResource(path));
+                    changeScene(load);
                     LobbyController lc=load.getController();
                     lc.setGuiMainStarter(guiMainStarter);
                 });
@@ -77,7 +109,8 @@ public class ClientGUI implements ClientView
                 {
                     int[] availableTeams = ((AvailableTeams) answer).getAvailableTeams();
                     String path = "/Client/GUI/Controllers/Teams.fxml";
-                    FXMLLoader load = changeScene(path);
+                    FXMLLoader load = new FXMLLoader(getClass().getResource(path));
+                    changeScene(load);
                     TeamController tc = load.getController();
                     tc.setGuiMainStarter(guiMainStarter);
                     tc.init(availableTeams);
@@ -88,31 +121,35 @@ public class ClientGUI implements ClientView
                 {
                     ArrayList<Wizard> available = (((AvailableWizards) answer).getAvailable());
                     String path= "/Client/GUI/Controllers/Wizard.fxml";
-                    FXMLLoader load=changeScene(path);
+                    FXMLLoader load = new FXMLLoader(getClass().getResource(path));
+                    changeScene(load);
                     WizardController wc=load.getController();
                     wc.setGuiMainStarter(guiMainStarter);
                     wc.updateOpacity(available);
                 });
-
                 break;
             case GAME_NFO:
-                Platform.runLater(()->
+                if(((InfoMessage) answer).getInfo().equals("Wizard Selected, type " + ANSI_GREEN + "[Ready] " + ANSI_RESET + "if you're ready to start!"))
                 {
-                    String path= "/Client/GUI/Controllers/Ready.fxml";
-                    FXMLLoader load=changeScene(path);
-                    ReadyController rc=load.getController();
-                    rc.setGuiMainStarter(guiMainStarter);
-                });
-                if(setupState)
-                {
-                    setupState = false;
+                    Platform.runLater(() ->
+                    {
+                        String path = "/Client/GUI/Controllers/Ready.fxml";
+                        FXMLLoader load = new FXMLLoader(getClass().getResource(path));
+                        changeScene(load);
+                        ReadyController rc = load.getController();
+                        rc.setGuiMainStarter(guiMainStarter);
+                    });
+                    if (setupState) {
+                        setupState = false;
+                    }
                 }
                 break;
             case GAME_START:
                 Platform.runLater(()->
                 {
                     String path= "/Client/GUI/Controllers/WaitingGameStart.fxml";
-                    changeScene(path);
+                    FXMLLoader load = new FXMLLoader(getClass().getResource(path));
+                    changeScene(load);
                 });
                 break;
             case REJECT:
@@ -120,96 +157,95 @@ public class ClientGUI implements ClientView
                 Platform.runLater(() ->
                 {
                     String path = "/Client/GUI/Controllers/RejectConnection.fxml";
-                    FXMLLoader load = changeScene(path);
+                    FXMLLoader load = new FXMLLoader(getClass().getResource(path));
+                    changeScene(load);
                     RejectionController controller = load.getController();
                     controller.setGuiMainStarter(guiMainStarter);
                     controller.setup();
                 });
-
+                break;
         }
     }
 
-    public FXMLLoader changeScene(String path)
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-        Scene scene= null;
-        try {
-            scene = new Scene(loader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        GuiMainStarter.getMainStage().setScene(scene);
-        return loader;
-    }
 
 
     @Override
-    public void messageHandler(StandardActionAnswer answer) throws JsonProcessingException {
+    public void messageHandler(StandardActionAnswer answer){
 
         switch(answer.getType())
         {
             case ERROR:
                 System.out.println(((ErrorMessage) answer).getError());
                 break;
-            case START_NFO:
-                System.out.println("Your Turn, start playing!");
-                break;
             case VIEW:
-                MyView.parse((ViewMessage) answer);
-                if(!firstView)
+                try {
+                    MyView.parse((ViewMessage) answer);
+                    if (!firstView) {
+                        Platform.runLater(() ->
+                        {
+                            String path = "/Client/GUI/Controllers/MainBoard.fxml";
+                            FXMLLoader load = new FXMLLoader(getClass().getResource(path));
+                            changeScene(load);
+                            MainBoardController mbc = load.getController();
+                            mbc.setGuiMainStarter(guiMainStarter);
+                            try
+                            {
+                                mbc.initialSetupOtherSchool(lightView.getCurrentTeams());
+                                mbc.initialSetupAssistantCard(lightView.getCurrentTeams());
+                                mbc.initialSetupIsland(lightView);
+                                mbc.initialSetupMineSchool(lightView.getCurrentTeams());
+                                mbc.initialSetupCharacterCard(lightView.getCurrentCharacterDeck(), lightView.getCurrentActiveCharacterCard());
+                                mbc.initialSetupPropaganda(lightView, lightView.getInformations());
+                            } catch (IOException e)
+                            {
+                                e.printStackTrace();
+                            }
+                        });
+                        firstView = true;
+                    }
+                }catch(JsonProcessingException e)
                 {
-                    Platform.runLater(()->
-                    {
-                        String path= "/Client/GUI/Controllers/MainBoard.fxml";
-                        FXMLLoader fxml=changeScene(path);
-                        MainBoardController mbc=fxml.getController();
-                        mbc.setGuiMainStarter(guiMainStarter);
-                        try {
-                            mbc.initialSetupOtherSchool(lightView.getCurrentTeams());
-                            mbc.initialSetupAssistantCard(lightView.getCurrentTeams());
-                            mbc.initialSetupIsland(lightView);
-                            mbc.initialSetupMineSchool(lightView.getCurrentTeams());
-                            mbc.initialSetupCharacterCard(lightView.getCurrentCharacterDeck(), lightView.getCurrentActiveCharacterCard());
-                            mbc.initialSetupPropaganda(lightView, lightView.getInformations());
-                            //altri setup      mbc.;
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
 
-                    });
-                    firstView = true;
                 }
                 break;
-            case CLOUD_REQ:
-                System.out.println(((RequestCloud) answer).getMessage());
+            case WIN:
+                serverConnection.disconnect();
+                Platform.runLater(() -> {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Winner.fxml"));
+                    GuiMainStarter.getClientGUI().changeScene(loader);
+                    WinnerController winnerControl = loader.getController();
+                    winnerControl.setGuiMainStarter(guiMainStarter);
+                    winnerControl.setup(((WinMessage)answer).getWinningTeam());
+                });
                 break;
-            case CARD_REQ:
-                System.out.println("Choose a Character Card!");
-                break;
-            case STUD_REQ:
-                System.out.println("Move a student from your entrance!");
-                break;
-            case MN_REQ:
-                System.out.println("Move Mother Nature!");
-                break;
+
         }
 
     }
 
-
-
-    public void setServerConnection(String nickname, String IP) throws IOException {
-        serverConnection= new ServerConnection(nickname,IP);
-        serverConnection.establishConnection();
+    public void setServerConnection(String nickname, String IP)
+    {
+        try
+        {
+            serverConnection= new ServerConnection(nickname,IP);
+            serverConnection.establishConnection();
+        }
+        catch(IOException e)
+        {
+            Platform.runLater(() -> {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
+                GuiMainStarter.getClientGUI().changeScene(loader);
+                IntroController intro = loader.getController();
+                intro.setGuiMainStarter(guiMainStarter);
+            });
+        }
         listenerGui = new ListenerGui(this);
         executor.execute(listenerGui);
     }
+
     public ServerConnection getServerConnection()
     {
         return serverConnection;
-    }
-    public Boolean getSetupState() {
-        return setupState;
     }
 
     public LightView getLightView() {

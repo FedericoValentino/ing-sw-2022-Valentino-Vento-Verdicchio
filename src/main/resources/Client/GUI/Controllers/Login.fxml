@@ -71,7 +71,7 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="TryConn" layoutX="443.0" layoutY="283.0" mnemonicParsing="false" onAction="#onClickTryConnection" text="Try Connection">
+            <Button fx:id="TryConn" layoutX="443.0" layoutY="283.0" mnemonicParsing="false" text="Try Connection">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding></Button>

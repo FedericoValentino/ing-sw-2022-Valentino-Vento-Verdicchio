@@ -25,6 +25,7 @@ public class IntroController extends Controller{
         FXMLLoader loader=loadNewScreen(path);
         LoginController controller = loader.getController();
         controller.setGuiMainStarter(guiMainStarter);
+        controller.initialize();
     }
 
     public void onClickStory(ActionEvent actionEvent) throws IOException {

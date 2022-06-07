@@ -61,14 +61,5 @@ public class GuiMainStarter extends Application {
         controller.setGuiMainStarter(this);
     }
 
-
-    //Creata solo per un test, poi va eliminata
-    public void loadLobby() throws IOException {
-        String path= "/Client/GUI/Controllers/Lobby.fxml";
-        FXMLLoader loader = new FXMLLoader(GuiMainStarter.class.getResource(path));
-        Scene scene= new Scene(loader.load());
-        getMainStage().setScene(scene);
-    }
-
 }
 

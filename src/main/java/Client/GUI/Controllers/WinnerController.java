@@ -8,11 +8,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 
-public class RejectionController extends Controller
+public class WinnerController extends Controller
 {
+    public Text title1;
     public Button BackToMenu;
 
 
@@ -26,8 +28,9 @@ public class RejectionController extends Controller
         });
     }
 
-    public void setup()
+    public void setup(String text)
     {
         BackToMenu.setOnMouseClicked(this::OnClickMenu);
+        title1.setText(text);
     }
 }

@@ -15,13 +15,7 @@ public class ListenerGui implements Runnable{
     {
         while(client.getServerConnection().getConnected())
         {
-            try {
-                client.readMessage();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            client.readMessage();
         }
     }
 }
