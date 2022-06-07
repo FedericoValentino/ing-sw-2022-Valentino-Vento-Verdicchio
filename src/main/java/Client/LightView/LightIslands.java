@@ -4,7 +4,7 @@ import Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
-//
+
 public class LightIslands extends Observable
 {
     private ArrayList<LightIsland> islands;
@@ -18,9 +18,15 @@ public class LightIslands extends Observable
     public void updateIslands(LightIslands light)
     {
         islands.clear();
-        for(int i = 0; i < islands.size(); i++)
+        int temp = 0;
+        for(int i = 0; i < light.getIslands().size(); i++)
         {
-            islands.add(light.getIslands().get(i));
+            islands.get(i).updateIsland(light.getIslands().get(i));
+            temp = i;
+        }
+        for(int i = 0; i < islands.size() - temp - 1; i++)
+        {
+            islands.remove(islands.size()-1);
         }
         System.out.println("Updated LightIslands");
         notifyLight(this);
