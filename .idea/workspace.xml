@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Mothernature Update">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="influence calculation fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/GameHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
+  <component name="RunManager" selected="Application.main">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -166,8 +166,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerApp" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.ServerApp" />
         <item itemvalue="Application.GenericRunner" />
         <item itemvalue="Application.GuiMainStarter" />
         <item itemvalue="JUnit.Client.LightView in softeng-GC61" />
@@ -219,13 +219,6 @@
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
-    </task>
-    <task id="LOCAL-00057" summary="A single line changed">
-      <created>1653403430654</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1653403430654</updated>
     </task>
     <task id="LOCAL-00058" summary="A big change in all GUI functionalities">
       <created>1653483492119</created>
@@ -563,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654639585395</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="influence calculation fix">
+      <created>1654640477689</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1654640477689</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="OtherSchool code" />
     <MESSAGE value="OtherSchool visualization done" />
     <MESSAGE value="Modified pixel of students in the entrance" />
     <MESSAGE value="AssistantController done and updated the Assistants fxml" />
@@ -608,7 +607,8 @@
     <MESSAGE value="Island" />
     <MESSAGE value="minor correction" />
     <MESSAGE value="Mothernature Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mothernature Update" />
+    <MESSAGE value="influence calculation fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="influence calculation fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -631,7 +631,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Server/GameHandler.java</url>
-          <line>239</line>
+          <line>251</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>

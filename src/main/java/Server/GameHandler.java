@@ -159,40 +159,52 @@ public class GameHandler extends Thread implements Observer
                 }
                 break;
             case DRAW_CHOICE:
-                if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type) && Checks.isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                boolean drawnCard = false;
+                if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type))
                 {
-                    if(!Checks.isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                    if (Checks.isAssistantValid(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                     {
-                        mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
-                        if(Checks.checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
-                        {
-                            mainController.lastTurn();
-                        }
-                    }
-                    else
-                    {
-                        if(Checks.canCardStillBePlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                        if(!Checks.isAssistantAlreadyPlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
                         {
                             mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
+                            drawnCard = true;
                             if(Checks.checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
                             {
                                 mainController.lastTurn();
                             }
                         }
-                    }
-
-                    if (Checks.isLastPlayer(mainController.getGame()))
-                    {
-                        updateLastPlayer(GamePhase.ACTION);
+                        else
+                        {
+                            if(Checks.canCardStillBePlayed(mainController.getGame(), mainController.getCurrentPlayer(), ((DrawAssistantCard) message).getCardIndex()))
+                            {
+                                mainController.getPlanningController().drawAssistantCard(mainController.getGame(), socket.getNickname(), ((DrawAssistantCard) message).getCardIndex());
+                                drawnCard = true;
+                                if(Checks.checkLastTurnDueToAssistants(mainController.getGame(), mainController.getCurrentPlayer()))
+                                {
+                                    mainController.lastTurn();
+                                }
+                            }
+                        }
+                        if(drawnCard)
+                        {
+                            if (Checks.isLastPlayer(mainController.getGame()))
+                            {
+                                updateLastPlayer(GamePhase.ACTION);
+                            }
+                            else
+                            {
+                                mainController.determineNextPlayer();
+                            }
+                        }
+                        else
+                        {
+                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Wrong Card! It was already played!")));
+                        }
                     }
                     else
                     {
-                        mainController.determineNextPlayer();
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Wrong Card Index")));
                     }
-                }
-                else
-                {
-                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Wrong Card!")));
                 }
                 break;
         }
