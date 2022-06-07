@@ -164,7 +164,14 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                 //Updating Towers
                 GridPane towers = (GridPane)((AnchorPane)APotherSChool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Towers")).collect(Collectors.toList()).get(0);
                 int tempTowers = school.getTowerCount();
-
+                for(int i = 0; i < 2 && tempTowers > 0; i++)
+                {
+                    for(int j = 0; j < 4 && tempTowers > 0; j++)
+                    {
+                        Pane cell = getCellFromGridPane(towers, j, i);
+                        cell.setVisible(false);
+                    }
+                }
                 for(int i = 0; i < 2 && tempTowers > 0; i++)
                 {
                     for(int j = 0; j < 4 && tempTowers > 0; j++)
@@ -172,6 +179,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                         Pane cell = getCellFromGridPane(towers, j, i);
                         cell.getChildren().clear();
                         cell.getChildren().add(new ImageView(TowerColorPath));
+                        cell.setVisible(true);
                         tempTowers--;
                     }
                 }
