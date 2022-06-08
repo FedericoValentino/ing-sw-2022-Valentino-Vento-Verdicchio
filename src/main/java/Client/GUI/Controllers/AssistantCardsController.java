@@ -3,21 +3,17 @@ package Client.GUI.Controllers;
 import Client.GUI.GuiMainStarter;
 import Client.LightView.LightPlayer;
 import Client.LightView.LightTeam;
-import Client.LightView.LightView;
 import Client.Messages.ActionMessages.DrawAssistantCard;
 import Client.Messages.SerializedMessage;
 import Observer.ObserverLightView;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 import model.cards.AssistantCard;
 
 

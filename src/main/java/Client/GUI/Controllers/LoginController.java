@@ -19,13 +19,23 @@ public class LoginController extends Controller{
     @FXML public Button TryConn;
 
 
-/**It's call every time logiController.fxml is load as the new scene
- * In this method I set the initial value of the team choice that we can select**/
+    /**
+     * It's call every time LoginController.fxml is load as the new scene
+     * This method sets the initial value of the team choice that we can select
+     * **/
     public void initialize()
     {
         TryConn.setOnMouseClicked(this::onClickTryConnection);
     }
-/**This method send all the attributes for the construction of the connection with the server **/
+
+    /**This function is called when the TryConnection button is pressed.
+     * Firstly this method send all the attributes for the constructions of the connection with the server.
+     * Secondly it uses the loadNewScreen method, inherited from the abstract class Controller, to replace
+     * the current scene with the Waiting scene.
+     * The location of the new screen it's stored in the variable called path.
+     * Then it also calls the setGuiMainStarter method, inherited from the Controller class, to preserve the reference
+     * to the class guiMainStarter.
+     */
     public void onClickTryConnection(MouseEvent actionEvent)
     {
 

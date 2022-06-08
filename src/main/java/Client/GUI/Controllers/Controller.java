@@ -20,8 +20,15 @@ public abstract class Controller {
     protected static GuiMainStarter guiMainStarter;
 
 
+    /**
+     * This function take the path of the screen that must be load and try to load it into the FMLLoader object (called "loader") and then
+     * replace the current scene with the loaded one.
+     *
+     * @param path is the path that must be load by the parameter loader
+     * @return loader, the FXMLLoader object
+     */
     /*Funzione che fa il load di una nuova schermata associandoci il controller specifico*/
-    public FXMLLoader loadNewScreen(String path) throws IOException {
+    public FXMLLoader loadNewScreen(String path){
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         Scene scene= null;
@@ -35,6 +42,8 @@ public abstract class Controller {
         return loader;
     }
 
+
+    //da capire se viene usata o meno che in caso la togliamo
     protected void showError(String title, String header){
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.initStyle(StageStyle.UNDECORATED);
