@@ -37,7 +37,12 @@ public class MainBoardController extends Controller {
 
     public GridPane PlayedAssistants;
 
-
+    /**
+     * This method it's called when the mainBoardController is setted for the first time.
+     * Firstly it loads the island's fxml from the specified path into the FXMLLoader object called loader.
+     * Then it replaces the content of the islandAnchorPane with the loader's one.
+     * Lastly it creates the reference to the IslandController and it calls the setup method specified in it.
+     * **/
     public void initialSetupIsland(LightView view) throws IOException {
         String path= "/Client/GUI/Controllers/Islands.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
@@ -46,6 +51,15 @@ public class MainBoardController extends Controller {
         IslandsController contr = loader.getController();
         contr.setup(islandAnchorPane, view);
     }
+
+
+    /**
+     * This method it's called when the mainBoardController is setted for the first time.
+     * Firstly it loads the Assistant fxml from the specified path into the FXMLLoader object called loader.
+     * Then it replaces the content of the assistantCardAnchorPane with the loader's one.
+     * Lastly it creates the reference to the AssistantCardController, store the value of the current player into the
+     * local variable called player and it calls the setup method specified in it.
+     * **/
    public void initialSetupAssistantCard(ArrayList<LightTeam> teams) throws IOException {
         String path = "/Client/GUI/Controllers/Assistants.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));

@@ -1,16 +1,18 @@
 package Client.GUI.Controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-
-import java.io.IOException;
 
 public class DescriptionController extends Controller{
 
     @FXML public Button buttonBack;
 
-    public void onClickBackToIntro(ActionEvent actionEvent) throws IOException {
+    /**This function is called when the Back button is pressed and use the loadNewScreen method, inherited from the
+     * abstract class controller, to rollback from the current scene to the Intro scene fxml (specified in the variable
+     * called path).
+     * The location of the intro scene it's stored in the variable called path.
+     */
+    public void onClickBackToIntro(){
         String path= "/Client/GUI/Controllers/Intro.fxml";
         loadNewScreen(path);
     }

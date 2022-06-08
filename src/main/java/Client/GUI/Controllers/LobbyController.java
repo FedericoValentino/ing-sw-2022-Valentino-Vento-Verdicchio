@@ -29,15 +29,22 @@ public class LobbyController extends Controller{
         difficultyChoice.getItems().addAll(true,false);
         difficultyChoice.setValue(true);
     }
-    /**This method send all the attributes for the settings of the game, from only the fist player that become the host**/
-    public void onClickTryConnection(ActionEvent actionEvent) throws IOException, InterruptedException {
+
+    /**This function is called when the TryConnection button is pressed.
+     * Firstly this method create a new GameMode object and sets the number of player and the boolean of the expertGame
+     * chose by the first player.
+     * Then it sends the gameMode to the server using the combination of writeObject, flush and reset functions.
+     * Finally, it uses the changeScene method of the ClientGui class to replace the current scene with the Waiting scene.
+     * The location of the new screen it's stored in the variable called path.
+     */
+    public void onClickTryConnection() throws IOException {
         GameMode gm = new GameMode();
         gm.setMaxPlayers(playersChoice.getValue());
         gm.setExpertGame(difficultyChoice.getValue());
 
-        guiMainStarter.getClientGUI().getServerConnection().getOut().writeObject(gm);
-        guiMainStarter.getClientGUI().getServerConnection().getOut().flush();
-        guiMainStarter.getClientGUI().getServerConnection().getOut().reset();
+        GuiMainStarter.getClientGUI().getServerConnection().getOut().writeObject(gm);
+        GuiMainStarter.getClientGUI().getServerConnection().getOut().flush();
+        GuiMainStarter.getClientGUI().getServerConnection().getOut().reset();
 
         String path= "/Client/GUI/Controllers/Waiting.fxml";
         FXMLLoader load = new FXMLLoader(getClass().getResource(path));
