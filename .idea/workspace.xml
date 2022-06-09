@@ -9,12 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Starting the documentation of the GUI">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Adding lobby,description and a little part of the MainBoardController&#10; documentation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/DescriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/DescriptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/IntroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/WaitingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/GuiMainStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/GUI/ListenerGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/GUI/ListenerGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/boards/Cloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/BoardTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/boards/CloudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/boards/CloudTest.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="4f25bf79-da76-410e-8951-3d3c61226aa4" name="Changes by valef" comment="" />
@@ -224,13 +230,6 @@
       <workItem from="1654337651099" duration="9120000" />
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
-    </task>
-    <task id="LOCAL-00062" summary="Replaced creation of Charcater cards in Character Deck with a factory method">
-      <created>1653582645684</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1653582645684</updated>
     </task>
     <task id="LOCAL-00063" summary="Corrected a stupid mistake in char deck constructor, now everything works">
       <created>1653583787729</created>
@@ -568,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654718263948</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Adding lobby,description and a little part of the MainBoardController&#10; documentation">
+      <created>1654720668771</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1654720668772</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Server side teamChoice. CLI e GUI ready for change" />
     <MESSAGE value="Character Parameter Pattern" />
     <MESSAGE value="GUI Clouds" />
     <MESSAGE value="GUI Islands" />
@@ -613,7 +618,8 @@
     <MESSAGE value="tower Showing" />
     <MESSAGE value="Testing IslandPositioning" />
     <MESSAGE value="Starting the documentation of the GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting the documentation of the GUI" />
+    <MESSAGE value="Adding lobby,description and a little part of the MainBoardController&#10; documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding lobby,description and a little part of the MainBoardController&#10; documentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

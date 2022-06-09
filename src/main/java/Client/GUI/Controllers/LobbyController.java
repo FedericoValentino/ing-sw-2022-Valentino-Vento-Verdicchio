@@ -20,8 +20,8 @@ public class LobbyController extends Controller{
     @FXML public Button SendChoice;
 
 
-    /**It's call every time logiController.fxml is load as the new scene
-     * In this method I set the initial value of the player choice and the difficulty that we can select**/
+    /**This method it's call every time loginController.fxml is load as the current scene.
+     * In this method I set the initial value of the player choice and the difficulty selected by the first player.**/
     public void initialize()
     {
         playersChoice.getItems().addAll(2,3,4);
@@ -30,7 +30,7 @@ public class LobbyController extends Controller{
         difficultyChoice.setValue(true);
     }
 
-    /**This function is called when the TryConnection button is pressed.
+    /**This method is called when the TryConnection button is pressed.
      * Firstly this method create a new GameMode object and sets the number of player and the boolean of the expertGame
      * chose by the first player.
      * Then it sends the gameMode to the server using the combination of writeObject, flush and reset functions.

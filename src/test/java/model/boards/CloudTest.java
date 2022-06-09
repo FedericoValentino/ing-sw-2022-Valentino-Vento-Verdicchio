@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 import model.boards.token.Student;
 import model.boards.token.Col;
 
-public class CloudTest {
+public class  CloudTest {
     CurrentGameState game  = new CurrentGameState(2, false);
     Cloud c= new Cloud(game,1);
     Cloud c2= new Cloud(game, 2);
@@ -28,6 +28,11 @@ public class CloudTest {
         Cloud c1=new Cloud(stud1, false, 0);
         assertEquals(c1.getStudent(1),st2);
     }
+
+
+    /**
+     * This method test the place token functionality.
+     */
     @Test
     public void testEmptyANDPlaceToken()
     {
@@ -45,7 +50,7 @@ public class CloudTest {
 
         c.getStudent(1);
         assertTrue(c.getStudent(1).equals(st2));
-        //now i want to verify the try catch
+        //now i want to verify the try catch into the getStudent
         assertNull(c.getStudent(70));
     }
 

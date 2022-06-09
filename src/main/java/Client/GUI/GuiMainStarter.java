@@ -20,7 +20,9 @@ public class GuiMainStarter extends Application {
         launch();
     }
 
-    /**It's a method to get my reference to CLientGUI, otherwise I'll lose it**/
+    /**It's a method to get my reference to CLientGUI, otherwise I'll lose it and I wont't be able to replace it with the
+     * next one.
+     * **/
     public static void setClientGUI(ClientGUI clientGUI)
     {
         GuiMainStarter.clientGUI=clientGUI;
@@ -29,18 +31,14 @@ public class GuiMainStarter extends Application {
     {
         return clientGUI;
     }
-    public ExecutorService getExecutor()
-    {
-        return executor;
-    }
     public static Stage getMainStage()
     {
         return mainStage;
     }
 
 
-    /** Start is the method that run when it's called GuiMainStarter.launch() in main
-     * This method set all the initial stage and load the intro.fxml file that's the first scene we use
+    /** This method it's called by launch(); in GuiMainStarter.main().
+     * In particular sets all the initial stage and load the intro.fxml file that's the first scene to use.
      * **/
     @Override
     public void start(Stage stage) throws Exception {

@@ -20,16 +20,16 @@ public class LoginController extends Controller{
 
 
     /**
-     * It's call every time LoginController.fxml is load as the new scene
-     * This method sets the initial value of the team choice that we can select
+     * This method it's call every time LoginController.fxml is load as the current scene.
+     * This method sets the initial value of the team choice selected by the first player.
      * **/
     public void initialize()
     {
         TryConn.setOnMouseClicked(this::onClickTryConnection);
     }
 
-    /**This function is called when the TryConnection button is pressed.
-     * Firstly this method send all the attributes for the constructions of the connection with the server.
+    /**This method is called when the TryConnection button is pressed.
+     * Firstly send all the attributes for the constructions of the connection with the server.
      * Secondly it uses the loadNewScreen method, inherited from the abstract class Controller, to replace
      * the current scene with the Waiting scene.
      * The location of the new screen it's stored in the variable called path.
