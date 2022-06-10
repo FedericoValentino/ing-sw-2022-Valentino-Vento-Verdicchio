@@ -1,6 +1,6 @@
-import Client.CLI.ClientCLI;
-import Client.GUI.ClientGUI;
-import Client.ClientView;
+import it.polimi.ingsw.Client.CLI.ClientCLI;
+import it.polimi.ingsw.Client.GUI.ClientGUI;
+import it.polimi.ingsw.Client.ClientView;
 
 import java.io.IOException;
 import java.util.Scanner;
