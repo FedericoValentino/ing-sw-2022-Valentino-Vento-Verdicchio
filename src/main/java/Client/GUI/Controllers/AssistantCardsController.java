@@ -23,15 +23,13 @@ import java.util.stream.Collectors;
 public class AssistantCardsController extends Controller implements ObserverLightView
 
 {
-    @FXML
-    public AnchorPane AssistantsAnchorPane;
-    public HBox Box;
-    public ArrayList<LightTeam> teams;
-    public ArrayList<LightPlayer> players = new ArrayList<>();
-    public ArrayList<AssistantCard> played = new ArrayList<>();
-    public String currentPlayer;
-
-    public Button LastPlayedButton;
+    @FXML private AnchorPane AssistantsAnchorPane;
+    @FXML public Button LastPlayedButton;
+    //private HBox Box;
+    private ArrayList<LightTeam> teams;
+    private ArrayList<LightPlayer> players = new ArrayList<>();
+    private ArrayList<AssistantCard> played = new ArrayList<>();
+    private String currentPlayer;
 
     private MainBoardController mainController;
 
@@ -96,9 +94,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                     cardImage.setFitWidth(86);
                     cardPane.getChildren().add(cardImage);
                     cards.getChildren().add(cardPane);
-                    cardPane.setOnMouseClicked(MouseEvent -> {
-                        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new DrawAssistantCard(sugmaindex)));
-                    });
+                    cardPane.setOnMouseClicked(MouseEvent -> GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new DrawAssistantCard(sugmaindex))));
                     cardIndex++;
                 }
             }

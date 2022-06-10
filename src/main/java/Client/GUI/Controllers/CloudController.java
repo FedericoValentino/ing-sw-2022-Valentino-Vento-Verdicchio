@@ -8,6 +8,7 @@ import Client.Messages.ActionMessages.DrawFromPouch;
 import Client.Messages.SerializedMessage;
 import Observer.ObserverLightView;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -21,14 +22,13 @@ import model.boards.token.Student;
 
 public class CloudController extends Controller implements ObserverLightView
 {
-    LightTurnState turn;
-    private int playerNumber;
+    private LightTurnState turn;
 
-    public GridPane clouds;
-    public GridPane cloud0;
-    public GridPane cloud1;
-    public GridPane cloud2;
-    public GridPane cloud3;
+    @FXML private GridPane clouds;
+    @FXML private GridPane cloud0;
+    @FXML private GridPane cloud1;
+    @FXML private GridPane cloud2;
+    @FXML private GridPane cloud3;
 
 
     public void CloudSelection(MouseEvent event)
@@ -47,8 +47,7 @@ public class CloudController extends Controller implements ObserverLightView
     public void setup(LightCloud[] cloudsArray, LightTurnState turnState)
     {
         turn = turnState;
-        playerNumber = cloudsArray.length;
-        int temp = playerNumber;
+        int temp = cloudsArray.length;
         for(int i = 0; i < 2 && temp > 0; i++)
         {
             for(int j = 0; j < 2 && temp > 0; j++)

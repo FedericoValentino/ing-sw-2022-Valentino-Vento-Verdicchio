@@ -1,11 +1,6 @@
 package Client.GUI.Controllers;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-
 public class DescriptionController extends Controller{
-
-    @FXML public Button buttonBack;
 
     /**This function is called when the Back button is pressed and use the loadNewScreen method, inherited from the
      * abstract class controller, to rollback from the current scene to the Intro scene fxml (specified in the variable

@@ -22,17 +22,17 @@ import java.util.stream.Collectors;
 
 
 public class MainBoardController extends Controller {
-    @FXML public AnchorPane mainAnchorPane;
+    @FXML private AnchorPane mainAnchorPane;
 
-    @FXML public AnchorPane otherSchoolAnchorPane;
-    @FXML public AnchorPane characterAnchorPane;
+    @FXML private AnchorPane otherSchoolAnchorPane;
+    @FXML private AnchorPane characterAnchorPane;
 
-    @FXML public AnchorPane islandAnchorPane;
-    @FXML public AnchorPane cloudsAnchorPane;
-    @FXML public AnchorPane assistantCardAnchorPane;
+    @FXML private AnchorPane islandAnchorPane;
+    //@FXML private AnchorPane cloudsAnchorPane;
+    @FXML private AnchorPane assistantCardAnchorPane;
 
-    @FXML public AnchorPane buttonAreaAnchorPane;
-    @FXML public AnchorPane mineSchoolAnchorPane;
+    @FXML private AnchorPane buttonAreaAnchorPane;
+    @FXML private AnchorPane mineSchoolAnchorPane;
 
 
     public GridPane PlayedAssistants;

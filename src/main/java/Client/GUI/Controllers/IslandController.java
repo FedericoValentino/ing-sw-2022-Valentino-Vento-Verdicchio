@@ -3,7 +3,6 @@ package Client.GUI.Controllers;
 import Client.GUI.GuiMainStarter;
 import Client.LightView.LightIsland;
 import Client.LightView.LightMotherNature;
-import Client.LightView.LightSchool;
 import Client.Messages.ActionMessages.MoveMN;
 import Client.Messages.SerializedMessage;
 import javafx.fxml.FXML;

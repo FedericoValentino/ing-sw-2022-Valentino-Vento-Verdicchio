@@ -3,10 +3,7 @@ package Client.GUI.Controllers;
 import Client.GUI.GuiMainStarter;
 import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.WizardChoice;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
@@ -17,28 +14,21 @@ import java.util.ArrayList;
 
 public class WizardController extends Controller{
 
-    @FXML public RadioButton rb1;
-    @FXML public RadioButton rb2;
-    @FXML public RadioButton rb3;
-    @FXML public RadioButton rb4;
-    @FXML public Button sendChoice;
+    @FXML private RadioButton rb1;
+    @FXML private RadioButton rb2;
+    @FXML private RadioButton rb3;
+    @FXML private RadioButton rb4;
 
-    @FXML public Text Druid;
-    @FXML public Text Witch;
-    @FXML public Text Lord;
-    @FXML public Text Sensei;
+    @FXML private Pane druid;
+    @FXML private Pane witch;
+    @FXML private Pane lord;
+    @FXML private Pane sensei;
 
-    @FXML public Pane druid;
-    @FXML public Pane witch;
-    @FXML public Pane lord;
-    @FXML public Pane sensei;
+    @FXML private Text alreadyChoose1;
+    @FXML private Text alreadyChoose2;
+    @FXML private Text alreadyChoose3;
+    @FXML private Text alreadyChoose4;
 
-    @FXML public Text alreadyChoose1;
-    @FXML public Text alreadyChoose2;
-    @FXML public Text alreadyChoose3;
-    @FXML public Text alreadyChoose4;
-
-    //private ArrayList<Wizard> available=new ArrayList<Wizard>();
     private ArrayList<Pane> paneWizard=new ArrayList<Pane>();
     private ArrayList<Text> textAvaiable=new ArrayList<>();
     ToggleGroup group = new ToggleGroup();
@@ -55,26 +45,26 @@ public class WizardController extends Controller{
         rb4.setToggleGroup(group);
     }
 
-    public void onClickRb1(ActionEvent actionEvent) {
+    public void onClickRb1() {
         rb1.setSelected(true);
         rb2.setSelected(false);
         rb3.setSelected(false);
         rb4.setSelected(false);
         System.out.println(group.getSelectedToggle());
     }
-    public void onClickRb2(ActionEvent actionEvent) {
+    public void onClickRb2() {
         rb1.setSelected(false);
         rb2.setSelected(true);
         rb3.setSelected(false);
         rb4.setSelected(false);
     }
-    public void onClickRb3(ActionEvent actionEvent) {
+    public void onClickRb3() {
         rb1.setSelected(false);
         rb2.setSelected(false);
         rb3.setSelected(true);
         rb4.setSelected(false);
     }
-    public void onClickRb4(ActionEvent actionEvent) {
+    public void onClickRb4() {
         rb1.setSelected(false);
         rb2.setSelected(false);
         rb3.setSelected(false);
@@ -82,13 +72,13 @@ public class WizardController extends Controller{
     }
 
 
-    public void onClickSendChoice(ActionEvent actionEvent) throws InterruptedException {
+    public void onClickSendChoice() {
         System.out.println("Entrato in onclickSendChoice del wizard");
         Wizard wizardTemp=null;
 
         if(group.getSelectedToggle()==rb1){wizardTemp=Wizard.DRUID;}
         else if(group.getSelectedToggle()==rb2)
-        {wizardTemp=Wizard.WITCH;;}
+        {wizardTemp=Wizard.WITCH;}
         else if(group.getSelectedToggle()==rb3)
         {wizardTemp=Wizard.LORD;}
         else if(group.getSelectedToggle()==rb4)
@@ -102,9 +92,6 @@ public class WizardController extends Controller{
     /**In this method I set the opacity as 0.3 and then if a wizard is avaiable i set it to 1**/
     public void updateOpacity(ArrayList<Wizard> available)
     {
-        //System.out.println("updateOpacity "+available.get(0));
-
-
         paneWizard.add(druid);
         paneWizard.add(sensei);
         paneWizard.add(lord);
@@ -115,15 +102,19 @@ public class WizardController extends Controller{
             p.setOpacity(0.3);
         }
 
-        int pos = 0;
-        //cerco se ci sono maghi avaiable li metto a opacità 1
 
-        textAvaiable.add(alreadyChoose1);textAvaiable.get(0).setVisible(true);
-        textAvaiable.add(alreadyChoose2);textAvaiable.get(1).setVisible(true);
-        textAvaiable.add(alreadyChoose3);textAvaiable.get(2).setVisible(true);
-        textAvaiable.add(alreadyChoose4);textAvaiable.get(3).setVisible(true);
-        /**vado a calcolare quale mago non è già stato scelto e vado a togliere il print di mago già scelto e setto l'opacità
-         * delle carte a 1**/
+        //cerco se ci sono maghi avaiable li metto a opacità 1
+        textAvaiable.add(alreadyChoose1);
+        textAvaiable.get(0).setVisible(true);
+        textAvaiable.add(alreadyChoose2);
+        textAvaiable.get(1).setVisible(true);
+        textAvaiable.add(alreadyChoose3);
+        textAvaiable.get(2).setVisible(true);
+        textAvaiable.add(alreadyChoose4);
+        textAvaiable.get(3).setVisible(true);
+
+        //vado a calcolare quale mago non è già stato scelto e vado a togliere il print di mago già scelto e setto l'opacità
+        // delle carte a 1
         for(Wizard w : available)
         {
 

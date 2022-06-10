@@ -1,23 +1,17 @@
 package Client.GUI.Controllers;
 
-import Client.GUI.ClientGUI;
 import Client.GUI.GuiMainStarter;
 import Client.Messages.SetupMessages.GameMode;
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-
 import java.io.IOException;
 
 public class LobbyController extends Controller{
 
 
-    @FXML public ChoiceBox <Integer>playersChoice;
-    @FXML public ChoiceBox <Boolean>difficultyChoice;
-    @FXML public Button SendChoice;
+    @FXML private ChoiceBox <Integer>playersChoice;
+    @FXML private ChoiceBox <Boolean>difficultyChoice;
 
 
     /**This method it's call every time loginController.fxml is load as the current scene.

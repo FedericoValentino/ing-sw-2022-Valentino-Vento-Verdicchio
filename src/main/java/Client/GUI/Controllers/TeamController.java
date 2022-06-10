@@ -1,7 +1,6 @@
 package Client.GUI.Controllers;
 
 import Client.GUI.GuiMainStarter;
-import Client.LightView.LightSchool;
 import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.TeamChoice;
 import javafx.fxml.FXML;
@@ -10,12 +9,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import model.boards.token.ColTow;
 
-import java.awt.event.MouseEvent;
 
 
 public class TeamController extends Controller
 {
-    @FXML public HBox AvailableTeams;
+    @FXML private HBox AvailableTeams;
 
     public String getTeamColorPath(int i)
     {
@@ -48,9 +46,7 @@ public class TeamController extends Controller
                 teamColor.setFitWidth(135);
                 Team.getChildren().clear();
                 Team.getChildren().add(teamColor);
-                Team.setOnMouseClicked((MouseEvent) -> {
-                    GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new TeamChoice(finalI)));
-                });
+                Team.setOnMouseClicked((MouseEvent) -> GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new TeamChoice(finalI))));
                 AvailableTeams.getChildren().add(Team);
             }
         }

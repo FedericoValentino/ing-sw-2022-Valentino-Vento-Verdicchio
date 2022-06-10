@@ -28,7 +28,6 @@ public class MineSchoolController implements ObserverLightView
     @FXML public Button toIsland;
 
     private AnchorPane MySchool;
-    private String PlayerName;
     private int studentEntrancePos;
 
     public void entranceClick(MouseEvent event)
@@ -61,7 +60,6 @@ public class MineSchoolController implements ObserverLightView
     public void setup(ArrayList<LightTeam> Teams,String PlayerName, AnchorPane School)
     {
         this.MySchool = School;
-        this.PlayerName = PlayerName;
         for(LightTeam t: Teams)
         {
             for(LightPlayer p : t.getPlayers())

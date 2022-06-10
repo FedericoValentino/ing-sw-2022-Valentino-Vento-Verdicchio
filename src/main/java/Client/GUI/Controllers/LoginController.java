@@ -13,10 +13,10 @@ import java.io.IOException;
 
 public class LoginController extends Controller{
 
-    @FXML public TextField nickname;
-    @FXML public TextField IP;
-    @FXML public TextField Port;
-    @FXML public Button TryConn;
+    @FXML private TextField nickname;
+    @FXML private TextField IP;
+    //@FXML private TextField Port;
+    @FXML private Button TryConn;
 
 
     /**

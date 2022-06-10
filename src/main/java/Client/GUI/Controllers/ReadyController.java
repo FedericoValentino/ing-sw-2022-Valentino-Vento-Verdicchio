@@ -3,18 +3,14 @@ package Client.GUI.Controllers;
 import Client.GUI.GuiMainStarter;
 import Client.Messages.SerializedMessage;
 import Client.Messages.SetupMessages.ReadyStatus;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 public class ReadyController extends Controller{
-    @FXML public Pane tickPane;
-    @FXML public ImageView imageTick;
+    @FXML private Pane tickPane;
 
-    public void onClickReadyButton(ActionEvent actionEvent)
+    public void onClickReadyButton()
     {
         String path="Client/GUI/Images/tick.png";
         ImageView nI=new ImageView(path);
