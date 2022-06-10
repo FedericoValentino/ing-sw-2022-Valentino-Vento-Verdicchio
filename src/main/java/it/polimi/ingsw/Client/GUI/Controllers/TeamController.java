@@ -1,13 +1,13 @@
-package Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers;
 
-import Client.GUI.GuiMainStarter;
-import Client.Messages.SerializedMessage;
-import Client.Messages.SetupMessages.TeamChoice;
+import it.polimi.ingsw.Client.GUI.GuiMainStarter;
+import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Client.Messages.SetupMessages.TeamChoice;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.ColTow;
 
 
 

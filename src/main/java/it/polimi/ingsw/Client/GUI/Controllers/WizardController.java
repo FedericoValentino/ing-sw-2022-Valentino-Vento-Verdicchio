@@ -1,14 +1,14 @@
-package Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers;
 
-import Client.GUI.GuiMainStarter;
-import Client.Messages.SerializedMessage;
-import Client.Messages.SetupMessages.WizardChoice;
+import it.polimi.ingsw.Client.GUI.GuiMainStarter;
+import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Client.Messages.SetupMessages.WizardChoice;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import model.boards.token.Wizard;
+import it.polimi.ingsw.model.boards.token.Wizard;
 
 import java.util.ArrayList;
 

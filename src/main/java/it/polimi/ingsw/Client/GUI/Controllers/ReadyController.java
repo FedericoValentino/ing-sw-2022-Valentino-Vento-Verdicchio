@@ -1,8 +1,8 @@
-package Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers;
 
-import Client.GUI.GuiMainStarter;
-import Client.Messages.SerializedMessage;
-import Client.Messages.SetupMessages.ReadyStatus;
+import it.polimi.ingsw.Client.GUI.GuiMainStarter;
+import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Client.Messages.SetupMessages.ReadyStatus;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;

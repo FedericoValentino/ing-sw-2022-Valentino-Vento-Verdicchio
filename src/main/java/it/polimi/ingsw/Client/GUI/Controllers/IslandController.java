@@ -1,18 +1,19 @@
-package Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers;
 
-import Client.GUI.GuiMainStarter;
-import Client.LightView.LightIsland;
-import Client.LightView.LightMotherNature;
-import Client.Messages.ActionMessages.MoveMN;
-import Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Client.GUI.ClientGUI;
+import it.polimi.ingsw.Client.GUI.GuiMainStarter;
+import it.polimi.ingsw.Client.LightView.LightIsland;
+import it.polimi.ingsw.Client.LightView.LightMotherNature;
+import it.polimi.ingsw.Client.Messages.ActionMessages.MoveMN;
+import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import model.boards.token.Col;
-import model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.boards.token.ColTow;
 
 
 public class IslandController extends Controller{

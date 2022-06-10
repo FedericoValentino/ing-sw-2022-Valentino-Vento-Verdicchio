@@ -1,7 +1,7 @@
-package Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers;
 
 
-import Client.GUI.GuiMainStarter;
+import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
