@@ -1,4 +1,4 @@
-import Server.Server;
+import it.polimi.ingsw.Server.Server;
 
 import java.io.IOException;
 

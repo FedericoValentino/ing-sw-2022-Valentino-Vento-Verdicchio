@@ -1,5 +1,5 @@
-import Client.CLI.ClientCLI;
-import Client.ClientView;
+import it.polimi.ingsw.Client.CLI.ClientCLI;
+import it.polimi.ingsw.Client.ClientView;
 
 import java.io.IOException;
 
