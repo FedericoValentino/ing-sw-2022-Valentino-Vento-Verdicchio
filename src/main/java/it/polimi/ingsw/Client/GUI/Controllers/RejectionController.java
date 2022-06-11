@@ -3,6 +3,7 @@ package it.polimi.ingsw.Client.GUI.Controllers;
 
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -10,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 
 public class RejectionController extends Controller
 {
-    public Button BackToMenu;
+    @FXML private Button backToMenu;
 
 
     public void OnClickMenu(MouseEvent event)
@@ -25,6 +26,6 @@ public class RejectionController extends Controller
 
     public void setup()
     {
-        BackToMenu.setOnMouseClicked(this::OnClickMenu);
+        backToMenu.setOnMouseClicked(this::OnClickMenu);
     }
 }

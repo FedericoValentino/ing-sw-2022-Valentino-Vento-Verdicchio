@@ -23,8 +23,8 @@ import java.util.stream.Collectors;
 public class AssistantCardsController extends Controller implements ObserverLightView
 
 {
-    @FXML private AnchorPane AssistantsAnchorPane;
-    @FXML public Button LastPlayedButton;
+    @FXML private AnchorPane assistantsAnchorPane;
+    @FXML private Button lastPlayedButton;
     //private HBox Box;
     private ArrayList<LightTeam> teams;
     private ArrayList<LightPlayer> players = new ArrayList<>();
@@ -36,7 +36,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
 
     private void assistantsOnClick(MouseEvent event)
     {
-        if(LastPlayedButton.getText().equals("Active\nAssistants"))
+        if(lastPlayedButton.getText().equals("Active\nAssistants"))
         {
             for (int i = 0; i < teams.size(); i++)
                 for (int j = 0; j < teams.get(i).getPlayers().size(); j++) {
@@ -46,17 +46,17 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                         mainController.showPlayedAssistants(path, j, i, player, false);
                     }
                 }
-            LastPlayedButton.setText("Hide");
+            lastPlayedButton.setText("Hide");
         }
         else {
             mainController.showPlayedAssistants("", -1, -1, null, true);
-            LastPlayedButton.setText("Active\nAssistants");
+            lastPlayedButton.setText("Active\nAssistants");
         }
     }
 
     public void setup(String currentPlayer, ArrayList<LightTeam> teams, AnchorPane AssistantsPane, MainBoardController controller) {
         this.teams = teams;
-        this.AssistantsAnchorPane = AssistantsPane;
+        this.assistantsAnchorPane = AssistantsPane;
         this.currentPlayer = currentPlayer;
         this.mainController = controller;
         for (LightTeam team : teams) {
@@ -81,7 +81,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
 
             if(player.getNome().equals(currentPlayer))
             {
-                HBox cards = (HBox) ((AnchorPane) AssistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Box")).collect(Collectors.toList()).get(0);
+                HBox cards = (HBox) ((AnchorPane) assistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Box")).collect(Collectors.toList()).get(0);
                 cards.getChildren().clear();
                 int cardIndex = 0;
                 for(AssistantCard card: player.getAssistantDeck().getDeck())

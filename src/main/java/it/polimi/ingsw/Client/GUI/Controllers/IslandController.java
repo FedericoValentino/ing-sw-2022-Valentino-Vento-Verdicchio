@@ -18,16 +18,16 @@ import it.polimi.ingsw.model.boards.token.ColTow;
 
 public class IslandController extends Controller{
 
-    @FXML public Text blueStudents;
-    @FXML public Text redStudents;
-    @FXML public Text pinkStudents;
-    @FXML public Text yellowStudents;
-    @FXML public Text greenStudents;
-    @FXML public Text towerNumber;
-    @FXML public ImageView motherNature;
-    @FXML public ImageView noEntry;
-    @FXML public AnchorPane islandPane;
-    @FXML public Pane ownerShip;
+    @FXML private Text blueStudents;
+    @FXML private Text redStudents;
+    @FXML private Text pinkStudents;
+    @FXML private Text yellowStudents;
+    @FXML private Text greenStudents;
+    @FXML private Text towerNumber;
+    @FXML private ImageView motherNature;
+    @FXML private ImageView noEntry;
+    @FXML private AnchorPane islandPane;
+    @FXML private Pane ownerShip;
 
     private int islandID;
     private LightMotherNature MN;

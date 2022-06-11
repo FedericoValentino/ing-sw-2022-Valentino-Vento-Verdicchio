@@ -5,6 +5,7 @@ import it.polimi.ingsw.Observer.ObserverLightView;
 import it.polimi.ingsw.Client.LightView.LightIslands;
 import it.polimi.ingsw.Client.LightView.LightView;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
@@ -13,8 +14,8 @@ import java.util.ArrayList;
 
 public class IslandsController extends Controller implements ObserverLightView {
 
-    public AnchorPane cloudsAnchorPane;
-    public AnchorPane mainIslandBoard;
+    @FXML private AnchorPane cloudsAnchorPane;
+    @FXML private AnchorPane mainIslandBoard;
 
     public ArrayList<AnchorPane> islands = new ArrayList<>();
     public ArrayList<IslandController> islandControllers = new ArrayList<>();

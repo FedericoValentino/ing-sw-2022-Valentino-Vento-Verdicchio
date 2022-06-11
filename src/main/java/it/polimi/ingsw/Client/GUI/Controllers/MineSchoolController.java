@@ -22,10 +22,10 @@ import java.util.stream.Collectors;
 
 public class MineSchoolController implements ObserverLightView
 {
-    @FXML public Pane studentChoice;
-    @FXML public ChoiceBox islands;
-    @FXML public Button toDining;
-    @FXML public Button toIsland;
+    @FXML private Pane studentChoice;
+    @FXML private ChoiceBox islands;
+    @FXML private Button toDining;
+    @FXML private Button toIsland;
 
     private AnchorPane MySchool;
     private int studentEntrancePos;

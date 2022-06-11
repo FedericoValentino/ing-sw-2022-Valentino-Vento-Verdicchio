@@ -17,9 +17,9 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class OtherSchoolController extends Controller implements ObserverLightView {
-    public AnchorPane APotherSChool;
-    public ArrayList<LightTeam> teams;
-    public String lookedPlayer;
+    private AnchorPane APotherSChool;
+    private ArrayList<LightTeam> teams;
+    private String lookedPlayer;
 
 
 
@@ -29,23 +29,23 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
         update(getSchoolByName(lookedPlayer));
     }
 
-    public void setup(ArrayList<LightTeam> Teams, AnchorPane OtherSchool)
+    public void setup(ArrayList<LightTeam> teams, AnchorPane otherSchool)
     {
-        this.APotherSChool = OtherSchool;
-        this.teams = Teams;
-        for(LightTeam t: teams)
+        this.APotherSChool = otherSchool;
+        this.teams = teams;
+        for(LightTeam t: this.teams)
         {
             for(LightPlayer p: t.getPlayers())
             {
                 p.getSchool().addObserverLight(this);
             }
         }
-        for(Node button : ((HBox)OtherSchool.getChildren().get(1)).getChildren())
+        for(Node button : ((HBox)otherSchool.getChildren().get(1)).getChildren())
         {
             Button b = (Button) button;
             b.setOnAction(this::onClick);
         }
-        this.lookedPlayer = ((Button)((HBox)OtherSchool.getChildren().get(1)).getChildren().get(0)).getText();
+        this.lookedPlayer = ((Button)((HBox)otherSchool.getChildren().get(1)).getChildren().get(0)).getText();
         update(getSchoolByName(lookedPlayer));
     }
 

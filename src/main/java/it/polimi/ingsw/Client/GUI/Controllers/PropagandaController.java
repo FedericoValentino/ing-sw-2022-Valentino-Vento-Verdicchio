@@ -8,6 +8,7 @@ import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.ActionMessages.EndTurn;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Observer.ObserverLightView;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -17,19 +18,19 @@ import java.util.stream.Collectors;
 public class PropagandaController extends Controller implements ObserverLightView
 {
 
-    public AnchorPane Propaganda;
-    public Button EndTurn;
-    public Button Exit;
-    public Button PlayersInfo;
+    @FXML private AnchorPane propaganda;
+    @FXML private Button endTurn;
+    @FXML private Button exit;
+    @FXML private Button playersInfo;
 
     private InfoDispenser infoGenerator;
     private LightView view;
 
     public void setup(InfoDispenser infoDispenser, LightView view)
     {
-        EndTurn.setOnMouseClicked(this:: endTurnOnClick);
-        Exit.setOnMouseClicked(this:: exitOnClick);
-        PlayersInfo.setOnMouseClicked(this:: infosOnClick);
+        endTurn.setOnMouseClicked(this:: endTurnOnClick);
+        exit.setOnMouseClicked(this:: exitOnClick);
+        playersInfo.setOnMouseClicked(this:: infosOnClick);
 
         this.infoGenerator = infoDispenser;
         this.view = view;
@@ -41,7 +42,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
 
     public void hintGeneration()
     {
-        Text hint = (Text) (Propaganda.getChildren().stream().filter(node -> node.getId().equals("Hints")).collect(Collectors.toList()).get(0));
+        Text hint = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("Hints")).collect(Collectors.toList()).get(0));
         hint.setText("");
         hint.setText(infoGenerator.informationCreator(view.getCurrentTurnState(), view.getCurrentTeams()).getInfoMessage());
     }
@@ -65,12 +66,12 @@ public class PropagandaController extends Controller implements ObserverLightVie
         LightTurnState state = (LightTurnState) o;
 
         hintGeneration();
-        Text turn = (Text) (Propaganda.getChildren().stream().filter(node -> node.getId().equals("Turn")).collect(Collectors.toList()).get(0));
+        Text turn = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("Turn")).collect(Collectors.toList()).get(0));
         turn.setText("");
         turn.setText("It's " + state.getCurrentPlayer() + "'s turn");
         LightPlayer currentPlayer = view.findPlayerByName(view.getCurrentTeams(), GuiMainStarter.getClientGUI().getServerConnection().getNickname());
 
-        Text coins = (Text) (Propaganda.getChildren().stream().filter(node -> node.getId().equals("Coins")).collect(Collectors.toList()).get(0));
+        Text coins = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("Coins")).collect(Collectors.toList()).get(0));
         coins.setText("");
         coins.setText("Your coins: " + currentPlayer.getCoinAmount());
     }

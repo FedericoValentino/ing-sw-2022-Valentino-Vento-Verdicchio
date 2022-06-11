@@ -24,7 +24,7 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="BackToMenu" layoutX="277.0" layoutY="163.0" mnemonicParsing="false" text="Menù" />
+            <Button fx:id="backToMenu" layoutX="277.0" layoutY="163.0" mnemonicParsing="false" text="Menù" />
          </children>
       </Pane>
    </children>

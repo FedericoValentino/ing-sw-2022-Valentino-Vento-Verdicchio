@@ -5,22 +5,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Propaganda" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="275.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.PropagandaController">
+<AnchorPane fx:id="propaganda" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="275.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.PropagandaController">
    <children>
-      <Button fx:id="EndTurn" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="End Turn" />
-      <Button fx:id="Exit" layoutX="190.0" layoutY="147.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Exit" />
-      <Button fx:id="PlayersInfo" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Players" />
-      <Text fx:id="Hints" layoutX="12.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info" wrappingWidth="245.13671875">
+      <Button fx:id="endTurn" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="End Turn" />
+      <Button fx:id="exit" layoutX="190.0" layoutY="147.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Exit" />
+      <Button fx:id="playersInfo" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Players" />
+      <Text fx:id="hints" layoutX="12.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info" wrappingWidth="245.13671875">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fx:id="Coins" layoutX="12.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coins">
+      <Text fx:id="coins" layoutX="12.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coins">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fx:id="Turn" layoutX="12.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player's turn">
+      <Text fx:id="turn" layoutX="12.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player's turn">
          <font>
             <Font size="14.0" />
          </font>

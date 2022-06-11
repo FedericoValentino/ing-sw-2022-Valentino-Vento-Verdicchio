@@ -27,23 +27,23 @@ import java.util.stream.Collectors;
 
 public class CharacterCardsController extends Controller implements ObserverLightView
 {
-    public AnchorPane CharacterPane;
-    public LightCharDeck characterDeck;
-    public LightActiveDeck activeCharDeck;
+    private AnchorPane characterPane;
+    private LightCharDeck characterDeck;
+    private LightActiveDeck activeCharDeck;
 
-    public ArrayList<CharacterCard> sceneCards = new ArrayList<>();
-    public int currentlyShowedCard = 2;
+    private ArrayList<CharacterCard> sceneCards = new ArrayList<>();
+    private int currentlyShowedCard = 2;
 
-    public MainBoardController mainController;
+    private MainBoardController mainController;
 
-    @FXML public StackPane mainPane;
-    @FXML public Button PreviousButton;
-    @FXML public Button NextButton;
-    @FXML public Button ActivateButton;
-    @FXML public Button PlayEffectButton;
+    @FXML private StackPane mainPane;
+    @FXML private Button previousButton;
+    @FXML private Button nextButton;
+    @FXML private Button activateButton;
+    @FXML private Button playEffectButton;
 
     public void setup(AnchorPane characterPane, LightCharDeck inactiveCharacters, LightActiveDeck activeCharacters, MainBoardController controller) throws IOException {
-        this.CharacterPane = characterPane;
+        this.characterPane = characterPane;
         this.characterDeck = inactiveCharacters;
         this.activeCharDeck = activeCharacters;
         this.mainController = controller;
@@ -52,13 +52,13 @@ public class CharacterCardsController extends Controller implements ObserverLigh
 
         activeCharDeck.addObserverLight(this);
 
-        PreviousButton.setOnMouseClicked(this:: previousOnClick);
+        previousButton.setOnMouseClicked(this:: previousOnClick);
 
-        NextButton.setOnMouseClicked(this:: nextOnClick);
+        nextButton.setOnMouseClicked(this:: nextOnClick);
 
-        ActivateButton.setOnMouseClicked(this:: activateOnClick);
+        activateButton.setOnMouseClicked(this:: activateOnClick);
 
-        PlayEffectButton.setOnMouseClicked(this:: playOnClick);
+        playEffectButton.setOnMouseClicked(this:: playOnClick);
 
         for(int i=0; i<3; i++)
         {

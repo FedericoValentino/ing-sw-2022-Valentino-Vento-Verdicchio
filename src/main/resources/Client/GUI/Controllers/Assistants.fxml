@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="AssistantsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.AssistantCardsController">
+<AnchorPane fx:id="assistantsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.AssistantCardsController">
    <children>
-      <HBox fx:id="Box" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="862.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="0.0" />
-      <Button fx:id="LastPlayedButton" alignment="BASELINE_CENTER" layoutX="871.0" layoutY="13.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="71.0" text="Active&#10;Assistants&#10;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+      <HBox fx:id="box" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="862.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="lastPlayedButton" alignment="BASELINE_CENTER" layoutX="871.0" layoutY="13.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="71.0" text="Active&#10;Assistants&#10;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="Constantia" size="12.0" />
          </font>
