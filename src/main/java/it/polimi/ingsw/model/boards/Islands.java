@@ -49,37 +49,21 @@ public class Islands extends Board {
         nextIsland = islands.get(i+1);
         previousIsland = islands.get(i-1);
       }
-      //Triple unification
-      if(currentIsland.getOwnership() == nextIsland.getOwnership() && currentIsland.getOwnership() == previousIsland.getOwnership()
-              && (currentIsland.motherNature || nextIsland.motherNature || previousIsland.motherNature)
+      if(currentIsland.getOwnership() == nextIsland.getOwnership() && (currentIsland.motherNature || nextIsland.motherNature)
               && currentIsland.getOwnership() != null)
       {
         unifyIslands(currentIsland, nextIsland);
-        unifyIslands(currentIsland, previousIsland);
         islands.set(i, currentIsland);
         islands.remove(nextIsland);
-        islands.remove(previousIsland);
         i = 0;
       }
-      //Double unification, applicable only if Current Island is already an Island Group
-      else if(currentIsland.getGroup())
+      else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || previousIsland.motherNature)
+              && currentIsland.getOwnership() != null)
       {
-        if(currentIsland.getOwnership() == nextIsland.getOwnership() && (currentIsland.motherNature || nextIsland.motherNature)
-                && currentIsland.getOwnership() != null)
-        {
-          unifyIslands(currentIsland, nextIsland);
-          islands.set(i, currentIsland);
-          islands.remove(nextIsland);
-          i = 0;
-        }
-        else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || previousIsland.motherNature)
-                && currentIsland.getOwnership() != null)
-        {
-          unifyIslands(currentIsland, previousIsland);
-          islands.set(i, currentIsland);
-          islands.remove(previousIsland);
-          i = 0;
-        }
+        unifyIslands(currentIsland, previousIsland);
+        islands.set(i, currentIsland);
+        islands.remove(previousIsland);
+        i = 0;
       }
     }
     resetId();
