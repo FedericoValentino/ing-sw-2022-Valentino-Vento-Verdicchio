@@ -142,7 +142,7 @@ public class InputParser
                 else if(words.length == 2)
                 {
                     CharacterActivationParser character =
-                            new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getCharacterName(), Integer.parseInt(words[1]));
+                            new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getName(), Integer.parseInt(words[1]));
                     socket.sendMessage(new SerializedMessage(character.buildMessage()));
                 }
                 else if(words.length == 3)
@@ -150,12 +150,12 @@ public class InputParser
                     try
                     {
                         CharacterActivationParser character =
-                                new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getCharacterName(), Integer.parseInt(words[1]), Integer.parseInt(words[2]));
+                                new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getName(), Integer.parseInt(words[1]), Integer.parseInt(words[2]));
                         socket.sendMessage(new SerializedMessage(character.buildMessage()));
                     }
                     catch (NumberFormatException e) {
                         CharacterActivationParser character =
-                                new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getCharacterName(), Integer.parseInt(words[1]), Col.valueOf(words[2]));
+                                new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getName(), Integer.parseInt(words[1]), Col.valueOf(words[2]));
                         socket.sendMessage(new SerializedMessage(character.buildMessage()));
                     }
                 }

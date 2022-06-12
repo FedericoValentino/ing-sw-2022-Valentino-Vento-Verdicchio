@@ -517,7 +517,7 @@ public class PrinterCLI
         String[] description = new String[7];
         description = card.getDescription();
 
-        if(card instanceof Princess)
+        if(card.getName().equals(CharacterName.PRINCESS))
         {
             character[0] += ANSI_YELLOW + "____________________";
             character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "        |  " + description[0];
@@ -533,36 +533,36 @@ public class PrinterCLI
             character[6] += ANSI_YELLOW + "    |  " + description[5];
             character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
         }
-        else if(card instanceof Priest)
+        else if(card.getName().equals(CharacterName.PRIEST))
         {
             character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "          |  " + description[0];
+            character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "          |  " + description[0];
             character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
             character[3] += "|                  |  " + description[2];
             character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
             character[5] += "|                  |  " + description[4];
-            character[6] += "|  " + ANSI_RESET + printStudent(((Priest) card).getStudents(), 2);
-            for(int i = 0; i < 4 - ((Priest) card).getStudents().size(); i++)
+            character[6] += "|  " + ANSI_RESET + printStudent(card.getStudentList(), 2);
+            for(int i = 0; i < 4 - card.getStudentList().size(); i++)
             {
                 character[6] += "  O";
             }
             character[6] += ANSI_YELLOW + "    |  " + description[5];
             character[7] += "|__________________|  " +  description[6] + ANSI_RESET + "\n";
         }
-        else if (card instanceof GrandmaHerbs)
+        else if (card.getName().equals(CharacterName.GRANDMA_HERBS))
         {
             character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "   |  " + description[0];
+            character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "   |  " + description[0];
             character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
             character[3] += "|                  |  " + description[2];
             character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
             character[5] += "|                  |  " + description[4];
             character[6] += "|  " + ANSI_RESET;
-            for(int i = 0; i < ((GrandmaHerbs) card).getNoEntry(); i++)
+            for(int i = 0; i < card.getNoEntry(); i++)
             {
                 character[6] += ANSI_RED_BACKGROUND + ANSI_BLACK + "  !" + ANSI_RESET;
             }
-            for(int i = 0; i < 4 - ((GrandmaHerbs) card).getNoEntry(); i++)
+            for(int i = 0; i < 4 - card.getNoEntry(); i++)
             {
                 character[6] += "  O";
             }

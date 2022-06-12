@@ -11,7 +11,12 @@ public class LightActiveDeck extends Observable
 
     public LightActiveDeck(ArrayList<CharacterCard> cards)
     {
-        lightActiveDeck = cards;
+        LightCharacterFactory factory = new LightCharacterFactory();
+        this.lightActiveDeck = new ArrayList<>();
+        for(CharacterCard card : cards)
+        {
+            lightActiveDeck.add(factory.characterCreator(card));
+        }
     }
 
     public void updateActive(LightActiveDeck light)
