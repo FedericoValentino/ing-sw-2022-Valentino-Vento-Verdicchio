@@ -1,7 +1,3 @@
-//TODO rimandare in caso di reject connection al menù di scelta con IP e Team
-//TODO Scelta team up to server
-//ciao
-
 package it.polimi.ingsw.Client.CLI;
 
 import it.polimi.ingsw.Client.ClientView;

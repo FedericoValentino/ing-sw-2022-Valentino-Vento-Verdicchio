@@ -1,7 +1,3 @@
-//TODO mai dire "Il Server dice al client"
-//TODO spostare logica nel controller
-
-//ciao
 package it.polimi.ingsw.Server;
 
 

@@ -24,7 +24,9 @@ public class CharacterActivationParser
         this.name = name;
         if(name == CharacterName.PRINCESS)
         {
-            this.chosenStudent = island;
+            //Instead of making a different method for princess I reuse this one since princess only takes a position and sends that student to the dining
+            int studentPositionOnCard = island;
+            this.chosenStudent = studentPositionOnCard;
         }
         else
         {
