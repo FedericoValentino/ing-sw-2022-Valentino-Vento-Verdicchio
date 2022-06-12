@@ -5,6 +5,7 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.cards.TruffleHunter;
 
 import java.util.ArrayList;
 
@@ -94,6 +95,15 @@ public class CharacterController
         }
     }
 
+    public void setTruffleHunterColor(CurrentGameState game, Col studentColor)
+    {
+        for(CharacterCard card: game.getCurrentActiveCharacterCard())
+        {
+            if(card.getCharacterName().equals(CharacterName.TRUFFLE_HUNTER))
+                ((TruffleHunter) card).setChosenColor(studentColor);
+        }
+
+    }
 
     public CharacterCard getPickedCard()
     {

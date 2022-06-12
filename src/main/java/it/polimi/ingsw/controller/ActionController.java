@@ -4,6 +4,10 @@ import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.Team;
+import it.polimi.ingsw.model.cards.Centaur;
+import it.polimi.ingsw.model.cards.CharacterCard;
+import it.polimi.ingsw.model.cards.Knight;
+import it.polimi.ingsw.model.cards.TruffleHunter;
 
 
 public class ActionController
@@ -75,11 +79,30 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
         game.getCurrentMotherNature().move(amount, game.getCurrentIslands().getTotalGroups()-1);
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
-        if(!Checks.checkForInfluenceCharacter(game, currentPlayer))
+        if(!Checks.checkForInfluenceCharacter(game))
         {
             game.solveEverything(game.getCurrentMotherNature().getPosition());
             Checks.checkWinnerForTowers(game);
             Checks.checkWinnerForIsland(game);
+        }
+        else
+        {
+            CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
+            if(card instanceof Knight)
+            {
+                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
+                CharacterController.deckManagement(game);
+            }
+            else if(card instanceof TruffleHunter)
+            {
+                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) card).getChosenColor());
+                CharacterController.deckManagement(game);
+            }
+            else if(card instanceof Centaur)
+            {
+                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, null);
+                CharacterController.deckManagement(game);
+            }
         }
         game.getCurrentTurnState().UpdateActionMoves();
     }

@@ -19,6 +19,7 @@ import it.polimi.ingsw.controller.CharacterController;
 import it.polimi.ingsw.controller.Checks;
 import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.controller.MovesChecks;
+import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.GamePhase;
 import it.polimi.ingsw.model.boards.token.Wizard;
 
@@ -273,8 +274,24 @@ public class GameHandler extends Thread implements Observer
             case CHARACTER_PLAY:
                 if (CharacterController.isPickable(mainController.getGame(),
                         ((PlayCharacter) message).getCharacterName(),
-                        MainController.findPlayerByName(mainController.getGame(), socket.getNickname()))) {
+                        MainController.findPlayerByName(mainController.getGame(), socket.getNickname())))
+                {
                     mainController.getCharacterController().pickCard(mainController.getGame(), ((PlayCharacter) message).getCharacterName(), MainController.findPlayerByName(mainController.getGame(), socket.getNickname()));
+                    if(((PlayCharacter) message).getCharacterName().equals(CharacterName.TRUFFLE_HUNTER))
+                    {
+                        mainController.getCharacterController().setTruffleHunterColor(mainController.getGame(), ((PlayCharacter) message).getStudentColor());
+                    }
+                    if(!Checks.checkForInfluenceCharacter(mainController.getGame()))
+                    {
+                        mainController.getCharacterController().playEffect(
+                                ((PlayCharacter) message).getCharacterName(),
+                                mainController.getGame(),
+                                ((PlayCharacter) message).getFirst(),
+                                ((PlayCharacter) message).getSecond(),
+                                ((PlayCharacter) message).getThird(),
+                                ((PlayCharacter) message).getStudentColor()
+                        );
+                    }
                 }
                 break;
         }
