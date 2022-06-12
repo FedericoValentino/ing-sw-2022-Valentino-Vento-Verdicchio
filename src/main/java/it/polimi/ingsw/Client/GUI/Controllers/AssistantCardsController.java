@@ -65,7 +65,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                 players.add(player);
             }
         }
-        Button lastPlayed = (Button) ((AnchorPane) AssistantsPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("LastPlayedButton")).collect(Collectors.toList()).get(0);
+        Button lastPlayed = (Button) ((AnchorPane) AssistantsPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("lastPlayedButton")).collect(Collectors.toList()).get(0);
         lastPlayed.setText("Active\nAssistants");
         lastPlayed.setOnMouseClicked(this:: assistantsOnClick);
         for(LightPlayer player: players)

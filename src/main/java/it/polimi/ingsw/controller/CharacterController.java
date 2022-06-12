@@ -25,7 +25,7 @@ public class CharacterController
         pickedCard = game.getCurrentCharacterDeck().drawCard(getCardByName( characterName, game.getCurrentCharacterDeck().getDeck()));
         game.getCurrentActiveCharacterCard().add(pickedCard);
 
-        /*Updates player balance and bank balance using the currentCost-1 of the card,
+        /*Updates player balance and bank balance using the curentCost-1 of the card,
         which is how much the card cost when it was played  */
         int gain = pickedCard.getCurrentCost() - 1;
         game.updateBankBalance(player, gain);
