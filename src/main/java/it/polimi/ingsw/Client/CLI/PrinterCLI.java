@@ -166,7 +166,7 @@ public class PrinterCLI
         }
     }
 
-    private String printStudent(ArrayList<Student> students, int spaces)
+    public String printStudent(ArrayList<Student> students, int spaces)
     {
         String output = "";
         for(Student s: students)

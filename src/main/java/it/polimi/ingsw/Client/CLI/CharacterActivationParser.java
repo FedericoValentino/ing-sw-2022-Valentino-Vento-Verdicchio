@@ -41,16 +41,15 @@ public class CharacterActivationParser
         this.chosenIsland = island;
         this.chosenStudent = student;
     }
-    public CharacterActivationParser(String nickname, CharacterName name, int island, Col chosenColor)
+    public CharacterActivationParser(String nickname, CharacterName name, Col chosenColor)
     {
         this.CurrentPlayer = nickname;
         this.name = name;
-        this.chosenIsland = island;
         this.chosenColor = chosenColor;
     }
 
-    public PlayCharacterEffect buildMessage()
+    public PlayCharacter buildMessage()
     {
-        return new PlayCharacterEffect(name, chosenStudent, chosenIsland, CurrentPlayer, chosenColor);
+        return new PlayCharacter(name, chosenStudent, chosenIsland, CurrentPlayer, chosenColor);
     }
 }

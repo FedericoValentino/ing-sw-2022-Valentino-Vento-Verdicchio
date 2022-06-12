@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Client.CLI;
 
+import it.polimi.ingsw.Client.LightView.LightCharacterCard;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.Messages.SetupMessages.ReadyStatus;
@@ -7,6 +8,7 @@ import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Client.Messages.ActionMessages.*;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
+import org.fusesource.jansi.AnsiConsole;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -65,7 +67,54 @@ public class InputParser
 
     public void CharacterParser(String[] words)
     {
-        socket.sendMessage(new SerializedMessage(new PlayCharacter(CharacterName.valueOf(words[1]))));
+        LightCharacterCard card = printer.getView().getCurrentCharacterDeck().getCard(Integer.parseInt(words[1]));
+        CharacterActivationParser activation;
+        String nickname = socket.getNickname();
+        CharacterName cardName = card.getName();
+        int input;
+        switch(card.getType())
+        {
+            case NONE:
+
+                activation = new CharacterActivationParser(nickname, cardName);
+                socket.sendMessage(new SerializedMessage(activation.buildMessage()));
+                break;
+            case INTEGER_1:
+
+                if(card.getName().equals(CharacterName.PRINCESS))
+                {
+                    printer.printStudent(card.getStudentList(), 2);
+                    AnsiConsole.out().println("Choose a student to move to dining room");
+                    input = Integer.parseInt(parser.nextLine());
+                }
+                else
+                {
+                    AnsiConsole.out().println("Choose the island");
+                    input = Integer.parseInt(parser.nextLine());
+                }
+                activation = new CharacterActivationParser(nickname, cardName, input);
+                socket.sendMessage(new SerializedMessage(activation.buildMessage()));
+                break;
+
+            case INTEGER_2:
+
+                printer.printStudent(card.getStudentList(), 2);
+                AnsiConsole.out().println("Choose the student to move");
+                int input1 = Integer.parseInt(parser.nextLine());
+                AnsiConsole.out().println("Choose the island");
+                input = Integer.parseInt(parser.nextLine());
+                activation = new CharacterActivationParser(nickname, cardName, input1, input);
+                socket.sendMessage(new SerializedMessage(activation.buildMessage()));
+                break;
+
+            case INTEGER_COLOR:
+
+                AnsiConsole.out().println("Choose a student color");
+                Col color = Col.valueOf(parser.nextLine());
+                activation = new CharacterActivationParser(nickname, cardName, color);
+                socket.sendMessage(new SerializedMessage(activation.buildMessage()));
+                break;
+        }
     }
 
     public void CharacterActivationParser(String[] words)
@@ -130,35 +179,6 @@ public class InputParser
                 resetScreen();
             case "draw":
                 DrawParser(words);
-                resetScreen();
-                break;
-            case "activate":
-                if (words.length == 1)
-                {
-                    CharacterActivationParser character =
-                            new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getName());
-                    socket.sendMessage(new SerializedMessage(character.buildMessage()));
-                }
-                else if(words.length == 2)
-                {
-                    CharacterActivationParser character =
-                            new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getName(), Integer.parseInt(words[1]));
-                    socket.sendMessage(new SerializedMessage(character.buildMessage()));
-                }
-                else if(words.length == 3)
-                {
-                    try
-                    {
-                        CharacterActivationParser character =
-                                new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getName(), Integer.parseInt(words[1]), Integer.parseInt(words[2]));
-                        socket.sendMessage(new SerializedMessage(character.buildMessage()));
-                    }
-                    catch (NumberFormatException e) {
-                        CharacterActivationParser character =
-                                new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getName(), Integer.parseInt(words[1]), Col.valueOf(words[2]));
-                        socket.sendMessage(new SerializedMessage(character.buildMessage()));
-                    }
-                }
                 resetScreen();
                 break;
             case "move":
