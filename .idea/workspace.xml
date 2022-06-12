@@ -9,8 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Corrected ingenuity regarding assistants on click">
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Again, someone did strange refactors...">
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/PropagandaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/PropagandaController.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="4f25bf79-da76-410e-8951-3d3c61226aa4" name="Changes by valef" comment="" />
@@ -203,20 +203,6 @@
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
       <workItem from="1655031677157" duration="700000" />
-    </task>
-    <task id="LOCAL-00064" summary="Found the only active Print instruction in the test classes, removed it">
-      <created>1653583981531</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1653583981531</updated>
-    </task>
-    <task id="LOCAL-00065" summary="JANSI">
-      <created>1653746115994</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1653746115994</updated>
     </task>
     <task id="LOCAL-00066" summary="Made Checks &quot;static&quot; and changed the method calls accordingly">
       <created>1653837146789</created>
@@ -547,7 +533,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654895682739</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="uuuh strange occurence">
+      <created>1655061967169</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1655061967169</updated>
+    </task>
+    <task id="LOCAL-00114" summary="Again, someone did strange refactors...">
+      <created>1655062120983</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1655062120983</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,8 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="GUI Clouds" />
-    <MESSAGE value="GUI Islands" />
     <MESSAGE value="Character cards visually complete" />
     <MESSAGE value="ToFront and ToBack to played assistants, to be tested" />
     <MESSAGE value="Minor Correction" />
@@ -592,7 +590,9 @@
     <MESSAGE value="Starting the documentation of the GUI" />
     <MESSAGE value="Adding lobby,description and a little part of the MainBoardController&#10; documentation" />
     <MESSAGE value="Changes in warning, public/private XJML import and other small things" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in warning, public/private XJML import and other small things" />
+    <MESSAGE value="uuuh strange occurence" />
+    <MESSAGE value="Again, someone did strange refactors..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Again, someone did strange refactors..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
