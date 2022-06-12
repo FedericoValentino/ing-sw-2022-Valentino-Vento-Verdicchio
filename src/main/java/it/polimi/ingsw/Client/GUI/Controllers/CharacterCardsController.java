@@ -3,6 +3,7 @@ package it.polimi.ingsw.Client.GUI.Controllers;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightActiveDeck;
 import it.polimi.ingsw.Client.LightView.LightCharDeck;
+import it.polimi.ingsw.Client.LightView.LightCharacterCard;
 import it.polimi.ingsw.Client.Messages.ActionMessages.PlayCharacter;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Observer.ObserverLightView;
@@ -31,7 +32,7 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     private LightCharDeck characterDeck;
     private LightActiveDeck activeCharDeck;
 
-    private ArrayList<CharacterCard> sceneCards = new ArrayList<>();
+    private ArrayList<LightCharacterCard> sceneCards = new ArrayList<>();
     private int currentlyShowedCard = 2;
 
     private MainBoardController mainController;
@@ -70,7 +71,7 @@ public class CharacterCardsController extends Controller implements ObserverLigh
 
             pane.setOnMouseClicked(this:: showOnClick);
 
-            ImageView cardImage = new ImageView(getCardPath(sceneCards.get(i).getCharacterName()));
+            ImageView cardImage = new ImageView(getCardPath(sceneCards.get(i).getName()));
             cardImage.setFitWidth(106);
             cardImage.setFitHeight(113);
 
@@ -130,8 +131,8 @@ public class CharacterCardsController extends Controller implements ObserverLigh
 
     private void showOnClick(MouseEvent mouseEvent)
     {
-        CharacterCard card = sceneCards.get(currentlyShowedCard);
-        String path = getCardPath(card.getCharacterName());
+        LightCharacterCard card = sceneCards.get(currentlyShowedCard);
+        String path = getCardPath(card.getName());
         mainController.displayCharInfo(card, path);
     }
 

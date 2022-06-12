@@ -7,11 +7,16 @@ import java.util.ArrayList;
 
 public class LightCharDeck extends Observable
 {
-    private ArrayList<CharacterCard> lightCharDeck;
+    private ArrayList<LightCharacterCard> lightCharDeck;
 
     public LightCharDeck(ArrayList<CharacterCard> cards)
     {
-        lightCharDeck = cards;
+        LightCharacterFactory factory = new LightCharacterFactory();
+        this.lightCharDeck = new ArrayList<>();
+        for(CharacterCard card : cards)
+        {
+            lightCharDeck.add(factory.characterCreator(card));
+        }
     }
 
     public void updateCharDeck(LightCharDeck light)
@@ -22,11 +27,11 @@ public class LightCharDeck extends Observable
     }
 
 
-    public ArrayList<CharacterCard> getLightCharDeck() {
+    public ArrayList<LightCharacterCard> getLightCharDeck() {
         return lightCharDeck;
     }
 
-    public CharacterCard getCard(int index)
+    public LightCharacterCard getCard(int index)
     {
        return lightCharDeck.get(index);
     }

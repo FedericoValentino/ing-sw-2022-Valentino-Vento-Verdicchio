@@ -28,7 +28,6 @@ public class MainBoardController extends Controller {
     @FXML private AnchorPane characterAnchorPane;
 
     @FXML private AnchorPane islandAnchorPane;
-    //@FXML private AnchorPane cloudsAnchorPane;
     @FXML private AnchorPane assistantCardAnchorPane;
 
     @FXML private AnchorPane buttonAreaAnchorPane;
@@ -154,11 +153,11 @@ public class MainBoardController extends Controller {
 
         Text name = (Text) charDescription.getChildren().stream().filter(node -> node.getId().equals("Name")).collect(Collectors.toList()).get(0);
         name.setText("");
-        name.setText(card.getCharacterName().toString());
+        name.setText(card.getName().toString());
 
         Text description = (Text) charDescription.getChildren().stream().filter(node -> node.getId().equals("Description")).collect(Collectors.toList()).get(0);
         description.setText("");
-        description.setText(Arrays.toString(card.description()));
+        description.setText(Arrays.toString(card.getDescription()));
 
         Button back = (Button) (charDescription.getChildren().stream().filter(node -> node.getId().equals("BackButton")).collect(Collectors.toList()).get(0));
         back.setOnMouseClicked(this:: hideCharacterInfo);
