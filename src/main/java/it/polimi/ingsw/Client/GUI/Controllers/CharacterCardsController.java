@@ -97,9 +97,7 @@ public class CharacterCardsController extends Controller implements ObserverLigh
 
     private void activateOnClick(MouseEvent mouseEvent)
     {
-        Pane frontPane = (Pane) mainPane.getChildren().get(2);
-        Text charName = (Text)  frontPane.getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor")).collect(Collectors.toList()).get(0);
-
+        mainController.showCharacterEffectPanel(sceneCards.get(currentlyShowedCard));
     }
 
     private void nextOnClick(MouseEvent mouseEvent)

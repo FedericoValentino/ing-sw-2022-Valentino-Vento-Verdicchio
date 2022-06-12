@@ -1,19 +1,23 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 
+import it.polimi.ingsw.Client.CharacterActivationParser;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.*;
+import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.model.boards.token.CharacterName;
+import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.boards.token.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
-import it.polimi.ingsw.model.cards.CharacterCard;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,8 +37,20 @@ public class MainBoardController extends Controller {
     @FXML private AnchorPane buttonAreaAnchorPane;
     @FXML private AnchorPane mineSchoolAnchorPane;
 
+    @FXML private Pane EffectPane;
+    @FXML private Text EffectDescription;
+    @FXML private Pane ParametersSlice;
+    @FXML private Button PlayButton;
+    @FXML private Button BackToBoard;
 
-    public GridPane PlayedAssistants;
+    @FXML  private GridPane PlayedAssistants;
+
+    private int integerChoice_1;
+    private int integerChoice_2;
+    private Col colorChoice;
+
+    private LightView view;
+
 
     /**
      * This method it's called when the mainBoardController is setted for the first time.
@@ -201,6 +217,155 @@ public class MainBoardController extends Controller {
     }
 
 
+    public void showCharacterEffectPanel(LightCharacterCard card) {
+        EffectPane.setMouseTransparent(false);
+        EffectPane.setVisible(true);
+        EffectDescription.setText("You are playing " + card.getName());
+        BackToBoard.setOnMouseClicked((MouseEvent) ->
+        {
+            EffectPane.setMouseTransparent(true);
+            EffectPane.setVisible(false);
+        });
+        switch (card.getType())
+        {
+            case NONE:
+                PlayButton.setOnMouseClicked((MouseEvent) ->
+                        {
+                            CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName());
+                            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                        }
+                );
+                break;
+
+
+            case INTEGER_1:
+                if(card.getName().equals(CharacterName.PRINCESS))
+                {
+                    HBox students = new HBox();
+                    int studentPosition = 0;
+                    for(Student student : card.getStudentList())
+                    {
+                        ImageView image = new ImageView(getRightColorPath(student));
+                        image.setFitHeight(27);
+                        image.setFitWidth(27);
+                        image.setId(String.valueOf(studentPosition));
+                        image.setOnMouseClicked((MouseEvent) ->
+                        {
+                            integerChoice_1 = Integer.parseInt(((Node)MouseEvent.getSource()).getId());
+                        });
+                        students.getChildren().add(image);
+                    }
+                    ParametersSlice.getChildren().clear();
+                    ParametersSlice.getChildren().add(students);
+                }
+                else
+                {
+                    HBox islandChoice = new HBox();
+                    Text hint = new Text();
+                    hint.setText("Select the target island");
+                    islandChoice.getChildren().add(hint);
+                    ChoiceBox box = new ChoiceBox();
+                    for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
+                    {
+                        box.getItems().add(i);
+                    }
+                    box.setOnAction((Event) ->
+                    {
+                        integerChoice_1 = box.getSelectionModel().getSelectedIndex();
+                    });
+                    islandChoice.getChildren().add(box);
+                    ParametersSlice.getChildren().clear();
+                    ParametersSlice.getChildren().add(islandChoice);
+                }
+                PlayButton.setOnMouseClicked((MouseEvent) ->
+                        {
+                            CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1);
+                            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                        }
+                );
+
+                break;
+
+            case INTEGER_2:
+                VBox priestParameters = new VBox();
+                priestParameters.getChildren().clear();
+
+                //setup islands
+                HBox islandChoice = new HBox();
+                Text hint = new Text();
+                hint.setText("Select the target island");
+                islandChoice.getChildren().add(hint);
+                ChoiceBox box = new ChoiceBox();
+                for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
+                {
+                    box.getItems().add(i);
+                }
+                box.setOnAction((Event) ->
+                {
+                    integerChoice_1 = box.getSelectionModel().getSelectedIndex();
+                });
+                islandChoice.getChildren().add(box);
+
+                priestParameters.getChildren().add(islandChoice);
+
+                //setup students
+                HBox students = new HBox();
+                int studentPosition = 0;
+                for(Student student : card.getStudentList())
+                {
+                    ImageView image = new ImageView(getRightColorPath(student));
+                    image.setFitHeight(27);
+                    image.setFitWidth(27);
+                    image.setId(String.valueOf(studentPosition));
+                    image.setOnMouseClicked((MouseEvent) ->
+                    {
+                        integerChoice_2 = Integer.parseInt(((Node)MouseEvent.getSource()).getId());
+                    });
+                    students.getChildren().add(image);
+                }
+                priestParameters.getChildren().add(students);
+
+                ParametersSlice.getChildren().clear();
+                ParametersSlice.getChildren().add(priestParameters);
+
+                PlayButton.setOnMouseClicked((MouseEvent) ->
+                        {
+                            CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1, integerChoice_2);
+                            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                        }
+                );
+
+                break;
+
+            case COLOR:
+                HBox Colors = new HBox();
+                for(int i = 0; i < 5; i++)
+                {
+                    Student student = new Student(Col.values()[i]);
+                    ImageView color = new ImageView(getRightColorPath(student));
+                    color.setId(Col.values()[i].toString());
+                    color.setOnMouseClicked((MouseEvent) -> {
+                        colorChoice = Col.valueOf(((Node) MouseEvent.getSource()).getId());
+                    });
+                }
+                ParametersSlice.getChildren().clear();
+                ParametersSlice.getChildren().add(Colors);
+
+                PlayButton.setOnMouseClicked((MouseEvent) ->
+                        {
+                            CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), colorChoice);
+                            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                        }
+                );
+
+                break;
+
+            default:
+
+        }
+    }
+
+
     public Pane getCellFromGridPane(GridPane matrix, int column, int row)
     {
         for(Node N : matrix.getChildren())
@@ -213,6 +378,30 @@ public class MainBoardController extends Controller {
             }
         }
         return null;
+    }
+
+    public String getRightColorPath(Student s)
+    {
+        switch(s.getColor())
+        {
+            case GREEN:
+                return "/Client/GUI/Images/Student/student_green.png";
+            case YELLOW:
+                return "/Client/GUI/Images/Student/student_yellow.png";
+            case RED:
+                return "/Client/GUI/Images/Student/student_red.png";
+            case BLUE:
+                return "/Client/GUI/Images/Student/student_blue.png";
+            case PINK:
+                return "/Client/GUI/Images/Student/student_pink.png";
+            default:
+                return "";
+        }
+    }
+
+    public void setup(LightView view)
+    {
+        this.view = view;
     }
 
 }
