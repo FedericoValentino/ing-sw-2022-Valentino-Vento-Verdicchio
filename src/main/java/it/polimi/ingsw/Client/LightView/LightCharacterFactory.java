@@ -136,7 +136,7 @@ public class LightCharacterFactory
                         -1,
                         null,
                         description,
-                        LightCharacterType.INTEGER_COLOR);
+                        LightCharacterType.COLOR);
         }
         return null;
     }

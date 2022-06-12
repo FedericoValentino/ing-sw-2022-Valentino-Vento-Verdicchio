@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Client.CLI;
 
+import it.polimi.ingsw.Client.CharacterActivationParser;
 import it.polimi.ingsw.Client.LightView.LightCharacterCard;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
@@ -107,7 +108,7 @@ public class InputParser
                 socket.sendMessage(new SerializedMessage(activation.buildMessage()));
                 break;
 
-            case INTEGER_COLOR:
+            case COLOR:
 
                 AnsiConsole.out().println("Choose a student color");
                 Col color = Col.valueOf(parser.nextLine());

@@ -1,4 +1,4 @@
-package it.polimi.ingsw.Client.CLI;
+package it.polimi.ingsw.Client;
 
 import it.polimi.ingsw.Client.Messages.ActionMessages.PlayCharacter;
 import it.polimi.ingsw.Client.Messages.ActionMessages.PlayCharacterEffect;

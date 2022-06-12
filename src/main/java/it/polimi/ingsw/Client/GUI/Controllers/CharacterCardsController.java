@@ -1,11 +1,8 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 
-import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightActiveDeck;
 import it.polimi.ingsw.Client.LightView.LightCharDeck;
 import it.polimi.ingsw.Client.LightView.LightCharacterCard;
-import it.polimi.ingsw.Client.Messages.ActionMessages.PlayCharacter;
-import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Observer.ObserverLightView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
