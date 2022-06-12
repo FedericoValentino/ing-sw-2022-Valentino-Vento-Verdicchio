@@ -102,7 +102,7 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     {
         Pane frontPane = (Pane) mainPane.getChildren().get(2);
         Text charName = (Text)  frontPane.getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor")).collect(Collectors.toList()).get(0);
-        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new PlayCharacter(CharacterName.valueOf(charName.getText()))));
+
     }
 
     private void nextOnClick(MouseEvent mouseEvent)

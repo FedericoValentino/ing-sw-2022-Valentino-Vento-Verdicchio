@@ -117,10 +117,6 @@ public class InputParser
         }
     }
 
-    public void CharacterActivationParser(String[] words)
-    {
-        socket.sendMessage(new SerializedMessage(new PlayCharacterEffect(CharacterName.valueOf(words[1]), valueOf(words[2]), valueOf(words[3]), playerName, Col.valueOf(words[4]))));
-    }
 
     public void showView(String[] words)
     {

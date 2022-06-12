@@ -9,17 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Hopefully right implementation f client side character cards">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="First implementation of new CLI character handling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/CharacterActivationParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/CharacterActivationParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/Checks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/TruffleHunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ChecksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ChecksTest.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
-    <list id="4f25bf79-da76-410e-8951-3d3c61226aa4" name="Changes by valef" comment="Same, but code with me">
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/CharacterActivationParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/CharacterActivationParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/Messages/ActionMessages/PlayCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/Messages/ActionMessages/PlayCharacter.java" afterDir="false" />
+    <list id="f4bd4409-f67a-45db-b4d8-593522953cb1" name="Changes by valef" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/ActionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +50,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/CharacterActivationParser.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="42" end1="43" start2="43" end2="44" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
-        <range start1="46" end1="47" start2="47" end2="47" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
-        <range start1="50" end1="51" start2="50" end2="51" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
-        <range start1="52" end1="53" start2="52" end2="53" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -221,20 +211,6 @@
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
       <workItem from="1655031677157" duration="700000" />
-    </task>
-    <task id="LOCAL-00070" summary="Main fxml pattern association">
-      <created>1654090612380</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1654090612380</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Adding resources">
-      <created>1654094825727</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1654094825727</updated>
     </task>
     <task id="LOCAL-00072" summary="Refactor resource's folder">
       <created>1654094978938</created>
@@ -565,7 +541,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655068517090</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="First implementation of new CLI character handling">
+      <created>1655070474152</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1655070474152</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Same, but code with me">
+      <created>1655070484718</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1655070484718</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix School" />
     <MESSAGE value="Informations and end turn button implemented" />
     <MESSAGE value="Should now work" />
     <MESSAGE value="init added" />
@@ -609,6 +598,7 @@
     <MESSAGE value="Again, someone did strange refactors..." />
     <MESSAGE value="First step in better implementation of client side character cards" />
     <MESSAGE value="Hopefully right implementation f client side character cards" />
+    <MESSAGE value="First implementation of new CLI character handling" />
     <MESSAGE value="Same, but code with me" />
     <option name="LAST_COMMIT_MESSAGE" value="Same, but code with me" />
   </component>

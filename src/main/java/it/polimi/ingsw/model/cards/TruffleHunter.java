@@ -32,7 +32,6 @@ public class TruffleHunter extends CharacterCard implements Serializable {
 
     /** Ignores a color of student in the influence calculation
      * @param game  an instance of the game
-     * @param color  the color of student not to take into consideration during the influence calculation
      * @param chosenIsland  the island on which the influence calculation must occur
      */
     @Override
@@ -43,7 +42,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         int cont = 0;
         for(int i=0; i<game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.size(); i++)
         {
-            if(game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.get(i).getColor() == color)
+            if(game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.get(i).getColor() == getChosenColor())
             {
                 game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.remove(i);
                 cont++;
@@ -55,7 +54,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         //After the influence calculations, it adds to the island as many students of the selected color as the number of the counter
         for(int i=0; i<cont; i++)
         {
-            game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.add(new Student(color));
+            game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.add(new Student(getChosenColor()));
         }
     }
 

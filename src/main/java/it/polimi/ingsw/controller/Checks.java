@@ -2,6 +2,7 @@ package it.polimi.ingsw.controller;
 
 import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.Team;
+import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.cards.*;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.boards.token.GamePhase;
@@ -189,28 +190,13 @@ public final class Checks {
      * @param game  an instance of hte game
      * @return whether influence based card are currently active
      */
-    public static boolean checkForInfluenceCharacter(CurrentGameState game, String currentPlayer)
+    public static boolean checkForInfluenceCharacter(CurrentGameState game)
     {
         for(CharacterCard card: game.getCurrentActiveCharacterCard())
         {
-            if(card instanceof Knight)
-            {
-                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
-                CharacterController.deckManagement(game);
-                return  true;
-            }
-            else if(card instanceof TruffleHunter)
-            {
-                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) card).getChosenColor());
-                CharacterController.deckManagement(game);
-                return  true;
-            }
-            else if(card instanceof Centaur)
-            {
-                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, null);
-                CharacterController.deckManagement(game);
-                return  true;
-            }
+            CharacterName cardName = card.getCharacterName();
+            if(cardName.equals(CharacterName.CENTAUR) || cardName.equals(CharacterName.TRUFFLE_HUNTER) || cardName.equals(CharacterName.KNIGHT))
+                return true;
         }
         return false;
     }

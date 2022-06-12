@@ -167,12 +167,12 @@ public class ChecksTest {
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
-        assertTrue(Checks.checkForInfluenceCharacter(controllerTest.getGame(), "jack"));
+        assertTrue(Checks.checkForInfluenceCharacter(controllerTest.getGame()));
 
         controllerTest.getGame().getCurrentActiveCharacterCard().clear();
         controllerTest.getGame().getCurrentActiveCharacterCard().add(princess);
 
-        assertFalse(Checks.checkForInfluenceCharacter(controllerTest.getGame(), "jack"));
+        assertFalse(Checks.checkForInfluenceCharacter(controllerTest.getGame()));
     }
 
 }
