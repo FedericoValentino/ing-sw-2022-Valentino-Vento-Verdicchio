@@ -9,17 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Again, someone did strange refactors...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCharacterCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCharacterType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/CharacterCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/CharacterCardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCharDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCharDeck.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="First step in better implementation of client side character cards">
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightActiveDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightActiveDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Centaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Centaur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Herald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Herald.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Postman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Priest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Princess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/TruffleHunter.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
-    <list id="4f25bf79-da76-410e-8951-3d3c61226aa4" name="Changes by valef" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCharacterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCharDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCharDeck.java" afterDir="false" />
+    <list id="4f25bf79-da76-410e-8951-3d3c61226aa4" name="Changes by valef" comment="Same, but code with me">
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightActiveDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightActiveDeck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +56,29 @@
     </file-type-list>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCharDeck.java">
+    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java">
+      <ranges>
+        <range start1="2" end1="6" start2="2" end2="4" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="515" end1="516" start2="513" end2="514" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="519" end1="520" start2="517" end2="518" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="521" end1="522" start2="519" end2="520" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="524" end1="525" start2="522" end2="523" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="529" end1="531" start2="527" end2="529" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="537" end1="538" start2="535" end2="536" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="540" end1="541" start2="538" end2="539" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="545" end1="547" start2="543" end2="545" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="553" end1="554" start2="551" end2="552" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="556" end1="557" start2="554" end2="555" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="562" end1="563" start2="560" end2="561" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="566" end1="567" start2="564" end2="565" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="576" end1="578" start2="574" end2="576" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightActiveDeck.java">
       <ranges>
         <range start1="9" end1="10" start2="9" end2="10" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="13" end1="14" start2="13" end2="19" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="18" end1="19" start2="23" end2="25" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
-        <range start1="24" end1="25" start2="30" end2="31" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="28" end1="29" start2="34" end2="35" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="13" end1="14" start2="13" end2="19" changelist="4f25bf79-da76-410e-8951-3d3c61226aa4" />
+        <range start1="25" end1="26" start2="30" end2="31" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
       </ranges>
     </file>
   </component>
@@ -221,20 +242,6 @@
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
       <workItem from="1655031677157" duration="700000" />
-    </task>
-    <task id="LOCAL-00066" summary="Made Checks &quot;static&quot; and changed the method calls accordingly">
-      <created>1653837146789</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1653837146789</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Removed the planning and action counters in GameHandler. Introduced a &quot;moves&quot; counter in CurrentTurnState, with methods to increment and reset said counter. Increments and resets called in proper functions of ActionController and PlanningController. Introduced a new &quot;static&quot; Checks class (MovesChecks) to help the GameHandler understand if the client is making the move we are expecting him to make.">
-      <created>1653841387460</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1653841387460</updated>
     </task>
     <task id="LOCAL-00068" summary="Little changes">
       <created>1654012615800</created>
@@ -565,7 +572,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655062120983</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="First step in better implementation of client side character cards">
+      <created>1655067993300</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1655067993300</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Same, but code with me">
+      <created>1655068014455</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1655068014455</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,8 +606,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Character cards visually complete" />
-    <MESSAGE value="ToFront and ToBack to played assistants, to be tested" />
     <MESSAGE value="Minor Correction" />
     <MESSAGE value="Fix School" />
     <MESSAGE value="Informations and end turn button implemented" />
@@ -610,7 +629,9 @@
     <MESSAGE value="Changes in warning, public/private XJML import and other small things" />
     <MESSAGE value="uuuh strange occurence" />
     <MESSAGE value="Again, someone did strange refactors..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Again, someone did strange refactors..." />
+    <MESSAGE value="First step in better implementation of client side character cards" />
+    <MESSAGE value="Same, but code with me" />
+    <option name="LAST_COMMIT_MESSAGE" value="Same, but code with me" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

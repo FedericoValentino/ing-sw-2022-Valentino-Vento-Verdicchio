@@ -1,9 +1,7 @@
 package it.polimi.ingsw.Client.CLI;
 
-import it.polimi.ingsw.Client.LightView.LightIsland;
-import it.polimi.ingsw.Client.LightView.LightPlayer;
-import it.polimi.ingsw.Client.LightView.LightTeam;
-import it.polimi.ingsw.Client.LightView.LightView;
+import it.polimi.ingsw.Client.LightView.*;
+import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.ColTow;
 import it.polimi.ingsw.model.boards.token.Student;
@@ -513,22 +511,22 @@ public class PrinterCLI
     }
 
 
-    private String[] printCharacter(CharacterCard card, String[] character, int index)
+    private String[] printCharacter(LightCharacterCard card, String[] character, int index)
     {
 
         String[] description = new String[7];
-        description = card.description();
+        description = card.getDescription();
 
         if(card instanceof Princess)
         {
             character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW + "        |  " + description[0];
+            character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "        |  " + description[0];
             character[2] += "|       " + ANSI_RESET +"ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
             character[3] += "|                  |  " + description[2];
             character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
             character[5] += "|                  |  " + description[4];
-            character[6] += "|  " + ANSI_RESET + printStudent(((Princess) card).getStudents(), 2);
-            for(int i = 0; i < 4 - ((Princess) card).getStudents().size(); i++)
+            character[6] += "|  " + ANSI_RESET + printStudent(card.getStudentList(), 2);
+            for(int i = 0; i < 4 - card.getStudentList().size(); i++)
             {
                 character[6] += "  O";
             }
@@ -574,8 +572,8 @@ public class PrinterCLI
         else
         {
             character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getCharacterName() + ANSI_YELLOW;
-            for(int i = 0; i < "TRUFFLE_HUNTER".length() - card.getCharacterName().toString().length(); i++)
+            character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW;
+            for(int i = 0; i < "TRUFFLE_HUNTER".length() - card.getName().toString().length(); i++)
             {
                 character[1] += " ";
             }

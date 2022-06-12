@@ -136,7 +136,7 @@ public class InputParser
                 if (words.length == 1)
                 {
                     CharacterActivationParser character =
-                            new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getCharacterName());
+                            new CharacterActivationParser(socket.getNickname(), printer.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(0).getName());
                     socket.sendMessage(new SerializedMessage(character.buildMessage()));
                 }
                 else if(words.length == 2)

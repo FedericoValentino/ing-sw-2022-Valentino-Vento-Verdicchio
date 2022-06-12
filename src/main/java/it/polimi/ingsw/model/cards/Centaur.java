@@ -32,16 +32,5 @@ public class Centaur extends CharacterCard implements Serializable {
         game.solveEverything(chosenIsland);
     }
 
-    @Override
-    public String[] description()
-    {
-        String[] centaurDescription = new String[7];
-        Arrays.fill(centaurDescription, "");
-        centaurDescription[0] += "Centaur is a card of the \"influence calculation\" type.";
-        centaurDescription[1] += "While this card is active, towers on the island on which mother nature lands do not count ";
-        centaurDescription[2] += "towards influence calculation, as if the island wasn't owned by anyone in the first place!";
-        centaurDescription[3] += "Use this card to help you conquer an island owned by your enemies!";
-        return centaurDescription;
-    }
 
 }

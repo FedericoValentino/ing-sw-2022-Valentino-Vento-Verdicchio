@@ -30,18 +30,4 @@ public class Postman extends CharacterCard implements Serializable {
         MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
     }
 
-    @Override
-    public String[] description()
-    {
-        String[] postmanDescription = new String[7];
-        Arrays.fill(postmanDescription, "");
-        postmanDescription[0] += "The Postman is quite the industrious chap. Thanks to the nature of his job, he developed excellent orienteering ";
-        postmanDescription[1] += "skills, skills that he uses to navigate efficiently around the cluttered Eryantis world.";
-        postmanDescription[2] += "If you choose him as your companion, he will teach you some of his tricks for the current turn, ";
-        postmanDescription[3] += "adding 2 extra movements to the maximum movements mother nature can perform!";
-        postmanDescription[4] += "Use this card to reach very distant islands.";
-        return postmanDescription;
-    }
-
-
 }

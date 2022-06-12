@@ -61,18 +61,6 @@ public class Princess extends CharacterCard implements Serializable {
         updateStudents(game.getCurrentPouch());
     }
 
-    @Override
-    public String[] description() {
-        String[] princessDescription = new String[7];
-        Arrays.fill(princessDescription, "");
-        princessDescription[0] += "The Princess-warrior of the lands has host of valorous and combat ready knights, always at her service. They loyalty is ";
-        princessDescription[1] += "without question; but, like everything, it has a price. For as small as two coins, you can convince one of these ";
-        princessDescription[2] += "skilled warriors to sit for the whole game at your dining room, patiently waiting for your - we are sure - genius ";
-        princessDescription[3] += "strategies to unfold.";
-        princessDescription[4] += "Use this card to grant you a significant advantage in the professors - control race!";
-        return princessDescription;
-    }
-
     public ArrayList<Student> getStudents() {
         return students;
     }

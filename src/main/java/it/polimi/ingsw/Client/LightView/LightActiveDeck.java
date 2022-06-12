@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class LightActiveDeck extends Observable
 {
-    private ArrayList<CharacterCard> lightActiveDeck;
+    private ArrayList<LightCharacterCard> lightActiveDeck;
 
     public LightActiveDeck(ArrayList<CharacterCard> cards)
     {
@@ -23,7 +23,7 @@ public class LightActiveDeck extends Observable
         }
     }
 
-    public ArrayList<CharacterCard> getLightActiveDeck() {
+    public ArrayList<LightCharacterCard> getLightActiveDeck() {
         return lightActiveDeck;
     }
 }
