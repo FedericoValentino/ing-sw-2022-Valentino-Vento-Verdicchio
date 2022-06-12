@@ -139,7 +139,7 @@ public class MainBoardController extends Controller {
         controller.setup(lightTeams, otherSchoolAnchorPane);
     }
 
-    public void displayCharInfo(CharacterCard card, String path)
+    public void displayCharInfo(LightCharacterCard card, String path)
     {
         Pane charDescription = (Pane) (mainAnchorPane.getChildren().stream().filter(node -> node.getId().equals("CharDescription")).collect(Collectors.toList()).get(0));
 

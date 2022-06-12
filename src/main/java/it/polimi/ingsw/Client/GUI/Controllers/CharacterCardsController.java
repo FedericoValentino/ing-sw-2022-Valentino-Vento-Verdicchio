@@ -83,7 +83,7 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             statusIndicator.setFill(Paint.valueOf("FF1F1F"));
 
             Text statusDescriptor = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor")).collect(Collectors.toList()).get(0);
-            statusDescriptor.setText(sceneCards.get(i).getCharacterName().toString());
+            statusDescriptor.setText(sceneCards.get(i).getName().toString());
 
             Text parameters = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Parameters")).collect(Collectors.toList()).get(0);
             parameters.setText("Uses: " + characterDeck.getCard(0).getUses() + "\nCurrent Cost: " + sceneCards.get(i).getCurrentCost());
