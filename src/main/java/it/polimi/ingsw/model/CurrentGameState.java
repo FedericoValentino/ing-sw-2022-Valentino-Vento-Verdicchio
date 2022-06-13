@@ -143,6 +143,8 @@ public class CurrentGameState extends Observable {
             //saves the player that has the highest number of students of that color in his Dining Room
             Player maxPlayer = null;
 
+            ArrayList<Integer> studentsNumber = new ArrayList<>();
+
             //Finds the maxPlayer
             for (Team t : currentTeams)
             {
@@ -153,21 +155,36 @@ public class CurrentGameState extends Observable {
                         max = p.getSchool().getDiningRoom()[c.ordinal()];
                         maxPlayer = p;
                     }
+                    studentsNumber.add(p.getSchool().getDiningRoom()[c.ordinal()]);
                 }
+            }
+            //checks if we have a tie
+            boolean tie = false;
+
+            Set<Integer> duplicates = studentsNumber
+                                    .stream()
+                                    .filter(i -> Collections.frequency(studentsNumber, i) > 1)
+                                    .collect(Collectors.toSet());
+            if(!duplicates.isEmpty())
+            {
+                tie = true;
             }
 
             //Assigns control of the correct professor to the maxPlayer
-            for (Team t : currentTeams)
+            if(!tie)
             {
-                for (Player p : t.getPlayers())
+                for (Team t : currentTeams)
                 {
-                    if(p.equals(maxPlayer))
+                    for (Player p : t.getPlayers())
                     {
-                        p.school.updateProfessorsTable(c.ordinal(), true);
-                    }
-                    else
-                    {
-                        p.school.updateProfessorsTable(c.ordinal(), false);
+                        if(p.equals(maxPlayer))
+                        {
+                            p.school.updateProfessorsTable(c.ordinal(), true);
+                        }
+                        else
+                        {
+                            p.school.updateProfessorsTable(c.ordinal(), false);
+                        }
                     }
                 }
             }
