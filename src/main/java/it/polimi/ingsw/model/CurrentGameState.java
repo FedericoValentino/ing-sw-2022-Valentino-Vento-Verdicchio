@@ -1,12 +1,10 @@
 package it.polimi.ingsw.model;
 
-//TODO Correct uses and currentCost for characters
 //TODO Hint glitches sometimes
 //TODO Client side errors
 //TODO Display GUI errors
 //TODO players information in GUI
 //TODO aesthetic of GUI in general
-//TODO model corrections
 //TODO terminate GUI with exit button or X button from window
 
 import com.fasterxml.jackson.core.JsonProcessingException;

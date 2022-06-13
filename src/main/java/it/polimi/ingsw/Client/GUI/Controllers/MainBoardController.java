@@ -234,6 +234,8 @@ public class MainBoardController extends Controller {
                         {
                             CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName());
                             GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                            EffectPane.setVisible(false);
+                            EffectPane.setMouseTransparent(true);
                         }
                 );
                 break;
@@ -282,6 +284,8 @@ public class MainBoardController extends Controller {
                         {
                             CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1);
                             GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                            EffectPane.setVisible(false);
+                            EffectPane.setMouseTransparent(true);
                         }
                 );
 
@@ -333,6 +337,8 @@ public class MainBoardController extends Controller {
                         {
                             CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1, integerChoice_2);
                             GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                            EffectPane.setVisible(false);
+                            EffectPane.setMouseTransparent(true);
                         }
                 );
 
@@ -356,6 +362,8 @@ public class MainBoardController extends Controller {
                         {
                             CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), colorChoice);
                             GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                            EffectPane.setVisible(false);
+                            EffectPane.setMouseTransparent(true);
                         }
                 );
 
