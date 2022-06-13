@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="visibility for ErrorDisplay addressed" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added close button" />
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,13 +206,6 @@
       <workItem from="1655116531013" duration="140000" />
       <workItem from="1655116684516" duration="286000" />
       <workItem from="1655149081823" duration="1514000" />
-    </task>
-    <task id="LOCAL-00083" summary="GUI Clouds">
-      <created>1654457715506</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1654457715506</updated>
     </task>
     <task id="LOCAL-00084" summary="GUI Islands">
       <created>1654466921466</created>
@@ -550,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655159438023</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="Added close button">
+      <created>1655160038592</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1655160038592</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mothernature Update" />
     <MESSAGE value="influence calculation fix" />
     <MESSAGE value="assistants corrections" />
     <MESSAGE value="tower Showing" />
@@ -595,7 +594,8 @@
     <MESSAGE value="Different Opacity for Play effect button&gt; experiment" />
     <MESSAGE value="Added Pane for error display in GUi" />
     <MESSAGE value="visibility for ErrorDisplay addressed" />
-    <option name="LAST_COMMIT_MESSAGE" value="visibility for ErrorDisplay addressed" />
+    <MESSAGE value="Added close button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added close button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
