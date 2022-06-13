@@ -17,7 +17,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import it.polimi.ingsw.model.boards.token.CharacterName;
-import it.polimi.ingsw.model.cards.CharacterCard;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,7 +38,6 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     @FXML private Button previousButton;
     @FXML private Button nextButton;
     @FXML private Button activateButton;
-    @FXML private Button playEffectButton;
 
     public void setup(AnchorPane characterPane, LightCharDeck inactiveCharacters, LightActiveDeck activeCharacters, MainBoardController controller) throws IOException {
         this.characterPane = characterPane;
@@ -56,7 +55,6 @@ public class CharacterCardsController extends Controller implements ObserverLigh
 
         activateButton.setOnMouseClicked(this:: activateOnClick);
 
-        playEffectButton.setOnMouseClicked(this:: playOnClick);
 
         for(int i=0; i<3; i++)
         {
@@ -89,10 +87,6 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             mainPane.getChildren().add(pane);
         }
         mainPane.getChildren().get(2).setVisible(true);
-    }
-
-    private void playOnClick(MouseEvent mouseEvent)
-    {
     }
 
     private void activateOnClick(MouseEvent mouseEvent)
