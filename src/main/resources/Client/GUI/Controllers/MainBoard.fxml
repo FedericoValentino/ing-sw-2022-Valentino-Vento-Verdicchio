@@ -144,13 +144,14 @@
             </VBox>
          </children>
       </Pane>
-      <Pane fx:id="ErrorDisplay" layoutX="1200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" visible="false" mouseTransparent="true">
+      <Pane fx:id="ErrorDisplay" disable="true" layoutX="1200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="100.0" prefWidth="400.0">
          <children>
             <Text fx:id="ErrorMessage" fill="RED" layoutX="161.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ErrorMessage" textAlignment="CENTER">
                <font>
                   <Font size="13.0" />
                </font>
             </Text>
+            <Button fx:id="CloseError" layoutX="362.0" layoutY="14.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="18.0" text="X" />
          </children>
       </Pane>
    </children>

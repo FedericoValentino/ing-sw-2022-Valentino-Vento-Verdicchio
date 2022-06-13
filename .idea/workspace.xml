@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added Pane for error display in GUi">
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
-    </list>
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="visibility for ErrorDisplay addressed" />
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -208,13 +206,6 @@
       <workItem from="1655116531013" duration="140000" />
       <workItem from="1655116684516" duration="286000" />
       <workItem from="1655149081823" duration="1514000" />
-    </task>
-    <task id="LOCAL-00082" summary="Character Parameter Pattern">
-      <created>1654345898462</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1654345898462</updated>
     </task>
     <task id="LOCAL-00083" summary="GUI Clouds">
       <created>1654457715506</created>
@@ -552,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655159096294</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="visibility for ErrorDisplay addressed">
+      <created>1655159438023</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1655159438023</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="minor correction" />
     <MESSAGE value="Mothernature Update" />
     <MESSAGE value="influence calculation fix" />
     <MESSAGE value="assistants corrections" />
@@ -597,7 +594,8 @@
     <MESSAGE value="Eliminated redundant button in CharacterCardscontroller" />
     <MESSAGE value="Different Opacity for Play effect button&gt; experiment" />
     <MESSAGE value="Added Pane for error display in GUi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Pane for error display in GUi" />
+    <MESSAGE value="visibility for ErrorDisplay addressed" />
+    <option name="LAST_COMMIT_MESSAGE" value="visibility for ErrorDisplay addressed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
