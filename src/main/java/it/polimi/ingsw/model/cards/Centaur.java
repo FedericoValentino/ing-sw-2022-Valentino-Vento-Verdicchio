@@ -30,6 +30,7 @@ public class Centaur extends CharacterCard implements Serializable {
     {
         game.getCurrentIslands().getIslands().get(chosenIsland).towerNumber = 0;
         game.solveEverything(chosenIsland);
+        game.notify(game.modelToJson());
     }
 
 

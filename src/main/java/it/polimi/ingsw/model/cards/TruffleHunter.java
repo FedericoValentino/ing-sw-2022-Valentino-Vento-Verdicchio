@@ -56,6 +56,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         {
             game.getCurrentIslands().getIslands().get(chosenIsland).currentStudents.add(new Student(getChosenColor()));
         }
+        game.notify(game.modelToJson());
     }
 
     public Col getChosenColor()

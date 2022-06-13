@@ -36,6 +36,7 @@ public class GrandmaHerbs extends CharacterCard implements Serializable {
     {
         game.getCurrentIslands().getIslands().get(chosenIsland).updateNoEntry();
         updateNoEntry(-1);
+        game.notify(game.modelToJson());
     }
 
     public int getNoEntry(){return noEntry;}

@@ -28,6 +28,7 @@ public class Postman extends CharacterCard implements Serializable {
     public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
         MainController.findPlayerByName(game, currentPlayer).updateMaxMotherMovement(2);
+        game.notify(game.modelToJson());
     }
 
 }

@@ -30,6 +30,7 @@ public class Herald extends CharacterCard implements Serializable {
             game.getCurrentIslands().getIslands().get(chosenIsland).updateMotherNature();
         game.solveEverything(chosenIsland);
         game.getCurrentIslands().getIslands().get(chosenIsland).updateMotherNature();
+        game.notify(game.modelToJson());
     }
 
 

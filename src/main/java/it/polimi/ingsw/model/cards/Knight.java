@@ -61,6 +61,7 @@ public class Knight extends CharacterCard implements Serializable {
         }
         game.getCurrentIslands().idManagement();
         game.getCurrentIslands().getIslands().get(chosenIsland).updateTeamInfluence(-2, MainController.getPlayerColor(game, currentPlayer).ordinal());
+        game.notify(game.modelToJson());
     }
 
 }
