@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
-
+//
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightSchool;
