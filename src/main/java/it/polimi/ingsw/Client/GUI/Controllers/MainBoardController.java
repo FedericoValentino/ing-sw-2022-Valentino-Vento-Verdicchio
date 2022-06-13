@@ -45,6 +45,10 @@ public class MainBoardController extends Controller {
 
     @FXML  private GridPane PlayedAssistants;
 
+    @FXML private Text ErrorMessage;
+    @FXML private Pane ErrorDisplay;
+    @FXML private Button CloseError;
+
     private int integerChoice_1;
     private int integerChoice_2;
     private Col colorChoice;
@@ -374,6 +378,14 @@ public class MainBoardController extends Controller {
         }
     }
 
+    public void DisplayError(String error)
+    {
+        ErrorDisplay.setVisible(true);
+        ErrorDisplay.setMouseTransparent(false);
+        ErrorMessage.setText("");
+        ErrorMessage.setText(error);
+    }
+
 
     public Pane getCellFromGridPane(GridPane matrix, int column, int row)
     {
@@ -411,6 +423,10 @@ public class MainBoardController extends Controller {
     public void setup(LightView view)
     {
         this.view = view;
+        CloseError.setOnMouseClicked((MouseEvent) -> {
+            ErrorDisplay.setVisible(false);
+            ErrorDisplay.setMouseTransparent(true);
+        });
     }
 
 }

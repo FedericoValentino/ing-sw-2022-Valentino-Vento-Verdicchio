@@ -14,6 +14,7 @@ import it.polimi.ingsw.Server.Answers.SetupAnswers.AvailableTeams;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.AvailableWizards;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.InfoMessage;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.StandardSetupAnswer;
+import it.polimi.ingsw.model.boards.token.GamePhase;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -34,6 +35,7 @@ public class ClientGUI implements ClientView
     private ListenerGui listenerGui;
     private LightView lightView;
     private Boolean firstView = false;
+    MainBoardController mbc;
 
 
     public static final String ANSI_RESET = "\u001B[0m";
@@ -221,7 +223,10 @@ public class ClientGUI implements ClientView
         switch(answer.getType())
         {
             case ERROR:
-                System.out.println(((ErrorMessage) answer).getError());
+                if(MyView.getCurrentTurnState().getGamePhase().equals(GamePhase.PLANNING) || MyView.getCurrentTurnState().getGamePhase().equals(GamePhase.ACTION))
+                {
+                    mbc.DisplayError(((ErrorMessage)answer).getError());
+                }
                 break;
             case VIEW:
                 try {
@@ -232,7 +237,7 @@ public class ClientGUI implements ClientView
                             String path = "/Client/GUI/Controllers/MainBoard.fxml";
                             FXMLLoader load = new FXMLLoader(getClass().getResource(path));
                             changeScene(load);
-                            MainBoardController mbc = load.getController();
+                            mbc = load.getController();
                             mbc.setGuiMainStarter(guiMainStarter);
                             try
                             {
