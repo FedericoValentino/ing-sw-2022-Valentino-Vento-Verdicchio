@@ -21,10 +21,15 @@ public class LightActiveDeck extends Observable
 
     public void updateActive(LightActiveDeck light)
     {
-        if(!lightActiveDeck.isEmpty()) {
-            this.lightActiveDeck = light.getLightActiveDeck();
-            System.out.println("Updated LightActiveCharDeck");
-            notifyLight(lightActiveDeck.get(0));
+        if(lightActiveDeck.isEmpty() && !light.getLightActiveDeck().isEmpty())
+        {
+            lightActiveDeck.add(light.getLightActiveDeck().get(0));
+            notifyLight(light.getLightActiveDeck().get(0));
+        }
+        else if(!lightActiveDeck.isEmpty() && light.getLightActiveDeck().isEmpty())
+        {
+            lightActiveDeck.clear();
+            notifyLight(null);
         }
     }
 

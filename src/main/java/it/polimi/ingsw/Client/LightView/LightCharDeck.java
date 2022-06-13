@@ -21,10 +21,11 @@ public class LightCharDeck extends Observable
 
     public void updateCharDeck(LightCharDeck light)
     {
-        this.lightCharDeck.clear();
-        lightCharDeck = light.getLightCharDeck();
-        System.out.println("Updated LightCharDeck");
-        notifyLight(this);
+        lightCharDeck.clear();
+        for(LightCharacterCard card : light.getLightCharDeck())
+        {
+            lightCharDeck.add(card);
+        }
     }
 
 
