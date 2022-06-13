@@ -223,7 +223,7 @@ public class ClientGUI implements ClientView
         switch(answer.getType())
         {
             case ERROR:
-                if(MyView.getCurrentTurnState().getGamePhase().equals(GamePhase.PLANNING) || MyView.getCurrentTurnState().getGamePhase().equals(GamePhase.ACTION))
+                if(firstView)
                 {
                     mbc.DisplayError(((ErrorMessage)answer).getError());
                 }
