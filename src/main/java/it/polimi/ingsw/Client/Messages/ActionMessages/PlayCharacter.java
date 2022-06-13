@@ -17,7 +17,7 @@ public class PlayCharacter extends StandardActionMessage
         this.island = island;
         this.currentPlayer = currentPlayer;
         this.studentColor = studentColor;
-        super.type = ACTIONMESSAGETYPE.CHARACTER_ACTIVATE;
+        super.type = ACTIONMESSAGETYPE.CHARACTER_PLAY;
     }
 
     public CharacterName getCharacterName() {
