@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Corrected some ingenuities">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Eliminated redundant button in CharacterCardscontroller">
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/CharacterCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/CharacterCardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Character.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Character.fxml" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -209,13 +208,6 @@
       <workItem from="1655116531013" duration="140000" />
       <workItem from="1655116684516" duration="286000" />
       <workItem from="1655149081823" duration="1514000" />
-    </task>
-    <task id="LOCAL-00079" summary="AssistantController done and updated the Assistants fxml">
-      <created>1654273878640</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1654273878640</updated>
     </task>
     <task id="LOCAL-00080" summary="Platform run laters for Update functions">
       <created>1654278444565</created>
@@ -553,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655153300860</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="Eliminated redundant button in CharacterCardscontroller">
+      <created>1655153829203</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1655153829203</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Corrections" />
     <MESSAGE value="Corrections 1:04" />
     <MESSAGE value="Island" />
     <MESSAGE value="minor correction" />
@@ -598,7 +596,8 @@
     <MESSAGE value="Possible fix for uses and cost not updating" />
     <MESSAGE value="smol" />
     <MESSAGE value="Corrected some ingenuities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected some ingenuities" />
+    <MESSAGE value="Eliminated redundant button in CharacterCardscontroller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminated redundant button in CharacterCardscontroller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

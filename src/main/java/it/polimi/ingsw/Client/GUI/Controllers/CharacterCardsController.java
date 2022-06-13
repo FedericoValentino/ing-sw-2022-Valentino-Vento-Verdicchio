@@ -138,6 +138,8 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             parameters.setText("Uses: " + card.getUses() + "\nCurrent Cost: " + card.getCurrentCost());
             Circle statusIndicator = (Circle) ((Pane) currentPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
             statusIndicator.setFill(Paint.valueOf("1A8000"));
+            activateButton.setMouseTransparent(true);
+            activateButton.setOpacity(0.30);
         }
         else
         {
@@ -146,6 +148,8 @@ public class CharacterCardsController extends Controller implements ObserverLigh
                 Pane pane = (Pane)node1;
                 Circle statusIndicator = (Circle) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
                 statusIndicator.setFill(Paint.valueOf("FF1F1F"));
+                activateButton.setMouseTransparent(false);
+                activateButton.setOpacity(1);
             }
         }
     }
