@@ -83,7 +83,6 @@ public class CharacterController
         CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
         game.getCurrentActiveCharacterCard().remove(0);
         game.getCurrentCharacterDeck().getDeck().add(card);
-        game.notify(game.modelToJson());
     }
 
     public void playEffect(CharacterName characterName, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
@@ -92,7 +91,6 @@ public class CharacterController
         {
             CharacterCard card = getCardByName(characterName, game.getCurrentActiveCharacterCard());
             card.effect(game, studentPosition, chosenIsland, currentPlayer, color);
-            deckManagement(game);
         }
     }
 

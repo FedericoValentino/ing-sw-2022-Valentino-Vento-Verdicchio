@@ -142,6 +142,7 @@ public class MainController
         game.getCurrentTurnState().getTurnOrder().remove(currentPlayer);
         actionController.setCurrentPlayer(currentPlayer);
         game.getCurrentTurnState().setCurrentPlayer(currentPlayer);
+        characterController.deckManagement(game);
         game.getCurrentTurnState().ResetMoves();
     }
 

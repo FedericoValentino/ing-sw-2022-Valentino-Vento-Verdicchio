@@ -1,5 +1,5 @@
 package it.polimi.ingsw.model;
-//TODO Correct professor assignment(in case of tie dont take prof)
+
 //TODO Correct uses and currentCost for characters
 //TODO Hint glitches sometimes
 //TODO Client side errors
@@ -7,6 +7,8 @@ package it.polimi.ingsw.model;
 //TODO players information in GUI
 //TODO aesthetic of GUI in general
 //TODO model corrections
+//TODO terminate GUI with exit button or X button from window
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
