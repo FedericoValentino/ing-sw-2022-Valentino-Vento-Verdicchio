@@ -137,7 +137,7 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     {
         if(o!= null)
         {
-            CharacterCard card = (CharacterCard) o;
+            LightCharacterCard card = (LightCharacterCard) o;
             Pane currentPane = getCorrectPane(card);
             Text parameters = (Text) ((Pane) currentPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Parameters")).collect(Collectors.toList()).get(0);
             parameters.setText("");
@@ -157,9 +157,9 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     }
 
 
-    public Pane getCorrectPane(CharacterCard card)
+    public Pane getCorrectPane(LightCharacterCard card)
     {
-        CharacterName name = card.getCharacterName();
+        CharacterName name = card.getName();
         for(Node correct: mainPane.getChildren())
         {
             Pane pane = (Pane)correct;
