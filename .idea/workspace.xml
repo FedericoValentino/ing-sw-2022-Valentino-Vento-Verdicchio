@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Further steps to ensure character's functionality" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="little change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
+    </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +83,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerApp">
+  <component name="RunManager" selected="Application.ClientApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -201,13 +206,6 @@
       <workItem from="1654505833010" duration="2842000" />
       <workItem from="1654630037126" duration="3610000" />
       <workItem from="1655031677157" duration="700000" />
-    </task>
-    <task id="LOCAL-00074" summary="OtherSchool.fxml">
-      <created>1654097434546</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1654097434546</updated>
     </task>
     <task id="LOCAL-00075" summary="OtherSchool code">
       <created>1654100584844</created>
@@ -545,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655073873678</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="little change">
+      <created>1655078959930</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1655078959930</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init added" />
     <MESSAGE value="Now it should work (infos)" />
     <MESSAGE value="ugh" />
     <MESSAGE value="yaawn" />
@@ -590,7 +594,8 @@
     <MESSAGE value="Same, but code with me" />
     <MESSAGE value="Further steps to ensure character's functionality" />
     <MESSAGE value="Same but code with me" />
-    <option name="LAST_COMMIT_MESSAGE" value="Same but code with me" />
+    <MESSAGE value="little change" />
+    <option name="LAST_COMMIT_MESSAGE" value="little change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

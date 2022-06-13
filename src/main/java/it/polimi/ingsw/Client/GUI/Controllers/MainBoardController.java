@@ -229,6 +229,7 @@ public class MainBoardController extends Controller {
         switch (card.getType())
         {
             case NONE:
+                ParametersSlice.getChildren().clear();
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
                             CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName());
