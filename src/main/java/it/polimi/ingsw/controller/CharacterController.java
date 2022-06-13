@@ -80,9 +80,12 @@ public class CharacterController
      */
     public static void deckManagement(CurrentGameState game)
     {
-        CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
-        game.getCurrentActiveCharacterCard().remove(0);
-        game.getCurrentCharacterDeck().getDeck().add(card);
+        if(!game.getCurrentActiveCharacterCard().isEmpty())
+        {
+            CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
+            game.getCurrentActiveCharacterCard().remove(0);
+            game.getCurrentCharacterDeck().getDeck().add(card);
+        }
     }
 
     public void playEffect(CharacterName characterName, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
