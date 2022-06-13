@@ -37,7 +37,6 @@ public class CurrentGameState extends Observable {
     private MotherNature currentMotherNature;
     private CurrentTurnState currentTurnState;
     private ArrayList<CharacterCard> currentActiveCharacterCard;
-    //private ArrayList<Student> currentExtractedStudents;
     private int bankBalance;
     private boolean expertGame;
 

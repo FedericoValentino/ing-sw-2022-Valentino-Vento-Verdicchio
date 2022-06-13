@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Different Opacity for Play effect button&gt; experiment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added Pane for error display in GUi">
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -210,13 +208,6 @@
       <workItem from="1655116531013" duration="140000" />
       <workItem from="1655116684516" duration="286000" />
       <workItem from="1655149081823" duration="1514000" />
-    </task>
-    <task id="LOCAL-00081" summary="Server side teamChoice. CLI e GUI ready for change">
-      <created>1654343345042</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1654343345042</updated>
     </task>
     <task id="LOCAL-00082" summary="Character Parameter Pattern">
       <created>1654345898462</created>
@@ -554,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655154219540</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="Added Pane for error display in GUi">
+      <created>1655159096294</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1655159096294</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Island" />
     <MESSAGE value="minor correction" />
     <MESSAGE value="Mothernature Update" />
     <MESSAGE value="influence calculation fix" />
@@ -599,7 +596,8 @@
     <MESSAGE value="Corrected some ingenuities" />
     <MESSAGE value="Eliminated redundant button in CharacterCardscontroller" />
     <MESSAGE value="Different Opacity for Play effect button&gt; experiment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Different Opacity for Play effect button&gt; experiment" />
+    <MESSAGE value="Added Pane for error display in GUi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Pane for error display in GUi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
