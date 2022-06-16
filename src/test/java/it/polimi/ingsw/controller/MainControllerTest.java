@@ -1,8 +1,5 @@
 package it.polimi.ingsw.controller;
 
-import it.polimi.ingsw.controller.CharacterController;
-import it.polimi.ingsw.controller.Checks;
-import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.boards.token.ColTow;
 import it.polimi.ingsw.model.boards.token.GamePhase;
@@ -12,8 +9,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class MainControllerTest
 {
@@ -33,13 +29,13 @@ public class MainControllerTest
         assertEquals(2, controllerTest.getGame().getCurrentTeams().size());
         assertEquals(1, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().size());
         assertEquals(1, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().size());
-        assertEquals("jack", controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getNome());
+        assertEquals("jack", controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getName());
         assertEquals(8, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().getTowerCount());
-        assertEquals(true, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).isTowerOwner());
+        assertTrue(controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).isTowerOwner());
         assertEquals(Wizard.LORD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getAssistantDeck().getWizard());
-        assertEquals("fede", controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getNome());
+        assertEquals("fede", controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getName());
         assertEquals(8, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
-        assertEquals(true, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).isTowerOwner());
+        assertTrue(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).isTowerOwner());
         assertEquals(Wizard.DRUID, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getAssistantDeck().getWizard());
         controllerTest.AddPlayer(0, "nico", 8, Wizard.SENSEI);
         controllerTest.AddPlayer(1, "Frah", 8, Wizard.WITCH);
@@ -79,7 +75,7 @@ public class MainControllerTest
 
             }
         }
-        assertEquals(false, controllerTest.getGame().getCurrentPouch().getSetup());
+        assertFalse(controllerTest.getGame().getCurrentPouch().getSetup());
         assertEquals(7, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().getEntrance().size());
         assertEquals(7, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().getEntrance().size());
     }
@@ -210,7 +206,7 @@ public class MainControllerTest
     @Test
     public void testIsGamePhase()
     {
-        assertEquals(true, Checks.isGamePhase(controllerTest.getGame(), GamePhase.SETUP));
+        assertTrue(Checks.isGamePhase(controllerTest.getGame(), GamePhase.SETUP));
     }
 
     @Test

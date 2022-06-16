@@ -1,8 +1,5 @@
 package it.polimi.ingsw.model;
 
-import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.Player;
-import it.polimi.ingsw.model.Team;
 import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.Wizard;
@@ -52,8 +49,8 @@ public class CurrentGameStateTest {
         p1.chooseAssistantCard(0);
         p2.chooseAssistantCard(1);
         cg2.updateTurnState();
-        tO.put(p1.getNome(), p1.getValue());
-        tOO.put(p2.getNome(),p2.getValue());
+        tO.put(p1.getName(), p1.getValue());
+        tOO.put(p2.getName(),p2.getValue());
 
         //TO DO risolvere questo
         //assertEquals(cg2.getCurrentTurnState().getTurnOrder().get(0),tO);
@@ -102,7 +99,7 @@ public void testPlaceToken1()
         cg1.getCurrentTeams().add(t2);
         cg1.getCurrentTeams().get(0).addPlayer(p1);
         cg1.getCurrentTeams().get(1).addPlayer(p2);
-        cg1.getCurrentTeams().get(0).getPlayers().get(0);
+
 
         cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().placeInDiningRoom(Col.YELLOW);
         cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
@@ -129,7 +126,7 @@ public void testPlaceToken1()
         assertTrue(cg1.getCurrentMotherNature().getPosition()>=0);
         assertFalse(cg2.getCurrentCharacterDeck().checkEmpty());
 
-        assertTrue(cg2.getCurrentClouds().length==2);
+        assertEquals(2, cg2.getCurrentClouds().length);
         //da rivedere, perché questa add va messa  in una funzione dedicata nel model (problema discusso)
         //assertEquals(,cg1.getCurrentActiveCharacterCard());
         // cg1.getCurrentActiveCharacterCard().add(cg1.getCurrentCharacterDeck().drawCard(0));

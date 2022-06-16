@@ -100,7 +100,7 @@ public class CurrentGameState extends Observable {
         {
             for(Player p: t.getPlayers())
             {
-                map.put(p.getNome(), p.getValue());
+                map.put(p.getName(), p.getValue());
             }
         }
         finalmap = map.entrySet().stream()

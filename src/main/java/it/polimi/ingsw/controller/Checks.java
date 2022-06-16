@@ -125,7 +125,7 @@ public final class Checks {
         {
             for (Player otherPlayer: team.getPlayers())
             {
-                if (!player.getNome().equals(otherPlayer.getNome()) && otherPlayer.getCurrentAssistantCard() != null)
+                if (!player.getName().equals(otherPlayer.getName()) && otherPlayer.getCurrentAssistantCard() != null)
                 {
                     if (player.getAssistantDeck().getDeck().get(cardIndex).getValue() == otherPlayer.getCurrentAssistantCard().getValue())
                         return true;
@@ -151,7 +151,7 @@ public final class Checks {
         ArrayList<AssistantCard> currentlyPlayedCards = new ArrayList<>();
         for(Team team: game.getCurrentTeams())
             for(Player p: team.getPlayers())
-                if(!p.getNome().equals(player.getNome()) && p.getCurrentAssistantCard() != null)
+                if(!p.getName().equals(player.getName()) && p.getCurrentAssistantCard() != null)
                     currentlyPlayedCards.add(p.getCurrentAssistantCard());
         int[] hitCounter = new int[player.getAssistantDeck().getDeck().size()-1];
         int index = 0;
@@ -164,8 +164,8 @@ public final class Checks {
                         hitCounter[index] += 1;
                         index +=1;
                     }
-        for (int i = 0; i < hitCounter.length; i++)
-            if (hitCounter[i] != 0)
+        for (int j : hitCounter)
+            if (j != 0)
                 counter += 1;
         return counter == hitCounter.length;
     }

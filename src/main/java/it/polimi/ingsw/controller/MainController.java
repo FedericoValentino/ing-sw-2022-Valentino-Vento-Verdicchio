@@ -142,7 +142,7 @@ public class MainController
         game.getCurrentTurnState().getTurnOrder().remove(currentPlayer);
         actionController.setCurrentPlayer(currentPlayer);
         game.getCurrentTurnState().setCurrentPlayer(currentPlayer);
-        characterController.deckManagement(game);
+        CharacterController.deckManagement(game);
         game.getCurrentTurnState().ResetMoves();
     }
 
@@ -166,7 +166,7 @@ public class MainController
         {
             for(Player p: t.getPlayers())
             {
-                if(p.getNome().equals(player))
+                if(p.getName().equals(player))
                 {
                     return p;
                 }
@@ -186,7 +186,7 @@ public class MainController
         {
             for(Player p: t.getPlayers())
             {
-                if(p.getNome().equals(player))
+                if(p.getName().equals(player))
                 {
                     return t.getColor();
                 }
@@ -204,7 +204,7 @@ public class MainController
             {
                 for(Player p: t.getPlayers())
                 {
-                    p.Discard();
+                    p.discard();
                 }
             }
         }

@@ -128,9 +128,9 @@ public class ChecksTest {
             controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().remove(0);
         assertEquals(9, controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().get(0).getValue());
         assertEquals(10, controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).getAssistantDeck().getDeck().get(1).getValue());
-        controllerTestfor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).Discard();
-        controllerTestfor3.getGame().getCurrentTeams().get(1).getPlayers().get(0).Discard();
-        controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).Discard();
+        controllerTestfor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).discard();
+        controllerTestfor3.getGame().getCurrentTeams().get(1).getPlayers().get(0).discard();
+        controllerTestfor3.getGame().getCurrentTeams().get(2).getPlayers().get(0).discard();
         controllerTestfor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(7);
         controllerTestfor3.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(8);
         assertTrue(Checks.isAssistantAlreadyPlayed(controllerTestfor3.getGame(), "puddu", 0));

@@ -1,7 +1,5 @@
 package it.polimi.ingsw.model;
 
-import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.ColTow;
 import it.polimi.ingsw.model.boards.token.Wizard;
@@ -28,14 +26,6 @@ public class PlayerTest {
     }
 
     @Test
-    public void testGetMaxMotherMovement()
-    {
-        int i=p2.getMaxMotherMovement();
-        p2.getMovementValue();
-        assertEquals(i,0);
-    }
-
-    @Test
     public void testChooseAssistantCard()
     {
         p1.chooseAssistantCard(0);
@@ -56,7 +46,7 @@ public class PlayerTest {
     {
         testChooseAssistantCard(); //to inzialize the current card, because I'm lazy
         AssistantCard a=p1.getCurrentAssistantCard();
-        p1.Discard();
+        p1.discard();
         assertNull(p1.getCurrentAssistantCard());
         assertEquals(a,p1.getLastPlayedCard());
     }
@@ -64,7 +54,7 @@ public class PlayerTest {
     public void testGenericGetter()
     {
         assertTrue(p1.getAssistantDeck() instanceof AssistantDeck);
-        assertEquals(p1.getNome(),"Giaco");
+        assertEquals(p1.getName(),"Giaco");
         assertTrue(p1.isTowerOwner());
     }
 

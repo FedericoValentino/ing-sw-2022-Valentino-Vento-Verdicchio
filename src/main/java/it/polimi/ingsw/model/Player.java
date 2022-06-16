@@ -9,16 +9,16 @@ import it.polimi.ingsw.model.cards.AssistantDeck;
 
 public class Player
 {
-  private String nome;
+  private String name;
   private int coinAmount;
   private AssistantCard currentAssistantCard;
   private AssistantCard lastPlayedCard;
   private AssistantDeck assistantDeck;
   public School school;
-  private int MaxMotherMovement;
+  private int maxMotherMovement;
   private int movementValue;
   private int value;
-  private boolean TowerOwner;
+  private boolean towerOwner;
   private CurrentGameState game;
 
 
@@ -32,21 +32,21 @@ public class Player
   public Player(String nome, ColTow col, int towerAmount, Wizard wizard, boolean expertGame, CurrentGameState game)
   {
     this.game = game;
-    this.nome = nome;
+    this.name = nome;
     this.school = new School(col, towerAmount, game);
     if(towerAmount != 0)
     {
-      this.TowerOwner = true;
+      this.towerOwner = true;
     }
     else
     {
-      this.TowerOwner = false;
+      this.towerOwner = false;
     }
     this.assistantDeck = new AssistantDeck(wizard, nome);
     this.currentAssistantCard = null;
     this.lastPlayedCard = null;
     this.movementValue = 0;
-    this.MaxMotherMovement = 0;
+    this.maxMotherMovement = 0;
     this.value = (int) (Math.random() * 10 + 1);
     if(expertGame)
       this.coinAmount = 1;
@@ -62,18 +62,18 @@ public class Player
   public void chooseAssistantCard(int cardPosition)
   {
     currentAssistantCard = assistantDeck.extractCard(cardPosition);
-    MaxMotherMovement = currentAssistantCard.getMovement();
+    maxMotherMovement = currentAssistantCard.getMovement();
     value = currentAssistantCard.getValue();
   }
 
   /** Removes the last played Assistant Card from the Current Assistant Card field and places it into the
    Last Played Card field
    */
-  public void Discard()
+  public void discard()
   {
     lastPlayedCard = currentAssistantCard;
     currentAssistantCard = null;
-    this.MaxMotherMovement = 0;
+    this.maxMotherMovement = 0;
   }
 
   /** Calculates the amount of coins gained by the players in relation to the "Checkpoints" in his Dining Room
@@ -114,7 +114,7 @@ public class Player
    */
   public void updateMaxMotherMovement(int movement)
   {
-    MaxMotherMovement += movement;
+    maxMotherMovement += movement;
   }
 
   public AssistantCard getCurrentAssistantCard() {
@@ -130,7 +130,7 @@ public class Player
     return coinAmount;
   }
   public int getMaxMotherMovement() {
-    return MaxMotherMovement;
+    return maxMotherMovement;
   }
   public int getMovementValue() {
     return movementValue;
@@ -141,11 +141,11 @@ public class Player
   public School getSchool() {
     return school;
   }
-  public String getNome() {
-    return nome;
+  public String getName() {
+    return name;
   }
 
   public boolean isTowerOwner() {
-    return TowerOwner;
+    return towerOwner;
   }
 }
