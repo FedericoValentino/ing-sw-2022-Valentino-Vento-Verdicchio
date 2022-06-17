@@ -49,7 +49,7 @@ public class Islands extends Board {
         nextIsland = islands.get(i+1);
         previousIsland = islands.get(i-1);
       }
-      if(currentIsland.getOwnership() == nextIsland.getOwnership() && (currentIsland.motherNature || nextIsland.motherNature)
+      if(currentIsland.getOwnership() == nextIsland.getOwnership() && (currentIsland.getMotherNature() || nextIsland.getMotherNature())
               && currentIsland.getOwnership() != null)
       {
         unifyIslands(currentIsland, nextIsland);
@@ -57,7 +57,7 @@ public class Islands extends Board {
         islands.remove(nextIsland);
         i = 0;
       }
-      else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.motherNature || previousIsland.motherNature)
+      else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.getMotherNature() || previousIsland.getMotherNature())
               && currentIsland.getOwnership() != null)
       {
         unifyIslands(currentIsland, previousIsland);
@@ -77,14 +77,14 @@ public class Islands extends Board {
   {
     if(nextIsland.getMotherNature())
     {
-      currentIsland.motherNature = true;
+      currentIsland.setMotherNature(true);
     }
-    currentIsland.currentStudents.addAll(nextIsland.currentStudents);
-    currentIsland.towerNumber += 1;
-    currentIsland.teamInfluence[0] += nextIsland.teamInfluence[0];
-    currentIsland.teamInfluence[1] += nextIsland.teamInfluence[1];
-    currentIsland.teamInfluence[2] += nextIsland.teamInfluence[2];
-    currentIsland.Group = true;
+    currentIsland.getCurrentStudents().addAll(nextIsland.getCurrentStudents());
+    currentIsland.setTowerNumber(currentIsland.getTowerNumber()+1);
+    currentIsland.getTeamInfluence()[0] += nextIsland.getTeamInfluence()[0];
+    currentIsland.getTeamInfluence()[1] += nextIsland.getTeamInfluence()[1];
+    currentIsland.getTeamInfluence()[2] += nextIsland.getTeamInfluence()[2];
+    currentIsland.setGroup(true);
 
   }
 
@@ -94,7 +94,7 @@ public class Islands extends Board {
     for(int i = 0; i < islands.size(); i++)
     {
       Island I = islands.get(i);
-      I.islandId = i;
+      I.setIslandId(i);
       islands.set(i, I);
       if(islands.get(i).getMotherNature())
       {

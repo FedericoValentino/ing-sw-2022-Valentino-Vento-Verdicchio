@@ -47,7 +47,7 @@ public class PriestTest {
     {
         for(int i=0;i<4;i++)
             p.updateStudents(po);
-        assertTrue(p.getStudent(2) instanceof Student);
+        assertTrue(p.getStudent(2) != null);
     }
 
     @Test
@@ -82,11 +82,11 @@ public class PriestTest {
         /*First of all, it verifies that the last student added to the island is of the same colour of that
         taken from the card.
         Then, it checks if the correct number of students are on the island at the end of the effect  */
-            assertEquals(color, controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.get(controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size()-1).getColor());
-            if(controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size() == 1)
-                assertEquals(1, controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size());
+            assertEquals(color, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().get(controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size()-1).getColor());
+            if(controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size() == 1)
+                assertEquals(1, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size());
             else
-                assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.size());
+                assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size());
 
     }
 

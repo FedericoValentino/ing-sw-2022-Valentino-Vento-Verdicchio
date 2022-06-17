@@ -180,14 +180,7 @@ public class CurrentGameState extends Observable {
                 {
                     for (Player p : t.getPlayers())
                     {
-                        if(p.equals(maxPlayer))
-                        {
-                            p.school.updateProfessorsTable(c.ordinal(), true);
-                        }
-                        else
-                        {
-                            p.school.updateProfessorsTable(c.ordinal(), false);
-                        }
+                        p.school.updateProfessorsTable(c.ordinal(), p.equals(maxPlayer));
                     }
                 }
             }
@@ -252,12 +245,10 @@ public class CurrentGameState extends Observable {
     {
       return currentTeams;
     }
-
     public CurrentTurnState getCurrentTurnState()
     {
         return currentTurnState;
     }
-
     public MotherNature getCurrentMotherNature() {
         return currentMotherNature;
     }

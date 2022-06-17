@@ -41,8 +41,8 @@ public class EffectTestsUtility
     public static int basicIslandSetup(CurrentGameState game)
     {
         int island = (int) ((Math.random()*11));
-        if(game.getCurrentIslands().getIslands().get(island).currentStudents.size() == 1)
-            game.getCurrentIslands().getIslands().get(island).currentStudents.remove(0);
+        if(game.getCurrentIslands().getIslands().get(island).getCurrentStudents().size() == 1)
+            game.getCurrentIslands().getIslands().get(island).getCurrentStudents().remove(0);
 
         //Grants the control of 3 professors to the first team, 2 to the other
 
@@ -76,11 +76,11 @@ public class EffectTestsUtility
         Student s4 = new Student(Col.PINK);
         Student s5 = new Student(Col.BLUE);
 
-        game.getCurrentIslands().getIslands().get(island).currentStudents.add(s1);
-        game.getCurrentIslands().getIslands().get(island).currentStudents.add(s2);
-        game.getCurrentIslands().getIslands().get(island).currentStudents.add(s3);
-        game.getCurrentIslands().getIslands().get(island).currentStudents.add(s4);
-        game.getCurrentIslands().getIslands().get(island).currentStudents.add(s5);
+        game.getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s1);
+        game.getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s2);
+        game.getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s3);
+        game.getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s4);
+        game.getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s5);
 
         //returns a reference to the island itself to be further used
 
@@ -98,7 +98,7 @@ public class EffectTestsUtility
         if(winningTeam == 0)
         {
             assertEquals(ColTow.GREY, game.getCurrentIslands().getIslands().get(island).getOwnership());
-            assertEquals(1, game.getCurrentIslands().getIslands().get(island).towerNumber);
+            assertEquals(1, game.getCurrentIslands().getIslands().get(island).getTowerNumber());
             assertEquals(8, game.getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
             assertEquals(0, game.getCurrentTeams().get(1).getControlledIslands());
             assertEquals(7, game.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getTowerCount());
@@ -107,7 +107,7 @@ public class EffectTestsUtility
         else if(winningTeam == 1)
         {
             assertEquals(ColTow.WHITE, game.getCurrentIslands().getIslands().get(island).getOwnership());
-            assertEquals(1, game.getCurrentIslands().getIslands().get(island).towerNumber);
+            assertEquals(1, game.getCurrentIslands().getIslands().get(island).getTowerNumber());
             assertEquals(7, game.getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
             assertEquals(8, game.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getTowerCount());
             assertEquals(1, game.getCurrentTeams().get(1).getControlledIslands());

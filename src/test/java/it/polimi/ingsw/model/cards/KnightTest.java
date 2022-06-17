@@ -31,8 +31,8 @@ public class KnightTest {
         assertEquals(k.getCharacterName(), CharacterName.KNIGHT);
     }
 
-    @Test
     /** Knight effect test */
+    @Test
     public void testTestEffect6()
     {
 
@@ -46,7 +46,7 @@ public class KnightTest {
 
         int island = EffectTestsUtility.basicIslandSetup(controllerTest.getGame());
 
-        if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature)
+        if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).getMotherNature())
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
@@ -59,7 +59,7 @@ public class KnightTest {
         (without the effect, the GREY team would have won).
          Checks if the WHITE influence has been re-updated accordingly at the end of the influence calculation*/
         EffectTestsUtility.checksAfterInfluenceCalculation(controllerTest.getGame(), 1, island);
-        assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[1]);
+        assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getTeamInfluence()[1]);
 
     }
 

@@ -60,10 +60,10 @@ public class TruffleHunterTest {
         and GREY should secure the victory   */
         Student s6 = new Student(Col.BLUE);
         Student s7 = new Student(Col.BLUE);
-        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s6);
-        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s7);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s6);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s7);
 
-        if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature)
+        if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).getMotherNature())
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.TRUFFLE_HUNTER, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
@@ -75,7 +75,7 @@ public class TruffleHunterTest {
 
         //Checks if GREY has won the island and if the eliminated students have been re-added on it
         EffectTestsUtility.checksAfterInfluenceCalculation(controllerTest.getGame(), 0, island);
-        assertEquals(3, (int) controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.stream().filter(Student -> Student.getColor() == Col.BLUE).count());
+        assertEquals(3, (int) controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count());
 
     }
 }

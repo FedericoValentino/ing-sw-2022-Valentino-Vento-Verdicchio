@@ -56,10 +56,10 @@ public class HeraldTest {
         /*After the influence calculation, the first team should control the selected island: fisrt it checks if
         the teamInfluence structure in the island has the correct values, then it checks that the winning team
         is chosen correctly. In the end it ensures that motherNature has been set at false on the island   */
-        assertEquals(3, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[0]);
-        assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[1]);
+        assertEquals(3, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getTeamInfluence()[0]);
+        assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getTeamInfluence()[1]);
         EffectTestsUtility.checksAfterInfluenceCalculation(controllerTest.getGame(), 0, island);
-        assertFalse(controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature);
+        assertFalse(controllerTest.getGame().getCurrentIslands().getIslands().get(island).getMotherNature());
     }
 
 

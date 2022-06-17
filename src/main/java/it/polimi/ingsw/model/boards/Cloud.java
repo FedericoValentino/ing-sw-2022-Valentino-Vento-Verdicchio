@@ -82,7 +82,7 @@ public class Cloud extends Board
     try {
       return student.get(pos);
     } catch (IndexOutOfBoundsException e) {
-      e.printStackTrace();
+      System.out.println("IN cloud index out of bound line 85");
     }
     return null;
   }

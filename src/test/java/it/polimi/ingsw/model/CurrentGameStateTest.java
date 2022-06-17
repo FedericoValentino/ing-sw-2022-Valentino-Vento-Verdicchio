@@ -59,19 +59,19 @@ public class CurrentGameStateTest {
     //this is a service class used in 3° test of testCheckWinner
 public void testPlaceToken1()
    {
-        cg2.getCurrentIslands().getIslands().get(0).currentStudents.add(s2);
-        cg2.getCurrentIslands().getIslands().get(1).currentStudents.add(s2);
-        cg2.getCurrentIslands().getIslands().get(2).currentStudents.add(s2);
-        cg2.getCurrentIslands().getIslands().get(3).currentStudents.add(s2);
-        cg2.getCurrentIslands().getIslands().get(4).currentStudents.add(s2);
-        cg2.getCurrentIslands().getIslands().get(5).currentStudents.add(s2);
-        cg2.getCurrentIslands().getIslands().get(6).currentStudents.add(s5);
-        cg2.getCurrentIslands().getIslands().get(7).currentStudents.add(s5);
-        cg2.getCurrentIslands().getIslands().get(8).currentStudents.add(s5);
+        cg2.getCurrentIslands().getIslands().get(0).getCurrentStudents().add(s2);
+        cg2.getCurrentIslands().getIslands().get(1).getCurrentStudents().add(s2);
+        cg2.getCurrentIslands().getIslands().get(2).getCurrentStudents().add(s2);
+        cg2.getCurrentIslands().getIslands().get(3).getCurrentStudents().add(s2);
+        cg2.getCurrentIslands().getIslands().get(4).getCurrentStudents().add(s2);
+        cg2.getCurrentIslands().getIslands().get(5).getCurrentStudents().add(s2);
+        cg2.getCurrentIslands().getIslands().get(6).getCurrentStudents().add(s5);
+        cg2.getCurrentIslands().getIslands().get(7).getCurrentStudents().add(s5);
+        cg2.getCurrentIslands().getIslands().get(8).getCurrentStudents().add(s5);
 
-        cg2.getCurrentIslands().getIslands().get(9).currentStudents.add(s2);
-        cg2.getCurrentIslands().getIslands().get(10).currentStudents.add(s2);
-        cg2.getCurrentIslands().getIslands().get(11).currentStudents.add(s2);
+        cg2.getCurrentIslands().getIslands().get(9).getCurrentStudents().add(s2);
+        cg2.getCurrentIslands().getIslands().get(10).getCurrentStudents().add(s2);
+        cg2.getCurrentIslands().getIslands().get(11).getCurrentStudents().add(s2);
 
         p1.getSchool().updateProfessorsTable(1,true);//red prof
         p2.getSchool().updateProfessorsTable(4,true);//blue prof

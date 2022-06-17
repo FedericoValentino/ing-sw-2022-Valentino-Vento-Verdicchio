@@ -51,11 +51,11 @@ public class CentaurTest {
         it adds a tower to the island and decrements the tower count in the GREY player's school.
         It updates the ownership on the island and the controlledIslands of the GREY team.
         Sets MotherNature to true, in order to simulate the situation in which the effect of this card is played */
-        if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).motherNature)
+        if(!controllerTest.getGame().getCurrentIslands().getIslands().get(island).getMotherNature())
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateTeamInfluence(controllerTest.getGame().getCurrentTeams());
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).calculateOwnership();
-        controllerTest.getGame().getCurrentIslands().getIslands().get(island).towerNumber = 1;
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).setTowerNumber(1);
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getSchool().updateTowerCount(-1);
         controllerTest.getGame().getCurrentTeams().get(0).updateControlledIslands(1);
 
@@ -64,8 +64,8 @@ public class CentaurTest {
         With the activation of the effect, the tower should be eliminated, and so the WHITE team should win*/
         Student s6 = new Student(Col.BLUE);
         Student s7 = new Student(Col.PINK);
-        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s6);
-        controllerTest.getGame().getCurrentIslands().getIslands().get(island).currentStudents.add(s7);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s6);
+        controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s7);
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.CENTAUR, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         testCard.effect(controllerTest.getGame(), 0, island, null, null);
@@ -74,8 +74,8 @@ public class CentaurTest {
 
 
         //Checks if the influence calculation has been done correctly and if the WHITE team won as expected
-        assertEquals(3, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[0]);
-        assertEquals(4, controllerTest.getGame().getCurrentIslands().getIslands().get(island).teamInfluence[1]);
+        assertEquals(3, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getTeamInfluence()[0]);
+        assertEquals(4, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getTeamInfluence()[1]);
         EffectTestsUtility.checksAfterInfluenceCalculation(controllerTest.getGame(), 1, island);
     }
 }

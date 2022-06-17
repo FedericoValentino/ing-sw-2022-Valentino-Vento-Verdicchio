@@ -143,7 +143,7 @@ public class MainController
         actionController.setCurrentPlayer(currentPlayer);
         game.getCurrentTurnState().setCurrentPlayer(currentPlayer);
         CharacterController.deckManagement(game);
-        game.getCurrentTurnState().ResetMoves();
+        game.getCurrentTurnState().resetMoves();
     }
 
 

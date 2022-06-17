@@ -13,7 +13,7 @@ public class CurrentTurnState
     private int planningMoves;
     private int actionMoves;
     private boolean gameEnded;
-    private ColTow WinningTeam;
+    private ColTow winningTeam;
     private GamePhase gamePhase;
     private boolean lastTurn;
     private CurrentGameState game;
@@ -26,33 +26,33 @@ public class CurrentTurnState
         this.actionMoves = 0;
         this.planningMoves = 0;
         this.gameEnded = false;
-        this.WinningTeam = null;
+        this.winningTeam = null;
         this.gamePhase = GamePhase.SETUP;
         this.game = game;
     }
 
     /** Iterates the Turn of the game */
-    public void UpdateTurn()
+    public void updateTurn()
     {
         turn++;
     }
 
     /** Iterates the actions that have been taken in a single turn */
-    public void UpdateActionMoves()
+    public void updateActionMoves()
     {
         actionMoves++;
         if(gamePhase == GamePhase.PLANNING || gamePhase == GamePhase.ACTION)
             game.notify(game.modelToJson());
     }
 
-    public void UpdatePlanningMoves()
+    public void updatePlanningMoves()
     {
         planningMoves++;
         if(gamePhase == GamePhase.PLANNING || gamePhase == GamePhase.ACTION)
             game.notify(game.modelToJson());
     }
 
-    public void ResetMoves()
+    public void resetMoves()
     {
         actionMoves = 0;
         planningMoves = 0;
@@ -66,7 +66,7 @@ public class CurrentTurnState
     public void updateWinner(ColTow t)
     {
         gameEnded = true;
-        WinningTeam = t;
+        winningTeam = t;
     }
 
     /** Updates the turn order with an updated HashMap
@@ -83,12 +83,6 @@ public class CurrentTurnState
 
     }
 
-    public void setLastTurn(){lastTurn = true;}
-
-    public void setCurrentPlayer(String player){
-        this.currentPlayer = player;
-    }
-
     public String getCurrentPlayer(){
         return currentPlayer;
     }
@@ -96,7 +90,7 @@ public class CurrentTurnState
         return gamePhase;
     }
     public ColTow getWinningTeam() {
-        return WinningTeam;
+        return winningTeam;
     }
     public boolean getIsGameEnded() {
         return gameEnded;
@@ -107,8 +101,12 @@ public class CurrentTurnState
         return turn;
     }
     public boolean getLastTurn(){ return  lastTurn; }
-
     public HashMap<String, Integer> getTurnOrder() {
         return turnOrder;
+    }
+
+    public void setLastTurn(){lastTurn = true;}
+    public void setCurrentPlayer(String player){
+        this.currentPlayer = player;
     }
 }

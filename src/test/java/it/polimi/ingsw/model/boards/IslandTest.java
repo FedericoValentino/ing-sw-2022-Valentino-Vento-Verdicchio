@@ -38,7 +38,7 @@ public class IslandTest {
         assertFalse(i.getGroup());
         assertEquals(i.getTowerNumber(),0);
         assertFalse(i.getNoEntry());
-        assertEquals(i.teamInfluence,i.getTeamInfluence());
+        assertEquals(i.getTeamInfluence(),i.getTeamInfluence());
     }
     @Test
     public void testAddStudent()
@@ -46,17 +46,17 @@ public class IslandTest {
         assertEquals(i.getCurrentStudents().size(),0);
         i.addStudent(s);
         assertEquals(i.getCurrentStudents().size(),1);
-        assertEquals(i.currentStudents.get(0),s);
+        assertEquals(i.getCurrentStudents().get(0),s);
     }
 
 
     @Test
     public void testCalculateOwnership()
     {
-        i.motherNature=true;
-        i.teamInfluence[0]=3;
-        i.teamInfluence[1]=4;
-        i.teamInfluence[2]=9;
+        i.setMotherNature(true);
+        i.getTeamInfluence()[0]=3;
+        i.getTeamInfluence()[1]=4;
+        i.getTeamInfluence()[2]=9;
         i.calculateOwnership();//problema su index array
         assertEquals(i.getOwnership(), ColTow.BLACK);
     }
@@ -73,11 +73,11 @@ public class IslandTest {
     public void testUpdateTeamInfluence()
     {
         //2 green , 1 blue, 1 yellow
-        i.currentStudents.add(s);
-        i.currentStudents.add(s2);
-        i.currentStudents.add(s3);
-        i.currentStudents.add(s4);
-        i.currentStudents.add(s);
+        i.getCurrentStudents().add(s);
+        i.getCurrentStudents().add(s2);
+        i.getCurrentStudents().add(s3);
+        i.getCurrentStudents().add(s4);
+        i.getCurrentStudents().add(s);
         i.updateMotherNature();
         t1.addPlayer(p1);t1.addPlayer(p3);
         t2.addPlayer(p2);t2.addPlayer(p4);t2.addPlayer(p5);
@@ -94,11 +94,11 @@ public class IslandTest {
         t2.updateProfessors();
         c.getCurrentTeams().add(t1);
         c.getCurrentTeams().add(t2);
-        assertTrue(t1.getControlledProfessors().get(0).equals(Col.GREEN));
-        assertTrue(t2.getControlledProfessors().get(0).equals(Col.YELLOW));
-        assertTrue(t1.getControlledProfessors().get(1).equals(Col.RED));
-        assertTrue(t2.getControlledProfessors().get(1).equals(Col.PINK));
-        assertTrue(t2.getControlledProfessors().get(2).equals(Col.BLUE));
+        assertEquals(t1.getControlledProfessors().get(0), Col.GREEN);
+        assertEquals(t2.getControlledProfessors().get(0), Col.YELLOW);
+        assertEquals(t1.getControlledProfessors().get(1), Col.RED);
+        assertEquals(t2.getControlledProfessors().get(1), Col.PINK);
+        assertEquals(t2.getControlledProfessors().get(2), Col.BLUE);
         i.updateMotherNature();
         i.calculateOwnership();
         i.updateTeamInfluence(c.getCurrentTeams());
@@ -107,9 +107,9 @@ public class IslandTest {
     @Test
     public void testUpdateTeamInfluence2()
     {
-        i.teamInfluence[0]=0;
-        i.teamInfluence[1]=34;
-        i.teamInfluence[2]=5;
+        i.getTeamInfluence()[0]=0;
+        i.getTeamInfluence()[1]=34;
+        i.getTeamInfluence()[2]=5;
         assertEquals(i.getTeamInfluence()[0],0);
         i.updateTeamInfluence(4,0);
         assertEquals(i.getTeamInfluence()[0],4);

@@ -49,21 +49,21 @@ public class IslandsTest {
     {
         //mancano 2 isole
 
-        is.getIslands().get(0).currentStudents.add(s1);//green
+        is.getIslands().get(0).getCurrentStudents().add(s1);//green
 
-        is.getIslands().get(1).currentStudents.add(s2);//pink
-        is.getIslands().get(3).currentStudents.add(s2);//pink
-        is.getIslands().get(2).currentStudents.add(s2);//pink
+        is.getIslands().get(1).getCurrentStudents().add(s2);//pink
+        is.getIslands().get(3).getCurrentStudents().add(s2);//pink
+        is.getIslands().get(2).getCurrentStudents().add(s2);//pink
 
-        is.getIslands().get(4).currentStudents.add(s4);
-        is.getIslands().get(5).currentStudents.add(s4);//yellow
-        is.getIslands().get(6).currentStudents.add(s4);
+        is.getIslands().get(4).getCurrentStudents().add(s4);
+        is.getIslands().get(5).getCurrentStudents().add(s4);//yellow
+        is.getIslands().get(6).getCurrentStudents().add(s4);
 
-        is.getIslands().get(7).currentStudents.add(s2);//pink
-        is.getIslands().get(8).currentStudents.add(s2);//pink
-        is.getIslands().get(9).currentStudents.add(s2);//pink
-        is.getIslands().get(10).currentStudents.add(s2);//pink
-        is.getIslands().get(11).currentStudents.add(s2);//pink
+        is.getIslands().get(7).getCurrentStudents().add(s2);//pink
+        is.getIslands().get(8).getCurrentStudents().add(s2);//pink
+        is.getIslands().get(9).getCurrentStudents().add(s2);//pink
+        is.getIslands().get(10).getCurrentStudents().add(s2);//pink
+        is.getIslands().get(11).getCurrentStudents().add(s2);//pink
 
     }
 
@@ -78,25 +78,25 @@ public class IslandsTest {
 
 
 
-        is2.getIslands().get(0).currentStudents.add(s1);//green p3
+        is2.getIslands().get(0).getCurrentStudents().add(s1);//green p3
 
-        is2.getIslands().get(1).currentStudents.add(s12);//red p1
-        is2.getIslands().get(2).currentStudents.add(s4);//yellow p2
-        is2.getIslands().get(3).currentStudents.add(s2);//pink p1
+        is2.getIslands().get(1).getCurrentStudents().add(s12);//red p1
+        is2.getIslands().get(2).getCurrentStudents().add(s4);//yellow p2
+        is2.getIslands().get(3).getCurrentStudents().add(s2);//pink p1
 
-        is2.getIslands().get(4).currentStudents.add(s3);//blue p2
+        is2.getIslands().get(4).getCurrentStudents().add(s3);//blue p2
 
-        is2.getIslands().get(5).currentStudents.add(s1);//green p3
+        is2.getIslands().get(5).getCurrentStudents().add(s1);//green p3
 
-        is2.getIslands().get(6).currentStudents.add(s12);//red p1
-        is2.getIslands().get(7).currentStudents.add(s4);//yellow p3
-        is2.getIslands().get(8).currentStudents.add(s2);//pink p1
+        is2.getIslands().get(6).getCurrentStudents().add(s12);//red p1
+        is2.getIslands().get(7).getCurrentStudents().add(s4);//yellow p3
+        is2.getIslands().get(8).getCurrentStudents().add(s2);//pink p1
 
-        is2.getIslands().get(9).currentStudents.add(s3);//blue p2
+        is2.getIslands().get(9).getCurrentStudents().add(s3);//blue p2
 
-        is2.getIslands().get(10).currentStudents.add(s1);//green p3
+        is2.getIslands().get(10).getCurrentStudents().add(s1);//green p3
 
-        is2.getIslands().get(11).currentStudents.add(s12);//red p1
+        is2.getIslands().get(11).getCurrentStudents().add(s12);//red p1
 
     }
 
@@ -146,9 +146,9 @@ public class IslandsTest {
 
 
         //adding a new student to reload idManagement (reducing to 3 groups)
-        is.getIslands().get(0).currentStudents.add(s2);
-        is.getIslands().get(0).currentStudents.add(s2);
-        is.getIslands().get(0).currentStudents.add(s2);
+        is.getIslands().get(0).getCurrentStudents().add(s2);
+        is.getIslands().get(0).getCurrentStudents().add(s2);
+        is.getIslands().get(0).getCurrentStudents().add(s2);
         is.getIslands().get(0).updateMotherNature();
         is.getIslands().get(2).updateMotherNature();
         is.getIslands().get(3).updateMotherNature();
@@ -262,29 +262,29 @@ public class IslandsTest {
             is2.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
 
-
-        assertEquals(12,is2.getTotalGroups());
+        System.out.println(is2.getTotalGroups());
+        assertEquals(10,is2.getTotalGroups());
     }
 
     public void testIdManagmentCase3(Team t1,Team t2,Player p1,Player p2, CurrentGameState c) {
         //t1 black
         //t2 grey
         //System.out.println("Inizio test 3");
-        is3.getIslands().get(0).currentStudents.add(s1);//green  black
+        is3.getIslands().get(0).getCurrentStudents().add(s1);//green  black
 
-        is3.getIslands().get(1).currentStudents.add(s2);//pink   grey
-        is3.getIslands().get(3).currentStudents.add(s2);//pink
-        is3.getIslands().get(2).currentStudents.add(s2);//pink
+        is3.getIslands().get(1).getCurrentStudents().add(s2);//pink   grey
+        is3.getIslands().get(3).getCurrentStudents().add(s2);//pink
+        is3.getIslands().get(2).getCurrentStudents().add(s2);//pink
 
-        is3.getIslands().get(4).currentStudents.add(s4);//yellow  white
-        is3.getIslands().get(5).currentStudents.add(s4);
-        is3.getIslands().get(6).currentStudents.add(s4);
+        is3.getIslands().get(4).getCurrentStudents().add(s4);//yellow  white
+        is3.getIslands().get(5).getCurrentStudents().add(s4);
+        is3.getIslands().get(6).getCurrentStudents().add(s4);
 
-        is3.getIslands().get(7).currentStudents.add(s2);//pink   grey
-        is3.getIslands().get(8).currentStudents.add(s2);//pink
-        is3.getIslands().get(9).currentStudents.add(s2);//pink
-        is3.getIslands().get(10).currentStudents.add(s2);//pink
-        is3.getIslands().get(11).currentStudents.add(s2);//pink
+        is3.getIslands().get(7).getCurrentStudents().add(s2);//pink   grey
+        is3.getIslands().get(8).getCurrentStudents().add(s2);//pink
+        is3.getIslands().get(9).getCurrentStudents().add(s2);//pink
+        is3.getIslands().get(10).getCurrentStudents().add(s2);//pink
+        is3.getIslands().get(11).getCurrentStudents().add(s2);//pink
 
         for(int i=0;i<12;i++) {
             is3.getIslands().get(i).calculateOwnership();
@@ -323,7 +323,7 @@ public class IslandsTest {
         }
 
 
-        assertEquals(4,is3.getTotalGroups());
+        assertEquals(10,is3.getTotalGroups());
 
 
 

@@ -28,7 +28,7 @@ public class Centaur extends CharacterCard implements Serializable {
     @Override
     public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
     {
-        game.getCurrentIslands().getIslands().get(chosenIsland).towerNumber = 0;
+        game.getCurrentIslands().getIslands().get(chosenIsland).setTowerNumber(0);
         game.solveEverything(chosenIsland);
         game.notify(game.modelToJson());
     }

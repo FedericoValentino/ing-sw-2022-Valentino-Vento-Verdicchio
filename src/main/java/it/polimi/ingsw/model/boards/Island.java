@@ -10,13 +10,13 @@ import java.util.ArrayList;
 
 public class Island
 {
-  public int islandId;
-  public boolean motherNature;
-  public boolean Group;
-  public ArrayList<Student> currentStudents;
+  private int islandId;
+  private boolean motherNature;
+  private boolean group;
+  private ArrayList<Student> currentStudents;
   private ColTow ownership;
-  public int towerNumber;
-  public int[] teamInfluence;
+  private int towerNumber;
+  private int[] teamInfluence;
   private boolean noEntry;
   private CurrentGameState game;
 
@@ -29,7 +29,7 @@ public class Island
     this.islandId = islandId;
     this.currentStudents = new ArrayList<>();
     this.motherNature = false;
-    this.Group = false;
+    this.group = false;
     this.towerNumber = 0;
     this.ownership = null;
     this.teamInfluence = new int[3];
@@ -113,10 +113,7 @@ public class Island
   /** Method updateNoEntry sets on or off the access of the island to motherNature */
   public void updateNoEntry()
   {
-    if(getNoEntry())
-      noEntry = false;
-    else
-      noEntry = true;
+    noEntry = !getNoEntry();
   }
 
   /** Overload of updateTeamInfluence, only used by CharacterCards which actively modify the influence on an island
@@ -131,14 +128,7 @@ public class Island
   /** Method updateMotherNature sets on or off the presence of mother nature on the island */
   public void updateMotherNature()
   {
-    if(motherNature)
-    {
-      motherNature = false;
-    }
-    else
-    {
-      motherNature = true;
-    }
+    motherNature = !motherNature;
   }
 
   public ArrayList<Student> getCurrentStudents(){
@@ -154,7 +144,13 @@ public class Island
   public int[] getTeamInfluence() {return teamInfluence;  }
   public boolean getNoEntry(){return noEntry;  }
   public boolean getGroup() {
-    return Group;
+    return group;
   }
   public int getTowerNumber() {return towerNumber;}
+  public void setIslandId(int id){
+    this.islandId=id;
+  }
+  public void setMotherNature(boolean motherNature){this.motherNature=motherNature;}
+  public void setGroup(boolean group){this.group =group;}
+  public void setTowerNumber(int towerNumber) {this.towerNumber=towerNumber;}
 }

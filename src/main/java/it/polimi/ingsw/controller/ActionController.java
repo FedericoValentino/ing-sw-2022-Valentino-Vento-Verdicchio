@@ -35,7 +35,7 @@ public class ActionController
         Student s = MainController.findPlayerByName(game, name).getSchool().extractStudent(entrancepos);
         game.getCurrentIslands().getIslands().get(islandId).addStudent(s);
         this.movableStudents--;
-        game.getCurrentTurnState().UpdateActionMoves();
+        game.getCurrentTurnState().updateActionMoves();
     }
 
     /** Method placeStudentToDiningRoom places the selected student from the entrance to the dining room, and checks
@@ -60,13 +60,13 @@ public class ActionController
             t.updateProfessors();
         }
         this.movableStudents--;
-        game.getCurrentTurnState().UpdateActionMoves();
+        game.getCurrentTurnState().updateActionMoves();
     }
 
     public void drawFromClouds(int cloudIndex, CurrentGameState game, String name)
     {
         MainController.findPlayerByName(game, name).getSchool().placeToken(game.getCurrentClouds()[cloudIndex].EmptyCloud());
-        game.getCurrentTurnState().UpdateActionMoves();
+        game.getCurrentTurnState().updateActionMoves();
     }
 
 
@@ -104,7 +104,7 @@ public class ActionController
                 CharacterController.deckManagement(game);
             }
         }
-        game.getCurrentTurnState().UpdateActionMoves();
+        game.getCurrentTurnState().updateActionMoves();
     }
 
 

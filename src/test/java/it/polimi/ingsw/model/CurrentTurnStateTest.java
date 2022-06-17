@@ -1,6 +1,4 @@
 package it.polimi.ingsw.model;
-import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.CurrentTurnState;
 import it.polimi.ingsw.model.boards.token.ColTow;
 import it.polimi.ingsw.model.boards.token.GamePhase;
 import org.junit.Test;
@@ -22,22 +20,13 @@ public class CurrentTurnStateTest {
         cW=curTurnObj.getWinningTeam();
     }
 
-    @Test
-    public void assertFalse() {
-        if (curTurnObj.getIsGameEnded() == false)
-        { //System.out.println("Ok, falso");
-        }
-        else
-        {//System.out.println("Errore, condizione vera");
-        }
-    }
 
     @Test
     public void TestUpdateTurn() {
         int t = curTurnObj.getTurn();
-        curTurnObj.UpdateTurn();
+        curTurnObj.updateTurn();
         t++;
-        assertTrue(t == curTurnObj.getTurn());
+        assertEquals(t, curTurnObj.getTurn());
     }
 
 
@@ -48,7 +37,7 @@ public class CurrentTurnStateTest {
 
         assertNull(curTurnObj.getWinningTeam());
         curTurnObj.updateWinner(cW);
-        assertTrue(curTurnObj.getWinningTeam().equals(cW));
+        assertEquals(curTurnObj.getWinningTeam(), cW);
     }
 
     @Test

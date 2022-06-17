@@ -16,7 +16,7 @@ public class PlanningController
         {
             game.getCurrentClouds()[position].placeToken(game.getCurrentPouch().extractStudent());
         }
-        game.getCurrentTurnState().UpdatePlanningMoves();
+        game.getCurrentTurnState().updatePlanningMoves();
     }
 
     /** It finds the currentPlayer by its name and it plays the desired AssistantCard, identified in
