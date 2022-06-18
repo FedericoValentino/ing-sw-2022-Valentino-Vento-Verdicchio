@@ -19,7 +19,7 @@ public class CharacterDeck implements Serializable
   {
     this.deck = new ArrayList<>();
     ArrayList<Integer> cardOrdinals = new ArrayList<>();
-    for(int i = 0; i < 8; i++)
+    for(int i = 0; i < 12; i++)
       cardOrdinals.add(i);
     Collections.shuffle(cardOrdinals);
     for(int i = 0; i < 3; i++)

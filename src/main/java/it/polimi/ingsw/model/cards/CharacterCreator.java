@@ -33,6 +33,18 @@ public class CharacterCreator
             case TRUFFLE_HUNTER:
                 card = new TruffleHunter();
                 break;
+            case JESTER:
+                card = new Jester();
+                break;
+            case MINSTREL:
+                card = new Minstrel();
+                break;
+            case THIEF:
+                card = new Thief();
+                break;
+            case COOK:
+                card = new Cook();
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + type);
         }

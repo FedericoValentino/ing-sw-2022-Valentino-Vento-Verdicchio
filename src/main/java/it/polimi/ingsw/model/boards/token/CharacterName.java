@@ -10,4 +10,8 @@ public enum CharacterName
     KNIGHT,
     TRUFFLE_HUNTER,
     PRINCESS,
+    COOK,
+    JESTER,
+    MINSTREL,
+    THIEF
 }

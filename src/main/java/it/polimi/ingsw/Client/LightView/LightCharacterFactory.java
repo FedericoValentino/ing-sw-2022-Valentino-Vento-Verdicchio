@@ -1,9 +1,6 @@
 package it.polimi.ingsw.Client.LightView;
 
-import it.polimi.ingsw.model.cards.CharacterCard;
-import it.polimi.ingsw.model.cards.GrandmaHerbs;
-import it.polimi.ingsw.model.cards.Priest;
-import it.polimi.ingsw.model.cards.Princess;
+import it.polimi.ingsw.model.cards.*;
 
 
 import java.util.Arrays;
@@ -137,6 +134,51 @@ public class LightCharacterFactory
                         null,
                         description,
                         LightCharacterType.COLOR);
+
+            case COOK:
+                description[0] += "";
+                return new LightCharacterCard(card.getCharacterName(),
+                        card.getBaseCost(),
+                        card.getUses(),
+                        card.getCurrentCost(),
+                        -1,
+                        null,
+                        description,
+                        LightCharacterType.NONE);
+
+            case MINSTREL:
+                description[0] += "";
+                return new LightCharacterCard(card.getCharacterName(),
+                        card.getBaseCost(),
+                        card.getUses(),
+                        card.getCurrentCost(),
+                        -1,
+                        null,
+                        description,
+                        LightCharacterType.NONE);
+
+            case THIEF:
+                description[0] += "";
+                return new LightCharacterCard(card.getCharacterName(),
+                        card.getBaseCost(),
+                        card.getUses(),
+                        card.getCurrentCost(),
+                        -1,
+                        null,
+                        description,
+                        LightCharacterType.COLOR);
+
+            case JESTER:
+                description[0] += "";
+                return new LightCharacterCard(card.getCharacterName(),
+                        card.getBaseCost(),
+                        card.getUses(),
+                        card.getCurrentCost(),
+                        -1,
+                        ((Jester) card).getStudents(),
+                        description,
+                        LightCharacterType.INTEGER_1);
+
         }
         return null;
     }
