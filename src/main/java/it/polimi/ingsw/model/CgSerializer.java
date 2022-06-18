@@ -8,6 +8,11 @@ import java.io.IOException;
 
 public class CgSerializer extends StdSerializer<CurrentGameState> {
 
+    public CgSerializer()
+    {
+        this(null);
+    }
+
     public CgSerializer(Class<CurrentGameState> cg) {
         super(cg);
     }

@@ -18,7 +18,7 @@ public class LightPlayer extends Observable
     private int value;
     private boolean TowerOwner;
 
-    public LightPlayer(@JsonProperty("nome") String nome,
+    public LightPlayer(@JsonProperty("name") String nome,
                   @JsonProperty("coinAmount")int coinAmount,
                   @JsonProperty("currentAssistantCard")AssistantCard currentAssistantCard,
                   @JsonProperty("lastPlayedCard")AssistantCard lastPlayedCard,
