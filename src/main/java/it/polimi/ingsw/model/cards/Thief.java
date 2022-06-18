@@ -3,7 +3,7 @@ package it.polimi.ingsw.model.cards;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
-
+//y
 import java.io.Serializable;
 
 public class Thief extends CharacterCard implements Serializable {

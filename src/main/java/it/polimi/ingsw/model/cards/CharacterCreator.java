@@ -1,7 +1,7 @@
 package it.polimi.ingsw.model.cards;
 
 import it.polimi.ingsw.model.boards.token.CharacterName;
-
+//y
 public class CharacterCreator
 {
     public static CharacterCard getCharacter(CharacterName type)

@@ -7,7 +7,7 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
-
+//
 public class CharacterDeck implements Serializable
 {
   private ArrayList<CharacterCard> deck;

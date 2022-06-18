@@ -5,7 +5,7 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 
 import java.io.Serializable;
-
+//y
 public class Cook extends CharacterCard implements Serializable {
 
     /** Class constructor */

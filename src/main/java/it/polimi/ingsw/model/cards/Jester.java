@@ -5,7 +5,7 @@ import it.polimi.ingsw.model.boards.Pouch;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.Student;
-
+//y
 import java.io.Serializable;
 import java.util.ArrayList;
 

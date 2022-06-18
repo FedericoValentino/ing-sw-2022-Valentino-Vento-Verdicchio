@@ -6,7 +6,7 @@ import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.Col;
 
 import java.io.Serializable;
-
+//y
 public class TruffleHunter extends CharacterCard implements Serializable {
 
     private Col chosenColor;
