@@ -9,21 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Changes in all the model files due to changes in the order of the method, names, change from public to private variable (in island).&#10;&#10;Obviously also changes in test due to refactors">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/IslandsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/IslandsController.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors">
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Pouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Pouch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/TruffleHunter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cgSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CgSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ActionControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ChecksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ChecksTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/MainControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/PlanningControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/PlanningControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Server.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -221,13 +210,6 @@
       <workItem from="1655116531013" duration="140000" />
       <workItem from="1655116684516" duration="286000" />
       <workItem from="1655149081823" duration="1514000" />
-    </task>
-    <task id="LOCAL-00086" summary="ToFront and ToBack to played assistants, to be tested">
-      <created>1654549674277</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1654549674277</updated>
     </task>
     <task id="LOCAL-00087" summary="Minor Correction">
       <created>1654549922350</created>
@@ -565,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655463799160</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors">
+      <created>1655543380325</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1655543380325</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Testing IslandPositioning" />
     <MESSAGE value="Starting the documentation of the GUI" />
     <MESSAGE value="Adding lobby,description and a little part of the MainBoardController&#10; documentation" />
     <MESSAGE value="Changes in warning, public/private XJML import and other small things" />
@@ -610,7 +598,8 @@
     <MESSAGE value="Changes in names and some other little changes" />
     <MESSAGE value="Changes in names and some other little changes (also in asserts in the tests)" />
     <MESSAGE value="Changes in all the model files due to changes in the order of the method, names, change from public to private variable (in island).&#10;&#10;Obviously also changes in test due to refactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in all the model files due to changes in the order of the method, names, change from public to private variable (in island).&#10;&#10;Obviously also changes in test due to refactors" />
+    <MESSAGE value="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

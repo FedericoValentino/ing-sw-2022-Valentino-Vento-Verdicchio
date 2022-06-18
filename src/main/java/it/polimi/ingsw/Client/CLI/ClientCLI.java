@@ -25,7 +25,7 @@ public class ClientCLI implements ClientView
     private ServerConnection main;
     private InputParser stdin;
     private SerializedAnswer input;
-    private Boolean setupState = true;
+    private boolean setupState = true;
     private Object setupLock = new Object();
     private Scanner info = new Scanner(System.in);
     private ExecutorService executor = Executors.newSingleThreadExecutor();

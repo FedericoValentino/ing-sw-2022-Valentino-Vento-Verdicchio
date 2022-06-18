@@ -34,7 +34,7 @@ public class GameHandler extends Thread implements Observer
     private boolean choseWizard;
     private boolean choseTeam;
     private int team;
-    private Boolean connected = true;
+    private boolean connected = true;
     private Match currentMatch;
 
     public static final String ANSI_RESET = "\u001B[0m";
@@ -351,7 +351,6 @@ public class GameHandler extends Thread implements Observer
         {
             System.out.println(socket.getNickname() + "disconnected");
             connected = false;
-            return;
         }
         catch(ClassNotFoundException e)
         {
@@ -400,7 +399,7 @@ public class GameHandler extends Thread implements Observer
         socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck(), mainController.getGame().getCurrentActiveCharacterCard())));
     }
 
-    public Boolean getConnected() {
+    public boolean getConnected() {
         return connected;
     }
 

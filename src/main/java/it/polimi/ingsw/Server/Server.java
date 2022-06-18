@@ -19,7 +19,7 @@ public class Server
    private ServerSocket server;
    private ArrayList<ClientConnection> waitLobby = new ArrayList<>();
    private ArrayList<Match> matches = new ArrayList<>();
-   private Boolean isGameSet = false;
+   private boolean isGameSet = false;
 
    public Server() throws IOException
    {
