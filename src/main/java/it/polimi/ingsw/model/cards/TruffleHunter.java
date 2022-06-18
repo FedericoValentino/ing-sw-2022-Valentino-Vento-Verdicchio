@@ -6,10 +6,9 @@ import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.Col;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 public class TruffleHunter extends CharacterCard implements Serializable {
-    private Col ChosenColor;
+    private Col chosenColor;
 
     /** Class constructor */
     public TruffleHunter()
@@ -18,7 +17,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         super.baseCost=3;
         super.name = CharacterName.TRUFFLE_HUNTER;
         super.currentCost=super.baseCost;
-        this.ChosenColor = null;
+        this.chosenColor = null;
     }
 
     /** Updates the color chosen by the player at the moment of activation
@@ -26,7 +25,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
      */
     public void setChosenColor(Col c)
     {
-        this.ChosenColor = c;
+        this.chosenColor = c;
     }
 
 
@@ -61,7 +60,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
 
     public Col getChosenColor()
     {
-        return ChosenColor;
+        return chosenColor;
     }
 
 }

@@ -66,35 +66,35 @@ public class MainController
     }
 
 
-    /** Method AddPlayer adds a player to the specified team
+    /** Method addPlayer adds a player to the specified team
      * @param team  the team that will contain the added player
      * @param name  the player's name
      * @param towers  the number of towers assigned to the player
-     * @param Wizard  the wizard chosen by the player
+     * @param wizard  the wizard chosen by the player
      */
-    public void AddPlayer(int team, String name, int towers, Wizard Wizard)
+    public void addPlayer(int team, String name, int towers, Wizard wizard)
     {
         if(game.getCurrentTeams().get(team).getPlayers().size() == 0)
         {
             if(players == 3)
             {
-                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 6, Wizard, this.expertGame, game));
+                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 6, wizard, this.expertGame, game));
             }
             else
             {
-                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, Wizard, this.expertGame, game));
+                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, wizard, this.expertGame, game));
             }
         }
         else
         {
-            this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 0, Wizard, this.expertGame, game));
+            this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 0, wizard, this.expertGame, game));
         }
     }
 
     /**
-     Method Setup handles the game setup phase: placing students in the islands and placing students in the players entrances
+     Method setup handles the game setup phase: placing students in the islands and placing students in the players entrances
      */
-    public void Setup()
+    public void setup()
     {
         int MNpos = game.getCurrentMotherNature().getPosition();
         game.getCurrentIslands().getIslands().get(MNpos).updateMotherNature();

@@ -1,5 +1,4 @@
 package it.polimi.ingsw.controller;
-import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.Wizard;
@@ -16,9 +15,9 @@ public class ActionControllerTest
 
     public void setupTest()
     {
-        controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
-        controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);
-        controllerTest.Setup();
+        controllerTest.addPlayer(0, "jack", 8, Wizard.LORD );
+        controllerTest.addPlayer(1, "fede", 8, Wizard.DRUID);
+        controllerTest.setup();
         controllerTest.updateTurnState();
         controllerTest.determineNextPlayer();
     }

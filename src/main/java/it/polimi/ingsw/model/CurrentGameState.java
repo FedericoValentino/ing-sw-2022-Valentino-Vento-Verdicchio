@@ -27,7 +27,7 @@ import it.polimi.ingsw.Observer.Observable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@JsonSerialize(using = cgSerializer.class)
+@JsonSerialize(using = CgSerializer.class)
 public class CurrentGameState extends Observable {
     private CharacterDeck currentCharacterDeck;
     private Pouch currentPouch;

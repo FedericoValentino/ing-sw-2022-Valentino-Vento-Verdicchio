@@ -25,14 +25,14 @@ public class ActionController
     }
 
     /** Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
-     * @param entrancepos  the index identifying the position of the player's student into the school entrance
+     * @param entrancePos  the index identifying the position of the player's student into the school entrance
      * @param islandId  the id of the island onto which the student must be placed
      * @param game  an instance of the game
      * @param name  the player's name, needed to access his school
      */
-    public void placeStudentToIsland(int entrancepos, int islandId, CurrentGameState game, String name)
+    public void placeStudentToIsland(int entrancePos, int islandId, CurrentGameState game, String name)
     {
-        Student s = MainController.findPlayerByName(game, name).getSchool().extractStudent(entrancepos);
+        Student s = MainController.findPlayerByName(game, name).getSchool().extractStudent(entrancePos);
         game.getCurrentIslands().getIslands().get(islandId).addStudent(s);
         this.movableStudents--;
         game.getCurrentTurnState().updateActionMoves();
@@ -40,17 +40,17 @@ public class ActionController
 
     /** Method placeStudentToDiningRoom places the selected student from the entrance to the dining room, and checks
      whether this action has granted the player the control of a professor
-     * @param entrancepos  the index identifying the position of the player's student into the school entrance
+     * @param entrancePos  the index identifying the position of the player's student into the school entrance
      * @param game  an instance of the game
      * @param name  the player's name, needed to access his school
      */
-    public void placeStudentToDiningRoom(int entrancepos, CurrentGameState game, String name)
+    public void placeStudentToDiningRoom(int entrancePos, CurrentGameState game, String name)
     {
 
         Player p = MainController.findPlayerByName(game, name);
         Student s;
 
-        s = p.getSchool().extractStudent(entrancepos);
+        s = p.getSchool().extractStudent(entrancePos);
         p.getSchool().placeInDiningRoom(s.getColor());
         game.updateBankBalance(p, 0);
 

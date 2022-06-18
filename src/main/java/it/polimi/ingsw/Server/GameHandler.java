@@ -105,7 +105,7 @@ public class GameHandler extends Thread implements Observer
                     synchronized (mainController.getAvailableWizards()) {
                         Wizard wizard = ((WizardChoice) message).getWizard();
                         if (mainController.getAvailableWizards().contains(wizard) && MainController.findPlayerByName(mainController.getGame(), socket.getNickname()) == null) {
-                            mainController.AddPlayer(team, socket.getNickname(), 8, wizard);
+                            mainController.addPlayer(team, socket.getNickname(), 8, wizard);
                             mainController.getAvailableWizards().remove(wizard);
                             choseWizard = true;
                         } else {
@@ -124,7 +124,7 @@ public class GameHandler extends Thread implements Observer
                             mainController.updateTurnState();
                             mainController.determineNextPlayer();
                             mainController.updateGamePhase(GamePhase.PLANNING);
-                            mainController.Setup();
+                            mainController.setup();
                         }
                         else
                         {

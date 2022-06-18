@@ -17,9 +17,9 @@ public class MainControllerTest
 
     public void setupTest()
     {
-        controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
-        controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);
-        controllerTest.Setup();
+        controllerTest.addPlayer(0, "jack", 8, Wizard.LORD );
+        controllerTest.addPlayer(1, "fede", 8, Wizard.DRUID);
+        controllerTest.setup();
     }
 
     @Test
@@ -37,8 +37,8 @@ public class MainControllerTest
         assertEquals(8, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getSchool().getTowerCount());
         assertTrue(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).isTowerOwner());
         assertEquals(Wizard.DRUID, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getAssistantDeck().getWizard());
-        controllerTest.AddPlayer(0, "nico", 8, Wizard.SENSEI);
-        controllerTest.AddPlayer(1, "Frah", 8, Wizard.WITCH);
+        controllerTest.addPlayer(0, "nico", 8, Wizard.SENSEI);
+        controllerTest.addPlayer(1, "Frah", 8, Wizard.WITCH);
 
         assertEquals(0, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(1).getSchool().getTowerCount());
         assertEquals(0, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(1).getSchool().getTowerCount());
@@ -189,7 +189,7 @@ public class MainControllerTest
         setupTest();
         controllerTest.getGame().updateTurnState();
         controllerTest.determineNextPlayer();
-        assert(controllerTest.isExpertGame() == true || controllerTest.isExpertGame() == false);
+        assert(controllerTest.isExpertGame() || !controllerTest.isExpertGame());
     }
 
     @Test

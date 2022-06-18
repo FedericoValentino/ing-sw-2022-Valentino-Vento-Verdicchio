@@ -1,24 +1,19 @@
 package it.polimi.ingsw.model;
 
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
 import java.io.IOException;
 
-public class cgSerializer extends StdSerializer<CurrentGameState> {
+public class CgSerializer extends StdSerializer<CurrentGameState> {
 
-    public cgSerializer() {
-        this(null);
-    }
-
-    public cgSerializer(Class<CurrentGameState> cg) {
+    public CgSerializer(Class<CurrentGameState> cg) {
         super(cg);
     }
 
     @Override
-    public void serialize(CurrentGameState cgItem, JsonGenerator jgen, SerializerProvider p) throws IOException, JsonProcessingException {
+    public void serialize(CurrentGameState cgItem, JsonGenerator jgen, SerializerProvider p) throws IOException{
         jgen.writeStartObject();
         jgen.writeObjectField("currentIslands", cgItem.getCurrentIslands());
         jgen.writeObjectField("currentTeams", cgItem.getCurrentTeams());

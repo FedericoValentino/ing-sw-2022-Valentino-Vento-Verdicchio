@@ -24,7 +24,7 @@ public class IslandsController extends Controller implements ObserverLightView {
 
     public void setup(AnchorPane anchorPane, LightView view) throws IOException {
         this.view = view;
-        //Cloud Controller Setup
+        //Cloud Controller setup
         String cloudPanePath = "/Client/GUI/Controllers/Clouds.fxml";
         FXMLLoader cloudLoader = new FXMLLoader(getClass().getResource(cloudPanePath));
         cloudsAnchorPane.getChildren().clear();

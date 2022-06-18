@@ -15,14 +15,14 @@ public class CharacterControllerTest {
     MainController controllerTest = new MainController(2, true);
 
     /** Creates two teams of one player each.
-     Runs the standard Setup procedure.
+     Runs the standard setup procedure.
      Assigns a sufficient number of coins to the players.
      */
     public static void setupTest(MainController controller)
     {
-        controller.AddPlayer(0, "jack", 8, Wizard.LORD );
-        controller.AddPlayer(1, "fede", 8, Wizard.DRUID);
-        controller.Setup();
+        controller.addPlayer(0, "jack", 8, Wizard.LORD );
+        controller.addPlayer(1, "fede", 8, Wizard.DRUID);
+        controller.setup();
         controller.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
         controller.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
     }

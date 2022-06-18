@@ -14,7 +14,7 @@ public class Pouch
     private boolean setup;
 
     /** Class constructor. It creates two bags of students, and then puts them together; the Game Bag contains
-     the students to utilize during the game phase, while the Setup Bag is to be used during the Setup of the match.
+     the students to utilize during the game phase, while the setup Bag is to be used during the setup of the match.
      Initially the boolean setup will be set as true, and it will be updated through the relative method by the
      controller during the setup phase.
      */
@@ -84,7 +84,7 @@ public class Pouch
    }
 
     /** Sets the setup value to False when we're out of the setup phase
-     * @param b  the boolean that tells us whether to set the Setup field to true or false
+     * @param b  the boolean that tells us whether to set the setup field to true or false
      */
    public void updateSetup(boolean b)
    {

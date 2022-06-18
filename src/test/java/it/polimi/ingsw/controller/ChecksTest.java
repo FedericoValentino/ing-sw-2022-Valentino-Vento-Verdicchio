@@ -16,17 +16,17 @@ public class ChecksTest {
 
     public void setupTest()
     {
-        controllerTest.AddPlayer(0, "jack", 8, Wizard.LORD );
-        controllerTest.AddPlayer(1, "fede", 8, Wizard.DRUID);
-        controllerTest.Setup();
+        controllerTest.addPlayer(0, "jack", 8, Wizard.LORD );
+        controllerTest.addPlayer(1, "fede", 8, Wizard.DRUID);
+        controllerTest.setup();
     }
 
     public void setupTestfor3()
     {
-        controllerTestfor3.AddPlayer(0, "jack", 6, Wizard.LORD );
-        controllerTestfor3.AddPlayer(1, "fede", 6, Wizard.DRUID);
-        controllerTestfor3.AddPlayer(2,"puddu",6, Wizard.SENSEI);
-        controllerTestfor3.Setup();
+        controllerTestfor3.addPlayer(0, "jack", 6, Wizard.LORD );
+        controllerTestfor3.addPlayer(1, "fede", 6, Wizard.DRUID);
+        controllerTestfor3.addPlayer(2,"puddu",6, Wizard.SENSEI);
+        controllerTestfor3.setup();
     }
 
     @Test
