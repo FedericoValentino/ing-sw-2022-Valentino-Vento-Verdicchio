@@ -12,10 +12,12 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import it.polimi.ingsw.model.boards.token.Student;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -34,6 +36,7 @@ public class MineSchoolController implements ObserverLightView
     {
         if(!studentChoice.isVisible())
         {
+            ((Pane) event.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
             studentChoice.setVisible(true);
             studentEntrancePos = Integer.parseInt(((Node)event.getSource()).getId().replace("entrance_", ""));
         }
@@ -41,6 +44,7 @@ public class MineSchoolController implements ObserverLightView
         {
             if(studentEntrancePos == Integer.parseInt(((Node)event.getSource()).getId().replace("entrance_", "")))
             {
+                ((Pane) event.getSource()).setEffect(null);
                 studentChoice.setVisible(false);
             }
             studentEntrancePos = Integer.parseInt(((Node)event.getSource()).getId().replace("entrance_", ""));
