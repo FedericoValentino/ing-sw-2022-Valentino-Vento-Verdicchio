@@ -54,7 +54,7 @@ public class ActionController
         p.getSchool().placeInDiningRoom(s.getColor());
         game.updateBankBalance(p, 0);
 
-        game.giveProfessors();
+        game.giveProfessors(false);
         for(Team t: game.getCurrentTeams())
         {
             t.updateProfessors();

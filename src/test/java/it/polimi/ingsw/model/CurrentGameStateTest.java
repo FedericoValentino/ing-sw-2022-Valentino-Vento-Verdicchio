@@ -107,7 +107,7 @@ public void testPlaceToken1()
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
-        cg1.giveProfessors();
+        cg1.giveProfessors(false);
         /*
          System.out.println(cg1.getCurrentTeams().get(0).getControlledProfessors());
          System.out.println(cg1.getCurrentTeams().get(1).getControlledProfessors());

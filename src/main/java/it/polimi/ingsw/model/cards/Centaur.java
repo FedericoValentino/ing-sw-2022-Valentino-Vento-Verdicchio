@@ -5,6 +5,7 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Centaur extends CharacterCard implements Serializable {
@@ -26,10 +27,10 @@ public class Centaur extends CharacterCard implements Serializable {
      * @param chosenIsland  the island on which the influence calculation must occur
      */
     @Override
-    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
-        game.getCurrentIslands().getIslands().get(chosenIsland).setTowerNumber(0);
-        game.solveEverything(chosenIsland);
+        game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).setTowerNumber(0);
+        game.solveEverything(chosenIsland.get(0));
         game.notify(game.modelToJson());
     }
 

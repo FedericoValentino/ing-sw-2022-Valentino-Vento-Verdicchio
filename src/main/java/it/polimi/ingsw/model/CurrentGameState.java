@@ -136,7 +136,7 @@ public class CurrentGameState extends Observable {
 
 
     /** Method giveProfessors assigns professors to the player with the most student in their diningRoom  */
-    public void giveProfessors()
+    public void giveProfessors(boolean cook)
     {
         //Scrolls through each students' color
         for(Col c: Col.values())
@@ -171,8 +171,12 @@ public class CurrentGameState extends Observable {
             if(!duplicates.isEmpty())
             {
                 tie = true;
+                if(cook)
+                {
+                    if(maxPlayer.getSchool().getDiningRoom()[c.ordinal()] == currentPlayer.getSchool().getDiningRoom()[c.ordinal()])
+                        currentPlayer.getSchool().updateProfessorsTable(c.ordinal(), true);
+                }
             }
-
             //Assigns control of the correct professor to the maxPlayer
             if(!tie)
             {
@@ -184,7 +188,6 @@ public class CurrentGameState extends Observable {
                     }
                 }
             }
-
         }
     }
 

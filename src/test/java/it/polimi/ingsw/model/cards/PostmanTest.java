@@ -5,6 +5,8 @@ import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class PostmanTest {
@@ -52,7 +54,7 @@ public class PostmanTest {
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateMaxMotherMovement(2);
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.POSTMAN, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        testCard.effect(controllerTest.getGame(), 0, 0, "jack", null);
+        testCard.effect(controllerTest.getGame(), null, null, "jack", null);
 
 
 

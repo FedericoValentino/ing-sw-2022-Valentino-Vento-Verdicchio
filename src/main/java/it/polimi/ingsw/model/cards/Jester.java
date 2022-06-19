@@ -1,6 +1,8 @@
 package it.polimi.ingsw.model.cards;
 
 import it.polimi.ingsw.model.CurrentGameState;
+import it.polimi.ingsw.model.Player;
+import it.polimi.ingsw.model.Team;
 import it.polimi.ingsw.model.boards.Pouch;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
@@ -8,6 +10,8 @@ import it.polimi.ingsw.model.boards.token.Student;
 //y
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class Jester extends CharacterCard implements Serializable {
 
@@ -24,10 +28,42 @@ public class Jester extends CharacterCard implements Serializable {
     }
 
     @Override
-    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color) {
+    public void effect(CurrentGameState game, ArrayList<Integer> cardStudentIndexes, ArrayList<Integer> entranceStudentsIndexes, String currentPlayer, Col color)
+    {
+        Collections.sort(cardStudentIndexes);
+        Collections.sort(entranceStudentsIndexes);
+        Player player = null;
 
+        for(Team t: game.getCurrentTeams())
+        {
+            for (Player p : t.getPlayers())
+            {
+                if(p.getName().equals(game.getCurrentTurnState().getCurrentPlayer()))
+                {
+                    player = p;
+                }
+            }
+        }
+        ArrayList<Student> toDining = new ArrayList<>();
+        swapStudents(toDining, cardStudentIndexes, students);
+        swapStudents(students, entranceStudentsIndexes, player.getSchool().getEntrance());
+        player.getSchool().getEntrance().addAll(toDining);
     }
 
+
+    private void swapStudents(ArrayList<Student> destination, ArrayList<Integer> indexes, ArrayList<Student> origin)
+    {
+        for(int index : indexes)
+        {
+            destination.add(origin.get(index));
+            origin.remove(index);
+            for(int i = 0; i < indexes.size(); i++)
+            {
+                if(indexes.get(i) != 0)
+                    indexes.set(i, indexes.get(i)-1);
+            }
+        }
+    }
 
     /** Adds one student from the pouch to the collection
      * @param pouch  the current game pouch
@@ -36,6 +72,7 @@ public class Jester extends CharacterCard implements Serializable {
     {
         students.add(pouch.extractStudent());
     }
+
 
     /** Returns the student selected, eliminating it from the collection
      * @param index  the position of the desired student on the Character Card

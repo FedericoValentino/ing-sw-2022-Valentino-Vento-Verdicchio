@@ -8,6 +8,8 @@ import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -70,7 +72,12 @@ public class PriestTest {
             Col color = testCard.getStudents().get(0).getColor();
 
             controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.PRIEST, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-            testCard.effect(controllerTest.getGame(), 0, island, null, null);
+
+        ArrayList<Integer> chosenStudent = new ArrayList<>();
+        chosenStudent.add(island);
+        ArrayList<Integer> chosenIsland = new ArrayList<>();
+        chosenIsland.add(island);
+        testCard.effect(controllerTest.getGame(), chosenStudent, chosenIsland, null, null);
 
 
 

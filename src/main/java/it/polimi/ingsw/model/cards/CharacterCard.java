@@ -5,6 +5,7 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public abstract class CharacterCard implements Serializable {
     protected CharacterName name;
@@ -24,7 +25,7 @@ public abstract class CharacterCard implements Serializable {
         currentCost=baseCost+uses;
     }
 
-    public abstract void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color);
+    public abstract void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color);
 
 
     public int getBaseCost() {return baseCost;}

@@ -61,7 +61,7 @@ public class SchoolTest
     @Test
     public void testUpdateCheckpoint() {
         int i=0;
-        s.updateCheckpoint(i);
+        s.updateCheckpoint(i, true);
         //udating the position
         assertEquals(s.getRoomCheckpoints()[i],5);
     }

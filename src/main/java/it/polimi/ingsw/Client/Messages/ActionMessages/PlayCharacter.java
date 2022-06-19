@@ -3,15 +3,17 @@ package it.polimi.ingsw.Client.Messages.ActionMessages;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 
+import java.util.ArrayList;
+
 public class PlayCharacter extends StandardActionMessage
 {
     private CharacterName name;
-    private int student;
-    private int island;
+    private ArrayList<Integer> student = new ArrayList<>();
+    private ArrayList<Integer> island = new ArrayList<>();
     private String currentPlayer;
     private Col studentColor;
 
-    public PlayCharacter(CharacterName name, int student, int island, String currentPlayer, Col studentColor) {
+    public PlayCharacter(CharacterName name, ArrayList<Integer> student, ArrayList<Integer> island, String currentPlayer, Col studentColor) {
         this.name = name;
         this.student = student;
         this.island = island;
@@ -28,7 +30,7 @@ public class PlayCharacter extends StandardActionMessage
         return student;
     }
 
-    public int getSecond() {
+    public ArrayList<Integer> getSecond() {
         return island;
     }
 

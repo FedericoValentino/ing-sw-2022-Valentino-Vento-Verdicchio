@@ -87,7 +87,7 @@ public class Player
         while(school.getDiningRoom()[i] > school.getRoomCheckpoints()[i])
         {
           gainedCoins++;
-          school.updateCheckpoint(i);
+          school.updateCheckpoint(i, true);
         }
       }
       updateCoins(gainedCoins);

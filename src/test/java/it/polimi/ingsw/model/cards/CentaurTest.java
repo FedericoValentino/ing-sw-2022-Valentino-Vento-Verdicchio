@@ -7,6 +7,8 @@ import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class CentaurTest {
@@ -66,9 +68,11 @@ public class CentaurTest {
         Student s7 = new Student(Col.PINK);
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s6);
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s7);
+        ArrayList<Integer> chosenIsland = new ArrayList<>();
+        chosenIsland.add(island);
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.CENTAUR, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        testCard.effect(controllerTest.getGame(), 0, island, null, null);
+        testCard.effect(controllerTest.getGame(), null, chosenIsland, null, null);
 
 
 

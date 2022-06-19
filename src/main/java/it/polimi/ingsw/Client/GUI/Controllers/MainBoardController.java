@@ -311,7 +311,7 @@ public class MainBoardController extends Controller {
                 }
                 box.setOnAction((Event) ->
                 {
-                    integerChoice_1 = box.getSelectionModel().getSelectedIndex();
+                    integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
                 });
                 islandChoice.getChildren().add(box);
 

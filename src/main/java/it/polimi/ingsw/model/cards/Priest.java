@@ -51,9 +51,9 @@ public class Priest extends CharacterCard implements Serializable {
      * @param chosenIsland  the island on which the student must be placed
      */
     @Override
-    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
-        game.getCurrentIslands().placeToken(getStudent(studentPosition), chosenIsland);
+        game.getCurrentIslands().placeToken(getStudent(studentPosition.get(0)), chosenIsland.get(0));
         updateStudents(game.getCurrentPouch());
         game.notify(game.modelToJson());
     }

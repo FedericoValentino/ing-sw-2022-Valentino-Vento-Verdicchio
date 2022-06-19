@@ -9,6 +9,7 @@ import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.ColTow;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Knight extends CharacterCard implements Serializable {
@@ -33,13 +34,13 @@ public class Knight extends CharacterCard implements Serializable {
      * @param currentPlayer  the player requesting the effect to be played
      */
     @Override
-    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
-        ColTow previousOwner = game.getCurrentIslands().getIslands().get(chosenIsland).getOwnership();                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
-        game.getCurrentIslands().getIslands().get(chosenIsland).updateTeamInfluence(game.getCurrentTeams());
-        game.getCurrentIslands().getIslands().get(chosenIsland).updateTeamInfluence(2, MainController.getPlayerColor(game, currentPlayer).ordinal());
-        game.getCurrentIslands().getIslands().get(chosenIsland).calculateOwnership();
-        ColTow currentOwner = game.getCurrentIslands().getIslands().get(chosenIsland).getOwnership();
+        ColTow previousOwner = game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getOwnership();                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
+        game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).updateTeamInfluence(game.getCurrentTeams());
+        game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).updateTeamInfluence(2, MainController.getPlayerColor(game, currentPlayer).ordinal());
+        game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).calculateOwnership();
+        ColTow currentOwner = game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getOwnership();
         if(previousOwner != currentOwner)
         {
             for(Team t: game.getCurrentTeams())
@@ -48,19 +49,19 @@ public class Knight extends CharacterCard implements Serializable {
                 {
                     if(p.isTowerOwner() && t.getColor() == previousOwner)
                     {
-                        p.getSchool().updateTowerCount(game.getCurrentIslands().getIslands().get(chosenIsland).getTowerNumber());
+                        p.getSchool().updateTowerCount(game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getTowerNumber());
                         t.updateControlledIslands(-1);
                     }
                     if(p.isTowerOwner() && t.getColor() == currentOwner)
                     {
-                        p.getSchool().updateTowerCount(-(game.getCurrentIslands().getIslands().get(chosenIsland).getTowerNumber()));
+                        p.getSchool().updateTowerCount(-(game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getTowerNumber()));
                         t.updateControlledIslands(1);
                     }
                 }
             }
         }
         game.getCurrentIslands().idManagement();
-        game.getCurrentIslands().getIslands().get(chosenIsland).updateTeamInfluence(-2, MainController.getPlayerColor(game, currentPlayer).ordinal());
+        game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).updateTeamInfluence(-2, MainController.getPlayerColor(game, currentPlayer).ordinal());
         game.notify(game.modelToJson());
     }
 

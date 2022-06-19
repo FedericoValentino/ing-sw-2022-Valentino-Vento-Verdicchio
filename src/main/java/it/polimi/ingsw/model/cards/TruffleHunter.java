@@ -6,6 +6,8 @@ import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.Col;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
 //y
 public class TruffleHunter extends CharacterCard implements Serializable {
 
@@ -35,26 +37,26 @@ public class TruffleHunter extends CharacterCard implements Serializable {
      * @param chosenIsland  the island on which the influence calculation must occur
      */
     @Override
-    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
         /*Uses this for cycle to remove the students of the selected color from the island: uses a
         counter to save how many students were removed  */
         int cont = 0;
-        for(int i=0; i<game.getCurrentIslands().getIslands().get(chosenIsland).getCurrentStudents().size(); i++)
+        for(int i=0; i<game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents().size(); i++)
         {
-            if(game.getCurrentIslands().getIslands().get(chosenIsland).getCurrentStudents().get(i).getColor() == getChosenColor())
+            if(game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents().get(i).getColor() == getChosenColor())
             {
-                game.getCurrentIslands().getIslands().get(chosenIsland).getCurrentStudents().remove(i);
+                game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents().remove(i);
                 cont++;
             }
         }
 
-        game.solveEverything(chosenIsland);
+        game.solveEverything(chosenIsland.get(0));
 
         //After the influence calculations, it adds to the island as many students of the selected color as the number of the counter
         for(int i=0; i<cont; i++)
         {
-            game.getCurrentIslands().getIslands().get(chosenIsland).getCurrentStudents().add(new Student(getChosenColor()));
+            game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents().add(new Student(getChosenColor()));
         }
         game.notify(game.modelToJson());
     }

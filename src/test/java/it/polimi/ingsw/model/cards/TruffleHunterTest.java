@@ -7,6 +7,8 @@ import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class TruffleHunterTest {
@@ -67,7 +69,10 @@ public class TruffleHunterTest {
             controllerTest.getGame().getCurrentIslands().getIslands().get(island).updateMotherNature();
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.TRUFFLE_HUNTER, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        testCard.effect(controllerTest.getGame(), 0, island, null, Col.BLUE);
+
+        ArrayList<Integer> chosenIsland = new ArrayList<>();
+        chosenIsland.add(island);
+        testCard.effect(controllerTest.getGame(), null, chosenIsland, null, Col.BLUE);
 
 
 

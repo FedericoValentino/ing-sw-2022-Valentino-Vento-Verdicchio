@@ -49,16 +49,17 @@ public class CharacterDeck implements Serializable
 
   public void SetupCards(Pouch pouch)
   {
-    for (CharacterCard characterCard : deck) {
-      if (characterCard instanceof Priest)
+    for (CharacterCard card : deck) {
+      if (card.getCharacterName().equals(CharacterName.PRIEST))
         for (int j = 0; j < 4; j++)
-          ((Priest) characterCard).updateStudents(pouch);
-      else if (characterCard instanceof Princess)
+          ((Priest) card).updateStudents(pouch);
+      else if (card.getCharacterName().equals(CharacterName.PRINCESS))
         for (int j = 0; j < 4; j++)
           ((Princess) characterCard).updateStudents(pouch);
 
     }
   }
+
 
   public ArrayList<CharacterCard> getDeck()
     {return deck;}

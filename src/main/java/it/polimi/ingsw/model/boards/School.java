@@ -86,12 +86,21 @@ public class School extends Board
      diningRoom[color.ordinal()]++;
   }
 
+  public Col removeFromDiningRoom(int colorIndex)
+  {
+    diningRoom[colorIndex]--;
+    return Col.values()[colorIndex];
+  }
+
     /** Takes the right value of the updateCheckpoint structure in order to "point" towards the next checkpoint
      * @param position  the position of the previous checkpoint
      */
-  public void updateCheckpoint(int position)
+  public void updateCheckpoint(int position, boolean positive)
   {
-    roomCheckpoints[position] += 3;
+    if(positive)
+      roomCheckpoints[position] += 3;
+    else
+      roomCheckpoints[position] -= 3;
   }
 
     /** Increments or decrements the number of towers in the school based on the input received

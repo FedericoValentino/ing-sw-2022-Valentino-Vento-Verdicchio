@@ -75,6 +75,12 @@ public class Pouch
        return student;
    }
 
+   public void refillBag(ArrayList<Student> students)
+   {
+       content.addAll(students);
+       Collections.shuffle(content);
+   }
+
     /** Checks if pouch is empty, useful for certain end game shenanigans
      * @return whether the pouch is empty
      */

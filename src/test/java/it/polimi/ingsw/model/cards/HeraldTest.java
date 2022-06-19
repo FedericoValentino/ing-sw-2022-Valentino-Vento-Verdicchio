@@ -5,6 +5,8 @@ import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
@@ -48,7 +50,10 @@ public class HeraldTest {
         int island = EffectTestsUtility.basicIslandSetup(controllerTest.getGame());
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        testCard.effect(controllerTest.getGame(), 0, island, null, null);
+
+        ArrayList<Integer> chosenIsland = new ArrayList<>();
+        chosenIsland.add(island);
+        testCard.effect(controllerTest.getGame(), null, chosenIsland, null, null);
 
 
 

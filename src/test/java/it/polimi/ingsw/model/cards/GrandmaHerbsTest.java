@@ -6,6 +6,8 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -62,7 +64,10 @@ public class GrandmaHerbsTest {
         int island = (int) ((Math.random()*11));
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.GRANDMA_HERBS, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        testCard.effect(controllerTest.getGame(), 0, island, null, null);
+
+        ArrayList<Integer> chosenIsland = new ArrayList<>();
+        chosenIsland.add(island);
+        testCard.effect(controllerTest.getGame(), null, chosenIsland, null, null);
 
 
 

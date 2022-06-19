@@ -5,6 +5,8 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
 //y
 public class Cook extends CharacterCard implements Serializable {
 
@@ -19,7 +21,8 @@ public class Cook extends CharacterCard implements Serializable {
 
 
     @Override
-    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color) {
-
+    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
+    {
+        game.giveProfessors(true);
     }
 }

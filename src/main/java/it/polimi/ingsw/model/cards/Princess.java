@@ -54,9 +54,9 @@ public class Princess extends CharacterCard implements Serializable {
      * @param currentPlayer  the name of the player who plays the effect
      */
     @Override
-    public void effect(CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
-        color = getStudent(studentPosition).getColor();
+        color = getStudent(studentPosition.get(0)).getColor();
         MainController.findPlayerByName(game, currentPlayer).getSchool().placeInDiningRoom(color);
         updateStudents(game.getCurrentPouch());
         game.notify(game.modelToJson());

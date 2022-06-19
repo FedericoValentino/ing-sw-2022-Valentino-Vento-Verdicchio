@@ -8,6 +8,8 @@ import it.polimi.ingsw.model.cards.Herald;
 import it.polimi.ingsw.model.cards.Knight;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class CharacterControllerTest {
@@ -177,7 +179,11 @@ public class CharacterControllerTest {
 
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        controllerTest.getCharacterController().playEffect(CharacterName.HERALD, controllerTest.getGame(), -1, 3, null, null);
+        ArrayList<Integer> studentPositions = new ArrayList<>();
+        studentPositions.add(-1);
+        ArrayList<Integer> chosenIslands = new ArrayList<>();
+        studentPositions.add(3);
+        controllerTest.getCharacterController().playEffect(CharacterName.HERALD, controllerTest.getGame(), studentPositions, chosenIslands, null, null);
 
         assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
         assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
