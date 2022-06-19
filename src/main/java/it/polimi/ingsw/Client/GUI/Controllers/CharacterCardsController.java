@@ -188,6 +188,14 @@ public class CharacterCardsController extends Controller implements ObserverLigh
                 return "/Client/GUI/Images/Characters/Princess.jpg";
             case TRUFFLE_HUNTER:
                 return "/Client/GUI/Images/Characters/THunter.jpg";
+            case COOK:
+                return "/Client/GUI/Images/Characters/Cook.jpg";
+            case JESTER:
+                return "/Client/GUI/Images/Characters/Jester.jpg";
+            case MINSTREL:
+                return "/Client/GUI/Images/Characters/Minstrel.jpg";
+            case THIEF:
+                return "/Client/GUI/Images/Characters/Thief.jpg";
             default:
                 return "";
         }
