@@ -5,10 +5,6 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.ColTow;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.cards.CharacterCard;
-import it.polimi.ingsw.model.cards.GrandmaHerbs;
-import it.polimi.ingsw.model.cards.Priest;
-import it.polimi.ingsw.model.cards.Princess;
 import org.fusesource.jansi.AnsiConsole;
 
 
