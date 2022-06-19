@@ -49,8 +49,8 @@ public class MainBoardController extends Controller {
     @FXML private Pane ErrorDisplay;
     @FXML private Button CloseError;
 
-    private int integerChoice_1;
-    private int integerChoice_2;
+    private ArrayList<Integer> integerChoice_1 = new ArrayList<>();
+    private ArrayList<Integer> integerChoice_2 = new ArrayList<>();
     private Col colorChoice;
 
     private LightView view;
@@ -258,7 +258,7 @@ public class MainBoardController extends Controller {
                         image.setId(String.valueOf(studentPosition));
                         image.setOnMouseClicked((MouseEvent) ->
                         {
-                            integerChoice_1 = Integer.parseInt(((Node)MouseEvent.getSource()).getId());
+                            integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
                         });
                         students.getChildren().add(image);
                     }
@@ -278,7 +278,7 @@ public class MainBoardController extends Controller {
                     }
                     box.setOnAction((Event) ->
                     {
-                        integerChoice_1 = box.getSelectionModel().getSelectedIndex();
+                        integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
                     });
                     islandChoice.getChildren().add(box);
                     ParametersSlice.getChildren().clear();
@@ -328,7 +328,7 @@ public class MainBoardController extends Controller {
                     image.setId(String.valueOf(studentPosition));
                     image.setOnMouseClicked((MouseEvent) ->
                     {
-                        integerChoice_2 = Integer.parseInt(((Node)MouseEvent.getSource()).getId());
+                        integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
                     });
                     students.getChildren().add(image);
                 }

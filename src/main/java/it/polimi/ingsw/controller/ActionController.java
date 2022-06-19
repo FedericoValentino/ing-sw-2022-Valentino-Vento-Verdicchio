@@ -9,6 +9,9 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import it.polimi.ingsw.model.cards.Knight;
 import it.polimi.ingsw.model.cards.TruffleHunter;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 
 public class ActionController
 {
@@ -88,19 +91,21 @@ public class ActionController
         else
         {
             CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
+            ArrayList<Integer> position = new ArrayList<>();
+            position.add(game.getCurrentMotherNature().getPosition());
             if(card instanceof Knight)
             {
-                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), currentPlayer, null);
+                card.effect(game, null, position, currentPlayer, null);
                 CharacterController.deckManagement(game);
             }
             else if(card instanceof TruffleHunter)
             {
-                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, ((TruffleHunter) card).getChosenColor());
+                card.effect(game, null, position, null, ((TruffleHunter) card).getChosenColor());
                 CharacterController.deckManagement(game);
             }
             else if(card instanceof Centaur)
             {
-                card.effect(game, 0, game.getCurrentMotherNature().getPosition(), null, null);
+                card.effect(game, null, position, null, null);
                 CharacterController.deckManagement(game);
             }
         }

@@ -88,7 +88,7 @@ public class CharacterController
         }
     }
 
-    public void playEffect(CharacterName characterName, CurrentGameState game, int studentPosition, int chosenIsland, String currentPlayer, Col color)
+    public void playEffect(CharacterName characterName, CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
         if(isEffectPlayable(game, characterName))
         {

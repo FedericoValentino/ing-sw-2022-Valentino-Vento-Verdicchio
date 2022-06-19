@@ -55,8 +55,10 @@ public class CharacterDeck implements Serializable
           ((Priest) card).updateStudents(pouch);
       else if (card.getCharacterName().equals(CharacterName.PRINCESS))
         for (int j = 0; j < 4; j++)
-          ((Princess) characterCard).updateStudents(pouch);
-
+          ((Princess) card).updateStudents(pouch);
+      else if(card.getCharacterName().equals(CharacterName.JESTER))
+        for(int j = 0; j < 6; j++)
+          ((Jester) card).updateStudents(pouch);
     }
   }
 

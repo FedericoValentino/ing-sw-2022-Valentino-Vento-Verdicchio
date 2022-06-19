@@ -26,7 +26,7 @@ public class PlayCharacter extends StandardActionMessage
         return name;
     }
 
-    public int getFirst() {
+    public ArrayList<Integer> getFirst() {
         return student;
     }
 

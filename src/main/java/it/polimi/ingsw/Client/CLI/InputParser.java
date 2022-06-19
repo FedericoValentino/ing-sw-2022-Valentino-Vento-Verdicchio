@@ -11,6 +11,7 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 import org.fusesource.jansi.AnsiConsole;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -93,7 +94,9 @@ public class InputParser
                     AnsiConsole.out().println("Choose the island");
                     input = Integer.parseInt(parser.nextLine());
                 }
-                activation = new CharacterActivationParser(nickname, cardName, input);
+                ArrayList<Integer> inputArray = new ArrayList<>();
+                inputArray.add(input);
+                activation = new CharacterActivationParser(nickname, cardName, inputArray);
                 socket.sendMessage(new SerializedMessage(activation.buildMessage()));
                 break;
 
@@ -104,7 +107,11 @@ public class InputParser
                 int input1 = Integer.parseInt(parser.nextLine());
                 AnsiConsole.out().println("Choose the island");
                 input = Integer.parseInt(parser.nextLine());
-                activation = new CharacterActivationParser(nickname, cardName, input1, input);
+                ArrayList<Integer> inputArray1 = new ArrayList<>();
+                inputArray1.add(input1);
+                ArrayList<Integer> inputArray2 = new ArrayList<>();
+                inputArray2.add(input);
+                activation = new CharacterActivationParser(nickname, cardName, inputArray1, inputArray2);
                 socket.sendMessage(new SerializedMessage(activation.buildMessage()));
                 break;
 

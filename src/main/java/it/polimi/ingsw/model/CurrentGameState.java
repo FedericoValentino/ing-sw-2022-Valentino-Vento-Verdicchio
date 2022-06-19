@@ -145,6 +145,7 @@ public class CurrentGameState extends Observable {
             int max = 0;
             //saves the player that has the highest number of students of that color in his Dining Room
             Player maxPlayer = null;
+            Player currentPlayer = null;
 
             ArrayList<Integer> studentsNumber = new ArrayList<>();
 
@@ -153,6 +154,9 @@ public class CurrentGameState extends Observable {
             {
                 for (Player p : t.getPlayers())
                 {
+                    if(p.getName().equals(currentTurnState.getCurrentPlayer()))
+                        currentPlayer = p;
+
                     if(p.getSchool().getDiningRoom()[c.ordinal()] > max)
                     {
                         max = p.getSchool().getDiningRoom()[c.ordinal()];
