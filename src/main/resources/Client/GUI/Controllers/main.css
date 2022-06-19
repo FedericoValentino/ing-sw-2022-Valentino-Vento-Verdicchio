@@ -1,0 +1,8 @@
+.button:hover {
+    -fx-border-style: solid;
+}
+
+.button{
+ -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0, 3);
+    -fx-background-color: white;
+}
