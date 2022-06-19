@@ -12,7 +12,7 @@ public class LightPlayer extends Observable
     private AssistantCard currentAssistantCard;
     private AssistantCard lastPlayedCard;
     private AssistantDeck assistantDeck;
-    public LightSchool school;
+    private LightSchool school;
     private int MaxMotherMovement;
     private int movementValue;
     private int value;

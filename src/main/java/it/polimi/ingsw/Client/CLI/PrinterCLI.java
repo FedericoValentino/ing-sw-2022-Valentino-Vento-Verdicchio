@@ -111,15 +111,15 @@ public class PrinterCLI
         islands[0] += "____________________  ";
         islands[1] += "|   Island n: " + addZero(island.getIslandId()) +"   |  ";
         islands[2] += "|       MN: " + printMN(island.getIslandId()) + "      |  ";
-        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).currentStudents.stream().filter(Student -> Student.getColor() == Col.GREEN).count();
+        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.GREEN).count();
         islands[3] += "| " + ANSI_GREEN + ":D " + ANSI_RESET + addZero(StudentNumber) + "            |  ";
-        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).currentStudents.stream().filter(Student -> Student.getColor() == Col.RED).count();
+        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.RED).count();
         islands[4] += "| " + ANSI_RED + ":D " + ANSI_RESET + addZero(StudentNumber) + "    " + convertTo3Char(view.getCurrentIslands().getIslands().get(island.getIslandId()).getOwnership())+ "     |  " ;
-        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).currentStudents.stream().filter(Student -> Student.getColor() == Col.YELLOW).count();
+        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.YELLOW).count();
         islands[5] += "| " + ANSI_YELLOW + ":D " + ANSI_RESET + addZero(StudentNumber) + "            |  ";
-        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).currentStudents.stream().filter(Student -> Student.getColor() == Col.PINK).count();
+        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.PINK).count();
         islands[6] += "| " + ANSI_PURPLE + ":D " + ANSI_RESET + addZero(StudentNumber) + "   TOW " + addZero(view.getCurrentIslands().getIslands().get(island.getIslandId()).getTowerNumber()) + "   |  ";
-        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).currentStudents.stream().filter(Student -> Student.getColor() == Col.BLUE).count();
+        StudentNumber = (int)view.getCurrentIslands().getIslands().get(island.getIslandId()).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count();
         islands[7] += "| " + ANSI_BLUE + ":D " + ANSI_RESET + addZero(StudentNumber) + "            |  ";
         islands[8] += "|__________________|  ";
 

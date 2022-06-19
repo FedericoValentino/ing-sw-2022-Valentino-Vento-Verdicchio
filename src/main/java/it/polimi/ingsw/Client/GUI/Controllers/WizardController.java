@@ -46,29 +46,16 @@ public class WizardController extends Controller{
     }
 
     public void onClickRb1() {
-        rb1.setSelected(true);
-        rb2.setSelected(false);
-        rb3.setSelected(false);
-        rb4.setSelected(false);
-        System.out.println(group.getSelectedToggle());
+        group.selectToggle(rb1);
     }
     public void onClickRb2() {
-        rb1.setSelected(false);
-        rb2.setSelected(true);
-        rb3.setSelected(false);
-        rb4.setSelected(false);
+        group.selectToggle(rb2);
     }
     public void onClickRb3() {
-        rb1.setSelected(false);
-        rb2.setSelected(false);
-        rb3.setSelected(true);
-        rb4.setSelected(false);
+        group.selectToggle(rb3);
     }
     public void onClickRb4() {
-        rb1.setSelected(false);
-        rb2.setSelected(false);
-        rb3.setSelected(false);
-        rb4.setSelected(true);
+        group.selectToggle(rb4);
     }
 
 

@@ -7,13 +7,13 @@ import it.polimi.ingsw.model.boards.token.Student;
 import java.util.ArrayList;
 
 public class LightIsland {
-    public int islandId;
-    public boolean motherNature;
-    public boolean Group;
-    public ArrayList<Student> currentStudents;
+    private int islandId;
+    private boolean motherNature;
+    private boolean Group;
+    private ArrayList<Student> currentStudents;
     private ColTow ownership;
-    public int towerNumber;
-    public int[] teamInfluence;
+    private int towerNumber;
+    private int[] teamInfluence;
     private boolean noEntry;
 
 
