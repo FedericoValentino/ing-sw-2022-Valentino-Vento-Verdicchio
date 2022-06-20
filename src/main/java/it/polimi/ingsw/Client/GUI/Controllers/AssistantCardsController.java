@@ -19,7 +19,7 @@ import it.polimi.ingsw.model.cards.AssistantCard;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
-
+//
 public class AssistantCardsController extends Controller implements ObserverLightView
 
 {

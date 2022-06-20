@@ -1,5 +1,5 @@
 package it.polimi.ingsw.model.cards;
-
+//
 import com.fasterxml.jackson.annotation.JsonProperty;
 import it.polimi.ingsw.model.boards.token.Wizard;
 

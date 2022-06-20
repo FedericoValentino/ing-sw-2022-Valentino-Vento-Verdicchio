@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.CLI;
-
+//
 import it.polimi.ingsw.Client.CharacterActivationParser;
 import it.polimi.ingsw.Client.LightView.LightCharacterCard;
 import it.polimi.ingsw.Client.LightView.LightPlayer;

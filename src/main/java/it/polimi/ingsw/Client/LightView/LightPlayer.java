@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.LightView;
-//
+////
 import it.polimi.ingsw.Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import it.polimi.ingsw.model.cards.AssistantCard;

@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.CLI;
-
+//
 import it.polimi.ingsw.Client.LightView.*;
 import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
