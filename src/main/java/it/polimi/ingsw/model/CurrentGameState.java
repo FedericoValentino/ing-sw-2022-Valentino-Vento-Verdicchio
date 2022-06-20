@@ -175,7 +175,7 @@ public class CurrentGameState extends Observable {
             if(!duplicates.isEmpty())
             {
                 tie = true;
-                if(cook)
+                if(cook && max!=0)
                 {
                     if(maxPlayer.getSchool().getDiningRoom()[c.ordinal()] == currentPlayer.getSchool().getDiningRoom()[c.ordinal()])
                         currentPlayer.getSchool().updateProfessorsTable(c.ordinal(), true);

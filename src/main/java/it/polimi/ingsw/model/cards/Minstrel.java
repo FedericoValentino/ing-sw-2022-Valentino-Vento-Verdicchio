@@ -28,7 +28,6 @@ public class Minstrel extends CharacterCard implements Serializable {
     @Override
     public void effect(CurrentGameState game, ArrayList<Integer> entranceStudentIndexes, ArrayList<Integer> colorOrdinals, String currentPlayer, Col color)
     {
-
         Player player = null;
 
         for(Team t: game.getCurrentTeams())
@@ -43,7 +42,7 @@ public class Minstrel extends CharacterCard implements Serializable {
         }
 
         ArrayList<Student> toDining = new ArrayList<>();
-        swapStudents(toDining, entranceStudentIndexes, player.getSchool().getEntrance());
+        EffectsUtilities.swapStudents(toDining, entranceStudentIndexes, player.getSchool().getEntrance());
 
         for(Integer colorIndex: colorOrdinals)
         {
@@ -54,24 +53,8 @@ public class Minstrel extends CharacterCard implements Serializable {
         for(Student student : toDining)
             player.getSchool().placeInDiningRoom(student.getColor());
 
-        adjustCheckpoints(player.getSchool());
+        EffectsUtilities.adjustCheckpoints(player.getSchool());
     }
 
-    private void adjustCheckpoints(School school)
-    {
-        for(Col c : Col.values())
-        {
-            if(school.getDiningRoom()[c.ordinal()] < school.getRoomCheckpoints()[c.ordinal()] - 3)
-            {
-                school.updateCheckpoint(c.ordinal(), false);
-            }
-        }
-    }
-//
-    private void swapStudents(ArrayList<Student> toFill, ArrayList<Integer> indexes, ArrayList<Student> toEmpty)
-    {
-        for(Integer index: indexes)
-            toFill.add(toEmpty.get(index));
-        toEmpty.removeAll(toFill);
-    }
+
 }

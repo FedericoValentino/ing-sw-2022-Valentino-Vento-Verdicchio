@@ -35,19 +35,13 @@ public class Thief extends CharacterCard implements Serializable {
                         toBag.add(new Student(p.getSchool().removeFromDiningRoom(color.ordinal())));
                     }
                 }
-                adjustCheckpoints(p.getSchool());
+                EffectsUtilities.adjustCheckpoints(p.getSchool());
             }
         }
         game.getCurrentPouch().refillBag(toBag);
     }
 
-    private void adjustCheckpoints(School school) {
-        for (Col c : Col.values()) {
-            if (school.getDiningRoom()[c.ordinal()] < school.getRoomCheckpoints()[c.ordinal()] - 3) {
-                school.updateCheckpoint(c.ordinal(), false);
-            }
-        }
-    }
+
 
 }
 

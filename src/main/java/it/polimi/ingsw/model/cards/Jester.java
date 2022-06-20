@@ -44,18 +44,12 @@ public class Jester extends CharacterCard implements Serializable {
         }
         ArrayList<Student> toDining = new ArrayList<>();
 
-        swapStudents(toDining, cardStudentIndexes, students);
-        swapStudents(students, entranceStudentsIndexes, player.getSchool().getEntrance());
+        EffectsUtilities.swapStudents(toDining, cardStudentIndexes, students);
+        EffectsUtilities.swapStudents(students, entranceStudentsIndexes, player.getSchool().getEntrance());
         player.getSchool().getEntrance().addAll(toDining);
     }
 
 
-    private void swapStudents(ArrayList<Student> toFill, ArrayList<Integer> indexes, ArrayList<Student> toEmpty)
-    {
-        for(Integer index: indexes)
-            toFill.add(toEmpty.get(index));
-        toEmpty.removeAll(toFill);
-    }
 
     /** Adds one student from the pouch to the collection
      * @param pouch  the current game pouch
