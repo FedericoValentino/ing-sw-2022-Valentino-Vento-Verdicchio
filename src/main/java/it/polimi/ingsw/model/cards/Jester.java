@@ -30,8 +30,6 @@ public class Jester extends CharacterCard implements Serializable {
     @Override
     public void effect(CurrentGameState game, ArrayList<Integer> cardStudentIndexes, ArrayList<Integer> entranceStudentsIndexes, String currentPlayer, Col color)
     {
-        Collections.sort(cardStudentIndexes);
-        Collections.sort(entranceStudentsIndexes);
         Player player = null;
 
         for(Team t: game.getCurrentTeams())

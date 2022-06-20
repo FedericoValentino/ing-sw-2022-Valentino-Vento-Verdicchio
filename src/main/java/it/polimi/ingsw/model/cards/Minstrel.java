@@ -67,7 +67,7 @@ public class Minstrel extends CharacterCard implements Serializable {
             }
         }
     }
-
+//
     private void swapStudents(ArrayList<Student> toFill, ArrayList<Integer> indexes, ArrayList<Student> toEmpty)
     {
         for(Integer index: indexes)
