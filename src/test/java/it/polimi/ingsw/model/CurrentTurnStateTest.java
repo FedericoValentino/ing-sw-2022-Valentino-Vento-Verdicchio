@@ -46,4 +46,11 @@ public class CurrentTurnStateTest {
         curTurnObj.updateGamePhase(GamePhase.PLANNING);
         assertEquals(GamePhase.PLANNING, curTurnObj.getGamePhase());
     }
+
+    @Test
+    public void setLastTurn()
+    {
+        curTurnObj.setLastTurn();
+        assertTrue(curTurnObj.getLastTurn());
+    }
 }

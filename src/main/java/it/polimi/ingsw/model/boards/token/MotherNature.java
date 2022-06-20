@@ -10,11 +10,6 @@ public class MotherNature
     private int idPosition;
     private CurrentGameState game;
 
-    public MotherNature(@JsonProperty("position") int idPosition)
-    {
-        this.idPosition = idPosition;
-    }
-
 
     /** Class constructor. The initial position of Mother Nature is randomized */
     public MotherNature(CurrentGameState game){
