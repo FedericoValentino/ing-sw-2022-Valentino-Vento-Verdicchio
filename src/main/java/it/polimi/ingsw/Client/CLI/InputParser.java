@@ -13,6 +13,7 @@ import it.polimi.ingsw.model.boards.token.CharacterName;
 import it.polimi.ingsw.model.boards.token.Col;
 import org.fusesource.jansi.AnsiConsole;
 
+
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -24,14 +25,20 @@ public class InputParser
     private Scanner parser = new Scanner(System.in).useDelimiter("\\n");
     private String playerName;
     private ServerConnection socket;
-    private PrinterCLI printer;
+    private BoardPrinters boardPrinters;
+    private SchoolPrinter schoolPrinter;
+    private InfoPrinters infoPrinters;
+    private CardPrinters cardPrinters;
     private Boolean printView = false;
 
     public InputParser(ServerConnection socket, LightView lv)
     {
         this.playerName = socket.getNickname();
         this.socket = socket;
-        this.printer = new PrinterCLI(lv);
+        this.boardPrinters = new BoardPrinters(lv);
+        this.schoolPrinter = new SchoolPrinter(lv);
+        this.infoPrinters = new InfoPrinters(lv);
+        this.cardPrinters = new CardPrinters(lv);
     }
 
     public Scanner getParser()
@@ -71,22 +78,13 @@ public class InputParser
 
     public void CharacterParser(String[] words)
     {
-        LightCharacterCard card = printer.getView().getCurrentCharacterDeck().getCard(Integer.parseInt(words[1]));
+        LightCharacterCard card = cardPrinters.getView().getCurrentCharacterDeck().getCard(Integer.parseInt(words[1]));
         CharacterActivationParser activation;
         String nickname = socket.getNickname();
         CharacterName cardName = card.getName();
         int input = 0;
-        LightPlayer player = null;
-        for(LightTeam team : printer.getView().getCurrentTeams())
-        {
-            for(LightPlayer p : team.getPlayers())
-            {
-                if(p.getNome().equals(nickname))
-                {
-                    player = p;
-                }
-            }
-        }
+        LightPlayer player = PrinterCLI.getPlayerByName(nickname, cardPrinters.getView());
+
         switch(card.getType())
         {
             case NONE:
@@ -97,7 +95,7 @@ public class InputParser
                 ArrayList<Integer> inputArray = new ArrayList<>();
                 if(card.getName().equals(CharacterName.PRINCESS))
                 {
-                    printer.printStudent(card.getStudentList(), 2);
+                    PrinterCLI.printStudent(card.getStudentList(), 2);
                     AnsiConsole.out().println("Choose a student to move to dining room");
                 }
                 else
@@ -116,7 +114,7 @@ public class InputParser
 
                 if(card.getName().equals(CharacterName.MINSTREL))
                 {
-                    printer.printStudent(player.getSchool().getEntrance(), 2);
+                    PrinterCLI.printStudent(player.getSchool().getEntrance(), 2);
                     AnsiConsole.out().println("You may choose up to 2 students, type -1 to stop selecting students");
                     while(input != -1)
                         AnsiConsole.out().println("Chose a student");
@@ -169,7 +167,7 @@ public class InputParser
                 }
                 else
                 {
-                    printer.printStudent(card.getStudentList(), 2);
+                    PrinterCLI.printStudent(card.getStudentList(), 2);
                     AnsiConsole.out().println("Choose the student to move");
                     int input1 = Integer.parseInt(parser.nextLine());
                     AnsiConsole.out().println("Choose the island");
@@ -204,7 +202,7 @@ public class InputParser
                 }
                 break;
             case "islands":
-                printer.showIsland(-1);
+                boardPrinters.showIsland(-1);
                 break;
             case "school": //mostra scuole
                 if(words.length == 3)
@@ -214,7 +212,7 @@ public class InputParser
                 schoolPrinter.showSchool("-1", socket.getNickname());
                 break;
             case "clouds":  //mostra nuvole
-                printer.showCloud();
+                boardPrinters.showCloud();
                 break;
             case "assistants": //mostra carte assistente
                 cardPrinters.showAssistantDeck(socket.getNickname());
@@ -228,11 +226,11 @@ public class InputParser
             case "player": //mostra status players
                 if(words.length == 3)
                 {
-                    printer.showPlayer(words[2]);
+                    infoPrinters.showPlayer(words[2]);
                 }
                 break;
             case "players":
-                printer.showPlayers();
+                infoPrinters.showPlayers();
         }
     }
 
@@ -265,7 +263,7 @@ public class InputParser
                 resetScreen();
                 break;
             case "help":
-                printer.showHelp();
+                infoPrinters.showHelp();
                 printView = false;
                 break;
             case "show":
@@ -289,9 +287,9 @@ public class InputParser
     }
     public void printGame()
     {
-        printer.showCloud();
+        boardPrinters.showCloud();
         System.out.println();
-        printer.showIsland(-1);
+        boardPrinters.showIsland(-1);
         System.out.println();
         schoolPrinter.showSchool("-1", socket.getNickname());
         System.out.println();

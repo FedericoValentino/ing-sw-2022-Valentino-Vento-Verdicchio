@@ -86,7 +86,7 @@ public abstract class PrinterCLI
     }
 
 
-    public String printStudent(ArrayList<Student> students, int spaces)
+    public static String printStudent(ArrayList<Student> students, int spaces)
     {
         String output = "";
         for(Student s: students)
@@ -154,5 +154,10 @@ public abstract class PrinterCLI
     public LightView getView()
     {
         return view;
+    }
+
+    public void setView(LightView view)
+    {
+        this.view = view;
     }
 }
