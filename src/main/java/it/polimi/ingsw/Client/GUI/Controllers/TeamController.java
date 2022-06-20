@@ -9,11 +9,9 @@ import javafx.geometry.Pos;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.control.TextField;
 import it.polimi.ingsw.model.boards.token.ColTow;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 
 
 public class TeamController extends Controller
@@ -25,11 +23,11 @@ public class TeamController extends Controller
         switch(ColTow.values()[i])
         {
             case WHITE:
-                return "/Client/GUI/Images/Tower/white_tower.png";
+                return "/Client/GUI/Images/Tower/white_tower_for_choice.png";
             case BLACK:
-                return "/Client/GUI/Images/Tower/black_tower.png";
+                return "/Client/GUI/Images/Tower/black_tower_for_choice.png";
             case GREY:
-                return "/Client/GUI/Images/Tower/grey_tower.png";
+                return "/Client/GUI/Images/Tower/grey_tower_for_choice.png";
             default:
                 return "";
         }

@@ -9,8 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little change in Team choice (not already finished)">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Final change in tower choice">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/black_tower_for_choice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/grey_tower_for_choice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/white_tower_for_choice.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/IslandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/IslandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/TeamController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/black_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/black_tower.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/grey_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/grey_tower.png" afterDir="false" />
@@ -215,14 +219,7 @@
       <workItem from="1655116684516" duration="286000" />
       <workItem from="1655149081823" duration="1514000" />
       <workItem from="1655719869870" duration="156000" />
-      <workItem from="1655720087290" duration="1036000" />
-    </task>
-    <task id="LOCAL-00089" summary="minor correction">
-      <created>1654550609000</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1654550609000</updated>
+      <workItem from="1655720087290" duration="2418000" />
     </task>
     <task id="LOCAL-00090" summary="Informations and end turn button implemented">
       <created>1654552276732</created>
@@ -560,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655719771406</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="Final change in tower choice">
+      <created>1655721231669</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1655721231670</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="uuuh strange occurence" />
     <MESSAGE value="Again, someone did strange refactors..." />
     <MESSAGE value="First step in better implementation of client side character cards" />
     <MESSAGE value="Hopefully right implementation f client side character cards" />
@@ -604,7 +607,8 @@
     <MESSAGE value="Changes in lightPlayer, island e wizard controller" />
     <MESSAGE value="Adding css stylesheet to the majority of the controllers" />
     <MESSAGE value="Little change in Team choice (not already finished)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little change in Team choice (not already finished)" />
+    <MESSAGE value="Final change in tower choice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final change in tower choice" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
