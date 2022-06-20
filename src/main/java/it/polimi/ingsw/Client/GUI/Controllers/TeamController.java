@@ -4,11 +4,15 @@ import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.Messages.SetupMessages.TeamChoice;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.control.TextField;
 import it.polimi.ingsw.model.boards.token.ColTow;
-
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 
 public class TeamController extends Controller
@@ -45,10 +49,25 @@ public class TeamController extends Controller
                 teamColor.setFitHeight(200);
                 teamColor.setFitWidth(135);
                 Team.getChildren().clear();
-                Team.getChildren().add(teamColor);
+
+                Text text=new Text(String.valueOf(ColTow.values()[i]));
+
+                VBox vBox1=new VBox();
+                vBox1.getChildren().add(teamColor);
+                vBox1.alignmentProperty().set(Pos.CENTER);
+                vBox1.getChildren().add(text);
+
+                HBox hBox=new HBox(vBox1);
+                Team.getChildren().add(hBox);
+
+                //Team.getChildren().add(teamColor);
+                //Team.getChildren().add(text);
+
                 Team.setOnMouseClicked((MouseEvent) -> GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new TeamChoice(finalI))));
                 AvailableTeams.getChildren().add(Team);
             }
         }
+        AvailableTeams.setSpacing(50);
+        AvailableTeams.alignmentProperty().set(Pos.CENTER);
     }
 }
