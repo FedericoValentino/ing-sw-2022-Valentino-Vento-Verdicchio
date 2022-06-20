@@ -51,4 +51,22 @@ public class JesterTest{
         assertEquals(Col.BLUE, testCard.getStudents().get(5).getColor());
 
     }
+
+    @Test
+    public void testGetStudent()
+    {
+        MainController controllerTest = new MainController(2, true);
+
+        CharacterControllerTest.setupTest(controllerTest);
+        Jester testCard = new Jester();
+
+        for(int i = 0; i < 6; i++)
+            testCard.updateStudents(controllerTest.getGame().getCurrentPouch());
+
+        Col firstStudent = testCard.getStudents().get(0).getColor();
+        Student extractedStudent = testCard.getStudent(0);
+
+        assertEquals(firstStudent, extractedStudent.getColor());
+        assertEquals(5, testCard.getStudents().size());
+    }
 }

@@ -42,11 +42,12 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         /*Uses this for cycle to remove the students of the selected color from the island: uses a
         counter to save how many students were removed  */
         int cont = 0;
-        for(int i=0; i<game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents().size(); i++)
+        ArrayList<Student> studentsOnIsland = game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents();
+        for(int i=0; i < studentsOnIsland.size(); i++)
         {
-            if(game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents().get(i).getColor() == getChosenColor())
+            if(studentsOnIsland.get(i).getColor() == getChosenColor())
             {
-                game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents().remove(i);
+                studentsOnIsland.remove(i);
                 cont++;
             }
         }
@@ -56,7 +57,7 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         //After the influence calculations, it adds to the island as many students of the selected color as the number of the counter
         for(int i=0; i<cont; i++)
         {
-            game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents().add(new Student(getChosenColor()));
+            studentsOnIsland.add(new Student(getChosenColor()));
         }
         game.notify(game.modelToJson());
     }
