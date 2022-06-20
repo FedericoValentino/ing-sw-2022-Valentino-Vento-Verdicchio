@@ -12,17 +12,6 @@ public class AssistantDeck
     private final String playerName;
     private final Wizard wizard;
 
-    /** Json constructor */
-    public AssistantDeck(
-            @JsonProperty("deck")ArrayList<AssistantCard> deck,
-            @JsonProperty("playerName")String playerName,
-            @JsonProperty("wizard")Wizard wizard)
-    {
-        this.deck = deck;
-        this.playerName = playerName;
-        this.wizard = wizard;
-    }
-
     /** Class constructor. Creates a Deck of Assistant Cards with a wizard and a player assigned. Calls the
      Assistant Card constructor and assigns a Turn Value and Maximum Mother Movement value to the card, as specified below
      * @param wizard  the wizard chosen by the player

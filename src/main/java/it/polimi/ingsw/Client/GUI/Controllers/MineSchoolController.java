@@ -34,9 +34,9 @@ public class MineSchoolController implements ObserverLightView
 
     public void entranceClick(MouseEvent event)
     {
+        ((Pane) event.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
         if(!studentChoice.isVisible())
         {
-            ((Pane) event.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
             studentChoice.setVisible(true);
             studentEntrancePos = Integer.parseInt(((Node)event.getSource()).getId().replace("entrance_", ""));
         }

@@ -13,10 +13,12 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -227,6 +229,11 @@ public class MainBoardController extends Controller {
         EffectDescription.setText("You are playing " + card.getName());
         BackToBoard.setOnMouseClicked((MouseEvent) ->
         {
+            ParametersSlice.getChildren().clear();
+            EffectDescription.setText("");
+            integerChoice_1.clear();
+            integerChoice_2.clear();
+            colorChoice = null;
             EffectPane.setMouseTransparent(true);
             EffectPane.setVisible(false);
         });
@@ -255,12 +262,14 @@ public class MainBoardController extends Controller {
                         ImageView image = new ImageView(getRightColorPath(student));
                         image.setFitHeight(27);
                         image.setFitWidth(27);
-                        image.setId(String.valueOf(studentPosition));
-                        image.setOnMouseClicked((MouseEvent) ->
+                        Pane studentPane = new Pane();
+                        studentPane.setId(String.valueOf(studentPosition));
+                        studentPane.setOnMouseClicked((MouseEvent) ->
                         {
                             integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
                         });
-                        students.getChildren().add(image);
+                        studentPane.getChildren().add(image);
+                        students.getChildren().add(studentPane);
                     }
                     ParametersSlice.getChildren().clear();
                     ParametersSlice.getChildren().add(students);
@@ -296,46 +305,163 @@ public class MainBoardController extends Controller {
                 break;
 
             case INTEGER_2:
-                VBox priestParameters = new VBox();
-                priestParameters.getChildren().clear();
-
-                //setup islands
-                HBox islandChoice = new HBox();
-                Text hint = new Text();
-                hint.setText("Select the target island");
-                islandChoice.getChildren().add(hint);
-                ChoiceBox box = new ChoiceBox();
-                for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
+                VBox cardParameters = new VBox();
+                cardParameters.getChildren().clear();
+                //getting the right player school
+                LightSchool school = null;
+                for(LightTeam team : view.getCurrentTeams())
                 {
-                    box.getItems().add(i);
-                }
-                box.setOnAction((Event) ->
-                {
-                    integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
-                });
-                islandChoice.getChildren().add(box);
-
-                priestParameters.getChildren().add(islandChoice);
-
-                //setup students
-                HBox students = new HBox();
-                int studentPosition = 0;
-                for(Student student : card.getStudentList())
-                {
-                    ImageView image = new ImageView(getRightColorPath(student));
-                    image.setFitHeight(27);
-                    image.setFitWidth(27);
-                    image.setId(String.valueOf(studentPosition));
-                    image.setOnMouseClicked((MouseEvent) ->
+                    for(LightPlayer player: team.getPlayers())
                     {
-                        integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
-                    });
-                    students.getChildren().add(image);
+                        if(player.getNome().equals(GuiMainStarter.getClientGUI().getServerConnection().getNickname()))
+                        {
+                            school = player.getSchool();
+                        }
+                    }
                 }
-                priestParameters.getChildren().add(students);
+                if(card.getName().equals(CharacterName.JESTER))
+                {
+                    //setup students
+                    HBox students = new HBox();
+                    int studentPosition = 0;
+                    for(Student student : card.getStudentList())
+                    {
+                        ImageView image = new ImageView(getRightColorPath(student));
+                        image.setFitHeight(27);
+                        image.setFitWidth(27);
+                        Pane studentPane = new Pane();
+                        studentPane.setId(String.valueOf(studentPosition));
+                        studentPane.setOnMouseClicked((MouseEvent) ->
+                        {
+                            if(integerChoice_1.size() < 3)
+                            {
+                                ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                                integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                            }
+
+                        });
+                        studentPane.getChildren().add(image);
+                        students.getChildren().add(studentPane);
+                        studentPosition++;
+                    }
+                    cardParameters.getChildren().add(students);
+                    //setup students
+                    HBox entrance = new HBox();
+                    int entrancePos = 0;
+                    for(Student student : school.getEntrance())
+                    {
+                        ImageView image = new ImageView(getRightColorPath(student));
+                        image.setFitHeight(27);
+                        image.setFitWidth(27);
+                        Pane studentPane = new Pane();
+                        studentPane.setId(String.valueOf(entrancePos));
+                        studentPane.setOnMouseClicked((MouseEvent) ->
+                        {
+                            if(integerChoice_2.size() < integerChoice_1.size())
+                            {
+                                ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                                integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                            }
+                        });
+                        studentPane.getChildren().add(image);
+                        entrance.getChildren().add(studentPane);
+                        entrancePos++;
+                    }
+                    cardParameters.getChildren().add(entrance);
+                }
+                else if(card.getName().equals(CharacterName.MINSTREL))
+                {
+                    //setup students
+                    HBox students = new HBox();
+                    int studentPosition = 0;
+                    for(Student student : school.getEntrance())
+                    {
+                        ImageView image = new ImageView(getRightColorPath(student));
+                        image.setFitHeight(27);
+                        image.setFitWidth(27);
+                        Pane studentPane = new Pane();
+                        studentPane.setId(String.valueOf(studentPosition));
+                        studentPane.setOnMouseClicked((MouseEvent) ->
+                        {
+                            if(integerChoice_1.size() < 3)
+                            {
+                                ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                                integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                            }
+                        });
+                        studentPane.getChildren().add(image);
+                        students.getChildren().add(studentPane);
+                        studentPosition++;
+                    }
+                    cardParameters.getChildren().add(students);
+
+                    HBox Colors = new HBox();
+                    for(int i = 0; i < 5; i++)
+                    {
+                        Student student = new Student(Col.values()[i]);
+                        ImageView color = new ImageView(getRightColorPath(student));
+                        color.setId(Col.values()[i].toString());
+                        Pane studentPane = new Pane();
+                        studentPane.setOnMouseClicked((MouseEvent) ->
+                        {
+                            if(integerChoice_2.size() < integerChoice_1.size())
+                            {
+                                ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                                integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                            }
+                        });
+                        studentPane.getChildren().add(color);
+                        Colors.getChildren().add(studentPane);
+                    }
+                    cardParameters.getChildren().add(Colors);
+
+                }
+                else
+                {
+                    //setup islands
+                    HBox islandChoice = new HBox();
+                    Text hint = new Text();
+                    hint.setText("Select the target island");
+                    islandChoice.getChildren().add(hint);
+                    ChoiceBox box = new ChoiceBox();
+                    for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
+                    {
+                        box.getItems().add(i);
+                    }
+                    box.setOnAction((Event) ->
+                    {
+                        integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
+                    });
+                    islandChoice.getChildren().add(box);
+
+                    cardParameters.getChildren().add(islandChoice);
+
+                    //setup students
+                    HBox students = new HBox();
+                    int studentPosition = 0;
+                    for(Student student : card.getStudentList())
+                    {
+                        ImageView image = new ImageView(getRightColorPath(student));
+                        image.setFitHeight(27);
+                        image.setFitWidth(27);
+
+                        Pane studentPane = new Pane();
+                        studentPane.setId(String.valueOf(studentPosition));
+                        studentPane.setOnMouseClicked((MouseEvent) ->
+                        {
+                            ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                            integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                        });
+                        studentPane.getChildren().add(image);
+                        students.getChildren().add(studentPane);
+                        studentPosition++;
+                    }
+                    cardParameters.getChildren().add(students);
+                }
 
                 ParametersSlice.getChildren().clear();
-                ParametersSlice.getChildren().add(priestParameters);
+                ParametersSlice.getChildren().add(cardParameters);
+
 
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
@@ -354,10 +480,15 @@ public class MainBoardController extends Controller {
                 {
                     Student student = new Student(Col.values()[i]);
                     ImageView color = new ImageView(getRightColorPath(student));
-                    color.setId(Col.values()[i].toString());
-                    color.setOnMouseClicked((MouseEvent) -> {
-                        colorChoice = Col.valueOf(((Node) MouseEvent.getSource()).getId());
+                    Pane studentPane = new Pane();
+                    studentPane.setId(String.valueOf(i));
+                    studentPane.setOnMouseClicked((MouseEvent) ->
+                    {
+                        ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                        colorChoice = Col.valueOf(((Node)MouseEvent.getSource()).getId());
                     });
+                    studentPane.getChildren().add(color);
+                    Colors.getChildren().add(studentPane);
                 }
                 ParametersSlice.getChildren().clear();
                 ParametersSlice.getChildren().add(Colors);

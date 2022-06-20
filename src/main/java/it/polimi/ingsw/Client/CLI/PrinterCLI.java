@@ -411,15 +411,15 @@ public class PrinterCLI
                 }
             }
         }
-        AnsiConsole.out().println(ANSI_GREEN + "[" + p.getAssistantDeck().getWizard().name() + "]" + ANSI_RESET + "'s deck");
-        for(int i = 0; i < p.getAssistantDeck().getDeck().size(); i++)
+        AnsiConsole.out().println(ANSI_GREEN + "[" + p.getLightAssistantDeck().getWizard().name() + "]" + ANSI_RESET + "'s deck");
+        for(int i = 0; i < p.getLightAssistantDeck().getDeck().size(); i++)
         {
             deck[0] += "__________ ";
             deck[1] += "|   " + addZero(i) + "   | ";
             deck[2] += "|        | ";
-            deck[3] += "|Value:" + addZero(p.getAssistantDeck().getDeck().get(i).getValue()) + "| ";
+            deck[3] += "|Value:" + addZero(p.getLightAssistantDeck().getDeck().get(i).getValue()) + "| ";
             deck[4] += "|        | ";
-            deck[5] += "|Moves:" + addZero(p.getAssistantDeck().getDeck().get(i).getMovement()) + "| ";
+            deck[5] += "|Moves:" + addZero(p.getLightAssistantDeck().getDeck().get(i).getMovement()) + "| ";
             deck[6] += "|________| ";
         }
 

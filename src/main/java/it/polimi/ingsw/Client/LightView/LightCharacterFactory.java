@@ -155,7 +155,7 @@ public class LightCharacterFactory
                         -1,
                         null,
                         description,
-                        LightCharacterType.NONE);
+                        LightCharacterType.INTEGER_2);
 
             case THIEF:
                 description[0] += "";
@@ -177,7 +177,7 @@ public class LightCharacterFactory
                         -1,
                         ((Jester) card).getStudents(),
                         description,
-                        LightCharacterType.INTEGER_1);
+                        LightCharacterType.INTEGER_2);
 
         }
         return null;

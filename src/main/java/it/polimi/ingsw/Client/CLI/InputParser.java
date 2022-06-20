@@ -2,6 +2,8 @@ package it.polimi.ingsw.Client.CLI;
 
 import it.polimi.ingsw.Client.CharacterActivationParser;
 import it.polimi.ingsw.Client.LightView.LightCharacterCard;
+import it.polimi.ingsw.Client.LightView.LightPlayer;
+import it.polimi.ingsw.Client.LightView.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.Messages.SetupMessages.ReadyStatus;
@@ -73,44 +75,109 @@ public class InputParser
         CharacterActivationParser activation;
         String nickname = socket.getNickname();
         CharacterName cardName = card.getName();
-        int input;
+        int input = 0;
+        LightPlayer player = null;
+        for(LightTeam team : printer.getView().getCurrentTeams())
+        {
+            for(LightPlayer p : team.getPlayers())
+            {
+                if(p.getNome().equals(nickname))
+                {
+                    player = p;
+                }
+            }
+        }
         switch(card.getType())
         {
             case NONE:
-
                 activation = new CharacterActivationParser(nickname, cardName);
                 socket.sendMessage(new SerializedMessage(activation.buildMessage()));
                 break;
             case INTEGER_1:
-
+                ArrayList<Integer> inputArray = new ArrayList<>();
                 if(card.getName().equals(CharacterName.PRINCESS))
                 {
                     printer.printStudent(card.getStudentList(), 2);
                     AnsiConsole.out().println("Choose a student to move to dining room");
-                    input = Integer.parseInt(parser.nextLine());
                 }
                 else
                 {
                     AnsiConsole.out().println("Choose the island");
-                    input = Integer.parseInt(parser.nextLine());
                 }
-                ArrayList<Integer> inputArray = new ArrayList<>();
+                input = Integer.parseInt(parser.nextLine());
                 inputArray.add(input);
                 activation = new CharacterActivationParser(nickname, cardName, inputArray);
                 socket.sendMessage(new SerializedMessage(activation.buildMessage()));
                 break;
 
             case INTEGER_2:
-
-                printer.printStudent(card.getStudentList(), 2);
-                AnsiConsole.out().println("Choose the student to move");
-                int input1 = Integer.parseInt(parser.nextLine());
-                AnsiConsole.out().println("Choose the island");
-                input = Integer.parseInt(parser.nextLine());
                 ArrayList<Integer> inputArray1 = new ArrayList<>();
-                inputArray1.add(input1);
                 ArrayList<Integer> inputArray2 = new ArrayList<>();
-                inputArray2.add(input);
+
+                if(card.getName().equals(CharacterName.MINSTREL))
+                {
+                    printer.printStudent(player.getSchool().getEntrance(), 2);
+                    AnsiConsole.out().println("You may choose up to 2 students, type -1 to stop selecting students");
+                    while(input != -1)
+                        AnsiConsole.out().println("Chose a student");
+                    input = Integer.parseInt(parser.nextLine());
+                    if(input >= 0 && input < player.getSchool().getEntrance().size())
+                        inputArray1.add(input);
+                    else if(input < -1)
+                        AnsiConsole.out().println("Not a valid index");
+
+                    for(int i = 0; i < inputArray1.size(); i++)
+                    {
+                        AnsiConsole.out().println("Choose a color:");
+                        try
+                        {
+                            inputArray2.add(Col.valueOf(parser.nextLine()).ordinal());
+                        }
+                        catch(IllegalArgumentException e)
+                        {
+                            AnsiConsole.out().println("You didn't put a valid Color, try again");
+                            i--;
+                        }
+                    }
+                }
+                else if(card.getName().equals(CharacterName.JESTER))
+                {
+                    printer.printStudent(card.getStudentList(), 2);
+                    printer.printStudent(player.getSchool().getEntrance(), 2);
+                    AnsiConsole.out().println("You may choose up to 3 students, type -1 to stop selecting students");
+                    while(input != -1)
+                        AnsiConsole.out().println("Chose a student");
+                    input = Integer.parseInt(parser.nextLine());
+                    if(input >= 0 && input < 6)
+                        inputArray1.add(input);
+                    else if(input < -1)
+                        AnsiConsole.out().println("Not a valid index");
+
+                    for(int i = 0; i < inputArray1.size(); i++)
+                    {
+                        AnsiConsole.out().println("Choose the students from the entrance");
+                        try
+                        {
+                            inputArray2.add(Integer.parseInt(parser.nextLine()));
+                        }
+                        catch(NumberFormatException e)
+                        {
+                            AnsiConsole.out().println("You didn't put a valid index, try again");
+                            i--;
+                        }
+                    }
+                }
+                else
+                {
+                    printer.printStudent(card.getStudentList(), 2);
+                    AnsiConsole.out().println("Choose the student to move");
+                    int input1 = Integer.parseInt(parser.nextLine());
+                    AnsiConsole.out().println("Choose the island");
+                    input = Integer.parseInt(parser.nextLine());
+                    inputArray1.add(input1);
+                    inputArray2.add(input);
+                }
+
                 activation = new CharacterActivationParser(nickname, cardName, inputArray1, inputArray2);
                 socket.sendMessage(new SerializedMessage(activation.buildMessage()));
                 break;

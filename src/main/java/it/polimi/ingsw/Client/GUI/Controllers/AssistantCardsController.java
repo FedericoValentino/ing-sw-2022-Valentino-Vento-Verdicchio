@@ -84,7 +84,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                 HBox cards = (HBox) ((AnchorPane) assistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("box")).collect(Collectors.toList()).get(0);
                 cards.getChildren().clear();
                 int cardIndex = 0;
-                for(AssistantCard card: player.getAssistantDeck().getDeck())
+                for(AssistantCard card: player.getLightAssistantDeck().getDeck())
                 {
                     int sugmaindex = cardIndex;
                     Pane cardPane = new Pane();

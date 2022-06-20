@@ -11,7 +11,7 @@ public class LightPlayer extends Observable
     private int coinAmount;
     private AssistantCard currentAssistantCard;
     private AssistantCard lastPlayedCard;
-    private AssistantDeck assistantDeck;
+    private LightAssistantDeck assistantDeck;
     private LightSchool school;
     private int MaxMotherMovement;
     private int movementValue;
@@ -22,7 +22,7 @@ public class LightPlayer extends Observable
                   @JsonProperty("coinAmount")int coinAmount,
                   @JsonProperty("currentAssistantCard")AssistantCard currentAssistantCard,
                   @JsonProperty("lastPlayedCard")AssistantCard lastPlayedCard,
-                  @JsonProperty("assistantDeck")AssistantDeck assistantDeck,
+                  @JsonProperty("assistantDeck")LightAssistantDeck assistantDeck,
                   @JsonProperty("school")LightSchool school,
                   @JsonProperty("maxMotherMovement")int maxMotherMovement,
                   @JsonProperty("movementValue")int movementValue,
@@ -49,7 +49,7 @@ public class LightPlayer extends Observable
         this.coinAmount = light.getCoinAmount();
         this.currentAssistantCard = light.getCurrentAssistantCard();
         this.lastPlayedCard = light.getLastPlayedCard();
-        this.assistantDeck = light.getAssistantDeck();
+        this.assistantDeck = light.getLightAssistantDeck();
         school.updateSchool(light.getSchool());
         this.MaxMotherMovement = light.getMaxMotherMovement();
         this.movementValue = light.getMovementValue();
@@ -76,7 +76,7 @@ public class LightPlayer extends Observable
         return lastPlayedCard;
     }
 
-    public AssistantDeck getAssistantDeck() {
+    public LightAssistantDeck getLightAssistantDeck() {
         return assistantDeck;
     }
 
