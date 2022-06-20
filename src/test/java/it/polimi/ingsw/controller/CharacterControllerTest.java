@@ -182,13 +182,12 @@ public class CharacterControllerTest {
         ArrayList<Integer> studentPositions = new ArrayList<>();
         studentPositions.add(-1);
         ArrayList<Integer> chosenIslands = new ArrayList<>();
-        studentPositions.add(3);
+        chosenIslands.add(3);
         controllerTest.getCharacterController().playEffect(CharacterName.HERALD, controllerTest.getGame(), studentPositions, chosenIslands, null, null);
 
-        assertEquals(0, controllerTest.getGame().getCurrentActiveCharacterCard().size());
-        assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
+        assertEquals(1, controllerTest.getGame().getCurrentActiveCharacterCard().size());
+        assertEquals(0, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
 
 
-        assertEquals(CharacterName.HERALD, controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getCharacterName());
     }
 }

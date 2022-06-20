@@ -75,7 +75,7 @@ public class PrincessTest {
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.PRINCESS, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         ArrayList<Integer> chosenStudent = new ArrayList<>();
-        chosenStudent.add(island);
+        chosenStudent.add(0);
         testCard.effect(controllerTest.getGame(), chosenStudent, null, "fede", null);
 
 

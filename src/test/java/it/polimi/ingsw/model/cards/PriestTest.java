@@ -74,7 +74,7 @@ public class PriestTest {
             controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.PRIEST, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         ArrayList<Integer> chosenStudent = new ArrayList<>();
-        chosenStudent.add(island);
+        chosenStudent.add(0);
         ArrayList<Integer> chosenIsland = new ArrayList<>();
         chosenIsland.add(island);
         testCard.effect(controllerTest.getGame(), chosenStudent, chosenIsland, null, null);
@@ -83,17 +83,19 @@ public class PriestTest {
 
 
 
-            //Checks if a new student has been added to the card after the effect
-            assertEquals(4, testCard.getStudents().size());
+        //Checks if a new student has been added to the card after the effect
+        assertEquals(4, testCard.getStudents().size());
 
         /*First of all, it verifies that the last student added to the island is of the same colour of that
         taken from the card.
         Then, it checks if the correct number of students are on the island at the end of the effect  */
-            assertEquals(color, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().get(controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size()-1).getColor());
-            if(controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size() == 1)
-                assertEquals(1, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size());
-            else
-                assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size());
+
+        int islandSize = controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size();
+        assertEquals(color, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().get(islandSize - 1).getColor());
+        if(controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size() == 1)
+            assertEquals(1, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size());
+        else
+            assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size());
 
     }
 

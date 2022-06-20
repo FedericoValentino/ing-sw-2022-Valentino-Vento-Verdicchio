@@ -72,10 +72,8 @@ public class TruffleHunterTest {
 
         ArrayList<Integer> chosenIsland = new ArrayList<>();
         chosenIsland.add(island);
-        testCard.effect(controllerTest.getGame(), null, chosenIsland, null, Col.BLUE);
-
-
-
+        testCard.setChosenColor(Col.BLUE);
+        testCard.effect(controllerTest.getGame(), null, chosenIsland, null, null);
 
 
         //Checks if GREY has won the island and if the eliminated students have been re-added on it
