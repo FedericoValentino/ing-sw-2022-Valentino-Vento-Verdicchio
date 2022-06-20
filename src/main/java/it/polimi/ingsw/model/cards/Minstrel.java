@@ -28,7 +28,6 @@ public class Minstrel extends CharacterCard implements Serializable {
     @Override
     public void effect(CurrentGameState game, ArrayList<Integer> entranceStudentIndexes, ArrayList<Integer> colorOrdinals, String currentPlayer, Col color)
     {
-        Collections.sort(entranceStudentIndexes);
 
         Player player = null;
 
@@ -69,17 +68,10 @@ public class Minstrel extends CharacterCard implements Serializable {
         }
     }
 
-    private void swapStudents(ArrayList<Student> destination, ArrayList<Integer> indexes, ArrayList<Student> origin)
+    private void swapStudents(ArrayList<Student> toFill, ArrayList<Integer> indexes, ArrayList<Student> toEmpty)
     {
-        for(int index : indexes)
-        {
-            destination.add(origin.get(index));
-            origin.remove(index);
-            for(int i = 0; i < indexes.size(); i++)
-            {
-                if(indexes.get(i) != 0)
-                    indexes.set(i, indexes.get(i)-1);
-            }
-        }
+        for(Integer index: indexes)
+            toFill.add(toEmpty.get(index));
+        toEmpty.removeAll(toFill);
     }
 }
