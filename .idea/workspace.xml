@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="minor correction">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little change in Team choice (not already finished)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/black_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/black_tower.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/grey_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/grey_tower.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/white_tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/Tower/white_tower.png" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -56,12 +58,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ing-sw-2021-pantaleone-parlati-naldi-main" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/giaco/OneDrive/Desktop/asdasdasadasdsa.fxml"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Controllers" />
@@ -91,7 +93,7 @@
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="ClientApp" />
-      <module name="softeng-GC61" />
+      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
       <option name="VM_PARAMETERS" value="--module-path=&quot;C:\--Ufficio--\JDK\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,7 +110,8 @@
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ServerApp" />
-      <module name="softeng-GC61" />
+      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <option name="VM_PARAMETERS" value="--module-path=&quot;C:\--Ufficio--\JDK\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,13 +214,8 @@
       <workItem from="1655116531013" duration="140000" />
       <workItem from="1655116684516" duration="286000" />
       <workItem from="1655149081823" duration="1514000" />
-    </task>
-    <task id="LOCAL-00088" summary="Fix School">
-      <created>1654550289058</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1654550289058</updated>
+      <workItem from="1655719869870" duration="156000" />
+      <workItem from="1655720087290" duration="1036000" />
     </task>
     <task id="LOCAL-00089" summary="minor correction">
       <created>1654550609000</created>
@@ -555,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655656888118</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="Little change in Team choice (not already finished)">
+      <created>1655719771406</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1655719771406</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes in warning, public/private XJML import and other small things" />
     <MESSAGE value="uuuh strange occurence" />
     <MESSAGE value="Again, someone did strange refactors..." />
     <MESSAGE value="First step in better implementation of client side character cards" />
@@ -599,7 +603,8 @@
     <MESSAGE value="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors" />
     <MESSAGE value="Changes in lightPlayer, island e wizard controller" />
     <MESSAGE value="Adding css stylesheet to the majority of the controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding css stylesheet to the majority of the controllers" />
+    <MESSAGE value="Little change in Team choice (not already finished)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little change in Team choice (not already finished)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,6 +4,7 @@ import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.Messages.SetupMessages.TeamChoice;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -58,6 +59,7 @@ public class TeamController extends Controller
                 vBox1.getChildren().add(text);
 
                 HBox hBox=new HBox(vBox1);
+                hBox.setPadding(new Insets(25,0,0,0));
                 Team.getChildren().add(hBox);
 
                 //Team.getChildren().add(teamColor);
