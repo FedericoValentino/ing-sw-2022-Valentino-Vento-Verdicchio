@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane stylesheets="@main.css"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.WizardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.WizardController">
    <children>
       <ImageView fitHeight="900.0" fitWidth="1600.0">
          <image>
@@ -82,11 +82,11 @@
                   </Pane>
                </children>
             </HBox>
-            <Button fx:id="sendChoice" layoutX="504.0" layoutY="311.0" mnemonicParsing="false" onAction="#onClickSendChoice" text="Send Chioce" />
-            <Text fx:id="alreadyChoose1" fill="RED" layoutX="40.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
-            <Text fx:id="alreadyChoose4" fill="RED" layoutX="475.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
-            <Text fx:id="alreadyChoose3" fill="RED" layoutX="332.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
-            <Text fx:id="alreadyChoose2" fill="RED" layoutX="191.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
+            <Button fx:id="sendChoice" layoutX="504.0" layoutY="311.0" mnemonicParsing="false" onAction="#onClickSendChoice" text="Send Choice" />
+            <Text fx:id="alreadyChoose1" fill="RED" layoutX="44.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choose" />
+            <Text fx:id="alreadyChoose4" fill="RED" layoutX="475.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choosen" />
+            <Text fx:id="alreadyChoose3" fill="RED" layoutX="330.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choosen" />
+            <Text fx:id="alreadyChoose2" fill="RED" layoutX="183.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Choosen" />
          </children>
       </Pane>
    </children>

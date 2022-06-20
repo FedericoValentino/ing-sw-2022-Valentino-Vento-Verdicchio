@@ -59,10 +59,6 @@ public class TeamController extends Controller
                 HBox hBox=new HBox(vBox1);
                 hBox.setPadding(new Insets(25,0,0,0));
                 Team.getChildren().add(hBox);
-
-                //Team.getChildren().add(teamColor);
-                //Team.getChildren().add(text);
-
                 Team.setOnMouseClicked((MouseEvent) -> GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new TeamChoice(finalI))));
                 AvailableTeams.getChildren().add(Team);
             }
