@@ -24,7 +24,7 @@ public class MinstrelTest extends TestCase {
 
         Player fede = controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0);
 
-        controllerTest.getGame().getCurrentTurnState().setCurrentPlayer("jack");
+        controllerTest.getGame().getCurrentTurnState().setCurrentPlayer("fede");
 
         fede.getSchool().getEntrance().clear();
 
@@ -51,7 +51,7 @@ public class MinstrelTest extends TestCase {
         assertEquals(0, fede.getSchool().getDiningRoom()[3]);
         assertEquals(0, fede.getSchool().getDiningRoom()[4]);
 
-      //  assertEquals(Col.RED, fede.getSchool().getEntrance().get());
-        //assertEquals(Col.YELLOW, fede.getSchool().getEntrance().get());
+        assertEquals(Col.GREEN, fede.getSchool().getEntrance().get(3).getColor());
+        assertEquals(Col.BLUE, fede.getSchool().getEntrance().get(4).getColor());
     }
 }

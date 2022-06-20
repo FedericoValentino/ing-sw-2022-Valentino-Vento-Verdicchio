@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class Thief extends CharacterCard implements Serializable {
 
-
     /**
      * Class constructor
      */

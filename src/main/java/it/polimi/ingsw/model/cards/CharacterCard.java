@@ -22,7 +22,7 @@ public abstract class CharacterCard implements Serializable {
     /** Updates the uses of the card upon activation and updates the currentCost */
     public void updateCost() {
         this.uses++;
-        currentCost=baseCost+uses;
+        currentCost = baseCost + uses;
     }
 
     public abstract void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color);
