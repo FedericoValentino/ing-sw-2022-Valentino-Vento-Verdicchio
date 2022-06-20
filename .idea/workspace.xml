@@ -9,11 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="New character tests done">
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/CurrentTurnStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/CurrentTurnStateTest.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Gained 100% of model coverage (97% line coverage)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/BoardPrinters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/InfoPrinters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/SchoolPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
-    <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
+    <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,8 +36,8 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,6 +52,54 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="13" end1="14" start2="13" end2="14" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="45" end1="46" start2="45" end2="46" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="53" end1="54" start2="53" end2="54" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="59" end1="60" start2="59" end2="60" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="72" end1="73" start2="72" end2="73" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="94" end1="163" start2="94" end2="94" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="164" end1="165" start2="95" end2="96" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="195" end1="726" start2="126" end2="127" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="741" end1="742" start2="142" end2="143" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="757" end1="760" start2="158" end2="159" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="765" end1="765" start2="164" end2="169" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="15" end1="15" start2="16" end2="17" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="26" end1="27" start2="28" end2="32" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="33" end1="34" start2="38" end2="42" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="73" end1="74" start2="81" end2="82" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="78" end1="89" start2="86" end2="88" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="99" end1="100" start2="98" end2="99" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="118" end1="119" start2="117" end2="118" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="144" end1="146" start2="143" end2="145" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="171" end1="172" start2="170" end2="171" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="202" end1="203" start2="201" end2="202" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="206" end1="207" start2="205" end2="206" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="210" end1="211" start2="209" end2="210" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="213" end1="214" start2="212" end2="213" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="216" end1="217" start2="215" end2="216" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="219" end1="220" start2="218" end2="219" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="222" end1="223" start2="221" end2="222" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="225" end1="226" start2="224" end2="225" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="230" end1="231" start2="229" end2="230" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="234" end1="235" start2="233" end2="234" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="267" end1="268" start2="266" end2="267" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="291" end1="292" start2="290" end2="291" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="293" end1="294" start2="292" end2="293" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
+        <range start1="295" end1="296" start2="294" end2="295" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="297" end1="298" start2="296" end2="297" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+        <range start1="311" end1="312" start2="310" end2="311" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -244,13 +301,6 @@
       <workItem from="1655149081823" duration="1514000" />
       <workItem from="1655719869870" duration="156000" />
       <workItem from="1655720087290" duration="3517000" />
-    </task>
-    <task id="LOCAL-00095" summary="yaawn">
-      <created>1654553167431</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1654553167431</updated>
     </task>
     <task id="LOCAL-00096" summary="Cloud corrections">
       <created>1654555283224</created>
@@ -588,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655759362885</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="Gained 100% of model coverage (97% line coverage)">
+      <created>1655761617567</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1655761617568</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +665,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Same, but code with me" />
     <MESSAGE value="Further steps to ensure character's functionality" />
     <MESSAGE value="Same but code with me" />
     <MESSAGE value="little change" />
@@ -633,7 +689,8 @@
     <MESSAGE value="Improved the effects of Minstrel and Jester" />
     <MESSAGE value="New characters tests almost done" />
     <MESSAGE value="New character tests done" />
-    <option name="LAST_COMMIT_MESSAGE" value="New character tests done" />
+    <MESSAGE value="Gained 100% of model coverage (97% line coverage)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gained 100% of model coverage (97% line coverage)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,7 +948,7 @@
       <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650875083411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1655761360048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1655761533066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testGetMax.ic" NAME="IslandsTest.testGetMax Coverage Results" MODIFIED="1650578489611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>
