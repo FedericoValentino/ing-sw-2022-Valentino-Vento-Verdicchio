@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 
+import it.polimi.ingsw.Client.GUI.ClientGUI;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightIsland;
 import it.polimi.ingsw.Client.LightView.LightMotherNature;
