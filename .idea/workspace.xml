@@ -9,18 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Improved the effects of Minstrel and Jester">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/EffectsUtilities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CookTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/JesterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/MinstrelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="New characters tests almost done">
+      <change afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/ThiefTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Cook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Cook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Jester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Jester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Minstrel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Minstrel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/Thief.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/MinstrelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/MinstrelTest.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -98,7 +90,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JesterTest.testEffect">
+  <component name="RunManager" selected="JUnit.ThiefTest.testEffect">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
@@ -116,14 +108,6 @@
       <option name="MAIN_CLASS_NAME" value="ServerApp" />
       <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
       <option name="VM_PARAMETERS" value="--module-path=&quot;C:\--Ufficio--\JDK\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,16 +144,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="it.polimi.ingsw in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MinstrelTest.testEffect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.model.cards.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.cards" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.cards.MinstrelTest" />
+      <option name="METHOD_NAME" value="testEffect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThiefTest.testEffect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.polimi.ingsw.model.cards.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.cards" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.cards.ThiefTest" />
+      <option name="METHOD_NAME" value="testEffect" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,18 +179,18 @@
     <list>
       <item itemvalue="Application.ClientApp" />
       <item itemvalue="Application.ServerApp" />
-      <item itemvalue="JUnit.All in softeng-GC61" />
-      <item itemvalue="JUnit.it.polimi.ingsw in softeng-GC61" />
       <item itemvalue="JUnit.CookTest.testEffect" />
       <item itemvalue="JUnit.JesterTest.testEffect" />
+      <item itemvalue="JUnit.MinstrelTest.testEffect" />
+      <item itemvalue="JUnit.ThiefTest.testEffect" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ThiefTest.testEffect" />
+        <item itemvalue="JUnit.MinstrelTest.testEffect" />
         <item itemvalue="JUnit.JesterTest.testEffect" />
         <item itemvalue="JUnit.CookTest.testEffect" />
         <item itemvalue="Application.ServerApp" />
-        <item itemvalue="JUnit.it.polimi.ingsw in softeng-GC61" />
-        <item itemvalue="JUnit.it.polimi.ingsw in softeng-GC61" />
       </list>
     </recent_temporary>
   </component>
@@ -243,13 +245,6 @@
       <workItem from="1655149081823" duration="1514000" />
       <workItem from="1655719869870" duration="156000" />
       <workItem from="1655720087290" duration="3517000" />
-    </task>
-    <task id="LOCAL-00093" summary="Now it should work (infos)">
-      <created>1654552908508</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1654552908508</updated>
     </task>
     <task id="LOCAL-00094" summary="ugh">
       <created>1654553061952</created>
@@ -587,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655753378413</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="New characters tests almost done">
+      <created>1655758266491</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1655758266491</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +609,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Hopefully right implementation f client side character cards" />
     <MESSAGE value="First implementation of new CLI character handling" />
     <MESSAGE value="Same, but code with me" />
     <MESSAGE value="Further steps to ensure character's functionality" />
@@ -632,7 +633,8 @@
     <MESSAGE value="Final change in tower choice" />
     <MESSAGE value="Tower's update" />
     <MESSAGE value="Improved the effects of Minstrel and Jester" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved the effects of Minstrel and Jester" />
+    <MESSAGE value="New characters tests almost done" />
+    <option name="LAST_COMMIT_MESSAGE" value="New characters tests almost done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
