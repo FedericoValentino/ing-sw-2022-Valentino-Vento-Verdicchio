@@ -17,7 +17,7 @@ public class CookTest {
     {
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Cook testCard = new Cook();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());

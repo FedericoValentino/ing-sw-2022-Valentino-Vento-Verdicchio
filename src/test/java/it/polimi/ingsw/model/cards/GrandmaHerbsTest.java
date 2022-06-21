@@ -56,7 +56,7 @@ public class GrandmaHerbsTest {
     {
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         GrandmaHerbs testCard = new GrandmaHerbs();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());

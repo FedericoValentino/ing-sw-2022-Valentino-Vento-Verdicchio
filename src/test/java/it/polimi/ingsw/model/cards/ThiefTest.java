@@ -14,7 +14,7 @@ public class ThiefTest extends TestCase {
     {
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Thief testCard = new Thief();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());

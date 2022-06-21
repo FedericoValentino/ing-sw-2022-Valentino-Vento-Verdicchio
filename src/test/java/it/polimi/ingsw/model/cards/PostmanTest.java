@@ -41,7 +41,7 @@ public class PostmanTest {
     {
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Postman testCard = new Postman();
 
 

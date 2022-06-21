@@ -43,7 +43,7 @@ public class CentaurTest {
     {
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Centaur testCard = new Centaur();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());

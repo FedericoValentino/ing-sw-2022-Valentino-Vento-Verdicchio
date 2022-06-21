@@ -14,7 +14,7 @@ public class PlanningControllerTest {
     @Test
     public void testDrawStudentForClouds()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         //Operates on the first cloud
         controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
@@ -34,7 +34,7 @@ public class PlanningControllerTest {
     @Test
     public void testDrawAssistantCard()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         //it draws the third card of the AssistantDeck on account of the GREY player
         controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), "jack", 2);

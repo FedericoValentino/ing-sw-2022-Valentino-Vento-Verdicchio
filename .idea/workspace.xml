@@ -9,19 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Introduced class structure for Printers">
-      <change afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/TestUtilities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/MovesChecksTest.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Half of the tests done and added a utility class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/TestUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/TestUtilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ActionControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ChecksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ChecksTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/MainControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/PlanningControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/PlanningControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/CurrentGameStateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CentaurTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CentaurTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CookTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/EffectTestsUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/EffectTestsUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/GrandmaHerbsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/GrandmaHerbsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/HeraldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/HeraldTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/JesterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/JesterTest.java" afterDir="false" />
@@ -113,7 +110,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainControllerTest.testGetAvailableTeams">
+  <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -127,7 +124,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChecksTest.testIsThereAWinner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ActionControllerTest.testPlaceStudentToIsland" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
@@ -136,30 +133,38 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.ChecksTest" />
-      <option name="METHOD_NAME" value="testIsThereAWinner" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.ActionControllerTest" />
+      <option name="METHOD_NAME" value="testPlaceStudentToIsland" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainControllerTest.testGetAvailableTeams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CentaurTest.testTestEffect4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.model.cards.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
-      <option name="METHOD_NAME" value="testGetAvailableTeams" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.cards" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.cards.CentaurTest" />
+      <option name="METHOD_NAME" value="testTestEffect4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainControllerTest.testLastTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterControllerTest.isPickable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
@@ -168,14 +173,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
-      <option name="METHOD_NAME" value="testLastTurn" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="isPickable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainControllerTest.testRemoveSlotFromTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterControllerTest.testPickCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
@@ -184,24 +189,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
-      <option name="METHOD_NAME" value="testRemoveSlotFromTeam" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainControllerTest.testSelectWinner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
-      <option name="METHOD_NAME" value="testSelectWinner" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="testPickCard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -209,19 +198,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ClientApp" />
-      <item itemvalue="JUnit.ChecksTest.testIsThereAWinner" />
-      <item itemvalue="JUnit.MainControllerTest.testLastTurn" />
-      <item itemvalue="JUnit.MainControllerTest.testSelectWinner" />
-      <item itemvalue="JUnit.MainControllerTest.testRemoveSlotFromTeam" />
-      <item itemvalue="JUnit.MainControllerTest.testGetAvailableTeams" />
+      <item itemvalue="JUnit.All in softeng-GC61" />
+      <item itemvalue="JUnit.CentaurTest.testTestEffect4" />
+      <item itemvalue="JUnit.ActionControllerTest.testPlaceStudentToIsland" />
+      <item itemvalue="JUnit.CharacterControllerTest.isPickable" />
+      <item itemvalue="JUnit.CharacterControllerTest.testPickCard" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainControllerTest.testGetAvailableTeams" />
-        <item itemvalue="JUnit.MainControllerTest.testRemoveSlotFromTeam" />
-        <item itemvalue="JUnit.MainControllerTest.testSelectWinner" />
-        <item itemvalue="JUnit.MainControllerTest.testLastTurn" />
-        <item itemvalue="JUnit.ChecksTest.testIsThereAWinner" />
+        <item itemvalue="JUnit.All in softeng-GC61" />
+        <item itemvalue="JUnit.CharacterControllerTest.testPickCard" />
+        <item itemvalue="JUnit.CharacterControllerTest.isPickable" />
+        <item itemvalue="JUnit.ActionControllerTest.testPlaceStudentToIsland" />
+        <item itemvalue="JUnit.CentaurTest.testTestEffect4" />
       </list>
     </recent_temporary>
   </component>
@@ -276,13 +265,6 @@
       <workItem from="1655149081823" duration="1514000" />
       <workItem from="1655719869870" duration="156000" />
       <workItem from="1655720087290" duration="3517000" />
-    </task>
-    <task id="LOCAL-00098" summary="Corrections">
-      <created>1654555916234</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1654555916234</updated>
     </task>
     <task id="LOCAL-00099" summary="Corrections 1:04">
       <created>1654556662713</created>
@@ -620,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655763523024</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="Half of the tests done and added a utility class">
+      <created>1655830388662</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1655830388662</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,7 +629,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="little change" />
     <MESSAGE value="Last Commit for the day" />
     <MESSAGE value="Possible fix for uses and cost not updating" />
     <MESSAGE value="smol" />
@@ -665,7 +653,8 @@
     <MESSAGE value="Gained 100% of model coverage (97% line coverage)" />
     <MESSAGE value="Introduced class structure for Printers" />
     <MESSAGE value="Same, but Code with Me" />
-    <option name="LAST_COMMIT_MESSAGE" value="Same, but Code with Me" />
+    <MESSAGE value="Half of the tests done and added a utility class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Half of the tests done and added a utility class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -923,7 +912,7 @@
       <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650875083411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1655826378156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1655838888558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testGetMax.ic" NAME="IslandsTest.testGetMax Coverage Results" MODIFIED="1650578489611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>

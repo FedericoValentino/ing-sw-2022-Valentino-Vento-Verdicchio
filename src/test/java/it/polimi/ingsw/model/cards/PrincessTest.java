@@ -57,7 +57,7 @@ public class PrincessTest {
     {
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Princess testCard = new Princess();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());

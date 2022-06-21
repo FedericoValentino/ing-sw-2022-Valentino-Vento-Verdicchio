@@ -42,7 +42,7 @@ public class HeraldTest {
 
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Herald testCard = new Herald();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());

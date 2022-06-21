@@ -19,7 +19,8 @@ public class ActionControllerTest
     public void testPlaceStudentToIsland()
     {
         Student s;
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
+        TestUtilities.setupTurn(controllerTest);
         s = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().get(0);
         controllerTest.getActionController().placeStudentToIsland(0, 0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
         assert(controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents().contains(s));
@@ -29,7 +30,8 @@ public class ActionControllerTest
     public void testPlaceStudentToDiningRoom()
     {
         Student s;
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
+        TestUtilities.setupTurn(controllerTest);
         s = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().get(0);
         int x = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getDiningRoom()[s.getColor().ordinal()];
         controllerTest.getActionController().placeStudentToDiningRoom(0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
@@ -40,7 +42,8 @@ public class ActionControllerTest
     public void testMoveMN()
     {
         Random r = new Random();
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
+        TestUtilities.setupTurn(controllerTest);
         controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), controllerTest.getCurrentPlayer(), 7);
         int movement = r.nextInt(MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getMaxMotherMovement() - 1) + 1;
         if(movement == 0)
@@ -56,7 +59,8 @@ public class ActionControllerTest
     @Test
     public void testSolveEverything()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
+        TestUtilities.setupTurn(controllerTest);
         controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents().removeAll(controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents());
         for(int i = 0; i < 4; i++)
         {
@@ -124,7 +128,8 @@ public class ActionControllerTest
     @Test
     public void TestDrawFromClouds()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
+        TestUtilities.setupTurn(controllerTest);
         controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
         int x = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size();
         controllerTest.getActionController().drawFromClouds(0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
@@ -135,7 +140,7 @@ public class ActionControllerTest
     @Test
     public void testGetMovableStudents()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         assertEquals(3, controllerTest.getActionController().getMovableStudents());
 
         for(int i = 0; i< 2; i++)

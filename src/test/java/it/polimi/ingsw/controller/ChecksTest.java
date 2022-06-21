@@ -16,7 +16,7 @@ public class ChecksTest {
     @Test
     public void testIsGamePhase()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         assertEquals(GamePhase.SETUP, controllerTest.getGame().getCurrentTurnState().getGamePhase());
         controllerTest.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
         assertEquals(GamePhase.ACTION, controllerTest.getGame().getCurrentTurnState().getGamePhase());
@@ -25,7 +25,7 @@ public class ChecksTest {
     @Test
     public void testIsCurrentPlayer()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(3);
         controllerTest.updateTurnState();
@@ -36,7 +36,7 @@ public class ChecksTest {
     @Test
     public void testIsDestinationAvailable()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Student student = MainController.findPlayerByName(controllerTest.getGame(), "jack").getSchool().extractStudent(0);
         controllerTest.getGame().getCurrentIslands().placeToken(student, 0);
         assertFalse(Checks.isDestinationAvailable(controllerTest.getGame(), "jack", 6, false, 13 ));
@@ -49,7 +49,7 @@ public class ChecksTest {
     @Test
     public void testIsAcceptableMovementAmount()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(6);
         assertFalse(Checks.isAcceptableMovementAmount(controllerTest.getGame(), "jack", 5));
         assertTrue(Checks.isAcceptableMovementAmount(controllerTest.getGame(), "jack", 2));
@@ -58,7 +58,7 @@ public class ChecksTest {
     @Test
     public void testIsCloudAvailable()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         for(int i=0; i<3; i++)
             controllerTest.getGame().getCurrentClouds()[0].placeToken(controllerTest.getGame().getCurrentPouch().extractStudent());
         assertFalse(Checks.isCloudAvailable(controllerTest.getGame(), 2));
@@ -70,7 +70,7 @@ public class ChecksTest {
     @Test
     public void testIsPouchAvailable()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         assertTrue(Checks.isPouchAvailable(controllerTest.getGame()));
         controllerTest.getGame().getCurrentPouch().getContent().clear();
         assertFalse(Checks.isPouchAvailable(controllerTest.getGame()));
@@ -79,7 +79,7 @@ public class ChecksTest {
     @Test
     public void testIsAssistantValid()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         assertTrue(Checks.isAssistantValid(controllerTest.getGame(), "jack", 5));
         assertFalse(Checks.isAssistantValid(controllerTest.getGame(), "jack", 10));
         for(int i=0; i<10; i++)
@@ -90,7 +90,7 @@ public class ChecksTest {
     @Test
     public void testIsAssistantAlreadyPlayed()
     {
-        TestUtilities.setupTestfor3(controllerTestFor3);
+        TestUtilities.setupTestFor3(controllerTestFor3);
         controllerTestFor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
         assertTrue(Checks.isAssistantAlreadyPlayed(controllerTestFor3.getGame(), "fede", 0));
         assertFalse(Checks.isAssistantAlreadyPlayed(controllerTestFor3.getGame(), "fede", 1));
@@ -99,7 +99,7 @@ public class ChecksTest {
     @Test
     public void testCanCardStillBePlayed()
     {
-        TestUtilities.setupTestfor3(controllerTestFor3);
+        TestUtilities.setupTestFor3(controllerTestFor3);
         controllerTestFor3.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
         controllerTestFor3.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(1);
         assertTrue(Checks.isAssistantAlreadyPlayed(controllerTestFor3.getGame(), "puddu", 0));
@@ -126,7 +126,7 @@ public class ChecksTest {
     @Test
     public void testIsLastPlayer()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(1);
         controllerTest.updateTurnState();
@@ -139,7 +139,7 @@ public class ChecksTest {
     @Test
     public void checkForInfluenceCharacters()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         Knight knight = new Knight();
         Centaur centaur = new Centaur();
@@ -162,7 +162,7 @@ public class ChecksTest {
     @Test
     public void testIsCloudFillable()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         assertTrue(Checks.isCloudFillable(controllerTest.getGame(), 0));
         assertTrue(Checks.isCloudFillable(controllerTest.getGame(), 1));
@@ -179,7 +179,7 @@ public class ChecksTest {
     @Test
     public void testIsLastTurn()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         assertFalse(Checks.isLastTurn(controllerTest.getGame()));
 
@@ -192,7 +192,7 @@ public class ChecksTest {
     @Test
     public void testCheckLastTurnDueToAssistants()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         assertFalse(Checks.checkLastTurnDueToAssistants(controllerTest.getGame(), "jack"));
 
@@ -204,7 +204,7 @@ public class ChecksTest {
     @Test
     public void testIsThereAWinner()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         assertFalse(Checks.isThereAWinner(controllerTest.getGame()));
         assertFalse(controllerTest.getGame().getCurrentTurnState().getIsGameEnded());

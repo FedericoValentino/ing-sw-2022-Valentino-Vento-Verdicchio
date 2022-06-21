@@ -19,7 +19,7 @@ public class JesterTest{
     {
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Jester testCard = new Jester();
 
         for(int i = 0; i < 6; i++)
@@ -58,7 +58,7 @@ public class JesterTest{
     {
         MainController controllerTest = new MainController(2, true);
 
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
         Jester testCard = new Jester();
 
         for(int i = 0; i < 6; i++)

@@ -23,7 +23,8 @@ public class CharacterControllerTest {
     public void testPickCard() {
 
         //Does a basic setup and checks if the desired number of coins has been correctly assigned
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
+        TestUtilities.gainCoins(controllerTest);
         assertEquals(6, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
         assertEquals(5, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
@@ -49,7 +50,7 @@ public class CharacterControllerTest {
     @Test
     public void deckManagement()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         CharacterName cardName1 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getCharacterName();
         CharacterName cardName2 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(1).getCharacterName();
@@ -76,7 +77,7 @@ public class CharacterControllerTest {
     @Test
     public void testGetPickedCard ()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         //Creates a dummy card
         Knight testCard = new Knight();
@@ -92,7 +93,8 @@ public class CharacterControllerTest {
     @Test
     public void isPickable()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
+        TestUtilities.gainCoins(controllerTest);
 
         Herald testCard = new Herald();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
@@ -110,7 +112,7 @@ public class CharacterControllerTest {
     @Test
     public void isEffectPlayable()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         Herald testCard = new Herald();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
@@ -128,7 +130,7 @@ public class CharacterControllerTest {
     @Test
     public void getCardByName()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         Herald testCard1 = new Herald();
         EffectTestsUtility.setDecks(testCard1, controllerTest.getGame());
@@ -158,7 +160,7 @@ public class CharacterControllerTest {
     @Test
     public void playEffect()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         Herald testCard = new Herald();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
@@ -180,7 +182,7 @@ public class CharacterControllerTest {
     @Test
     public void testSetTruffleHunterColor()
     {
-        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestFor2(controllerTest);
 
         TruffleHunter testCard = new TruffleHunter();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());

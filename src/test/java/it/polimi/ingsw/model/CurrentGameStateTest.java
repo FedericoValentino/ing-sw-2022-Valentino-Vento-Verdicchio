@@ -56,10 +56,11 @@ public class CurrentGameStateTest {
         //assertEquals(cg2.getCurrentTurnState().getTurnOrder().get(0),tO);
     }
 
-    //this is a service class used in 3° test of testCheckWinner
+    /*this is a service method used in 3° test of testCheckWinner
     @Test
     public void testPlaceToken1()
    {
+       for()
         cg2.getCurrentIslands().getIslands().get(0).getCurrentStudents().add(s2);
         cg2.getCurrentIslands().getIslands().get(1).getCurrentStudents().add(s2);
         cg2.getCurrentIslands().getIslands().get(2).getCurrentStudents().add(s2);
@@ -88,7 +89,7 @@ public class CurrentGameStateTest {
         }
         cg2.getCurrentIslands().idManagement();
         assertEquals(2, cg2.getCurrentIslands().getTotalGroups());
-    }
+    }*/
 
 
     @Test

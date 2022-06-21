@@ -59,7 +59,7 @@ public class PriestTest {
     {
         MainController controllerTest = new MainController(2, true);
 
-            TestUtilities.setupTestfor2(controllerTest);
+            TestUtilities.setupTestFor2(controllerTest);
             Priest testCard = new Priest();
             EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
             EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
