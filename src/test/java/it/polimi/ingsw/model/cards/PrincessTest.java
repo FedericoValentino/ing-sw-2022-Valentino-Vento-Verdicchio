@@ -1,5 +1,6 @@
 package it.polimi.ingsw.model.cards;
 
+import it.polimi.ingsw.TestUtilities;
 import it.polimi.ingsw.controller.CharacterControllerTest;
 import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.boards.Pouch;
@@ -56,7 +57,7 @@ public class PrincessTest {
     {
         MainController controllerTest = new MainController(2, true);
 
-        CharacterControllerTest.setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
         Princess testCard = new Princess();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());

@@ -1,6 +1,7 @@
 package it.polimi.ingsw.model.cards;
 
 
+import it.polimi.ingsw.TestUtilities;
 import it.polimi.ingsw.controller.CharacterControllerTest;
 import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.Player;
@@ -16,7 +17,7 @@ public class CookTest {
     {
         MainController controllerTest = new MainController(2, true);
 
-        CharacterControllerTest.setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
         Cook testCard = new Cook();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());

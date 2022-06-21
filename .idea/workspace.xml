@@ -9,20 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Gained 100% of model coverage (97% line coverage)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/BoardPrinters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/InfoPrinters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/SchoolPrinter.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Introduced class structure for Printers">
+      <change afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/TestUtilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/MovesChecksTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ActionControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ChecksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/ChecksTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/MainControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/PlanningControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/PlanningControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/CurrentGameStateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CentaurTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CentaurTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CookTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/EffectTestsUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/EffectTestsUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/GrandmaHerbsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/GrandmaHerbsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/HeraldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/HeraldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/JesterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/JesterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/KnightTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/KnightTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/MinstrelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/MinstrelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/PostmanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/PostmanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/PriestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/PriestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/PrincessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/PrincessTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/ThiefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/ThiefTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/TruffleHunterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/TruffleHunterTest.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
-    <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" afterDir="false" />
-    </list>
+    <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="Same, but Code with Me" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,54 +64,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="13" end1="14" start2="13" end2="14" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="45" end1="46" start2="45" end2="46" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="53" end1="54" start2="53" end2="54" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="59" end1="60" start2="59" end2="60" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="72" end1="73" start2="72" end2="73" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="94" end1="163" start2="94" end2="94" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="164" end1="165" start2="95" end2="96" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="195" end1="726" start2="126" end2="127" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="741" end1="742" start2="142" end2="143" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="757" end1="760" start2="158" end2="159" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="765" end1="765" start2="164" end2="169" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="15" end1="15" start2="16" end2="17" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="26" end1="27" start2="28" end2="32" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="33" end1="34" start2="38" end2="42" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="73" end1="74" start2="81" end2="82" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="78" end1="89" start2="86" end2="88" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="99" end1="100" start2="98" end2="99" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="118" end1="119" start2="117" end2="118" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="144" end1="146" start2="143" end2="145" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="171" end1="172" start2="170" end2="171" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="202" end1="203" start2="201" end2="202" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="206" end1="207" start2="205" end2="206" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="210" end1="211" start2="209" end2="210" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="213" end1="214" start2="212" end2="213" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="216" end1="217" start2="215" end2="216" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="219" end1="220" start2="218" end2="219" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="222" end1="223" start2="221" end2="222" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="225" end1="226" start2="224" end2="225" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="230" end1="231" start2="229" end2="230" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="234" end1="235" start2="233" end2="234" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="267" end1="268" start2="266" end2="267" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="291" end1="292" start2="290" end2="291" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="293" end1="294" start2="292" end2="293" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="295" end1="296" start2="294" end2="295" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="297" end1="298" start2="296" end2="297" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="311" end1="312" start2="310" end2="311" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -142,91 +106,102 @@
       <recent name="model.boards.token" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="it.polimi.ingsw.controller" />
       <recent name="it.polimi.ingsw.model.cards" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in softeng-GC61">
+  <component name="RunManager" selected="JUnit.MainControllerTest.testGetAvailableTeams">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <envs>
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="ClientApp" />
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <module name="softeng-GC61" />
       <option name="VM_PARAMETERS" value="--module-path=&quot;C:\--Ufficio--\JDK\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CurrentTurnStateTest.setLastTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChecksTest.testIsThereAWinner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.model.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.CurrentTurnStateTest" />
-      <option name="METHOD_NAME" value="setLastTurn" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.ChecksTest" />
+      <option name="METHOD_NAME" value="testIsThereAWinner" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JesterTest.testGetStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainControllerTest.testGetAvailableTeams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.model.cards.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.cards" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.cards.JesterTest" />
-      <option name="METHOD_NAME" value="testGetStudent" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
+      <option name="METHOD_NAME" value="testGetAvailableTeams" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrincessTest.testTestEffect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainControllerTest.testLastTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.model.cards.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.cards" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.cards.PrincessTest" />
-      <option name="METHOD_NAME" value="testTestEffect" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
+      <option name="METHOD_NAME" value="testLastTurn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TruffleHunterTest.testTestEffect5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainControllerTest.testRemoveSlotFromTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.model.cards.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.cards" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.cards.TruffleHunterTest" />
-      <option name="METHOD_NAME" value="testTestEffect5" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
+      <option name="METHOD_NAME" value="testRemoveSlotFromTeam" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainControllerTest.testSelectWinner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
+      <option name="METHOD_NAME" value="testSelectWinner" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -234,19 +209,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ClientApp" />
-      <item itemvalue="JUnit.All in softeng-GC61" />
-      <item itemvalue="JUnit.PrincessTest.testTestEffect" />
-      <item itemvalue="JUnit.TruffleHunterTest.testTestEffect5" />
-      <item itemvalue="JUnit.JesterTest.testGetStudent" />
-      <item itemvalue="JUnit.CurrentTurnStateTest.setLastTurn" />
+      <item itemvalue="JUnit.ChecksTest.testIsThereAWinner" />
+      <item itemvalue="JUnit.MainControllerTest.testLastTurn" />
+      <item itemvalue="JUnit.MainControllerTest.testSelectWinner" />
+      <item itemvalue="JUnit.MainControllerTest.testRemoveSlotFromTeam" />
+      <item itemvalue="JUnit.MainControllerTest.testGetAvailableTeams" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in softeng-GC61" />
-        <item itemvalue="JUnit.CurrentTurnStateTest.setLastTurn" />
-        <item itemvalue="JUnit.JesterTest.testGetStudent" />
-        <item itemvalue="JUnit.TruffleHunterTest.testTestEffect5" />
-        <item itemvalue="JUnit.PrincessTest.testTestEffect" />
+        <item itemvalue="JUnit.MainControllerTest.testGetAvailableTeams" />
+        <item itemvalue="JUnit.MainControllerTest.testRemoveSlotFromTeam" />
+        <item itemvalue="JUnit.MainControllerTest.testSelectWinner" />
+        <item itemvalue="JUnit.MainControllerTest.testLastTurn" />
+        <item itemvalue="JUnit.ChecksTest.testIsThereAWinner" />
       </list>
     </recent_temporary>
   </component>
@@ -301,20 +276,6 @@
       <workItem from="1655149081823" duration="1514000" />
       <workItem from="1655719869870" duration="156000" />
       <workItem from="1655720087290" duration="3517000" />
-    </task>
-    <task id="LOCAL-00096" summary="Cloud corrections">
-      <created>1654555283224</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1654555283224</updated>
-    </task>
-    <task id="LOCAL-00097" summary="Corrections">
-      <created>1654555502946</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1654555502946</updated>
     </task>
     <task id="LOCAL-00098" summary="Corrections">
       <created>1654555916234</created>
@@ -645,7 +606,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655761617568</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Introduced class structure for Printers">
+      <created>1655763507791</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1655763507791</updated>
+    </task>
+    <task id="LOCAL-00146" summary="Same, but Code with Me">
+      <created>1655763523024</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1655763523024</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,8 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Further steps to ensure character's functionality" />
-    <MESSAGE value="Same but code with me" />
     <MESSAGE value="little change" />
     <MESSAGE value="Last Commit for the day" />
     <MESSAGE value="Possible fix for uses and cost not updating" />
@@ -690,7 +663,9 @@
     <MESSAGE value="New characters tests almost done" />
     <MESSAGE value="New character tests done" />
     <MESSAGE value="Gained 100% of model coverage (97% line coverage)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gained 100% of model coverage (97% line coverage)" />
+    <MESSAGE value="Introduced class structure for Printers" />
+    <MESSAGE value="Same, but Code with Me" />
+    <option name="LAST_COMMIT_MESSAGE" value="Same, but Code with Me" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -948,7 +923,7 @@
       <FILTER>model.boards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61__1_.ic" NAME="All in softeng-GC61 (1) Coverage Results" MODIFIED="1650875083411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1655761533066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ing_sw_2022_Valentino_Vento_Verdicchio$All_in_softeng_GC61.ic" NAME="All in softeng-GC61 Coverage Results" MODIFIED="1655826378156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PROG_ING_GIT$IslandsTest_testGetMax.ic" NAME="IslandsTest.testGetMax Coverage Results" MODIFIED="1650578489611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>model.boards.*</FILTER>
     </SUITE>

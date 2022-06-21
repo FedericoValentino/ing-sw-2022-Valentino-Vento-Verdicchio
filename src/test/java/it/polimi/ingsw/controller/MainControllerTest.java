@@ -1,9 +1,13 @@
 package it.polimi.ingsw.controller;
 
+import it.polimi.ingsw.TestUtilities;
 import it.polimi.ingsw.model.CurrentGameState;
+import it.polimi.ingsw.model.Player;
+import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.ColTow;
 import it.polimi.ingsw.model.boards.token.GamePhase;
 import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.model.cards.EffectTestsUtility;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,18 +18,13 @@ import static org.junit.Assert.*;
 public class MainControllerTest
 {
     MainController controllerTest = new MainController(2, true);
+    MainController controllerTestFor3 = new MainController(3, true);
 
-    public void setupTest()
-    {
-        controllerTest.addPlayer(0, "jack", 8, Wizard.LORD );
-        controllerTest.addPlayer(1, "fede", 8, Wizard.DRUID);
-        controllerTest.setup();
-    }
 
     @Test
     public void testAddPlayer()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         assertEquals(2, controllerTest.getGame().getCurrentTeams().size());
         assertEquals(1, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().size());
         assertEquals(1, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().size());
@@ -47,7 +46,7 @@ public class MainControllerTest
     @Test
     public void testSetup()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         int MNpos = controllerTest.getGame().getCurrentMotherNature().getPosition();
         for(int i = MNpos+1; i < 12 + MNpos; i++)
         {
@@ -83,7 +82,7 @@ public class MainControllerTest
     @Test
     public void testUpdateTurnState()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.updateTurnState();
         ArrayList<Integer> ordered = new ArrayList<>();
         for(Map.Entry<String, Integer> entry : controllerTest.getGame().getCurrentTurnState().getTurnOrder().entrySet())
@@ -103,7 +102,7 @@ public class MainControllerTest
     @Test
     public void testDetermineNextPlayer()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.updateTurnState();
         controllerTest.determineNextPlayer();
         if(controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getValue() < controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getValue())
@@ -119,7 +118,7 @@ public class MainControllerTest
     @Test
     public void testFindPlayerByName()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         assertEquals(controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0), MainController.findPlayerByName(controllerTest.getGame(), "jack"));
         assertNull(MainController.findPlayerByName(controllerTest.getGame(), "pirla"));
     }
@@ -127,7 +126,7 @@ public class MainControllerTest
     @Test
     public void testGetPlayerColor()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         assertEquals(ColTow.values()[0], MainController.getPlayerColor(controllerTest.getGame(), "jack"));
         assertNull(MainController.getPlayerColor(controllerTest.getGame(), "giorgio"));
     }
@@ -135,7 +134,7 @@ public class MainControllerTest
     @Test
     public void testUpdateGamePhase()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).chooseAssistantCard(0);
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).chooseAssistantCard(1);
         controllerTest.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
@@ -153,7 +152,7 @@ public class MainControllerTest
     @Test
     public void resetReady()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.readyPlayer();
         assertEquals(1, controllerTest.getReadyPlayers());
         controllerTest.resetReady();
@@ -163,21 +162,21 @@ public class MainControllerTest
     @Test
     public void testGetGame()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         assert(controllerTest.getGame() instanceof CurrentGameState);
     }
 
     @Test
     public void testGetCharacterController()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         assert(controllerTest.getCharacterController() instanceof CharacterController);
     }
 
     @Test
     public void testGetCurrentPlayer()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.getGame().updateTurnState();
         controllerTest.determineNextPlayer();
         assert(controllerTest.getCurrentPlayer() instanceof String);
@@ -186,7 +185,7 @@ public class MainControllerTest
     @Test
     public void testIsExpertGame()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.getGame().updateTurnState();
         controllerTest.determineNextPlayer();
         assert(controllerTest.isExpertGame() || !controllerTest.isExpertGame());
@@ -195,7 +194,7 @@ public class MainControllerTest
     @Test
     public void testLastPlayer()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.getGame().updateTurnState();
         controllerTest.determineNextPlayer();
         assert(!Checks.isLastPlayer(controllerTest.getGame()));
@@ -220,15 +219,65 @@ public class MainControllerTest
     @Test
     public void testGetAvailableWizards()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         assert(controllerTest.getAvailableWizards().get(0) instanceof Wizard);
     }
 
     @Test
     public void testGetPlayers()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         assert(controllerTest.getPlayers() >= 2);
+    }
+
+    @Test
+    public void testLastTurn()
+    {
+        TestUtilities.setupTestfor2(controllerTest);
+
+        controllerTest.lastTurn();
+        assertTrue(controllerTest.getGame().getCurrentTurnState().getLastTurn());
+    }
+
+    @Test
+    public void testSelectWinner()
+    {
+        TestUtilities.setupTestfor2(controllerTest);
+
+        int island = EffectTestsUtility.basicIslandSetup(controllerTest.getGame());
+
+        controllerTest.selectWinner();
+
+        assertTrue(controllerTest.getGame().getCurrentTurnState().getIsGameEnded());
+        assertEquals(ColTow.GREY, controllerTest.getGame().getCurrentTurnState().getWinningTeam());
+    }
+
+    @Test
+    public void testRemoveSlotFromTeam()
+    {
+        TestUtilities.setupTestfor2(controllerTest);
+
+        controllerTest.removeSlotFromTeam(0);
+        assertEquals(0, controllerTest.getAvailableTeams()[0]);
+        assertEquals(1, controllerTest.getAvailableTeams()[1]);
+    }
+
+    @Test
+    public void testGetAvailableTeams()
+    {
+        TestUtilities.setupTestfor2(controllerTest);
+        TestUtilities.setupTestfor3(controllerTest);
+
+        assertEquals(3, controllerTest.getAvailableTeams().length);
+        assertEquals(3, controllerTestFor3.getAvailableTeams().length);
+
+        for(int i = 0; i < 2; i++)
+        {
+            assertEquals(1, controllerTest.getAvailableTeams()[i]);
+            assertEquals(1, controllerTestFor3.getAvailableTeams()[i]);
+        }
+        assertEquals(0, controllerTest.getAvailableTeams()[2]);
+        assertEquals(1, controllerTestFor3.getAvailableTeams()[2]);
     }
 }
 

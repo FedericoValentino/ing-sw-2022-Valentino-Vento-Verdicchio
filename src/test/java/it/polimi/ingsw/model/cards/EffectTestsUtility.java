@@ -8,7 +8,7 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 
 import static org.junit.Assert.assertEquals;
 
-public class EffectTestsUtility
+public final class EffectTestsUtility
 {
 
     /** Checks if the decks have been manipulated correctly

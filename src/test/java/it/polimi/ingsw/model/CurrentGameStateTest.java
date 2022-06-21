@@ -57,7 +57,8 @@ public class CurrentGameStateTest {
     }
 
     //this is a service class used in 3° test of testCheckWinner
-public void testPlaceToken1()
+    @Test
+    public void testPlaceToken1()
    {
         cg2.getCurrentIslands().getIslands().get(0).getCurrentStudents().add(s2);
         cg2.getCurrentIslands().getIslands().get(1).getCurrentStudents().add(s2);

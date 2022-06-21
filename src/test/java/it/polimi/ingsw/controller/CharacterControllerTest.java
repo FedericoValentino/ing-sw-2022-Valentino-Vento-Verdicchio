@@ -1,11 +1,10 @@
 package it.polimi.ingsw.controller;
 
+import it.polimi.ingsw.TestUtilities;
 import it.polimi.ingsw.model.boards.token.CharacterName;
+import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.Wizard;
-import it.polimi.ingsw.model.cards.CharacterCard;
-import it.polimi.ingsw.model.cards.EffectTestsUtility;
-import it.polimi.ingsw.model.cards.Herald;
-import it.polimi.ingsw.model.cards.Knight;
+import it.polimi.ingsw.model.cards.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -16,19 +15,6 @@ public class CharacterControllerTest {
 
     MainController controllerTest = new MainController(2, true);
 
-    /** Creates two teams of one player each.
-     Runs the standard setup procedure.
-     Assigns a sufficient number of coins to the players.
-     */
-    public static void setupTest(MainController controller)
-    {
-        controller.addPlayer(0, "jack", 8, Wizard.LORD );
-        controller.addPlayer(1, "fede", 8, Wizard.DRUID);
-        controller.setup();
-        controller.getGame().getCurrentTeams().get(0).getPlayers().get(0).updateCoins(5);
-        controller.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(4);
-    }
-
 
     @Test
     /** Checks if the function pickCard, in charge of moving a card from the CharDeck
@@ -37,7 +23,7 @@ public class CharacterControllerTest {
     public void testPickCard() {
 
         //Does a basic setup and checks if the desired number of coins has been correctly assigned
-        setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
         assertEquals(6, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
         assertEquals(5, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
@@ -63,7 +49,7 @@ public class CharacterControllerTest {
     @Test
     public void deckManagement()
     {
-        setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
 
         CharacterName cardName1 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getCharacterName();
         CharacterName cardName2 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(1).getCharacterName();
@@ -90,7 +76,7 @@ public class CharacterControllerTest {
     @Test
     public void testGetPickedCard ()
     {
-        setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
 
         //Creates a dummy card
         Knight testCard = new Knight();
@@ -106,7 +92,7 @@ public class CharacterControllerTest {
     @Test
     public void isPickable()
     {
-        setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
 
         Herald testCard = new Herald();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
@@ -124,7 +110,7 @@ public class CharacterControllerTest {
     @Test
     public void isEffectPlayable()
     {
-        setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
 
         Herald testCard = new Herald();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
@@ -142,7 +128,7 @@ public class CharacterControllerTest {
     @Test
     public void getCardByName()
     {
-        setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
 
         Herald testCard1 = new Herald();
         EffectTestsUtility.setDecks(testCard1, controllerTest.getGame());
@@ -172,7 +158,7 @@ public class CharacterControllerTest {
     @Test
     public void playEffect()
     {
-        setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
 
         Herald testCard = new Herald();
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
@@ -189,5 +175,21 @@ public class CharacterControllerTest {
         assertEquals(0, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
 
 
+    }
+
+    @Test
+    public void testSetTruffleHunterColor()
+    {
+        TestUtilities.setupTestfor2(controllerTest);
+
+        TruffleHunter testCard = new TruffleHunter();
+        EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
+        EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
+
+        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.TRUFFLE_HUNTER, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
+
+        controllerTest.getCharacterController().setTruffleHunterColor(controllerTest.getGame(), Col.BLUE);
+
+        assertEquals(Col.BLUE, testCard.getChosenColor());
     }
 }

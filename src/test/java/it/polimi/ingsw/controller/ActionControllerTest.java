@@ -1,4 +1,5 @@
 package it.polimi.ingsw.controller;
+import it.polimi.ingsw.TestUtilities;
 import it.polimi.ingsw.model.boards.token.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.Wizard;
@@ -13,21 +14,12 @@ public class ActionControllerTest
 {
     MainController controllerTest = new MainController(2, true);
 
-    public void setupTest()
-    {
-        controllerTest.addPlayer(0, "jack", 8, Wizard.LORD );
-        controllerTest.addPlayer(1, "fede", 8, Wizard.DRUID);
-        controllerTest.setup();
-        controllerTest.updateTurnState();
-        controllerTest.determineNextPlayer();
-    }
-
 
     @Test
     public void testPlaceStudentToIsland()
     {
         Student s;
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         s = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().get(0);
         controllerTest.getActionController().placeStudentToIsland(0, 0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
         assert(controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents().contains(s));
@@ -37,7 +29,7 @@ public class ActionControllerTest
     public void testPlaceStudentToDiningRoom()
     {
         Student s;
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         s = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().get(0);
         int x = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getDiningRoom()[s.getColor().ordinal()];
         controllerTest.getActionController().placeStudentToDiningRoom(0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
@@ -48,7 +40,7 @@ public class ActionControllerTest
     public void testMoveMN()
     {
         Random r = new Random();
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), controllerTest.getCurrentPlayer(), 7);
         int movement = r.nextInt(MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getMaxMotherMovement() - 1) + 1;
         if(movement == 0)
@@ -64,7 +56,7 @@ public class ActionControllerTest
     @Test
     public void testSolveEverything()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents().removeAll(controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents());
         for(int i = 0; i < 4; i++)
         {
@@ -132,7 +124,7 @@ public class ActionControllerTest
     @Test
     public void TestDrawFromClouds()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
         int x = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size();
         controllerTest.getActionController().drawFromClouds(0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
@@ -143,7 +135,7 @@ public class ActionControllerTest
     @Test
     public void testGetMovableStudents()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
         assertEquals(3, controllerTest.getActionController().getMovableStudents());
 
         for(int i = 0; i< 2; i++)

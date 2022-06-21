@@ -1,5 +1,6 @@
 package it.polimi.ingsw.model.cards;
 
+import it.polimi.ingsw.TestUtilities;
 import it.polimi.ingsw.controller.CharacterControllerTest;
 import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.boards.token.CharacterName;
@@ -40,7 +41,7 @@ public class KnightTest {
 
         MainController controllerTest = new MainController(2, true);
 
-        CharacterControllerTest.setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
         Knight testCard = new Knight();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());

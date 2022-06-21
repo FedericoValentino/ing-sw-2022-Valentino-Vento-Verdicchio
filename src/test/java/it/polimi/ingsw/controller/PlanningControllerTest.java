@@ -1,5 +1,6 @@
 package it.polimi.ingsw.controller;
 
+import it.polimi.ingsw.TestUtilities;
 import it.polimi.ingsw.model.boards.token.Wizard;
 import org.junit.Test;
 
@@ -9,20 +10,11 @@ public class PlanningControllerTest {
 
     MainController controllerTest = new MainController(2, false);
 
-    /**
-     Creates two teams of one player each.
-     Runs the standard setup procedure.
-     */
-    public void setupTest() {
-        controllerTest.addPlayer(0, "jack", 8, Wizard.LORD );
-        controllerTest.addPlayer(1, "fede", 8, Wizard.DRUID);
-        controllerTest.setup();
-    }
 
     @Test
     public void testDrawStudentForClouds()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
 
         //Operates on the first cloud
         controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
@@ -42,7 +34,7 @@ public class PlanningControllerTest {
     @Test
     public void testDrawAssistantCard()
     {
-        setupTest();
+        TestUtilities.setupTestfor2(controllerTest);
 
         //it draws the third card of the AssistantDeck on account of the GREY player
         controllerTest.getPlanningController().drawAssistantCard(controllerTest.getGame(), "jack", 2);

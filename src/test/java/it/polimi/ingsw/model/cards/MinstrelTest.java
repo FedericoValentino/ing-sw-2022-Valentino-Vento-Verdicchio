@@ -1,5 +1,6 @@
 package it.polimi.ingsw.model.cards;
 
+import it.polimi.ingsw.TestUtilities;
 import it.polimi.ingsw.controller.CharacterControllerTest;
 import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.Player;
@@ -16,7 +17,7 @@ public class MinstrelTest extends TestCase {
     {
         MainController controllerTest = new MainController(2, true);
 
-        CharacterControllerTest.setupTest(controllerTest);
+        TestUtilities.setupTestfor2(controllerTest);
         Minstrel testCard = new Minstrel();
 
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
