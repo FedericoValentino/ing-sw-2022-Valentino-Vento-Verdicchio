@@ -2,7 +2,7 @@
 
 package it.polimi.ingsw.model.boards;
 
-import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 
 import java.util.ArrayList;

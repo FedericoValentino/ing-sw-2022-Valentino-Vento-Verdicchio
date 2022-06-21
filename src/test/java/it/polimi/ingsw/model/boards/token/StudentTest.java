@@ -1,7 +1,6 @@
 package it.polimi.ingsw.model.boards.token;
 
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.Student;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

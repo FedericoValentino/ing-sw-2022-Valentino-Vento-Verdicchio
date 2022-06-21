@@ -1,6 +1,6 @@
 package it.polimi.ingsw.Client.Messages.SetupMessages;
 
-import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 
 public class WizardChoice extends StandardSetupMessage
 {

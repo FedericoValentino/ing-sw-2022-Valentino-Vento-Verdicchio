@@ -14,11 +14,10 @@ import it.polimi.ingsw.Server.Answers.SetupAnswers.AvailableTeams;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.AvailableWizards;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.InfoMessage;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.StandardSetupAnswer;
-import it.polimi.ingsw.model.boards.token.GamePhase;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 
 import java.io.IOException;
 import java.util.ArrayList;

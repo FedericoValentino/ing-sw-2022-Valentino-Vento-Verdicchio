@@ -1,7 +1,6 @@
 package it.polimi.ingsw.controller;
 
 import it.polimi.ingsw.TestUtilities;
-import it.polimi.ingsw.model.boards.token.Wizard;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -2,7 +2,7 @@ package it.polimi.ingsw.model.boards;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.Team;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 
 import java.util.ArrayList;
 

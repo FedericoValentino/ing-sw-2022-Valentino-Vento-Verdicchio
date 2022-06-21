@@ -1,15 +1,14 @@
 package it.polimi.ingsw.Client.CLI.Printers;
 //
 import it.polimi.ingsw.Client.LightView.*;
-import it.polimi.ingsw.model.boards.token.CharacterName;
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import it.polimi.ingsw.model.boards.token.Student;
 import org.fusesource.jansi.AnsiConsole;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public abstract class PrinterCLI
 {

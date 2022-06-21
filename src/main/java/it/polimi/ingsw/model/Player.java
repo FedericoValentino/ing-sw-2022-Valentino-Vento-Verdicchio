@@ -1,10 +1,10 @@
 package it.polimi.ingsw.model;
 
 import it.polimi.ingsw.model.boards.School;
-import it.polimi.ingsw.model.cards.AssistantCard;
-import it.polimi.ingsw.model.boards.token.ColTow;
-import it.polimi.ingsw.model.boards.token.Wizard;
-import it.polimi.ingsw.model.cards.AssistantDeck;
+import it.polimi.ingsw.model.cards.assistants.AssistantCard;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
+import it.polimi.ingsw.model.cards.assistants.AssistantDeck;
 
 
 public class Player

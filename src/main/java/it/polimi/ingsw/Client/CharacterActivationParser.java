@@ -1,9 +1,8 @@
 package it.polimi.ingsw.Client;
 
 import it.polimi.ingsw.Client.Messages.ActionMessages.PlayCharacter;
-import it.polimi.ingsw.Client.Messages.ActionMessages.PlayCharacterEffect;
-import it.polimi.ingsw.model.boards.token.CharacterName;
-import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,8 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
-import it.polimi.ingsw.Client.LightView.InfoDispenser;
-import it.polimi.ingsw.Client.LightView.LightPlayer;
+import it.polimi.ingsw.Client.LightView.LightUtilities.InfoDispenser;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTurnState;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.ActionMessages.EndTurn;

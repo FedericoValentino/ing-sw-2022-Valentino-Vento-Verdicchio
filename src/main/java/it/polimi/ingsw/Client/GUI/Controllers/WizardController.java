@@ -8,7 +8,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 
 import java.util.ArrayList;
 

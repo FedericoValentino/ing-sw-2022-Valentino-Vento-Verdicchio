@@ -10,8 +10,8 @@ import it.polimi.ingsw.Client.Messages.SetupMessages.GameMode;
 import it.polimi.ingsw.Client.Messages.SetupMessages.TeamChoice;
 import it.polimi.ingsw.Client.Messages.SetupMessages.WizardChoice;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.*;
-import it.polimi.ingsw.model.boards.token.ColTow;
-import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import org.fusesource.jansi.AnsiConsole;
 
 import java.io.IOException;

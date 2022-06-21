@@ -16,12 +16,12 @@ import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ViewMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.WinMessage;
 import it.polimi.ingsw.controller.CharacterController;
-import it.polimi.ingsw.controller.Checks;
+import it.polimi.ingsw.controller.checksandbalances.Checks;
 import it.polimi.ingsw.controller.MainController;
-import it.polimi.ingsw.controller.MovesChecks;
-import it.polimi.ingsw.model.boards.token.CharacterName;
-import it.polimi.ingsw.model.boards.token.GamePhase;
-import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.controller.checksandbalances.MovesChecks;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 
 import java.io.IOException;
 

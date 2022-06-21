@@ -1,10 +1,7 @@
 package it.polimi.ingsw.model;
 
-import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.Player;
-import it.polimi.ingsw.model.Team;
-import it.polimi.ingsw.model.boards.token.ColTow;
-import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;

@@ -1,14 +1,13 @@
 package it.polimi.ingsw.model.boards;
 
 import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.boards.Cloud;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 
 public class  CloudTest {
     CurrentGameState game  = new CurrentGameState(2, false);

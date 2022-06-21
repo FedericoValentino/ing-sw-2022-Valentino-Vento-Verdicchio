@@ -1,7 +1,7 @@
 package it.polimi.ingsw.model;
 
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 
 import java.util.ArrayList;
 

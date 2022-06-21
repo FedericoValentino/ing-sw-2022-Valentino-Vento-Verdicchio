@@ -1,6 +1,7 @@
 package it.polimi.ingsw.model.boards.token;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 
 import java.io.Serializable;
 

@@ -3,8 +3,6 @@ package it.polimi.ingsw.model.cards;
 import static org.junit.Assert.*;
 
 import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.cards.CharacterCard;
-import it.polimi.ingsw.model.cards.CharacterDeck;
 import org.junit.Test;
 
 public class CharacterDeckTest {

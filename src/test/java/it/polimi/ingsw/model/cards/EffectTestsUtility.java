@@ -1,10 +1,9 @@
 package it.polimi.ingsw.model.cards;
 
 import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.cards.CharacterCard;
 
 import static org.junit.Assert.assertEquals;
 

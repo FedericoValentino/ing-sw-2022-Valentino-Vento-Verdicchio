@@ -1,8 +1,8 @@
 package it.polimi.ingsw.model.cards;
 
 import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.boards.token.CharacterName;
-import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -3,9 +3,9 @@ package it.polimi.ingsw.controller;
 import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.cards.CharacterCard;
 import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.boards.token.CharacterName;
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.cards.TruffleHunter;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
+import it.polimi.ingsw.model.cards.characters.TruffleHunter;
 
 import java.util.ArrayList;
 

@@ -3,11 +3,10 @@ package it.polimi.ingsw.model.boards;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.Team;
-import it.polimi.ingsw.model.boards.Island;
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

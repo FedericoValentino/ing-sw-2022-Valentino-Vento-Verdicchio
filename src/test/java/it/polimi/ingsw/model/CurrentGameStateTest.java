@@ -1,9 +1,9 @@
 package it.polimi.ingsw.model;
 
-import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.boards.token.Wizard;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import org.junit.Test;
 import java.util.HashMap;
 import static org.junit.Assert.*;

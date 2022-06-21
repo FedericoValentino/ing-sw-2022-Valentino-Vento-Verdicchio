@@ -2,7 +2,10 @@ package it.polimi.ingsw.model.cards;
 
 import it.polimi.ingsw.model.boards.Pouch;
 import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.boards.token.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.cards.characters.Jester;
+import it.polimi.ingsw.model.cards.characters.Priest;
+import it.polimi.ingsw.model.cards.characters.Princess;
 
 import java.io.Serializable;
 import java.util.ArrayList;

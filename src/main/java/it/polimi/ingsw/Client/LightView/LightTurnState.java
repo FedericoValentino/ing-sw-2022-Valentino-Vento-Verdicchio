@@ -2,8 +2,8 @@ package it.polimi.ingsw.Client.LightView;
 
 import it.polimi.ingsw.Observer.Observable;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import it.polimi.ingsw.model.boards.token.ColTow;
-import it.polimi.ingsw.model.boards.token.GamePhase;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 
 import java.util.HashMap;
 

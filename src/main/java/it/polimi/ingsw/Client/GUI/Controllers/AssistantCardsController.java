@@ -1,8 +1,8 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
-import it.polimi.ingsw.Client.LightView.LightPlayer;
-import it.polimi.ingsw.Client.LightView.LightTeam;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.Messages.ActionMessages.DrawAssistantCard;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Observer.ObserverLightView;
@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import it.polimi.ingsw.model.cards.AssistantCard;
+import it.polimi.ingsw.model.cards.assistants.AssistantCard;
 
 
 import java.util.ArrayList;

@@ -4,7 +4,7 @@ import it.polimi.ingsw.Server.Answers.ActionAnswers.WinMessage;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.GameStarting;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.InfoMessage;
-import it.polimi.ingsw.controller.Checks;
+import it.polimi.ingsw.controller.checksandbalances.Checks;
 import it.polimi.ingsw.controller.MainController;
 
 import java.io.IOException;

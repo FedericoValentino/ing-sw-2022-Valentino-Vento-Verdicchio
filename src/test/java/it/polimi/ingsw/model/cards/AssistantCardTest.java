@@ -2,7 +2,7 @@ package it.polimi.ingsw.model.cards;
 
 import static org.junit.Assert.*;
 
-import it.polimi.ingsw.model.cards.AssistantCard;
+import it.polimi.ingsw.model.cards.assistants.AssistantCard;
 import org.junit.Test;
 
 

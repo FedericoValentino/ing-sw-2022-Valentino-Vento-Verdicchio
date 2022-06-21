@@ -9,7 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 

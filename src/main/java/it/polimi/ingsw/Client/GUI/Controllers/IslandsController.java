@@ -1,8 +1,8 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 
-import it.polimi.ingsw.Client.LightView.LightIsland;
+import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Observer.ObserverLightView;
-import it.polimi.ingsw.Client.LightView.LightIslands;
+import it.polimi.ingsw.Client.LightView.LightBoards.LightIslands;
 import it.polimi.ingsw.Client.LightView.LightView;
 import javafx.application.Platform;
 import javafx.fxml.FXML;

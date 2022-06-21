@@ -1,10 +1,10 @@
 package it.polimi.ingsw.Client.CLI.Printers;
 
-import it.polimi.ingsw.Client.LightView.LightCharacterCard;
-import it.polimi.ingsw.Client.LightView.LightPlayer;
-import it.polimi.ingsw.Client.LightView.LightTeam;
+import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharacterCard;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightView;
-import it.polimi.ingsw.model.boards.token.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
 import org.fusesource.jansi.AnsiConsole;
 
 import java.util.Arrays;

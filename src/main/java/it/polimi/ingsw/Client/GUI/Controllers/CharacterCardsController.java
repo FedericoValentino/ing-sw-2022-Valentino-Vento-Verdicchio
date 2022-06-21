@@ -1,8 +1,8 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 //y
-import it.polimi.ingsw.Client.LightView.LightActiveDeck;
-import it.polimi.ingsw.Client.LightView.LightCharDeck;
-import it.polimi.ingsw.Client.LightView.LightCharacterCard;
+import it.polimi.ingsw.Client.LightView.LightCards.characters.LightActiveDeck;
+import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharDeck;
+import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharacterCard;
 import it.polimi.ingsw.Observer.ObserverLightView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import it.polimi.ingsw.model.boards.token.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
 
 
 import java.io.IOException;

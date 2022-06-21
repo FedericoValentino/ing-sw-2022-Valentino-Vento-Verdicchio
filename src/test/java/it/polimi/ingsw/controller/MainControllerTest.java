@@ -1,12 +1,11 @@
 package it.polimi.ingsw.controller;
 
 import it.polimi.ingsw.TestUtilities;
+import it.polimi.ingsw.controller.checksandbalances.Checks;
 import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.Player;
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.ColTow;
-import it.polimi.ingsw.model.boards.token.GamePhase;
-import it.polimi.ingsw.model.boards.token.Wizard;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import it.polimi.ingsw.model.cards.EffectTestsUtility;
 import org.junit.Test;
 

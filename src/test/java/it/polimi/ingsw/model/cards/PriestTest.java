@@ -1,12 +1,11 @@
 package it.polimi.ingsw.model.cards;
 
 import it.polimi.ingsw.TestUtilities;
-import it.polimi.ingsw.controller.CharacterControllerTest;
 import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.boards.Pouch;
-import it.polimi.ingsw.model.boards.token.CharacterName;
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.Student;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
+import it.polimi.ingsw.model.cards.characters.Priest;
 import org.junit.Test;
 
 import java.util.ArrayList;

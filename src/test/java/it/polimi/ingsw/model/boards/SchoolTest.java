@@ -3,10 +3,9 @@ package it.polimi.ingsw.model.boards;
 import static org.junit.Assert.*;
 
 import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.boards.School;
 import org.junit.Test;
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import it.polimi.ingsw.model.boards.token.Student;
 
 import java.util.ArrayList;

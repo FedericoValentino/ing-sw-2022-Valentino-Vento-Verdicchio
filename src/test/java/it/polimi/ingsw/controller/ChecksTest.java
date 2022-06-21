@@ -1,8 +1,16 @@
 package it.polimi.ingsw.controller;
 
 import it.polimi.ingsw.TestUtilities;
+import it.polimi.ingsw.controller.checksandbalances.Checks;
 import it.polimi.ingsw.model.boards.token.*;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 import it.polimi.ingsw.model.cards.*;
+import it.polimi.ingsw.model.cards.characters.Centaur;
+import it.polimi.ingsw.model.cards.characters.Knight;
+import it.polimi.ingsw.model.cards.characters.Princess;
+import it.polimi.ingsw.model.cards.characters.TruffleHunter;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

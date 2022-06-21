@@ -1,5 +1,13 @@
 package it.polimi.ingsw.Client.LightView;
 
+import it.polimi.ingsw.Client.LightView.LightBoards.LightCloud;
+import it.polimi.ingsw.Client.LightView.LightBoards.LightIslands;
+import it.polimi.ingsw.Client.LightView.LightCards.characters.LightActiveDeck;
+import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharDeck;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
+import it.polimi.ingsw.Client.LightView.LightToken.LightMotherNature;
+import it.polimi.ingsw.Client.LightView.LightUtilities.InfoDispenser;
 import it.polimi.ingsw.Observer.Observable;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ViewMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;

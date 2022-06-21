@@ -1,12 +1,10 @@
 package it.polimi.ingsw.model.cards;
 
 import it.polimi.ingsw.TestUtilities;
-import it.polimi.ingsw.controller.CharacterControllerTest;
 import it.polimi.ingsw.controller.MainController;
-import it.polimi.ingsw.model.boards.token.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.cards.characters.Postman;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 

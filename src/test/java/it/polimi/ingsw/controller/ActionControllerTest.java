@@ -1,8 +1,7 @@
 package it.polimi.ingsw.controller;
 import it.polimi.ingsw.TestUtilities;
-import it.polimi.ingsw.model.boards.token.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.boards.token.Wizard;
 import org.junit.Test;
 
 import java.util.Random;

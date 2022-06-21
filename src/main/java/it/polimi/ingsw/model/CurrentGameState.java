@@ -19,8 +19,8 @@ import it.polimi.ingsw.model.boards.Pouch;
 import it.polimi.ingsw.model.cards.CharacterCard;
 import it.polimi.ingsw.model.cards.CharacterDeck;
 import it.polimi.ingsw.model.boards.Islands;
-import it.polimi.ingsw.model.boards.token.Col;
-import it.polimi.ingsw.model.boards.token.ColTow;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
+import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import it.polimi.ingsw.model.boards.token.MotherNature;
 import it.polimi.ingsw.Observer.Observable;
 

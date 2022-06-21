@@ -1,8 +1,8 @@
 package it.polimi.ingsw.Client.CLI.Printers;
 
-import it.polimi.ingsw.Client.LightView.LightIsland;
-import it.polimi.ingsw.Client.LightView.LightPlayer;
-import it.polimi.ingsw.Client.LightView.LightTeam;
+import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
+import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightView;
 import org.fusesource.jansi.AnsiConsole;
 

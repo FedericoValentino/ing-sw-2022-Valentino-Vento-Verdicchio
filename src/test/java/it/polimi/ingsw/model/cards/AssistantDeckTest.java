@@ -3,9 +3,9 @@ package it.polimi.ingsw.model.cards;
 
 import static org.junit.Assert.*;
 
-import it.polimi.ingsw.model.boards.token.Wizard;
-import it.polimi.ingsw.model.cards.AssistantCard;
-import it.polimi.ingsw.model.cards.AssistantDeck;
+import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
+import it.polimi.ingsw.model.cards.assistants.AssistantCard;
+import it.polimi.ingsw.model.cards.assistants.AssistantDeck;
 import org.junit.Test;
 
 public class AssistantDeckTest{

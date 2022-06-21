@@ -1,7 +1,7 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 //
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
-import it.polimi.ingsw.Client.LightView.LightCloud;
+import it.polimi.ingsw.Client.LightView.LightBoards.LightCloud;
 import it.polimi.ingsw.Client.LightView.LightTurnState;
 import it.polimi.ingsw.Client.Messages.ActionMessages.ChooseCloud;
 import it.polimi.ingsw.Client.Messages.ActionMessages.DrawFromPouch;
@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import it.polimi.ingsw.model.boards.token.GamePhase;
+import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 import it.polimi.ingsw.model.boards.token.Student;
 
 

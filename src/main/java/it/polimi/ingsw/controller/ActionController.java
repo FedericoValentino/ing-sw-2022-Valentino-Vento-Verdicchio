@@ -1,15 +1,15 @@
 package it.polimi.ingsw.controller;
 
+import it.polimi.ingsw.controller.checksandbalances.Checks;
 import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.Team;
-import it.polimi.ingsw.model.cards.Centaur;
+import it.polimi.ingsw.model.cards.characters.Centaur;
 import it.polimi.ingsw.model.cards.CharacterCard;
-import it.polimi.ingsw.model.cards.Knight;
-import it.polimi.ingsw.model.cards.TruffleHunter;
+import it.polimi.ingsw.model.cards.characters.Knight;
+import it.polimi.ingsw.model.cards.characters.TruffleHunter;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 

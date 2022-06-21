@@ -1,6 +1,8 @@
 package it.polimi.ingsw.model.cards;
 
-import it.polimi.ingsw.model.boards.token.CharacterName;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.cards.characters.*;
+
 //y
 public class CharacterCreator
 {
