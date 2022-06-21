@@ -8,7 +8,7 @@ import it.polimi.ingsw.model.cards.assistants.AssistantCard;
 
 public class LightPlayer extends Observable
 {
-    private String nome;
+    private String name;
     private int coinAmount;
     private AssistantCard currentAssistantCard;
     private AssistantCard lastPlayedCard;
@@ -30,7 +30,7 @@ public class LightPlayer extends Observable
                   @JsonProperty("value")int value,
                   @JsonProperty("towerOwner")boolean towerOwner)
     {
-        this.nome = nome;
+        this.name = nome;
         this.coinAmount = coinAmount;
         this.currentAssistantCard = currentAssistantCard;
         this.lastPlayedCard = lastPlayedCard;
@@ -46,7 +46,7 @@ public class LightPlayer extends Observable
 
     public void updatePlayer(LightPlayer light)
     {
-        this.nome = light.getNome();
+        this.name = light.getName();
         this.coinAmount = light.getCoinAmount();
         this.currentAssistantCard = light.getCurrentAssistantCard();
         this.lastPlayedCard = light.getLastPlayedCard();
@@ -61,8 +61,8 @@ public class LightPlayer extends Observable
     }
 
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
     public int getCoinAmount() {

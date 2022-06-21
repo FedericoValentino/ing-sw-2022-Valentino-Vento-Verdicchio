@@ -22,7 +22,7 @@ public class SchoolPrinter extends PrinterCLI
         {
             for(LightPlayer player: team.getPlayers())
             {
-                if(player.getNome().equals(nome))
+                if(player.getName().equals(nome))
                 {
                     entranceCount = player.getSchool().getEntrance().size();
                     output = printStudent(player.getSchool().getEntrance(), 2);
@@ -63,7 +63,7 @@ public class SchoolPrinter extends PrinterCLI
         {
             for(LightPlayer player: team.getPlayers())
             {
-                if(player.getNome().equals(nome))
+                if(player.getName().equals(nome))
                 {
                     for(int i = 0; i < 10; i++)
                     {
@@ -93,7 +93,7 @@ public class SchoolPrinter extends PrinterCLI
         {
             for(LightPlayer player: team.getPlayers())
             {
-                if(player.getNome().equals(nome))
+                if(player.getName().equals(nome))
                 {
                     if(player.getSchool().getProfessorTable()[tablePosition])
                         output = ANSI_GREEN_BACKGROUND + ANSI_BLACK + "P" + ANSI_RESET;
@@ -107,7 +107,7 @@ public class SchoolPrinter extends PrinterCLI
 
     private String[] printSchool(String[] schools, LightPlayer player, String currentPlayer)
     {
-        String name = player.getNome();
+        String name = player.getName();
         String nameTrimmed = nameTrimmer(name);
         String currentPlayerTrimmed = nameTrimmer(currentPlayer);
 
@@ -155,7 +155,7 @@ public class SchoolPrinter extends PrinterCLI
                         Arrays.fill(schools, "");
                     }
                 }
-                else if (player.getNome().equals(name))
+                else if (player.getName().equals(name))
                 {
                     totalSchools++;
                     schools = printSchool(schools, player, currentPlayer);
@@ -164,7 +164,7 @@ public class SchoolPrinter extends PrinterCLI
                         totalSchools = 0;
                     }
                 }
-                else if(!player.getNome().equals((name)))
+                else if(!player.getName().equals((name)))
                 {
                     playerNotFoundCounter += 1;
                 }

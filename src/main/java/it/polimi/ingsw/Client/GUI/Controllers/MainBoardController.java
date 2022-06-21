@@ -148,9 +148,9 @@ public class MainBoardController extends Controller {
         {
             for(LightPlayer player: team.getPlayers())
             {
-                if(!player.getNome().equals(tempOwner))
+                if(!player.getName().equals(tempOwner))
                 {
-                    Button playerSwitch = new Button(player.getNome());
+                    Button playerSwitch = new Button(player.getName());
                     otherPlayers.getChildren().add(playerSwitch);
                     c++;
                     playerSwitch.setId("pSchool"+c);
@@ -207,7 +207,7 @@ public class MainBoardController extends Controller {
         {
             Pane cell = getCellFromGridPane(PlayedAssistants, column, row);
             cell.getChildren().clear();
-            Text name = new Text(player.getNome());
+            Text name = new Text(player.getName());
             cell.getChildren().add(name);
             name.translateXProperty().add(-15);
             name.translateYProperty().add(70);
@@ -318,7 +318,7 @@ public class MainBoardController extends Controller {
                 {
                     for(LightPlayer player: team.getPlayers())
                     {
-                        if(player.getNome().equals(GuiMainStarter.getClientGUI().getServerConnection().getNickname()))
+                        if(player.getName().equals(GuiMainStarter.getClientGUI().getServerConnection().getNickname()))
                         {
                             school = player.getSchool();
                         }

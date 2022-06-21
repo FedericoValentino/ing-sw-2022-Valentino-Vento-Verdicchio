@@ -79,7 +79,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
         Platform.runLater(()-> {
             LightPlayer player = (LightPlayer) o;
 
-            if(player.getNome().equals(currentPlayer))
+            if(player.getName().equals(currentPlayer))
             {
                 HBox cards = (HBox) ((AnchorPane) assistantsAnchorPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("box")).collect(Collectors.toList()).get(0);
                 cards.getChildren().clear();

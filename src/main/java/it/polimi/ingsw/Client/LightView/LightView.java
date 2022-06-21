@@ -88,7 +88,7 @@ public class LightView extends Observable
         for(LightTeam t: currentTeams)
             for(LightPlayer p: t.getPlayers())
             {
-                p.getSchool().updateName(p.getNome());
+                p.getSchool().updateName(p.getName());
             }
     }
 
@@ -98,7 +98,7 @@ public class LightView extends Observable
         {
             for(LightPlayer p: t.getPlayers())
             {
-                if(p.getNome().equals(player))
+                if(p.getName().equals(player))
                 {
                     return p;
                 }
@@ -127,7 +127,6 @@ public class LightView extends Observable
     public void setBankBalance(int bankBalance) {
         this.bankBalance = bankBalance;
     }
-
 
     public LightActiveDeck getCurrentActiveCharacterCard() {
         return currentActiveCharacterCard;

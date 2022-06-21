@@ -122,7 +122,7 @@ public abstract class PrinterCLI
         {
             for(LightPlayer player: team.getPlayers())
             {
-                if(player.getNome().equals(name))
+                if(player.getName().equals(name))
                 {
                     return player;
                 }
@@ -138,7 +138,7 @@ public abstract class PrinterCLI
         {
             for(LightPlayer player: team.getPlayers())
             {
-                if(player.getNome().equals(name))
+                if(player.getName().equals(name))
                 {
                     return team;
                 }

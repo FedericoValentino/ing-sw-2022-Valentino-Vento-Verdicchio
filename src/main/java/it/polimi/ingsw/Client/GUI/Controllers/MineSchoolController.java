@@ -68,7 +68,7 @@ public class MineSchoolController implements ObserverLightView
         {
             for(LightPlayer p : t.getPlayers())
             {
-                if(p.getNome().equals(PlayerName))
+                if(p.getName().equals(PlayerName))
                 {
                     p.getSchool().addObserverLight(this);
                     for(int i = 0; i < p.getSchool().getEntrance().size(); i++)

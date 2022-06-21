@@ -67,7 +67,7 @@ public class InfoPrinters extends PrinterCLI
         {
             for(LightPlayer player: team.getPlayers())
             {
-                showPlayer(player.getNome());
+                showPlayer(player.getName());
             }
         }
     }

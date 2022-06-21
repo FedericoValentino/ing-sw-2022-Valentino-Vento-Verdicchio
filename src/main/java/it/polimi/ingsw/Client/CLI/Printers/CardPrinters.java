@@ -26,7 +26,7 @@ public class CardPrinters extends PrinterCLI
         {
             for (LightPlayer player : team.getPlayers())
             {
-                if(player.getNome().equals(nickname))
+                if(player.getName().equals(nickname))
                 {
                     p = player;
                 }
@@ -64,7 +64,7 @@ public class CardPrinters extends PrinterCLI
         {
             for(LightPlayer p: t.getPlayers())
             {
-                String name = p.getNome();
+                String name = p.getName();
                 String nameTrimmed = nameTrimmer(name);
                 if(p.getCurrentAssistantCard() == null)
                 {

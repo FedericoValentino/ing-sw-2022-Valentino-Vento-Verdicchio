@@ -55,7 +55,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
         {
             for(LightPlayer p: t.getPlayers())
             {
-                if(p.getNome().equals(username))
+                if(p.getName().equals(username))
                 {
                     return p.getSchool();
                 }
