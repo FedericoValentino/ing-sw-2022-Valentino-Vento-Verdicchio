@@ -1,5 +1,6 @@
-package it.polimi.ingsw.Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers;
 
+import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +12,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
-public class LoginController extends Controller{
+public class LoginController extends Controller {
 
     @FXML private TextField nickname;
     @FXML private TextField IP;

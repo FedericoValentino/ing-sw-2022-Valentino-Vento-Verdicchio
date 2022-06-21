@@ -1,5 +1,6 @@
-package it.polimi.ingsw.Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers.InformationControllers;
 
+import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightUtilities.InfoDispenser;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;

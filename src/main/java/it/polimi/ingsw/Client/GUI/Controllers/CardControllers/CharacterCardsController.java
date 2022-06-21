@@ -1,5 +1,7 @@
-package it.polimi.ingsw.Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers.CardControllers;
 //y
+import it.polimi.ingsw.Client.GUI.Controllers.Controller;
+import it.polimi.ingsw.Client.GUI.Controllers.MainBoardController;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightActiveDeck;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharDeck;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharacterCard;

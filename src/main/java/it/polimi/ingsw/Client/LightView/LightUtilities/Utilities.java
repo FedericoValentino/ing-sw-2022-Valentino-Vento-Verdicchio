@@ -18,15 +18,35 @@ public final class Utilities
     public static LightPlayer findPlayerByName(LightView view, String nickname)
     {
 
-
             for(LightTeam team: view.getCurrentTeams())
-            {
+
                 for(LightPlayer player: team.getPlayers())
-                {
+
                     if(player.getName().equals(nickname))
+
                         return player;
-                }
-            }
+
             return null;
     }
+
+
+    /** Given a player's name, identifies and return the player's team
+     * @param view an instance of the view
+     * @param name the player's name
+     * @return the correct team
+     */
+    public static LightTeam getPlayerTeam(LightView view, String name)
+    {
+
+        for (LightTeam team : view.getCurrentTeams())
+
+            for (LightPlayer player : team.getPlayers())
+
+                if (player.getName().equals(name))
+
+                    return team;
+
+        return null;
+    }
 }
+

@@ -1,6 +1,12 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
 //
 import it.polimi.ingsw.Client.CharacterActivationParser;
+import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandsController;
+import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.MineSchoolController;
+import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.OtherSchoolController;
+import it.polimi.ingsw.Client.GUI.Controllers.CardControllers.AssistantCardsController;
+import it.polimi.ingsw.Client.GUI.Controllers.CardControllers.CharacterCardsController;
+import it.polimi.ingsw.Client.GUI.Controllers.InformationControllers.PropagandaController;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.*;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightSchool;

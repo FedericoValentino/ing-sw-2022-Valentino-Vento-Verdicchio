@@ -1,5 +1,8 @@
-package it.polimi.ingsw.Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
 
+import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.CloudController;
+import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandController;
+import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Observer.ObserverLightView;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightIslands;

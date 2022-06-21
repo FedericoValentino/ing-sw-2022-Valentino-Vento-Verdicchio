@@ -1,5 +1,6 @@
-package it.polimi.ingsw.Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers;
 
+import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.Messages.SetupMessages.ReadyStatus;
@@ -7,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
-public class ReadyController extends Controller{
+public class ReadyController extends Controller {
     @FXML private Pane tickPane;
 
     public void onClickReadyButton()

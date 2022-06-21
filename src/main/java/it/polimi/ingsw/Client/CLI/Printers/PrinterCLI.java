@@ -30,11 +30,20 @@ public abstract class PrinterCLI
     private LightView view;
 
 
+    /** Class constructor: it instantiates the LightView
+     * @param lv the LightView
+     */
     public PrinterCLI(LightView lv)
     {
         this.view = lv;
     }
 
+
+    /** Necessary to display numbers from 0 to 99 with ease and order, if the input parameter, which is the number that must
+     * be showed, is composed by a single cipher, it adds a 0 in front of it, to make spacing uniform
+     * @param X the number to represent
+     * @return 0X if X was less than 10, the string equivalent of X if it isn't
+     */
     protected String addZero(int X)
     {
         if(X < 10)
@@ -43,12 +52,21 @@ public abstract class PrinterCLI
             return String.valueOf(X);
     }
 
+
+    /** Clear command for the console
+     */
     public static void cls()
     {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
+
+    /** Necessary to resolve the inevitable problems of spacing when dealing with name of different lengths, it brings the
+     * nickname in input to be 10 characters long, either adding blank spaces or trimming it
+     * @param name the name to extend or trim
+     * @return the extended or trimmed name
+     */
     protected String nameTrimmer(String name)
     {
         if(name.length() > 10)
@@ -62,6 +80,11 @@ public abstract class PrinterCLI
     }
 
 
+    /** To uniform the representation of the teams and towers colors, it returns a string containing the identifier of the
+     * desired color, composed by three letters
+     * @param towerColor the color to trim
+     * @return the trimmed color
+     */
     protected String convertTo3Char(ColTow towerColor)
     {
         if(towerColor != null)
@@ -85,6 +108,11 @@ public abstract class PrinterCLI
     }
 
 
+    /** used by multiple printers to print students using the correct color and desired spacing between them
+     * @param students a generic list of students
+     * @param spaces the amount of spaces desired between each student
+     * @return the string representing the list of students
+     */
     public static String printStudent(ArrayList<Student> students, int spaces)
     {
         String output = "";
@@ -115,39 +143,6 @@ public abstract class PrinterCLI
         }
         return output + ANSI_RESET;
     }
-
-    public static LightPlayer getPlayerByName(String name, LightView view)
-    {
-        for(LightTeam team: view.getCurrentTeams())
-        {
-            for(LightPlayer player: team.getPlayers())
-            {
-                if(player.getName().equals(name))
-                {
-                    return player;
-                }
-            }
-        }
-        AnsiConsole.out().println( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
-        return null;
-    }
-
-    protected LightTeam getPlayerTeam(String name)
-    {
-        for(LightTeam team: view.getCurrentTeams())
-        {
-            for(LightPlayer player: team.getPlayers())
-            {
-                if(player.getName().equals(name))
-                {
-                    return team;
-                }
-            }
-        }
-        AnsiConsole.out().println( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
-        return null;
-    }
-
 
 
     public LightView getView()

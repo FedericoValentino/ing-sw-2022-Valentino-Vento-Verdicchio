@@ -9,11 +9,19 @@ import java.util.Arrays;
 
 public class SchoolPrinter extends PrinterCLI
 {
+    /** Class constructor; through the parent class constructor, it grants access to the view
+     * @param view the LightView coming from the PrinterCLI class
+     */
     public SchoolPrinter(LightView view)
     {
         super(view);
     }
 
+
+    /** Given a player's name, returns the player's school entrance, using the function "printStudent"
+     * @param nome the player's name
+     * @return the string representing the entrance, i.e a list of students
+     */
     private String printEntrance(String nome)
     {
         String output = "";
@@ -36,6 +44,13 @@ public class SchoolPrinter extends PrinterCLI
         return output + ANSI_RESET;
     }
 
+
+    /** Given a player's name and the row of the dining room, it returns a list of students (colored X), blank spaces (O)
+     *  and coin spaces (grey C), representing that row of the player's school dining table
+     * @param nome the player's name
+     * @param dinnerPosition identifies the row of the dining table
+     * @return the representation of the row of the dining room
+     */
     private String printDinnerTable(String nome, int dinnerPosition)
     {
         String output = "";
@@ -86,6 +101,13 @@ public class SchoolPrinter extends PrinterCLI
         return  output + ANSI_RESET;
     }
 
+
+    /** Return a string containing a colored P if the player controls the professor identified by the color of the dining table row,
+     * identified by "tablePosition"; returns a white O if the professor is not present
+     * @param nome the player's name
+     * @param tablePosition identifies the correct dining table row
+     * @return the string representing a professor or the absence of thereof
+     */
     private String printHasProf(String nome, int tablePosition)
     {
         String output = "";
@@ -105,6 +127,13 @@ public class SchoolPrinter extends PrinterCLI
         return output;
     }
 
+
+    /** Using the aforementioned auxiliary methods, it fills the given string array with the drawing of a full school
+     * @param schools the string to manipulate
+     * @param player the player owning rhe school
+     * @param currentPlayer the current player, used to understand which school description the method should use
+     * @return the manipulated string, containing the graphical representation of the school
+     */
     private String[] printSchool(String[] schools, LightPlayer player, String currentPlayer)
     {
         String name = player.getName();
@@ -133,6 +162,10 @@ public class SchoolPrinter extends PrinterCLI
     }
 
 
+    /** Shows the selected player's school, using the aforementioned auxiliary methods
+     * @param name the player's name used to identify the correct school to display
+     * @param currentPlayer necessary to the "printSchool" function above
+     */
     public void showSchool(String name, String currentPlayer) {
         String[] schools = new String[12];
         Arrays.fill(schools, "");

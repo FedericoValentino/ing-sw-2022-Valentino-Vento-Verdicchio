@@ -1,6 +1,13 @@
 package it.polimi.ingsw.Client.GUI;
 
 import it.polimi.ingsw.Client.ClientView;
+import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.IntroController;
+import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.LobbyController;
+import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.RejectionController;
+import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.WinnerController;
+import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.ReadyController;
+import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.TeamController;
+import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.WizardController;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;

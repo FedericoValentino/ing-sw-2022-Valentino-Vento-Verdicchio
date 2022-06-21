@@ -11,11 +11,18 @@ import java.util.Arrays;
 
 public class CardPrinters extends PrinterCLI
 {
+    /** Class constructor; through the parent class constructor, it grants access to the view
+     * @param view the LightView coming from the PrinterCLI class
+     */
     public CardPrinters(LightView view)
     {
         super(view);
     }
 
+
+    /** Upon player's command, it prints the player's assistant deck. Of course, each player can see only his deck.
+     * @param nickname the nickname of the player requesting to see his deck
+     */
     public void showAssistantDeck(String nickname)
     {
         String[] deck = new String[7];
@@ -50,6 +57,9 @@ public class CardPrinters extends PrinterCLI
         }
     }
 
+
+    /** Upon player's input, it shows the currently played and last played assistant cards of all players
+     */
     public void showPlayedCards()
     {
         String[] currentlyPlayed = new String[8];
@@ -128,6 +138,14 @@ public class CardPrinters extends PrinterCLI
     }
 
 
+    /** Used by the function "showCharacters", it fills the strings received in input to form the graphical representation of
+     * the cards and their content, based on the type of card. Since a lot of cards can be represented in the same way, it isn't
+     * necessary to use more than four if branches.
+     * @param card the card to generate
+     * @param character the string to manipulate
+     * @param index the index of the card in its deck
+     * @return the manipulated string, containing the drawing of the card
+     */
     private String[] printCharacter(LightCharacterCard card, String[] character, int index)
     {
 
@@ -205,6 +223,9 @@ public class CardPrinters extends PrinterCLI
         return character;
     }
 
+
+    /** Upon player's input, it shows the character card in the game, and if they are currently active or not
+     */
     public void showCharacters()
     {
         String[] inactiveCharacter = new String[8];

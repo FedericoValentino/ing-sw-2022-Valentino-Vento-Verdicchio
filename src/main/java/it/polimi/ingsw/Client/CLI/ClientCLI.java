@@ -30,6 +30,8 @@ public class ClientCLI implements ClientView
     private Scanner info = new Scanner(System.in);
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
+
+
     @Override
     public void setupHandler(StandardSetupAnswer answer){
         switch(answer.getType())
@@ -119,6 +121,7 @@ public class ClientCLI implements ClientView
                 }
         }
     }
+
 
     @Override
     public void messageHandler(StandardActionAnswer answer) {

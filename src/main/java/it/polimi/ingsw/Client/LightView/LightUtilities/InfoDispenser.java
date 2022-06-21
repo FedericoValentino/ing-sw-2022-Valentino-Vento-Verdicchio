@@ -9,6 +9,12 @@ import java.util.ArrayList;
 
 public class InfoDispenser {
 
+
+    /** A factory method that uses the client's own information on the game to dynamically generate hints to display to the player
+     * @param state the actual state of the game
+     * @param teams the list of teams
+     * @return the dynamically generated hint
+     */
     public InternalMessage informationCreator(LightTurnState state, ArrayList<LightTeam> teams) {
         int players = 0;
         for (LightTeam team : teams) {

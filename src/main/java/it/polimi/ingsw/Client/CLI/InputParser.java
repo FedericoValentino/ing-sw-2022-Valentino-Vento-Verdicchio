@@ -4,6 +4,7 @@ import it.polimi.ingsw.Client.CLI.Printers.*;
 import it.polimi.ingsw.Client.CharacterActivationParser;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharacterCard;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
+import it.polimi.ingsw.Client.LightView.LightUtilities.Utilities;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.Messages.SetupMessages.ReadyStatus;
@@ -83,7 +84,7 @@ public class InputParser
         String nickname = socket.getNickname();
         CharacterName cardName = card.getName();
         int input = 0;
-        LightPlayer player = PrinterCLI.getPlayerByName(nickname, cardPrinters.getView());
+        LightPlayer player = Utilities.findPlayerByName(cardPrinters.getView(), nickname);
 
         switch(card.getType())
         {

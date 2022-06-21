@@ -3,6 +3,7 @@ package it.polimi.ingsw.Client.CLI.Printers;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
+import it.polimi.ingsw.Client.LightView.LightUtilities.Utilities;
 import it.polimi.ingsw.Client.LightView.LightView;
 import org.fusesource.jansi.AnsiConsole;
 
@@ -11,15 +12,27 @@ import java.util.ArrayList;
 public class InfoPrinters extends PrinterCLI
 {
 
+    /** Class constructor; through the parent class constructor, it grants access to the view
+     * @param view the LightView coming from the PrinterCLI class
+     */
     public InfoPrinters(LightView view)
     {
         super(view);
     }
 
+
+    /** Upon player's input, it shows a short list of information about the selected player and its team, such as controlled
+     * islands, number of towers left, and other useful information
+     * @param name the name of the player to show
+     */
     public void showPlayer(String name)
     {
-        LightPlayer player = getPlayerByName(name, getView());
-        LightTeam team = getPlayerTeam(name);
+        LightPlayer player = Utilities.findPlayerByName(getView(), name);
+        if(player == null)
+            AnsiConsole.out().println( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
+        LightTeam team = Utilities.getPlayerTeam(getView(), name);
+        if(team == null)
+            AnsiConsole.out().println( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, player not found. Are you sure the spelling was correct?" + ANSI_RESET);
         AnsiConsole.out().println(ANSI_CYAN +  name + ANSI_RESET + "'s information:");
         AnsiConsole.out().println(team.getColor() + " Team");
         if(team.getControlledIslands() != 0) {
@@ -61,6 +74,9 @@ public class InfoPrinters extends PrinterCLI
     }
 
 
+    /** Calls the aforementioned "showPlayer" function to show information on all the players, to grant a  strategic
+     * ensemble view on the game
+     */
     public void showPlayers()
     {
         for(LightTeam team: super.getView().getCurrentTeams())
@@ -72,6 +88,10 @@ public class InfoPrinters extends PrinterCLI
         }
     }
 
+
+    /** Upon player's input, it shows a brief but sufficiently detailed description of the main board and of all the commands
+     * a player can use
+     */
     public void showHelp()
     {
         AnsiConsole.out().println("Welcome to Eryantis! The game automatically displays on your screen the " + ANSI_GREEN + "Game Board" + ANSI_RESET + ", which comprises:");
@@ -112,6 +132,10 @@ public class InfoPrinters extends PrinterCLI
     }
 
 
+    /** Used by the "showPlayer" function, it returns a list of the islands controlled by the specified team
+     * @param team the desired team
+     * @return the list of the islands controlled by the team
+     */
     private ArrayList<String> controlledIslands(LightTeam team)
     {
         ArrayList<String> islands = new ArrayList<>();

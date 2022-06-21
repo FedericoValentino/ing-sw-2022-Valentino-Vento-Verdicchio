@@ -11,11 +11,19 @@ import java.util.Arrays;
 
 public class BoardPrinters extends PrinterCLI
 {
+
+    /** Class constructor; through the parent class constructor, it grants access to the view
+     * @param view the LightView coming from the PrinterCLI class
+     */
     public BoardPrinters(LightView view)
     {
         super(view);
     }
 
+    /** If Mother Nature is present on the selected island, it prints an X, if not, it returns an O
+     * @param id the island position
+     * @return a string that the function "showIsland" will print to indicate whether Mother Nature is present on the island
+     */
     private String printMN(int id)
     {
         if(super.getView().getCurrentIslands().getIslands().get(id).isMotherNature())
@@ -24,6 +32,13 @@ public class BoardPrinters extends PrinterCLI
             return "O";
     }
 
+
+    /** Used by the function "showIslands", it constructs and returns the outline and content of the graphical representation
+     * of the desired island
+     * @param islands the array of strings to manipulate
+     * @param id the chosen island
+     * @return the updated string array after the elaboration
+     */
     private String[] printIsland(String[] islands, int id)
     {
         int StudentNumber;
@@ -46,6 +61,10 @@ public class BoardPrinters extends PrinterCLI
         return islands;
     }
 
+
+    /** Using the auxiliary functions discussed above, it prints the island or the islands, based on the island id it receives
+     * @param id the selected island
+     */
     public void showIsland(int id)
     {
         String[] islands = new String[9];
@@ -86,6 +105,12 @@ public class BoardPrinters extends PrinterCLI
         }
     }
 
+
+    /** Used by the function "showCloud", it returns a string containing the graphical representation of the students on the cloud.
+     * A colored X is used to mark the presence of a student (of the same color), while an O is used to represent a vacant space
+     * @param students the list containing the students on the cloud
+     * @return a string representing the students on the cloud
+     */
     private String printStudentOnCloud(ArrayList<Student> students)
     {
         String output = "";
@@ -98,6 +123,9 @@ public class BoardPrinters extends PrinterCLI
         return output;
     }
 
+
+    /** Upon player's command, and automatically upon every move by any players, it prints the clouds
+     */
     public void showCloud()
     {
         String[] clouds = new String[5];

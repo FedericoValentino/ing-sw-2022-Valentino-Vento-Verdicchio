@@ -1,5 +1,6 @@
-package it.polimi.ingsw.Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
 
+import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Client.LightView.LightToken.LightMotherNature;
@@ -15,7 +16,7 @@ import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 
 
-public class IslandController extends Controller{
+public class IslandController extends Controller {
 
     @FXML private Text blueStudents;
     @FXML private Text redStudents;

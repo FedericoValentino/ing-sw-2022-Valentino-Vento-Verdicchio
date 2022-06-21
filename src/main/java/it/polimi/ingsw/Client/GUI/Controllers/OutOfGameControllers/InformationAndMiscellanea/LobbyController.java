@@ -1,5 +1,6 @@
-package it.polimi.ingsw.Client.GUI.Controllers;
+package it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea;
 
+import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.Messages.SetupMessages.GameMode;
 import javafx.fxml.FXML;
@@ -7,7 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ChoiceBox;
 import java.io.IOException;
 
-public class LobbyController extends Controller{
+public class LobbyController extends Controller {
 
 
     @FXML private ChoiceBox <Integer>playersChoice;

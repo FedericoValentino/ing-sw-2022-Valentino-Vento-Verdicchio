@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI;
-import it.polimi.ingsw.Client.GUI.Controllers.IntroController;
+import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.IntroController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
