@@ -78,16 +78,16 @@ public class MainController
         {
             if(players == 3)
             {
-                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 6, wizard, this.expertGame, game));
+                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 6, wizard, this.expertGame));
             }
             else
             {
-                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, wizard, this.expertGame, game));
+                this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], towers, wizard, this.expertGame));
             }
         }
         else
         {
-            this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 0, wizard, this.expertGame, game));
+            this.game.getCurrentTeams().get(team).addPlayer(new Player(name, ColTow.values()[team], 0, wizard, this.expertGame));
         }
     }
 

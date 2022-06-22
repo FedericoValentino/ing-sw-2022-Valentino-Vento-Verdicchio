@@ -10,10 +10,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PlayerTest {
-    CurrentGameState dummy  = new CurrentGameState(2, false);
-    Player p1=new Player("Giaco", ColTow.WHITE,8, Wizard.DRUID,false, dummy);
-    Player p3=new Player("paol", ColTow.WHITE,0, Wizard.DRUID,false, dummy);
-    Player p2=new Player("ci", ColTow.BLACK,8,Wizard.DRUID,true, dummy);
+    Player p1=new Player("Giaco", ColTow.WHITE,8, Wizard.DRUID,false);
+    Player p3=new Player("paol", ColTow.WHITE,0, Wizard.DRUID,false);
+    Player p2=new Player("ci", ColTow.BLACK,8,Wizard.DRUID,true);
     AssistantDeck ad=new AssistantDeck(Wizard.DRUID,"Giaco");
     AssistantCard ac=new AssistantCard(1,1);
 

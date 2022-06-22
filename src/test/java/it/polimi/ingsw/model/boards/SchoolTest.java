@@ -12,9 +12,8 @@ import java.util.ArrayList;
 
 public class SchoolTest
 {
-    CurrentGameState game = new CurrentGameState(2, true);
-    School s=new School(ColTow.BLACK,6, game);
-    School s2=new School(ColTow.GREY,6, game);
+    School s=new School(ColTow.BLACK,6);
+    School s2=new School(ColTow.GREY,6);
     Student ss1=new Student(Col.YELLOW);
     Student ss2=new Student(Col.GREEN);
 
@@ -28,7 +27,7 @@ public class SchoolTest
     @Test
     public void testPlaceToken2()
     {
-        School st = new School(ColTow.BLACK,6, game);
+        School st = new School(ColTow.BLACK,6);
         st.getEntrance().removeAll(st.getEntrance());
         ArrayList<Student> ss = new ArrayList<>();
         ss.add(ss1);

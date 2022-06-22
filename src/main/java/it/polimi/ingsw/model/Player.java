@@ -19,7 +19,6 @@ public class Player
   private int movementValue;
   private int value;
   private boolean towerOwner;
-  private CurrentGameState game;
 
 
   /** Class constructor
@@ -29,11 +28,10 @@ public class Player
    * @param wizard  the wizard chosen by the player
    * @param expertGame  the game mode chosen by the host: determines whether the player is assigned coins
    */
-  public Player(String nome, ColTow col, int towerAmount, Wizard wizard, boolean expertGame, CurrentGameState game)
+  public Player(String nome, ColTow col, int towerAmount, Wizard wizard, boolean expertGame)
   {
-    this.game = game;
     this.name = nome;
-    this.school = new School(col, towerAmount, game);
+    this.school = new School(col, towerAmount);
     if(towerAmount != 0)
     {
       this.towerOwner = true;

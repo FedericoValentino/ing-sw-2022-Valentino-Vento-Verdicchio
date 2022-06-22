@@ -48,27 +48,27 @@ public class CurrentGameState extends Observable {
     public CurrentGameState(int playerNum, boolean expertGame)
     {
        this.currentPouch = new Pouch();
-       this.currentMotherNature = new MotherNature(this);
+       this.currentMotherNature = new MotherNature();
        this.currentIslands = new Islands(this);
        this.currentTeams = new ArrayList<>();
        if(playerNum == 2 || playerNum == 4)
        {
            for(int i = 0; i < 2; i++)
            {
-               currentTeams.add(new Team(ColTow.values()[i], this));
+               currentTeams.add(new Team(ColTow.values()[i]));
            }
        }
        else if(playerNum == 3)
        {
            for(int i = 0; i < 3; i++)
            {
-               currentTeams.add(new Team(ColTow.values()[i],this));
+               currentTeams.add(new Team(ColTow.values()[i]));
            }
        }
        this.currentClouds = new Cloud[playerNum];
        for(int i = 0; i < playerNum; i++)
        {
-           currentClouds[i] = new Cloud(this, i);
+           currentClouds[i] = new Cloud(i);
        }
        this.currentTurnState = new CurrentTurnState(this);
        this.currentActiveCharacterCard = new ArrayList<>();

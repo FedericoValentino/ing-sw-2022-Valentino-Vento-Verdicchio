@@ -6,8 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MotherNatureTest {
-    CurrentGameState game;
-    MotherNature mother= new MotherNature(game);
+    MotherNature mother= new MotherNature();
 
     @Test
     public void testMove()

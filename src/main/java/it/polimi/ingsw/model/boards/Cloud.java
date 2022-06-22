@@ -9,14 +9,12 @@ public class Cloud extends Board
 {
   private int cloudNumber;
   private ArrayList<Student> student;
-  private CurrentGameState game;
 
   /** Class constructor 1*/
-  public Cloud(CurrentGameState game, int identifier)
+  public Cloud(int identifier)
   {
     cloudNumber = identifier;
     student= new ArrayList<>();
-    this.game = game;
   }
 
   /** Class constructor 2 */

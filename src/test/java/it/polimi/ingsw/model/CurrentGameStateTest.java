@@ -16,8 +16,8 @@ public class CurrentGameStateTest {
     Student s2=new Student(Col.RED);
     Student s5=new Student(Col.BLUE);
 
-    Player p1=new Player("ci", ColTow.WHITE,8, Wizard.DRUID,false, dummy);
-    Player p2=new Player("asd", ColTow.GREY,8,Wizard.WITCH,false, dummy);
+    Player p1=new Player("ci", ColTow.WHITE,8, Wizard.DRUID,false);
+    Player p2=new Player("asd", ColTow.GREY,8,Wizard.WITCH,false);
     HashMap<String, Integer> tO=new HashMap<>();
     HashMap<String, Integer> tOO=new HashMap<>();
 
@@ -25,8 +25,8 @@ public class CurrentGameStateTest {
     @Test
     public void testUpdateBankBalance()
     {
-        Player p11=new Player("ci", ColTow.WHITE,8,Wizard.SENSEI,true, dummy);
-        Player p22=new Player("asd", ColTow.BLACK,8,Wizard.LORD,true, dummy);
+        Player p11=new Player("ci", ColTow.WHITE,8,Wizard.SENSEI,true);
+        Player p22=new Player("asd", ColTow.BLACK,8,Wizard.LORD,true);
 
         int i=p1.getCoinAmount();
         cg1.getCurrentTeams().get(0).addPlayer(p11);
@@ -95,8 +95,8 @@ public class CurrentGameStateTest {
     @Test
     public void testGiveProfessors()
     {
-        Team t1=new Team(ColTow.WHITE, dummy);
-        Team t2=new Team(ColTow.GREY, dummy);
+        Team t1=new Team(ColTow.WHITE);
+        Team t2=new Team(ColTow.GREY);
         cg1.getCurrentTeams().add(t1);
         cg1.getCurrentTeams().add(t2);
         cg1.getCurrentTeams().get(0).addPlayer(p1);

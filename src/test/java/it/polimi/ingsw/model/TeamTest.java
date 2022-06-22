@@ -7,10 +7,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class TeamTest {
-    CurrentGameState dummy;
-    Team t=new Team(ColTow.GREY, dummy);
-    Player p=new Player("giaco",ColTow.GREY,3, Wizard.SENSEI,false, dummy);
-    Player p2=new Player("giaco",ColTow.GREY,3,Wizard.LORD,false, dummy);
+    Team t=new Team(ColTow.GREY);
+    Player p=new Player("giaco",ColTow.GREY,3, Wizard.SENSEI,false);
+    Player p2=new Player("giaco",ColTow.GREY,3,Wizard.LORD,false);
     @Test
     public void testAddPlayer()
     {

@@ -18,14 +18,12 @@ public class Island
   private int towerNumber;
   private int[] teamInfluence;
   private boolean noEntry;
-  private CurrentGameState game;
 
   /** Class Constructor
    * @param islandId  the ID to assign to the new island
    */
-  public Island(int islandId, CurrentGameState game)
+  public Island(int islandId)
   {
-    this.game = game;
     this.islandId = islandId;
     this.currentStudents = new ArrayList<>();
     this.motherNature = false;

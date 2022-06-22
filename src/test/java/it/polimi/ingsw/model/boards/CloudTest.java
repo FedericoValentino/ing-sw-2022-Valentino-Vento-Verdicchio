@@ -10,9 +10,8 @@ import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.enumerations.Col;
 
 public class  CloudTest {
-    CurrentGameState game  = new CurrentGameState(2, false);
-    Cloud c= new Cloud(game,1);
-    Cloud c2= new Cloud(game, 2);
+    Cloud c= new Cloud(1);
+    Cloud c2= new Cloud( 2);
     ArrayList<Student> stud=new ArrayList<Student>();
     Student st1=new Student(Col.GREEN);
     Student st2=new Student(Col.PINK);
@@ -65,7 +64,7 @@ public class  CloudTest {
     @Test
     public void testEmptyCloud()
     {
-        Cloud c1 = new Cloud(game, 1);
+        Cloud c1 = new Cloud(1);
         Student s1 = new Student(Col.YELLOW);
         Student s2 = new Student(Col.GREEN);
         ArrayList<Student> ss = new ArrayList<>();

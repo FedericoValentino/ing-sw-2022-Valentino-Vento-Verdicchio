@@ -8,13 +8,10 @@ import java.util.Random;
 public class MotherNature
 {
     private int idPosition;
-    private CurrentGameState game;
 
 
     /** Class constructor. The initial position of Mother Nature is randomized */
-    public MotherNature(CurrentGameState game){
-        //this.id_position
-        this.game = game;
+    public MotherNature(){
         Random r= new Random();
         this.idPosition=r.nextInt(12);
     }
