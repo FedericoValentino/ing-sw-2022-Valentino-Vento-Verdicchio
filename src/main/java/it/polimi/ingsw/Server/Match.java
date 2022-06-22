@@ -19,17 +19,31 @@ public class Match
     private HashMap<String, String> moves = new HashMap<>();
     private boolean running = false;
 
+    /**
+     * Class Constructor, creates a new match with rules determined by the first client that connects to the waitList in the Server class
+     * @param playerNumber is the number of players playing the game
+     * @param expert is the game mode selector
+     * @param matchID is the unique gameID
+     */
     public Match(int playerNumber, boolean expert, int matchID)
     {
         this.matchID = matchID;
         this.mainController = new MainController(playerNumber, expert);
     }
 
+    /**
+     * Method addClient adds a client to the clients ArrayList
+     * @param client
+     * @throws IOException
+     */
     public void addClient(ClientConnection client) throws IOException {
         GameHandler gameHandler = new GameHandler(mainController, client, this);
         clients.add(gameHandler);
     }
 
+    /**
+     * Method startGame starts every client GameHandler thread
+     */
     public void startGame()
     {
         running = true;
@@ -40,6 +54,9 @@ public class Match
         }
     }
 
+    /**
+     * Method announceGameReady tells every client that the game is starting once everyone has sent a READINESS message
+     */
     public void announceGameReady()
     {
         for(GameHandler GH : clients)
@@ -48,6 +65,9 @@ public class Match
         }
     }
 
+    /**
+     * Ends the current match and terminates every thread sending the reason the game ended
+     */
     public void end()
     {
         running = false;

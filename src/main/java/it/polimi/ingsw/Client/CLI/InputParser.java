@@ -47,6 +47,10 @@ public class InputParser
         return parser;
     }
 
+    /**
+     * Method DrawParser parses the words required to send a DRAW_CHOICE message
+     * @param words is the current user input being parsed
+     */
     public void DrawParser(String[] words)
     {
         if(words[1].equals("assistantcard"))
@@ -55,6 +59,10 @@ public class InputParser
         }
     }
 
+    /**
+     * Method MoveParser parses the words required to send a STUD_MOVE or a MN_MOVE message
+     * @param words is the current user input being parsed
+     */
     public void MoveParser(String[] words)
     {
         if(words[1].equals("student"))
@@ -77,6 +85,10 @@ public class InputParser
         }
     }
 
+    /**
+     * Method CharacterParser parses the words required to send a CHARACTER_PLAY message
+     * @param words is the current user input being parsed
+     */
     public void CharacterParser(String[] words)
     {
         LightCharacterCard card = cardPrinters.getView().getCurrentCharacterDeck().getCard(Integer.parseInt(words[1]));
@@ -118,7 +130,7 @@ public class InputParser
                     PrinterCLI.printStudent(player.getSchool().getEntrance(), 2);
                     AnsiConsole.out().println("You may choose up to 2 students, type -1 to stop selecting students");
                     while(input != -1)
-                        AnsiConsole.out().println("Chose a student");
+                        AnsiConsole.out().println("Choose a student");
                     input = Integer.parseInt(parser.nextLine());
                     if(input >= 0 && input < player.getSchool().getEntrance().size())
                         inputArray1.add(input);
@@ -192,6 +204,10 @@ public class InputParser
     }
 
 
+    /**
+     * Method showView prints to screen the user requested feature
+     * @param words is the current user input being parsed
+     */
     public void showView(String[] words)
     {
         switch(words[1])
@@ -235,6 +251,11 @@ public class InputParser
         }
     }
 
+    /**
+     * Method parseString parses the first words from the input and either sends a message to the server or redirects the
+     * parsing to the right parser
+     * @param input
+     */
     public void parseString(String input)
     {
         String[] words = input.split("[\\s']");
@@ -281,11 +302,18 @@ public class InputParser
         }
     }
 
+    /**
+     * Method newMove gets input from the user and starts the parsing process
+     */
     public void newMove()
     {
         String input = parser.nextLine();
         parseString(input.toLowerCase(Locale.ROOT));
     }
+
+    /**
+     * Method printGame prints the main board information, clouds, schools and islands
+     */
     public void printGame()
     {
         boardPrinters.showCloud();
@@ -295,15 +323,6 @@ public class InputParser
         schoolPrinter.showSchool("-1", socket.getNickname());
         System.out.println();
         infoPrinters.printTurn();
-    }
-
-    public void setPrintView(boolean t)
-    {
-        this.printView = t;
-    }
-
-    public Boolean getPrintView() {
-        return printView;
     }
 
     private void resetScreen()

@@ -2,11 +2,9 @@ package it.polimi.ingsw.model;
 
 //URGENT
 //TODO Client side errors
-//TODO Display GUI errors
 //TODO terminate GUI with exit button or X button from window
 
 //Less urgent
-//TODO Hint glitches sometimes
 //TODO players information in GUI
 //TODO aesthetic of GUI in general
 

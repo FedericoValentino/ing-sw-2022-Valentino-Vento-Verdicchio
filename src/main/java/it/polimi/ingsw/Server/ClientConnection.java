@@ -14,12 +14,21 @@ public class ClientConnection
     private ObjectInputStream inputStream;
     private String nickname;
 
+    /**
+     * Class Constructor, instantiates a new instance of ClientConnection taking as a parameter the newly bound client socket
+     * @param client the Client socket
+     * @throws IOException
+     */
     public ClientConnection(Socket client) throws IOException {
         this.client = client;
         this.outputStream = new ObjectOutputStream(client.getOutputStream());
         this.inputStream = new ObjectInputStream(client.getInputStream());
     }
 
+    /**
+     * Method sendAnswer sends a message to the client
+     * @param answer the message to be sent
+     */
     public void sendAnswer(SerializedAnswer answer)
     {
         try {

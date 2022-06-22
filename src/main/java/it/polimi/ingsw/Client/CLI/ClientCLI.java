@@ -1,9 +1,11 @@
 package it.polimi.ingsw.Client.CLI;
 
 import it.polimi.ingsw.Client.ClientView;
+import it.polimi.ingsw.Client.ErrorGenerator;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.*;
+import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import it.polimi.ingsw.Client.Messages.SetupMessages.GameMode;
@@ -20,7 +22,7 @@ import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ClientCLI implements ClientView
+public class ClientCLI implements ClientView, ErrorGenerator
 {
     private ServerConnection main;
     private InputParser stdin;
@@ -129,7 +131,7 @@ public class ClientCLI implements ClientView
         switch(answer.getType())
         {
             case ERROR:
-                AnsiConsole.out().println(((ErrorMessage) answer).getError());
+                System.out.println(errorGenerator(((ErrorMessage)answer).getError(), MyView));
                 break;
             case START_NFO:
                 System.out.println("Your Turn, start playing!");

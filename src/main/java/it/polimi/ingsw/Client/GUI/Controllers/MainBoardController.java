@@ -123,7 +123,7 @@ public class MainBoardController extends Controller {
         MineSchoolController controller = loader.getController();
         String player=GuiMainStarter.getClientGUI().getServerConnection().getNickname();
 
-        controller.setup(lightTeams, player, mineSchoolAnchorPane);
+        controller.setup(view, player, mineSchoolAnchorPane);
     }
 
     public void initialSetupPropaganda(LightView view, InfoDispenser infos) throws IOException

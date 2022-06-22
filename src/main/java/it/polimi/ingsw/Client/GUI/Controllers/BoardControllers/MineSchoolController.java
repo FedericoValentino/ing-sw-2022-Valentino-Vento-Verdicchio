@@ -4,6 +4,7 @@ import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightSchool;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
+import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.ActionMessages.MoveStudent;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Observer.ObserverLightView;
@@ -31,6 +32,7 @@ public class MineSchoolController implements ObserverLightView
 
     private AnchorPane MySchool;
     private int studentEntrancePos;
+    private LightView view;
 
     public void entranceClick(MouseEvent event)
     {
@@ -61,10 +63,11 @@ public class MineSchoolController implements ObserverLightView
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, true, Integer.parseInt((String)islands.getValue()))));
     }
 
-    public void setup(ArrayList<LightTeam> Teams,String PlayerName, AnchorPane School)
+    public void setup(LightView view,String PlayerName, AnchorPane School)
     {
+        this.view = view;
         this.MySchool = School;
-        for(LightTeam t: Teams)
+        for(LightTeam t: view.getCurrentTeams())
         {
             for(LightPlayer p : t.getPlayers())
             {
@@ -81,7 +84,7 @@ public class MineSchoolController implements ObserverLightView
                 }
             }
         }
-        for(int i = 0; i < 12; i++)
+        for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
         {
             islands.getItems().add(Integer.toString(i));
         }
@@ -144,6 +147,11 @@ public class MineSchoolController implements ObserverLightView
         Platform.runLater(()->{
             LightSchool school = (LightSchool) o;
             String TowerColorPath = getSchoolColorPath(school);
+            //Updating ChoiceBox
+            for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
+            {
+                islands.getItems().add(Integer.toString(i));
+            }
             //Updating Entrance
             for(int i = 0; i < 9; i++)
             {

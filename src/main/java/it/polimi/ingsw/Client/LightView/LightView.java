@@ -34,6 +34,11 @@ public class LightView extends Observable
     {
     }
 
+    /**
+     * Method parse parses the ViewMessage containing the JSON serialization of the game model
+     * @param view
+     * @throws JsonProcessingException
+     */
     public void parse(ViewMessage view) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         String json = view.getJsonView();
@@ -44,6 +49,10 @@ public class LightView extends Observable
         updateLightView(lv);
     }
 
+    /**
+     * Method updateLightView updates the client view, after the deserialization of the model JSON
+     * @param newView
+     */
     public void updateLightView(LightView newView)
     {
 
@@ -83,6 +92,9 @@ public class LightView extends Observable
         }
     }
 
+    /**
+     * Method addNameToSchools sets the school owner for easier localization of the player school
+     */
     public void addNameToSchools()
     {
         for(LightTeam t: currentTeams)
@@ -92,6 +104,11 @@ public class LightView extends Observable
             }
     }
 
+    /** Method findPlayerByName returns the Player with the given name
+     * @param currentTeams  the teams to search the player name in
+     * @param player  the name of the player object to seek
+     * @return p, the correct player object
+     */
     public LightPlayer findPlayerByName(ArrayList<LightTeam> currentTeams, String player)
     {
         for(LightTeam t: currentTeams)

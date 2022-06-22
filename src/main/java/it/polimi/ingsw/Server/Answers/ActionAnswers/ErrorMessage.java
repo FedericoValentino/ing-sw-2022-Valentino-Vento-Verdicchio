@@ -1,18 +1,21 @@
 package it.polimi.ingsw.Server.Answers.ActionAnswers;
 
+import it.polimi.ingsw.Server.Answers.ActionAnswers.ACTIONANSWERTYPE;
+import it.polimi.ingsw.Server.Answers.ActionAnswers.StandardActionAnswer;
+
 public class ErrorMessage extends StandardActionAnswer
 {
 
 
-    private String error;
+    private ERRORTYPES error;
 
-    public ErrorMessage(String error)
+    public ErrorMessage(ERRORTYPES error)
     {
         this.error = error;
         super.type = ACTIONANSWERTYPE.ERROR;
     }
 
-    public String getError(){
+    public ERRORTYPES getError(){
         return error;
     }
 }

@@ -3,6 +3,7 @@ package it.polimi.ingsw.Server;
 
 
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.AvailableTeams;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.AvailableWizards;
@@ -54,6 +55,10 @@ public class GameHandler extends Thread implements Observer
     }
 
 
+    /**
+     * Method updateLastPlayer analyzes the current state of the game and decides whether to end it if it's the last turn or to just compute a new turn order
+     * @param phase the current gamePhase
+     */
     public void updateLastPlayer(GamePhase phase)
     {
         if(Checks.isLastTurn(mainController.getGame()) && Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION))
@@ -79,6 +84,12 @@ public class GameHandler extends Thread implements Observer
 
     }
 
+    /**
+     * method setupHandler handles the messages that could arrive during the setupPhase, team choice, wizard choice and
+     * player readiness
+     * @param message the message that needs to be handled
+     * @throws IOException
+     */
     public void setupHandler(StandardSetupMessage message) throws IOException
     {
         if(Checks.isGamePhase(mainController.getGame(), GamePhase.SETUP))
@@ -97,7 +108,7 @@ public class GameHandler extends Thread implements Observer
                         }
                         else
                         {
-                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, wrong input or Team already full" + ANSI_RESET)));
+                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.WRONG_INPUT)));
                         }
                     }
                     break;
@@ -109,7 +120,7 @@ public class GameHandler extends Thread implements Observer
                             mainController.getAvailableWizards().remove(wizard);
                             choseWizard = true;
                         } else {
-                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage( ANSI_RED_BACKGROUND + ANSI_BLACK + "Sorry, wrong input or Wizard already taken" + ANSI_RESET)));
+                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.WRONG_INPUT)));
                         }
                     }
                     break;
@@ -139,11 +150,18 @@ public class GameHandler extends Thread implements Observer
         }
         else
         {
-            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wrong Phase" + ANSI_RESET)));
+            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.WRONG_PHASE)));
         }
 
     }
 
+
+    /**
+     * method planningHandler handles the messages that could arrive during the planningPhase, the cloud choice and the
+     * assistant card choice
+     * @param message the message that needs to be handled
+     * @throws IOException
+     */
     public void planningHandler(StandardActionMessage message)
     {
         switch(message.type)
@@ -154,7 +172,7 @@ public class GameHandler extends Thread implements Observer
                 }
                 else
                 {
-                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Cloud is not empty or wrong index")));
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.CLOUD_ERROR)));
                 }
                 break;
             case DRAW_CHOICE:
@@ -197,18 +215,24 @@ public class GameHandler extends Thread implements Observer
                         }
                         else
                         {
-                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Wrong Card! It was already played!")));
+                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.CARD_ERROR)));
                         }
                     }
                     else
                     {
-                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage("Wrong Card Index")));
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.CARD_ERROR)));
                     }
                 }
                 break;
         }
     }
 
+    /**
+     * Method actionHandler handles the messages that could arrive during the actionPhase, student moves, mother nature
+     * moves, cloud choice for the entrance refill and the turn end message
+     * @param message the message that needs to be handled
+     * @throws IOException
+     */
     public void actionHandler(StandardActionMessage message)
     {
         switch(message.type)
@@ -237,7 +261,7 @@ public class GameHandler extends Thread implements Observer
                     if (Checks.isAcceptableMovementAmount(mainController.getGame(), mainController.getCurrentPlayer(), ((MoveMN) message).getAmount())) {
                         mainController.getActionController().MoveMN(((MoveMN) message).getAmount(), mainController.getGame());
                     } else {
-                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Too much movement" + ANSI_RESET)));
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.MOTHER_ERROR)));
                     }
                 }
                 break;
@@ -246,31 +270,13 @@ public class GameHandler extends Thread implements Observer
             case ENTRANCE_REFILL:
                 if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type)) {
                     if (!Checks.isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
-                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "You selected an empty Cloud" + ANSI_RESET)));
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.CLOUD_ERROR)));
                     } else {
                         mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
                     }
                 }
                 break;
 
-
-            case TURN_END:
-                if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type))
-                {
-                    if (Checks.isLastPlayer(mainController.getGame())) {
-                        updateLastPlayer(GamePhase.PLANNING);
-                    } else {
-                        mainController.determineNextPlayer();
-                    }
-                }
-                break;
-        }
-    }
-
-    public void characterHandler(StandardActionMessage message)
-    {
-        switch(message.type)
-        {
             case CHARACTER_PLAY:
                 if (CharacterController.isPickable(mainController.getGame(),
                         ((PlayCharacter) message).getCharacterName(),
@@ -294,9 +300,26 @@ public class GameHandler extends Thread implements Observer
                     }
                 }
                 break;
+
+
+            case TURN_END:
+                if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type))
+                {
+                    if (Checks.isLastPlayer(mainController.getGame())) {
+                        updateLastPlayer(GamePhase.PLANNING);
+                    } else {
+                        mainController.determineNextPlayer();
+                    }
+                }
+                break;
         }
     }
 
+    /**
+     * Method messageHandler decides wheter to redirect the handling of the game messages to the planningHandler method
+     * or the actionHandler
+     * @param message the message that needs to be handles
+     */
     public void messageHandler(StandardActionMessage message)
     {
         if(socket.getNickname().equals(mainController.getCurrentPlayer()))
@@ -307,30 +330,30 @@ public class GameHandler extends Thread implements Observer
                         planningHandler(message);
                 else
                 {
-                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wrong Phase, you are in Action Phase!" + ANSI_RESET)));
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.WRONG_PHASE)));
                 }
             }
             else
             {
                 if(Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION))
                 {
-                    if(message.type == ACTIONMESSAGETYPE.CHARACTER_PLAY || message.type == ACTIONMESSAGETYPE.CHARACTER_ACTIVATE)
-                        characterHandler(message);
-                    else
-                        actionHandler(message);
+                    actionHandler(message);
                 }
                 else
                 {
-                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wrong Phase, you are in Planning Phase!" + ANSI_RESET)));
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.WRONG_PHASE)));
                 }
             }
         }
         else
         {
-            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ANSI_RED_BACKGROUND + ANSI_BLACK + "Wait for your turn!" + ANSI_RESET)));
+            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.WRONG_TURN)));
         }
     }
 
+    /**
+     * Method readMessage reads messages coming from the client and redirects them to the correct handler
+     */
     public void readMessage()
     {
         try
@@ -358,6 +381,11 @@ public class GameHandler extends Thread implements Observer
         }
     }
 
+    /**
+     * Method run is the method that every thread runs. It handles the communication with the client telling it 2 main things:
+     * 1) if a winner is detected it will alert the client with a win message
+     * 2) if the game is starting it will tell the client which teams are available to join and which wizards are available to choose
+     */
     @Override
     public void run()
     {
@@ -392,6 +420,10 @@ public class GameHandler extends Thread implements Observer
     }
 
 
+    /**
+     * The update function is run after every successful client interaction with the model. It sends the client a view message, containing the json serialization of the game model
+     * @param message
+     */
     @Override
     public void update(String message)
     {

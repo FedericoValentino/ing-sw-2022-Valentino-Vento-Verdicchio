@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.GUI;
 
 import it.polimi.ingsw.Client.ClientView;
+import it.polimi.ingsw.Client.ErrorGenerator;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.IntroController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.LobbyController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.RejectionController;
@@ -31,7 +32,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ClientGUI implements ClientView
+public class ClientGUI implements ClientView, ErrorGenerator
 {
     private GuiMainStarter guiMainStarter;
     private SerializedAnswer input;
@@ -231,7 +232,7 @@ public class ClientGUI implements ClientView
             case ERROR:
                 if(firstView)
                 {
-                    mbc.DisplayError(((ErrorMessage)answer).getError());
+                    mbc.DisplayError(errorGenerator(((ErrorMessage)answer).getError(), MyView));
                 }
                 break;
             case VIEW:

@@ -21,11 +21,20 @@ public class Server
    private ArrayList<Match> matches = new ArrayList<>();
    private boolean isGameSet = false;
 
+
+   /**
+    * Class Constructor
+    * @throws IOException
+    */
    public Server() throws IOException
    {
        this.server = new ServerSocket(PORT);
    }
 
+   /**
+    * Method registerConnection registers the clients connecting to the server adding them to the server waitLobby
+    * @param s
+    */
    public void registerConnection(Socket s)
    {
 
@@ -58,6 +67,11 @@ public class Server
       }
    }
 
+   /**
+    * Method requestGameInfo asks the first client connecting to the waitLobby what gameMode he would like to play
+    * @param client
+    * @return the requested GameMode
+    */
    public GameMode requestGameInfo(ClientConnection client)
    {
       try
@@ -83,6 +97,9 @@ public class Server
       return new GameMode();
    }
 
+   /**
+    * Method run starts up the server making it accept connections and creating a new Match every time enough clients connect
+    */
    public void run()
    {
       GameMode info = new GameMode();

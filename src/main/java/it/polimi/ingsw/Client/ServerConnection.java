@@ -21,14 +21,24 @@ public class ServerConnection
     private boolean connected = false;
 
 
+    /**
+     * Class Constructor saves the parameters to send to the server after connecting
+     * @param nickname
+     * @param serverIP
+     * @throws IOException
+     */
     public ServerConnection(String nickname, String serverIP) throws IOException
     {
         this.nickname = nickname;
         this.ServerIP = serverIP;
     }
 
+    /**
+     * Method establishConnection tries to connect to the server
+     * @throws IOException
+     */
     public void establishConnection() throws IOException {
-        server = new Socket(ServerIP, 1234);
+        server = new Socket(ServerIP, PORT);
         out = new ObjectOutputStream(server.getOutputStream());
         in = new ObjectInputStream(server.getInputStream());
 
@@ -40,6 +50,10 @@ public class ServerConnection
     }
 
 
+    /**
+     * Sends a SerializedMessage to the server
+     * @param answer
+     */
     public void sendMessage(SerializedMessage answer)
     {
         try {
