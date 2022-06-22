@@ -8,11 +8,19 @@ import java.util.ArrayList;
 public class PlayCharacter extends StandardActionMessage
 {
     private CharacterName name;
-    private ArrayList<Integer> student = new ArrayList<>();
-    private ArrayList<Integer> island = new ArrayList<>();
+    private ArrayList<Integer> student;
+    private ArrayList<Integer> island;
     private String currentPlayer;
     private Col studentColor;
 
+    /**
+     * Class Constructor, this message is used to activate a character during the action phase
+     * @param name the character we want to activate
+     * @param student an arraylist of positions
+     * @param island an arraylist of positions
+     * @param currentPlayer the player that wants to activate the card
+     * @param studentColor the color of the students the card has the effect on
+     */
     public PlayCharacter(CharacterName name, ArrayList<Integer> student, ArrayList<Integer> island, String currentPlayer, Col studentColor) {
         this.name = name;
         this.student = student;

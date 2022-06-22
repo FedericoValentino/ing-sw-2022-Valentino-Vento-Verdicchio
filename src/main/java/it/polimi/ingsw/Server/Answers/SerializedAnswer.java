@@ -12,12 +12,20 @@ public class SerializedAnswer implements Serializable
     private StandardSetupAnswer command;
     private StandardActionAnswer action;
 
+    /**
+     * Constructor for a game message
+     * @param m
+     */
     public SerializedAnswer(StandardActionAnswer m)
     {
         this.command = null;
         this.action = m;
     }
 
+    /**
+     * Constructor for a setup message
+     * @param m
+     */
     public SerializedAnswer(StandardSetupAnswer m)
     {
         this.command = m;

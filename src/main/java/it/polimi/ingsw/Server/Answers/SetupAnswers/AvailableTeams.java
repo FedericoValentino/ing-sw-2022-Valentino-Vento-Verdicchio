@@ -5,6 +5,10 @@ public class AvailableTeams extends StandardSetupAnswer
 {
     private int[] availableTeams;
 
+    /**
+     * Class Constructor, this message is used to tell the clients the available team slots
+     * @param teams
+     */
     public AvailableTeams(int[] teams)
     {
         this.availableTeams = teams;

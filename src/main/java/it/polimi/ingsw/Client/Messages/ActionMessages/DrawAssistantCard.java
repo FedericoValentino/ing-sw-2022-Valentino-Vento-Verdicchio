@@ -4,6 +4,10 @@ public class DrawAssistantCard extends StandardActionMessage
 {
     public int cardIndex;
 
+    /**
+     * Class Constructor, this message is used to draw an assistant card from our hand
+     * @param cardIndex
+     */
     public DrawAssistantCard(int cardIndex)
     {
         this.cardIndex = cardIndex;

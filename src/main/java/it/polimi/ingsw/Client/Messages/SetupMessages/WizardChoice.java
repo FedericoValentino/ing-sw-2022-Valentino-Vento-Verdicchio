@@ -6,6 +6,10 @@ public class WizardChoice extends StandardSetupMessage
 {
     private Wizard wizard;
 
+    /**
+     * Class Constructor, this message is used to tell the server about the player's wizard choice
+     * @param w
+     */
     public WizardChoice(Wizard w)
     {
         this.wizard = w;

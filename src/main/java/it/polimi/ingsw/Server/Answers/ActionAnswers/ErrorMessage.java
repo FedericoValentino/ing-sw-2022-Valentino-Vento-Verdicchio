@@ -9,6 +9,10 @@ public class ErrorMessage extends StandardActionAnswer
 
     private ERRORTYPES error;
 
+    /**
+     * Class Constructor, this message is used to tell the client about his errors
+     * @param error
+     */
     public ErrorMessage(ERRORTYPES error)
     {
         this.error = error;

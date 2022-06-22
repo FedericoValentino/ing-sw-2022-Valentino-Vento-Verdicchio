@@ -11,12 +11,20 @@ public class SerializedMessage implements Serializable
     private StandardSetupMessage command;
     private StandardActionMessage action;
 
+    /**
+     * Constructor for a game message
+     * @param m
+     */
     public SerializedMessage(StandardActionMessage m)
     {
         this.command = null;
         this.action = m;
     }
 
+    /**
+     * Constructor for a setup message
+     * @param m
+     */
     public SerializedMessage(StandardSetupMessage m)
     {
         this.command = m;

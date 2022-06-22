@@ -152,18 +152,6 @@ public class ClientCLI implements ClientView, ErrorGenerator
                     System.out.println("Error in processing view, show commands aren't available");
                 }
                 break;
-            case CLOUD_REQ:
-                System.out.println(((RequestCloud) answer).getMessage());
-                break;
-            case CARD_REQ:
-                System.out.println("Choose an Assistant Card");
-                break;
-            case STUD_REQ:
-                System.out.println("Move a student from your entrance");
-                break;
-            case MN_REQ:
-                System.out.println("Move Mother Nature");
-                break;
             case WIN:
                 System.out.println(((WinMessage) answer).getWinningTeam());
                 System.exit(0);

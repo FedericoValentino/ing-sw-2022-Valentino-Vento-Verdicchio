@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class AvailableWizards extends StandardSetupAnswer {
     private ArrayList<Wizard> available;
 
+    /**
+     * Class Constructor, this message is used to tell the clients the available wizards
+     * @param available
+     */
     public AvailableWizards(ArrayList<Wizard> available)
     {
         this.available = available;

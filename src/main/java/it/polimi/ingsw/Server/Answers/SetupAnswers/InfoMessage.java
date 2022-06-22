@@ -3,6 +3,10 @@ package it.polimi.ingsw.Server.Answers.SetupAnswers;
 public class InfoMessage extends StandardSetupAnswer {
     private String info;
 
+    /**
+     * Class Constructor, used to tell the client whichever information is in the input string
+     * @param input
+     */
     public InfoMessage(String input)
     {
         this.info = input;

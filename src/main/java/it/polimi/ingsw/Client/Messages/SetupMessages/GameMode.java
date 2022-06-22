@@ -5,6 +5,9 @@ public class GameMode extends StandardSetupMessage
     private int maxPlayers;
     private boolean expertGame;
 
+    /**
+     * Class Constructor, this message is used to tell the server the desired game mode
+     */
     public GameMode()
     {
         super.type = SETUPMESSAGETYPE.MODE;
