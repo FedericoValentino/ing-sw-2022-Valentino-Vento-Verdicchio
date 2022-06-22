@@ -148,6 +148,7 @@ public class MineSchoolController implements ObserverLightView
             LightSchool school = (LightSchool) o;
             String TowerColorPath = getSchoolColorPath(school);
             //Updating ChoiceBox
+            islands.getItems().clear();
             for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
             {
                 islands.getItems().add(Integer.toString(i));
