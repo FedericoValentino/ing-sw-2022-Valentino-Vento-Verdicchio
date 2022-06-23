@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public abstract class Controller {
 
-    /**that's the link to the gui **/
+    /**That's the reference to the gui **/
     protected static GuiMainStarter guiMainStarter;
 
 
@@ -22,7 +22,6 @@ public abstract class Controller {
      * @param path is the path that must be load by the parameter loader
      * @return loader, the FXMLLoader object
      */
-    /*Funzione che fa il load di una nuova schermata associandoci il controller specifico*/
     public FXMLLoader loadNewScreen(String path){
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
@@ -36,9 +35,6 @@ public abstract class Controller {
 
         return loader;
     }
-
-
-
 
     public void setGuiMainStarter(GuiMainStarter gms)
     {
