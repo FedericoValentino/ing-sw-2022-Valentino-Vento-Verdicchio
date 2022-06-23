@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class LightActiveDeck extends Observable
 {
     private ArrayList<LightCharacterCard> lightActiveDeck;
+    private LightCharacterFactory factory = new LightCharacterFactory();
 
     public LightActiveDeck(ArrayList<CharacterCard> cards)
     {
-        LightCharacterFactory factory = new LightCharacterFactory();
         this.lightActiveDeck = new ArrayList<>();
         for(CharacterCard card : cards)
         {
