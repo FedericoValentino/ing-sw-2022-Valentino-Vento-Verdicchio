@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little change  in student pane in mine school (add the remove of the effect)">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Add the invisibility to the students that doesn't have a counter more then 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Island.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Island.fxml" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -247,14 +246,7 @@
       <workItem from="1655720087290" duration="3517000" />
       <workItem from="1655923958330" duration="7413000" />
       <workItem from="1655935574071" duration="1775000" />
-      <workItem from="1655938708797" duration="17683000" />
-    </task>
-    <task id="LOCAL-00115" summary="First step in better implementation of client side character cards">
-      <created>1655067993300</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1655067993300</updated>
+      <workItem from="1655938708797" duration="19124000" />
     </task>
     <task id="LOCAL-00116" summary="Same, but code with me">
       <created>1655068014455</created>
@@ -592,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655995743932</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="Add the invisibility to the students that doesn't have a counter more then 1">
+      <created>1655999097401</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1655999097401</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +621,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Little change in Team choice (not already finished)" />
     <MESSAGE value="Final change in tower choice" />
     <MESSAGE value="Tower's update" />
     <MESSAGE value="Improved the effects of Minstrel and Jester" />
@@ -647,7 +645,8 @@
     <MESSAGE value="Little changes in the error pane" />
     <MESSAGE value="Little change  in student pane in mine school" />
     <MESSAGE value="Little change  in student pane in mine school (add the remove of the effect)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little change  in student pane in mine school (add the remove of the effect)" />
+    <MESSAGE value="Add the invisibility to the students that doesn't have a counter more then 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the invisibility to the students that doesn't have a counter more then 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -78,14 +78,44 @@ public class IslandController extends Controller {
         this.MN = Mother;
         islandID = ID;
         this.totalIslands = total;
+
+
+
+
+        studentPlacing(island);
+
+
+
+
+        motherNature.setVisible(island.isMotherNature());
+        noEntry.setVisible(island.isNoEntry());
+        islandPane.setOnMouseClicked(this::onClick);
+        if(island.getOwnership() != null)
+        {
+            ownerShip.getChildren().clear();
+            ImageView ownershipImage = new ImageView(getTowerColorPath(island.getOwnership()));
+            ownershipImage.setFitWidth(21);
+            ownershipImage.setFitHeight(21);
+            ownerShip.getChildren().add(ownershipImage);
+            ownerShip.setVisible(true);
+            towerNumber.setText(Integer.toString(island.getTowerNumber()));
+            towerNumber.setVisible(true);
+        }
+
+    }
+
+
+    void studentPlacing(LightIsland island)
+    {
+
         long counterTemp=0;
 
         counterTemp= island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count();
         if(counterTemp>0)
             blueStudents.setText(Long.toString(counterTemp));
-        else
+       else
         {
-            blueStudents.setVisible(false);
+            blueStudents.setText("");
             stud_blue.setVisible(false);
         }
 
@@ -124,22 +154,5 @@ public class IslandController extends Controller {
             greenStudents.setVisible(false);
             stud_green.setVisible(false);
         }
-
-
-        motherNature.setVisible(island.isMotherNature());
-        noEntry.setVisible(island.isNoEntry());
-        islandPane.setOnMouseClicked(this::onClick);
-        if(island.getOwnership() != null)
-        {
-            ownerShip.getChildren().clear();
-            ImageView ownershipImage = new ImageView(getTowerColorPath(island.getOwnership()));
-            ownershipImage.setFitWidth(21);
-            ownershipImage.setFitHeight(21);
-            ownerShip.getChildren().add(ownershipImage);
-            ownerShip.setVisible(true);
-            towerNumber.setText(Integer.toString(island.getTowerNumber()));
-            towerNumber.setVisible(true);
-        }
-
     }
 }
