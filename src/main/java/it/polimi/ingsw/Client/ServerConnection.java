@@ -2,7 +2,6 @@ package it.polimi.ingsw.Client;
 
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.Messages.SetupMessages.SetupConnection;
-import it.polimi.ingsw.Client.PreemptiveChecks.GeneralChecks;
 
 
 import java.io.IOException;

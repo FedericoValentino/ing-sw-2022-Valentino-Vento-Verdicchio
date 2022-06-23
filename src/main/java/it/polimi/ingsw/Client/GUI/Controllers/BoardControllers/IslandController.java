@@ -8,6 +8,7 @@ import it.polimi.ingsw.Client.Messages.ActionMessages.MoveMN;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.model.boards.token.Student;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -26,6 +27,7 @@ public class IslandController extends Controller {
     @FXML private ImageView stud_red;
     @FXML private ImageView stud_yellow;
     @FXML private ImageView stud_pink;
+    @FXML private ImageView islandImage;
     @FXML private Text blueStudents;
     @FXML private Text redStudents;
     @FXML private Text pinkStudents;
@@ -79,13 +81,7 @@ public class IslandController extends Controller {
         islandID = ID;
         this.totalIslands = total;
 
-
-
-
         studentPlacing(island);
-
-
-
 
         motherNature.setVisible(island.isMotherNature());
         noEntry.setVisible(island.isNoEntry());
@@ -102,6 +98,7 @@ public class IslandController extends Controller {
             towerNumber.setVisible(true);
         }
 
+        islandImage.setImage(new Image("/Client/GUI/Images/Islands/island"+Integer.toString(ID%3)+".png"));
     }
 
 

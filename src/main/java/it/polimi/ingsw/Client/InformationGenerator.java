@@ -4,7 +4,9 @@ import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
 import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 
-public interface ErrorGenerator
+import java.util.ArrayList;
+
+public interface InformationGenerator
 {
     /**
      * Factory Method to produce the correct error message string
@@ -12,7 +14,7 @@ public interface ErrorGenerator
      * @param view our current LightView
      * @return a string containing the error information
      */
-    default String errorGenerator(ERRORTYPES error, LightView view)
+    default InternalMessage errorGenerator(ERRORTYPES error, LightView view)
     {
         switch(error)
         {

@@ -1,7 +1,7 @@
 package it.polimi.ingsw.Client.CLI;
 
 import it.polimi.ingsw.Client.ClientView;
-import it.polimi.ingsw.Client.ErrorGenerator;
+import it.polimi.ingsw.Client.InformationGenerator;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.*;
@@ -22,7 +22,7 @@ import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ClientCLI implements ClientView, ErrorGenerator
+public class ClientCLI implements ClientView, InformationGenerator
 {
     private ServerConnection main;
     private InputParser stdin;
@@ -131,7 +131,7 @@ public class ClientCLI implements ClientView, ErrorGenerator
         switch(answer.getType())
         {
             case ERROR:
-                System.out.println(errorGenerator(((ErrorMessage)answer).getError(), MyView));
+                System.out.println(errorGenerator(((ErrorMessage)answer).getError(), MyView).getInfoMessage());
                 break;
             case START_NFO:
                 System.out.println("Your Turn, start playing!");
@@ -144,7 +144,7 @@ public class ClientCLI implements ClientView, ErrorGenerator
                     System.out.println(MyView.getCurrentTurnState().getGamePhase());
                     if(main.getNickname().equals(MyView.getCurrentTurnState().getCurrentPlayer()))
                     {
-                        System.out.println(MyView.getInformations().informationCreator(MyView.getCurrentTurnState(), MyView.getCurrentTeams()).getInfoMessage());
+                        System.out.println(informationCreator(MyView.getCurrentTurnState(), MyView.getCurrentTeams()).getInfoMessage());
                     }
                 }
                 catch(JsonProcessingException e)

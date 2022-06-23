@@ -1,7 +1,5 @@
 package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
 
-import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.CloudController;
-import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandController;
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Observer.ObserverLightView;
@@ -80,7 +78,7 @@ public class IslandsController extends Controller implements ObserverLightView {
                 islandController.setup(island, id, view.getCurrentMotherNature(), lightIslands.getIslands().size());
                 islandContainer.setLayoutX(350 + 75 * Math.cos(startingAngle) + (radius * Math.cos(startingAngle)));
                 islandContainer.setLayoutY(225 - 25 * Math.sin(startingAngle) - (radius * Math.sin(startingAngle)));
-                startingAngle += deltaTheta;
+                startingAngle -= deltaTheta;
                 mainIslandBoard.getChildren().add(islandContainer);
                 id++;
             }

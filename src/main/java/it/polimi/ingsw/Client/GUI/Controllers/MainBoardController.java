@@ -15,14 +15,12 @@ import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharDeck;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharacterCard;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
-import it.polimi.ingsw.Client.LightView.LightUtilities.InfoDispenser;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
 import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -32,7 +30,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,10 +69,10 @@ public class MainBoardController extends Controller {
 
 
     /**
-     * This method it's called when the mainBoardController is setted for the first time.
+     * This method it's called when the mainBoardController is set for the first time.
      * Firstly it loads the island's fxml from the specified path into the FXMLLoader object called loader.
      * Then it replaces the content of the islandAnchorPane with the loader's one.
-     * Lastly it creates the reference to the IslandController and it calls the setup method specified in it.
+     * Lastly it creates the reference to the IslandController, and it calls the setup method specified in it.
      * **/
     public void initialSetupIsland(LightView view) throws IOException {
         String path= "/Client/GUI/Controllers/Islands.fxml";
@@ -88,7 +85,7 @@ public class MainBoardController extends Controller {
 
 
     /**
-     * This method it's called when the mainBoardController is setted for the first time.
+     * This method it's called when the mainBoardController is set for the first time.
      * Firstly it loads the Assistant fxml from the specified path into the FXMLLoader object called loader.
      * Then it replaces the content of the assistantCardAnchorPane with the loader's one.
      * Lastly it creates the reference to the AssistantCardController, store the value of the current player into the
@@ -116,7 +113,7 @@ public class MainBoardController extends Controller {
     }
 
 
-    public void initialSetupMineSchool(ArrayList<LightTeam> lightTeams) throws IOException {
+    public void initialSetupMineSchool() throws IOException {
         String path= "/Client/GUI/Controllers/MineSchool.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         mineSchoolAnchorPane.getChildren().clear();
@@ -128,7 +125,7 @@ public class MainBoardController extends Controller {
         controller.setup(view, player, mineSchoolAnchorPane);
     }
 
-    public void initialSetupPropaganda(LightView view, InfoDispenser infos) throws IOException
+    public void initialSetupPropaganda(LightView view) throws IOException
     {
         String path = "/Client/GUI/Controllers/Propaganda.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
@@ -136,7 +133,7 @@ public class MainBoardController extends Controller {
         buttonAreaAnchorPane.getChildren().add(0,loader.load());
         PropagandaController propagandaController = loader.getController();
 
-        propagandaController.setup(infos, view);
+        propagandaController.setup(view);
     }
 
 
@@ -278,9 +275,7 @@ public class MainBoardController extends Controller {
                         Pane studentPane = new Pane();
                         studentPane.setId(String.valueOf(studentPosition));
                         studentPane.setOnMouseClicked((MouseEvent) ->
-                        {
-                            integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
-                        });
+                                integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId())));
                         studentPane.getChildren().add(image);
                         students.getChildren().add(studentPane);
                     }
@@ -299,9 +294,7 @@ public class MainBoardController extends Controller {
                         box.getItems().add(i);
                     }
                     box.setOnAction((Event) ->
-                    {
-                        integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
-                    });
+                            integerChoice_1.add(box.getSelectionModel().getSelectedIndex()));
                     islandChoice.getChildren().add(box);
                     ParametersSlice.getChildren().clear();
                     ParametersSlice.getChildren().add(islandChoice);
@@ -442,9 +435,7 @@ public class MainBoardController extends Controller {
                         box.getItems().add(i);
                     }
                     box.setOnAction((Event) ->
-                    {
-                        integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
-                    });
+                            integerChoice_1.add(box.getSelectionModel().getSelectedIndex()));
                     islandChoice.getChildren().add(box);
 
                     cardParameters.getChildren().add(islandChoice);

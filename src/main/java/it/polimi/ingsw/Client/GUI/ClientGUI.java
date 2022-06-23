@@ -1,7 +1,7 @@
 package it.polimi.ingsw.Client.GUI;
 
 import it.polimi.ingsw.Client.ClientView;
-import it.polimi.ingsw.Client.ErrorGenerator;
+import it.polimi.ingsw.Client.InformationGenerator;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.IntroController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.LobbyController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.RejectionController;
@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ClientGUI implements ClientView, ErrorGenerator
+public class ClientGUI implements ClientView, InformationGenerator
 {
     private GuiMainStarter guiMainStarter;
     private SerializedAnswer input;
@@ -232,7 +232,7 @@ public class ClientGUI implements ClientView, ErrorGenerator
             case ERROR:
                 if(firstView)
                 {
-                    mbc.DisplayError(errorGenerator(((ErrorMessage)answer).getError(), MyView));
+                    mbc.DisplayError(errorGenerator(((ErrorMessage)answer).getError(), MyView).getInfoMessage());
                 }
                 break;
             case VIEW:
@@ -252,9 +252,9 @@ public class ClientGUI implements ClientView, ErrorGenerator
                                 mbc.initialSetupOtherSchool(lightView.getCurrentTeams());
                                 mbc.initialSetupAssistantCard(lightView.getCurrentTeams());
                                 mbc.initialSetupIsland(lightView);
-                                mbc.initialSetupMineSchool(lightView.getCurrentTeams());
+                                mbc.initialSetupMineSchool();
                                 mbc.initialSetupCharacterCard(lightView.getCurrentCharacterDeck(), lightView.getCurrentActiveCharacterCard());
-                                mbc.initialSetupPropaganda(lightView, lightView.getInformations());
+                                mbc.initialSetupPropaganda(lightView);
                             } catch (IOException e)
                             {
                                 e.printStackTrace();

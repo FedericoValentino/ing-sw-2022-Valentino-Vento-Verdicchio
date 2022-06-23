@@ -58,7 +58,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island1.png" />
+                  <Image url="@../Images/Islands/island0.png" />
                </image>
             </ImageView>
          </children>
@@ -67,7 +67,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island2.png" />
+                  <Image url="@../Images/Islands/island1.png" />
                </image>
             </ImageView>
          </children>
@@ -76,7 +76,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island1.png" />
+                  <Image url="@../Images/Islands/island0.png" />
                </image>
             </ImageView>
          </children>
@@ -85,7 +85,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island3.png" />
+                  <Image url="@../Images/Islands/island2.png" />
                </image>
             </ImageView>
          </children>
@@ -94,7 +94,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island3.png" />
+                  <Image url="@../Images/Islands/island2.png" />
                </image>
             </ImageView>
          </children>
@@ -103,7 +103,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island2.png" />
+                  <Image url="@../Images/Islands/island1.png" />
                </image>
             </ImageView>
          </children>
@@ -112,7 +112,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island3.png" />
+                  <Image url="@../Images/Islands/island2.png" />
                </image>
             </ImageView>
          </children>
@@ -121,7 +121,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island3.png" />
+                  <Image url="@../Images/Islands/island2.png" />
                </image>
             </ImageView>
          </children>
@@ -130,7 +130,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island3.png" />
+                  <Image url="@../Images/Islands/island2.png" />
                </image>
             </ImageView>
          </children>
@@ -139,7 +139,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island3.png" />
+                  <Image url="@../Images/Islands/island2.png" />
                </image>
             </ImageView>
          </children>
@@ -148,7 +148,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island3.png" />
+                  <Image url="@../Images/Islands/island2.png" />
                </image>
             </ImageView>
          </children>
@@ -157,7 +157,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
-                  <Image url="@../Images/Islands/island3.png" />
+                  <Image url="@../Images/Islands/island2.png" />
                </image>
             </ImageView>
          </children>

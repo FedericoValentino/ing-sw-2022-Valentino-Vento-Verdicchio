@@ -28,7 +28,6 @@ public class LightView extends Observable
     private LightTurnState currentTurnState;
     private int bankBalance;
 
-    private InfoDispenser informations = new InfoDispenser();
 
     public LightView()
     {
@@ -172,10 +171,6 @@ public class LightView extends Observable
     public LightTurnState getCurrentTurnState()
     {
         return currentTurnState;
-    }
-
-    public InfoDispenser getInformations(){
-        return informations;
     }
 
     public int getBankBalance() {

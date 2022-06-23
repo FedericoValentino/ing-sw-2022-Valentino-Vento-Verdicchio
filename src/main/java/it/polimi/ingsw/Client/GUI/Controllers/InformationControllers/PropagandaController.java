@@ -24,16 +24,14 @@ public class PropagandaController extends Controller implements ObserverLightVie
     @FXML private Button exit;
     @FXML private Button playersInfo;
 
-    private InfoDispenser infoGenerator;
     private LightView view;
 
-    public void setup(InfoDispenser infoDispenser, LightView view)
+    public void setup(LightView view)
     {
         endTurn.setOnMouseClicked(this:: endTurnOnClick);
         exit.setOnMouseClicked(this:: exitOnClick);
         playersInfo.setOnMouseClicked(this:: infosOnClick);
 
-        this.infoGenerator = infoDispenser;
         this.view = view;
 
         view.getCurrentTurnState().addObserverLight(this);
@@ -45,7 +43,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
     {
         Text hint = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("hints")).collect(Collectors.toList()).get(0));
         hint.setText("");
-        hint.setText(infoGenerator.informationCreator(view.getCurrentTurnState(), view.getCurrentTeams()).getInfoMessage());
+        hint.setText(GuiMainStarter.getClientGUI().informationCreator(view.getCurrentTurnState(), view.getCurrentTeams()).getInfoMessage());
     }
 
     private void infosOnClick(MouseEvent mouseEvent)
