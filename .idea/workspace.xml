@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes in the error pane">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/MineSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/MineSchoolController.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -247,14 +246,7 @@
       <workItem from="1655720087290" duration="3517000" />
       <workItem from="1655923958330" duration="7413000" />
       <workItem from="1655935574071" duration="1775000" />
-      <workItem from="1655938708797" duration="12637000" />
-    </task>
-    <task id="LOCAL-00112" summary="Changes in warning, public/private XJML import and other small things">
-      <created>1654895682739</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1654895682739</updated>
+      <workItem from="1655938708797" duration="14403000" />
     </task>
     <task id="LOCAL-00113" summary="uuuh strange occurence">
       <created>1655061967169</created>
@@ -592,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655980915883</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="Little changes in the error pane">
+      <created>1655992596985</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1655992596985</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +610,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors" />
     <MESSAGE value="Changes in lightPlayer, island e wizard controller" />
     <MESSAGE value="Adding css stylesheet to the majority of the controllers" />
     <MESSAGE value="Little change in Team choice (not already finished)" />
@@ -636,7 +634,8 @@
     <MESSAGE value="Little docu about WizardController" />
     <MESSAGE value="Little docu about ReadyController" />
     <MESSAGE value="Little changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little changes" />
+    <MESSAGE value="Little changes in the error pane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little changes in the error pane" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

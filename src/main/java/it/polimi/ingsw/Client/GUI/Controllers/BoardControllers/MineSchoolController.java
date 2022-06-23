@@ -56,11 +56,13 @@ public class MineSchoolController implements ObserverLightView
     public void sendDining(MouseEvent event)
     {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, false, 0)));
+        studentChoice.setVisible(false);
     }
 
     public void sendIsland(MouseEvent event)
     {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, true, Integer.parseInt((String)islands.getValue()))));
+        studentChoice.setVisible(false);
     }
 
     public void setup(LightView view,String PlayerName, AnchorPane School)
