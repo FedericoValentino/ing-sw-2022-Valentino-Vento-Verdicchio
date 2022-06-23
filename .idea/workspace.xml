@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes in the error pane">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little change  in student pane in mine school">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/MineSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/MineSchoolController.java" afterDir="false" />
     </list>
@@ -246,14 +246,7 @@
       <workItem from="1655720087290" duration="3517000" />
       <workItem from="1655923958330" duration="7413000" />
       <workItem from="1655935574071" duration="1775000" />
-      <workItem from="1655938708797" duration="14403000" />
-    </task>
-    <task id="LOCAL-00113" summary="uuuh strange occurence">
-      <created>1655061967169</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1655061967169</updated>
+      <workItem from="1655938708797" duration="15177000" />
     </task>
     <task id="LOCAL-00114" summary="Again, someone did strange refactors...">
       <created>1655062120983</created>
@@ -591,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655992596985</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="Little change  in student pane in mine school">
+      <created>1655994771842</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1655994771842</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +610,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes in lightPlayer, island e wizard controller" />
     <MESSAGE value="Adding css stylesheet to the majority of the controllers" />
     <MESSAGE value="Little change in Team choice (not already finished)" />
     <MESSAGE value="Final change in tower choice" />
@@ -635,7 +634,8 @@
     <MESSAGE value="Little docu about ReadyController" />
     <MESSAGE value="Little changes" />
     <MESSAGE value="Little changes in the error pane" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little changes in the error pane" />
+    <MESSAGE value="Little change  in student pane in mine school" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little change  in student pane in mine school" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
