@@ -22,6 +22,7 @@ import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -31,6 +32,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -524,7 +526,6 @@ public class MainBoardController extends Controller {
     {
         ErrorDisplay.setVisible(true);
         ErrorDisplay.setMouseTransparent(false);
-        ErrorMessage.setText("");
         ErrorMessage.setText(error);
     }
 

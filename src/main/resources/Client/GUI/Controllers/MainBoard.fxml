@@ -144,14 +144,18 @@
             </VBox>
          </children>
       </Pane>
-      <Pane fx:id="ErrorDisplay" layoutX="1200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white;" visible="false">
+      <Pane fx:id="ErrorDisplay" layoutX="670.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: white;" visible="false">
          <children>
-            <Text fx:id="ErrorMessage" fill="RED" layoutX="161.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ErrorMessage" textAlignment="CENTER">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Text>
-            <Button fx:id="CloseError" layoutX="362.0" layoutY="14.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="18.0" text="X" />
+            <Button fx:id="CloseError" layoutX="138.0" layoutY="74.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="18.0" text="X" />
+            <HBox layoutY="14.0" prefHeight="50.0" prefWidth="300.0" style="-fx-alignment: center;">
+               <children>
+                  <Text fx:id="ErrorMessage" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="ErrorMessage" textAlignment="CENTER">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
          </children>
       </Pane>
    </children>
