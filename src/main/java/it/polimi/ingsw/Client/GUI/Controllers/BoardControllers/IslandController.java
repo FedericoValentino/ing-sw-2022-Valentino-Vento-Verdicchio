@@ -6,6 +6,7 @@ import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Client.LightView.LightToken.LightMotherNature;
 import it.polimi.ingsw.Client.Messages.ActionMessages.MoveMN;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.model.boards.token.Student;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -15,9 +16,16 @@ import javafx.scene.text.Text;
 import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 
+import java.util.ArrayList;
+
 
 public class IslandController extends Controller {
 
+    @FXML private ImageView stud_green;
+    @FXML private ImageView stud_blue;
+    @FXML private ImageView stud_red;
+    @FXML private ImageView stud_yellow;
+    @FXML private ImageView stud_pink;
     @FXML private Text blueStudents;
     @FXML private Text redStudents;
     @FXML private Text pinkStudents;
@@ -70,11 +78,54 @@ public class IslandController extends Controller {
         this.MN = Mother;
         islandID = ID;
         this.totalIslands = total;
-        blueStudents.setText(Long.toString(island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count()));
-        redStudents.setText(Long.toString(island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.RED).count()));
-        pinkStudents.setText(Long.toString(island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.PINK).count()));
-        yellowStudents.setText(Long.toString(island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.YELLOW).count()));
-        greenStudents.setText(Long.toString(island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.GREEN).count()));
+        long counterTemp=0;
+
+        counterTemp= island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count();
+        if(counterTemp>0)
+            blueStudents.setText(Long.toString(counterTemp));
+        else
+        {
+            blueStudents.setVisible(false);
+            stud_blue.setVisible(false);
+        }
+
+        counterTemp=island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.RED).count();
+        if(counterTemp>0)
+            redStudents.setText(Long.toString(counterTemp));
+        else
+        {
+            redStudents.setVisible(false);
+            stud_red.setVisible(false);
+        }
+
+        counterTemp=island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.PINK).count();
+        if(counterTemp>0)
+            pinkStudents.setText(Long.toString(counterTemp));
+        else
+        {
+            pinkStudents.setVisible(false);
+            stud_pink.setVisible(false);
+        }
+
+        counterTemp=island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.YELLOW).count();
+        if(counterTemp>0)
+            yellowStudents.setText(Long.toString(counterTemp));
+        else
+        {
+            yellowStudents.setVisible(false);
+            stud_yellow.setVisible(false);
+        }
+
+        counterTemp=island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.GREEN).count();
+        if(counterTemp>0)
+            greenStudents.setText(Long.toString(counterTemp));
+        else
+        {
+            greenStudents.setVisible(false);
+            stud_green.setVisible(false);
+        }
+
+
         motherNature.setVisible(island.isMotherNature());
         noEntry.setVisible(island.isNoEntry());
         islandPane.setOnMouseClicked(this::onClick);

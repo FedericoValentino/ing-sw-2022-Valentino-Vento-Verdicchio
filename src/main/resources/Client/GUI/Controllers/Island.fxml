@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="islandPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandController">
+<AnchorPane fx:id="islandPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandController">
    <children>
       <ImageView fx:id="islandImage" fitHeight="200.0" fitWidth="200.0">
          <image>
             <Image url="@../Images/Islands/island2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="48.0" layoutY="69.0">
+      <ImageView fx:id="stud_green" fitHeight="27.0" fitWidth="28.0" layoutX="48.0" layoutY="69.0">
          <image>
             <Image url="@../Images/Student/student_green.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="105.0" layoutY="58.0">
+      <ImageView fx:id="stud_blue" fitHeight="27.0" fitWidth="28.0" layoutX="105.0" layoutY="58.0">
          <image>
             <Image url="@../Images/Student/student_blue.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="68.0" layoutY="28.0">
+      <ImageView fx:id="stud_red" fitHeight="27.0" fitWidth="28.0" layoutX="68.0" layoutY="28.0">
          <image>
             <Image url="@../Images/Student/student_red.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="74.0" layoutY="110.0">
+      <ImageView fx:id="stud_yellow" fitHeight="27.0" fitWidth="28.0" layoutX="74.0" layoutY="110.0">
          <image>
             <Image url="@../Images/Student/student_yellow.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="130.0" layoutY="94.0">
+      <ImageView fx:id="stud_pink" fitHeight="27.0" fitWidth="28.0" layoutX="130.0" layoutY="94.0">
          <image>
             <Image url="@../Images/Student/student_pink.png" />
          </image>
@@ -46,32 +49,35 @@
             <Image url="@../Images/mother_nature.png" />
          </image>
       </ImageView>
-      <Text fx:id="redStudents" layoutX="76.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+      <Text fx:id="redStudents" layoutX="75.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
          <font>
-            <Font size="11.0" />
+            <Font size="14.0" />
          </font>
       </Text>
-      <Text fx:id="greenStudents" layoutX="56.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+      <Text fx:id="greenStudents" layoutX="55.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
          <font>
-            <Font size="11.0" />
+            <Font size="14.0" />
          </font>
       </Text>
-      <Text fx:id="pinkStudents" layoutX="138.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+      <Text fx:id="pinkStudents" layoutX="137.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
          <font>
-            <Font size="11.0" />
+            <Font size="14.0" />
          </font>
       </Text>
-      <Text fx:id="yellowStudents" layoutX="82.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+      <Text fx:id="yellowStudents" layoutX="80.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
          <font>
-            <Font size="11.0" />
+            <Font size="14.0" />
          </font>
       </Text>
-      <Text fx:id="blueStudents" layoutX="115.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+      <Text fx:id="blueStudents" layoutX="112.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
          <font>
-            <Font size="11.0" />
+            <Font size="14.0" />
          </font>
       </Text>
       <Pane fx:id="ownerShip" layoutX="110.0" layoutY="18.0" prefHeight="21.0" prefWidth="21.0" />
-      <Text fx:id="towerNumber" layoutX="114.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
+      <Text fx:id="towerNumber" layoutX="121.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
    </children>
 </AnchorPane>
