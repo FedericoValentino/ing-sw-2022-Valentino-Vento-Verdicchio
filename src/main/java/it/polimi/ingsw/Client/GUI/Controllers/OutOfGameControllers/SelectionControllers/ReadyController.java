@@ -11,6 +11,11 @@ import javafx.scene.layout.Pane;
 public class ReadyController extends Controller {
     @FXML private Pane tickPane;
 
+
+    /**
+     * This method replace the cross of the ReadyController contained in tickPane with a tick (when the button is pressed)
+     * and send a ReadyStatus message to the server
+     */
     public void onClickReadyButton()
     {
         String path="Client/GUI/Images/tick.png";
