@@ -38,27 +38,10 @@ public abstract class Controller {
     }
 
 
-    //da capire se viene usata o meno che in caso la togliamo
-    protected void showError(String title, String header){
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.initStyle(StageStyle.UNDECORATED);
-        alert.initModality(Modality.APPLICATION_MODAL);
-        alert.initOwner(GuiMainStarter.getMainStage());
-
-        alert.setHeaderText(title);
-        alert.setContentText(header);
-
-        alert.showAndWait();
-    }
-
 
 
     public void setGuiMainStarter(GuiMainStarter gms)
     {
         guiMainStarter=gms;
-    }
-    public GuiMainStarter getGuiMainStarter()
-    {
-        return guiMainStarter;
     }
 }

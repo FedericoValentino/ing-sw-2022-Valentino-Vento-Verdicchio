@@ -42,7 +42,7 @@ public class ClientGUI implements ClientView, ErrorGenerator
     private ListenerGui listenerGui;
     private LightView lightView;
     private Boolean firstView = false;
-    MainBoardController mbc;
+    private MainBoardController mbc;
 
 
     public static final String ANSI_RESET = "\u001B[0m";

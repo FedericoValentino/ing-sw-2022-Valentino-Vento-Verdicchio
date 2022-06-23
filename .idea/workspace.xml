@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Gained 100% of model coverage (97% line coverage)">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Modified 3 lines">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCards/characters/LightActiveDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCards/characters/LightActiveDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCards/characters/LightCharDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCards/characters/LightCharDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/Controller.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -248,14 +247,7 @@
       <workItem from="1655720087290" duration="3517000" />
       <workItem from="1655923958330" duration="7413000" />
       <workItem from="1655935574071" duration="1775000" />
-      <workItem from="1655938708797" duration="2764000" />
-    </task>
-    <task id="LOCAL-00105" summary="Mothernature Update">
-      <created>1654639585395</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1654639585395</updated>
+      <workItem from="1655938708797" duration="4036000" />
     </task>
     <task id="LOCAL-00106" summary="influence calculation fix">
       <created>1654640477689</created>
@@ -593,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655936877258</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="Modified 3 lines">
+      <created>1655970995460</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1655970995460</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +611,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added Pane for error display in GUi" />
     <MESSAGE value="visibility for ErrorDisplay addressed" />
     <MESSAGE value="Added close button" />
     <MESSAGE value="Changes in names and some other little changes" />
@@ -637,7 +635,8 @@
     <MESSAGE value="ErrorGenerator class for generating errors client side and documentation for a bunch of classes" />
     <MESSAGE value="fix for the islands ChoiceBox" />
     <MESSAGE value="Removed communication messages that are no longer used and added documentation to the remaining ones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed communication messages that are no longer used and added documentation to the remaining ones" />
+    <MESSAGE value="Modified 3 lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified 3 lines" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
