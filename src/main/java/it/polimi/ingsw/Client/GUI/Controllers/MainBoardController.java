@@ -543,6 +543,11 @@ public class MainBoardController extends Controller {
         return null;
     }
 
+
+    /**Choose the correct student's path according to the type of Student inserted
+     * @param s is the student passed
+     * @return the path to the right color for the current student
+     */
     public String getRightColorPath(Student s)
     {
         switch(s.getColor())
