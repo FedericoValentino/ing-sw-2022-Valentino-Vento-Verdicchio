@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little docu about a method">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little docu about ReadyController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/SelectionControllers/WizardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/SelectionControllers/WizardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/main.css" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -246,21 +247,7 @@
       <workItem from="1655720087290" duration="3517000" />
       <workItem from="1655923958330" duration="7413000" />
       <workItem from="1655935574071" duration="1775000" />
-      <workItem from="1655938708797" duration="5963000" />
-    </task>
-    <task id="LOCAL-00109" summary="Testing IslandPositioning">
-      <created>1654643052911</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1654643052911</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Starting the documentation of the GUI">
-      <created>1654718263947</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1654718263948</updated>
+      <workItem from="1655938708797" duration="10077000" />
     </task>
     <task id="LOCAL-00111" summary="Adding lobby,description and a little part of the MainBoardController&#10; documentation">
       <created>1654720668771</created>
@@ -591,7 +578,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655973071530</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="Little docu about WizardController">
+      <created>1655974307565</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1655974307565</updated>
+    </task>
+    <task id="LOCAL-00159" summary="Little docu about ReadyController">
+      <created>1655974481032</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1655974481032</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,8 +611,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes in names and some other little changes (also in asserts in the tests)" />
-    <MESSAGE value="Changes in all the model files due to changes in the order of the method, names, change from public to private variable (in island).&#10;&#10;Obviously also changes in test due to refactors" />
     <MESSAGE value="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors" />
     <MESSAGE value="Changes in lightPlayer, island e wizard controller" />
     <MESSAGE value="Adding css stylesheet to the majority of the controllers" />
@@ -635,7 +634,9 @@
     <MESSAGE value="Some delete in Controller and a change in ClientGUI" />
     <MESSAGE value="Little changes" />
     <MESSAGE value="Little docu about a method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little docu about a method" />
+    <MESSAGE value="Little docu about WizardController" />
+    <MESSAGE value="Little docu about ReadyController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little docu about ReadyController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
