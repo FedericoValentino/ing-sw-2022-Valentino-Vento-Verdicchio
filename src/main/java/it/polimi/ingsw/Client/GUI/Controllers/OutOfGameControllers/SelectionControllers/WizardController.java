@@ -30,9 +30,9 @@ public class WizardController extends Controller {
     @FXML private Text alreadyChoose3;
     @FXML private Text alreadyChoose4;
 
-    private ArrayList<Pane> paneWizard=new ArrayList<Pane>();
+    private ArrayList<Pane> paneWizard=new ArrayList<>();
     private ArrayList<Text> textAvaiable=new ArrayList<>();
-    ToggleGroup group = new ToggleGroup();
+    private ToggleGroup group = new ToggleGroup();
 
     /**It's call every time logiController.fxml is load as the new scene
      * In this method I set the initial value of the all the radio button
@@ -46,6 +46,11 @@ public class WizardController extends Controller {
         rb4.setToggleGroup(group);
     }
 
+
+    /**
+     * Setting the radio button selected on true and set the other button's on false (that's automatically done by
+     * the ToggleGroup properties)
+     */
     public void onClickRb1() {
         group.selectToggle(rb1);
     }
@@ -60,8 +65,10 @@ public class WizardController extends Controller {
     }
 
 
+    /**
+     * This method send a message to the server with the choosen wizard
+     */
     public void onClickSendChoice() {
-        System.out.println("Entrato in onclickSendChoice del wizard");
         Wizard wizardTemp=null;
 
         if(group.getSelectedToggle()==rb1){wizardTemp=Wizard.DRUID;}
@@ -77,7 +84,10 @@ public class WizardController extends Controller {
 
     }
 
-    /**In this method I set the opacity as 0.3 and then if a wizard is avaiable i set it to 1**/
+
+    /**   In this method I set the opacity as 0.3 and then if a wizard is avaiable i set it to 1
+     * @param available that's the array that contains all the wizards available
+     */
     public void updateOpacity(ArrayList<Wizard> available)
     {
         paneWizard.add(druid);
@@ -91,7 +101,7 @@ public class WizardController extends Controller {
         }
 
 
-        //cerco se ci sono maghi avaiable li metto a opacità 1
+        //I add all the error text to the right wizard and set the visibility to true
         textAvaiable.add(alreadyChoose1);
         textAvaiable.get(0).setVisible(true);
         textAvaiable.add(alreadyChoose2);
@@ -101,8 +111,9 @@ public class WizardController extends Controller {
         textAvaiable.add(alreadyChoose4);
         textAvaiable.get(3).setVisible(true);
 
-        //vado a calcolare quale mago non è già stato scelto e vado a togliere il print di mago già scelto e setto l'opacità
-        // delle carte a 1
+
+        //I'm searching if there is a wizard that isn't already being choose and for that wizard I set the opacity to 1
+        // and the visibility of the error message to false
         for(Wizard w : available)
         {
 

@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little docu about a method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/SelectionControllers/WizardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/SelectionControllers/WizardController.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -246,14 +246,7 @@
       <workItem from="1655720087290" duration="3517000" />
       <workItem from="1655923958330" duration="7413000" />
       <workItem from="1655935574071" duration="1775000" />
-      <workItem from="1655938708797" duration="4834000" />
-    </task>
-    <task id="LOCAL-00108" summary="tower Showing">
-      <created>1654641858384</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1654641858384</updated>
+      <workItem from="1655938708797" duration="5963000" />
     </task>
     <task id="LOCAL-00109" summary="Testing IslandPositioning">
       <created>1654643052911</created>
@@ -591,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655972327020</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="Little docu about a method">
+      <created>1655973071530</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1655973071530</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +610,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes in names and some other little changes" />
     <MESSAGE value="Changes in names and some other little changes (also in asserts in the tests)" />
     <MESSAGE value="Changes in all the model files due to changes in the order of the method, names, change from public to private variable (in island).&#10;&#10;Obviously also changes in test due to refactors" />
     <MESSAGE value="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors" />
@@ -635,7 +634,8 @@
     <MESSAGE value="Modified 3 lines" />
     <MESSAGE value="Some delete in Controller and a change in ClientGUI" />
     <MESSAGE value="Little changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little changes" />
+    <MESSAGE value="Little docu about a method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little docu about a method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
