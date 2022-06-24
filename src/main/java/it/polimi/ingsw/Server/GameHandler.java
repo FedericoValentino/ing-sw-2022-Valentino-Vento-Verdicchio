@@ -40,9 +40,6 @@ public class GameHandler extends Thread implements Observer
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 
     public GameHandler(MainController m, ClientConnection s, Match match)
     {
@@ -64,7 +61,7 @@ public class GameHandler extends Thread implements Observer
         if(Checks.isLastTurn(mainController.getGame()) && Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION))
         {
             mainController.selectWinner();
-            socket.sendAnswer(new SerializedAnswer(new WinMessage(String.valueOf(mainController.getGame().getCurrentTurnState().getWinningTeam()) + "is the Winner!")));
+            socket.sendAnswer(new SerializedAnswer(new WinMessage(mainController.getGame().getCurrentTurnState().getWinningTeam() + "is the Winner!")));
             try
             {
                 socket.getClient().close();
@@ -88,7 +85,7 @@ public class GameHandler extends Thread implements Observer
      * method setupHandler handles the messages that could arrive during the setupPhase, team choice, wizard choice and
      * player readiness
      * @param message the message that needs to be handled
-     * @throws IOException
+     * @throws IOException if closing the connection results in an error
      */
     public void setupHandler(StandardSetupMessage message) throws IOException
     {
@@ -160,7 +157,6 @@ public class GameHandler extends Thread implements Observer
      * method planningHandler handles the messages that could arrive during the planningPhase, the cloud choice and the
      * assistant card choice
      * @param message the message that needs to be handled
-     * @throws IOException
      */
     public void planningHandler(StandardActionMessage message)
     {
@@ -231,7 +227,6 @@ public class GameHandler extends Thread implements Observer
      * Method actionHandler handles the messages that could arrive during the actionPhase, student moves, mother nature
      * moves, cloud choice for the entrance refill and the turn end message
      * @param message the message that needs to be handled
-     * @throws IOException
      */
     public void actionHandler(StandardActionMessage message)
     {
@@ -422,7 +417,7 @@ public class GameHandler extends Thread implements Observer
 
     /**
      * The update function is run after every successful client interaction with the model. It sends the client a view message, containing the json serialization of the game model
-     * @param message
+     * @param message is the serialized model
      */
     @Override
     public void update(String message)
