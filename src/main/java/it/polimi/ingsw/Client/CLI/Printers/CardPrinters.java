@@ -154,35 +154,15 @@ public class CardPrinters extends PrinterCLI
 
         if(card.getName().equals(CharacterName.PRINCESS))
         {
-            character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "        |  " + description[0];
-            character[2] += "|       " + ANSI_RESET +"ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
-            character[3] += "|                  |  " + description[2];
-            character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
-            character[5] += "|                  |  " + description[4];
-            character[6] += "|  " + ANSI_RESET + printStudent(card.getStudentList(), 2);
-            for(int i = 0; i < 4 - card.getStudentList().size(); i++)
-            {
-                character[6] += "  O";
-            }
-            character[6] += ANSI_YELLOW + "    |  " + description[5];
-            character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
+            return printCharacterWithStudents(card, 2, 4, index, character);
         }
         else if(card.getName().equals(CharacterName.PRIEST))
         {
-            character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "          |  " + description[0];
-            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
-            character[3] += "|                  |  " + description[2];
-            character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
-            character[5] += "|                  |  " + description[4];
-            character[6] += "|  " + ANSI_RESET + printStudent(card.getStudentList(), 2);
-            for(int i = 0; i < 4 - card.getStudentList().size(); i++)
-            {
-                character[6] += "  O";
-            }
-            character[6] += ANSI_YELLOW + "    |  " + description[5];
-            character[7] += "|__________________|  " +  description[6] + ANSI_RESET + "\n";
+            return printCharacterWithStudents(card, 2, 4, index, character);
+        }
+        else if(card.getName().equals(CharacterName.JESTER))
+        {
+            return printCharacterWithStudents(card, 1, 6, index, character);
         }
         else if (card.getName().equals(CharacterName.GRANDMA_HERBS))
         {
@@ -256,5 +236,24 @@ public class CardPrinters extends PrinterCLI
                 AnsiConsole.out().println(inactiveCharacter[j]);
             }
         }
+    }
+
+    private String[] printCharacterWithStudents(LightCharacterCard card, int spaces, int students, int index, String[] character)
+    {
+        String[] description = card.getDescription();
+        character[0] += ANSI_YELLOW + "____________________";
+        character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "        |  " + description[0];
+        character[2] += "|       " + ANSI_RESET +"ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
+        character[3] += "|                  |  " + description[2];
+        character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
+        character[5] += "|                  |  " + description[4];
+        character[6] += "|  " + ANSI_RESET + printStudent(card.getStudentList(), spaces);
+        for(int i = 0; i < students - card.getStudentList().size(); i++)
+        {
+            character[6] += "  O";
+        }
+        character[6] += ANSI_YELLOW + "    |  " + description[5];
+        character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
+        return character;
     }
 }
