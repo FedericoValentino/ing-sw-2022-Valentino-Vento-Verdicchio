@@ -9,10 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes in UI (Your school and delete of some useless images)">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes in UI (setting all the students in the dining not visible at the beginning of the game)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MineSchool.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MineSchool.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/OtherSchool.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/OtherSchool.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -252,14 +253,9 @@
       <workItem from="1655935574071" duration="1775000" />
       <workItem from="1655938708797" duration="19124000" />
       <workItem from="1656023201810" duration="2807000" />
-      <workItem from="1656057091774" duration="439000" />
-    </task>
-    <task id="LOCAL-00118" summary="Same, but code with me">
-      <created>1655068517090</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1655068517090</updated>
+      <workItem from="1656057091774" duration="1055000" />
+      <workItem from="1656058184717" duration="6470000" />
+      <workItem from="1656066885723" duration="696000" />
     </task>
     <task id="LOCAL-00119" summary="First implementation of new CLI character handling">
       <created>1655070474152</created>
@@ -597,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656056139202</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="Little changes in UI (setting all the students in the dining not visible at the beginning of the game)">
+      <created>1656057670327</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1656057670328</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +630,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved the effects of Minstrel and Jester" />
     <MESSAGE value="New characters tests almost done" />
     <MESSAGE value="New character tests done" />
     <MESSAGE value="Gained 100% of model coverage (97% line coverage)" />
@@ -652,7 +654,8 @@
     <MESSAGE value="Add the invisibility to the students that doesn't have a counter more then 1" />
     <MESSAGE value="Add a new method to manage the count of students" />
     <MESSAGE value="Little changes in UI (Your school and delete of some useless images)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little changes in UI (Your school and delete of some useless images)" />
+    <MESSAGE value="Little changes in UI (setting all the students in the dining not visible at the beginning of the game)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little changes in UI (setting all the students in the dining not visible at the beginning of the game)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

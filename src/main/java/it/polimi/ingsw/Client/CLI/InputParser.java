@@ -31,6 +31,7 @@ public class InputParser
     private InfoPrinters infoPrinters;
     private CardPrinters cardPrinters;
     private Boolean printView = false;
+    private CharacterActivationParser activation;
 
     public InputParser(ServerConnection socket, LightView lv)
     {
@@ -92,7 +93,7 @@ public class InputParser
     public void CharacterParser(String[] words)
     {
         LightCharacterCard card = cardPrinters.getView().getCurrentCharacterDeck().getCard(Integer.parseInt(words[1]));
-        CharacterActivationParser activation;
+
         String nickname = socket.getNickname();
         CharacterName cardName = card.getName();
         int input = 0;
