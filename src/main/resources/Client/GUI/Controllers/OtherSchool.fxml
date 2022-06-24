@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.OtherSchoolController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.OtherSchoolController">
    <children>
       <ImageView fx:id="background" fitHeight="600.0" fitWidth="275.0">
          <image>
@@ -89,16 +96,16 @@
          <children>
             <VBox prefHeight="290.0" prefWidth="31.0">
                <children>
-                  <Pane prefHeight="33.0" prefWidth="31.0">
+                  <Pane prefHeight="33.0" prefWidth="31.0" visible="false">
                      <children>
-                        <ImageView fitHeight="33.0" fitWidth="31.0">
+                        <ImageView fitHeight="33.0" fitWidth="31.0" visible="false">
                            <image>
                               <Image url="@../Images/Student/student_green.png" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -107,7 +114,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="31.0">
                            <image>
@@ -116,7 +123,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="1.0">
                            <image>
@@ -125,7 +132,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
                            <image>
@@ -134,7 +141,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="30.0">
                            <image>
@@ -143,7 +150,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
                            <image>
@@ -152,7 +159,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -161,7 +168,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="30.0" prefWidth="31.0">
+                  <Pane prefHeight="30.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -170,7 +177,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -183,7 +190,7 @@
             </VBox>
             <VBox prefHeight="290.0" prefWidth="31.0">
                <children>
-                  <Pane prefHeight="33.0" prefWidth="31.0">
+                  <Pane prefHeight="33.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="2.0" layoutY="2.0">
                            <image>
@@ -192,7 +199,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="3.0">
                            <image>
@@ -201,7 +208,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="3.0" layoutY="2.0">
                            <image>
@@ -210,7 +217,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="4.0" layoutY="2.0">
                            <image>
@@ -219,7 +226,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
                            <image>
@@ -228,7 +235,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="30.0">
                            <image>
@@ -237,7 +244,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
                            <image>
@@ -246,7 +253,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -255,7 +262,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="30.0" prefWidth="31.0">
+                  <Pane prefHeight="30.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -264,7 +271,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -277,7 +284,7 @@
             </VBox>
             <VBox prefHeight="290.0" prefWidth="31.0">
                <children>
-                  <Pane prefHeight="33.0" prefWidth="31.0">
+                  <Pane prefHeight="33.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="33.0" fitWidth="31.0">
                            <image>
@@ -286,7 +293,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -295,7 +302,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="31.0">
                            <image>
@@ -304,7 +311,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="1.0">
                            <image>
@@ -313,7 +320,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
                            <image>
@@ -322,7 +329,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="30.0">
                            <image>
@@ -331,7 +338,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
                            <image>
@@ -340,7 +347,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -349,7 +356,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="30.0" prefWidth="31.0">
+                  <Pane prefHeight="30.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -358,7 +365,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -371,7 +378,7 @@
             </VBox>
             <VBox prefHeight="290.0" prefWidth="31.0">
                <children>
-                  <Pane prefHeight="33.0" prefWidth="31.0">
+                  <Pane prefHeight="33.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="33.0" fitWidth="31.0">
                            <image>
@@ -380,7 +387,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -389,7 +396,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="31.0">
                            <image>
@@ -398,7 +405,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="1.0">
                            <image>
@@ -407,7 +414,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
                            <image>
@@ -416,7 +423,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="30.0">
                            <image>
@@ -425,7 +432,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
                            <image>
@@ -434,7 +441,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -443,7 +450,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="30.0" prefWidth="31.0">
+                  <Pane prefHeight="30.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -452,7 +459,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -465,7 +472,7 @@
             </VBox>
             <VBox prefHeight="290.0" prefWidth="31.0">
                <children>
-                  <Pane prefHeight="33.0" prefWidth="31.0">
+                  <Pane prefHeight="33.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="33.0" fitWidth="31.0">
                            <image>
@@ -474,7 +481,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -483,7 +490,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="31.0">
                            <image>
@@ -492,7 +499,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="28.0" prefWidth="31.0">
+                  <Pane prefHeight="28.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="1.0">
                            <image>
@@ -501,7 +508,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="31.0" layoutY="1.0">
                            <image>
@@ -510,7 +517,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="30.0">
                            <image>
@@ -519,7 +526,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="-2.0" layoutY="-1.0">
                            <image>
@@ -528,7 +535,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="27.0" prefWidth="31.0">
+                  <Pane prefHeight="27.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="31.0">
                            <image>
@@ -537,7 +544,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="30.0" prefWidth="31.0">
+                  <Pane prefHeight="30.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="-1.0">
                            <image>
@@ -546,7 +553,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane prefHeight="29.0" prefWidth="31.0">
+                  <Pane prefHeight="29.0" prefWidth="31.0" visible="false">
                      <children>
                         <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="-1.0">
                            <image>

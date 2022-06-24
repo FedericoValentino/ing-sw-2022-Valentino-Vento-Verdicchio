@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Add the invisibility to the students that doesn't have a counter more then 1">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes in UI (Your school and delete of some useless images)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MineSchool.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MineSchool.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/OtherSchool.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/OtherSchool.fxml" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -253,13 +252,7 @@
       <workItem from="1655935574071" duration="1775000" />
       <workItem from="1655938708797" duration="19124000" />
       <workItem from="1656023201810" duration="2807000" />
-    </task>
-    <task id="LOCAL-00117" summary="Hopefully right implementation f client side character cards">
-      <created>1655068505963</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1655068505963</updated>
+      <workItem from="1656057091774" duration="439000" />
     </task>
     <task id="LOCAL-00118" summary="Same, but code with me">
       <created>1655068517090</created>
@@ -597,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656000311261</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="Little changes in UI (Your school and delete of some useless images)">
+      <created>1656056139202</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1656056139202</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +627,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Tower's update" />
     <MESSAGE value="Improved the effects of Minstrel and Jester" />
     <MESSAGE value="New characters tests almost done" />
     <MESSAGE value="New character tests done" />
@@ -652,7 +651,8 @@
     <MESSAGE value="Little change  in student pane in mine school (add the remove of the effect)" />
     <MESSAGE value="Add the invisibility to the students that doesn't have a counter more then 1" />
     <MESSAGE value="Add a new method to manage the count of students" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a new method to manage the count of students" />
+    <MESSAGE value="Little changes in UI (Your school and delete of some useless images)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little changes in UI (Your school and delete of some useless images)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
