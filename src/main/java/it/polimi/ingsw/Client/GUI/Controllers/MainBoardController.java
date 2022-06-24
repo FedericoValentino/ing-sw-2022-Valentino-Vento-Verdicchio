@@ -118,7 +118,13 @@ public class MainBoardController extends Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         mineSchoolAnchorPane.getChildren().clear();
         mineSchoolAnchorPane.getChildren().add(0,loader.load());
-        mineSchoolAnchorPane.getChildren().add(new Text("Your School"));
+
+        //wrapping the text "Your school" in a hbox and add it to the main area
+        HBox textHbox=new HBox();
+        textHbox.setStyle("-fx-border-color: black; -fx-background-color: white; -fx-padding: 2,0,2,10");
+        textHbox.getChildren().add(new Text("Your School"));
+        mineSchoolAnchorPane.getChildren().add(textHbox);
+
         MineSchoolController controller = loader.getController();
         String player=GuiMainStarter.getClientGUI().getServerConnection().getNickname();
 
