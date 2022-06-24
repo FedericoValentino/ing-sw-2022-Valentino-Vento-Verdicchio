@@ -9,16 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Jestser added to the Printers and resolved some code repetitions in CardPrinters">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Resolved some code repetitions in Printer CLI - cards">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCards/LightAssistantDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCards/LightAssistantDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientApp.java" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
-    <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCards/characters/LightCharacterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightCards/characters/LightCharacterFactory.java" afterDir="false" />
+    <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me">
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,29 +46,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java">
-      <ranges>
-        <range start1="7" end1="7" start2="7" end2="8" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="58" end1="58" start2="59" end2="74" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="71" end1="72" start2="87" end2="87" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="82" end1="83" start2="97" end2="100" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="84" end1="95" start2="101" end2="101" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="97" end1="108" start2="103" end2="104" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="138" end1="204" start2="134" end2="134" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="211" end1="211" start2="141" end2="142" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="220" end1="221" start2="151" end2="152" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="228" end1="229" start2="159" end2="160" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="232" end1="233" start2="163" end2="164" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="235" end1="236" start2="166" end2="167" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="240" end1="241" start2="171" end2="179" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-        <range start1="243" end1="251" start2="181" end2="184" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="252" end1="253" start2="185" end2="186" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="254" end1="257" start2="187" end2="194" changelist="ed258069-bd50-49bc-bde5-464ded5e1b2f" />
-        <range start1="258" end1="258" start2="195" end2="244" changelist="77873dc4-e89e-424d-8df5-ddb97d65533f" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -274,20 +248,6 @@
       <workItem from="1656057091774" duration="1055000" />
       <workItem from="1656058184717" duration="6470000" />
       <workItem from="1656066885723" duration="1694000" />
-    </task>
-    <task id="LOCAL-00121" summary="Further steps to ensure character's functionality">
-      <created>1655073858314</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1655073858314</updated>
-    </task>
-    <task id="LOCAL-00122" summary="Same but code with me">
-      <created>1655073873678</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1655073873678</updated>
     </task>
     <task id="LOCAL-00123" summary="little change">
       <created>1655078959930</created>
@@ -618,7 +578,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656100806002</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="Resolved some code repetitions in Printer CLI - cards">
+      <created>1656104007150</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1656104007150</updated>
+    </task>
+    <task id="LOCAL-00171" summary="same, but code with me">
+      <created>1656104026305</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1656104026305</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,8 +623,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Introduced class structure for Printers" />
-    <MESSAGE value="Same, but Code with Me" />
     <MESSAGE value="Half of the tests done and added a utility class" />
     <MESSAGE value="Now everything works" />
     <MESSAGE value="Added some packages for better navigation" />
@@ -674,7 +646,9 @@
     <MESSAGE value="Little changes in inputParser (put activation (it's a parameter) from a method in the main declaration part of the class)" />
     <MESSAGE value="Little changes in inputParser (put activation (it's a parameter) from a method to the main declaration part of the class)" />
     <MESSAGE value="Jestser added to the Printers and resolved some code repetitions in CardPrinters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jestser added to the Printers and resolved some code repetitions in CardPrinters" />
+    <MESSAGE value="Resolved some code repetitions in Printer CLI - cards" />
+    <MESSAGE value="same, but code with me" />
+    <option name="LAST_COMMIT_MESSAGE" value="same, but code with me" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

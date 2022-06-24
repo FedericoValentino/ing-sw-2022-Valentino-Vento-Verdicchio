@@ -17,7 +17,7 @@ public class ClientApp
     public static void main( String[] args ) throws IOException, ClassNotFoundException {
         ClientView view;
         Scanner stdin = new Scanner(System.in);
-        System.out.println("Quale interfaccia vuoi far partire?");
+        System.out.println("Which graphical interface would you like to run, CLI or GUI?");
         String selection = stdin.next();
 
         switch(selection)
