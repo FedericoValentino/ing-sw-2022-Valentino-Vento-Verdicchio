@@ -91,7 +91,7 @@ public class LightCharacterFactory
                 
             case POSTMAN:
                 description[0] += "The Postman is quite the industrious chap. Thanks to the nature of his job, he developed excellent orienteering ";
-                description[1] += "skills, skills that he uses to navigate efficiently around the cluttered Eryantis world.";
+                description[1] += "skills, skills that he uses to navigate efficiently around the cluttered Eriantys world.";
                 description[2] += "If you choose him as your companion, he will teach you some of his tricks for the current turn, ";
                 description[3] += "adding 2 extra movements to the maximum movements mother nature can perform!";
                 description[4] += "Use this card to reach very distant islands.";

@@ -5,6 +5,7 @@ import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
+import it.polimi.ingsw.model.cards.assistants.AssistantCard;
 import org.fusesource.jansi.AnsiConsole;
 
 import java.util.Arrays;
@@ -57,6 +58,21 @@ public class CardPrinters extends PrinterCLI
         }
     }
 
+    private void printPlayedAssistant(String[] card, boolean currentlyPlayed, String name, AssistantCard assistantCard)
+    {
+        card[0] += name+ "      ";
+        card[1] += "__________     ";
+        if(currentlyPlayed)
+            card[2] += "|   " + ANSI_GREEN + "CP" + ANSI_RESET + "   |     ";
+        else
+            card[2] += "|   " + ANSI_RED + "LP" + ANSI_RESET + "   |     ";
+        card[3] += "|        |     ";
+        card[4] += "|Value:" + addZero(assistantCard.getValue()) + "|     ";
+        card[5] += "|        |     ";
+        card[6] += "|Moves:" + addZero(assistantCard.getMovement()) + "|     ";
+        card[7] += "|________|     ";
+    }
+
 
     /** Upon player's input, it shows the currently played and last played assistant cards of all players
      */
@@ -69,7 +85,6 @@ public class CardPrinters extends PrinterCLI
         int currentCardCounter = 0;
         int lastCardCounter = 0;
 
-
         for(LightTeam t: super.getView().getCurrentTeams())
         {
             for(LightPlayer p: t.getPlayers())
@@ -80,32 +95,13 @@ public class CardPrinters extends PrinterCLI
                 {
                     currentCardCounter += 1;
                 }
-                else
-                {
-                    currentlyPlayed[0] += nameTrimmed + "      ";
-                    currentlyPlayed[1] += "__________     ";
-                    currentlyPlayed[2] += "|   " + ANSI_GREEN + "CP" + ANSI_RESET + "   |     ";
-                    currentlyPlayed[3] += "|        |     ";
-                    currentlyPlayed[4] += "|Value:" + addZero(p.getCurrentAssistantCard().getValue()) + "|     ";
-                    currentlyPlayed[5] += "|        |     ";
-                    currentlyPlayed[6] += "|Moves:" + addZero(p.getCurrentAssistantCard().getMovement()) + "|     ";
-                    currentlyPlayed[7] += "|________|     ";
-                }
+                printPlayedAssistant(currentlyPlayed, true, nameTrimmed, p.getCurrentAssistantCard());
+
                 if(p.getLastPlayedCard() == null)
                 {
                     lastCardCounter += 1;
                 }
-                else
-                {
-                    lastPlayed[0] += nameTrimmed + "      ";
-                    lastPlayed[1] += "__________     ";
-                    lastPlayed[2] += "|   " + ANSI_RED + "LP" + ANSI_RESET + "   |     ";
-                    lastPlayed[3] += "|        |     ";
-                    lastPlayed[4] += "|Value:" + addZero(p.getLastPlayedCard().getValue()) + "|     ";
-                    lastPlayed[5] += "|        |     ";
-                    lastPlayed[6] += "|Moves:" + addZero(p.getLastPlayedCard().getMovement()) + "|     ";
-                    lastPlayed[7] += "|________|     ";
-                }
+                printPlayedAssistant(lastPlayed, false, nameTrimmed, p.getLastPlayedCard());
             }
         }
 
@@ -143,6 +139,7 @@ public class CardPrinters extends PrinterCLI
     public void showCharacters()
     {
         String[] inactiveCharacter = new String[8];
+        String[] activeCharacter = new String[8];
         Arrays.fill(inactiveCharacter, "");
         if(super.getView().getCurrentCharacterDeck() == null)
         {
@@ -152,7 +149,7 @@ public class CardPrinters extends PrinterCLI
         AnsiConsole.out().println( ANSI_GREEN + "Inactive Cards:" + ANSI_RESET);
         for(int i = 0; i < super.getView().getCurrentCharacterDeck().getLightCharDeck().size(); i++)
         {
-            inactiveCharacter = printCharacter(super.getView().getCurrentCharacterDeck().getCard(i), inactiveCharacter, i);
+            printCharacter(super.getView().getCurrentCharacterDeck().getCard(i), inactiveCharacter, i);
             for(int j = 0; j < 8; j++)
             {
                 AnsiConsole.out().println(inactiveCharacter[j]);
@@ -164,10 +161,10 @@ public class CardPrinters extends PrinterCLI
         AnsiConsole.out().println(ANSI_RED + "Active Card" + ANSI_RESET);
         for(int i = 0; i < super.getView().getCurrentActiveCharacterCard().getLightActiveDeck().size(); i++)
         {
-            inactiveCharacter = printCharacter(super.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(i), inactiveCharacter, i);
+            printCharacter(super.getView().getCurrentActiveCharacterCard().getLightActiveDeck().get(i), activeCharacter, i);
             for(int j = 0; j < 8; j++)
             {
-                AnsiConsole.out().println(inactiveCharacter[j]);
+                AnsiConsole.out().println(activeCharacter[j]);
             }
         }
     }
@@ -182,20 +179,19 @@ public class CardPrinters extends PrinterCLI
     private void printCharacter(LightCharacterCard card, String[] character, int index)
     {
         String[] description = card.getDescription();
-        character[0] += ANSI_YELLOW + "____________________";
-        character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "        |  " + description[0];
-        character[2] += "|       " + ANSI_RESET +"ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
-        character[3] += "|                  |  " + description[2];
-        character[4] += "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
-        character[5] += "|                  |  " + description[4];
-        character[6] += "|  " + ANSI_RESET + printStudent(card.getStudentList(), spaces);
-        for(int i = 0; i < students - card.getStudentList().size(); i++)
+        character[0] = ANSI_YELLOW + "____________________";
+        character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW;
+        for(int i = 0; i < "TRUFFLE_HUNTER".length() - card.getName().toString().length(); i++)
         {
-            character[6] += "  O";
+            character[1] += " ";
         }
-        character[6] += ANSI_YELLOW + "    |  " + description[5];
-        character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
-        return character;
+        character[1] += "  |  " + description[0];
+        character[2] = "|       " + ANSI_RESET +"ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
+        character[3] = "|                  |  " + description[2];
+        character[4] = "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
+        character[5] = "|                  |  " + description[4];
+        character[6] = characterDifferentiate(card);
+        character[7] = "|__________________|  " + ANSI_RESET + description[6] + "\n";
     }
 
     /** Auxiliary method that adapts a critical line of the character representation according to certain character types.
