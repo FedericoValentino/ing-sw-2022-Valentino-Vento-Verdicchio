@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes in UI (setting all the students in the dining not visible at the beginning of the game)">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Little changes in inputParser (put activation (it's a parameter) from a method to the main declaration part of the class)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <list id="d716b638-73d3-42fc-84bc-8894e5e54209" name="Changes by enric" comment="Changes by enric" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="" />
@@ -255,14 +253,7 @@
       <workItem from="1656023201810" duration="2807000" />
       <workItem from="1656057091774" duration="1055000" />
       <workItem from="1656058184717" duration="6470000" />
-      <workItem from="1656066885723" duration="696000" />
-    </task>
-    <task id="LOCAL-00119" summary="First implementation of new CLI character handling">
-      <created>1655070474152</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1655070474152</updated>
+      <workItem from="1656066885723" duration="1694000" />
     </task>
     <task id="LOCAL-00120" summary="Same, but code with me">
       <created>1655070484718</created>
@@ -600,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656057670328</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="Little changes in inputParser (put activation (it's a parameter) from a method to the main declaration part of the class)">
+      <created>1656067898877</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1656067898878</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,8 +628,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="New characters tests almost done" />
-    <MESSAGE value="New character tests done" />
     <MESSAGE value="Gained 100% of model coverage (97% line coverage)" />
     <MESSAGE value="Introduced class structure for Printers" />
     <MESSAGE value="Same, but Code with Me" />
@@ -655,7 +651,9 @@
     <MESSAGE value="Add a new method to manage the count of students" />
     <MESSAGE value="Little changes in UI (Your school and delete of some useless images)" />
     <MESSAGE value="Little changes in UI (setting all the students in the dining not visible at the beginning of the game)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little changes in UI (setting all the students in the dining not visible at the beginning of the game)" />
+    <MESSAGE value="Little changes in inputParser (put activation (it's a parameter) from a method in the main declaration part of the class)" />
+    <MESSAGE value="Little changes in inputParser (put activation (it's a parameter) from a method to the main declaration part of the class)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little changes in inputParser (put activation (it's a parameter) from a method to the main declaration part of the class)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
