@@ -138,72 +138,6 @@ public class CardPrinters extends PrinterCLI
     }
 
 
-    /** Used by the function "showCharacters", it fills the strings received in input to form the graphical representation of
-     * the cards and their content, based on the type of card. Since a lot of cards can be represented in the same way, it isn't
-     * necessary to use more than four if branches.
-     * @param card the card to generate
-     * @param character the string to manipulate
-     * @param index the index of the card in its deck
-     * @return the manipulated string, containing the drawing of the card
-     */
-    private String[] printCharacter(LightCharacterCard card, String[] character, int index)
-    {
-
-        String[] description = new String[7];
-        description = card.getDescription();
-
-        if(card.getName().equals(CharacterName.PRINCESS))
-        {
-            return printCharacterWithStudents(card, 2, 4, index, character);
-        }
-        else if(card.getName().equals(CharacterName.PRIEST))
-        {
-            return printCharacterWithStudents(card, 2, 4, index, character);
-        }
-        else if(card.getName().equals(CharacterName.JESTER))
-        {
-            return printCharacterWithStudents(card, 1, 6, index, character);
-        }
-        else if (card.getName().equals(CharacterName.GRANDMA_HERBS))
-        {
-            character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW + "   |  " + description[0];
-            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
-            character[3] += "|                  |  " + description[2];
-            character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
-            character[5] += "|                  |  " + description[4];
-            character[6] += "|  " + ANSI_RESET;
-            for(int i = 0; i < card.getNoEntry(); i++)
-            {
-                character[6] += ANSI_RED_BACKGROUND + ANSI_BLACK + "  !" + ANSI_RESET;
-            }
-            for(int i = 0; i < 4 - card.getNoEntry(); i++)
-            {
-                character[6] += "  O";
-            }
-            character[6] += ANSI_YELLOW + "    |  " + description[5];
-            character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
-        }
-        else
-        {
-            character[0] += ANSI_YELLOW + "____________________";
-            character[1] += "|  " + ANSI_GREEN + card.getName() + ANSI_YELLOW;
-            for(int i = 0; i < "TRUFFLE_HUNTER".length() - card.getName().toString().length(); i++)
-            {
-                character[1] += " ";
-            }
-            character[1] += "  |  " + description[0];
-            character[2] += "|       " + ANSI_RESET + "ID: " + addZero(index) + ANSI_YELLOW + "     |  " + description[1];
-            character[3] += "|                  |  " + description[2];
-            character[4] += "| " + ANSI_RESET + "Current Cost: "+ addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
-            character[5] += "|                  |  " + description[4];
-            character[6] += "|                  |  " + description[5];
-            character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
-        }
-        return character;
-    }
-
-
     /** Upon player's input, it shows the character card in the game, and if they are currently active or not
      */
     public void showCharacters()
@@ -226,7 +160,7 @@ public class CardPrinters extends PrinterCLI
             Arrays.fill(inactiveCharacter, "");
         }
 
-        Arrays.fill(inactiveCharacter, "");
+        Arrays.fill(activeCharacter, "");
         AnsiConsole.out().println(ANSI_RED + "Active Card" + ANSI_RESET);
         for(int i = 0; i < super.getView().getCurrentActiveCharacterCard().getLightActiveDeck().size(); i++)
         {
@@ -238,7 +172,14 @@ public class CardPrinters extends PrinterCLI
         }
     }
 
-    private String[] printCharacterWithStudents(LightCharacterCard card, int spaces, int students, int index, String[] character)
+    /** Used by the function "showCharacters", it fills the strings received in input to form the graphical representation of
+     * the cards and their content, based on the type of card. Since a lot of cards can be represented in the same way, it isn't
+     * necessary to use more than four if branches.
+     * @param card the card to generate
+     * @param character the string to manipulate
+     * @param index the index of the card in its deck
+     */
+    private void printCharacter(LightCharacterCard card, String[] character, int index)
     {
         String[] description = card.getDescription();
         character[0] += ANSI_YELLOW + "____________________";
@@ -255,5 +196,54 @@ public class CardPrinters extends PrinterCLI
         character[6] += ANSI_YELLOW + "    |  " + description[5];
         character[7] += "|__________________|  " + ANSI_RESET + description[6] + "\n";
         return character;
+    }
+
+    /** Auxiliary method that adapts a critical line of the character representation according to certain character types.
+     * For example, some characters will need to represent a list of students, some nothing at all.
+     * @param card the card used to give the correct representation
+     * @return the string that will correspond to character[6] into the character string array
+     */
+    private String characterDifferentiate(LightCharacterCard card)
+    {
+        StringBuilder line = new StringBuilder();
+        String[] description;
+        description = card.getDescription();
+
+        if(card.getName().equals(CharacterName.PRINCESS) || card.getName().equals(CharacterName.PRIEST))
+        {
+            line.append("|  " + ANSI_RESET).append(printStudent(card.getStudentList(), 2));
+            for(int i = 0; i < 4 - card.getStudentList().size(); i++)
+            {
+                line.append("  O");
+            }
+            line.append(ANSI_YELLOW + "    |  ").append(description[5]);
+        }
+        else if(card.getName().equals(CharacterName.JESTER))
+        {
+            line.append("|  " + ANSI_RESET).append(printStudent(card.getStudentList(), 1));
+            for(int i = 0; i < 6 - card.getStudentList().size(); i++)
+            {
+                line.append("  O");
+            }
+            line.append(ANSI_YELLOW + "    |  ").append(description[5]);
+        }
+        else if (card.getName().equals(CharacterName.GRANDMA_HERBS))
+        {
+            line.append("|  " + ANSI_RESET);
+            for(int i = 0; i < card.getNoEntry(); i++)
+            {
+                line.append(ANSI_RED_BACKGROUND + ANSI_BLACK + "  !" + ANSI_RESET);
+            }
+            for(int i = 0; i < 4 - card.getNoEntry(); i++)
+            {
+                line.append("  O");
+            }
+            line.append(ANSI_YELLOW + "    |  ").append(description[5]);
+        }
+        else
+        {
+            return "|                  |  " + description[5];
+        }
+        return line.toString();
     }
 }

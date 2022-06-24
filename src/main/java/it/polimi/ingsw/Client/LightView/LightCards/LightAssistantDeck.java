@@ -23,9 +23,7 @@ public class LightAssistantDeck
         this.wizard = wizard;
     }
 
-    public ArrayList<AssistantCard> getDeck() {
-        return deck;
-    }
+    public ArrayList<AssistantCard> getDeck() { return deck; }
 
     public String getPlayerName() {
         return playerName;
