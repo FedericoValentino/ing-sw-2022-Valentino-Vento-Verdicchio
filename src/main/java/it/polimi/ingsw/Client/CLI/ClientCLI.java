@@ -39,7 +39,8 @@ public class ClientCLI implements ClientView, InformationGenerator
         switch(answer.getType())
         {
             case PING:
-                System.out.println("Server pinged do i Pong?");
+                //System.out.println("Server pinged do i Pong?");
+                break;
             case GAME_NFO_REQ:
                 GameMode gm = new GameMode();
                 System.out.println("First Client, what gamemode would you like to play?");
