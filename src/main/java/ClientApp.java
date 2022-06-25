@@ -1,6 +1,7 @@
 import it.polimi.ingsw.Client.CLI.ClientCLI;
 import it.polimi.ingsw.Client.GUI.ClientGUI;
 import it.polimi.ingsw.Client.ClientView;
+import it.polimi.ingsw.Server.Server;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class ClientApp
     public static void main( String[] args ) throws IOException, ClassNotFoundException {
         ClientView view;
         Scanner stdin = new Scanner(System.in);
-        System.out.println("Which graphical interface would you like to run, CLI or GUI?");
+        System.out.println("Which graphical interface would you like to run, CLI or GUI? If you would like to run the server instead just type SERVER");
         String selection = stdin.next();
 
         switch(selection)
@@ -30,6 +31,15 @@ public class ClientApp
                 view = new ClientGUI();
                 view.run();
                 break;
+            case "SERVER":
+                Server server;
+                try {
+                    server = new Server();
+                    server.run();
+                } catch(IOException e){
+                    System.err.println("Impossible to start the server!\n" + e.getMessage());
+                    throw new RuntimeException(e);
+                }
             default:
                 break;
         }

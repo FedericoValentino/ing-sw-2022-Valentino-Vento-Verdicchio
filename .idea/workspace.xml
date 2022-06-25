@@ -9,12 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="(╯°□°)╯︵ ┻━┻">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Fixed Cook, added disconnect option">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/InformationControllers/PropagandaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/InformationControllers/PropagandaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/BoardPrinters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/BoardPrinters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/InfoPrinters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/InfoPrinters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/SchoolPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/SchoolPrinter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CookTest.java" afterDir="false" />
     </list>
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +66,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -72,11 +79,11 @@
       <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\java\Server\Answers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valef\IdeaProjects\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\META-INF" />
       <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Controllers" />
       <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\Wizard" />
       <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\IslandsFolder" />
       <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\CloudsFolder" />
-      <recent name="C:\Users\giaco\OneDrive\Desktop\#2 Progetto Ingegneria del Software\ing-sw-2022-Valentino-Vento-Verdicchio\src\main\resources\Client\GUI\Images\TeacherFolder" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
@@ -94,7 +101,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CookTest.testEffect">
+  <component name="RunManager" selected="Application.ClientApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -190,8 +197,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CookTest.testEffect" />
         <item itemvalue="Application.ServerApp" />
+        <item itemvalue="JUnit.CookTest.testEffect" />
         <item itemvalue="JUnit.All in softeng-GC61" />
       </list>
     </recent_temporary>
@@ -254,14 +261,8 @@
       <workItem from="1656057091774" duration="1055000" />
       <workItem from="1656058184717" duration="6470000" />
       <workItem from="1656066885723" duration="1694000" />
-      <workItem from="1656117377462" duration="1654000" />
-    </task>
-    <task id="LOCAL-00126" summary="smol">
-      <created>1655152149257</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1655152149257</updated>
+      <workItem from="1656117377462" duration="1892000" />
+      <workItem from="1656150011339" duration="7622000" />
     </task>
     <task id="LOCAL-00127" summary="Corrected some ingenuities">
       <created>1655153300860</created>
@@ -599,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656116936831</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="Fixed Cook, added disconnect option">
+      <created>1656119239785</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1656119239785</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +638,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="First step towards implementing client side error checks" />
     <MESSAGE value="ErrorGenerator class for generating errors client side and documentation for a bunch of classes" />
     <MESSAGE value="fix for the islands ChoiceBox" />
     <MESSAGE value="Removed communication messages that are no longer used and added documentation to the remaining ones" />
@@ -655,7 +662,8 @@
     <MESSAGE value="Proudly announcing Eriantys Ping Edition" />
     <MESSAGE value="Code with me" />
     <MESSAGE value="(╯°□°)╯︵ ┻━┻" />
-    <option name="LAST_COMMIT_MESSAGE" value="(╯°□°)╯︵ ┻━┻" />
+    <MESSAGE value="Fixed Cook, added disconnect option" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Cook, added disconnect option" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

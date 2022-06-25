@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-import static java.lang.Integer.valueOf;
 
 public class InputParser
 {
@@ -56,7 +55,15 @@ public class InputParser
     {
         if(words[1].equals("assistantcard"))
         {
-            socket.sendMessage(new SerializedMessage(new DrawAssistantCard(valueOf(words[2]))));
+            try
+            {
+                int index = Integer.parseInt(words[2]);
+                socket.sendMessage(new SerializedMessage(new DrawAssistantCard(index)));
+            }
+            catch(NumberFormatException e)
+            {
+                AnsiConsole.out().println("Error in parsing the string, maybe you didn't type the right index?");
+            }
         }
     }
 
@@ -66,23 +73,122 @@ public class InputParser
      */
     public void MoveParser(String[] words)
     {
-        if(words[1].equals("student"))
+        try
         {
-            int STUD_POS = valueOf(words[2]);
-            if(words[3].equals("toisland"))
+            if(words[1].equals("student"))
             {
-                int ISLAND_POS = valueOf(words[4]);
-                socket.sendMessage(new SerializedMessage(new MoveStudent(STUD_POS, true, ISLAND_POS)));
+                int STUD_POS = Integer.parseInt(words[2]);
+                if(words[3].equals("toisland"))
+                {
+                    int ISLAND_POS = Integer.parseInt(words[4]);
+                    socket.sendMessage(new SerializedMessage(new MoveStudent(STUD_POS, true, ISLAND_POS)));
+                }
+                if(words[3].equals("todining"))
+                {
+                    socket.sendMessage(new SerializedMessage(new MoveStudent(STUD_POS, false, 0)));
+                }
             }
-            if(words[3].equals("todining"))
+            if(words[1].equals("mothernature"))
             {
-                socket.sendMessage(new SerializedMessage(new MoveStudent(STUD_POS, false, 0)));
+                int MN_POS = Integer.parseInt(words[2]);
+                socket.sendMessage(new SerializedMessage(new MoveMN(MN_POS)));
             }
         }
-        if(words[1].equals("mothernature"))
+        catch(NumberFormatException e)
         {
-            int MN_POS = valueOf(words[2]);
-            socket.sendMessage(new SerializedMessage(new MoveMN(MN_POS)));
+            AnsiConsole.out().println("Error in parsing the string, maybe you didn't type the right index?");
+        }
+    }
+
+    /**
+     * Method MinstrelParser Parses the input for the CharacterCard Minstrel
+     * @param player is the current player
+     * @param inputArray1 is the list of students
+     * @param inputArray2 is the list of colors we want to exchange
+     */
+    public void MinstrelParser(LightPlayer player, ArrayList<Integer> inputArray1, ArrayList<Integer> inputArray2)
+    {
+        int input = 0;
+        PrinterCLI.printStudent(player.getSchool().getEntrance(), 2);
+        int[] diningRoom = player.getSchool().getDiningRoom().clone();
+
+        AnsiConsole.out().println("You may choose up to 2 students, type -1 to stop selecting students");
+
+        while(input != -1 && inputArray1.size() < 2)
+        {
+            AnsiConsole.out().println("Choose a student");
+            input = Integer.parseInt(parser.nextLine());
+            if(input >= 0 && input < player.getSchool().getEntrance().size()) {
+                inputArray1.add(input);
+            }
+            else if(input < -1)
+                AnsiConsole.out().println("Not a valid index");
+        }
+
+        for(int i = 0; i < inputArray1.size(); i++)
+        {
+            AnsiConsole.out().println("Choose a color:");
+            ArrayList <Col> colors = infoPrinters.printAvailableColors(diningRoom);
+            try
+            {
+                Col colorInput = Col.valueOf(parser.nextLine());
+                if(colors.contains(colorInput))
+                {
+                    diningRoom[colorInput.ordinal()]--;
+                    inputArray2.add(colorInput.ordinal());
+                }
+                else
+                {
+                    AnsiConsole.out().println("The color you entered isn't available, try again");
+                }
+            }
+            catch(IllegalArgumentException e)
+            {
+                AnsiConsole.out().println("You didn't put a valid Color, try again");
+                i--;
+            }
+        }
+    }
+
+    /**
+     * Method JesterParser parses the input for the CharacterCard Jester
+     * @param player is the current player
+     * @param inputArray1 is the list of students indexes on the card
+     * @param inputArray2 is the list of students indexes in the entrance
+     */
+    public void JesterParser(LightCharacterCard card, LightPlayer player, ArrayList<Integer> inputArray1, ArrayList<Integer> inputArray2)
+    {
+        int inputStudentOnCardIndex = 0;
+        int inputStudentInEntrance;
+        PrinterCLI.printStudent(card.getStudentList(), 2);
+        PrinterCLI.printStudent(player.getSchool().getEntrance(), 2);
+        AnsiConsole.out().println("You may choose up to 3 students, type -1 to stop selecting students");
+
+        while(inputStudentOnCardIndex != -1 && inputArray1.size() < 3)
+        {
+            AnsiConsole.out().println("Chose a student");
+            inputStudentOnCardIndex = Integer.parseInt(parser.nextLine());
+            if (inputStudentOnCardIndex >= 0 && inputStudentOnCardIndex < 6)
+            {
+                inputArray1.add(inputStudentOnCardIndex);
+            }
+            else if (inputStudentOnCardIndex < -1)
+                AnsiConsole.out().println("Not a valid index");
+        }
+
+        for(int i = 0; i < inputArray1.size(); i++)
+        {
+            AnsiConsole.out().println("Choose the students from the entrance");
+            inputStudentInEntrance = Integer.parseInt(parser.nextLine());
+            if (inputStudentInEntrance >= 0 && inputStudentInEntrance < player.getSchool().getEntrance().size())
+            {
+                inputArray2.add(inputStudentInEntrance);
+            }
+            else
+            {
+                AnsiConsole.out().println("Your index was invalid, type again");
+                i--;
+            }
         }
     }
 
@@ -96,7 +202,7 @@ public class InputParser
         CharacterActivationParser activation;
         String nickname = socket.getNickname();
         CharacterName cardName = card.getName();
-        int input = 0;
+        int input;
         LightPlayer player = Utilities.findPlayerByName(cardPrinters.getView(), nickname);
 
         switch(card.getType())
@@ -111,13 +217,21 @@ public class InputParser
                 {
                     PrinterCLI.printStudent(card.getStudentList(), 2);
                     AnsiConsole.out().println("Choose a student to move to dining room");
+                    input = Integer.parseInt(parser.nextLine());
+                    if(input >= 0 && input <= 4)
+                    {
+                        inputArray.add(input);
+                    }
                 }
                 else
                 {
                     AnsiConsole.out().println("Choose the island");
+                    input = Integer.parseInt(parser.nextLine());
+                    if(input >= 0 && input < cardPrinters.getView().getCurrentIslands().getIslands().size())
+                    {
+                        inputArray.add(input);
+                    }
                 }
-                input = Integer.parseInt(parser.nextLine());
-                inputArray.add(input);
                 activation = new CharacterActivationParser(nickname, cardName, inputArray);
                 socket.sendMessage(new SerializedMessage(activation.buildMessage()));
                 break;
@@ -125,59 +239,13 @@ public class InputParser
             case INTEGER_2:
                 ArrayList<Integer> inputArray1 = new ArrayList<>();
                 ArrayList<Integer> inputArray2 = new ArrayList<>();
-
                 if(card.getName().equals(CharacterName.MINSTREL))
                 {
-                    PrinterCLI.printStudent(player.getSchool().getEntrance(), 2);
-                    AnsiConsole.out().println("You may choose up to 2 students, type -1 to stop selecting students");
-                    while(input != -1)
-                        AnsiConsole.out().println("Choose a student");
-                    input = Integer.parseInt(parser.nextLine());
-                    if(input >= 0 && input < player.getSchool().getEntrance().size())
-                        inputArray1.add(input);
-                    else if(input < -1)
-                        AnsiConsole.out().println("Not a valid index");
-
-                    for(int i = 0; i < inputArray1.size(); i++)
-                    {
-                        AnsiConsole.out().println("Choose a color:");
-                        try
-                        {
-                            inputArray2.add(Col.valueOf(parser.nextLine()).ordinal());
-                        }
-                        catch(IllegalArgumentException e)
-                        {
-                            AnsiConsole.out().println("You didn't put a valid Color, try again");
-                            i--;
-                        }
-                    }
+                    MinstrelParser(player, inputArray1, inputArray2);
                 }
                 else if(card.getName().equals(CharacterName.JESTER))
                 {
-                    PrinterCLI.printStudent(card.getStudentList(), 2);
-                    PrinterCLI.printStudent(player.getSchool().getEntrance(), 2);
-                    AnsiConsole.out().println("You may choose up to 3 students, type -1 to stop selecting students");
-                    while(input != -1)
-                        AnsiConsole.out().println("Chose a student");
-                    input = Integer.parseInt(parser.nextLine());
-                    if(input >= 0 && input < 6)
-                        inputArray1.add(input);
-                    else if(input < -1)
-                        AnsiConsole.out().println("Not a valid index");
-
-                    for(int i = 0; i < inputArray1.size(); i++)
-                    {
-                        AnsiConsole.out().println("Choose the students from the entrance");
-                        try
-                        {
-                            inputArray2.add(Integer.parseInt(parser.nextLine()));
-                        }
-                        catch(NumberFormatException e)
-                        {
-                            AnsiConsole.out().println("You didn't put a valid index, try again");
-                            i--;
-                        }
-                    }
+                    JesterParser(card, player, inputArray1, inputArray2);
                 }
                 else
                 {
@@ -204,7 +272,6 @@ public class InputParser
         }
     }
 
-
     /**
      * Method showView prints to screen the user requested feature
      * @param words is the current user input being parsed
@@ -216,7 +283,14 @@ public class InputParser
             case "island": //mostra isole
                 if(words.length == 3)
                 {
-                    boardPrinters.showIsland(valueOf(words[2]));
+                    try
+                    {
+                        boardPrinters.showIsland(Integer.parseInt(words[2]));
+                    }
+                    catch(NumberFormatException e)
+                    {
+                        AnsiConsole.out().println("Invalid Index");
+                    }
                 }
                 break;
             case "islands":
@@ -255,7 +329,7 @@ public class InputParser
     /**
      * Method parseString parses the first words from the input and either sends a message to the server or redirects the
      * parsing to the right parser
-     * @param input
+     * @param input is the string to parse
      */
     public void parseString(String input)
     {
@@ -263,12 +337,31 @@ public class InputParser
         switch (words[0])
         {
             case "refill":
-                socket.sendMessage(new SerializedMessage(new DrawFromPouch(valueOf(words[1]))));
-                resetScreen();
+                try
+                {
+                    int index = Integer.parseInt(words[1]);
+                    socket.sendMessage(new SerializedMessage(new DrawFromPouch(index)));
+                    resetScreen();
+                }
+                catch(NumberFormatException e)
+                {
+                    AnsiConsole.out().println("Invalid Index");
+                }
+
+
                 break;
             case "refillfrom":
-                socket.sendMessage(new SerializedMessage(new ChooseCloud(valueOf(words[1]))));
-                resetScreen();
+                try
+                {
+                    int index = Integer.parseInt(words[1]);
+                    socket.sendMessage(new SerializedMessage(new ChooseCloud(index)));
+                    resetScreen();
+                }
+                catch(NumberFormatException e)
+                {
+                    AnsiConsole.out().println("Invalid Index");
+                }
+                break;
             case "draw":
                 DrawParser(words);
                 resetScreen();

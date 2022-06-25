@@ -37,9 +37,8 @@ public class BoardPrinters extends PrinterCLI
      * of the desired island
      * @param islands the array of strings to manipulate
      * @param id the chosen island
-     * @return the updated string array after the elaboration
      */
-    private String[] printIsland(String[] islands, int id)
+    private void printIsland(String[] islands, int id)
     {
         int StudentNumber;
         LightIsland island = super.getView().getCurrentIslands().getIslands().get(id);
@@ -57,8 +56,6 @@ public class BoardPrinters extends PrinterCLI
         StudentNumber = (int)super.getView().getCurrentIslands().getIslands().get(island.getIslandId()).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count();
         islands[7] += "| " + ANSI_BLUE + ":D " + ANSI_RESET + addZero(StudentNumber) + "            |  ";
         islands[8] += "|__________________|  ";
-
-        return islands;
     }
 
 
@@ -72,7 +69,7 @@ public class BoardPrinters extends PrinterCLI
 
         if(id >= 0)
         {
-            islands = printIsland(islands, id);
+            printIsland(islands, id);
             for(int k = 0; k < 9; k++)
             {
                 AnsiConsole.out().println(islands[k]);
@@ -80,27 +77,25 @@ public class BoardPrinters extends PrinterCLI
         }
         else
         {
-
-            int totalIslandsPrinted = 1;
+            int totalIslands = super.getView().getCurrentIslands().getIslands().size();
+            int half = totalIslands / 2;
+            if(totalIslands%2 != 0)
+            {
+                half++;
+            }
             for(int i = 0; i < 2; i++)
             {
                 Arrays.fill(islands, "");
 
-                for(int j = i * 6; j < super.getView().getCurrentIslands().getIslands().size(); j++)
+                for(int j = 0; j < half && j + i * 6 < totalIslands; j++)
                 {
-                    islands = printIsland(islands, j);
-                    totalIslandsPrinted++;
-                    if(totalIslandsPrinted > super.getView().getCurrentIslands().getIslands().size()/2)
-                    {
-                        break;
-                    }
+                    printIsland(islands, j + i * 6);
                 }
 
                 for(int k = 0; k < 9; k++)
                 {
                     AnsiConsole.out().println(islands[k]);
                 }
-                totalIslandsPrinted = 1;
             }
         }
     }
@@ -113,14 +108,14 @@ public class BoardPrinters extends PrinterCLI
      */
     private String printStudentOnCloud(ArrayList<Student> students)
     {
-        String output = "";
+        StringBuilder output = new StringBuilder();
         int cloudCount = students.size();
-        output = printStudent(students, 1);
+        output.append(printStudent(students, 1));
         for(int i = 0; i < 4 - cloudCount; i++)
         {
-            output += ANSI_RESET + " O";
+            output.append(ANSI_RESET + " O");
         }
-        return output;
+        return output.toString();
     }
 
 

@@ -5,7 +5,6 @@ package it.polimi.ingsw.model;
 //TODO extract duplicate code from gui controllers
 //TODO game testing
 //TODO test school checkpoints when using minstrel and thief
-//TODO check input for colors when using minstrel
 
 //Less urgent
 //TODO players information in GUI
@@ -183,7 +182,7 @@ public class CurrentGameState extends Observable {
                     for(Team t : currentTeams)
                         for(Player p: t.getPlayers())
                         {
-                            if(maxPlayer.getSchool().getDiningRoom()[c.ordinal()] == p.getSchool().getDiningRoom()[c.ordinal()]);
+                            if(maxPlayer.getSchool().getDiningRoom()[c.ordinal()] == p.getSchool().getDiningRoom()[c.ordinal()])
                             {
                                 p.getSchool().updateProfessorsTable(c.ordinal(), false);
                             }

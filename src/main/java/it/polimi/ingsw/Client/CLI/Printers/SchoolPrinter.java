@@ -24,7 +24,7 @@ public class SchoolPrinter extends PrinterCLI
      */
     private String printEntrance(String nome)
     {
-        String output = "";
+        StringBuilder output = new StringBuilder();
         int entranceCount = 0;
         for(LightTeam team: super.getView().getCurrentTeams())
         {
@@ -33,15 +33,15 @@ public class SchoolPrinter extends PrinterCLI
                 if(player.getName().equals(nome))
                 {
                     entranceCount = player.getSchool().getEntrance().size();
-                    output = printStudent(player.getSchool().getEntrance(), 2);
+                    output.append(printStudent(player.getSchool().getEntrance(), 2));
                 }
             }
         }
         for(int i = 0; i < 9 - entranceCount; i++)
         {
-            output += ANSI_RESET + "  O";
+            output.append(ANSI_RESET + "  O");
         }
-        return output + ANSI_RESET;
+        return output.append(ANSI_RESET).toString();
     }
 
 
@@ -53,27 +53,27 @@ public class SchoolPrinter extends PrinterCLI
      */
     private String printDinnerTable(String nome, int dinnerPosition)
     {
-        String output = "";
+        StringBuilder output = new StringBuilder();
         String color = "";
         switch (dinnerPosition)
         {
             case 0:
-                color += ANSI_GREEN;
+                color = ANSI_GREEN;
                 break;
             case 1:
-                color += ANSI_RED;
+                color = ANSI_RED;
                 break;
             case 2:
-                color += ANSI_YELLOW;
+                color = ANSI_YELLOW;
                 break;
             case 3:
-                color += ANSI_PURPLE;
+                color = ANSI_PURPLE;
                 break;
             case 4:
-                color += ANSI_BLUE;
+                color = ANSI_BLUE;
                 break;
         }
-        output += color;
+        output.append(color);
         for(LightTeam team: super.getView().getCurrentTeams())
         {
             for(LightPlayer player: team.getPlayers())
@@ -84,21 +84,21 @@ public class SchoolPrinter extends PrinterCLI
                     {
                         if(i < player.getSchool().getDiningRoom()[dinnerPosition])
                         {
-                            output += " X";
+                            output.append(" X");
                         }
                         else if(i == 2 || i == 5 || i == 8)
                         {
-                            output += ANSI_WHITE + " C" + color;
+                            output.append(ANSI_WHITE + " C").append(color);
                         }
                         else
                         {
-                            output += ANSI_RESET + " O" + color;
+                            output.append(ANSI_RESET + " O").append(color);
                         }
                     }
                 }
             }
         }
-        return  output + ANSI_RESET;
+        return  output.append(ANSI_RESET).toString();
     }
 
 
@@ -132,9 +132,8 @@ public class SchoolPrinter extends PrinterCLI
      * @param schools the string to manipulate
      * @param player the player owning rhe school
      * @param currentPlayer the current player, used to understand which school description the method should use
-     * @return the manipulated string, containing the graphical representation of the school
      */
-    private String[] printSchool(String[] schools, LightPlayer player, String currentPlayer)
+    private void printSchool(String[] schools, LightPlayer player, String currentPlayer)
     {
         String name = player.getName();
         String nameTrimmed = nameTrimmer(name);
@@ -157,8 +156,6 @@ public class SchoolPrinter extends PrinterCLI
         schools[9] += ("| P:" + printDinnerTable(name, 3) + "  || " + printHasProf(name, 3) + "             |\t");
         schools[10] += ("| B:" + printDinnerTable(name, 4) + "  || " + printHasProf(name, 4) + "             |\t");
         schools[11] += ("|__________________________________________|\t");
-
-        return schools;
     }
 
 
@@ -178,7 +175,7 @@ public class SchoolPrinter extends PrinterCLI
                 if (name.equals("-1"))
                 {
                     totalSchools++;
-                    schools = printSchool(schools, player, currentPlayer);
+                    printSchool(schools, player, currentPlayer);
                     if (totalSchools == 2) {
                         for (int i = 0; i < 12; i++) {
                             AnsiConsole.out().println(schools[i]);
@@ -191,7 +188,7 @@ public class SchoolPrinter extends PrinterCLI
                 else if (player.getName().equals(name))
                 {
                     totalSchools++;
-                    schools = printSchool(schools, player, currentPlayer);
+                    printSchool(schools, player, currentPlayer);
                     for (int i = 0; i < 12; i++) {
                         AnsiConsole.out().println(schools[i]);
                         totalSchools = 0;
@@ -208,7 +205,6 @@ public class SchoolPrinter extends PrinterCLI
         {
             for (int i = 0; i < 12; i++) {
                 AnsiConsole.out().println(schools[i]);
-                totalSchools = 0;
             }
         }
 

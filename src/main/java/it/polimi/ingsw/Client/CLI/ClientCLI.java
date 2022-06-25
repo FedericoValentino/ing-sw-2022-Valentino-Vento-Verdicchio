@@ -17,8 +17,6 @@ import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import org.fusesource.jansi.AnsiConsole;
 
 import java.io.IOException;
-import java.io.InterruptedIOException;
-import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -31,7 +29,7 @@ public class ClientCLI implements ClientView, InformationGenerator
     private InputParser stdin;
     private SerializedAnswer input;
     private boolean setupState = true;
-    private Object setupLock = new Object();
+    private final Object setupLock = new Object();
     private Scanner info = new Scanner(System.in);
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
@@ -185,11 +183,13 @@ public class ClientCLI implements ClientView, InformationGenerator
         catch(SocketTimeoutException e)
         {
             main.disconnect();
+            System.out.println("Connection to server lost");
             System.exit(0);
         }
         catch(IOException e)
         {
             main.disconnect();
+            System.out.println("Something went wrong, your game was stopped");
             System.exit(0);
         }
         catch(ClassNotFoundException e)

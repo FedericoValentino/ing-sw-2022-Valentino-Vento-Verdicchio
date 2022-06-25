@@ -1,11 +1,8 @@
 package it.polimi.ingsw.Client.CLI.Printers;
 //
 import it.polimi.ingsw.Client.LightView.*;
-import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
-import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import it.polimi.ingsw.model.boards.token.Student;
-import org.fusesource.jansi.AnsiConsole;
 
 
 import java.util.ArrayList;
@@ -115,33 +112,33 @@ public abstract class PrinterCLI
      */
     public static String printStudent(ArrayList<Student> students, int spaces)
     {
-        String output = "";
+        StringBuilder output = new StringBuilder();
         for(Student s: students)
         {
             for(int i = 0; i < spaces; i++)
             {
-                output += " ";
+                output.append(" ");
             }
             switch(s.getColor())
             {
                 case GREEN:
-                    output += ANSI_GREEN + "X";
+                    output.append(ANSI_GREEN + "X");
                     break;
                 case RED:
-                    output += ANSI_RED + "X";
+                    output.append(ANSI_RED + "X");
                     break;
                 case YELLOW:
-                    output += ANSI_YELLOW + "X";
+                    output.append(ANSI_YELLOW + "X");
                     break;
                 case PINK:
-                    output += ANSI_PURPLE + "X";
+                    output.append(ANSI_PURPLE + "X");
                     break;
                 case BLUE:
-                    output += ANSI_BLUE + "X";
+                    output.append(ANSI_BLUE + "X");
                     break;
             }
         }
-        return output + ANSI_RESET;
+        return output.append(ANSI_RESET).toString();
     }
 
 

@@ -5,6 +5,7 @@ import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightUtilities.Utilities;
 import it.polimi.ingsw.Client.LightView.LightView;
+import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import org.fusesource.jansi.AnsiConsole;
 
 import java.util.ArrayList;
@@ -149,5 +150,22 @@ public class InfoPrinters extends PrinterCLI
 
     public void printTurn(){
         AnsiConsole.out().println( ANSI_GREEN + "Turn " + ANSI_RESET + super.getView().getCurrentTurnState().getTurn());
+    }
+
+
+    public ArrayList<Col> printAvailableColors(int[] diningRoom)
+    {
+        StringBuilder colors = new StringBuilder();
+        ArrayList<Col> available = new ArrayList<>();
+        for(int i = 0; i < 5; i++)
+        {
+            if(diningRoom[i] > 0)
+            {
+                colors.append(Col.values()[i]).append(" ");
+                available.add(Col.values()[i]);
+            }
+        }
+        System.out.println(colors);
+        return available;
     }
 }
