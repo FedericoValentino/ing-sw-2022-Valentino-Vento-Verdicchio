@@ -9,10 +9,6 @@ import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAn
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.ReadyController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.TeamController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.WizardController;
-import it.polimi.ingsw.Client.LightView.LightView;
-import it.polimi.ingsw.Client.Messages.SerializedMessage;
-import it.polimi.ingsw.Client.Messages.SetupMessages.Pong;
-import it.polimi.ingsw.Client.Messages.SetupMessages.StandardSetupMessage;
 import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.StandardActionAnswer;
@@ -112,7 +108,6 @@ public class ClientGUI implements ClientView, InformationGenerator
         }
         catch(ClassNotFoundException e)
         {
-
         }
 
     }
@@ -254,7 +249,7 @@ public class ClientGUI implements ClientView, InformationGenerator
                             try
                             {
                                 mbc.setup(MyView);
-                                mbc.initialSetupOtherSchool(MyView.getCurrentTeams());
+                                mbc.initialSetupOtherSchool(MyView);
                                 mbc.initialSetupAssistantCard(MyView.getCurrentTeams());
                                 mbc.initialSetupIsland(MyView);
                                 mbc.initialSetupMineSchool();

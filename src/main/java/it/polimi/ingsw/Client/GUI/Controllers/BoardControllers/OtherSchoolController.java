@@ -2,9 +2,12 @@ package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
 
 
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
+import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightSchool;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
+import it.polimi.ingsw.Client.LightView.LightUtilities.Utilities;
+import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Observer.ObserverLightView;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -12,7 +15,6 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import it.polimi.ingsw.model.boards.token.Student;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -21,19 +23,21 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
     private AnchorPane APotherSChool;
     private ArrayList<LightTeam> teams;
     private String lookedPlayer;
+    private LightView view;
 
 
 
     public void onClick(ActionEvent event)
     {
         this.lookedPlayer = ((Button)event.getSource()).getText();
-        update(getSchoolByName(lookedPlayer));
+        update(Utilities.getSchoolByName(view, lookedPlayer));
     }
 
-    public void setup(ArrayList<LightTeam> teams, AnchorPane otherSchool)
+    public void setup(LightView view, AnchorPane otherSchool)
     {
+        this.view = view;
         this.APotherSChool = otherSchool;
-        this.teams = teams;
+        this.teams = view.getCurrentTeams();
         for(LightTeam t: this.teams)
         {
             for(LightPlayer p: t.getPlayers())
@@ -47,69 +51,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
             b.setOnAction(this::onClick);
         }
         this.lookedPlayer = ((Button)((HBox)otherSchool.getChildren().get(1)).getChildren().get(0)).getText();
-        update(getSchoolByName(lookedPlayer));
-    }
-
-    public LightSchool getSchoolByName(String username)
-    {
-        for(LightTeam t: teams)
-        {
-            for(LightPlayer p: t.getPlayers())
-            {
-                if(p.getName().equals(username))
-                {
-                    return p.getSchool();
-                }
-            }
-        }
-        return null;
-    }
-    public String getRightColorPath(Student s)
-    {
-        switch(s.getColor())
-        {
-            case GREEN:
-                return "/Client/GUI/Images/Student/student_green.png";
-            case YELLOW:
-                return "/Client/GUI/Images/Student/student_yellow.png";
-            case RED:
-                return "/Client/GUI/Images/Student/student_red.png";
-            case BLUE:
-                return "/Client/GUI/Images/Student/student_blue.png";
-            case PINK:
-                return "/Client/GUI/Images/Student/student_pink.png";
-            default:
-                return "";
-        }
-    }
-
-    public String getSchoolColorPath(LightSchool school)
-    {
-        switch(school.getColor())
-        {
-            case WHITE:
-                return "/Client/GUI/Images/Tower/white_tower.png";
-            case BLACK:
-                return "/Client/GUI/Images/Tower/black_tower.png";
-            case GREY:
-                return "/Client/GUI/Images/Tower/grey_tower.png";
-            default:
-                return "";
-        }
-    }
-
-    public Pane getCellFromGridPane(GridPane matrix, int column, int row)
-    {
-        for(Node N : matrix.getChildren())
-        {
-            int rowN = GridPane.getRowIndex(N);
-            int columnN = GridPane.getColumnIndex(N);
-            if(rowN == row && columnN == column)
-            {
-                return (Pane)N;
-            }
-        }
-        return null;
+        update(Utilities.getSchoolByName(view, lookedPlayer));
     }
 
 
@@ -118,7 +60,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
     {
         Platform.runLater(()->{
             LightSchool school = (LightSchool) o;
-            String TowerColorPath = getSchoolColorPath(school);
+            String TowerColorPath = GUIUtilities.getSchoolColorPath(school.getColor());
             if(lookedPlayer.equals(school.getOwner()))
             {
                 //Updating Entrance
@@ -133,7 +75,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                     int finalI = i;
                     Pane entrance_pos = (Pane)((AnchorPane)APotherSChool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
                     entrance_pos.getChildren().clear();
-                    ImageView nImage=new ImageView(getRightColorPath(school.getEntrance().get(i)));
+                    ImageView nImage=new ImageView(GUIUtilities.getRightColorPath(school.getEntrance().get(i)));
                     nImage.setFitHeight(27);
                     nImage.setFitWidth(27);
                     entrance_pos.getChildren().add(nImage);
@@ -168,7 +110,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                 {
                     for(int j = 0; j < 4; j++)
                     {
-                        Pane cell = getCellFromGridPane(towers, j, i);
+                        Pane cell = (Pane) GUIUtilities.getCellFromGridPane(towers, j, i);
                         cell.setVisible(false);
                     }
                 }
@@ -176,7 +118,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                 {
                     for(int j = 0; j < 4 && tempTowers > 0; j++)
                     {
-                        Pane cell = getCellFromGridPane(towers, j, i);
+                        Pane cell = (Pane) GUIUtilities.getCellFromGridPane(towers, j, i);
                         cell.getChildren().clear();
                         cell.getChildren().add(new ImageView(TowerColorPath));
                         cell.setVisible(true);

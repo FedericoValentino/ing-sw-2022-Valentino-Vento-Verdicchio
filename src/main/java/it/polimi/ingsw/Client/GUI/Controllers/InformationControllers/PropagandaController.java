@@ -2,7 +2,6 @@ package it.polimi.ingsw.Client.GUI.Controllers.InformationControllers;
 
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
-import it.polimi.ingsw.Client.LightView.LightUtilities.InfoDispenser;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTurnState;
 import it.polimi.ingsw.Client.LightView.LightView;
@@ -10,6 +9,7 @@ import it.polimi.ingsw.Client.Messages.ActionMessages.EndTurn;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.Messages.SetupMessages.Disconnect;
 import it.polimi.ingsw.Observer.ObserverLightView;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -54,6 +54,8 @@ public class PropagandaController extends Controller implements ObserverLightVie
     private void exitOnClick(MouseEvent mouseEvent)
     {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new Disconnect()));
+        System.exit(0);
+        Platform.exit();
     }
 
     private void endTurnOnClick(MouseEvent mouseEvent)

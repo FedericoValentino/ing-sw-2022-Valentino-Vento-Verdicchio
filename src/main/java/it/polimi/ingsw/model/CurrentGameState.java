@@ -1,8 +1,6 @@
 package it.polimi.ingsw.model;
 
 //URGENT
-//TODO terminate GUI or X button from window
-//TODO extract duplicate code from gui controllers
 //TODO game testing
 //TODO test school checkpoints when using minstrel and thief
 

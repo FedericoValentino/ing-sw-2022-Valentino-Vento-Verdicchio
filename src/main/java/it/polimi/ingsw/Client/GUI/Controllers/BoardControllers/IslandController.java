@@ -1,9 +1,11 @@
 package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
 
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
+import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Client.LightView.LightToken.LightMotherNature;
+import it.polimi.ingsw.Client.LightView.LightUtilities.Utilities;
 import it.polimi.ingsw.Client.Messages.ActionMessages.MoveMN;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.model.boards.token.Student;
@@ -58,20 +60,7 @@ public class IslandController extends Controller {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveMN(amount)));
     }
 
-    public String getTowerColorPath(ColTow color)
-    {
-        switch(color)
-        {
-            case WHITE:
-                return "/Client/GUI/Images/Tower/white_tower.png";
-            case BLACK:
-                return "/Client/GUI/Images/Tower/black_tower.png";
-            case GREY:
-                return "/Client/GUI/Images/Tower/grey_tower.png";
-            default:
-                return "";
-        }
-    }
+
 
     public void setup(LightIsland island, int ID, LightMotherNature Mother, int total)
     {
@@ -89,7 +78,7 @@ public class IslandController extends Controller {
         if(island.getOwnership() != null)
         {
             ownerShip.getChildren().clear();
-            ImageView ownershipImage = new ImageView(getTowerColorPath(island.getOwnership()));
+            ImageView ownershipImage = new ImageView(GUIUtilities.getSchoolColorPath(island.getOwnership()));
             ownershipImage.setFitWidth(21);
             ownershipImage.setFitHeight(21);
             ownerShip.getChildren().add(ownershipImage);
@@ -98,16 +87,14 @@ public class IslandController extends Controller {
             towerNumber.setVisible(true);
         }
 
-        islandImage.setImage(new Image("/Client/GUI/Images/Islands/island"+Integer.toString(ID%3)+".png"));
+        islandImage.setImage(new Image("/Client/GUI/Images/Islands/island"+ ID % 3 +".png"));
     }
 
 
     void studentPlacing(LightIsland island)
     {
 
-        long counterTemp=0;
-
-        counterTemp= island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count();
+        long counterTemp= island.getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count();
         if(counterTemp>0)
             blueStudents.setText(Long.toString(counterTemp));
        else

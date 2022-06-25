@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
 //
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
+import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightCloud;
 import it.polimi.ingsw.Client.LightView.LightTurnState;
@@ -19,6 +20,7 @@ import javafx.scene.layout.StackPane;
 import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 import it.polimi.ingsw.model.boards.token.Student;
 
+import static it.polimi.ingsw.Client.GUI.GUIUtilities.getRightColorPath;
 
 
 public class CloudController extends Controller implements ObserverLightView
@@ -53,7 +55,7 @@ public class CloudController extends Controller implements ObserverLightView
         {
             for(int j = 0; j < 2 && temp > 0; j++)
             {
-                StackPane pane = (StackPane) getCellFromGridPane(clouds, j, i);
+                StackPane pane = (StackPane) GUIUtilities.getCellFromGridPane(clouds, j, i);
                 pane.setVisible(true);
                 pane.setOnMouseClicked(this::CloudSelection);
                 temp--;
@@ -66,38 +68,7 @@ public class CloudController extends Controller implements ObserverLightView
     }
 
 
-    public Node getCellFromGridPane(GridPane matrix, int column, int row)
-    {
-        for(Node N : matrix.getChildren())
-        {
-            int rowN = GridPane.getRowIndex(N);
-            int columnN = GridPane.getColumnIndex(N);
-            if(rowN == row && columnN == column)
-            {
-                return N;
-            }
-        }
-        return null;
-    }
 
-    public String getRightColorPath(Student s)
-    {
-        switch(s.getColor())
-        {
-            case GREEN:
-                return "/Client/GUI/Images/Student/student_green.png";
-            case YELLOW:
-                return "/Client/GUI/Images/Student/student_yellow.png";
-            case RED:
-                return "/Client/GUI/Images/Student/student_red.png";
-            case BLUE:
-                return "/Client/GUI/Images/Student/student_blue.png";
-            case PINK:
-                return "/Client/GUI/Images/Student/student_pink.png";
-            default:
-                return "";
-        }
-    }
 
     public void fill(GridPane fillable, LightCloud filler)
     {
@@ -106,7 +77,7 @@ public class CloudController extends Controller implements ObserverLightView
         {
             for(int j = 0; j < 2; j++)
             {
-                Pane cell = (Pane)getCellFromGridPane(fillable, j, i);
+                Pane cell = (Pane) GUIUtilities.getCellFromGridPane(fillable, j, i);
                 cell.setVisible(false);
             }
         }
@@ -114,10 +85,10 @@ public class CloudController extends Controller implements ObserverLightView
         {
             for(int j = 0; j < 2 && temp > 0; j++)
             {
-                Pane cell = (Pane)getCellFromGridPane(fillable, j, i);
+                Pane cell = (Pane) GUIUtilities.getCellFromGridPane(fillable, j, i);
                 cell.setVisible(true);
                 cell.getChildren().clear();
-                cell.getChildren().add(new ImageView(getRightColorPath(filler.getStudents().get(temp-1))));
+                cell.getChildren().add(new ImageView(GUIUtilities.getRightColorPath(filler.getStudents().get(temp-1))));
                 temp--;
             }
         }

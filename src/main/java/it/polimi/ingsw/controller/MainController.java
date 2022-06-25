@@ -1,5 +1,3 @@
-//TODO rimuove parametro torri da addPlayer
-
 package it.polimi.ingsw.controller;
 
 import it.polimi.ingsw.model.CurrentGameState;
@@ -10,6 +8,7 @@ import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Optional;
 
 public class MainController
@@ -38,10 +37,7 @@ public class MainController
         //this.checks = new Checks();
         this.expertGame = expert;
         this.availableWizards = new ArrayList<>();
-        for(int i = 0; i < 4; i++)
-        {
-            this.availableWizards.add(Wizard.values()[i]);
-        }
+        this.availableWizards.addAll(Arrays.asList(Wizard.values()).subList(0, 4));
         this.availableTeams = new int[3];
         if(playerNumber == 2)
         {

@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Client.LightView.LightUtilities;
 
+import it.polimi.ingsw.Client.LightView.LightBoards.LightSchool;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightView;
@@ -46,6 +47,22 @@ public final class Utilities
 
                     return team;
 
+        return null;
+    }
+
+
+    public static LightSchool getSchoolByName(LightView view, String username)
+    {
+        for(LightTeam t: view.getCurrentTeams())
+        {
+            for(LightPlayer p: t.getPlayers())
+            {
+                if(p.getName().equals(username))
+                {
+                    return p.getSchool();
+                }
+            }
+        }
         return null;
     }
 }

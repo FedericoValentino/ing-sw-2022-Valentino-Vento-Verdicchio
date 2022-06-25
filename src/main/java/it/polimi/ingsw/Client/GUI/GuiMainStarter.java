@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.GUI;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.IntroController;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -11,14 +12,13 @@ import java.util.concurrent.*;
 public class GuiMainStarter extends Application {
     private static Stage mainStage;
     private static ClientGUI clientGUI;
-    private ExecutorService executor = Executors.newSingleThreadExecutor();
 
 
     public static void main(){
         launch();
     }
 
-    /**It's a method to get my reference to CLientGUI, otherwise I'll lose it and I wont't be able to replace it with the
+    /**It's a method to get my reference to CLientGUI, otherwise I'll lose it and I wont be able to replace it with the
      * next one.
      * **/
     public static void setClientGUI(ClientGUI clientGUI)
@@ -53,6 +53,11 @@ public class GuiMainStarter extends Application {
         mainStage.setScene(new Scene(loader.load()));
         mainStage.show();
         mainStage.setAlwaysOnTop(false);
+        mainStage.setOnCloseRequest((Event) ->
+        {
+            System.exit(0);
+            Platform.exit();
+        });
         IntroController controller = loader.getController();
         controller.setGuiMainStarter(this);
     }

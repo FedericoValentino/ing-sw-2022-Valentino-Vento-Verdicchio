@@ -60,8 +60,8 @@ public class IslandsController extends Controller implements ObserverLightView {
             {
                 String islandPath = "/Client/GUI/Controllers/Island.fxml";
                 FXMLLoader islandLoader = new FXMLLoader(getClass().getResource(islandPath));
-                islands.removeAll(islands);
-                islandControllers.removeAll((islandControllers));
+                islands.clear();
+                islandControllers.clear();
                 AnchorPane islandContainer = new AnchorPane();
                 islandContainer.setId("is"+id);
                 islandContainer.getChildren().clear();

@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
 ////
+import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightSchool;
@@ -26,7 +27,7 @@ import java.util.stream.Collectors;
 public class MineSchoolController implements ObserverLightView
 {
     @FXML private Pane studentChoice;
-    @FXML private ChoiceBox islands;
+    @FXML private ChoiceBox<String> islands;
     @FXML private Button toDining;
     @FXML private Button toIsland;
 
@@ -66,7 +67,7 @@ public class MineSchoolController implements ObserverLightView
 
     public void sendIsland(MouseEvent event)
     {
-        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, true, Integer.parseInt((String)islands.getValue()))));
+        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, true, Integer.parseInt(islands.getValue()))));
         //tolgo il pane di scelta e disabilito l'effetto rosso dello student
         studentChoice.setVisible(false);
         ((Pane) eventStudent.getSource()).setEffect(null);
@@ -102,60 +103,12 @@ public class MineSchoolController implements ObserverLightView
     }
 
 
-    public String getRightColorPath(Student s)
-    {
-        switch(s.getColor())
-        {
-            case GREEN:
-                return "/Client/GUI/Images/Student/student_green.png";
-            case YELLOW:
-                return "/Client/GUI/Images/Student/student_yellow.png";
-            case RED:
-                return "/Client/GUI/Images/Student/student_red.png";
-            case BLUE:
-                return "/Client/GUI/Images/Student/student_blue.png";
-            case PINK:
-                return "/Client/GUI/Images/Student/student_pink.png";
-            default:
-                return "";
-        }
-    }
-
-    public String getSchoolColorPath(LightSchool school)
-    {
-        switch(school.getColor())
-        {
-            case WHITE:
-                return "/Client/GUI/Images/Tower/white_tower.png";
-            case BLACK:
-                return "/Client/GUI/Images/Tower/black_tower.png";
-            case GREY:
-                return "/Client/GUI/Images/Tower/grey_tower.png";
-            default:
-                return "";
-        }
-    }
-
-    public Pane getCellFromGridPane(GridPane matrix, int column, int row)
-    {
-        for(Node N : matrix.getChildren())
-        {
-            int rowN = GridPane.getRowIndex(N);
-            int columnN = GridPane.getColumnIndex(N);
-            if(rowN == row && columnN == column)
-            {
-                return (Pane)N;
-            }
-        }
-        return null;
-    }
-
     @Override
     public void update(Object o)
     {
         Platform.runLater(()->{
             LightSchool school = (LightSchool) o;
-            String TowerColorPath = getSchoolColorPath(school);
+            String TowerColorPath = GUIUtilities.getSchoolColorPath(school.getColor());
             //Updating ChoiceBox
             islands.getItems().clear();
             for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
@@ -174,7 +127,7 @@ public class MineSchoolController implements ObserverLightView
                 int finalI = i;
                 Pane entrance_pos = (Pane)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
                 entrance_pos.getChildren().clear();
-                ImageView nImage=new ImageView(getRightColorPath(school.getEntrance().get(i)));
+                ImageView nImage=new ImageView(GUIUtilities.getRightColorPath(school.getEntrance().get(i)));
                 nImage.setFitHeight(27);
                 nImage.setFitWidth(27);
                 entrance_pos.getChildren().add(nImage);
@@ -209,7 +162,7 @@ public class MineSchoolController implements ObserverLightView
             {
                 for(int j = 0; j < 4; j++)
                 {
-                    Pane cell = getCellFromGridPane(towers, j, i);
+                    Pane cell = (Pane) GUIUtilities.getCellFromGridPane(towers, j, i);
                     cell.setVisible(false);
                 }
             }
@@ -217,7 +170,7 @@ public class MineSchoolController implements ObserverLightView
             {
                 for(int j = 0; j < 4 && tempTowers > 0; j++)
                 {
-                    Pane cell = getCellFromGridPane(towers, j, i);
+                    Pane cell = (Pane) GUIUtilities.getCellFromGridPane(towers, j, i);
                     cell.getChildren().clear();
                     cell.getChildren().add(new ImageView(TowerColorPath));
                     cell.setVisible(true);
