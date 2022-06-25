@@ -36,7 +36,7 @@
             <Image url="@../Images/Student/student_pink.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="noEntry" fitHeight="46.0" fitWidth="49.0" layoutX="137.0" layoutY="8.0">
+      <ImageView fx:id="noEntry" fitHeight="36.0" fitWidth="35.0" layoutX="152.0" layoutY="13.0">
          <image>
             <Image url="@../Images/deny_island_icon.png" />
          </image>
@@ -72,6 +72,7 @@
          </font>
       </Text>
       <Pane fx:id="ownerShip" layoutX="110.0" layoutY="18.0" prefHeight="21.0" prefWidth="21.0" />
+      <Text fx:id="islandIDText" layoutX="14.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="28.0" />
       <Text fx:id="towerNumber" layoutX="121.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
          <font>
             <Font size="14.0" />

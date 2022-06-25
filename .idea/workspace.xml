@@ -9,21 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Removed warnings in CLI, unified every main in a single main in ClientApp, fixed merging visualization in CLI and much more">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/GUIUtilities.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Removed warnings when possible from GUI, added the close button functionality, still researching a way of restarting the GUI totally. Added new GUIUtilities class and removed duplicate code when possible">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/CloudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/CloudController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/MineSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/MineSchoolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/OtherSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/OtherSchoolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/InformationControllers/PropagandaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/InformationControllers/PropagandaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/GuiMainStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/GuiMainStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightUtilities/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightUtilities/Utilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Island.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Island.fxml" afterDir="false" />
     </list>
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
@@ -268,14 +260,8 @@
       <workItem from="1656058184717" duration="6470000" />
       <workItem from="1656066885723" duration="1694000" />
       <workItem from="1656117377462" duration="1892000" />
-      <workItem from="1656150011339" duration="12430000" />
-    </task>
-    <task id="LOCAL-00128" summary="Eliminated redundant button in CharacterCardscontroller">
-      <created>1655153829203</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1655153829203</updated>
+      <workItem from="1656150011339" duration="12839000" />
+      <workItem from="1656168778040" duration="2148000" />
     </task>
     <task id="LOCAL-00129" summary="Different Opacity for Play effect button&gt; experiment">
       <created>1655154219540</created>
@@ -613,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656159614636</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="Removed warnings when possible from GUI, added the close button functionality, still researching a way of restarting the GUI totally. Added new GUIUtilities class and removed duplicate code when possible">
+      <created>1656164556805</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1656164556805</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,8 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix for the islands ChoiceBox" />
-    <MESSAGE value="Removed communication messages that are no longer used and added documentation to the remaining ones" />
     <MESSAGE value="Modified 3 lines" />
     <MESSAGE value="Some delete in Controller and a change in ClientGUI" />
     <MESSAGE value="Little docu about a method" />
@@ -669,7 +660,9 @@
     <MESSAGE value="(╯°□°)╯︵ ┻━┻" />
     <MESSAGE value="Fixed Cook, added disconnect option" />
     <MESSAGE value="Removed warnings in CLI, unified every main in a single main in ClientApp, fixed merging visualization in CLI and much more" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed warnings in CLI, unified every main in a single main in ClientApp, fixed merging visualization in CLI and much more" />
+    <MESSAGE value="Removed warnings when possible from GUI, added the close button functionality, still researching a way of restarting the GUI totally" />
+    <MESSAGE value="Removed warnings when possible from GUI, added the close button functionality, still researching a way of restarting the GUI totally. Added new GUIUtilities class and removed duplicate code when possible" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed warnings when possible from GUI, added the close button functionality, still researching a way of restarting the GUI totally. Added new GUIUtilities class and removed duplicate code when possible" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

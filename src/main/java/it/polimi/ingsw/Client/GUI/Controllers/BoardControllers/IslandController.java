@@ -40,6 +40,7 @@ public class IslandController extends Controller {
     @FXML private ImageView noEntry;
     @FXML private AnchorPane islandPane;
     @FXML private Pane ownerShip;
+    @FXML private Text islandIDText;
 
     private int islandID;
     private LightMotherNature MN;
@@ -62,7 +63,7 @@ public class IslandController extends Controller {
 
 
 
-    public void setup(LightIsland island, int ID, LightMotherNature Mother, int total)
+    public void setup(LightIsland island, int ID, LightMotherNature Mother, int total, double angle)
     {
         towerNumber.setVisible(false);
         ownerShip.setVisible(false);
@@ -74,6 +75,12 @@ public class IslandController extends Controller {
 
         motherNature.setVisible(island.isMotherNature());
         noEntry.setVisible(island.isNoEntry());
+        noEntry.setLayoutX(100 + 90 * Math.cos(angle));
+        noEntry.setLayoutY(100 - 90 * Math.sin(angle));
+        islandIDText.setLayoutX(100 + 90 * Math.cos(angle + Math.PI));
+        islandIDText.setLayoutY(100 - 90 * Math.sin(angle + Math.PI));
+        islandIDText.setText(String.valueOf(islandID));
+
         islandPane.setOnMouseClicked(this::onClick);
         if(island.getOwnership() != null)
         {

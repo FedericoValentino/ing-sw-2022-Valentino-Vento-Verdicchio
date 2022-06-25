@@ -75,7 +75,7 @@ public class IslandsController extends Controller implements ObserverLightView {
                 }
                 islands.add(islandContainer);
                 IslandController islandController = islandLoader.getController();
-                islandController.setup(island, id, view.getCurrentMotherNature(), lightIslands.getIslands().size());
+                islandController.setup(island, id, view.getCurrentMotherNature(), lightIslands.getIslands().size(), startingAngle);
                 islandContainer.setLayoutX(350 + 75 * Math.cos(startingAngle) + (radius * Math.cos(startingAngle)));
                 islandContainer.setLayoutY(225 - 25 * Math.sin(startingAngle) - (radius * Math.sin(startingAngle)));
                 startingAngle -= deltaTheta;

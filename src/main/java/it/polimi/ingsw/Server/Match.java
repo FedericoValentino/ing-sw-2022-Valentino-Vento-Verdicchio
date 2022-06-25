@@ -22,6 +22,7 @@ public class Match
     private ArrayList<GameHandler> clients = new ArrayList<>();
     private boolean running = false;
     private boolean isGameSet = false;
+    private boolean hasEnded = false;
     private ExecutorService clientPinger = Executors.newFixedThreadPool(128);
 
 
@@ -93,7 +94,7 @@ public class Match
         {
             for(GameHandler GameHandler: clients)
             {
-                GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage(String.valueOf(mainController.getGame().getCurrentTurnState().getWinningTeam()) + "is the Winner!")));
+                GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage(mainController.getGame().getCurrentTurnState().getWinningTeam() + "is the Winner!")));
                 try
                 {
                     GameHandler.getSocket().getClient().close();
@@ -105,6 +106,7 @@ public class Match
                 }
             }
         }
+        hasEnded = true;
 
     }
 
@@ -122,4 +124,8 @@ public class Match
 
     public boolean isGameSet(){ return isGameSet; }
 
+    public boolean hasEnded()
+    {
+        return hasEnded;
+    }
 }

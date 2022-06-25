@@ -115,7 +115,7 @@ public class Server
             int runningMatches = 0;
             for(Match match: matches)
             {
-               if (match.getRunning())
+               if (match.getRunning() || match.hasEnded())
                   runningMatches ++;
             }
             if(runningMatches == matches.size())
