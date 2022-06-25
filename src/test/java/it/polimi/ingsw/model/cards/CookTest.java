@@ -50,10 +50,21 @@ public class CookTest {
         assertTrue(jack.getSchool().getProfessorTable()[4]);
         assertFalse(jack.getSchool().getProfessorTable()[0]);
 
+        fede.getSchool().placeInDiningRoom(Col.BLUE);
+        testCard.effect(controllerTest.getGame(), null, null, "fede", null);
+
+        assertTrue(fede.getSchool().getProfessorTable()[0]);
+        assertTrue(fede.getSchool().getProfessorTable()[4]);
+        assertFalse(jack.getSchool().getProfessorTable()[4]);
+        assertFalse(jack.getSchool().getProfessorTable()[0]);
+
         controllerTest.getGame().getCurrentTeams().get(0).updateProfessors();
         controllerTest.getGame().getCurrentTeams().get(1).updateProfessors();
 
-        assertEquals(Col.GREEN, controllerTest.getGame().getCurrentTeams().get(1).getControlledProfessors().get(0));
-        assertEquals(Col.BLUE, controllerTest.getGame().getCurrentTeams().get(0).getControlledProfessors().get(0));
+        assert(controllerTest.getGame().getCurrentTeams().get(1).getControlledProfessors().contains(Col.GREEN)
+        && controllerTest.getGame().getCurrentTeams().get(1).getControlledProfessors().contains(Col.BLUE));
+
+        assertFalse(controllerTest.getGame().getCurrentTeams().get(0).getControlledProfessors().contains(Col.GREEN)
+                && controllerTest.getGame().getCurrentTeams().get(0).getControlledProfessors().contains(Col.BLUE));
     }
 }

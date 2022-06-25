@@ -8,6 +8,7 @@ import it.polimi.ingsw.Client.LightView.LightTurnState;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.ActionMessages.EndTurn;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Client.Messages.SetupMessages.Disconnect;
 import it.polimi.ingsw.Observer.ObserverLightView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -52,6 +53,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
 
     private void exitOnClick(MouseEvent mouseEvent)
     {
+        GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new Disconnect()));
     }
 
     private void endTurnOnClick(MouseEvent mouseEvent)

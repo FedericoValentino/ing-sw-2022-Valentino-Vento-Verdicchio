@@ -7,6 +7,7 @@ import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightUtilities.Utilities;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Client.Messages.SetupMessages.Disconnect;
 import it.polimi.ingsw.Client.Messages.SetupMessages.ReadyStatus;
 import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Client.Messages.ActionMessages.*;
@@ -295,6 +296,10 @@ public class InputParser
             case "ready":
                 socket.sendMessage(new SerializedMessage(new ReadyStatus()));
                 resetScreen();
+                break;
+            case "exit":
+                socket.sendMessage(new SerializedMessage(new Disconnect()));
+                System.exit(0);
                 break;
             default:
                 System.out.println("Unrecognized input");
