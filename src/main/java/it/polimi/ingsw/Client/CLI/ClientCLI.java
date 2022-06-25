@@ -17,6 +17,9 @@ import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import org.fusesource.jansi.AnsiConsole;
 
 import java.io.IOException;
+import java.io.InterruptedIOException;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
@@ -179,17 +182,20 @@ public class ClientCLI implements ClientView, InformationGenerator
                 messageHandler(answer);
             }
         }
+        catch(SocketTimeoutException e)
+        {
+            main.disconnect();
+            System.exit(0);
+        }
         catch(IOException e)
         {
             main.disconnect();
-            e.printStackTrace();
             System.exit(0);
         }
         catch(ClassNotFoundException e)
         {
             System.out.println("Client couldn't understand Server");
         }
-
     }
 
     @Override
