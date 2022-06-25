@@ -162,7 +162,7 @@ public class ClientCLI implements ClientView, InformationGenerator
         }
 
     }
-
+//
     @Override
     public void readMessage(){
         try
