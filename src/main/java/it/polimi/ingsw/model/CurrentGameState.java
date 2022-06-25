@@ -1,8 +1,9 @@
 package it.polimi.ingsw.model;
 
 //URGENT
-//TODO Client side errors
 //TODO terminate GUI with exit button or X button from window
+//TODO extract duplicate code
+//TODO ping
 
 //Less urgent
 //TODO players information in GUI

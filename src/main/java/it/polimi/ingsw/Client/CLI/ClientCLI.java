@@ -38,6 +38,8 @@ public class ClientCLI implements ClientView, InformationGenerator
     public void setupHandler(StandardSetupAnswer answer){
         switch(answer.getType())
         {
+            case PING:
+                System.out.println("Server pinged do i Pong?");
             case GAME_NFO_REQ:
                 GameMode gm = new GameMode();
                 System.out.println("First Client, what gamemode would you like to play?");
@@ -179,6 +181,7 @@ public class ClientCLI implements ClientView, InformationGenerator
         catch(IOException e)
         {
             main.disconnect();
+            e.printStackTrace();
             System.exit(0);
         }
         catch(ClassNotFoundException e)

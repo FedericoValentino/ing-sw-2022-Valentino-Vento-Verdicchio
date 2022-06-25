@@ -6,5 +6,6 @@ public enum SETUPANSWERTYPE {
     GAME_START,
     GAME_NFO,
     GAME_NFO_REQ,
-    REJECT
+    REJECT,
+    PING
 }

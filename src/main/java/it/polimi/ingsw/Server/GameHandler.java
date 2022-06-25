@@ -3,6 +3,7 @@ package it.polimi.ingsw.Server;
 
 
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Client.Messages.SetupMessages.SETUPMESSAGETYPE;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.AvailableTeams;
@@ -27,6 +28,7 @@ import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import java.io.IOException;
 
 
+
 public class GameHandler extends Thread implements Observer
 {
     private ClientConnection socket;
@@ -41,10 +43,9 @@ public class GameHandler extends Thread implements Observer
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_GREEN = "\u001B[32m";
 
-    public GameHandler(MainController m, ClientConnection s, Match match)
+    public GameHandler(ClientConnection s, Match match)
     {
         this.socket = s;
-        this.mainController = m;
         this.ready = false;
         this.choseWizard = false;
         this.choseTeam = false;
@@ -426,8 +427,9 @@ public class GameHandler extends Thread implements Observer
         socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck(), mainController.getGame().getCurrentActiveCharacterCard())));
     }
 
-    public boolean getConnected() {
-        return connected;
+    public void setMainController(MainController controller)
+    {
+        mainController = controller;
     }
 
     public ClientConnection getSocket()

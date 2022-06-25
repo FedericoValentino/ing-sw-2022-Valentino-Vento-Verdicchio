@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ClientConnection
 {
@@ -29,7 +31,7 @@ public class ClientConnection
      * Method sendAnswer sends a message to the client
      * @param answer the message to be sent
      */
-    public void sendAnswer(SerializedAnswer answer)
+    public synchronized void sendAnswer(SerializedAnswer answer)
     {
         try {
             outputStream.writeObject(answer);

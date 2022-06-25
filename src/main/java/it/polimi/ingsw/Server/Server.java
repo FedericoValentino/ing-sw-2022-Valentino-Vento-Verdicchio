@@ -17,7 +17,6 @@ public class Server
 {
    private static final int PORT = 1234;
    private ServerSocket server;
-   private ArrayList<ClientConnection> waitLobby = new ArrayList<>();
    private ArrayList<Match> matches = new ArrayList<>();
    private boolean isGameSet = false;
 
@@ -35,9 +34,8 @@ public class Server
     * Method registerConnection registers the clients connecting to the server adding them to the server waitLobby
     * @param s
     */
-   public void registerConnection(Socket s)
+   public void registerConnection(Socket s, Match lastCreated)
    {
-
       try
       {
          System.out.println("registering new connection");
@@ -45,9 +43,12 @@ public class Server
          ClientConnection connection = new ClientConnection(s);
          SetupConnection message = (SetupConnection) connection.getInputStream().readObject();
          connection.setNickname(message.getNickname());
-         for(ClientConnection C : waitLobby)
+
+
+
+         for(GameHandler GH : lastCreated.getClients())
          {
-            if(C.getNickname().equals(connection.getNickname()))
+            if(GH.getSocket().getNickname().equals(connection.getNickname()))
             {
                connection.sendAnswer(new SerializedAnswer(new RejectConnection()));
                connection.getClient().close();
@@ -55,7 +56,7 @@ public class Server
             }
          }
          //adding Client To waiting Lobby
-         waitLobby.add(connection);
+         lastCreated.addClient(connection);
       }
       catch(IOException e)
       {
@@ -72,27 +73,27 @@ public class Server
     * @param client
     * @return the requested GameMode
     */
-   public GameMode requestGameInfo(ClientConnection client)
+   public GameMode requestGameInfo(GameHandler GH)
    {
       try
       {
 
          //requesting GameInfo to first client
-         client.sendAnswer(new SerializedAnswer(new RequestGameInfo()));
+         GH.getSocket().sendAnswer(new SerializedAnswer(new RequestGameInfo()));
          //receiving GameMode info from first client
-         GameMode info =(GameMode) client.getInputStream().readObject();
+         GameMode info =(GameMode) GH.getSocket().getInputStream().readObject();
          isGameSet = true;
          return info;
       }
       catch(IOException e)
       {
          System.out.println("Client disconnected");
-         waitLobby.remove(client);
+         matches.get(matches.size() - 1).getClients().remove(GH);
       }
       catch(ClassNotFoundException e)
       {
          System.out.println("Couldn't understand client");
-         waitLobby.remove(client);
+         matches.get(matches.size() - 1).getClients().remove(GH);
       }
       return new GameMode();
    }
@@ -107,24 +108,33 @@ public class Server
       {
          try
          {
+            if(matches.size() == 0)
+            {
+               matches.add(new Match(matches.size()));
+            }
+            int runningMatches = 0;
+            for(Match match: matches)
+            {
+               if (match.getRunning())
+                  runningMatches ++;
+            }
+            if(runningMatches == matches.size())
+            {
+               matches.add(new Match(matches.size()));
+            }
+            Match last = matches.get(matches.size() - 1);
             Socket socket = server.accept();
             System.out.println("New Connection!");
-            registerConnection(socket);
-            if(waitLobby.size() == 1 && !isGameSet)
+            registerConnection(socket, last);
+
+            if(last.getClients().size() == 1 && !last.isGameSet())
             {
-               info = requestGameInfo(waitLobby.get(0));
+               info = requestGameInfo(last.getClients().get(0));
+               last.setMode(info.isExpertGame(), info.getMaxPlayers());
             }
-            if(waitLobby.size() == info.getMaxPlayers())
+            if(last.getClients().size() == info.getMaxPlayers())
             {
-               Match match = new Match(info.getMaxPlayers(), info.isExpertGame(), matches.size());
-               for(ClientConnection client : waitLobby)
-               {
-                  match.addClient(client);
-               }
-               match.startGame();
-               matches.add(match);
-               waitLobby.removeAll(waitLobby);
-               isGameSet = false;
+               last.startGame();
             }
          } catch (IOException e) {
             throw new RuntimeException(e);

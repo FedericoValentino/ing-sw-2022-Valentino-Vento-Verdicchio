@@ -10,13 +10,16 @@ import it.polimi.ingsw.controller.MainController;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Match
 {
     private int matchID;
     private MainController mainController;
+    private int players;
+    private boolean expertMode;
     private ArrayList<GameHandler> clients = new ArrayList<>();
-    private HashMap<String, String> moves = new HashMap<>();
     private boolean running = false;
 
     /**
@@ -25,7 +28,7 @@ public class Match
      * @param expert is the game mode selector
      * @param matchID is the unique gameID
      */
-    public Match(int playerNumber, boolean expert, int matchID)
+    public Match(int matchID)
     {
         this.matchID = matchID;
         this.mainController = new MainController(playerNumber, expert);
@@ -37,8 +40,9 @@ public class Match
      * @throws IOException
      */
     public void addClient(ClientConnection client) throws IOException {
-        GameHandler gameHandler = new GameHandler(mainController, client, this);
+        GameHandler gameHandler = new GameHandler(client, this);
         clients.add(gameHandler);
+        clientPinger.execute(new ClientPinger(gameHandler));
     }
 
     /**
@@ -46,6 +50,10 @@ public class Match
      */
     public void startGame()
     {
+        for(GameHandler GH: getClients())
+        {
+            GH.setMainController(mainController);
+        }
         running = true;
         for(GameHandler client : clients)
         {

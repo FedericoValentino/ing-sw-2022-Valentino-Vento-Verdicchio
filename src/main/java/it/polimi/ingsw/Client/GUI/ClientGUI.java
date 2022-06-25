@@ -10,6 +10,9 @@ import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionCont
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.TeamController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.WizardController;
 import it.polimi.ingsw.Client.LightView.LightView;
+import it.polimi.ingsw.Client.Messages.SerializedMessage;
+import it.polimi.ingsw.Client.Messages.SetupMessages.Pong;
+import it.polimi.ingsw.Client.Messages.SetupMessages.StandardSetupMessage;
 import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.StandardActionAnswer;
@@ -40,7 +43,6 @@ public class ClientGUI implements ClientView, InformationGenerator
     private Boolean setupState = true;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private ListenerGui listenerGui;
-    private LightView lightView;
     private Boolean firstView = false;
     private MainBoardController mbc;
 
@@ -58,7 +60,6 @@ public class ClientGUI implements ClientView, InformationGenerator
     @Override
     public void run() {
         guiMainStarter=new GuiMainStarter();
-        lightView=MyView;
         GuiMainStarter.setClientGUI(this);
         GuiMainStarter.main();
     }
@@ -101,6 +102,7 @@ public class ClientGUI implements ClientView, InformationGenerator
         }
         catch(IOException e)
         {
+            serverConnection.disconnect();
             Platform.runLater(() -> {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
                 changeScene(loader);
@@ -139,6 +141,9 @@ public class ClientGUI implements ClientView, InformationGenerator
     {
         switch(answer.getType())
         {
+            case PING:
+                System.out.println("Server is Alive");
+                break;
             case GAME_NFO_REQ:
                 Platform.runLater(()->
                 {
@@ -248,13 +253,13 @@ public class ClientGUI implements ClientView, InformationGenerator
                             mbc.setGuiMainStarter(guiMainStarter);
                             try
                             {
-                                mbc.setup(lightView);
-                                mbc.initialSetupOtherSchool(lightView.getCurrentTeams());
-                                mbc.initialSetupAssistantCard(lightView.getCurrentTeams());
-                                mbc.initialSetupIsland(lightView);
+                                mbc.setup(MyView);
+                                mbc.initialSetupOtherSchool(MyView.getCurrentTeams());
+                                mbc.initialSetupAssistantCard(MyView.getCurrentTeams());
+                                mbc.initialSetupIsland(MyView);
                                 mbc.initialSetupMineSchool();
-                                mbc.initialSetupCharacterCard(lightView.getCurrentCharacterDeck(), lightView.getCurrentActiveCharacterCard());
-                                mbc.initialSetupPropaganda(lightView);
+                                mbc.initialSetupCharacterCard(MyView.getCurrentCharacterDeck(), MyView.getCurrentActiveCharacterCard());
+                                mbc.initialSetupPropaganda(MyView);
                             } catch (IOException e)
                             {
                                 e.printStackTrace();
@@ -312,9 +317,5 @@ public class ClientGUI implements ClientView, InformationGenerator
     public ServerConnection getServerConnection()
     {
         return serverConnection;
-    }
-
-    public LightView getLightView() {
-        return lightView;
     }
 }
