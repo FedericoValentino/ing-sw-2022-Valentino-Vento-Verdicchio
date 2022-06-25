@@ -69,15 +69,15 @@ public class Server
    }
 
    /**
-    * Method requestGameInfo asks the first client connecting to the waitLobby what gameMode he would like to play
-    * @param client
+    * Method requestGameInfo asks the first client connecting to the waitLobby, through its Game Handler what gameMode
+    * he would like to play
+    * @param GH an instance of the Game handler associated with he desired client
     * @return the requested GameMode
     */
    public GameMode requestGameInfo(GameHandler GH)
    {
       try
       {
-
          //requesting GameInfo to first client
          GH.getSocket().sendAnswer(new SerializedAnswer(new RequestGameInfo()));
          //receiving GameMode info from first client

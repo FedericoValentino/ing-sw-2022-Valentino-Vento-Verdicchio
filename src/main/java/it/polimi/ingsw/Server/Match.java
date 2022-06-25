@@ -21,17 +21,18 @@ public class Match
     private boolean expertMode;
     private ArrayList<GameHandler> clients = new ArrayList<>();
     private boolean running = false;
+    private boolean isGameSet = false;
+    private ExecutorService clientPinger = Executors.newFixedThreadPool(128);
+
 
     /**
      * Class Constructor, creates a new match with rules determined by the first client that connects to the waitList in the Server class
-     * @param playerNumber is the number of players playing the game
-     * @param expert is the game mode selector
      * @param matchID is the unique gameID
      */
     public Match(int matchID)
     {
         this.matchID = matchID;
-        this.mainController = new MainController(playerNumber, expert);
+
     }
 
     /**
@@ -105,9 +106,20 @@ public class Match
             }
         }
 
+    }
 
+    public void setMode(boolean expert, int playerNumber)
+    {
+        mainController = new MainController(playerNumber, expert);
+        expertMode = expert;
+        players = playerNumber;
+        isGameSet = true;
     }
 
     public boolean getRunning(){return running;}
+
+    public ArrayList<GameHandler> getClients(){return clients;}
+
+    public boolean isGameSet(){ return isGameSet; }
 
 }
