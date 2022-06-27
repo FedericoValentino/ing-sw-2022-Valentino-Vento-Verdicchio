@@ -40,8 +40,11 @@ public class LightView extends Observable
         String json = view.getJsonView();
         LightView lv;
         lv = objectMapper.readValue(json, LightView.class);
-        lv.currentCharacterDeck = new LightCharDeck(view.getCurrentCharacterDeck().getDeck());
-        lv.currentActiveCharacterCard = new LightActiveDeck(view.getCurrentActiveCharacterCard());
+        if(lv.currentCharacterDeck != null && lv.currentActiveCharacterCard !=null)
+        {
+            lv.currentCharacterDeck = new LightCharDeck(view.getCurrentCharacterDeck().getDeck());
+            lv.currentActiveCharacterCard = new LightActiveDeck(view.getCurrentActiveCharacterCard());
+        }
         updateLightView(lv);
     }
 
@@ -63,8 +66,11 @@ public class LightView extends Observable
                 currentClouds[i].updateCloud(newView.currentClouds[i]);
             }
             currentMotherNature.updateMother(newView.currentMotherNature);
-            currentCharacterDeck.updateCharDeck(newView.currentCharacterDeck);
-            currentActiveCharacterCard.updateActive(newView.currentActiveCharacterCard);
+            if(newView.currentCharacterDeck != null && newView.currentActiveCharacterCard !=null)
+            {
+                currentCharacterDeck.updateCharDeck(newView.currentCharacterDeck);
+                currentActiveCharacterCard.updateActive(newView.currentActiveCharacterCard);
+            }
             currentTurnState.updateTurn(newView.getCurrentTurnState());
         }
         else
@@ -73,11 +79,14 @@ public class LightView extends Observable
             this.currentTeams = newView.currentTeams;
             this.currentClouds = newView.currentClouds;
             this.currentMotherNature = newView.currentMotherNature;
-            this.currentCharacterDeck = newView.currentCharacterDeck;
-            this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
+            if(newView.currentCharacterDeck != null && newView.currentActiveCharacterCard !=null)
+            {
+                this.currentCharacterDeck = newView.currentCharacterDeck;
+                this.currentActiveCharacterCard = newView.currentActiveCharacterCard;
+            }
             this.currentTurnState = newView.currentTurnState;
         }
-//
+
 
         addNameToSchools();
         if(firstUpdate)

@@ -73,10 +73,10 @@ public class CurrentGameState extends Observable {
            currentClouds[i] = new Cloud(i);
        }
        this.currentTurnState = new CurrentTurnState(this);
-       this.currentActiveCharacterCard = new ArrayList<>();
-       //this.currentExtractedStudents = new ArrayList<>();
+
        if(expertGame)
        {
+           this.currentActiveCharacterCard = new ArrayList<>();
            this.bankBalance = 20 - playerNum;
            this.currentCharacterDeck = new CharacterDeck(this);
            getCurrentPouch().updateSetup(false);
