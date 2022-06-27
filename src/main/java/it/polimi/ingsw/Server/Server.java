@@ -23,7 +23,6 @@ public class Server
 
    /**
     * Class Constructor
-    * @throws IOException
     */
    public Server() throws IOException
    {
@@ -32,7 +31,6 @@ public class Server
 
    /**
     * Method registerConnection registers the clients connecting to the server adding them to the server waitLobby
-    * @param s
     */
    public void registerConnection(Socket s, Match lastCreated)
    {

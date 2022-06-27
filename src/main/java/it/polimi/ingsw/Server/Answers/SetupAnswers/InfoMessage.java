@@ -5,7 +5,6 @@ public class InfoMessage extends StandardSetupAnswer {
 
     /**
      * Class Constructor, used to tell the client whichever information is in the input string
-     * @param input
      */
     public InfoMessage(String input)
     {

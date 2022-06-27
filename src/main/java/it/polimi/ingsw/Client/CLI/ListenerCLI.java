@@ -7,7 +7,6 @@ public class ListenerCLI implements Runnable
 
     /**
      * Class Constructor instatiates a new Listener for the CLI
-     * @param client
      */
     public ListenerCLI(ClientCLI client)
     {

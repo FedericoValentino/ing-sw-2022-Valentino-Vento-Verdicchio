@@ -12,8 +12,6 @@ public class ClientApp
      * This main method display into the standard output console which interface (cli or gui) we want to run and
      * according to the choice it starts the ClientCLI or the ClientGUI.
      * @param args is the Standard String vector that main must have
-     * @throws IOException
-     * @throws ClassNotFoundException
      */
     public static void main( String[] args ) throws IOException, ClassNotFoundException {
         ClientView view;

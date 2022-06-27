@@ -5,7 +5,6 @@ import it.polimi.ingsw.Client.InformationGenerator;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.*;
-import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import it.polimi.ingsw.Client.Messages.SetupMessages.GameMode;

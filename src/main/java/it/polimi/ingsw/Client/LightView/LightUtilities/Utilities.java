@@ -4,9 +4,6 @@ import it.polimi.ingsw.Client.LightView.LightBoards.LightSchool;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightView;
-import it.polimi.ingsw.model.CurrentGameState;
-import it.polimi.ingsw.model.Player;
-import it.polimi.ingsw.model.Team;
 
 public final class Utilities
 {

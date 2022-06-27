@@ -32,14 +32,7 @@ public class Player
   {
     this.name = nome;
     this.school = new School(col, towerAmount);
-    if(towerAmount != 0)
-    {
-      this.towerOwner = true;
-    }
-    else
-    {
-      this.towerOwner = false;
-    }
+    this.towerOwner = towerAmount != 0;
     this.assistantDeck = new AssistantDeck(wizard, nome);
     this.currentAssistantCard = null;
     this.lastPlayedCard = null;

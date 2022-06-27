@@ -1,7 +1,5 @@
 package it.polimi.ingsw.model.boards.token;
 //serve java.utils.random per randomizzare la posizione
-import com.fasterxml.jackson.annotation.JsonProperty;
-import it.polimi.ingsw.model.CurrentGameState;
 
 import java.util.Random;
 

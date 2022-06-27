@@ -11,16 +11,12 @@ import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Observer.ObserverLightView;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
-import it.polimi.ingsw.model.boards.token.Student;
-
-import static it.polimi.ingsw.Client.GUI.GUIUtilities.getRightColorPath;
 
 
 public class CloudController extends Controller implements ObserverLightView

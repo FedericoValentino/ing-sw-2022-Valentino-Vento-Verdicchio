@@ -7,7 +7,6 @@ public class SetupConnection extends StandardSetupMessage
 
     /**
      * Class Constructor, this message is used to tell the server our nickname after the connection has been established
-     * @param nickname
      */
     public SetupConnection(String nickname) {
         this.nickname = nickname;

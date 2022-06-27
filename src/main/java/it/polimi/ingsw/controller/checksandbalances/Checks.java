@@ -53,9 +53,7 @@ public final class Checks {
         {
             if(validEntrance)
             {
-                if (islandId >= game.getCurrentIslands().getIslands().size() || islandId < 0)
-                    return false;
-                return true;
+                return islandId < game.getCurrentIslands().getIslands().size() && islandId >= 0;
             }
             else
                 return false;

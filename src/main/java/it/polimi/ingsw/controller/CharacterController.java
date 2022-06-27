@@ -68,9 +68,9 @@ public class CharacterController
 
     public CharacterCard getCardByName(CharacterName characterName, ArrayList<CharacterCard> deck)
     {
-        for(int i=0; i<deck.size(); i++)
-            if(deck.get(i).getCharacterName() == characterName)
-                return deck.get(i);
+        for (CharacterCard characterCard : deck)
+            if (characterCard.getCharacterName() == characterName)
+                return characterCard;
         return null;
     }
 

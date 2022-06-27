@@ -6,7 +6,6 @@ public class DrawAssistantCard extends StandardActionMessage
 
     /**
      * Class Constructor, this message is used to draw an assistant card from our hand
-     * @param cardIndex
      */
     public DrawAssistantCard(int cardIndex)
     {

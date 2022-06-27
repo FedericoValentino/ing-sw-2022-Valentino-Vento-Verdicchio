@@ -5,10 +5,8 @@ import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Client.LightView.LightToken.LightMotherNature;
-import it.polimi.ingsw.Client.LightView.LightUtilities.Utilities;
 import it.polimi.ingsw.Client.Messages.ActionMessages.MoveMN;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
-import it.polimi.ingsw.model.boards.token.Student;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,9 +15,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import it.polimi.ingsw.model.boards.token.enumerations.Col;
-import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
-
-import java.util.ArrayList;
 
 
 public class IslandController extends Controller {

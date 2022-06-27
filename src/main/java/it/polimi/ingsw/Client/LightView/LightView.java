@@ -7,7 +7,6 @@ import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharDeck;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightToken.LightMotherNature;
-import it.polimi.ingsw.Client.LightView.LightUtilities.InfoDispenser;
 import it.polimi.ingsw.Observer.Observable;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ViewMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -35,8 +34,6 @@ public class LightView extends Observable
 
     /**
      * Method parse parses the ViewMessage containing the JSON serialization of the game model
-     * @param view
-     * @throws JsonProcessingException
      */
     public void parse(ViewMessage view) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -50,7 +47,6 @@ public class LightView extends Observable
 
     /**
      * Method updateLightView updates the client view, after the deserialization of the model JSON
-     * @param newView
      */
     public void updateLightView(LightView newView)
     {

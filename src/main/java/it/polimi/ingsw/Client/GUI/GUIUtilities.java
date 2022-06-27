@@ -1,11 +1,9 @@
 package it.polimi.ingsw.Client.GUI;
 
-import it.polimi.ingsw.Client.LightView.LightBoards.LightSchool;
 import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 
 public final class GUIUtilities
 {

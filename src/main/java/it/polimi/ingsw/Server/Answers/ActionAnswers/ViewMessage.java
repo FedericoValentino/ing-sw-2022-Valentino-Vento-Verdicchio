@@ -15,9 +15,6 @@ public class ViewMessage extends StandardActionAnswer
     /**
      * Class Constructor, used to send the current game model to the client via JSON serialization, the Character deck
      * and the active character card are not serialized
-     * @param jsonView
-     * @param CD
-     * @param CACD
      */
     public ViewMessage(String jsonView, CharacterDeck CD, ArrayList<CharacterCard> CACD) {
         this.jsonView = jsonView;

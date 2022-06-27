@@ -9,7 +9,6 @@ public class AvailableWizards extends StandardSetupAnswer {
 
     /**
      * Class Constructor, this message is used to tell the clients the available wizards
-     * @param available
      */
     public AvailableWizards(ArrayList<Wizard> available)
     {

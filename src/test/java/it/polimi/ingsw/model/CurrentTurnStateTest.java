@@ -15,8 +15,6 @@ public class CurrentTurnStateTest {
     public void TestGetTurn() {
 
         curTurnObj.getTurn();
-        //assertNull(currentTurnStateObj.getIsGameEnded());
-        //curTurnObj.getIsActionPhase();
         cW=curTurnObj.getWinningTeam();
     }
 

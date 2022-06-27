@@ -18,10 +18,8 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import it.polimi.ingsw.model.boards.token.Student;
 import javafx.scene.paint.Color;
 
-import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class MineSchoolController implements ObserverLightView

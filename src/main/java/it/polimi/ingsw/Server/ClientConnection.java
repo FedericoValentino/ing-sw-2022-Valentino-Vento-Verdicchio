@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class ClientConnection
 {
@@ -19,7 +17,6 @@ public class ClientConnection
     /**
      * Class Constructor, instantiates a new instance of ClientConnection taking as a parameter the newly bound client socket
      * @param client the Client socket
-     * @throws IOException
      */
     public ClientConnection(Socket client) throws IOException {
         this.client = client;

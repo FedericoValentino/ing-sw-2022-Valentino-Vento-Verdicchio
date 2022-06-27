@@ -14,7 +14,6 @@ public class SerializedAnswer implements Serializable
 
     /**
      * Constructor for a game message
-     * @param m
      */
     public SerializedAnswer(StandardActionAnswer m)
     {
@@ -24,7 +23,6 @@ public class SerializedAnswer implements Serializable
 
     /**
      * Constructor for a setup message
-     * @param m
      */
     public SerializedAnswer(StandardSetupAnswer m)
     {

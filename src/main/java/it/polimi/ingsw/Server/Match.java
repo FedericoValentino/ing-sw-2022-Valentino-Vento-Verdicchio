@@ -9,7 +9,6 @@ import it.polimi.ingsw.controller.MainController;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -38,10 +37,8 @@ public class Match
 
     /**
      * Method addClient adds a client to the clients ArrayList
-     * @param client
-     * @throws IOException
      */
-    public void addClient(ClientConnection client) throws IOException {
+    public void addClient(ClientConnection client) {
         GameHandler gameHandler = new GameHandler(client, this);
         clients.add(gameHandler);
         clientPinger.execute(new ClientPinger(gameHandler));

@@ -7,7 +7,6 @@ public class AvailableTeams extends StandardSetupAnswer
 
     /**
      * Class Constructor, this message is used to tell the clients the available team slots
-     * @param teams
      */
     public AvailableTeams(int[] teams)
     {

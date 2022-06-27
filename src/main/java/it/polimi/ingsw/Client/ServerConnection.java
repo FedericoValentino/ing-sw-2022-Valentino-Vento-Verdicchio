@@ -22,11 +22,8 @@ public class ServerConnection
 
     /**
      * Class Constructor saves the parameters to send to the server after connecting
-     * @param nickname
-     * @param serverIP
-     * @throws IOException
      */
-    public ServerConnection(String nickname, String serverIP) throws IOException
+    public ServerConnection(String nickname, String serverIP)
     {
         this.nickname = nickname;
         this.ServerIP = serverIP;
@@ -34,7 +31,6 @@ public class ServerConnection
 
     /**
      * Method establishConnection tries to connect to the server
-     * @throws IOException
      */
     public void establishConnection() throws IOException {
         server = new Socket(ServerIP, PORT);
@@ -52,7 +48,6 @@ public class ServerConnection
 
     /**
      * Sends a SerializedMessage to the server
-     * @param answer
      */
     public void sendMessage(SerializedMessage answer)
     {

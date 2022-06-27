@@ -8,7 +8,6 @@ public class WizardChoice extends StandardSetupMessage
 
     /**
      * Class Constructor, this message is used to tell the server about the player's wizard choice
-     * @param w
      */
     public WizardChoice(Wizard w)
     {

@@ -11,11 +11,11 @@ public interface ClientView
 {
     LightView MyView = new LightView();
 
-    void run() throws IOException, ClassNotFoundException;
+    void run();
     
-    void setupHandler(StandardSetupAnswer answer) throws IOException;
+    void setupHandler(StandardSetupAnswer answer);
 
-    void messageHandler(StandardActionAnswer answer) throws JsonProcessingException;
+    void messageHandler(StandardActionAnswer answer);
 
-    void readMessage() throws IOException, ClassNotFoundException;
+    void readMessage();
 }

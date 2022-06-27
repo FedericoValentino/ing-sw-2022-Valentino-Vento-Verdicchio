@@ -7,7 +7,6 @@ public class TeamChoice extends StandardSetupMessage
 
     /**
      * Class Constructor, this message is used to tell the server which team the player wants to join
-     * @param team
      */
     public TeamChoice(int team)
     {

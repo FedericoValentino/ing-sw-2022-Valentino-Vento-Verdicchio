@@ -1,7 +1,6 @@
 package it.polimi.ingsw.model.boards;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.CurrentGameState;
 
 import java.util.ArrayList;
 
@@ -57,7 +56,7 @@ public class Cloud extends Board
   {
     ArrayList<Student> current = new ArrayList<>();
     current.addAll(student);
-    student.removeAll(student);
+    student.clear();
     return current;
   }
 
@@ -66,10 +65,7 @@ public class Cloud extends Board
    */
   public boolean isEmpty(){
     //da verificare se non posso farlo con una funzione di libreria piuttosto che così
-    if(student.size()==0)
-      return true;
-    else
-      return false;
+    return student.size() == 0;
   }
 
   /** Return the student at the specified position

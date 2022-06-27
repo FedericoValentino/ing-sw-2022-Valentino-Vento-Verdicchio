@@ -6,7 +6,6 @@ public class DrawFromPouch extends StandardActionMessage
 
     /**
      * Class Constructor, this message is used to tell the server we want to refill a cloud
-     * @param cloudIndex
      */
     public DrawFromPouch(int cloudIndex)
     {

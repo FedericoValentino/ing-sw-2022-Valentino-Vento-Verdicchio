@@ -13,7 +13,6 @@ public class SerializedMessage implements Serializable
 
     /**
      * Constructor for a game message
-     * @param m
      */
     public SerializedMessage(StandardActionMessage m)
     {
@@ -23,7 +22,6 @@ public class SerializedMessage implements Serializable
 
     /**
      * Constructor for a setup message
-     * @param m
      */
     public SerializedMessage(StandardSetupMessage m)
     {

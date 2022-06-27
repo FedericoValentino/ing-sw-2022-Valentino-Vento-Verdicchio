@@ -7,7 +7,6 @@ public class WinMessage extends StandardActionAnswer
 
     /**
      * Class constructor this message is used to tell the client what team has won the match
-     * @param winning
      */
     public WinMessage(String winning)
     {

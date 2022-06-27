@@ -1,6 +1,5 @@
 package it.polimi.ingsw.model.boards;
 import it.polimi.ingsw.model.boards.token.Student;
-import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.Team;
 import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;

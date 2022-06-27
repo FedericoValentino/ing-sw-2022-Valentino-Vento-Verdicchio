@@ -6,7 +6,6 @@ public class MoveMN extends StandardActionMessage
 
     /**
      * Class constructor, this message is used to tell the server how much we want to move MN
-     * @param amount
      */
     public MoveMN(int amount)
     {

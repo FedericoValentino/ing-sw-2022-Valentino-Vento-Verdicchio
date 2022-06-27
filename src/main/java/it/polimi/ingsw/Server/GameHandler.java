@@ -3,7 +3,6 @@ package it.polimi.ingsw.Server;
 
 
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
-import it.polimi.ingsw.Client.Messages.SetupMessages.SETUPMESSAGETYPE;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.AvailableTeams;
