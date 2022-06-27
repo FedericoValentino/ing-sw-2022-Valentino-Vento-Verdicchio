@@ -42,9 +42,9 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     @FXML private Button activateButton;
 
     public void setup(AnchorPane characterPane, LightCharDeck inactiveCharacters, LightActiveDeck activeCharacters, MainBoardController controller) throws IOException {
+        this.characterPane = characterPane;
         if(inactiveCharacters != null)
         {
-            this.characterPane = characterPane;
             this.characterDeck = inactiveCharacters;
             this.activeCharDeck = activeCharacters;
             this.mainController = controller;
@@ -90,11 +90,12 @@ public class CharacterCardsController extends Controller implements ObserverLigh
                 mainPane.getChildren().add(pane);
             }
             mainPane.getChildren().get(2).setVisible(true);
+
         }
         else
         {
-            mainPane.getChildren().clear();
-            mainPane.getChildren().add(new Text("This slot is unlocked when playing expert mode"));
+            characterPane.getChildren().clear();
+            characterPane.getChildren().add(new Text("This slot is unlocked when playing expert mode"));
         }
     }
 
