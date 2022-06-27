@@ -102,12 +102,11 @@ public class CharacterController
 
     public void setTruffleHunterColor(CurrentGameState game, Col studentColor)
     {
-        for(CharacterCard card: game.getCurrentActiveCharacterCard())
+        for (CharacterCard card : game.getCurrentActiveCharacterCard())
         {
-            if(card.getCharacterName().equals(CharacterName.TRUFFLE_HUNTER))
+            if (card.getCharacterName().equals(CharacterName.TRUFFLE_HUNTER))
                 ((TruffleHunter) card).setChosenColor(studentColor);
-        }
-
+            }
     }
 
     public CharacterCard getPickedCard()

@@ -23,7 +23,6 @@ public class PropagandaController extends Controller implements ObserverLightVie
     @FXML private AnchorPane propaganda;
     @FXML private Button endTurn;
     @FXML private Button exit;
-    @FXML private Button playersInfo;
 
     private LightView view;
 
@@ -31,7 +30,6 @@ public class PropagandaController extends Controller implements ObserverLightVie
     {
         endTurn.setOnMouseClicked(this:: endTurnOnClick);
         exit.setOnMouseClicked(this:: exitOnClick);
-        playersInfo.setOnMouseClicked(this:: infosOnClick);
 
         this.view = view;
 
@@ -47,9 +45,6 @@ public class PropagandaController extends Controller implements ObserverLightVie
         hint.setText(GuiMainStarter.getClientGUI().informationCreator(view.getCurrentTurnState(), view.getCurrentTeams()).getInfoMessage());
     }
 
-    private void infosOnClick(MouseEvent mouseEvent)
-    {
-    }
 
     private void exitOnClick(MouseEvent mouseEvent)
     {
