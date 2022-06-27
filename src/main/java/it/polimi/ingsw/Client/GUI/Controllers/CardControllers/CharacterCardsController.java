@@ -42,53 +42,59 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     @FXML private Button activateButton;
 
     public void setup(AnchorPane characterPane, LightCharDeck inactiveCharacters, LightActiveDeck activeCharacters, MainBoardController controller) throws IOException {
-        this.characterPane = characterPane;
-        this.characterDeck = inactiveCharacters;
-        this.activeCharDeck = activeCharacters;
-        this.mainController = controller;
-
-        sceneCards.addAll(inactiveCharacters.getLightCharDeck());
-
-        activeCharDeck.addObserverLight(this);
-
-        previousButton.setOnMouseClicked(this:: previousOnClick);
-
-        nextButton.setOnMouseClicked(this:: nextOnClick);
-
-        activateButton.setOnMouseClicked(this:: activateOnClick);
-
-
-        for(int i=0; i<3; i++)
+        if(inactiveCharacters != null)
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/CharacterDepiction.fxml"));
+            this.characterPane = characterPane;
+            this.characterDeck = inactiveCharacters;
+            this.activeCharDeck = activeCharacters;
+            this.mainController = controller;
 
-            Pane pane = new Pane();
-            pane.getChildren().clear();
-            pane.getChildren().add(loader.load());
+            sceneCards.addAll(inactiveCharacters.getLightCharDeck());
 
-            pane.setOnMouseClicked(this:: showOnClick);
+            activeCharDeck.addObserverLight(this);
 
-            ImageView cardImage = new ImageView(getCardPath(sceneCards.get(i).getName()));
-            cardImage.setFitWidth(106);
-            cardImage.setFitHeight(113);
+            previousButton.setOnMouseClicked(this::previousOnClick);
 
-            Pane characterImage = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterImage")).collect(Collectors.toList()).get(0);
-            characterImage.getChildren().clear();
-            characterImage.getChildren().add(cardImage);
+            nextButton.setOnMouseClicked(this::nextOnClick);
 
-            Circle statusIndicator = (Circle) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
-            statusIndicator.setFill(Paint.valueOf("FF1F1F"));
+            activateButton.setOnMouseClicked(this::activateOnClick);
 
-            Text statusDescriptor = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor")).collect(Collectors.toList()).get(0);
-            statusDescriptor.setText(sceneCards.get(i).getName().toString());
 
-            Text parameters = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Parameters")).collect(Collectors.toList()).get(0);
-            parameters.setText("Uses: " + characterDeck.getCard(0).getUses() + "\nCurrent Cost: " + sceneCards.get(i).getCurrentCost());
+            for (int i = 0; i < 3; i++) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/CharacterDepiction.fxml"));
 
-            pane.setVisible(false);
-            mainPane.getChildren().add(pane);
+                Pane pane = new Pane();
+                pane.getChildren().clear();
+                pane.getChildren().add(loader.load());
+
+                pane.setOnMouseClicked(this::showOnClick);
+
+                ImageView cardImage = new ImageView(getCardPath(sceneCards.get(i).getName()));
+                cardImage.setFitWidth(106);
+                cardImage.setFitHeight(113);
+
+                Pane characterImage = (Pane) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterImage")).collect(Collectors.toList()).get(0);
+                characterImage.getChildren().clear();
+                characterImage.getChildren().add(cardImage);
+
+                Circle statusIndicator = (Circle) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
+                statusIndicator.setFill(Paint.valueOf("FF1F1F"));
+
+                Text statusDescriptor = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("StatusDescriptor")).collect(Collectors.toList()).get(0);
+                statusDescriptor.setText(sceneCards.get(i).getName().toString());
+
+                Text parameters = (Text) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Parameters")).collect(Collectors.toList()).get(0);
+                parameters.setText("Uses: " + characterDeck.getCard(0).getUses() + "\nCurrent Cost: " + sceneCards.get(i).getCurrentCost());
+
+                pane.setVisible(false);
+                mainPane.getChildren().add(pane);
+            }
+            mainPane.getChildren().get(2).setVisible(true);
         }
-        mainPane.getChildren().get(2).setVisible(true);
+        else
+        {
+            mainPane.getChildren().add(new Text("This slot is unlocked when playing expert mode"));
+        }
     }
 
     private void activateOnClick(MouseEvent mouseEvent)
