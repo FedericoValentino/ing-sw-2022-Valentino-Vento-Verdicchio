@@ -423,7 +423,7 @@ public class GameHandler extends Thread implements Observer
     public void update(String message)
     {
         System.out.println(message);
-        socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck(), mainController.getGame().getCurrentActiveCharacterCard())));
+        socket.sendAnswer(new SerializedAnswer(new ViewMessage(message, mainController.getGame().getCurrentCharacterDeck(), mainController.getGame().getCurrentActiveCharacterCard(), mainController.isExpertGame())));
     }
 
     public void setMainController(MainController controller)

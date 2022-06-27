@@ -40,7 +40,7 @@ public class LightView extends Observable
         String json = view.getJsonView();
         LightView lv;
         lv = objectMapper.readValue(json, LightView.class);
-        if(lv.currentCharacterDeck != null && lv.currentActiveCharacterCard !=null)
+        if(view.isExpertMode())
         {
             lv.currentCharacterDeck = new LightCharDeck(view.getCurrentCharacterDeck().getDeck());
             lv.currentActiveCharacterCard = new LightActiveDeck(view.getCurrentActiveCharacterCard());
