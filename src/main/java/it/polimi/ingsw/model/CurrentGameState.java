@@ -49,6 +49,7 @@ public class CurrentGameState extends Observable {
      */
     public CurrentGameState(int playerNum, boolean expertGame)
     {
+       this.expertGame = expertGame;
        this.currentPouch = new Pouch();
        this.currentMotherNature = new MotherNature();
        this.currentIslands = new Islands(this);
@@ -84,8 +85,9 @@ public class CurrentGameState extends Observable {
            getCurrentPouch().updateSetup(true);
        }
        else
+       {
            this.bankBalance = 0;
-       this.expertGame = expertGame;
+       }
     }
 
 
