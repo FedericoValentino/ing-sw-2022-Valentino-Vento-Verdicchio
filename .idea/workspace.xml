@@ -12,9 +12,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="removed a lot of warnings from the code">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="light change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/CardControllers/CharacterCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/CardControllers/CharacterCardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/checksandbalances/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/checksandbalances/Checks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
     </list>
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
@@ -266,14 +268,7 @@
       <workItem from="1656150011339" duration="12839000" />
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
-      <workItem from="1656359517611" duration="1470000" />
-    </task>
-    <task id="LOCAL-00131" summary="visibility for ErrorDisplay addressed">
-      <created>1655159438023</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1655159438023</updated>
+      <workItem from="1656359517611" duration="2692000" />
     </task>
     <task id="LOCAL-00132" summary="Added close button">
       <created>1655160038592</created>
@@ -611,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656360302068</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="light change">
+      <created>1656361095687</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1656361095687</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Little docu about a method" />
     <MESSAGE value="Little docu about WizardController" />
     <MESSAGE value="Little docu about ReadyController" />
     <MESSAGE value="Little changes" />
@@ -667,7 +668,8 @@
     <MESSAGE value="Removed warnings when possible from GUI, added the close button functionality, still researching a way of restarting the GUI totally. Added new GUIUtilities class and removed duplicate code when possible" />
     <MESSAGE value="Added little fix to server, it wasn't generating matches properly, added island counters" />
     <MESSAGE value="removed a lot of warnings from the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed a lot of warnings from the code" />
+    <MESSAGE value="light change" />
+    <option name="LAST_COMMIT_MESSAGE" value="light change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -80,7 +80,7 @@ public class CharacterController
      */
     public static void deckManagement(CurrentGameState game)
     {
-        if(game.getCurrentCharacterDeck() != null)
+        if(game.getExpertMode())
         {
             if (!game.getCurrentActiveCharacterCard().isEmpty())
             {

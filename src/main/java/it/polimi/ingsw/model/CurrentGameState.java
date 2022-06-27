@@ -267,4 +267,7 @@ public class CurrentGameState extends Observable {
     public MotherNature getCurrentMotherNature() {
         return currentMotherNature;
     }
+    public boolean getExpertMode(){
+        return expertGame;
+    }
 }

@@ -192,11 +192,13 @@ public final class Checks {
      */
     public static boolean checkForInfluenceCharacter(CurrentGameState game)
     {
-        for(CharacterCard card: game.getCurrentActiveCharacterCard())
+        if(game.getExpertMode())
         {
-            CharacterName cardName = card.getCharacterName();
-            if(cardName.equals(CharacterName.CENTAUR) || cardName.equals(CharacterName.TRUFFLE_HUNTER) || cardName.equals(CharacterName.KNIGHT))
-                return true;
+            for (CharacterCard card : game.getCurrentActiveCharacterCard()) {
+                CharacterName cardName = card.getCharacterName();
+                if (cardName.equals(CharacterName.CENTAUR) || cardName.equals(CharacterName.TRUFFLE_HUNTER) || cardName.equals(CharacterName.KNIGHT))
+                    return true;
+            }
         }
         return false;
     }
