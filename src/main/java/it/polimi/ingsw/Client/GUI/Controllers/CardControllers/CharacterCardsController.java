@@ -93,6 +93,7 @@ public class CharacterCardsController extends Controller implements ObserverLigh
         }
         else
         {
+            mainPane.getChildren().clear();
             mainPane.getChildren().add(new Text("This slot is unlocked when playing expert mode"));
         }
     }
