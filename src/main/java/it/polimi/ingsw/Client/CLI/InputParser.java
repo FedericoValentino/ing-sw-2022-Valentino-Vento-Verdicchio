@@ -241,7 +241,7 @@ public class InputParser
                 ArrayList<Integer> inputArray2 = new ArrayList<>();
                 if(card.getName().equals(CharacterName.MINSTREL))
                 {
-                    MinstrelParser(player, inputArray1, inputArray2);
+                    MinstrelParser(player, inputArray2, inputArray1);
                 }
                 else if(card.getName().equals(CharacterName.JESTER))
                 {

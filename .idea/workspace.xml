@@ -14,9 +14,8 @@
   <component name="ChangeListManager">
     <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="( ಠ ͜ʖಠ)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Answers/ActionAnswers/ViewMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Answers/ActionAnswers/ViewMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterDeck.java" afterDir="false" />
     </list>
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,9 +50,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="2" />
   </component>
   <component name="ProjectId" id="27I0DHTyTwgsFPc6g6bYMh9z33T" />
   <component name="ProjectLevelVcsManager">
@@ -104,7 +100,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
+  <component name="RunManager" selected="Application.ServerApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -269,13 +265,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00135" summary="Changes in all the controller files due to changes in the order of the method and names.&#10;&#10;Obviously also changes in test due to refactors">
-      <created>1655543380325</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1655543380325</updated>
     </task>
     <task id="LOCAL-00136" summary="Changes in lightPlayer, island e wizard controller">
       <created>1655656888118</created>
@@ -613,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656363617955</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="( ಠ ͜ʖಠ)">
+      <created>1656364472649</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1656364472649</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,6 +682,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java</url>
           <line>315</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/EffectsUtilities.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
