@@ -80,11 +80,14 @@ public class CharacterController
      */
     public static void deckManagement(CurrentGameState game)
     {
-        if(!game.getCurrentActiveCharacterCard().isEmpty())
+        if(game.getCurrentCharacterDeck() != null)
         {
-            CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
-            game.getCurrentActiveCharacterCard().remove(0);
-            game.getCurrentCharacterDeck().getDeck().add(card);
+            if (!game.getCurrentActiveCharacterCard().isEmpty())
+            {
+                CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
+                game.getCurrentActiveCharacterCard().remove(0);
+                game.getCurrentCharacterDeck().getDeck().add(card);
+            }
         }
     }
 
