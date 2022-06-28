@@ -12,7 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="change in idsetting">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="maybe fix?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
@@ -256,13 +256,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00142" summary="New characters tests almost done">
-      <created>1655758266491</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1655758266491</updated>
     </task>
     <task id="LOCAL-00143" summary="New character tests done">
       <created>1655759362885</created>
@@ -600,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656450320355</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="maybe fix?">
+      <created>1656451262032</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1656451262032</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +631,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a new method to manage the count of students" />
     <MESSAGE value="Little changes in UI (Your school and delete of some useless images)" />
     <MESSAGE value="Little changes in UI (setting all the students in the dining not visible at the beginning of the game)" />
     <MESSAGE value="Little changes in inputParser (put activation (it's a parameter) from a method in the main declaration part of the class)" />
@@ -656,7 +655,8 @@
     <MESSAGE value="change" />
     <MESSAGE value="lmao" />
     <MESSAGE value="change in idsetting" />
-    <option name="LAST_COMMIT_MESSAGE" value="change in idsetting" />
+    <MESSAGE value="maybe fix?" />
+    <option name="LAST_COMMIT_MESSAGE" value="maybe fix?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

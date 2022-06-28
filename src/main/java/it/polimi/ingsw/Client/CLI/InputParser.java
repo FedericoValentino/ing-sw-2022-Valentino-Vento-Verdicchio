@@ -162,27 +162,27 @@ public class InputParser
         int inputStudentInEntrance;
         PrinterCLI.printStudent(card.getStudentList(), 2);
         PrinterCLI.printStudent(player.getSchool().getEntrance(), 2);
-        AnsiConsole.out().println("You may choose up to 3 students, type -1 to stop selecting students");
+        AnsiConsole.out().println("You may choose up to 3 students from the card, type -1 to stop selecting students");
 
-        while(inputStudentOnCardIndex != -1 && inputArray1.size() < 3)
+        while(inputStudentOnCardIndex != -1 && inputArray2.size() < 3)
         {
             AnsiConsole.out().println("Chose a student");
             inputStudentOnCardIndex = Integer.parseInt(parser.nextLine());
-            if (inputStudentOnCardIndex >= 0 && inputStudentOnCardIndex < 6)
+            if (inputStudentOnCardIndex >= 0 && inputStudentOnCardIndex < 6 && !inputArray2.contains(inputStudentOnCardIndex))
             {
-                inputArray1.add(inputStudentOnCardIndex);
+                inputArray2.add(inputStudentOnCardIndex);
             }
             else if (inputStudentOnCardIndex < -1)
                 AnsiConsole.out().println("Not a valid index");
         }
 
-        for(int i = 0; i < inputArray1.size(); i++)
+        for(int i = 0; i < inputArray2.size(); i++)
         {
             AnsiConsole.out().println("Choose the students from the entrance");
             inputStudentInEntrance = Integer.parseInt(parser.nextLine());
             if (inputStudentInEntrance >= 0 && inputStudentInEntrance < player.getSchool().getEntrance().size())
             {
-                inputArray2.add(inputStudentInEntrance);
+                inputArray1.add(inputStudentInEntrance);
             }
             else
             {
