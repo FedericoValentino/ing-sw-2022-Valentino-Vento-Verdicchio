@@ -12,12 +12,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="( ಠ ͜ʖಠ)">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="littlest pet shop">
       <change afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/CardControllers/AssistantCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/CardControllers/AssistantCardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
     </list>
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,6 +131,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="softeng-GC61" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <option name="PACKAGE_NAME" value="" />
@@ -156,22 +162,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovesChecksTest.testIsExpectedActionMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.controller.checksandbalances.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MovesChecksTest" />
-      <option name="METHOD_NAME" value="testIsExpectedActionMove" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MovesChecksTest.testIsExpectedPlanningMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
@@ -190,8 +180,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.ClientApp" />
+      <item itemvalue="Application.main" />
       <item itemvalue="Application.ServerApp" />
-      <item itemvalue="JUnit.MovesChecksTest.testIsExpectedActionMove" />
       <item itemvalue="JUnit.MovesChecksTest.testIsExpectedPlanningMove" />
       <item itemvalue="JUnit.All in softeng-GC61" />
       <item itemvalue="JUnit.CookTest.testEffect" />
@@ -199,6 +189,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ServerApp" />
+        <item itemvalue="Application.main" />
         <item itemvalue="JUnit.CookTest.testEffect" />
         <item itemvalue="JUnit.All in softeng-GC61" />
       </list>
@@ -267,13 +258,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00136" summary="Changes in lightPlayer, island e wizard controller">
-      <created>1655656888118</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1655656888118</updated>
     </task>
     <task id="LOCAL-00137" summary="Little change in Team choice (not already finished)">
       <created>1655719771406</created>
@@ -611,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656364472649</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="littlest pet shop">
+      <created>1656427724031</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1656427724032</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,7 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Little changes" />
     <MESSAGE value="Little changes in the error pane" />
     <MESSAGE value="Little change  in student pane in mine school" />
     <MESSAGE value="Little change  in student pane in mine school (add the remove of the effect)" />
@@ -666,7 +656,8 @@
     <MESSAGE value="light change" />
     <MESSAGE value="change" />
     <MESSAGE value="( ಠ ͜ʖಠ)" />
-    <option name="LAST_COMMIT_MESSAGE" value="( ಠ ͜ʖಠ)" />
+    <MESSAGE value="littlest pet shop" />
+    <option name="LAST_COMMIT_MESSAGE" value="littlest pet shop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

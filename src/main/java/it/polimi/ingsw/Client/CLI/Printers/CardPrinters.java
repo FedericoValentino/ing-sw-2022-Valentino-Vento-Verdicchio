@@ -95,13 +95,19 @@ public class CardPrinters extends PrinterCLI
                 {
                     currentCardCounter += 1;
                 }
-                printPlayedAssistant(currentlyPlayed, true, nameTrimmed, p.getCurrentAssistantCard());
+                else
+                {
+                    printPlayedAssistant(currentlyPlayed, true, nameTrimmed, p.getCurrentAssistantCard());
+                }
 
                 if(p.getLastPlayedCard() == null)
                 {
                     lastCardCounter += 1;
                 }
-                printPlayedAssistant(lastPlayed, false, nameTrimmed, p.getLastPlayedCard());
+                else
+                {
+                    printPlayedAssistant(lastPlayed, false, nameTrimmed, p.getLastPlayedCard());
+                }
             }
         }
 

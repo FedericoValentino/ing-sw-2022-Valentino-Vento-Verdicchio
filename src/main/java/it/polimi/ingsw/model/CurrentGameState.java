@@ -3,6 +3,10 @@ package it.polimi.ingsw.model;
 //URGENT
 //TODO game testing
 //TODO test school checkpoints when using minstrel and thief
+//TODO professor assigning doesnt work
+//TODO hints on turn end
+//TODO charactercard notify and green sign GUI
+//TODO minstrel fix
 
 //Less urgent
 //TODO players information in GUI
@@ -172,7 +176,7 @@ public class CurrentGameState extends Observable {
 
             Set<Integer> duplicates = studentsNumber
                                     .stream()
-                                    .filter(i -> Collections.frequency(studentsNumber, i) > 1)
+                                    .filter(i -> Collections.frequency(studentsNumber, i) > 1 && i != 0)
                                     .collect(Collectors.toSet());
             if(!duplicates.isEmpty())
             {
