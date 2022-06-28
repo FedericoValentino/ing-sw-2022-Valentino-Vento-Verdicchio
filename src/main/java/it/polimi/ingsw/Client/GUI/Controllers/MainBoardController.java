@@ -359,7 +359,6 @@ public class MainBoardController extends Controller {
                     input1.getChildren().add(box);
 
                     //setup students
-                    HBox students = new HBox();
                     int studentPosition = 0;
                     for(Student student : card.getStudentList())
                     {
@@ -376,7 +375,7 @@ public class MainBoardController extends Controller {
                             integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
                         });
                         studentPane.getChildren().add(image);
-                        students.getChildren().add(studentPane);
+                        input2.getChildren().add(studentPane);
                         studentPosition++;
                     }
                 }
@@ -392,7 +391,7 @@ public class MainBoardController extends Controller {
                 break;
 
             case COLOR:
-                HBox Colors = new HBox();
+
                 for(int i = 0; i < 5; i++)
                 {
                     Student student = new Student(Col.values()[i]);
@@ -407,8 +406,6 @@ public class MainBoardController extends Controller {
                     studentPane.getChildren().add(color);
                     input1.getChildren().add(studentPane);
                 }
-                ParametersSlice.getChildren().clear();
-                ParametersSlice.getChildren().add(Colors);
 
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
@@ -483,7 +480,7 @@ public class MainBoardController extends Controller {
     }
 
 
-    public void MinstrelSetup(VBox cardParameters, LightPlayer player)
+    public void MinstrelSetup(LightPlayer player)
     {
         final int[] diningRoom = player.getSchool().getDiningRoom().clone();
         //setup students
