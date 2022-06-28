@@ -506,8 +506,8 @@ public class MainBoardController extends Controller {
             {
                 Student student = new Student(Col.values()[i]);
                 ImageView color = new ImageView(GUIUtilities.getRightColorPath(student));
-                color.setId(Col.values()[i].toString());
                 Pane studentPane = new Pane();
+                studentPane.setId(Col.values()[i].toString());
                 studentPane.setOnMouseClicked((MouseEvent) ->
                 {
                     if(integerChoice_2.size() < integerChoice_1.size())
