@@ -96,17 +96,14 @@ public class ActionController
             if(card instanceof Knight)
             {
                 card.effect(game, null, position, currentPlayer, null);
-                CharacterController.deckManagement(game);
             }
             else if(card instanceof TruffleHunter)
             {
                 card.effect(game, null, position, null, ((TruffleHunter) card).getChosenColor());
-                CharacterController.deckManagement(game);
             }
             else if(card instanceof Centaur)
             {
                 card.effect(game, null, position, null, null);
-                CharacterController.deckManagement(game);
             }
         }
         game.getCurrentTurnState().updateActionMoves();

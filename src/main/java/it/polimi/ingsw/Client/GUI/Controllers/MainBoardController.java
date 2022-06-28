@@ -399,7 +399,7 @@ public class MainBoardController extends Controller {
                     Student student = new Student(Col.values()[i]);
                     ImageView color = new ImageView(GUIUtilities.getRightColorPath(student));
                     Pane studentPane = new Pane();
-                    studentPane.setId(String.valueOf(i));
+                    studentPane.setId(Col.values()[i].toString());
                     studentPane.setOnMouseClicked((MouseEvent) ->
                     {
                         ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
