@@ -140,7 +140,7 @@ public class CurrentGameState extends Observable {
             bankBalance = 0;
     }
 
-
+//
     /** Method giveProfessors assigns professors to the player with the most student in their diningRoom  */
     public void giveProfessors(boolean cook)
     {
