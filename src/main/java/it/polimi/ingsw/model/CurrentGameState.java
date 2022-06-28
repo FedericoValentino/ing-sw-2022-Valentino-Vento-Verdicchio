@@ -2,20 +2,23 @@ package it.polimi.ingsw.model;
 
 //URGENT
 //TODO game testing
+//TODO Characters can be played all in a row during a single turn in CLI. Needs fix asap
 //TODO somehow islands (sometimes, hardly replicable) do not update. Very bad issue
-//TODO test school checkpoints when using minstrel and thief
+//TODO test school checkpoints when using minstrel
 //TODO hints on turn end (3 Players)
 //TODO minstrel color choice in GUI
 //TODO ALL CARDS in GUI descriptor of effect choices (this is entrance, this is dining and so on)
 //TODO Thief, Truffle_hunter
 //TODO Truffle Hunter seemingly not working for shit
 //TODO Wrong inputs still causing the CLI to crash
+//TODO Bank Balance to update in LightView
+//TODO Give professors doesn't work when you draw with 0 students (the professors are not removed)
 
 
 //A bit less urgent
 //TODO Documentation!!
 //TODO Remove updater notices
-//TODO CLI must visualize coins and bank balance in main board, GUI needs to visualize bank balance in propaganda
+//TODO GUI needs to visualize bank balance in propaganda
 
 //Less less urgent
 //TODO aesthetic of GUI in general
@@ -109,7 +112,7 @@ public class CurrentGameState extends Observable {
     public void updateTurnState()
     {
         HashMap<String, Integer> map = new HashMap<>();
-        HashMap<String, Integer> finalmap = new HashMap<>();
+        HashMap<String, Integer> finalMap;
         for(Team t: currentTeams)
         {
             for(Player p: t.getPlayers())
@@ -117,11 +120,11 @@ public class CurrentGameState extends Observable {
                 map.put(p.getName(), p.getValue());
             }
         }
-        finalmap = map.entrySet().stream()
+        finalMap = map.entrySet().stream()
                                  .sorted(Map.Entry.comparingByValue())
                                  .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
-        currentTurnState.updateTurn(finalmap);
+        currentTurnState.updateTurn(finalMap);
     }
 
 
@@ -132,7 +135,7 @@ public class CurrentGameState extends Observable {
      */
     public void updateBankBalance(Player p, int gain)
     {
-        int coinsToLose = 0;
+        int coinsToLose;
         if(gain == 0)
         {
             coinsToLose = p.gainCoin();
@@ -180,14 +183,7 @@ public class CurrentGameState extends Observable {
             {
                 for(Player player : playersMax)
                 {
-                    if(player.getName().equals(currentTurnState.getCurrentPlayer()))
-                    {
-                        player.getSchool().updateProfessorsTable(color.ordinal(), true);
-                    }
-                    else
-                    {
-                        player.getSchool().updateProfessorsTable(color.ordinal(), false);
-                    }
+                    player.getSchool().updateProfessorsTable(color.ordinal(), player.getName().equals(currentTurnState.getCurrentPlayer()));
                 }
             }
             for(Player loser: losers)

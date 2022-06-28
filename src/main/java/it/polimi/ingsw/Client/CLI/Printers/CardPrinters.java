@@ -197,7 +197,7 @@ public class CardPrinters extends PrinterCLI
         character[4] = "| " + ANSI_RESET + "Current Cost: " + addZero(card.getCurrentCost()) + ANSI_YELLOW + " |  " + description[3];
         character[5] = "|                  |  " + description[4];
         character[6] = characterDifferentiate(card);
-        character[7] = "|__________________|  " + ANSI_RESET + description[6] + "\n";
+        character[7] = "|__________________|  " +  description[6] + ANSI_RESET + "\n";
     }
 
     /** Auxiliary method that adapts a critical line of the character representation according to certain character types.

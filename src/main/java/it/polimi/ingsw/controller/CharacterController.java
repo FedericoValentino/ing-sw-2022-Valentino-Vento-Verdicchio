@@ -39,10 +39,10 @@ public class CharacterController
      * @param player  the player responsible for the action
      * @return ture if the card is present, false if not
      */
-    public static boolean isPickable(CurrentGameState game, CharacterName characterName, Player player)
+    public static boolean isPlayable(CurrentGameState game, CharacterName characterName, Player player)
     {
         for(int i=0; i<game.getCurrentCharacterDeck().getDeck().size(); i++)
-            if(game.getCurrentCharacterDeck().getDeck().get(i).getCharacterName() == characterName)
+            if(game.getCurrentCharacterDeck().getDeck().get(i).getCharacterName() == characterName && game.getCurrentActiveCharacterCard().isEmpty())
             {
                 CharacterCard card = game.getCurrentCharacterDeck().getDeck().get(i);
                 if(player.getCoinAmount() >= card.getCurrentCost())

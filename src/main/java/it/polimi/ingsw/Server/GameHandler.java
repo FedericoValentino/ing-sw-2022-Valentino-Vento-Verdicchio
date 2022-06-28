@@ -273,7 +273,7 @@ public class GameHandler extends Thread implements Observer
                 break;
 
             case CHARACTER_PLAY:
-                if (CharacterController.isPickable(mainController.getGame(),
+                if (CharacterController.isPlayable(mainController.getGame(),
                         ((PlayCharacter) message).getCharacterName(),
                         MainController.findPlayerByName(mainController.getGame(), socket.getNickname())))
                 {
@@ -293,6 +293,10 @@ public class GameHandler extends Thread implements Observer
                                 ((PlayCharacter) message).getStudentColor()
                         );
                     }
+                }
+                else
+                {
+                    socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.CARD_ERROR)));
                 }
                 break;
 

@@ -19,8 +19,9 @@ public class CharacterControllerTest {
 
 
     @Test
-    /** Checks if the function pickCard, in charge of moving a card from the CharDeck
-     to the ActiveCharDeck and modifying the economy of the game, is working properly.
+    /**
+     * Checks if the function pickCard, in charge of moving a card from the CharDeck
+     * to the ActiveCharDeck and modifying the economy of the game, is working properly.
      */
     public void testPickCard() {
 
@@ -64,7 +65,7 @@ public class CharacterControllerTest {
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), cardName3, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         CharacterCard card = controllerTest.getGame().getCurrentActiveCharacterCard().get(0);
-        controllerTest.getCharacterController().deckManagement(controllerTest.getGame());
+        CharacterController.deckManagement(controllerTest.getGame());
 
         //Checks if the sizes of the decks have been handled correctly (2 cards in the Active, one in the Char)
         assertEquals(2, controllerTest.getGame().getCurrentActiveCharacterCard().size());
@@ -103,12 +104,12 @@ public class CharacterControllerTest {
 
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
-        assertTrue(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
+        assertTrue(CharacterController.isPlayable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
 
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(-3);
         //System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
-        assertFalse(controllerTest.getCharacterController().isPickable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
+        assertFalse(CharacterController.isPlayable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
     }
 
     @Test
@@ -124,7 +125,7 @@ public class CharacterControllerTest {
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
         assertTrue(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), CharacterName.HERALD));
-        controllerTest.getCharacterController().deckManagement(controllerTest.getGame());
+        CharacterController.deckManagement(controllerTest.getGame());
 
         assertFalse(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), CharacterName.HERALD));
     }
@@ -150,7 +151,7 @@ public class CharacterControllerTest {
         assert(resultCard2 instanceof Herald);
 
         for(int i=0; i<2; i++)
-            controllerTest.getCharacterController().deckManagement(controllerTest.getGame());
+            CharacterController.deckManagement(controllerTest.getGame());
 
         CharacterCard resultCard3 = controllerTest.getCharacterController().getCardByName(CharacterName.KNIGHT, controllerTest.getGame().getCurrentCharacterDeck().getDeck());
         assert(resultCard3 instanceof Knight);
