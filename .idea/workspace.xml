@@ -12,7 +12,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="little change to character controller" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="change">
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
+    </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
@@ -254,13 +256,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00139" summary="Tower's update">
-      <created>1655722592606</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1655722592606</updated>
     </task>
     <task id="LOCAL-00140" summary="Tower's update">
       <created>1655722651202</created>
@@ -598,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656449256351</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="change">
+      <created>1656449379424</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1656449379424</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,12 +651,12 @@
     <MESSAGE value="Added little fix to server, it wasn't generating matches properly, added island counters" />
     <MESSAGE value="removed a lot of warnings from the code" />
     <MESSAGE value="light change" />
-    <MESSAGE value="change" />
     <MESSAGE value="( ಠ ͜ʖಠ)" />
     <MESSAGE value="littlest pet shop" />
     <MESSAGE value="little change to character controller" />
     <MESSAGE value="cod with me" />
-    <option name="LAST_COMMIT_MESSAGE" value="cod with me" />
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

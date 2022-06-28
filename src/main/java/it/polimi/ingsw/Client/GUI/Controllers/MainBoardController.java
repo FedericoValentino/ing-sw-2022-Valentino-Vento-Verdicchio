@@ -55,7 +55,6 @@ public class MainBoardController extends Controller {
     @FXML private HBox input1;
     @FXML private HBox input2;
     @FXML private Text EffectDescription;
-    @FXML private Pane ParametersSlice;
     @FXML private Button PlayButton;
     @FXML private Button BackToBoard;
 
@@ -251,7 +250,6 @@ public class MainBoardController extends Controller {
         input2.getChildren().clear();
         BackToBoard.setOnMouseClicked((MouseEvent) ->
         {
-            ParametersSlice.getChildren().clear();
             EffectDescription.setText("");
             integerChoice_1.clear();
             integerChoice_2.clear();
@@ -262,7 +260,6 @@ public class MainBoardController extends Controller {
         switch (card.getType())
         {
             case NONE:
-                ParametersSlice.getChildren().clear();
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
                             CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName());
@@ -295,7 +292,6 @@ public class MainBoardController extends Controller {
 
                         studentPosition++;
                     }
-                    ParametersSlice.getChildren().clear();
                 }
                 else
                 {
@@ -314,7 +310,6 @@ public class MainBoardController extends Controller {
                             });
 
                     input1.getChildren().add(box);
-                    ParametersSlice.getChildren().clear();
                 }
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
