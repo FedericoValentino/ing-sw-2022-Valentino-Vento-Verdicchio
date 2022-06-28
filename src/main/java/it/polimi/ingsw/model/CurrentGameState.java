@@ -7,10 +7,9 @@ package it.polimi.ingsw.model;
 //TODO hints on turn end (3 Players)
 //TODO hints bug sometimes upon character usage
 //TODO minstrel color choice in GUI
-//TODO ALL CARDS in GUI descriptor of effect choices (this is entrance, this is dining and so on)
+//TODO ALL CARDS: in GUI descriptors of effect choices are needed(this is entrance, this is dining and so on)
 //TODO Wrong inputs still causing the CLI to crash
 //TODO Bank Balance to update in LightView
-//TODO Give professors doesn't work when you draw with 0 students (the professors are not removed)
 //TODO Testing of Knight, Centaur, Gherbs
 //TODO Princess doesn't work in GUI
 
