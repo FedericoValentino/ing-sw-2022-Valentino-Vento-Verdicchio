@@ -7,7 +7,9 @@ package it.polimi.ingsw.model;
 //TODO hints on turn end (3 Players)
 //TODO minstrel color choice in GUI
 //TODO ALL CARDS in GUI descriptor of effect choices (this is entrance, this is dining and so on)
-//TODO Thief, Truffle_hunter, Princess testing
+//TODO Thief, Truffle_hunter
+//TODO Truffle Hunter seemingly not working for shit
+
 
 //A bit less urgent
 //TODO Documentation!!
