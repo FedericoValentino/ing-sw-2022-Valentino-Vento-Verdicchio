@@ -48,7 +48,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
                         String path = getAssistantPath(player.getCurrentAssistantCard());
                         if(i == 2)
                         {
-                            column = 0;
+                            column = 1;
                         }
                         else
                         {

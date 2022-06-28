@@ -46,6 +46,7 @@ public class Jester extends CharacterCard implements Serializable {
         EffectsUtilities.swapStudents(toDining, cardStudentIndexes, students);
         EffectsUtilities.swapStudents(students, entranceStudentsIndexes, player.getSchool().getEntrance());
         player.getSchool().getEntrance().addAll(toDining);
+        game.notify(game.modelToJson());
     }
 
 

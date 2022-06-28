@@ -25,5 +25,6 @@ public class Cook extends CharacterCard implements Serializable {
     public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
         game.giveProfessors(true);
+        game.notify(game.modelToJson());
     }
 }
