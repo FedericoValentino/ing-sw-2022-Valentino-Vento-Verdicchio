@@ -12,11 +12,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added economy in CLI">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="fix to color type cards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/Player.java" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
@@ -102,7 +100,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApp">
+  <component name="RunManager" selected="Application.ServerApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -259,13 +257,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00149" summary="Added some packages for better navigation">
-      <created>1655842315778</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1655842315778</updated>
     </task>
     <task id="LOCAL-00150" summary="First step towards implementing client side error checks">
       <created>1655844924084</created>
@@ -603,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656456290453</updated>
     </task>
-    <option name="localTasksCounter" value="198" />
+    <task id="LOCAL-00198" summary="fix to color type cards">
+      <created>1656457609607</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1656457609607</updated>
+    </task>
+    <option name="localTasksCounter" value="199" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Jestser added to the Printers and resolved some code repetitions in CardPrinters" />
     <MESSAGE value="Resolved some code repetitions in Printer CLI - cards" />
     <MESSAGE value="same, but code with me" />
     <MESSAGE value="Proudly announcing Eriantys Ping Edition" />
@@ -659,7 +656,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="Added economy in CLI" />
     <MESSAGE value="Now it is impossible to play more than 1 card per round by controller design. CLI will show an error message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now it is impossible to play more than 1 card per round by controller design. CLI will show an error message" />
+    <MESSAGE value="fix to color type cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix to color type cards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

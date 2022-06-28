@@ -383,10 +383,20 @@ public class MainBoardController extends Controller {
                 }
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
-                            CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1, integerChoice_2);
-                            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
-                            EffectPane.setVisible(false);
-                            EffectPane.setMouseTransparent(true);
+                            if(card.getType().equals(LightCharacterType.INTEGER_2) && integerChoice_2.size() != integerChoice_1.size())
+                            {
+                                EffectPane.setVisible(false);
+                                EffectPane.setMouseTransparent(true);
+                                DisplayError("Wrong input, try again");
+                            }
+                            else
+                            {
+                                CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1, integerChoice_2);
+                                GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                                EffectPane.setVisible(false);
+                                EffectPane.setMouseTransparent(true);
+                            }
+
                         }
                 );
 
@@ -412,19 +422,10 @@ public class MainBoardController extends Controller {
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
                             CharacterActivationParser activation;
-                            if(card.getType().equals(LightCharacterType.INTEGER_2) && integerChoice_2.size() != integerChoice_1.size())
-                            {
-                                EffectPane.setVisible(false);
-                                EffectPane.setMouseTransparent(true);
-                                DisplayError("Wrong input, try again");
-                            }
-                            else
-                            {
-                                activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), colorChoice);
-                                GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
-                                EffectPane.setVisible(false);
-                                EffectPane.setMouseTransparent(true);
-                            }
+                            activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), colorChoice);
+                            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                            EffectPane.setVisible(false);
+                            EffectPane.setMouseTransparent(true);
                         }
                 );
 
