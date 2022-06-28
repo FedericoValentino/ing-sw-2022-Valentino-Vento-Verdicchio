@@ -3,13 +3,13 @@ package it.polimi.ingsw.model;
 //URGENT
 //TODO game testing
 //TODO test school checkpoints when using minstrel and thief
-//TODO professor assigning doesnt work
+//TODO professor assigning doesn't work
 //TODO hints on turn end
 //TODO charactercard notify and green sign GUI
 //TODO minstrel fix
 
-//Less urgent
-//TODO players information in GUI
+//A bit less urgent
+//TODO Documentation!!
 
 //Less less urgent
 //TODO aesthetic of GUI in general
