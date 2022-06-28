@@ -248,6 +248,8 @@ public class MainBoardController extends Controller {
         EffectDescription.setText("You are playing " + card.getName());
         input1.getChildren().clear();
         input2.getChildren().clear();
+        integerChoice_1.clear();
+        integerChoice_2.clear();
         BackToBoard.setOnMouseClicked((MouseEvent) ->
         {
             EffectDescription.setText("");
