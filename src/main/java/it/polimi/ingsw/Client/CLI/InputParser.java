@@ -429,6 +429,8 @@ public class InputParser
         System.out.println();
         schoolPrinter.showSchool("-1", socket.getNickname());
         System.out.println();
+        infoPrinters.printEconomy(socket.getNickname());
+        System.out.println();
         infoPrinters.printTurn();
     }
 

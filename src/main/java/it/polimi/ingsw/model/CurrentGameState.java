@@ -9,15 +9,18 @@ package it.polimi.ingsw.model;
 //TODO ALL CARDS in GUI descriptor of effect choices (this is entrance, this is dining and so on)
 //TODO Thief, Truffle_hunter
 //TODO Truffle Hunter seemingly not working for shit
+//TODO Wrong inputs still causing the CLI to crash
 
 
 //A bit less urgent
 //TODO Documentation!!
 //TODO Remove updater notices
+//TODO CLI must visualize coins and bank balance in main board, GUI needs to visualize bank balance in propaganda
 
 //Less less urgent
 //TODO aesthetic of GUI in general
 //TODO CLI school information appears not aligned
+//TODO Revisit undesired cls in CLI
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;

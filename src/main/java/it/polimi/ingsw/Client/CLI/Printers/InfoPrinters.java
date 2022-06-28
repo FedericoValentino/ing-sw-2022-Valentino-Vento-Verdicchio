@@ -89,6 +89,13 @@ public class InfoPrinters extends PrinterCLI
         }
     }
 
+    public void printEconomy(String playerName)
+    {
+        LightPlayer player = Utilities.findPlayerByName(super.getView(), playerName);
+        AnsiConsole.out().println("Your " + ANSI_YELLOW + "coins " + ANSI_RESET + ": " + player.getCoinAmount());
+        AnsiConsole.out().println("Bank Balance: " + super.getView().getBankBalance());
+    }
+
 
     /** Upon player's input, it shows a brief but sufficiently detailed description of the main board and of all the commands
      * a player can use
