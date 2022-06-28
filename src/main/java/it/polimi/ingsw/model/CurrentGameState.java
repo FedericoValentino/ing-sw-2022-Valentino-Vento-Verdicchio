@@ -144,68 +144,46 @@ public class CurrentGameState extends Observable {
     /** Method giveProfessors assigns professors to the player with the most student in their diningRoom  */
     public void giveProfessors(boolean cook)
     {
-        //Scrolls through each students' color
-        for(Col c: Col.values())
+        for(Col color: Col.values())
         {
-            //Saves the max number of colors we find
-            int max = 0;
-            //saves the player that has the highest number of students of that color in his Dining Room
-            Player maxPlayer = null;
-            Player currentPlayer = null;
-
-            ArrayList<Integer> studentsNumber = new ArrayList<>();
-
-            //Finds the maxPlayer
-            for (Team t : currentTeams)
+            HashMap<Player, Integer> comparator = new HashMap<>();
+            for(Team team: currentTeams)
             {
-                for (Player p : t.getPlayers())
+                for(Player player: team.getPlayers())
                 {
-                    if(p.getName().equals(currentTurnState.getCurrentPlayer()))
-                        currentPlayer = p;
+                    comparator.put(player, player.getSchool().getDiningRoom()[color.ordinal()]);
+                }
+            }
+            int max = Collections.max(comparator.values());
+            ArrayList<Player> playersMax = new ArrayList<>();
+            ArrayList<Player> losers = new ArrayList<>();
+            comparator.forEach((player, integer) -> {
+                if(integer == max)
+                    playersMax.add(player);
+                else
+                    losers.add(player);
+            });
 
-                    if(p.getSchool().getDiningRoom()[c.ordinal()] > max)
+            if(playersMax.size() == 1)
+            {
+                playersMax.get(0).getSchool().updateProfessorsTable(color.ordinal(), true);
+            }
+            else if(cook)
+            {
+                for(Player player : playersMax)
+                {
+                    if(player.getName().equals(currentTurnState.getCurrentPlayer()))
                     {
-                        max = p.getSchool().getDiningRoom()[c.ordinal()];
-                        maxPlayer = p;
+                        player.getSchool().updateProfessorsTable(color.ordinal(), true);
                     }
-                    studentsNumber.add(p.getSchool().getDiningRoom()[c.ordinal()]);
-                }
-            }
-            //checks if we have a tie
-            boolean tie = false;
-
-            Set<Integer> duplicates = studentsNumber
-                                    .stream()
-                                    .filter(i -> Collections.frequency(studentsNumber, i) > 1 && i != 0)
-                                    .collect(Collectors.toSet());
-            if(!duplicates.isEmpty())
-            {
-                tie = true;
-                if(cook && max!=0)
-                {
-                    for(Team t : currentTeams)
-                        for(Player p: t.getPlayers())
-                        {
-                            if(maxPlayer.getSchool().getDiningRoom()[c.ordinal()] == p.getSchool().getDiningRoom()[c.ordinal()])
-                            {
-                                p.getSchool().updateProfessorsTable(c.ordinal(), false);
-                            }
-                        }
-                    if(maxPlayer.getSchool().getDiningRoom()[c.ordinal()] == currentPlayer.getSchool().getDiningRoom()[c.ordinal()])
-                        currentPlayer.getSchool().updateProfessorsTable(c.ordinal(), true);
-                }
-            }
-            //Assigns control of the correct professor to the maxPlayer
-            if(!tie)
-            {
-                for (Team t : currentTeams)
-                {
-                    for (Player p : t.getPlayers())
+                    else
                     {
-                        p.school.updateProfessorsTable(c.ordinal(), p.equals(maxPlayer));
+                        player.getSchool().updateProfessorsTable(color.ordinal(), false);
                     }
                 }
             }
+            for(Player loser: losers)
+                loser.getSchool().updateProfessorsTable(color.ordinal(), false);
         }
     }
 
