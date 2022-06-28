@@ -149,7 +149,7 @@ public class InputParser
             }
         }
     }
-
+//
     /**
      * Method JesterParser parses the input for the CharacterCard Jester
      * @param player is the current player
