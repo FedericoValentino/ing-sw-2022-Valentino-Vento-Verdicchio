@@ -222,6 +222,15 @@ public class InputParser
                     {
                         inputArray.add(input);
                     }
+                    else
+                    {
+                        while(input < 0 || input > 4)
+                        {
+                            AnsiConsole.out().println("Wrong input insert the index again");
+                            input = Integer.parseInt(parser.nextLine());
+                        }
+                        inputArray.add(input);
+                    }
                 }
                 else
                 {

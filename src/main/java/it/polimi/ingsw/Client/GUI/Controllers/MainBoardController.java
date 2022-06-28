@@ -284,8 +284,15 @@ public class MainBoardController extends Controller {
                         Pane studentPane = new Pane();
                         studentPane.setId(String.valueOf(studentPosition));
 
-                        studentPane.setOnMouseClicked((MouseEvent) ->
-                                integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId())));
+                        studentPane.setOnMouseClicked((MouseEvent) ->{
+                                    if(integerChoice_1.size() == 0)
+                                    {
+                                        integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                                        ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                                    }
+                                });
+
+
 
                         studentPane.getChildren().add(image);
                         input1.getChildren().add(studentPane);
