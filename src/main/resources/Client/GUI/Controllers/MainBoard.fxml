@@ -95,7 +95,7 @@
             <Pane fx:id="Image3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="140.0" translateX="4.5" translateY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Pane fx:id="EffectPane" layoutX="550.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: white;">
+      <Pane fx:id="EffectPane" layoutX="550.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: white;" visible="false">
          <children>
             <VBox fx:id="EffectBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0">
                <children>

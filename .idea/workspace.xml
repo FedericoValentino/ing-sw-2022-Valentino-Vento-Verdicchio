@@ -12,13 +12,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="littlest pet shop">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
-    </list>
-    <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="little change to character controller" />
+    <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,20 +254,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00137" summary="Little change in Team choice (not already finished)">
-      <created>1655719771406</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1655719771406</updated>
-    </task>
-    <task id="LOCAL-00138" summary="Final change in tower choice">
-      <created>1655721231669</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1655721231670</updated>
     </task>
     <task id="LOCAL-00139" summary="Tower's update">
       <created>1655722592606</created>
@@ -603,7 +584,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656427724032</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="little change to character controller">
+      <created>1656449237590</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1656449237590</updated>
+    </task>
+    <task id="LOCAL-00187" summary="cod with me">
+      <created>1656449256351</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1656449256351</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,8 +629,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Little changes in the error pane" />
-    <MESSAGE value="Little change  in student pane in mine school" />
     <MESSAGE value="Little change  in student pane in mine school (add the remove of the effect)" />
     <MESSAGE value="Add the invisibility to the students that doesn't have a counter more then 1" />
     <MESSAGE value="Add a new method to manage the count of students" />
@@ -659,7 +652,9 @@
     <MESSAGE value="change" />
     <MESSAGE value="( ಠ ͜ʖಠ)" />
     <MESSAGE value="littlest pet shop" />
-    <option name="LAST_COMMIT_MESSAGE" value="littlest pet shop" />
+    <MESSAGE value="little change to character controller" />
+    <MESSAGE value="cod with me" />
+    <option name="LAST_COMMIT_MESSAGE" value="cod with me" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
