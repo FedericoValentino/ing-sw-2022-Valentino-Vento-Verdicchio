@@ -2,13 +2,12 @@ package it.polimi.ingsw.model;
 
 //URGENT
 //TODO game testing
+//TODO somehow islands (sometimes, hardly replicable) do not update. Very bad issue
 //TODO test school checkpoints when using minstrel and thief
-//TODO professor assigning doesn't work
-//TODO hints on turn end
-//TODO charactercard notify and green sign GUI
+//TODO hints on turn end (3 Players)
 //TODO minstrel color choice in GUI
-//TODO Jester fix
-//TODO Jester input limitations missing in CLI
+//TODO ALL CARDS in GUI descriptor of effect choices (this is entrance, this is dining and so on)
+//TODO Thief, Truffle_hunter, Princess testing
 
 //A bit less urgent
 //TODO Documentation!!
@@ -16,6 +15,7 @@ package it.polimi.ingsw.model;
 
 //Less less urgent
 //TODO aesthetic of GUI in general
+//TODO CLI school information appears not aligned
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;

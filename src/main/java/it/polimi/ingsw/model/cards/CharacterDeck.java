@@ -26,9 +26,9 @@ public class CharacterDeck implements Serializable
       cardOrdinals.add(i);
     Collections.shuffle(cardOrdinals);
     //TODO to remove in the future
-    cardOrdinals.add(0, 10);
-    cardOrdinals.add(1, 9);
-    cardOrdinals.add(2, 8);
+    cardOrdinals.add(0, 11);
+    cardOrdinals.add(1, 7);
+    cardOrdinals.add(2, 6);
     for(int i = 0; i < 3; i++)
     {
       deck.add(CharacterCreator.getCharacter(CharacterName.values()[cardOrdinals.get(0)]));
