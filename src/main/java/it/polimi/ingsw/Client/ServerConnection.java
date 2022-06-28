@@ -42,7 +42,7 @@ public class ServerConnection
         out.flush();
         out.reset();
         connected = true;
-        server.setSoTimeout(30000);
+        server.setSoTimeout(10000);
     }
 
 
