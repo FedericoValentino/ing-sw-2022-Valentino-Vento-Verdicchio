@@ -61,16 +61,18 @@ public class PropagandaController extends Controller implements ObserverLightVie
     @Override
     public void update(Object o)
     {
-        LightTurnState state = (LightTurnState) o;
+        Platform.runLater(() -> {
+            LightTurnState state = (LightTurnState) o;
 
-        hintGeneration();
-        Text turn = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("turn")).collect(Collectors.toList()).get(0));
-        turn.setText("");
-        turn.setText("It's " + state.getCurrentPlayer() + "'s turn");
-        LightPlayer currentPlayer = view.findPlayerByName(view.getCurrentTeams(), GuiMainStarter.getClientGUI().getServerConnection().getNickname());
+            hintGeneration();
+            Text turn = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("turn")).collect(Collectors.toList()).get(0));
+            turn.setText("");
+            turn.setText("It's " + state.getCurrentPlayer() + "'s turn");
+            LightPlayer currentPlayer = view.findPlayerByName(view.getCurrentTeams(), GuiMainStarter.getClientGUI().getServerConnection().getNickname());
 
-        Text coins = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("coins")).collect(Collectors.toList()).get(0));
-        coins.setText("");
-        coins.setText("Your coins: " + currentPlayer.getCoinAmount());
+            Text coins = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("coins")).collect(Collectors.toList()).get(0));
+            coins.setText("");
+            coins.setText("Your coins: " + currentPlayer.getCoinAmount());
+        });
     }
 }
