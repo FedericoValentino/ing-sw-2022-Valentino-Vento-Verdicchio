@@ -52,6 +52,8 @@ public class MainBoardController extends Controller {
     @FXML private AnchorPane mineSchoolAnchorPane;
 
     @FXML private Pane EffectPane;
+    @FXML private HBox input1;
+    @FXML private HBox input2;
     @FXML private Text EffectDescription;
     @FXML private Pane ParametersSlice;
     @FXML private Button PlayButton;
@@ -245,6 +247,8 @@ public class MainBoardController extends Controller {
         EffectPane.setMouseTransparent(false);
         EffectPane.setVisible(true);
         EffectDescription.setText("You are playing " + card.getName());
+        input1.getChildren().clear();
+        input2.getChildren().clear();
         BackToBoard.setOnMouseClicked((MouseEvent) ->
         {
             ParametersSlice.getChildren().clear();
@@ -273,7 +277,6 @@ public class MainBoardController extends Controller {
             case INTEGER_1:
                 if(card.getName().equals(CharacterName.PRINCESS))
                 {
-                    HBox students = new HBox();
                     int studentPosition = 0;
                     for(Student student : card.getStudentList())
                     {
@@ -288,19 +291,17 @@ public class MainBoardController extends Controller {
                                 integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId())));
 
                         studentPane.getChildren().add(image);
-                        students.getChildren().add(studentPane);
+                        input1.getChildren().add(studentPane);
 
                         studentPosition++;
                     }
                     ParametersSlice.getChildren().clear();
-                    ParametersSlice.getChildren().add(students);
                 }
                 else
                 {
-                    HBox islandChoice = new HBox();
                     Text hint = new Text();
                     hint.setText("Select the target island");
-                    islandChoice.getChildren().add(hint);
+                    input1.getChildren().add(hint);
                     ChoiceBox<Integer> box = new ChoiceBox<>();
                     for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
                     {
@@ -312,9 +313,8 @@ public class MainBoardController extends Controller {
                                 integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
                             });
 
-                    islandChoice.getChildren().add(box);
+                    input1.getChildren().add(box);
                     ParametersSlice.getChildren().clear();
-                    ParametersSlice.getChildren().add(islandChoice);
                 }
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
@@ -328,27 +328,24 @@ public class MainBoardController extends Controller {
                 break;
 
             case INTEGER_2:
-                VBox cardParameters = new VBox();
-                cardParameters.getChildren().clear();
                 //getting the right player
                 LightPlayer player = Utilities.findPlayerByName(view, GuiMainStarter.getClientGUI().getServerConnection().getNickname());
 
 
                 if(card.getName().equals(CharacterName.JESTER))
                 {
-                    JesterSetup(card, cardParameters, player);
+                    JesterSetup(card, player);
                 }
                 else if(card.getName().equals(CharacterName.MINSTREL))
                 {
-                    MinstrelSetup(cardParameters, player);
+                    MinstrelSetup(player);
                 }
                 else
                 {
                     //setup islands
-                    HBox islandChoice = new HBox();
                     Text hint = new Text();
                     hint.setText("Select the target island");
-                    islandChoice.getChildren().add(hint);
+                    input1.getChildren().add(hint);
                     ChoiceBox<Integer> box = new ChoiceBox<>();
                     for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
                     {
@@ -359,9 +356,7 @@ public class MainBoardController extends Controller {
                                 integerChoice_1.clear();
                                 integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
                             });
-                    islandChoice.getChildren().add(box);
-
-                    cardParameters.getChildren().add(islandChoice);
+                    input1.getChildren().add(box);
 
                     //setup students
                     HBox students = new HBox();
@@ -384,13 +379,7 @@ public class MainBoardController extends Controller {
                         students.getChildren().add(studentPane);
                         studentPosition++;
                     }
-                    cardParameters.getChildren().add(students);
                 }
-
-                ParametersSlice.getChildren().clear();
-                ParametersSlice.getChildren().add(cardParameters);
-
-
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
                             CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1, integerChoice_2);
@@ -416,7 +405,7 @@ public class MainBoardController extends Controller {
                         colorChoice = Col.valueOf(((Node)MouseEvent.getSource()).getId());
                     });
                     studentPane.getChildren().add(color);
-                    Colors.getChildren().add(studentPane);
+                    input1.getChildren().add(studentPane);
                 }
                 ParametersSlice.getChildren().clear();
                 ParametersSlice.getChildren().add(Colors);
@@ -446,10 +435,9 @@ public class MainBoardController extends Controller {
     }
 
 
-    public void JesterSetup(LightCharacterCard card, VBox cardParameters, LightPlayer player)
+    public void JesterSetup(LightCharacterCard card, LightPlayer player)
     {
         //setup students
-        HBox students = new HBox();
         int studentPosition = 0;
         for(Student student : card.getStudentList())
         {
@@ -468,12 +456,10 @@ public class MainBoardController extends Controller {
 
             });
             studentPane.getChildren().add(image);
-            students.getChildren().add(studentPane);
+            input1.getChildren().add(studentPane);
             studentPosition++;
         }
-        cardParameters.getChildren().add(students);
         //setup students
-        HBox entrance = new HBox();
         int entrancePos = 0;
         for(Student student : player.getSchool().getEntrance())
         {
@@ -491,10 +477,9 @@ public class MainBoardController extends Controller {
                 }
             });
             studentPane.getChildren().add(image);
-            entrance.getChildren().add(studentPane);
+            input2.getChildren().add(studentPane);
             entrancePos++;
         }
-        cardParameters.getChildren().add(entrance);
     }
 
 
@@ -502,7 +487,6 @@ public class MainBoardController extends Controller {
     {
         final int[] diningRoom = player.getSchool().getDiningRoom().clone();
         //setup students
-        HBox students = new HBox();
         int studentPosition = 0;
         for(Student student : player.getSchool().getEntrance())
         {
@@ -520,12 +504,10 @@ public class MainBoardController extends Controller {
                 }
             });
             studentPane.getChildren().add(image);
-            students.getChildren().add(studentPane);
+            input1.getChildren().add(studentPane);
             studentPosition++;
         }
-        cardParameters.getChildren().add(students);
 
-        HBox Colors = new HBox();
         for(int i = 0; i < 5; i++)
         {
             if(diningRoom[i] > 0)
@@ -539,14 +521,13 @@ public class MainBoardController extends Controller {
                     if(integerChoice_2.size() < integerChoice_1.size())
                     {
                         ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
-                        integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                        integerChoice_2.add(Col.valueOf(((Node)MouseEvent.getSource()).getId()).ordinal());
                     }
                 });
                 studentPane.getChildren().add(color);
-                Colors.getChildren().add(studentPane);
+                input2.getChildren().add(studentPane);
             }
         }
-        cardParameters.getChildren().add(Colors);
     }
 
     public void DisplayError(String error)
