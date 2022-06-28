@@ -142,8 +142,9 @@ public class InfoPrinters extends PrinterCLI
         ArrayList<String> islands = new ArrayList<>();
         for(LightIsland island : super.getView().getCurrentIslands().getIslands())
         {
-            if(island.getOwnership().equals(team.getColor()))
-                islands.add(addZero(island.getIslandId()));
+            if(island.getOwnership() != null)
+                if(island.getOwnership().equals(team.getColor()))
+                    islands.add(addZero(island.getIslandId()));
         }
         return islands;
     }
