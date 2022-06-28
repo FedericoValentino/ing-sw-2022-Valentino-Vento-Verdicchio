@@ -489,10 +489,10 @@ public class MainBoardController extends Controller {
             studentPane.setId(String.valueOf(studentPosition));
             studentPane.setOnMouseClicked((MouseEvent) ->
             {
-                if(integerChoice_1.size() < 3)
+                if(integerChoice_2.size() < 3)
                 {
                     ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
-                    integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                    integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
                 }
             });
             studentPane.getChildren().add(image);
@@ -510,10 +510,10 @@ public class MainBoardController extends Controller {
                 studentPane.setId(Col.values()[i].toString());
                 studentPane.setOnMouseClicked((MouseEvent) ->
                 {
-                    if(integerChoice_2.size() < integerChoice_1.size())
+                    if(integerChoice_1.size() < integerChoice_2.size())
                     {
                         ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
-                        integerChoice_2.add(Col.valueOf(((Node)MouseEvent.getSource()).getId()).ordinal());
+                        integerChoice_1.add(Col.valueOf(((Node)MouseEvent.getSource()).getId()).ordinal());
                     }
                 });
                 studentPane.getChildren().add(color);
