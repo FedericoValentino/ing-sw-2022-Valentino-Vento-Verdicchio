@@ -12,13 +12,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added economy in CLI">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Now it is impossible to play more than 1 card per round by controller design. CLI will show an error message">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/CardPrinters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
@@ -104,7 +100,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerApp">
+  <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -191,10 +187,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="Application.ServerApp" />
         <item itemvalue="Application.main" />
         <item itemvalue="JUnit.CookTest.testEffect" />
-        <item itemvalue="JUnit.All in softeng-GC61" />
       </list>
     </recent_temporary>
   </component>
@@ -261,13 +257,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00148" summary="Now everything works">
-      <created>1655840256807</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1655840256807</updated>
     </task>
     <task id="LOCAL-00149" summary="Added some packages for better navigation">
       <created>1655842315778</created>
@@ -605,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656455072878</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="Now it is impossible to play more than 1 card per round by controller design. CLI will show an error message">
+      <created>1656456290453</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1656456290453</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Little changes in inputParser (put activation (it's a parameter) from a method to the main declaration part of the class)" />
     <MESSAGE value="Jestser added to the Printers and resolved some code repetitions in CardPrinters" />
     <MESSAGE value="Resolved some code repetitions in Printer CLI - cards" />
     <MESSAGE value="same, but code with me" />
@@ -661,7 +656,8 @@
     <MESSAGE value="Added TODOs, now testing three different cards" />
     <MESSAGE value="fix" />
     <MESSAGE value="Added economy in CLI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added economy in CLI" />
+    <MESSAGE value="Now it is impossible to play more than 1 card per round by controller design. CLI will show an error message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now it is impossible to play more than 1 card per round by controller design. CLI will show an error message" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

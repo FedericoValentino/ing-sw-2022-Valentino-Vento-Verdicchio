@@ -2,14 +2,11 @@ package it.polimi.ingsw.model;
 
 //URGENT
 //TODO game testing
-//TODO Characters can be played all in a row during a single turn in CLI. Needs fix asap
 //TODO somehow islands (sometimes, hardly replicable) do not update. Very bad issue
 //TODO test school checkpoints when using minstrel
 //TODO hints on turn end (3 Players)
 //TODO minstrel color choice in GUI
 //TODO ALL CARDS in GUI descriptor of effect choices (this is entrance, this is dining and so on)
-//TODO Thief, Truffle_hunter
-//TODO Truffle Hunter seemingly not working for shit
 //TODO Wrong inputs still causing the CLI to crash
 //TODO Bank Balance to update in LightView
 //TODO Give professors doesn't work when you draw with 0 students (the professors are not removed)
@@ -151,7 +148,7 @@ public class CurrentGameState extends Observable {
             bankBalance = 0;
     }
 
-//
+
     /** Method giveProfessors assigns professors to the player with the most student in their diningRoom  */
     public void giveProfessors(boolean cook)
     {
@@ -169,7 +166,7 @@ public class CurrentGameState extends Observable {
             ArrayList<Player> playersMax = new ArrayList<>();
             ArrayList<Player> losers = new ArrayList<>();
             comparator.forEach((player, integer) -> {
-                if(integer == max)
+                if(integer == max && integer != 0)
                     playersMax.add(player);
                 else
                     losers.add(player);
