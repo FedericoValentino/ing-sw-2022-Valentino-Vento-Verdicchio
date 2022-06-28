@@ -1,7 +1,7 @@
 package it.polimi.ingsw.model.boards.token.enumerations;
 
 public enum CharacterName
-{//y
+{
     PRIEST,
     HERALD,
     POSTMAN,
