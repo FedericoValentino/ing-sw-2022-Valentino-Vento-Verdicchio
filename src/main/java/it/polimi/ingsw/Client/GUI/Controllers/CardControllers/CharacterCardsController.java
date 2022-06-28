@@ -6,6 +6,7 @@ import it.polimi.ingsw.Client.LightView.LightCards.characters.LightActiveDeck;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharDeck;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharacterCard;
 import it.polimi.ingsw.Observer.ObserverLightView;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -142,29 +143,31 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     @Override
     public void update(Object o)
     {
-        if(o!= null)
-        {
-            LightCharacterCard card = (LightCharacterCard) o;
-            Pane currentPane = getCorrectPane(card);
-            Text parameters = (Text) ((Pane) currentPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Parameters")).collect(Collectors.toList()).get(0);
-            parameters.setText("");
-            parameters.setText("Uses: " + card.getUses() + "\nCurrent Cost: " + card.getCurrentCost());
-            Circle statusIndicator = (Circle) ((Pane) currentPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
-            statusIndicator.setFill(Paint.valueOf("1A8000"));
-            activateButton.setMouseTransparent(true);
-            activateButton.setOpacity(0.30);
-        }
-        else
-        {
-            for(Node node1: mainPane.getChildren())
+        Platform.runLater(() -> {
+            if(o!= null)
             {
-                Pane pane = (Pane)node1;
-                Circle statusIndicator = (Circle) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
-                statusIndicator.setFill(Paint.valueOf("FF1F1F"));
-                activateButton.setMouseTransparent(false);
-                activateButton.setOpacity(1);
+                LightCharacterCard card = (LightCharacterCard) o;
+                Pane currentPane = getCorrectPane(card);
+                Text parameters = (Text) ((Pane) currentPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Parameters")).collect(Collectors.toList()).get(0);
+                parameters.setText("");
+                parameters.setText("Uses: " + card.getUses() + "\nCurrent Cost: " + card.getCurrentCost());
+                Circle statusIndicator = (Circle) ((Pane) currentPane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
+                statusIndicator.setFill(Paint.valueOf("1A8000"));
+                activateButton.setMouseTransparent(true);
+                activateButton.setOpacity(0.30);
             }
-        }
+            else
+            {
+                for(Node node1: mainPane.getChildren())
+                {
+                    Pane pane = (Pane)node1;
+                    Circle statusIndicator = (Circle) ((Pane) pane.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("CharacterStatusIndicator")).collect(Collectors.toList()).get(0);
+                    statusIndicator.setFill(Paint.valueOf("FF1F1F"));
+                    activateButton.setMouseTransparent(false);
+                    activateButton.setOpacity(1);
+                }
+            }
+            });
     }
 
 
