@@ -6,10 +6,13 @@ package it.polimi.ingsw.model;
 //TODO professor assigning doesn't work
 //TODO hints on turn end
 //TODO charactercard notify and green sign GUI
-//TODO minstrel fix
+//TODO minstrel color choice in GUI
+//TODO Jester fix
+//TODO Jester input limitations missing in CLI
 
 //A bit less urgent
 //TODO Documentation!!
+//TODO Remove updater notices
 
 //Less less urgent
 //TODO aesthetic of GUI in general
