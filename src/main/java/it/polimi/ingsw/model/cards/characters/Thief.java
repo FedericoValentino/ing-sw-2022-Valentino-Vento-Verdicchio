@@ -38,6 +38,7 @@ public class Thief extends CharacterCard implements Serializable {
             }
         }
         game.getCurrentPouch().refillBag(toBag);
+        game.giveProfessors(false);
         game.notify(game.modelToJson());
     }
 

@@ -53,6 +53,7 @@ public class Minstrel extends CharacterCard implements Serializable {
             player.getSchool().placeInDiningRoom(student.getColor());
 
         EffectsUtilities.adjustCheckpoints(player.getSchool());
+        game.giveProfessors(false);
         game.notify(game.modelToJson());
     }
 
