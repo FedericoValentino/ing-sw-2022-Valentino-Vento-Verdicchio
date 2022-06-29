@@ -37,7 +37,6 @@ public class LightSchool extends Observable
         this.diningRoom = light.getDiningRoom();
         this.professorTable = light.getProfessorTable();
         this.towerCount = light.getTowerCount();
-        System.out.println("Updated LightSchool");
         notifyLight(this);
     }
 

@@ -86,7 +86,6 @@ public class MainBoardController extends Controller {
         contr.setup(islandAnchorPane, view);
     }
 
-
     /**
      * This method it's called when the mainBoardController is set for the first time.
      * Firstly it loads the Assistant fxml from the specified path into the FXMLLoader object called loader.
@@ -104,6 +103,7 @@ public class MainBoardController extends Controller {
         assistantController.setup(player, teams, assistantCardAnchorPane, this);
 
     }
+
     public void initialSetupCharacterCard(LightCharDeck charDeck, LightActiveDeck activeDeck) throws IOException
     {
         String path = "/Client/GUI/Controllers/Character.fxml";
@@ -114,7 +114,6 @@ public class MainBoardController extends Controller {
 
         characterController.setup(characterAnchorPane, charDeck, activeDeck, this);
     }
-
 
     public void initialSetupMineSchool() throws IOException {
         String path= "/Client/GUI/Controllers/MineSchool.fxml";
@@ -144,7 +143,6 @@ public class MainBoardController extends Controller {
 
         propagandaController.setup(view);
     }
-
 
     public void initialSetupOtherSchool(LightView view) throws IOException {
 
@@ -259,6 +257,7 @@ public class MainBoardController extends Controller {
             EffectPane.setMouseTransparent(true);
             EffectPane.setVisible(false);
         });
+
         switch (card.getType())
         {
             case NONE:
@@ -272,54 +271,14 @@ public class MainBoardController extends Controller {
                 );
                 break;
 
-
             case INTEGER_1:
                 if(card.getName().equals(CharacterName.PRINCESS))
                 {
-                    input1.getChildren().add(new Text("Students on Card"));
-                    int studentPosition = 0;
-                    for(Student student : card.getStudentList())
-                    {
-                        ImageView image = new ImageView(GUIUtilities.getRightColorPath(student));
-                        image.setFitHeight(27);
-                        image.setFitWidth(27);
-
-                        Pane studentPane = new Pane();
-                        studentPane.setId(String.valueOf(studentPosition));
-
-                        studentPane.setOnMouseClicked((MouseEvent) ->{
-                                    if(integerChoice_1.size() == 0)
-                                    {
-                                        integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
-                                        ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
-                                    }
-                                });
-
-
-
-                        studentPane.getChildren().add(image);
-                        input1.getChildren().add(studentPane);
-
-                        studentPosition++;
-                    }
+                    PrincessSetup(card);
                 }
                 else
                 {
-                    Text hint = new Text();
-                    hint.setText("Select the target island");
-                    input1.getChildren().add(hint);
-                    ChoiceBox<Integer> box = new ChoiceBox<>();
-                    for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
-                    {
-                        box.getItems().add(i);
-                    }
-                    box.setOnAction((Event) ->
-                            {
-                                integerChoice_1.clear();
-                                integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
-                            });
-
-                    input1.getChildren().add(box);
+                    Integer1Setup();
                 }
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
@@ -329,14 +288,10 @@ public class MainBoardController extends Controller {
                             EffectPane.setMouseTransparent(true);
                         }
                 );
-
                 break;
 
             case INTEGER_2:
-                //getting the right player
                 LightPlayer player = Utilities.findPlayerByName(view, GuiMainStarter.getClientGUI().getServerConnection().getNickname());
-
-
                 if(card.getName().equals(CharacterName.JESTER))
                 {
                     JesterSetup(card, player);
@@ -347,42 +302,7 @@ public class MainBoardController extends Controller {
                 }
                 else
                 {
-                    //setup islands
-                    Text hint = new Text();
-                    hint.setText("Select the target island");
-                    input1.getChildren().add(hint);
-                    ChoiceBox<Integer> box = new ChoiceBox<>();
-                    for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
-                    {
-                        box.getItems().add(i);
-                    }
-                    box.setOnAction((Event) ->
-                            {
-                                integerChoice_1.clear();
-                                integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
-                            });
-                    input1.getChildren().add(box);
-
-                    //setup students
-                    int studentPosition = 0;
-                    for(Student student : card.getStudentList())
-                    {
-                        ImageView image = new ImageView(GUIUtilities.getRightColorPath(student));
-                        image.setFitHeight(27);
-                        image.setFitWidth(27);
-
-                        Pane studentPane = new Pane();
-                        studentPane.setId(String.valueOf(studentPosition));
-                        studentPane.setOnMouseClicked((MouseEvent) ->
-                        {
-                            integerChoice_2.clear();
-                            ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
-                            integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
-                        });
-                        studentPane.getChildren().add(image);
-                        input2.getChildren().add(studentPane);
-                        studentPosition++;
-                    }
+                    Integer2Setup(card);
                 }
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
@@ -399,30 +319,12 @@ public class MainBoardController extends Controller {
                                 EffectPane.setVisible(false);
                                 EffectPane.setMouseTransparent(true);
                             }
-
                         }
                 );
-
                 break;
 
             case COLOR:
-
-                input1.getChildren().add(new Text("Choose a color"));
-                for(int i = 0; i < 5; i++)
-                {
-                    Student student = new Student(Col.values()[i]);
-                    ImageView color = new ImageView(GUIUtilities.getRightColorPath(student));
-                    Pane studentPane = new Pane();
-                    studentPane.setId(Col.values()[i].toString());
-                    studentPane.setOnMouseClicked((MouseEvent) ->
-                    {
-                        ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
-                        colorChoice = Col.valueOf(((Node)MouseEvent.getSource()).getId());
-                    });
-                    studentPane.getChildren().add(color);
-                    input1.getChildren().add(studentPane);
-                }
-
+                ColorSetup();
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
                             CharacterActivationParser activation;
@@ -435,6 +337,111 @@ public class MainBoardController extends Controller {
 
                 break;
 
+        }
+    }
+
+    public void PrincessSetup(LightCharacterCard card)
+    {
+        input1.getChildren().add(new Text("Students on Card"));
+        int studentPosition = 0;
+        for(Student student : card.getStudentList())
+        {
+            ImageView image = new ImageView(GUIUtilities.getRightColorPath(student));
+            image.setFitHeight(27);
+            image.setFitWidth(27);
+
+            Pane studentPane = new Pane();
+            studentPane.setId(String.valueOf(studentPosition));
+
+            studentPane.setOnMouseClicked((MouseEvent) ->{
+                if(integerChoice_1.size() == 0)
+                {
+                    integerChoice_1.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+                    ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                }
+            });
+            studentPane.getChildren().add(image);
+            input1.getChildren().add(studentPane);
+
+            studentPosition++;
+        }
+    }
+
+    public void ColorSetup()
+    {
+        input1.getChildren().add(new Text("Choose a color"));
+        for(int i = 0; i < 5; i++)
+        {
+            Student student = new Student(Col.values()[i]);
+            ImageView color = new ImageView(GUIUtilities.getRightColorPath(student));
+            Pane studentPane = new Pane();
+            studentPane.setId(Col.values()[i].toString());
+            studentPane.setOnMouseClicked((MouseEvent) ->
+            {
+                ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                colorChoice = Col.valueOf(((Node)MouseEvent.getSource()).getId());
+            });
+            studentPane.getChildren().add(color);
+            input1.getChildren().add(studentPane);
+        }
+    }
+
+    public void Integer1Setup()
+    {
+        Text hint = new Text();
+        hint.setText("Select the target island");
+        input1.getChildren().add(hint);
+        ChoiceBox<Integer> box = new ChoiceBox<>();
+        for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
+        {
+            box.getItems().add(i);
+        }
+        box.setOnAction((Event) ->
+        {
+            integerChoice_1.clear();
+            integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
+        });
+
+        input1.getChildren().add(box);
+    }
+
+    public void Integer2Setup(LightCharacterCard card)
+    {
+        //setup islands
+        Text hint = new Text();
+        hint.setText("Select the target island");
+        input1.getChildren().add(hint);
+        ChoiceBox<Integer> box = new ChoiceBox<>();
+        for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
+        {
+            box.getItems().add(i);
+        }
+        box.setOnAction((Event) ->
+        {
+            integerChoice_1.clear();
+            integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
+        });
+        input1.getChildren().add(box);
+
+        //setup students
+        int studentPosition = 0;
+        for(Student student : card.getStudentList())
+        {
+            ImageView image = new ImageView(GUIUtilities.getRightColorPath(student));
+            image.setFitHeight(27);
+            image.setFitWidth(27);
+
+            Pane studentPane = new Pane();
+            studentPane.setId(String.valueOf(studentPosition));
+            studentPane.setOnMouseClicked((MouseEvent) ->
+            {
+                integerChoice_2.clear();
+                ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+                integerChoice_2.add(Integer.parseInt(((Node)MouseEvent.getSource()).getId()));
+            });
+            studentPane.getChildren().add(image);
+            input2.getChildren().add(studentPane);
+            studentPosition++;
         }
     }
 
@@ -515,19 +522,7 @@ public class MainBoardController extends Controller {
             studentPosition++;
         }
         input2.getChildren().add(new Text("Students in dining room available for swap"));
-        for(int i = 0; i < 5; i++)
-        {
-            if(diningRoom[i] > 0)
-            {
-                Student student = new Student(Col.values()[i]);
-                ImageView color = new ImageView(GUIUtilities.getRightColorPath(student));
-                Pane studentPane = new Pane();
-                studentPane.setId(Col.values()[i].toString());
-                studentPane.setOnMouseClicked(this::minstrelColorChoice);
-                studentPane.getChildren().add(color);
-                input2.getChildren().add(studentPane);
-            }
-        }
+        setDiningRoomColors(diningRoom);
     }
 
 

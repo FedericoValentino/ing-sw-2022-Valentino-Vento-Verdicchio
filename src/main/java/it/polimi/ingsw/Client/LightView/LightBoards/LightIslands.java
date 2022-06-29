@@ -27,7 +27,6 @@ public class LightIslands extends Observable
         {
             islands.remove(islands.size()-1);
         }
-        System.out.println("Updated LightIslands");
         notifyLight(this);
     }
 

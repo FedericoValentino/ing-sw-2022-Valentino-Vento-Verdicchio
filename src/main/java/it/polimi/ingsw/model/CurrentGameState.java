@@ -6,16 +6,8 @@ package it.polimi.ingsw.model;
 //TODO hints on turn end (3 Players)    !!could be fixed!!
 //TODO hints bug sometimes upon character usage     !!could be fixed!!
 //TODO test school checkpoints when using minstrel
-//TODO Wrong inputs still causing the CLI to crash
 //TODO Testing of Knight, Centaur, GHerbs
 //TODO Documentation!!
-
-
-//A bit less urgent
-//TODO Remove updater notices
-//TODO GUI needs to visualize bank balance in propaganda
-//TODO Look at code repetition in MainBoard for characters (Jester - Princess - Priest)
-//TODO Look at the jSon constructor in Assistants and Student and double constructor in cloud
 
 //Less less urgent
 //TODO aesthetic of GUI in general

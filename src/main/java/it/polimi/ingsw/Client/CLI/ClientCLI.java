@@ -45,12 +45,12 @@ public class ClientCLI implements ClientView, InformationGenerator
                 GameMode gm = new GameMode();
                 System.out.println("First Client, what gamemode would you like to play?");
                 System.out.println("Player number?[2][3][4]");
-                gm.setMaxPlayers(Integer.parseInt(stdin.getParser().nextLine()));
+                gm.setMaxPlayers(stdin.integerParser());
                 while(gm.getMaxPlayers() > 4 || gm.getMaxPlayers() < 2)
                 {
                     System.out.println("Wrong input");
                     System.out.println("Player number?[2][3][4]");
-                    gm.setMaxPlayers(Integer.parseInt(stdin.getParser().nextLine()));
+                    gm.setMaxPlayers(stdin.integerParser());
                 }
 
                 System.out.println("Expert Mode?[true][false]");
@@ -75,11 +75,11 @@ public class ClientCLI implements ClientView, InformationGenerator
                     System.out.print("[" + i + "] " + ColTow.values()[i] + ": " + availableTeams[i] + " Slots ");
                 }
                 System.out.println();
-                int teamChoice = Integer.parseInt(stdin.getParser().nextLine());
+                int teamChoice = stdin.integerParser();
                 while(teamChoice > 2 || teamChoice < 0)
                 {
                     System.out.println("You must enter a number between 0 and 2");
-                    teamChoice = Integer.parseInt(stdin.getParser().nextLine());
+                    teamChoice = stdin.integerParser();
                 }
                 main.sendMessage(new SerializedMessage(new TeamChoice(teamChoice)));
                 break;
@@ -91,11 +91,11 @@ public class ClientCLI implements ClientView, InformationGenerator
                     System.out.print("[" + w.ordinal() + "] " + w + " ");
                 }
                 System.out.println();
-                int choice = Integer.parseInt(stdin.getParser().nextLine());
+                int choice = stdin.integerParser();
                 while(choice > 4 || choice < 0)
                 {
                     System.out.println("You must enter a number between 0 and 4");
-                    choice = Integer.parseInt(stdin.getParser().nextLine());
+                    choice = stdin.integerParser();
                 }
                 main.sendMessage(new SerializedMessage(new WizardChoice(Wizard.values()[choice])));
                 break;

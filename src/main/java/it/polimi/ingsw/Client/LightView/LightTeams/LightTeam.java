@@ -34,7 +34,6 @@ public class LightTeam extends Observable
         }
         this.controlledIslands = light.getControlledIslands();
         this.controlledProfessors = light.getControlledProfessors();
-        System.out.println("Updated LightTeam");
         notifyLight(this);
     }
 

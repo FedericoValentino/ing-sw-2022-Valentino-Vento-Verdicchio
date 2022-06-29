@@ -117,7 +117,7 @@ public class InputParser
         while(input != -1 && inputArray1.size() < 2)
         {
             AnsiConsole.out().println("Choose a student");
-            input = Integer.parseInt(parser.nextLine());
+            input = integerParser();
             if(input >= 0 && input < player.getSchool().getEntrance().size()) {
                 inputArray1.add(input);
             }
@@ -131,7 +131,7 @@ public class InputParser
             ArrayList <Col> colors = infoPrinters.printAvailableColors(diningRoom);
             try
             {
-                Col colorInput = Col.valueOf(parser.nextLine());
+                Col colorInput = studentColorParser();
                 if(colors.contains(colorInput))
                 {
                     diningRoom[colorInput.ordinal()]--;
@@ -167,7 +167,7 @@ public class InputParser
         while(inputStudentOnCardIndex != -1 && inputArray2.size() < 3)
         {
             AnsiConsole.out().println("Chose a student");
-            inputStudentOnCardIndex = Integer.parseInt(parser.nextLine());
+            inputStudentOnCardIndex = integerParser();
             if (inputStudentOnCardIndex >= 0 && inputStudentOnCardIndex < 6 && !inputArray2.contains(inputStudentOnCardIndex))
             {
                 inputArray2.add(inputStudentOnCardIndex);
@@ -179,7 +179,7 @@ public class InputParser
         for(int i = 0; i < inputArray2.size(); i++)
         {
             AnsiConsole.out().println("Choose the students from the entrance");
-            inputStudentInEntrance = Integer.parseInt(parser.nextLine());
+            inputStudentInEntrance = integerParser();
             if (inputStudentInEntrance >= 0 && inputStudentInEntrance < player.getSchool().getEntrance().size())
             {
                 inputArray1.add(inputStudentInEntrance);
@@ -217,7 +217,7 @@ public class InputParser
                 {
                     PrinterCLI.printStudent(card.getStudentList(), 2);
                     AnsiConsole.out().println("Choose a student to move to dining room");
-                    input = Integer.parseInt(parser.nextLine());
+                    input = integerParser();
                     if(input >= 0 && input <= 4)
                     {
                         inputArray.add(input);
@@ -227,7 +227,7 @@ public class InputParser
                         while(input < 0 || input > 4)
                         {
                             AnsiConsole.out().println("Wrong input insert the index again");
-                            input = Integer.parseInt(parser.nextLine());
+                            input = integerParser();
                         }
                         inputArray.add(input);
                     }
@@ -235,7 +235,7 @@ public class InputParser
                 else
                 {
                     AnsiConsole.out().println("Choose the island");
-                    input = Integer.parseInt(parser.nextLine());
+                    input = integerParser();
                     if(input >= 0 && input < cardPrinters.getView().getCurrentIslands().getIslands().size())
                     {
                         inputArray.add(input);
@@ -260,9 +260,9 @@ public class InputParser
                 {
                     PrinterCLI.printStudent(card.getStudentList(), 2);
                     AnsiConsole.out().println("Choose the student to move");
-                    int input1 = Integer.parseInt(parser.nextLine());
+                    int input1 = integerParser();
                     AnsiConsole.out().println("Choose the island");
-                    input = Integer.parseInt(parser.nextLine());
+                    input = integerParser();
                     inputArray1.add(input1);
                     inputArray2.add(input);
                 }
@@ -274,7 +274,7 @@ public class InputParser
             case COLOR:
 
                 AnsiConsole.out().println("Choose a student color");
-                Col color = Col.valueOf(parser.nextLine());
+                Col color = studentColorParser();
                 activation = new CharacterActivationParser(nickname, cardName, color);
                 socket.sendMessage(new SerializedMessage(activation.buildMessage()));
                 break;
@@ -433,6 +433,39 @@ public class InputParser
         infoPrinters.printTurn();
     }
 
+    public Integer integerParser()
+    {
+        Integer input = null;
+        while(input == null)
+        {
+            try
+            {
+                input = Integer.parseInt(parser.nextLine());
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Index not recognized, maybe another character slipped in there");
+            }
+        }
+        return input;
+    }
+
+    public Col studentColorParser()
+    {
+        Col input = null;
+        while(input == null)
+        {
+            try
+            {
+                input = Col.valueOf(parser.nextLine());
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Color not recognized, maybe another character slipped in there");
+            }
+        }
+        return input;
+    }
     private void resetScreen()
     {
         PrinterCLI.cls();
