@@ -46,40 +46,37 @@ public class IslandsController extends Controller implements ObserverLightView {
         Platform.runLater(() ->
         {
             LightIslands lightIslands = (LightIslands) o;
-
-            //Islands  initial setup
-            double deltaTheta = 2*Math.PI/lightIslands.getIslands().size();
-            double startingAngle = 0;
-            while(mainIslandBoard.getChildren().removeIf(node -> node.getId().startsWith("is")))
+            synchronized (lightIslands.getLock())
             {
-
-            }
-            int id = 0;
-            for(LightIsland island : lightIslands.getIslands())
-            {
-                String islandPath = "/Client/GUI/Controllers/Island.fxml";
-                FXMLLoader islandLoader = new FXMLLoader(getClass().getResource(islandPath));
-                islands.clear();
-                islandControllers.clear();
-                AnchorPane islandContainer = new AnchorPane();
-                islandContainer.setId("is"+id);
-                islandContainer.getChildren().clear();
-                try
-                {
-                    islandContainer.getChildren().add(islandLoader.load());
-                }
-                catch(IOException e)
-                {
+                //Islands  initial setup
+                double deltaTheta = 2 * Math.PI / lightIslands.getIslands().size();
+                double startingAngle = 0;
+                while (mainIslandBoard.getChildren().removeIf(node -> node.getId().startsWith("is"))) {
 
                 }
-                islands.add(islandContainer);
-                IslandController islandController = islandLoader.getController();
-                islandController.setup(island, id, view.getCurrentMotherNature(), lightIslands.getIslands().size(), startingAngle);
-                islandContainer.setLayoutX(350 + 75 * Math.cos(startingAngle) + (radius * Math.cos(startingAngle)));
-                islandContainer.setLayoutY(225 - 25 * Math.sin(startingAngle) - (radius * Math.sin(startingAngle)));
-                startingAngle -= deltaTheta;
-                mainIslandBoard.getChildren().add(islandContainer);
-                id++;
+                int id = 0;
+                for (LightIsland island : lightIslands.getIslands()) {
+                    String islandPath = "/Client/GUI/Controllers/Island.fxml";
+                    FXMLLoader islandLoader = new FXMLLoader(getClass().getResource(islandPath));
+                    islands.clear();
+                    islandControllers.clear();
+                    AnchorPane islandContainer = new AnchorPane();
+                    islandContainer.setId("is" + id);
+                    islandContainer.getChildren().clear();
+                    try {
+                        islandContainer.getChildren().add(islandLoader.load());
+                    } catch (IOException e) {
+
+                    }
+                    islands.add(islandContainer);
+                    IslandController islandController = islandLoader.getController();
+                    islandController.setup(island, id, view.getCurrentMotherNature(), lightIslands.getIslands().size(), startingAngle);
+                    islandContainer.setLayoutX(350 + 75 * Math.cos(startingAngle) + (radius * Math.cos(startingAngle)));
+                    islandContainer.setLayoutY(225 - 25 * Math.sin(startingAngle) - (radius * Math.sin(startingAngle)));
+                    startingAngle -= deltaTheta;
+                    mainIslandBoard.getChildren().add(islandContainer);
+                    id++;
+                }
             }
         });
 

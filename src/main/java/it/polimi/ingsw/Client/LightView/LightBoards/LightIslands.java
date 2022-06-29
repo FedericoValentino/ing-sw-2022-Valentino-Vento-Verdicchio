@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class LightIslands extends Observable
 {
     private ArrayList<LightIsland> islands;
+    private final Object setupLock = new Object();
 
     public LightIslands(@JsonProperty("islands") ArrayList<LightIsland> islands,
                         @JsonProperty("totalGroups") int totalGroups)
@@ -17,25 +18,20 @@ public class LightIslands extends Observable
 
     public void updateIslands(LightIslands light)
     {
-        islands.clear();
-        islands.addAll(light.getIslands());
-        /*
-        int temp = 0;
-        for(int i = 0; i < light.getIslands().size(); i++)
+        synchronized (setupLock)
         {
-            islands.get(i).updateIsland(light.getIslands().get(i));
-            temp = i;
+            islands.clear();
+            islands.addAll(light.getIslands());
+            notifyLight(this);
         }
-        for(int i = 0; i < islands.size() - temp - 1; i++)
-        {
-            islands.remove(islands.size()-1);
-        }
-        */
-        notifyLight(this);
     }
 
 
     public ArrayList<LightIsland> getIslands() {
         return islands;
+    }
+    public Object getLock()
+    {
+        return setupLock;
     }
 }

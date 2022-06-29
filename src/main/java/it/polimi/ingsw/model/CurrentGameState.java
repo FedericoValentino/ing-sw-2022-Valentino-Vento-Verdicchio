@@ -2,7 +2,6 @@ package it.polimi.ingsw.model;
 
 //URGENT
 //TODO game testing (especially 3 and ESPECIALLY 4 players)
-//TODO Herald throws a strange exception
 //TODO Documentation!!
 //TODO reset first view to ensure that you can play again from main menu
 

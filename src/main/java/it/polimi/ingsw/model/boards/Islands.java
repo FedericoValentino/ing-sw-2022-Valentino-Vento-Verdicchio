@@ -59,14 +59,12 @@ public class Islands extends Board {
       }
 
 
-      if(currentIsland.getOwnership() == nextIsland.getOwnership() && (currentIsland.getMotherNature() || nextIsland.getMotherNature())
-              && currentIsland.getOwnership() != null)
+      if(currentIsland.getOwnership() == nextIsland.getOwnership() && currentIsland.getOwnership() != null)
       {
         unifyIslands(currentIsland, nextIsland);
         i = 0;
       }
-      else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.getMotherNature() || previousIsland.getMotherNature())
-              && currentIsland.getOwnership() != null)
+      else if(currentIsland.getOwnership() == previousIsland.getOwnership() && currentIsland.getOwnership() != null)
       {
         unifyIslands(previousIsland, currentIsland);
         i = 0;
