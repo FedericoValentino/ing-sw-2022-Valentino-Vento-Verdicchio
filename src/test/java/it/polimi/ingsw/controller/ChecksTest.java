@@ -172,15 +172,15 @@ public class ChecksTest {
     {
         TestUtilities.setupTestFor2(controllerTest);
 
-        assertTrue(Checks.isCloudFillable(controllerTest.getGame(), 0));
-        assertTrue(Checks.isCloudFillable(controllerTest.getGame(), 1));
-        assertFalse(Checks.isCloudFillable(controllerTest.getGame(), 2));
+        assertTrue(Checks.canCloudBeFilled(controllerTest.getGame(), 0));
+        assertTrue(Checks.canCloudBeFilled(controllerTest.getGame(), 1));
+        assertFalse(Checks.canCloudBeFilled(controllerTest.getGame(), 2));
 
         controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
         controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 1);
 
-        assertFalse(Checks.isCloudFillable(controllerTest.getGame(), 0));
-        assertFalse(Checks.isCloudFillable(controllerTest.getGame(), 1));
+        assertFalse(Checks.canCloudBeFilled(controllerTest.getGame(), 0));
+        assertFalse(Checks.canCloudBeFilled(controllerTest.getGame(), 1));
 
     }
 

@@ -12,45 +12,48 @@ import it.polimi.ingsw.model.cards.characters.TruffleHunter;
 
 import java.util.ArrayList;
 
-
+/**
+ * This controller class revolves around the actions performed during the Action Phase, in the modality discussed in the
+ * MainController documentation.
+ */
 public class ActionController
 {
     private String currentPlayer;
-    private int movableStudents;
 
-    public ActionController(String Player, int playerNumber)
+
+    /**
+     * Class constructor. Sets the currentPlayer
+     * @param player the currentPlayer
+     */
+    public ActionController(String player)
     {
-        this.currentPlayer = Player;
-        if(playerNumber == 2 || playerNumber == 4)
-            this.movableStudents = 3;
-        else if(playerNumber == 3)
-            this.movableStudents = 4;
+        this.currentPlayer = player;
     }
 
-    /** Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
+
+    /**
+     * Method placeStudentToIsland places a student from the currentPlayer's school to a specified island
      * @param entrancePos  the index identifying the position of the player's student into the school entrance
      * @param islandId  the id of the island onto which the student must be placed
      * @param game  an instance of the game
-     * @param name  the player's name, needed to access his school
      */
-    public void placeStudentToIsland(int entrancePos, int islandId, CurrentGameState game, String name)
+    public void placeStudentToIsland(int entrancePos, int islandId, CurrentGameState game)
     {
-        Student s = MainController.findPlayerByName(game, name).getSchool().extractStudent(entrancePos);
+        Student s = MainController.findPlayerByName(game, currentPlayer).getSchool().extractStudent(entrancePos);
         game.getCurrentIslands().getIslands().get(islandId).addStudent(s);
-        this.movableStudents--;
         game.getCurrentTurnState().updateActionMoves();
     }
 
-    /** Method placeStudentToDiningRoom places the selected student from the entrance to the dining room, and checks
-     whether this action has granted the player the control of a professor
+    /**
+     * Method placeStudentToDiningRoom places the selected student from the entrance to the dining room, and checks
+     * whether this action has granted the player the control of a professor
      * @param entrancePos  the index identifying the position of the player's student into the school entrance
      * @param game  an instance of the game
-     * @param name  the player's name, needed to access his school
      */
-    public void placeStudentToDiningRoom(int entrancePos, CurrentGameState game, String name)
+    public void placeStudentToDiningRoom(int entrancePos, CurrentGameState game)
     {
 
-        Player p = MainController.findPlayerByName(game, name);
+        Player p = MainController.findPlayerByName(game, currentPlayer);
         Student s;
 
         s = p.getSchool().extractStudent(entrancePos);
@@ -62,18 +65,23 @@ public class ActionController
         {
             t.updateProfessors();
         }
-        this.movableStudents--;
         game.getCurrentTurnState().updateActionMoves();
     }
 
-    public void drawFromClouds(int cloudIndex, CurrentGameState game, String name)
+    /**
+     * The method allows the currentPlayer to replenish his entrance from the selected cloud
+     * @param cloudIndex the selected cloud
+     * @param game an instance of the game
+     */
+    public void drawFromClouds(int cloudIndex, CurrentGameState game)
     {
-        MainController.findPlayerByName(game, name).getSchool().placeToken(game.getCurrentClouds()[cloudIndex].EmptyCloud());
+        MainController.findPlayerByName(game, currentPlayer).getSchool().placeToken(game.getCurrentClouds()[cloudIndex].EmptyCloud());
         game.getCurrentTurnState().updateActionMoves();
     }
 
 
-    /** Method moveMN moves mother nature for the specified amount
+    /**
+     * Method moveMN moves mother nature of the specified amount
      * @param amount  amount of spaces mother nature has to move through
      * @param game  an instance of the game
      */
@@ -110,13 +118,13 @@ public class ActionController
     }
 
 
-
+    /**
+     * sets the currentPlayer to its updated value, after the DetermineNextPlayer function has been called
+     * @param name the new currentPlayer
+     */
     public void setCurrentPlayer(String name)
     {
         currentPlayer = name;
     }
 
-    public int getMovableStudents() {
-        return movableStudents;
-    }
 }

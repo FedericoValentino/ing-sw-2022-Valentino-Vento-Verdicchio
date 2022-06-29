@@ -163,7 +163,7 @@ public class GameHandler extends Thread implements Observer
         switch(message.type)
         {
             case CLOUD_CHOICE:
-                if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type) && Checks.isCloudFillable(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
+                if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type) && Checks.canCloudBeFilled(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
                     mainController.getPlanningController().drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
                 }
                 else
@@ -238,13 +238,11 @@ public class GameHandler extends Thread implements Observer
                         mainController.getActionController()
                                 .placeStudentToIsland(((MoveStudent) message).getEntrancePos(),
                                         ((MoveStudent) message).getIslandId(),
-                                        mainController.getGame(),
-                                        socket.getNickname());
+                                        mainController.getGame());
                     } else {
                         mainController.getActionController()
                                 .placeStudentToDiningRoom(((MoveStudent) message).getEntrancePos(),
-                                        mainController.getGame(),
-                                        socket.getNickname());
+                                        mainController.getGame());
                     }
                 }
                 break;
@@ -267,13 +265,13 @@ public class GameHandler extends Thread implements Observer
                     if (!Checks.isCloudAvailable(mainController.getGame(), ((ChooseCloud) message).getCloudIndex())) {
                         socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.CLOUD_ERROR)));
                     } else {
-                        mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame(), socket.getNickname());
+                        mainController.getActionController().drawFromClouds(((ChooseCloud) message).getCloudIndex(), mainController.getGame());
                     }
                 }
                 break;
 
             case CHARACTER_PLAY:
-                if (CharacterController.isPlayable(mainController.getGame(),
+                if (CharacterController.canBePicked(mainController.getGame(),
                         ((PlayCharacter) message).getCharacterName(),
                         MainController.findPlayerByName(mainController.getGame(), socket.getNickname())))
                 {

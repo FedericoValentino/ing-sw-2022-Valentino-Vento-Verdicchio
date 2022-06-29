@@ -21,7 +21,7 @@ public class ActionControllerTest
         TestUtilities.setupTestFor2(controllerTest);
         TestUtilities.setupTurn(controllerTest);
         s = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().get(0);
-        controllerTest.getActionController().placeStudentToIsland(0, 0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
+        controllerTest.getActionController().placeStudentToIsland(0, 0, controllerTest.getGame());
         assert(controllerTest.getGame().getCurrentIslands().getIslands().get(0).getCurrentStudents().contains(s));
     }
 
@@ -33,7 +33,7 @@ public class ActionControllerTest
         TestUtilities.setupTurn(controllerTest);
         s = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().get(0);
         int x = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getDiningRoom()[s.getColor().ordinal()];
-        controllerTest.getActionController().placeStudentToDiningRoom(0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
+        controllerTest.getActionController().placeStudentToDiningRoom(0, controllerTest.getGame());
         assertEquals(x + 1, MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getDiningRoom()[s.getColor().ordinal()]);
     }
 
@@ -71,9 +71,7 @@ public class ActionControllerTest
         {
             controllerTest.getActionController().placeStudentToDiningRoom(
                     MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size()-1,
-                    controllerTest.getGame(),
-                    controllerTest.getCurrentPlayer()
-            );
+                    controllerTest.getGame());
         }
         //piazzo due studenti rosa sull'isola 0
         for(int i = 0; i < 2; i++)
@@ -81,9 +79,7 @@ public class ActionControllerTest
             controllerTest.getActionController().placeStudentToIsland(
                     MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size()-1,
                     0,
-                    controllerTest.getGame(),
-                    controllerTest.getCurrentPlayer()
-            );
+                    controllerTest.getGame());
         }
         assertTrue(MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getProfessorTable()[Col.PINK.ordinal()]);
         controllerTest.getGame().getCurrentIslands().getIslands().get(0).setMotherNature(true);
@@ -102,8 +98,7 @@ public class ActionControllerTest
         {
             controllerTest.getActionController().placeStudentToDiningRoom(
                     MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size()-1,
-                    controllerTest.getGame(),
-                    controllerTest.getCurrentPlayer()
+                    controllerTest.getGame()
             );
         }
 
@@ -113,9 +108,7 @@ public class ActionControllerTest
             controllerTest.getActionController().placeStudentToIsland(
                     MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size()-1,
                     0,
-                    controllerTest.getGame(),
-                    controllerTest.getCurrentPlayer()
-            );
+                    controllerTest.getGame());
         }
         assertTrue(MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getProfessorTable()[Col.RED.ordinal()]);
         controllerTest.getGame().getCurrentIslands().getIslands().get(0).setMotherNature(true);
@@ -131,7 +124,7 @@ public class ActionControllerTest
         TestUtilities.setupTurn(controllerTest);
         controllerTest.getPlanningController().drawStudentForClouds(controllerTest.getGame(), 0);
         int x = MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size();
-        controllerTest.getActionController().drawFromClouds(0, controllerTest.getGame(), controllerTest.getCurrentPlayer());
+        controllerTest.getActionController().drawFromClouds(0, controllerTest.getGame());
         assert(controllerTest.getGame().getCurrentClouds()[0].getStudents().isEmpty());
         assert(x + 3 == MainController.findPlayerByName(controllerTest.getGame(), controllerTest.getCurrentPlayer()).getSchool().getEntrance().size());
     }
@@ -140,13 +133,10 @@ public class ActionControllerTest
     public void testGetMovableStudents()
     {
         TestUtilities.setupTestFor2(controllerTest);
-        assertEquals(3, controllerTest.getActionController().getMovableStudents());
 
         for(int i = 0; i< 2; i++)
-            controllerTest.getActionController().placeStudentToDiningRoom(0, controllerTest.getGame(), "jack");
-        controllerTest.getActionController().placeStudentToIsland(0, 1, controllerTest.getGame(), "jack");
-
-        assertEquals(0, controllerTest.getActionController().getMovableStudents());
+            controllerTest.getActionController().placeStudentToDiningRoom(0, controllerTest.getGame());
+        controllerTest.getActionController().placeStudentToIsland(0, 1, controllerTest.getGame());
     }
 
 

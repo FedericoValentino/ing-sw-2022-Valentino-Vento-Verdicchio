@@ -86,7 +86,7 @@ public class CharacterControllerTest {
         EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterCard card = controllerTest.getCharacterController().getPickedCard();
+        CharacterCard card = controllerTest.getGame().getCurrentActiveCharacterCard().get(0);
 
         //Verifies if the method returns the right card by comparing the correct ID with the dummy's ID
         assertEquals(CharacterName.KNIGHT, card.getCharacterName());
@@ -103,12 +103,12 @@ public class CharacterControllerTest {
 
         EffectTestsUtility.verifyDecks(testCard, controllerTest.getGame());
 
-        assertTrue(CharacterController.isPlayable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
+        assertTrue(CharacterController.canBePicked(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
 
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(-103);
         System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
-        assertFalse(CharacterController.isPlayable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
+        assertFalse(CharacterController.canBePicked(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
     }
 
     @Test

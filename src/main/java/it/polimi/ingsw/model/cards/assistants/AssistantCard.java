@@ -11,7 +11,9 @@ public class AssistantCard
   private final int value;
 
 
-    /** Class constructor: assigns permanently movement and turn values to the card
+    /**
+     * Class constructor: assigns permanently movement and turn values to the card. Being the Assistant Card a bean, we
+     * can send the object directly to the view without much worry: that's the reason for the json constructor
      * @param movement  the Mother Nature movement value of the Card; defined in the Assistant Deck constructor
      * @param value  the Turn value of the card; defined in the Assistant Deck constructor
      */

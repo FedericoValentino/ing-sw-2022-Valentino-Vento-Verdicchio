@@ -2,12 +2,13 @@ package it.polimi.ingsw.model;
 
 //URGENT
 //TODO game testing (especially 3 and ESPECIALLY 4 players)
-//TODO somehow islands (sometimes, hardly replicable) do not update. Very bad issue   !!could be fixed!!ù
+//TODO somehow islands (sometimes, hardly replicable) do not update. Very bad issue   !!could be fixed!!
 //TODO hints on turn end (3 Players)    !!could be fixed!!
 //TODO hints bug sometimes upon character usage     !!could be fixed!!
 //TODO test school checkpoints when using minstrel
 //TODO Testing of Knight, Centaur, GHerbs
 //TODO Documentation!!
+//TODO Update network protocol
 
 //Less less urgent
 //TODO aesthetic of GUI in general

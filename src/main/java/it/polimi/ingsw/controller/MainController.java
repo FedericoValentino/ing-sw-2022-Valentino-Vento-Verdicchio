@@ -11,6 +11,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
 
+/**
+ * The main class of the controller. It instantiates the other controllers and the currentGameState (and everything along
+ * with that). Additionally, holds different methods useful to manage some standard actions done during the game, and other
+ * general methods that can aid the other controller classes in their job.
+ * The main philosophy behind all the controllers is to use the simple logic methods already present in the model to form more
+ * complex instructions that require a higher level of access. The Controller rarely modifies the model by direct action, but
+ * always through using the methods already defined in the model, in such a fashion that permits the correct flow of the game.
+ */
 public class MainController
 {
     private CurrentGameState game;
@@ -25,16 +33,20 @@ public class MainController
     private int players;
 
 
-
+    /**
+     * Class constructor. It instantiates the other controllers, the currentGameState, and other structure useful during
+     * the setup phase (such as availableTeams and availableWizards)
+     * @param playerNumber number of players in the game
+     * @param expert player choice about the expert mode
+     */
     public MainController(int playerNumber, boolean expert)
     {
 
         this.game = new CurrentGameState(playerNumber, expert);
         this.currentPlayer = null;
-        this.actionController = new ActionController(currentPlayer, playerNumber);
+        this.actionController = new ActionController(null);
         this.planningController = new PlanningController();
         this.characterController = new CharacterController();
-        //this.checks = new Checks();
         this.expertGame = expert;
         this.availableWizards = new ArrayList<>();
         this.availableWizards.addAll(Arrays.asList(Wizard.values()).subList(0, 4));
@@ -43,7 +55,6 @@ public class MainController
         {
             availableTeams[0] = 1;
             availableTeams[1] = 1;
-            availableTeams[2] = 0;
         }
         else if(playerNumber == 3)
         {
@@ -55,14 +66,14 @@ public class MainController
         {
             availableTeams[0] = 2;
             availableTeams[1] = 2;
-            availableTeams[2] = 0;
         }
         this.readyPlayers = 0;
         this.players = playerNumber;
     }
 
 
-    /** Method addPlayer adds a player to the specified team
+    /**
+     * Method addPlayer adds a player to the specified team
      * @param team  the team that will contain the added player
      * @param name  the player's name
      * @param towers  the number of towers assigned to the player
@@ -88,15 +99,15 @@ public class MainController
     }
 
     /**
-     Method setup handles the game setup phase: placing students in the islands and placing students in the players entrances
+     * Method setup handles the game setup phase: placing students in the islands and placing students in the players entrances
      */
     public void setup()
     {
-        int MNpos = game.getCurrentMotherNature().getPosition();
-        game.getCurrentIslands().getIslands().get(MNpos).updateMotherNature();
-        for(int i = MNpos+1; i < 12 + MNpos; i++)
+        int MotherPosition = game.getCurrentMotherNature().getPosition();
+        game.getCurrentIslands().getIslands().get(MotherPosition).updateMotherNature();
+        for(int i = MotherPosition+1; i < 12 + MotherPosition; i++)
         {
-            if(i != MNpos + 6)
+            if(i != MotherPosition + 6)
             {
                 if(i >= 12)
                 {
@@ -110,13 +121,13 @@ public class MainController
             }
         }
         game.getCurrentPouch().updateSetup(false);
-        for(Team t: game.getCurrentTeams())
+        for(Team team: game.getCurrentTeams())
         {
-            for(Player p: t.getPlayers())
+            for(Player player: team.getPlayers())
             {
                 for(int i = 0; i < 7; i++)
                 {
-                    p.getSchool().placeToken(game.getCurrentPouch().extractStudent());
+                    player.getSchool().placeToken(game.getCurrentPouch().extractStudent());
                 }
             }
         }
@@ -125,7 +136,7 @@ public class MainController
 
 
     /**
-     Method determineNextPlayer extracts the next player to play from the CurrentTurnState HashMap
+     * Method determineNextPlayer extracts the next player to play from the CurrentTurnState HashMap
      */
     public void determineNextPlayer()
     {
@@ -144,34 +155,36 @@ public class MainController
 
 
     /**
-     Method updateTurnState updates the HashMap with the new turn order
+     * Method updateTurnState updates the HashMap with the new turn order
      */
     public void updateTurnState()
     {
         game.updateTurnState();
     }
 
-    /** Method findPlayerByName returns the Player with the given name
+    /**
+     * Method findPlayerByName returns the Player with the given name
      * @param game  an instance of the game
-     * @param player  the name of the player object to seek
-     * @return p, the correct player object
+     * @param playerName  the name of the player object to seek
+     * @return player, the correct player object
      */
-    public static Player findPlayerByName(CurrentGameState game, String player)
+    public static Player findPlayerByName(CurrentGameState game, String playerName)
     {
-        for(Team t: game.getCurrentTeams())
+        for(Team team: game.getCurrentTeams())
         {
-            for(Player p: t.getPlayers())
+            for(Player player: team.getPlayers())
             {
-                if(p.getName().equals(player))
+                if(player.getName().equals(playerName))
                 {
-                    return p;
+                    return player;
                 }
             }
         }
         return null;
     }
 
-    /** Method getPlayerColor returns the team color given a playerName
+    /**
+     * Method getPlayerColor returns the team color given a playerName
      * @param game  an instance of the game
      * @param player  the player belonging to the team that defines its color
      * @return the color of the team to which the player is assigned
@@ -192,6 +205,10 @@ public class MainController
     }
 
 
+    /**
+     * Changes the Game Phase in currentTurnState to the specified one
+     * @param phase the phase we want to transition into
+     */
     public void updateGamePhase(GamePhase phase)
     {
         if(game.getCurrentTurnState().getGamePhase() == GamePhase.ACTION && phase.equals(GamePhase.PLANNING))
@@ -207,27 +224,43 @@ public class MainController
         game.getCurrentTurnState().updateGamePhase(phase);
     }
 
+    /**
+     * Upon reaching certain conditions (the depletion of assistant cards for example), it sets the lastTurn boolean
+     * in currentTurnState to true, prompting the last turn of the game
+     */
     public void lastTurn()
     {
         game.getCurrentTurnState().setLastTurn();
     }
 
+    /**
+     * Updates the winning team by checking which team controls most islands
+     */
     public void selectWinner()
     {
         game.getCurrentTurnState().updateWinner(game.getCurrentIslands().getMaxCol(game.getCurrentTeams()));
     }
 
+    /**
+     * Updates the available slots in the specified teams upon player entry in that team
+     * @param teamChoice the team to update
+     */
     public void removeSlotFromTeam(int teamChoice)
     {
         availableTeams[teamChoice]--;
     }
 
-
+    /**
+     * reset ready players to the initial value
+     */
     public void resetReady()
     {
         readyPlayers = 0;
     }
 
+    /**
+     * Updates the ready players value upon command of player readiness
+     */
     public void readyPlayer()
     {
         readyPlayers++;

@@ -11,10 +11,16 @@ import it.polimi.ingsw.model.cards.assistants.AssistantCard;
 
 import java.util.ArrayList;
 
+/**
+ * Checks are (almost) entirely placed into the controller: the high level of access the controller guarantees makes complex
+ * and comprehensive checks possible. All the checks do not write or modify the model in any way. They are organized as static
+ * methods so that everyone can access them: this is generally harmless, since they are read-only methods.
+ */
 public final class Checks {
 
 
-    /** Checks whether the given gamePhase is the current gamePhase
+    /**
+     * Checks whether the given gamePhase is the current gamePhase
      * @param game an instance of the game
      * @param currentGamePhase the given gamePhase
      * @return true if the game is in the given gamePhase
@@ -25,7 +31,8 @@ public final class Checks {
     }
 
 
-    /** Compares the given player with the currentPlayer
+    /**
+     * Compares the given player with the currentPlayer
      * @param nickname  the given player's nickname
      * @param currentPlayer the current player's nickname
      * @return true if the nicknames are the same
@@ -36,7 +43,8 @@ public final class Checks {
     }
 
 
-    /** Checks the validity of the chosen entrancePosition and islandID
+    /**
+     * Checks the validity of the chosen entrancePosition and islandID
      * @param game an instance of the game
      * @param currentPlayer the current player's nickname
      * @param entrancePosition chosen entrance position
@@ -61,7 +69,8 @@ public final class Checks {
     }
 
 
-    /** Checks if the Mother Nature Movement value chosen by the player is within an acceptable range
+    /**
+     * Checks if the Mother Nature Movement value chosen by the player is within an acceptable range
      * @param game an instance of the game
      * @param currentPlayer the current player's name
      * @param amount the chosen movement value
@@ -73,7 +82,8 @@ public final class Checks {
     }
 
 
-    /** Checks if the selected cloud exists and if it's not empty
+    /**
+     * Checks if the selected cloud exists and if it's not empty
      * @param game an instance of the game
      * @param cloudIndex the chosen cloud
      * @return true if the cloudIndex refers to an existing cloud an if said cloud is not empty
@@ -83,13 +93,20 @@ public final class Checks {
         return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && !game.getCurrentClouds()[cloudIndex].getStudents().isEmpty();
     }
 
-    public static boolean isCloudFillable(CurrentGameState game, int cloudIndex)
+    /**
+     * Checks if the selected cloud is empty and can be filled with students
+     * @param game an instance of the game
+     * @param cloudIndex the selected cloud
+     * @return true if the conditions are met, false otherwise
+     */
+    public static boolean canCloudBeFilled(CurrentGameState game, int cloudIndex)
     {
         return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && game.getCurrentClouds()[cloudIndex].getStudents().isEmpty();
     }
 
 
-    /** Checks if the pouch can be used to extract students
+    /**
+     * Checks if the pouch can be used to extract students
      * @param game an instance of the game
      * @return true if the pouch is not empty
      */
@@ -99,7 +116,8 @@ public final class Checks {
     }
 
 
-    /** Checks whether the given cardIndex is referring to an existing assistant card
+    /**
+     * Checks whether the given cardIndex is referring to an existing assistant card
      * @param game an instance of the game
      * @param currentPlayer the current player's nickname
      * @param cardIndex the position of the chosen card into the deck
@@ -112,7 +130,8 @@ public final class Checks {
     }
 
 
-    /** Checks if the selected assistant card has already been played by other players
+    /**
+     * Checks if the selected assistant card has already been played by other players
      * @param game an instance of the game
      * @param currentPlayer the current player's nickname
      * @param cardIndex the selected card
@@ -137,9 +156,10 @@ public final class Checks {
 
 
 
-    /** Has to be called after isAssistantAlreadyPlayed (if true): checks the player's deck and verifies whether
-     the other cards in player's possession have been already played by others in the current turn. If this happens
-     to be true, then the chosen card can be played
+    /**
+     * Has to be called after isAssistantAlreadyPlayed (if true): checks the player's deck and verifies whether
+     * the other cards in player's possession have been already played by others in the current turn. If this happens
+     * to be true, then the chosen card can be played
      * @param game an instance of the game
      * @param currentPlayer the current player's nickname
      * @param cardIndex the chosen card
@@ -172,7 +192,8 @@ public final class Checks {
 
 
 
-    /** Checks if the current turn is expiring
+    /**
+     * Checks if the current turn is expiring
      * @param game an instance of the game
      * @return true if the current player is indeed the last player of that turn
      */
@@ -181,12 +202,18 @@ public final class Checks {
         return game.getCurrentTurnState().getTurnOrder().size() == 0;
     }
 
+    /**
+     * Checks if we are in the lastTurn
+     * @param game an instance of the game
+     * @return true if the game is in its last turn
+     */
     public static boolean isLastTurn(CurrentGameState game){
         return game.getCurrentTurnState().getLastTurn();
     }
 
 
-    /** Returns true if there are any influence related character cards present in the Active Characters Deck
+    /**
+     * Returns true if there are any influence related character cards present in the Active Characters Deck
      * @param game  an instance of hte game
      * @return whether influence based card are currently active
      */
@@ -203,20 +230,29 @@ public final class Checks {
         return false;
     }
 
+    /**
+     * Checks periodically if any player has depleted his towers: in that case, his team wins
+     * @param game an instance of the game
+     */
     public static void checkWinnerForTowers(CurrentGameState game)
     {
-        for(Team t: game.getCurrentTeams())
+        for(Team team: game.getCurrentTeams())
         {
-            for(Player p: t.getPlayers())
+            for(Player player: team.getPlayers())
             {
-                if(p.getSchool().getTowerCount() == 0 && p.isTowerOwner())
+                if(player.getSchool().getTowerCount() == 0 && player.isTowerOwner())
                 {
-                    game.getCurrentTurnState().updateWinner(t.getColor());
+                    game.getCurrentTurnState().updateWinner(team.getColor());
                 }
             }
         }
     }
 
+    /**
+     * Checks if there are equal or less than three total island groups; in that case, finds the team with the most
+     * controlled islands and sets the winner
+     * @param game an instance of the game
+     */
     public static void checkWinnerForIsland(CurrentGameState game)
     {
         if(game.getCurrentIslands().getTotalGroups() <= 3)
@@ -225,12 +261,23 @@ public final class Checks {
         }
     }
 
+    /**
+     * Checks if the deck of the currentPlayer is empty, things that will trigger the updateLastTurn
+     * @param game an instance of the game
+     * @param currentPlayer the currentPlayer's nickname
+     * @return true if the conditions are met, false otherwise
+     */
     public static boolean checkLastTurnDueToAssistants(CurrentGameState game, String currentPlayer)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
         return player.getAssistantDeck().getDeck().isEmpty();
     }
 
+    /**
+     * Checks if a winner has been chosen
+     * @param game an instance of the game
+     * @return true if the conditions are met,false otherwise
+     */
     public static boolean isThereAWinner(CurrentGameState game)
     {
         return game.getCurrentTurnState().getWinningTeam() != null;

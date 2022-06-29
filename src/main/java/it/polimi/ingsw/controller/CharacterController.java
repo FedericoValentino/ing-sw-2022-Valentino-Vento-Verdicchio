@@ -10,27 +10,24 @@ import it.polimi.ingsw.model.cards.characters.TruffleHunter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class CharacterController
 {
-    private CharacterCard pickedCard;
 
-
-    /** Takes the selected card from the CharDeck and puts it in the ActiveDeck;
-     handles the economy related to this action
+    /**
+     * Takes the selected card from the CharDeck and puts it in the ActiveDeck;
+     * handles the economy related to this action. It is necessary to call a "notify" here, even if not proper procedure,
+     * to ensure that the GUI visualization works completely and reliably with all cards
      * @param game  an instance of the game
      * @param player   the player interacting with the card
      * @param characterName  the type of the chosen card in the deck
      */
     public void pickCard(CurrentGameState game, CharacterName characterName, Player player)
     {
-        //drawCard updates the cost and the uses of the selected card
-        pickedCard = game.getCurrentCharacterDeck().drawCard(getCardByName( characterName, game.getCurrentCharacterDeck().getDeck()));
+
+        CharacterCard pickedCard = game.getCurrentCharacterDeck().drawCard(getCardByName( characterName, game.getCurrentCharacterDeck().getDeck()));
         game.getCurrentActiveCharacterCard().add(pickedCard);
 
-        /*Updates player balance and bank balance using the curentCost-1 of the card,
-        which is how much the card cost when it was played  */
         int gain = pickedCard.getCurrentCost() - 1;
         game.updateBankBalance(player, gain);
         game.notify(game.modelToJson());
@@ -38,13 +35,15 @@ public class CharacterController
 
 
     /**
-     * Checks if the desired card can be picked, by comparing its ID with the cards in the CharacterDeck
+     * Checks if the desired card can be picked, by comparing its ID with the cards in the CharacterDeck. Also, it checks if
+     * there aren't any other active cards, by making sure the ActiveDeck is empty, and if the player has enough coin
+     * to afford the card
      * @param game  an instance of the game
      * @param characterName  the type of the desired card
      * @param player  the player responsible for the action
-     * @return ture if the card is present, false if not
+     * @return ture if the card can be played, false in the opposite case
      */
-    public static boolean isPlayable(CurrentGameState game, CharacterName characterName, Player player)
+    public static boolean canBePicked(CurrentGameState game, CharacterName characterName, Player player)
     {
         for(int i=0; i<game.getCurrentCharacterDeck().getDeck().size(); i++)
             if(game.getCurrentCharacterDeck().getDeck().get(i).getCharacterName() == characterName && game.getCurrentActiveCharacterCard().isEmpty())
@@ -72,7 +71,14 @@ public class CharacterController
         return false;
     }
 
-    public CharacterCard getCardByName(CharacterName characterName, ArrayList<CharacterCard> deck)
+
+    /**
+     * Finds the characterCard corresponding to the given CharacterName inside the given list of cards
+     * @param characterName the name of the card to find
+     * @param deck the list of cards
+     * @return the card if it's present, null if it's absent
+     */
+    protected CharacterCard getCardByName(CharacterName characterName, ArrayList<CharacterCard> deck)
     {
         for (CharacterCard characterCard : deck)
             if (characterCard.getCharacterName() == characterName)
@@ -80,8 +86,11 @@ public class CharacterController
         return null;
     }
 
-    /** Finds the card that has been used in the ActiveCharDeck, removes it from there,
-     and places it, with updated values, in the CharacterDe
+
+    /**
+     * Finds the card that has been used in the ActiveCharDeck, removes it from there,
+     * and places it, with updated values, in the CharacterDeck. In the end, sorts the characterDeck to reorder the cards
+     * in the order they were before the card was picked: this is paramount to guarantee consistency in the view.
      * @param game  an instance of the game
      */
     public static void deckManagement(CurrentGameState game)
@@ -98,15 +107,30 @@ public class CharacterController
         Collections.sort(game.getCurrentCharacterDeck().getDeck(), Comparator.comparingInt(CharacterCard::getDeckIndex));
     }
 
-    public void playEffect(CharacterName characterName, CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
+    /**
+     * Plays the effect of the desired card found in the Active Deck. According to the strategy pattern used, the correct
+     * overridden effect will be played
+     * @param characterName the name of the character
+     * @param game an instance of the game
+     * @param firstChoice a list of integers that can represent different things based on the card played
+     * @param secondChoice a list of integers that can represent different things based on the card played
+     * @param currentPlayer the current player's nickname
+     * @param color a parameter of type Col, useful for some cards
+     */
+    public void playEffect(CharacterName characterName, CurrentGameState game, ArrayList<Integer> firstChoice, ArrayList<Integer> secondChoice, String currentPlayer, Col color)
     {
         if(isEffectPlayable(game, characterName))
         {
             CharacterCard card = getCardByName(characterName, game.getCurrentActiveCharacterCard());
-            card.effect(game, studentPosition, chosenIsland, currentPlayer, color);
+            card.effect(game, firstChoice, secondChoice, currentPlayer, color);
         }
     }
 
+    /**
+     * Sets the color of Truffle Hunter to the desired color chosen by the player upon card effect activation
+     * @param game an instance of the game
+     * @param studentColor the color chosen by the player
+     */
     public void setTruffleHunterColor(CurrentGameState game, Col studentColor)
     {
         for (CharacterCard card : game.getCurrentActiveCharacterCard())
@@ -116,8 +140,4 @@ public class CharacterController
             }
     }
 
-    public CharacterCard getPickedCard()
-    {
-        return pickedCard;
-    }
 }
