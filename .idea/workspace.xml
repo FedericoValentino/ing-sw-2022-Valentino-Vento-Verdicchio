@@ -12,7 +12,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Updated TODOs" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added RunLater to PropController">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
+    </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
@@ -254,20 +257,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00152" summary="fix for the islands ChoiceBox">
-      <created>1655931346070</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1655931346070</updated>
-    </task>
-    <task id="LOCAL-00153" summary="Removed communication messages that are no longer used and added documentation to the remaining ones">
-      <created>1655936877257</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1655936877258</updated>
     </task>
     <task id="LOCAL-00154" summary="Modified 3 lines">
       <created>1655970995460</created>
@@ -598,7 +587,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656459336765</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="Added runLater to CharacterCardsController in GUI">
+      <created>1656459536889</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1656459536889</updated>
+    </task>
+    <task id="LOCAL-00202" summary="Added RunLater to PropController">
+      <created>1656459582149</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1656459582149</updated>
+    </task>
+    <option name="localTasksCounter" value="203" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,8 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Proudly announcing Eriantys Ping Edition" />
-    <MESSAGE value="Code with me" />
     <MESSAGE value="(╯°□°)╯︵ ┻━┻" />
     <MESSAGE value="Fixed Cook, added disconnect option" />
     <MESSAGE value="Removed warnings in CLI, unified every main in a single main in ClientApp, fixed merging visualization in CLI and much more" />
@@ -654,7 +655,9 @@
     <MESSAGE value="fix to color type cards" />
     <MESSAGE value="Fixed delayed updating of influence based cards" />
     <MESSAGE value="Updated TODOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated TODOs" />
+    <MESSAGE value="Added runLater to CharacterCardsController in GUI" />
+    <MESSAGE value="Added RunLater to PropController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added RunLater to PropController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

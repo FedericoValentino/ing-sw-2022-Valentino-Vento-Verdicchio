@@ -1,23 +1,25 @@
 package it.polimi.ingsw.model;
 
 //URGENT
-//TODO game testing
-//TODO somehow islands (sometimes, hardly replicable) do not update. Very bad issue
+//TODO game testing (especially 3 and ESPECIALLY 4 players)
+//TODO somehow islands (sometimes, hardly replicable) do not update. Very bad issue   !!could be fixed!!
 //TODO test school checkpoints when using minstrel
-//TODO hints on turn end (3 Players)
-//TODO hints bug sometimes upon character usage
+//TODO hints on turn end (3 Players)    !!could be fixed!!
+//TODO hints bug sometimes upon character usage     !!could be fixed!!
 //TODO minstrel color choice in GUI
 //TODO ALL CARDS: in GUI descriptors of effect choices are needed(this is entrance, this is dining and so on)
 //TODO Wrong inputs still causing the CLI to crash
-//TODO Bank Balance to update in LightView
-//TODO Testing of Knight, Centaur, Gherbs
-//TODO Princess doesn't work in GUI
+//TODO Bank Balance to update in LightView and added to GUI
+//TODO Testing of Knight, Centaur, GHerbs
+//TODO Princess doesn't work in GUI (visualization problem)
+//TODO Played Assistants still won't use second column of the grid pane
+//TODO Documentation!!
 
 
 //A bit less urgent
-//TODO Documentation!!
 //TODO Remove updater notices
 //TODO GUI needs to visualize bank balance in propaganda
+//TODO Look at code repetition in MainBoard for characters (Jester - Princess - Priest)
 
 //Less less urgent
 //TODO aesthetic of GUI in general
