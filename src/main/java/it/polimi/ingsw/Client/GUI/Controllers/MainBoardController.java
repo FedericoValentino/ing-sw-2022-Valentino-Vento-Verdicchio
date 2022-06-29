@@ -424,6 +424,7 @@ public class MainBoardController extends Controller {
         input1.getChildren().add(box);
 
         //setup students
+        input2.getChildren().add(new Text("Select the student"));
         int studentPosition = 0;
         for(Student student : card.getStudentList())
         {
