@@ -3,7 +3,6 @@ package it.polimi.ingsw.model;
 //URGENT
 //TODO game testing (especially 3 and ESPECIALLY 4 players)
 //TODO Documentation!!
-//TODO reset first view to ensure that you can play again from main menu
 
 //less urgent
 //TODO test GHerbs, Centaur and Knight in CLI
@@ -11,7 +10,6 @@ package it.polimi.ingsw.model;
 //Less less urgent
 //TODO aesthetic of GUI in general
 //TODO CLI school information appears not aligned
-//TODO convert name with spaces to name with underscore
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;

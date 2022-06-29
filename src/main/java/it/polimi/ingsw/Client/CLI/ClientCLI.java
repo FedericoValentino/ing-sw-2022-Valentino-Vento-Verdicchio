@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Client.CLI;
 
+import it.polimi.ingsw.Client.CLI.Printers.PrinterCLI;
 import it.polimi.ingsw.Client.ClientView;
 import it.polimi.ingsw.Client.InformationGenerator;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
@@ -200,8 +201,11 @@ public class ClientCLI implements ClientView, InformationGenerator
     @Override
     public void run(){
         AnsiConsole.systemInstall();
+        PrinterCLI.cls();
+        PrinterCLI.printTitle();
         System.out.println("Nickname?");
         String nickname = info.nextLine();
+        checkUsername(nickname);
         System.out.println("ServerIP?");
         String IP = info.nextLine();
         try
@@ -245,6 +249,7 @@ public class ClientCLI implements ClientView, InformationGenerator
     public synchronized boolean getSetupState(){
         return setupState;
     }
+
 }
 
 

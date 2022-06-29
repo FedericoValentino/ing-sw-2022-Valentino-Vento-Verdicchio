@@ -15,22 +15,18 @@ import javafx.scene.text.Text;
 public class WinnerController extends Controller
 {
     @FXML private Text title1;
-    @FXML private Button backToMenu;
+    @FXML private Button CloseGame;
 
 
-    public void OnClickMenu(MouseEvent event)
+    public void OnClickQuit(MouseEvent event)
     {
-        Platform.runLater(() -> {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
-            GuiMainStarter.getClientGUI().changeScene(loader);
-            IntroController intro = loader.getController();
-            intro.setGuiMainStarter(guiMainStarter);
-        });
+       Platform.exit();
+       System.exit(0);
     }
 
     public void setup(String text)
     {
-        backToMenu.setOnMouseClicked(this::OnClickMenu);
+        CloseGame.setOnMouseClicked(this::OnClickQuit);
         title1.setText(text);
     }
 }

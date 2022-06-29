@@ -18,4 +18,9 @@ public interface ClientView
     void messageHandler(StandardActionAnswer answer);
 
     void readMessage();
+
+    default void checkUsername(String nickname)
+    {
+        nickname.replace(" ", "_");
+    }
 }

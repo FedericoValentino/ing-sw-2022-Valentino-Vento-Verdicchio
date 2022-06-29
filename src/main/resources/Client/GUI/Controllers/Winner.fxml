@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane stylesheets="@main.css"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.WinnerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.WinnerController">
    <children>
       <ImageView fitHeight="900.0" fitWidth="1600.0">
          <image>
@@ -24,7 +24,7 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="backToMenu" layoutX="277.0" layoutY="163.0" mnemonicParsing="false" text="Menù" />
+            <Button fx:id="CloseGame" layoutX="252.0" layoutY="163.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Close game" />
          </children>
       </Pane>
    </children>

@@ -12,12 +12,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Herald exception fixed">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Images/background.png" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="GUI background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/InformationAndMiscellanea/IntroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/InformationAndMiscellanea/IntroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Islands.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/MainBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/ClientView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/ClientView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/InformationAndMiscellanea/WinnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/InformationAndMiscellanea/WinnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/SelectionControllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/SelectionControllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Winner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/GUI/Controllers/Winner.fxml" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
@@ -261,14 +264,7 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-      <workItem from="1656528089385" duration="307000" />
-    </task>
-    <task id="LOCAL-00162" summary="Little change  in student pane in mine school">
-      <created>1655994771842</created>
-      <option name="number" value="00162" />
-      <option name="presentableId" value="LOCAL-00162" />
-      <option name="project" value="LOCAL" />
-      <updated>1655994771842</updated>
+      <workItem from="1656528089385" duration="1766000" />
     </task>
     <task id="LOCAL-00163" summary="Little change  in student pane in mine school (add the remove of the effect)">
       <created>1655995743932</created>
@@ -606,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656524992953</updated>
     </task>
-    <option name="localTasksCounter" value="211" />
+    <task id="LOCAL-00211" summary="GUI background">
+      <created>1656528567069</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1656528567069</updated>
+    </task>
+    <option name="localTasksCounter" value="212" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="removed a lot of warnings from the code" />
     <MESSAGE value="light change" />
     <MESSAGE value="( ಠ ͜ʖಠ)" />
     <MESSAGE value="littlest pet shop" />
@@ -662,7 +664,8 @@
     <MESSAGE value="little islands fix" />
     <MESSAGE value="maybe it now works" />
     <MESSAGE value="Herald exception fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Herald exception fixed" />
+    <MESSAGE value="GUI background" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI background" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

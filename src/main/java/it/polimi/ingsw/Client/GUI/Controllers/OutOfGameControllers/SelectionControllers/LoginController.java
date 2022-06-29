@@ -39,8 +39,9 @@ public class LoginController extends Controller {
      */
     public void onClickTryConnection(MouseEvent actionEvent)
     {
-
-        GuiMainStarter.getClientGUI().setServerConnection(nickname.getText(), IP.getText());
+        String nick = nickname.getText();
+        GuiMainStarter.getClientGUI().checkUsername(nick);
+        GuiMainStarter.getClientGUI().setServerConnection(nick, IP.getText());
 
         String path= "/Client/GUI/Controllers/Waiting.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
