@@ -158,6 +158,8 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             }
             else
             {
+                sceneCards.clear();
+                sceneCards.addAll(characterDeck.getLightCharDeck());
                 for(Node node1: mainPane.getChildren())
                 {
                     Pane pane = (Pane)node1;

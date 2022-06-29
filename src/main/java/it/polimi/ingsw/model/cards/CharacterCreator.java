@@ -13,7 +13,7 @@ public class CharacterCreator
      * @param type the name of the character card
      * @return the character card just created
      */
-    public static CharacterCard getCharacter(CharacterName type)
+    public static CharacterCard getCharacter(CharacterName type, int deckIndex)
     {
         CharacterCard card;
         switch(type)
@@ -57,6 +57,7 @@ public class CharacterCreator
             default:
                 throw new IllegalStateException("Unexpected value: " + type);
         }
+        card.setDeckIndex(deckIndex);
         return  card;
     }
 }

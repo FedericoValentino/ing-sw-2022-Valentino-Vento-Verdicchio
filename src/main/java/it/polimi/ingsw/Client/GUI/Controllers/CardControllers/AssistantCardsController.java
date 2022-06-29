@@ -40,22 +40,15 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     {
         if(lastPlayedButton.getText().equals("Active\nAssistants"))
         {
-            int column;
-            for (int i = 0; i < teams.size(); i++)
-                for (int j = 0; j < teams.get(i).getPlayers().size(); j++) {
-                    LightPlayer player = teams.get(i).getPlayers().get(j);
-                    if (player.getCurrentAssistantCard() != null) {
+            int totalcards = 0;
+            for (LightTeam team : teams)
+                for (LightPlayer player : team.getPlayers())
+                {
+                    if (player.getCurrentAssistantCard() != null)
+                    {
                         String path = getAssistantPath(player.getCurrentAssistantCard());
-                        if(i == 2)
-                        {
-                            column = 1;
-                        }
-                        else
-                        {
-                            column = i;
-                        }
-
-                        mainController.showPlayedAssistants(path, j, column, player, false);
+                        mainController.showPlayedAssistants(path, totalcards / 2, totalcards % 2, player, false);
+                        totalcards++;
                     }
                 }
             lastPlayedButton.setText("Hide");

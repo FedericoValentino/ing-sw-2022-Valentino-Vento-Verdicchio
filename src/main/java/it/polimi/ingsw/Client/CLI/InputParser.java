@@ -381,7 +381,6 @@ public class InputParser
                 break;
             case "play":
                 CharacterParser(words);
-                resetScreen();
                 break;
             case "endturn":
                 socket.sendMessage(new SerializedMessage(new EndTurn()));

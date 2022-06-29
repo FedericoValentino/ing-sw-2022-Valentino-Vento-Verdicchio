@@ -8,6 +8,9 @@ import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.cards.characters.TruffleHunter;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class CharacterController
 {
@@ -92,6 +95,7 @@ public class CharacterController
                 game.getCurrentCharacterDeck().getDeck().add(card);
             }
         }
+        Collections.sort(game.getCurrentCharacterDeck().getDeck(), Comparator.comparingInt(CharacterCard::getDeckIndex));
     }
 
     public void playEffect(CharacterName characterName, CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)

@@ -86,6 +86,7 @@ public class LightView extends Observable
             }
             this.currentTurnState = newView.currentTurnState;
         }
+        this.bankBalance = newView.getBankBalance();
 
 
         addNameToSchools();

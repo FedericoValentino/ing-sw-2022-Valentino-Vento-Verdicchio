@@ -19,6 +19,7 @@ public abstract class CharacterCard implements Serializable {
     protected int baseCost;
     protected int uses;
     protected int currentCost;
+    protected int deckIndex;
 
     /**
      * Class constructor. BaseCost, ID, and other characteristics, are detailed in the constructor of each card
@@ -49,9 +50,16 @@ public abstract class CharacterCard implements Serializable {
      */
     public abstract void effect(CurrentGameState game, ArrayList<Integer> firstChoice, ArrayList<Integer> secondChoice, String currentPlayer, Col color);
 
+    public void setDeckIndex(int index)
+    {
+        this.deckIndex = index;
+    }
 
     public int getBaseCost() {return baseCost;}
     public int getUses() {return uses;}
     public int getCurrentCost() {return currentCost;}
     public CharacterName getCharacterName() {return name;}
+    public int getDeckIndex(){
+        return deckIndex;
+    }
 }

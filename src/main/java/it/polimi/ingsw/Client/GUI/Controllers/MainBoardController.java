@@ -276,6 +276,7 @@ public class MainBoardController extends Controller {
             case INTEGER_1:
                 if(card.getName().equals(CharacterName.PRINCESS))
                 {
+                    input1.getChildren().add(new Text("Students on Card"));
                     int studentPosition = 0;
                     for(Student student : card.getStudentList())
                     {
@@ -406,6 +407,7 @@ public class MainBoardController extends Controller {
 
             case COLOR:
 
+                input1.getChildren().add(new Text("Choose a color"));
                 for(int i = 0; i < 5; i++)
                 {
                     Student student = new Student(Col.values()[i]);
@@ -439,6 +441,7 @@ public class MainBoardController extends Controller {
 
     public void JesterSetup(LightCharacterCard card, LightPlayer player)
     {
+        input1.getChildren().add(new Text("Students on card"));
         //setup students
         int studentPosition = 0;
         for(Student student : card.getStudentList())
@@ -461,6 +464,7 @@ public class MainBoardController extends Controller {
             input1.getChildren().add(studentPane);
             studentPosition++;
         }
+        input2.getChildren().add(new Text("Students in your entrance"));
         //setup students
         int entrancePos = 0;
         for(Student student : player.getSchool().getEntrance())
@@ -489,6 +493,7 @@ public class MainBoardController extends Controller {
     {
         final int[] diningRoom = player.getSchool().getDiningRoom().clone();
         //setup students
+        input1.getChildren().add(new Text("Students in your entrance"));
         int studentPosition = 0;
         for(Student student : player.getSchool().getEntrance())
         {
@@ -509,7 +514,7 @@ public class MainBoardController extends Controller {
             input1.getChildren().add(studentPane);
             studentPosition++;
         }
-
+        input2.getChildren().add(new Text("Students in dining room available for swap"));
         for(int i = 0; i < 5; i++)
         {
             if(diningRoom[i] > 0)
@@ -518,14 +523,44 @@ public class MainBoardController extends Controller {
                 ImageView color = new ImageView(GUIUtilities.getRightColorPath(student));
                 Pane studentPane = new Pane();
                 studentPane.setId(Col.values()[i].toString());
-                studentPane.setOnMouseClicked((MouseEvent) ->
-                {
-                    if(integerChoice_1.size() < integerChoice_2.size())
-                    {
-                        ((Pane)MouseEvent.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
-                        integerChoice_1.add(Col.valueOf(((Node)MouseEvent.getSource()).getId()).ordinal());
-                    }
-                });
+                studentPane.setOnMouseClicked(this::minstrelColorChoice);
+                studentPane.getChildren().add(color);
+                input2.getChildren().add(studentPane);
+            }
+        }
+    }
+
+
+
+    public void minstrelColorChoice(MouseEvent event)
+    {
+        LightPlayer player = Utilities.findPlayerByName(view, GuiMainStarter.getClientGUI().getServerConnection().getNickname());
+        if(integerChoice_1.size() < integerChoice_2.size())
+        {
+            ((Pane)event.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
+            integerChoice_1.add(Col.valueOf(((Node)event.getSource()).getId()).ordinal());
+            if(integerChoice_1.size() < integerChoice_2.size())
+            {
+                input2.getChildren().clear();
+                input2.getChildren().add(new Text("You selected " + ((Node) event.getSource()).getId() + " choose another color!"));
+                int[] diningClone = player.getSchool().getDiningRoom().clone();
+                diningClone[integerChoice_1.get(0)]--;
+                setDiningRoomColors(diningClone);
+            }
+        }
+    }
+
+    public void setDiningRoomColors(int[] dining)
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            if(dining[i] > 0)
+            {
+                Student student = new Student(Col.values()[i]);
+                ImageView color = new ImageView(GUIUtilities.getRightColorPath(student));
+                Pane studentPane = new Pane();
+                studentPane.setId(Col.values()[i].toString());
+                studentPane.setOnMouseClicked(this::minstrelColorChoice);
                 studentPane.getChildren().add(color);
                 input2.getChildren().add(studentPane);
             }

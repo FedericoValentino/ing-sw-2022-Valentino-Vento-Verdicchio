@@ -72,7 +72,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
 
             Text coins = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("coins")).collect(Collectors.toList()).get(0));
             coins.setText("");
-            coins.setText("Your coins: " + currentPlayer.getCoinAmount());
+            coins.setText("Your coins: " + currentPlayer.getCoinAmount() + " Bank Balance: " + view.getBankBalance());
         });
     }
 }
