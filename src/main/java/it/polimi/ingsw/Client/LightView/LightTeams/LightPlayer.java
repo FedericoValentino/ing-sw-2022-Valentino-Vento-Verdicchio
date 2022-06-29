@@ -56,7 +56,6 @@ public class LightPlayer extends Observable
         this.movementValue = light.getMovementValue();
         this.value = light.getValue();
         this.TowerOwner = light.isTowerOwner();
-        System.out.println("Updated Lightplayer");
         notifyLight(this);
     }
 

@@ -5,8 +5,10 @@ import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.Team;
+import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
 import it.polimi.ingsw.model.cards.characters.Centaur;
 import it.polimi.ingsw.model.cards.CharacterCard;
+import it.polimi.ingsw.model.cards.characters.GrandmaHerbs;
 import it.polimi.ingsw.model.cards.characters.Knight;
 import it.polimi.ingsw.model.cards.characters.TruffleHunter;
 
@@ -90,29 +92,34 @@ public class ActionController
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
         game.getCurrentMotherNature().move(amount, game.getCurrentIslands().getTotalGroups()-1);
         game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateMotherNature();
-        if(!Checks.checkForInfluenceCharacter(game))
+        if(!game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).getNoEntry())
         {
-            game.solveEverything(game.getCurrentMotherNature().getPosition());
-            Checks.checkWinnerForTowers(game);
-            Checks.checkWinnerForIsland(game);
+            if (!Checks.checkForInfluenceCharacter(game)) {
+                game.solveEverything(game.getCurrentMotherNature().getPosition());
+                Checks.checkWinnerForTowers(game);
+                Checks.checkWinnerForIsland(game);
+            } else {
+                CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
+                ArrayList<Integer> position = new ArrayList<>();
+                position.add(game.getCurrentMotherNature().getPosition());
+                if (card instanceof Knight) {
+                    card.effect(game, null, position, currentPlayer, null);
+                } else if (card instanceof TruffleHunter) {
+                    card.effect(game, null, position, null, ((TruffleHunter) card).getChosenColor());
+                } else if (card instanceof Centaur) {
+                    card.effect(game, null, position, null, null);
+                }
+            }
         }
         else
         {
-            CharacterCard card = game.getCurrentActiveCharacterCard().get(0);
-            ArrayList<Integer> position = new ArrayList<>();
-            position.add(game.getCurrentMotherNature().getPosition());
-            if(card instanceof Knight)
+            game.getCurrentIslands().getIslands().get(game.getCurrentMotherNature().getPosition()).updateNoEntry();
+            CharacterCard card = CharacterController.getCardByName(CharacterName.GRANDMA_HERBS, game.getCurrentActiveCharacterCard());
+            if(card == null)
             {
-                card.effect(game, null, position, currentPlayer, null);
+                card = CharacterController.getCardByName(CharacterName.GRANDMA_HERBS, game.getCurrentCharacterDeck().getDeck());
             }
-            else if(card instanceof TruffleHunter)
-            {
-                card.effect(game, null, position, null, ((TruffleHunter) card).getChosenColor());
-            }
-            else if(card instanceof Centaur)
-            {
-                card.effect(game, null, position, null, null);
-            }
+            ((GrandmaHerbs)card).updateNoEntry(1);
         }
         game.getCurrentTurnState().updateActionMoves();
     }

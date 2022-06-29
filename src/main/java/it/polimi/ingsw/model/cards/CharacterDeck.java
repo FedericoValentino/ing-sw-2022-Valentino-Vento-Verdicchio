@@ -1,7 +1,6 @@
 package it.polimi.ingsw.model.cards;
 
 import it.polimi.ingsw.model.boards.Pouch;
-import it.polimi.ingsw.model.CurrentGameState;
 import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
 import it.polimi.ingsw.model.cards.characters.Jester;
 import it.polimi.ingsw.model.cards.characters.Priest;
@@ -32,9 +31,9 @@ public class CharacterDeck implements Serializable
       cardOrdinals.add(i);
     Collections.shuffle(cardOrdinals);
     //TODO to remove in the future
-    cardOrdinals.add(0, 10);
-    cardOrdinals.add(1, 7);
-    cardOrdinals.add(2, 6);
+    cardOrdinals.add(0, 5);
+    cardOrdinals.add(1, 4);
+    cardOrdinals.add(2, 3);
     for(int i = 0; i < 3; i++)
     {
       deck.add(CharacterCreator.getCharacter(CharacterName.values()[cardOrdinals.get(0)], i));

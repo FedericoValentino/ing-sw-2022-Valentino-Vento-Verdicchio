@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="mainIslandBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandsController">
+<AnchorPane fx:id="mainIslandBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandsController">
    <children>
       <AnchorPane fx:id="cloudsAnchorPane" layoutX="285.0" layoutY="165.0" prefHeight="300.0" prefWidth="300.0">
          <children>
@@ -24,17 +22,17 @@
             <AnchorPane layoutX="170.0" layoutY="170.0" prefHeight="125.0" prefWidth="125.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="is1" layoutX="375.0" layoutY="5.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane fx:id="is2" layoutX="547.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane fx:id="is4" layoutX="763.0" layoutY="265.0" />
-      <AnchorPane fx:id="is3" layoutX="706.0" layoutY="81.0" />
-      <AnchorPane fx:id="is7" layoutX="385.0" layoutY="523.0" />
-      <AnchorPane fx:id="is6" layoutX="547.0" layoutY="523.0" />
-      <AnchorPane fx:id="is5" layoutX="706.0" layoutY="433.0" />
-      <AnchorPane fx:id="is8" layoutX="209.0" layoutY="523.0" />
-      <AnchorPane fx:id="is9" layoutX="69.0" layoutY="397.0" />
-      <AnchorPane fx:id="is10" layoutX="-18.0" layoutY="250.0" />
-      <AnchorPane fx:id="is11" layoutX="28.0" layoutY="81.0" />
-      <AnchorPane fx:id="is12" layoutX="195.0" layoutY="5.0" />
+      <AnchorPane fx:id="is0" layoutX="375.0" layoutY="5.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane fx:id="is1" layoutX="547.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane fx:id="is3" layoutX="763.0" layoutY="265.0" />
+      <AnchorPane fx:id="is2" layoutX="706.0" layoutY="81.0" />
+      <AnchorPane fx:id="is6" layoutX="385.0" layoutY="523.0" />
+      <AnchorPane fx:id="is7" layoutX="547.0" layoutY="523.0" />
+      <AnchorPane fx:id="is4" layoutX="706.0" layoutY="433.0" />
+      <AnchorPane fx:id="is7" layoutX="209.0" layoutY="523.0" />
+      <AnchorPane fx:id="is8" layoutX="69.0" layoutY="397.0" />
+      <AnchorPane fx:id="is9" layoutX="-18.0" layoutY="250.0" />
+      <AnchorPane fx:id="is10" layoutX="28.0" layoutY="81.0" />
+      <AnchorPane fx:id="is11" layoutX="195.0" layoutY="5.0" />
    </children>
 </AnchorPane>
