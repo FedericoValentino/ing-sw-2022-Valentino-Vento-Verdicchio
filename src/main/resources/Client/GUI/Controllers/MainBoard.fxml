@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="900.0" minWidth="1600.0" prefHeight="900.0" prefWidth="1600.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.MainBoardController">
    <children>
-      <ImageView fitHeight="902.0" fitWidth="1616.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="background" fitHeight="902.0" fitWidth="1616.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/background.png" />
          </image>
