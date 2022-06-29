@@ -78,7 +78,7 @@ public class CharacterController
      * @param deck the list of cards
      * @return the card if it's present, null if it's absent
      */
-    protected CharacterCard getCardByName(CharacterName characterName, ArrayList<CharacterCard> deck)
+    protected static CharacterCard getCardByName(CharacterName characterName, ArrayList<CharacterCard> deck)
     {
         for (CharacterCard characterCard : deck)
             if (characterCard.getCharacterName() == characterName)
