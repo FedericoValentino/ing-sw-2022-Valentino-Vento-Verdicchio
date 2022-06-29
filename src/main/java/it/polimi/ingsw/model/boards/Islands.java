@@ -57,24 +57,22 @@ public class Islands extends Board {
         nextIsland = islands.get(i+1);
         previousIsland = islands.get(i-1);
       }
+
+
       if(currentIsland.getOwnership() == nextIsland.getOwnership() && (currentIsland.getMotherNature() || nextIsland.getMotherNature())
               && currentIsland.getOwnership() != null)
       {
         unifyIslands(currentIsland, nextIsland);
-        islands.set(i, currentIsland);
-        islands.remove(nextIsland);
         i = 0;
       }
       else if(currentIsland.getOwnership() == previousIsland.getOwnership() && (currentIsland.getMotherNature() || previousIsland.getMotherNature())
               && currentIsland.getOwnership() != null)
       {
-        unifyIslands(currentIsland, previousIsland);
-        islands.set(i, currentIsland);
-        islands.remove(previousIsland);
+        unifyIslands(previousIsland, currentIsland);
         i = 0;
       }
+      resetId();
     }
-    resetId();
   }
 
   /**
@@ -89,12 +87,12 @@ public class Islands extends Board {
       currentIsland.setMotherNature(true);
     }
     currentIsland.getCurrentStudents().addAll(nextIsland.getCurrentStudents());
-    currentIsland.setTowerNumber(currentIsland.getTowerNumber()+1);
+    currentIsland.setTowerNumber(currentIsland.getTowerNumber() + nextIsland.getTowerNumber());
     currentIsland.getTeamInfluence()[0] += nextIsland.getTeamInfluence()[0];
     currentIsland.getTeamInfluence()[1] += nextIsland.getTeamInfluence()[1];
     currentIsland.getTeamInfluence()[2] += nextIsland.getTeamInfluence()[2];
     currentIsland.setGroup(true);
-
+    islands.remove(nextIsland);
   }
 
   /**
@@ -104,9 +102,7 @@ public class Islands extends Board {
   {
     for(int i = 0; i < islands.size(); i++)
     {
-      Island I = islands.get(i);
-      I.setIslandId(i);
-      islands.set(i, I);
+      islands.get(i).setIslandId(i);
       if(islands.get(i).getMotherNature())
       {
         game.getCurrentMotherNature().updatePositionAfterMerge(i);

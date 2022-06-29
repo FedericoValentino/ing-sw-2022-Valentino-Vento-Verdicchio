@@ -38,11 +38,7 @@ public class Herald extends CharacterCard implements Serializable {
     @Override
     public void effect(CurrentGameState game, ArrayList<Integer> firstChoice, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
-        Island island = game.getCurrentIslands().getIslands().get(chosenIsland.get(0));
-        if(!island.getMotherNature())
-            island.updateMotherNature();
         game.solveEverything(chosenIsland.get(0));
-        island.updateMotherNature();
         game.notify(game.modelToJson());
     }
 

@@ -50,7 +50,7 @@ public class IslandsController extends Controller implements ObserverLightView {
             //Islands  initial setup
             double deltaTheta = 2*Math.PI/lightIslands.getIslands().size();
             double startingAngle = 0;
-            for(int i = 0; i <= lightIslands.getIslands().size(); i++)
+            for(int i = 0; i <= view.getCurrentIslands().getIslands().size(); i++)
             {
                 int finalI = i;
                 mainIslandBoard.getChildren().removeIf(node -> node.getId().equals("is"+ finalI));

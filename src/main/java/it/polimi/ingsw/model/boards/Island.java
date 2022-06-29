@@ -45,28 +45,25 @@ public class Island
   {
     int max = 0;
     int team = 0;
-    if(motherNature)
+    for(int i = 0; i < 3; i++)
     {
-      for(int i = 0; i < 3; i++)
+      if(teamInfluence[i] > max)
       {
-        if(teamInfluence[i] > max)
-        {
-          max = teamInfluence[i];
-          team = i;
-        }
+        max = teamInfluence[i];
+        team = i;
       }
-      for(int i = 0; i < 3; i++)
+    }
+    for(int i = 0; i < 3; i++)
+    {
+      if(i != team && max == teamInfluence[i])
       {
-        if(i != team && max == teamInfluence[i])
-        {
-          return;
-        }
+        return;
       }
-      ownership = ColTow.values()[team];
-      if(towerNumber == 0)
-      {
-        towerNumber = 1;
-      }
+    }
+    ownership = ColTow.values()[team];
+    if(towerNumber == 0)
+    {
+      towerNumber = 1;
     }
   }
 
@@ -98,11 +95,8 @@ public class Island
       if (t.getControlledProfessors().contains(Col.BLUE))
         this.teamInfluence[t.getColor().ordinal()] += numBLUE;
     }
-    if(motherNature)
-    {
-      if(ownership != null)
-        this.teamInfluence[ownership.ordinal()] += towerNumber;
-    }
+    if(ownership != null)
+      this.teamInfluence[ownership.ordinal()] += towerNumber;
   }
 
   /**
