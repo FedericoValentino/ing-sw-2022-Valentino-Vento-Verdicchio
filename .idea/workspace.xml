@@ -12,9 +12,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Added RunLater to PropController">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Last TODOs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/checksandbalances/Checks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/checksandbalances/Checks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CgSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CgSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentTurnState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentTurnState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Cloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Islands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Pouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/Pouch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/School.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/token/MotherNature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/boards/token/MotherNature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/assistants/AssistantCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/assistants/AssistantCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/assistants/AssistantDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/assistants/AssistantDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Centaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Centaur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Cook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Cook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/EffectsUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/EffectsUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/GrandmaHerbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/GrandmaHerbs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Herald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Herald.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Jester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Jester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Minstrel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Minstrel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Postman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Postman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Priest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Princess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Princess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/Thief.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/TruffleHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/characters/TruffleHunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/controller/CharacterControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/CurrentGameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/CurrentGameStateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/boards/CloudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/boards/CloudTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/boards/PouchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/boards/PouchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/AssistantDeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/AssistantDeckTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CharacterDeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/CharacterDeckTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/EffectTestsUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/model/cards/EffectTestsUtility.java" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
@@ -100,7 +139,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerApp">
+  <component name="RunManager" selected="JUnit.All in softeng-GC61">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -145,33 +184,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CookTest.testEffect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterControllerTest.isPlayable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.model.cards.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.cards" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.cards.CookTest" />
-      <option name="METHOD_NAME" value="testEffect" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="isPlayable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovesChecksTest.testIsExpectedPlanningMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterControllerTest.testPickCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.controller.checksandbalances.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MovesChecksTest" />
-      <option name="METHOD_NAME" value="testIsExpectedPlanningMove" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.CharacterControllerTest" />
+      <option name="METHOD_NAME" value="testPickCard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,16 +220,17 @@
       <item itemvalue="Application.ClientApp" />
       <item itemvalue="Application.main" />
       <item itemvalue="Application.ServerApp" />
-      <item itemvalue="JUnit.MovesChecksTest.testIsExpectedPlanningMove" />
       <item itemvalue="JUnit.All in softeng-GC61" />
-      <item itemvalue="JUnit.CookTest.testEffect" />
+      <item itemvalue="JUnit.CharacterControllerTest.isPlayable" />
+      <item itemvalue="JUnit.CharacterControllerTest.testPickCard" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerApp" />
         <item itemvalue="JUnit.All in softeng-GC61" />
+        <item itemvalue="JUnit.CharacterControllerTest.testPickCard" />
+        <item itemvalue="JUnit.CharacterControllerTest.isPlayable" />
+        <item itemvalue="Application.ServerApp" />
         <item itemvalue="Application.main" />
-        <item itemvalue="JUnit.CookTest.testEffect" />
       </list>
     </recent_temporary>
   </component>
@@ -257,13 +297,6 @@
       <workItem from="1656168778040" duration="3319000" />
       <workItem from="1656172135943" duration="32000" />
       <workItem from="1656359517611" duration="2692000" />
-    </task>
-    <task id="LOCAL-00154" summary="Modified 3 lines">
-      <created>1655970995460</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1655970995460</updated>
     </task>
     <task id="LOCAL-00155" summary="Some delete in Controller and a change in ClientGUI">
       <created>1655972279370</created>
@@ -601,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656459582149</updated>
     </task>
-    <option name="localTasksCounter" value="203" />
+    <task id="LOCAL-00203" summary="Last TODOs">
+      <created>1656461126217</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1656461126218</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="(╯°□°)╯︵ ┻━┻" />
     <MESSAGE value="Fixed Cook, added disconnect option" />
     <MESSAGE value="Removed warnings in CLI, unified every main in a single main in ClientApp, fixed merging visualization in CLI and much more" />
     <MESSAGE value="Removed warnings when possible from GUI, added the close button functionality, still researching a way of restarting the GUI totally" />
@@ -657,7 +696,8 @@
     <MESSAGE value="Updated TODOs" />
     <MESSAGE value="Added runLater to CharacterCardsController in GUI" />
     <MESSAGE value="Added RunLater to PropController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added RunLater to PropController" />
+    <MESSAGE value="Last TODOs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last TODOs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

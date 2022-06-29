@@ -12,12 +12,17 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Princess allows the player to select one of the card students and places it in his dining room
+ */
 public class Princess extends CharacterCard implements Serializable {
 
     private ArrayList<Student> students;
 
 
-    /** Class constructor */
+    /**
+     * Class constructor
+     */
     public Princess() {
         super();
         super.baseCost = 2;
@@ -26,7 +31,8 @@ public class Princess extends CharacterCard implements Serializable {
         this.students = new ArrayList<>();
     }
 
-    /** Adds a student from the pouch to the collection
+    /**
+     * Adds a student from the pouch to the collection
      * @param pouch  the current game pouch
      */
     public void updateStudents(Pouch pouch)
@@ -35,7 +41,8 @@ public class Princess extends CharacterCard implements Serializable {
     }
 
 
-    /** Returns the selected student, removing it from the collection
+    /**
+     * Returns the selected student, removing it from the collection
      * @param index  the position of the desired student onto the Character Card
      * @return the desired student
      */
@@ -47,11 +54,14 @@ public class Princess extends CharacterCard implements Serializable {
         return student;
     }
 
-    /** Takes a student from the card at the desired position, saves its color; then finds the active player
-     and obtains its school, placing the student in the dining room (updating the dining room structure using the student's color)
-     * @param game  an instance of the game
-     * @param studentPosition  the position of the chosen student onto the Princess card
-     * @param currentPlayer  the name of the player who plays the effect
+    /**
+     * Takes a student from the card at the desired position, saves its color; then finds the active player
+     * and obtains its school, placing the student in the dining room (updating the dining room structure using the student's color)
+     * @param game an instance of the game, needed to operate at a high level of access
+     * @param studentPosition a list containing the index of the selected card student
+     * @param chosenIsland not used here
+     * @param currentPlayer the name of the currentPlayer, the one who played the card
+     * @param color not used here
      */
     @Override
     public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)

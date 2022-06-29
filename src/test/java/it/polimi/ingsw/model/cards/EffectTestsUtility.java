@@ -18,7 +18,7 @@ public final class EffectTestsUtility
     {
         assertEquals(1, game.getCurrentCharacterDeck().getDeck().size());
         assertEquals(0, game.getCurrentActiveCharacterCard().size());
-        assertEquals(testCard.getCharacterName(), game.getCurrentCharacterDeck().getCard(0).getCharacterName());
+        assertEquals(testCard.getCharacterName(), game.getCurrentCharacterDeck().getDeck().get(0).getCharacterName());
     }
 
     /** Specializes the setup by removing all character cards

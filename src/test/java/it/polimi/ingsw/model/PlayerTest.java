@@ -13,7 +13,7 @@ public class PlayerTest {
     Player p1=new Player("Giaco", ColTow.WHITE,8, Wizard.DRUID,false);
     Player p3=new Player("paol", ColTow.WHITE,0, Wizard.DRUID,false);
     Player p2=new Player("ci", ColTow.BLACK,8,Wizard.DRUID,true);
-    AssistantDeck ad=new AssistantDeck(Wizard.DRUID,"Giaco");
+    AssistantDeck ad=new AssistantDeck(Wizard.DRUID);
     AssistantCard ac=new AssistantCard(1,1);
 
 
@@ -52,7 +52,6 @@ public class PlayerTest {
     @Test
     public void testGenericGetter()
     {
-        assertTrue(p1.getAssistantDeck() instanceof AssistantDeck);
         assertEquals(p1.getName(),"Giaco");
         assertTrue(p1.isTowerOwner());
     }

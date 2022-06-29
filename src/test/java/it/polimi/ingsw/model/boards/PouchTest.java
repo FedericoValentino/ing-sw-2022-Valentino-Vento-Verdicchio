@@ -23,7 +23,7 @@ public class PouchTest{
     @Test
     public void testCheckEmpty()
     {
-        assertFalse(test.checkEmpty());
+        assertFalse(test.getContent().isEmpty());
     }
     @Test
     public void testGetSetup()

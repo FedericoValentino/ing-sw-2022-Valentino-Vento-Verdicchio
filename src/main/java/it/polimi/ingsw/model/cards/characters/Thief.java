@@ -11,6 +11,9 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Thief allows the player to steal up to three students of the selected color from every player's dining room
+ */
 public class Thief extends CharacterCard implements Serializable {
 
     /**
@@ -23,18 +26,26 @@ public class Thief extends CharacterCard implements Serializable {
         super.name = CharacterName.THIEF;
     }
 
-
+    /**
+     * Runs through each player's dining room and removes a maximum of three students per selected color. After this
+     * it recalculates the checkpoints, readjusting them, and runs a check on the professors
+     * @param game an instance of the game, needed to operate at a high level of access
+     * @param firstChoice not used here
+     * @param secondChoice not used here
+     * @param currentPlayer not used here
+     * @param color the selected color
+     */
     @Override
-    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color) {
+    public void effect(CurrentGameState game, ArrayList<Integer> firstChoice, ArrayList<Integer> secondChoice, String currentPlayer, Col color) {
         ArrayList<Student> toBag = new ArrayList<>();
-        for (Team t : game.getCurrentTeams()) {
-            for (Player p : t.getPlayers()) {
+        for (Team team : game.getCurrentTeams()) {
+            for (Player player : team.getPlayers()) {
                 for (int i = 0; i < 3; i++) {
-                    if (p.getSchool().getDiningRoom()[color.ordinal()] != 0) {
-                        toBag.add(new Student(p.getSchool().removeFromDiningRoom(color.ordinal())));
+                    if (player.getSchool().getDiningRoom()[color.ordinal()] != 0) {
+                        toBag.add(new Student(player.getSchool().removeFromDiningRoom(color.ordinal())));
                     }
                 }
-                EffectsUtilities.adjustCheckpoints(p.getSchool());
+                EffectsUtilities.adjustCheckpoints(player.getSchool());
             }
         }
         game.getCurrentPouch().refillBag(toBag);

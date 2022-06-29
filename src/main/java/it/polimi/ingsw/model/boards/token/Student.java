@@ -5,12 +5,16 @@ import it.polimi.ingsw.model.boards.token.enumerations.Col;
 
 import java.io.Serializable;
 
+/**
+ * Student class models a student, identified by its color
+ */
 public class Student implements Serializable {
 
     private Col color;
 
 
-    /** Class constructor. Creates a new student given the student color
+    /**
+     * Class constructor. Creates a new student given the student color
      * @param StudentColor  the color assigned to the new student
      */
     public Student(@JsonProperty("color") Col StudentColor)

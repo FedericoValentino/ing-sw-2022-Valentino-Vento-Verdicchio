@@ -12,9 +12,15 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Knight is one of the "Influence Calculation" characters: upon the influence calculation, it grants plus two influence
+ * to the currentPlayer
+ */
 public class Knight extends CharacterCard implements Serializable {
 
-    /** Class constructor */
+    /**
+     * Class constructor
+     */
     public Knight()
     {
         super();
@@ -25,16 +31,19 @@ public class Knight extends CharacterCard implements Serializable {
 
 
 
-    /** Adds 2 extra influence to the Active team during the influence calculation. Since the standard method
-     solveEverything updates the teamInfluence internally, it is needed to manually update the teams influence,
-     add 2 extra influence to the desired team, calculate ownership, update towers and calling the idManagement.
-     In the end, the boosted influence is set to its previous value.
+    /**
+     * Adds 2 extra influence to the Active team during the influence calculation. Since the standard method
+     * solveEverything updates the teamInfluence internally, it is needed to manually update the teams influence,
+     * add 2 extra influence to the desired team, calculate ownership, update towers and calling the idManagement.
+     * In the end, the boosted influence is set to its previous value.
      * @param game  an instance of the game
+     * @param firstChoice not used here
      * @param chosenIsland  the island on which the influence calculation must occur
      * @param currentPlayer  the player requesting the effect to be played
+     * @param color not used here
      */
     @Override
-    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
+    public void effect(CurrentGameState game, ArrayList<Integer> firstChoice, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
         ColTow previousOwner = game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getOwnership();                                                                                                           //chiama l'altro metodo (overloading) per aumentare di 2
         game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).updateTeamInfluence(game.getCurrentTeams());

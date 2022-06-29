@@ -80,12 +80,12 @@ public final class Checks {
      */
     public static boolean isCloudAvailable(CurrentGameState game, int cloudIndex)
     {
-        return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && !game.getCurrentClouds()[cloudIndex].isEmpty();
+        return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && !game.getCurrentClouds()[cloudIndex].getStudents().isEmpty();
     }
 
     public static boolean isCloudFillable(CurrentGameState game, int cloudIndex)
     {
-        return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && game.getCurrentClouds()[cloudIndex].isEmpty();
+        return cloudIndex >= 0 && cloudIndex < game.getCurrentClouds().length && game.getCurrentClouds()[cloudIndex].getStudents().isEmpty();
     }
 
 
@@ -95,7 +95,7 @@ public final class Checks {
      */
     public static boolean isPouchAvailable(CurrentGameState game)
     {
-        return !game.getCurrentPouch().checkEmpty();
+        return !game.getCurrentPouch().getContent().isEmpty();
     }
 
 
@@ -108,7 +108,7 @@ public final class Checks {
     public static boolean isAssistantValid(CurrentGameState game, String currentPlayer, int cardIndex)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
-        return !player.getAssistantDeck().checkEmpty() && cardIndex >= 0 && cardIndex < player.getAssistantDeck().getDeck().size();
+        return !player.getAssistantDeck().getDeck().isEmpty() && cardIndex >= 0 && cardIndex < player.getAssistantDeck().getDeck().size();
     }
 
 
@@ -228,7 +228,7 @@ public final class Checks {
     public static boolean checkLastTurnDueToAssistants(CurrentGameState game, String currentPlayer)
     {
         Player player = MainController.findPlayerByName(game, currentPlayer);
-        return player.getAssistantDeck().checkEmpty();
+        return player.getAssistantDeck().getDeck().isEmpty();
     }
 
     public static boolean isThereAWinner(CurrentGameState game)

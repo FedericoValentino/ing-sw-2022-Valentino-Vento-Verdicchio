@@ -10,26 +10,20 @@ import org.junit.Test;
 
 public class AssistantDeckTest{
 
-    AssistantDeck d = new AssistantDeck(Wizard.DRUID, "Nico");
+    AssistantDeck d = new AssistantDeck(Wizard.DRUID);
     AssistantCard a=new AssistantCard(1,1);
     AssistantCard test = new AssistantCard(2, 10);
 
     @Test
     public void testCheckEmpty()
     {
-        assertFalse(d.checkEmpty());
+        assertFalse(d.getDeck().isEmpty());
     }
 
     @Test
     public void testExtractCard()
     {
        assertEquals(test.getMovement(), d.extractCard(2).getMovement());
-    }
-
-    @Test
-    public void testGetPlayerName()
-    {
-        assertEquals("Nico", d.getPlayerName());
     }
 
     @Test
@@ -41,8 +35,8 @@ public class AssistantDeckTest{
     @Test
     public void testGetCard()
     {
-        assertEquals(a.getMovement(),d.getCard(0).getMovement());
-        assertEquals(a.getValue(),d.getCard(0).getValue());
+        assertEquals(a.getMovement(),d.getDeck().get(0).getMovement());
+        assertEquals(a.getValue(),d.getDeck().get(0).getValue());
     }
 
 }

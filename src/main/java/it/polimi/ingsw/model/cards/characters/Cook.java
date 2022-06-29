@@ -8,10 +8,14 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
+/**
+ * Cook operates by granting the player who played it the control of professors even in case of a draw
+ */
 public class Cook extends CharacterCard implements Serializable {
 
-    /** Class constructor */
+    /**
+     * Class constructor
+     */
     public Cook()
     {
         super();
@@ -20,9 +24,17 @@ public class Cook extends CharacterCard implements Serializable {
         super.name = CharacterName.COOK;
     }
 
-
+    /**
+     * It simply calls the method to run the professors check upon activation, giving a "true" input: this means that, in case
+     * of a draw, the professor will still be assigned to the player who played the card
+     * @param game an instance of the game, needed to operate at a high level of access
+     * @param firstChoice not used here
+     * @param secondChoice not used here
+     * @param currentPlayer not used here
+     * @param color not used here
+     */
     @Override
-    public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
+    public void effect(CurrentGameState game, ArrayList<Integer> firstChoice, ArrayList<Integer> secondChoice, String currentPlayer, Col color)
     {
         game.giveProfessors(true);
         game.notify(game.modelToJson());

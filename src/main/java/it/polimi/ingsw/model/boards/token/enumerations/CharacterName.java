@@ -1,5 +1,8 @@
 package it.polimi.ingsw.model.boards.token.enumerations;
 
+/**
+ * Enumeration lists the possible names of the Character Cards
+ */
 public enum CharacterName
 {
     PRIEST,

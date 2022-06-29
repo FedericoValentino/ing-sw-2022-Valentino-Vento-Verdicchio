@@ -9,12 +9,16 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-//y
+/**
+ * Truffle Hunter, a card of th "Influence Calculation" type makes the influence calculation ignore the selected color
+ */
 public class TruffleHunter extends CharacterCard implements Serializable {
 
     private Col chosenColor;
 
-    /** Class constructor */
+    /**
+     * Class constructor
+     */
     public TruffleHunter()
     {
         super();
@@ -24,24 +28,29 @@ public class TruffleHunter extends CharacterCard implements Serializable {
         this.chosenColor = null;
     }
 
-    /** Updates the color chosen by the player at the moment of activation
-     * @param c  the color chosen by the player that needs to be ignored during the influence calculation
+    /**
+     * Updates the color chosen by the player at the moment of activation
+     * @param color  the color chosen by the player that needs to be ignored during the influence calculation
      */
-    public void setChosenColor(Col c)
+    public void setChosenColor(Col color)
     {
-        this.chosenColor = c;
+        this.chosenColor = color;
     }
 
 
-    /** Ignores a color of student in the influence calculation
-     * @param game  an instance of the game
-     * @param chosenIsland  the island on which the influence calculation must occur
+    /**
+     * Removes the student of the selected color on the island, and saves their number for later. After calling the influence
+     * calculation function, it creates and adds to the island the same number of students, of the same color, that were
+     * removed
+     * @param game an instance of the game, needed to operate at a high level of access
+     * @param studentPosition not used here
+     * @param chosenIsland the island on which the influence calculation must occur
+     * @param currentPlayer not used here
+     * @param color not used here
      */
     @Override
     public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
-        /*Uses this for cycle to remove the students of the selected color from the island: uses a
-        counter to save how many students were removed  */
         int cont = 0;
         ArrayList<Student> studentsOnIsland = game.getCurrentIslands().getIslands().get(chosenIsland.get(0)).getCurrentStudents();
         for(int i=0; i < studentsOnIsland.size(); i++)
@@ -55,7 +64,6 @@ public class TruffleHunter extends CharacterCard implements Serializable {
 
         game.solveEverything(chosenIsland.get(0));
 
-        //After the influence calculations, it adds to the island as many students of the selected color as the number of the counter
         for(int i=0; i<cont; i++)
         {
             studentsOnIsland.add(new Student(getChosenColor()));

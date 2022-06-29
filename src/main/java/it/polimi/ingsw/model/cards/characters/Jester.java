@@ -12,12 +12,17 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Jester lets the player swap up to three students between his school entrance and the card itself
+ */
 public class Jester extends CharacterCard implements Serializable {
 
     private ArrayList<Student> students = new ArrayList<>();
 
 
-    /** Class constructor */
+    /**
+     * Class constructor
+     */
     public Jester()
     {
         super();
@@ -26,32 +31,32 @@ public class Jester extends CharacterCard implements Serializable {
         super.name = CharacterName.JESTER;
     }
 
+    /**
+     * The method searches for the currentPlayer, then uses a support list, toEntrance, to swap the students between the
+     * card and the player's entrance
+     * @param game an instance of the game, needed to operate at a high level of access
+     * @param cardStudentIndexes list containing the indexes of the students on the card
+     * @param entranceStudentsIndexes list containing the indexes of the students in the entrance
+     * @param currentPlayer the player who activated the card
+     * @param color not used here
+     */
     @Override
     public void effect(CurrentGameState game, ArrayList<Integer> cardStudentIndexes, ArrayList<Integer> entranceStudentsIndexes, String currentPlayer, Col color)
     {
-        Player player = null;
+        Player player = EffectsUtilities.searchForCurrentPlayer(currentPlayer, game.getCurrentTeams());
 
-        for(Team t: game.getCurrentTeams())
-        {
-            for (Player p : t.getPlayers())
-            {
-                if(p.getName().equals(game.getCurrentTurnState().getCurrentPlayer()))
-                {
-                    player = p;
-                }
-            }
-        }
-        ArrayList<Student> toDining = new ArrayList<>();
+        ArrayList<Student> toEntrance = new ArrayList<>();
 
-        EffectsUtilities.swapStudents(toDining, cardStudentIndexes, students);
+        EffectsUtilities.swapStudents(toEntrance, cardStudentIndexes, students);
         EffectsUtilities.swapStudents(students, entranceStudentsIndexes, player.getSchool().getEntrance());
-        player.getSchool().getEntrance().addAll(toDining);
+        player.getSchool().getEntrance().addAll(toEntrance);
         game.notify(game.modelToJson());
     }
 
 
 
-    /** Adds one student from the pouch to the collection
+    /**
+     * Adds one student from the pouch to the collection
      * @param pouch  the current game pouch
      */
     public void updateStudents(Pouch pouch)
@@ -60,7 +65,8 @@ public class Jester extends CharacterCard implements Serializable {
     }
 
 
-    /** Returns the student selected, eliminating it from the collection
+    /**
+     * Returns the student selected, eliminating it from the collection
      * @param index  the position of the desired student on the Character Card
      * @return the selected student
      */

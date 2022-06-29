@@ -10,15 +10,21 @@ import it.polimi.ingsw.model.cards.characters.Princess;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
-//
+
+/**
+ * The deck that will hold the inactive character cards. It contains methods to draw a selected card and to manipulate
+ * those cards that need extra processing in initial stages
+ */
 public class CharacterDeck implements Serializable
 {
   private ArrayList<CharacterCard> deck;
 
-  /** Class constructor. Creates every character Object, shuffles the collection, and eliminates 5 of them.
-   This ensures a random Character Deck composition for each game instance
+  /**
+   * Class constructor. Creates a list of integers, from 0 to 11, representing the ordinal value of the Character Name enumeration.
+   * The list is then shuffled, and the first three integers are used to add a character card, by calling the Character Factory
+   * using the appropriate Character Name. This ensures that the deck is always formed by random cards every match.
    */
-  public CharacterDeck(CurrentGameState game)
+  public CharacterDeck()
   {
     this.deck = new ArrayList<>();
     ArrayList<Integer> cardOrdinals = new ArrayList<>();
@@ -36,14 +42,10 @@ public class CharacterDeck implements Serializable
     }
   }
 
-  /** Checks if the deck is empty
-   * @return whether the deck is empty
-   */
-  public boolean checkEmpty()
-  {return deck.isEmpty();}
 
-  /** Gets the card "ready" for its further activation: removes it from
-   the CharacterDeck, updates its cost (and with is its uses) and returns it
+  /**
+   * Gets the card "ready" for its further activation: removes it from
+   * the CharacterDeck, updates its cost (and with it, its uses) and returns it
    * @param card the selected card in the Character Deck
    * @return the desired card
    */
@@ -54,6 +56,11 @@ public class CharacterDeck implements Serializable
     return card;
   }
 
+  /**
+   * Handles the further processing needed by some of the more complex character cards in the setup phase. Now, it fills
+   * with students the cards that need them
+   * @param pouch an instance of the game pouch
+   */
   public void SetupCards(Pouch pouch)
   {
     for (CharacterCard card : deck) {
@@ -69,11 +76,6 @@ public class CharacterDeck implements Serializable
     }
   }
 
-
   public ArrayList<CharacterCard> getDeck()
     {return deck;}
-
-  public CharacterCard getCard(int index)
-  {return deck.get(index);}
-
 }

@@ -118,7 +118,7 @@ public class CurrentGameStateTest {
 
         assertEquals(cg1.getCurrentPouch().getContent().size(),130);
         assertTrue(cg1.getCurrentMotherNature().getPosition()>=0);
-        assertFalse(cg2.getCurrentCharacterDeck().checkEmpty());
+        assertFalse(cg2.getCurrentCharacterDeck().getDeck().isEmpty());
 
         assertEquals(2, cg2.getCurrentClouds().length);
         //da rivedere, perché questa add va messa  in una funzione dedicata nel model (problema discusso)

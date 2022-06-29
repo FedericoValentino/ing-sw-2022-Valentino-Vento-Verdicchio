@@ -11,10 +11,14 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
+/**
+ * Minstrel allows the player to exchange up to two student between their entrance and dining room
+ */
 public class Minstrel extends CharacterCard implements Serializable {
 
-    /** Class constructor */
+    /**
+     * Class constructor
+     */
     public Minstrel()
     {
         super();
@@ -23,22 +27,19 @@ public class Minstrel extends CharacterCard implements Serializable {
         super.name = CharacterName.MINSTREL;
     }
 
-
+    /**
+     * It swaps the desired number of students between the entrance and the dining room of the current player. Runs
+     * a check on the dining room checkpoints to readjust them, if necessary; same fot the professors
+     * @param game an instance of the game, needed to operate at a high level of access
+     * @param entranceStudentIndexes a list of the indexes of the entrance student to swap
+     * @param colorOrdinals a list of color ordinals representing the dining room students to swap
+     * @param currentPlayer the name of the currentPlayer, the one who played the card
+     * @param color not used here
+     */
     @Override
     public void effect(CurrentGameState game, ArrayList<Integer> entranceStudentIndexes, ArrayList<Integer> colorOrdinals, String currentPlayer, Col color)
     {
-        Player player = null;
-
-        for(Team t: game.getCurrentTeams())
-        {
-            for (Player p : t.getPlayers())
-            {
-                if(p.getName().equals(game.getCurrentTurnState().getCurrentPlayer()))
-                {
-                    player = p;
-                }
-            }
-        }
+        Player player = EffectsUtilities.searchForCurrentPlayer(currentPlayer, game.getCurrentTeams());
 
         ArrayList<Student> toDining = new ArrayList<>();
         EffectsUtilities.swapStudents(toDining, entranceStudentIndexes, player.getSchool().getEntrance());

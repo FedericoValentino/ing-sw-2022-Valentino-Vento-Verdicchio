@@ -6,13 +6,20 @@ import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 
 import java.util.ArrayList;
 
+/**
+ * Islands is generally used as a collection of island objects. It contains methods that need to access more islands at once,
+ * for example the methods that rule the merging of island objects after the influence calculation
+ */
 public class Islands extends Board {
   private ArrayList<Island> islands=new ArrayList<>();
   private int totalGroups;
   CurrentGameState game;
 
 
-  /** Class Constructor, creates 12 Island and sets the total group to 12 */
+  /**
+   * Class Constructor, creates 12 Island and sets the total group to 12
+   * @param game an instance of the game
+   */
   public Islands(CurrentGameState game)
   {
     this.game = game;
@@ -23,8 +30,9 @@ public class Islands extends Board {
     totalGroups = 12;
   }
 
-  /** Method idManagement handles the unification of islands and updates the totalGroup parameter to match
-   with the ArrayList.size()
+  /**
+   * Method idManagement handles the unification of the islands, and updates the totalGroup parameter to match
+   * with the ArrayList.size()
    */
   public void idManagement()
   {
@@ -69,7 +77,8 @@ public class Islands extends Board {
     resetId();
   }
 
-  /** Method unifyIslands handles the unification of 2 islands
+  /**
+   * Method unifyIslands handles the unification of 2 islands
    * @param currentIsland  one of the islands object of the unification process
    * @param nextIsland  the second island object of the unification process
    */
@@ -88,7 +97,9 @@ public class Islands extends Board {
 
   }
 
-  /** Reorders the IDs of the islands after the eventual unifications */
+  /**
+   * Reorders the IDs of the islands after the eventual unification
+   */
   private void resetId()
   {
     for(int i = 0; i < islands.size(); i++)
@@ -105,30 +116,26 @@ public class Islands extends Board {
   }
 
 
-  /** Method placeToken places a token on an island tile
-   * @param s  student to place onto the island
-   * @param pos  index identifying the position of the island into the Islands structure
+  /**
+   * Method placeToken places a token on an island tile
+   * @param student  student to place onto the island
+   * @param position  index identifying the position of the island into the Islands structure
    */
-  public void placeToken(Student s, int pos) {
-    Island I = islands.get(pos);
-    I.addStudent(s);
-    islands.set(pos, I);
+  public void placeToken(Student student, int position) {
+    Island I = islands.get(position);
+    I.addStudent(student);
+    islands.set(position, I);
   }
 
-  /** Method getMaxCol determines the color of the team with the highest number of towers built
+  /**
+   * Method getMaxCol determines the color of the team with the highest number of towers built
    * @param Teams  the arraylist of the teams present in the game
    * @return the color of the team with the highest number of towers built
    */
   public ColTow getMaxCol(ArrayList<Team> Teams)
   {
     int[] ControlledProfessors = new int[3];
-    ControlledProfessors[0] = 0;
-    ControlledProfessors[1] = 0;
-    ControlledProfessors[2] = 0;
     int[] Towers = new int[3];
-    Towers [0]=0;
-    Towers [1]=0;
-    Towers [2]=0;
     int max = 0;
     int Winner = 0;
     for(Island I: islands)
@@ -169,13 +176,19 @@ public class Islands extends Board {
     return ColTow.values()[Winner];
   }
 
+  /**
+   * Given a color, finds the team associated to said color
+   * @param Teams a list of the competing teams
+   * @param color the color of the desired team
+   * @return the team corresponding to said color
+   */
   private Team getTeam(ArrayList<Team> Teams, ColTow color)
   {
-    for(Team t: Teams)
+    for(Team team: Teams)
     {
-      if(t.getColor() == color)
+      if(team.getColor() == color)
       {
-        return t;
+        return team;
       }
     }
     return null;

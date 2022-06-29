@@ -20,6 +20,7 @@ package it.polimi.ingsw.model;
 //TODO Remove updater notices
 //TODO GUI needs to visualize bank balance in propaganda
 //TODO Look at code repetition in MainBoard for characters (Jester - Princess - Priest)
+//TODO Look at the jSon constructor in Assistants and Student and double constructor in cloud
 
 //Less less urgent
 //TODO aesthetic of GUI in general
@@ -43,6 +44,14 @@ import it.polimi.ingsw.Observer.Observable;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * CurrentGameState is one of the two classes responsible to represent, as the name suggests, the current state of the game:
+ * it does this by creating and sometimes manipulating game objects.
+ * In addition, it is the highest class in the model hierarchy, having the possibility to access almost every other class,
+ * some directly via reference, some through other high level classes.
+ * It creates the game objects through its constructor and has methods requiring a higher level of access in order to change
+ * the state of some game objects.
+ */
 @JsonSerialize(using = CgSerializer.class)
 public class CurrentGameState extends Observable {
     private CharacterDeck currentCharacterDeck;
@@ -58,8 +67,8 @@ public class CurrentGameState extends Observable {
 
 
     /**
-     Class Constructor, instantiates a new CurrentGameState, taking as parameters only the number of players playing and
-     whether we're playing an expertGame or not
+     * Class Constructor, instantiates a new CurrentGameState, taking as parameters only the number of players playing and
+     * whether we're playing an expertGame or not
      * @param playerNum  the number of players
      * @param expertGame  the game mode
      */
@@ -95,7 +104,7 @@ public class CurrentGameState extends Observable {
        {
            this.currentActiveCharacterCard = new ArrayList<>();
            this.bankBalance = 20 - playerNum;
-           this.currentCharacterDeck = new CharacterDeck(this);
+           this.currentCharacterDeck = new CharacterDeck();
            getCurrentPouch().updateSetup(false);
            currentCharacterDeck.SetupCards(getCurrentPouch());
            getCurrentPouch().updateSetup(true);
@@ -107,43 +116,45 @@ public class CurrentGameState extends Observable {
     }
 
 
-    /** Method updateTurnState takes the AssistantCard value that every player has played and puts it in an HashMap and
-     then sorts it from the lowest to the highest
+    /**
+     * Method updateTurnState takes the AssistantCard value that every player has played and puts it in an HashMap; it
+     * then sorts it from the lowest to the highest
      */
     public void updateTurnState()
     {
         HashMap<String, Integer> map = new HashMap<>();
         HashMap<String, Integer> finalMap;
-        for(Team t: currentTeams)
+        for(Team team: currentTeams)
         {
-            for(Player p: t.getPlayers())
+            for(Player player: team.getPlayers())
             {
-                map.put(p.getName(), p.getValue());
+                map.put(player.getName(), player.getValue());
             }
         }
         finalMap = map.entrySet().stream()
                                  .sorted(Map.Entry.comparingByValue())
-                                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+                                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (element1, element2) -> element1, LinkedHashMap::new));
 
         currentTurnState.updateTurn(finalMap);
     }
 
 
-    /** Method updateBankBalance updates the BankBalance everytime a player p gains a coin from its DiningRoom or pays
-     for a Character Card
-     * @param p  the player to check
+    /**
+     * Method updateBankBalance updates the BankBalance everytime a player gains a coin from its DiningRoom or pays
+     * for a Character Card
+     * @param player  the player to check
      * @param gain  the amount of coins gained or lost by the player
      */
-    public void updateBankBalance(Player p, int gain)
+    public void updateBankBalance(Player player, int gain)
     {
         int coinsToLose;
         if(gain == 0)
         {
-            coinsToLose = p.gainCoin();
+            coinsToLose = player.gainCoin();
         }
         else
         {
-            p.updateCoins(-gain);
+            player.updateCoins(-gain);
             coinsToLose = -(gain-1);
         }
         if(coinsToLose <= bankBalance)
@@ -153,7 +164,12 @@ public class CurrentGameState extends Observable {
     }
 
 
-    /** Method giveProfessors assigns professors to the player with the most student in their diningRoom  */
+    /**
+     * Method giveProfessors assigns professors to the player with the most student in their diningRoom. It accounts for
+     * draw cases, and it differentiates whether the Cook card is active, using a simple boolean in input
+     * @param cook a boolean that tells the method if cook is active. If it is active, in case of a draw, the method will
+     *             give the contested professor to the player who activated the card, contrary to the normal flow of the method
+     */
     public void giveProfessors(boolean cook)
     {
         for(Col color: Col.values())
@@ -193,16 +209,17 @@ public class CurrentGameState extends Observable {
     }
 
 
-    /** Method solveEverything is responsible for the influence calculation on the desired island, and
-     handles the eventual exchange of towers between players' schools and the island
-     * @param pos  the island on which the influence calculation has to be called
+    /**
+     * Method solveEverything is responsible for the influence calculation on the desired island, and
+     * handles the eventual exchange of towers between players' schools and the island
+     * @param islandPosition  the island on which the influence calculation has to be called
      */
-    public void solveEverything(int pos)
+    public void solveEverything(int islandPosition)
     {
-        ColTow previousOwner = currentIslands.getIslands().get(pos).getOwnership();
-        currentIslands.getIslands().get(pos).updateTeamInfluence(getCurrentTeams());
-        currentIslands.getIslands().get(pos).calculateOwnership();
-        ColTow currentOwner = currentIslands.getIslands().get(pos).getOwnership();
+        ColTow previousOwner = currentIslands.getIslands().get(islandPosition).getOwnership();
+        currentIslands.getIslands().get(islandPosition).updateTeamInfluence(getCurrentTeams());
+        currentIslands.getIslands().get(islandPosition).calculateOwnership();
+        ColTow currentOwner = currentIslands.getIslands().get(islandPosition).getOwnership();
         if(previousOwner != currentOwner)
         {
             for(Team t: getCurrentTeams())
@@ -211,12 +228,12 @@ public class CurrentGameState extends Observable {
                 {
                     if(p.isTowerOwner() && t.getColor() == previousOwner)
                     {
-                        p.getSchool().updateTowerCount(getCurrentIslands().getIslands().get(pos).getTowerNumber());
+                        p.getSchool().updateTowerCount(getCurrentIslands().getIslands().get(islandPosition).getTowerNumber());
                         t.updateControlledIslands(-1);
                     }
                     if(p.isTowerOwner() && t.getColor() == currentOwner)
                     {
-                        p.getSchool().updateTowerCount(-(getCurrentIslands().getIslands().get(pos).getTowerNumber()));
+                        p.getSchool().updateTowerCount(-(getCurrentIslands().getIslands().get(islandPosition).getTowerNumber()));
                         t.updateControlledIslands(1);
                     }
                 }
@@ -225,9 +242,13 @@ public class CurrentGameState extends Observable {
         currentIslands.idManagement();
     }
 
+    /**
+     * Method used by the notifies to compile the json file with the currentGameState information
+     * @return a string representing the json file
+     */
     public String modelToJson()
     {
-        String json=null;
+        String json = null;
         try {
             json = new ObjectMapper().writeValueAsString(this);
         } catch (JsonProcessingException e) {

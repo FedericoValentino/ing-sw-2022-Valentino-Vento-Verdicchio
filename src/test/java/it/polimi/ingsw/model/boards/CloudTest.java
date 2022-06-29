@@ -12,11 +12,11 @@ import it.polimi.ingsw.model.boards.token.enumerations.Col;
 public class  CloudTest {
     Cloud c= new Cloud(1);
     Cloud c2= new Cloud( 2);
-    ArrayList<Student> stud=new ArrayList<Student>();
+    ArrayList<Student> stud=new ArrayList<>();
     Student st1=new Student(Col.GREEN);
     Student st2=new Student(Col.PINK);
     Student st3=new Student(Col.YELLOW);
-    ArrayList<Student> stud1=new ArrayList<Student>();
+    ArrayList<Student> stud1=new ArrayList<>();
 
     @Test
     public void testConstructor()
@@ -24,7 +24,7 @@ public class  CloudTest {
         stud1.add(st1);
         stud1.add(st2);
         Cloud c1=new Cloud(stud1, false, 0);
-        assertEquals(c1.getStudent(1),st2);
+        assertEquals(c1.getStudents().get(1),st2);
     }
 
 
@@ -35,9 +35,9 @@ public class  CloudTest {
     public void testEmptyANDPlaceToken()
     {
         Student s= new Student(Col.GREEN);
-        assertTrue(c.isEmpty());
+        assertTrue(c.getStudents().isEmpty());
         c.placeToken(s);
-        assertFalse(c.isEmpty());
+        assertFalse(c.getStudents().isEmpty());
     }
     @Test
     public void testGetPos()
@@ -46,10 +46,10 @@ public class  CloudTest {
         c.placeToken(st2);
         c.placeToken(st3);
 
-        c.getStudent(1);
-        assertTrue(c.getStudent(1).equals(st2));
+        Student student = c.getStudents().get(1);
+        assertEquals(student.getColor(), st2.getColor());
         //now i want to verify the try catch into the getStudent
-        assertNull(c.getStudent(70));
+        assertNull(c.getStudents().get(70));
     }
 
     @Test
@@ -57,7 +57,7 @@ public class  CloudTest {
     {
         c2.placeToken(st1);
         c2.removeToken(st1);
-        assertTrue(c2.isEmpty());
+        assertTrue(c2.getStudents().isEmpty());
         c2.removeToken(st1);
     }
 
@@ -67,13 +67,13 @@ public class  CloudTest {
         Cloud c1 = new Cloud(1);
         Student s1 = new Student(Col.YELLOW);
         Student s2 = new Student(Col.GREEN);
-        ArrayList<Student> ss = new ArrayList<>();
+        ArrayList<Student> ss;
         c1.placeToken(s1);
         c1.placeToken(s2);
         ss = c1.EmptyCloud();
         assert(ss.contains(s1));
         assert(ss.contains(s2));
-        assert(c1.isEmpty());
+        assert(c1.getStudents().isEmpty());
 
 
     }

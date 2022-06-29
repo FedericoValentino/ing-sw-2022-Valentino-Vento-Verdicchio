@@ -3,9 +3,16 @@ package it.polimi.ingsw.model.cards;
 import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
 import it.polimi.ingsw.model.cards.characters.*;
 
-//y
+/**
+ * This class contains the Factory method used by the Factory Pattern in CharacterDeck
+ */
 public class CharacterCreator
 {
+    /**
+     * Given a type of characterCard, the method dynamically chooses which one to create, and returns it
+     * @param type the name of the character card
+     * @return the character card just created
+     */
     public static CharacterCard getCharacter(CharacterName type)
     {
         CharacterCard card;

@@ -17,22 +17,21 @@ public class CharacterControllerTest {
 
     MainController controllerTest = new MainController(2, true);
 
-
-    @Test
     /**
      * Checks if the function pickCard, in charge of moving a card from the CharDeck
      * to the ActiveCharDeck and modifying the economy of the game, is working properly.
      */
+    @Test
     public void testPickCard() {
 
         //Does a basic setup and checks if the desired number of coins has been correctly assigned
         TestUtilities.setupTestFor2(controllerTest);
         TestUtilities.gainCoins(controllerTest);
-        assertEquals(6, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
-        assertEquals(5, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
+        assertEquals(104, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
+        assertEquals(103, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
         //Saves the reference to the card and its initial cost
-        CharacterCard card = controllerTest.getGame().getCurrentCharacterDeck().getCard(0);
+        CharacterCard card = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0);
         int baseInitialCost = card.getBaseCost();
 
         //picks the card
@@ -46,7 +45,7 @@ public class CharacterControllerTest {
         //Then it checks if the card values and the economy have been updated correctly
         assertEquals(1, controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getUses());
         assertEquals(baseInitialCost + 1, controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getCurrentCost());
-        assertEquals(6 - baseInitialCost, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
+        assertEquals(104 - baseInitialCost, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
         assertEquals((baseInitialCost - 1) + 18, controllerTest.getGame().getBankBalance());
     }
 
@@ -94,7 +93,7 @@ public class CharacterControllerTest {
     }
 
     @Test
-    public void isPickable()
+    public void isPlayable()
     {
         TestUtilities.setupTestFor2(controllerTest);
         TestUtilities.gainCoins(controllerTest);
@@ -106,8 +105,8 @@ public class CharacterControllerTest {
 
         assertTrue(CharacterController.isPlayable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
 
-        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(-3);
-        //System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
+        controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(-103);
+        System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
         assertFalse(CharacterController.isPlayable(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
     }

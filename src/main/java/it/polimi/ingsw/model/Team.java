@@ -5,6 +5,10 @@ import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 
 import java.util.ArrayList;
 
+/**
+ * Team class contains everything needed to model a team. First, a team is a collection of Players, so each Team object
+ * contains a List of players.
+ */
 public class Team
 {
   private final ColTow color;
@@ -12,7 +16,9 @@ public class Team
   private int controlledIslands;
   private ArrayList<Col> controlledProfessors;
 
-  /** Class Constructor */
+  /**
+   * Class Constructor
+   */
   public Team(ColTow color)
   {
     this.color = color;
@@ -22,16 +28,18 @@ public class Team
   }
 
 
-  /** Method addPlayer adds a player to the team
-   * @param p  reference to the player that has to be added to the team
+  /**
+   * Method addPlayer adds a player to the team
+   * @param player reference to the player that has to be added to the team
    */
-  public void addPlayer(Player p)
+  public void addPlayer(Player player)
   {
-    this.players.add(p);
+    this.players.add(player);
   }
 
-  /** Method updateProfessors checks whether a player in the team has a professor or not.
-   If it does then it adds it to its collection of held professors
+  /**
+   * Method updateProfessors checks whether a player in the team has a professor or not.
+   * If it does then it adds it to its collection of held professors
    */
   public void updateProfessors()
   {
@@ -71,14 +79,15 @@ public class Team
 
   }
 
-  /** Updates the team's controlled islands by adding the specified value to the ControlledIslands field
+  /**
+   * Updates the team's controlled islands by adding the specified value to the ControlledIslands field
    * @param value  the value to add to the ControlledIslands field
    */
   public void updateControlledIslands(int value)
   {
-    if(controlledIslands == 0 && value<0){}
-    else
+    if (controlledIslands != 0 || value >= 0) {
       controlledIslands += value;
+    }
   }
 
   public ColTow getColor() {

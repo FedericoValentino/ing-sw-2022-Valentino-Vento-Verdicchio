@@ -7,17 +7,17 @@ import org.junit.Test;
 
 public class CharacterDeckTest {
     CurrentGameState game = new CurrentGameState(2,true);
-    CharacterDeck cd = new CharacterDeck(game);
+    CharacterDeck cd = new CharacterDeck();
     CharacterCard cc;CharacterCard cc1;
 
     @Test
     public void testCheckEmpty() {
-        assertFalse(cd.checkEmpty());
+        assertFalse(cd.getDeck().isEmpty());
     }
 
     @Test
     public void testDrawCard() {
-        cc1=cd.getCard(0);
+        cc1=cd.getDeck().get(0);
         cc=cd.drawCard(cc1);
         assertEquals(cc1,cc);
         assertEquals(cc.getBaseCost()+1,cc.getCurrentCost());

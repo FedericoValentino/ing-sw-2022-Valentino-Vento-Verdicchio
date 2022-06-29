@@ -5,6 +5,11 @@ import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 
 import java.util.HashMap;
 
+/**
+ * The second class responsible for holding information representing the current state of the game. Quite differently to
+ * CurrentGameState, it holds all the information relative to the turn, game phases, players turn order, winning teams
+ * and others.
+ */
 public class CurrentTurnState
 {
     private String currentPlayer;
@@ -18,7 +23,9 @@ public class CurrentTurnState
     private boolean lastTurn;
     private CurrentGameState game;
 
-    /** Class constructor. Uses a HashMap to model in which order the players have to play for that turn */
+    /**
+     * Class constructor. Uses a HashMap to model in which order the players have to play for that turn
+     */
     public CurrentTurnState(CurrentGameState game)
     {
         this.turnOrder = new HashMap<>();
@@ -31,13 +38,18 @@ public class CurrentTurnState
         this.game = game;
     }
 
-    /** Iterates the Turn of the game */
+    /**
+     * Iterates the Turn of the game
+     */
     public void updateTurn()
     {
         turn++;
     }
 
-    /** Iterates the actions that have been taken in a single turn */
+    /**
+     * Iterates the actions that have been taken in a single Action Phase. Since it is called at the end of every move,
+     * it notifies the view to trigger a LightView update
+     */
     public void updateActionMoves()
     {
         actionMoves++;
@@ -45,6 +57,10 @@ public class CurrentTurnState
             game.notify(game.modelToJson());
     }
 
+    /**
+     * Iterates the actions that have been taken in a single Planning Phase. Since it is called at the end of every move,
+     * it notifies the view to trigger a LightView update
+     */
     public void updatePlanningMoves()
     {
         planningMoves++;
@@ -52,6 +68,10 @@ public class CurrentTurnState
             game.notify(game.modelToJson());
     }
 
+    /**
+     * At the end of a player's Action Phase, it resets all parameters to the original values. For similar reasons as above,
+     * it notifies the view
+     */
     public void resetMoves()
     {
         actionMoves = 0;
@@ -60,16 +80,18 @@ public class CurrentTurnState
             game.notify(game.modelToJson());
     }
 
-    /** Signals that the game is ended and defines the winning team
-     * @param t  the team that has won the game
+    /**
+     * Informs that the game is ended and proclaims a team as winner
+     * @param team  the team that has won the game
      */
-    public void updateWinner(ColTow t)
+    public void updateWinner(ColTow team)
     {
         gameEnded = true;
-        winningTeam = t;
+        winningTeam = team;
     }
 
-    /** Updates the turn order with an updated HashMap
+    /**
+     * Updates the turn order with an updated HashMap
      * @param map  the updated HashMap into which the players' turn order is stored
      */
     public void updateTurn(HashMap<String, Integer> map)
@@ -77,10 +99,28 @@ public class CurrentTurnState
         this.turnOrder = map;
     }
 
+    /**
+     * Updates the Game Phase with a given one
+     * @param newPhase the Phase the game is transitioning into
+     */
     public void updateGamePhase(GamePhase newPhase)
     {
         gamePhase = newPhase;
 
+    }
+
+    /**
+     * Sets the current turn as last turn of the game: it is triggered when the pouch empties or when a player ends his
+     * assistant cards
+     */
+    public void setLastTurn(){lastTurn = true;}
+
+    /**
+     * After each player's turn, updates the currentPlayer field accordingly
+     * @param player the player that has to become the currentPlayer
+     */
+    public void setCurrentPlayer(String player){
+        this.currentPlayer = player;
     }
 
     public String getCurrentPlayer(){
@@ -105,8 +145,5 @@ public class CurrentTurnState
         return turnOrder;
     }
 
-    public void setLastTurn(){lastTurn = true;}
-    public void setCurrentPlayer(String player){
-        this.currentPlayer = player;
-    }
+
 }

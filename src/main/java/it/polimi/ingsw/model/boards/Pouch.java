@@ -8,15 +8,21 @@ import it.polimi.ingsw.model.boards.token.Student;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Pouch contains all the students in the game (at least at the beginning of the setup phase). It attributes and methods
+ * to vary its behaviour based upon the game phase and, of course, methods to manipulate the list of student it instantiates
+ */
 public class Pouch
 {
     private ArrayList<Student> content;
     private boolean setup;
 
-    /** Class constructor. It creates two bags of students, and then puts them together; the Game Bag contains
-     the students to utilize during the game phase, while the setup Bag is to be used during the setup of the match.
-     Initially the boolean setup will be set as true, and it will be updated through the relative method by the
-     controller during the setup phase.
+    /**
+     * Class constructor. It creates two bags of students, and then puts them together; the Game Bag contains
+     * the students to utilize during the game phase, while the setup Bag is to be used during the setup of the match.
+     * Initially the boolean setup will be set as true, and it will be updated through the relative method by the
+     * controller during the setup phase.
+     * The setup bag will need to have exactly two students of each color in order to prepare the islands, according to the rules.
      */
     public Pouch()
     {
@@ -25,7 +31,6 @@ public class Pouch
         ArrayList<Student> setupBag = new ArrayList<>();
         ArrayList<Student> gameBag = new ArrayList<>();
 
-        //Fills the gameBag with 120 students, 24 of each color, and then shuffles it
         for(int i = 0; i < 5; i++)
         {
             for(int j = 0; j < 24; j++)
@@ -35,7 +40,6 @@ public class Pouch
         }
         Collections.shuffle(gameBag);
 
-        //Fills the setupBag with 2 students of each color to use in the setup phase, then shuffles it
         for(int i = 0; i < 5; i++)
         {
             for(int j = 0; j < 2; j++)
@@ -45,27 +49,27 @@ public class Pouch
         }
         Collections.shuffle(setupBag);
 
-        //Content represents the main bag: gameBag at the head, setupBag at the tail
         this.content.addAll(gameBag);
         this.content.addAll(setupBag);
     }
 
-    /** Removes a student from the pouch and returns it. It functions differently
-     in setupPhase and in gamePhase
+
+    /**
+     * Removes a student from the pouch and returns it. It functions differently
+     * in setupPhase and in gamePhase:
+     * if we are in setup, it extracts from the tail, so from the end of the setupBag
+     * if we are not in setup, the setup bag has been consumed, and the extractions will be done from the head
      * @return the student extracted from the pouch
      */
    public Student extractStudent()
    {
        int index;
 
-       /*If we are in the setup phase, the pouch will take students from the setupBag,
-       so taking them from the tail of the content */
        if(getSetup())
         {
             index = content.size() - 10;
          }
 
-       //If we are not in the setup phase, the pouch will take students from the head
        else
          {
            index = 0;
@@ -75,26 +79,23 @@ public class Pouch
        return student;
    }
 
+    /**
+     * Refills the pouch with the given list of students
+     * @param students a list of students
+     */
    public void refillBag(ArrayList<Student> students)
    {
        content.addAll(students);
        Collections.shuffle(content);
    }
 
-    /** Checks if pouch is empty, useful for certain end game shenanigans
-     * @return whether the pouch is empty
+    /**
+     * Sets the setup value to False when we're out of the setup phase
+     * @param bool  the boolean that tells us whether to set the setup field to true or false
      */
-   public boolean checkEmpty()
+   public void updateSetup(boolean bool)
    {
-       return content.isEmpty();
-   }
-
-    /** Sets the setup value to False when we're out of the setup phase
-     * @param b  the boolean that tells us whether to set the setup field to true or false
-     */
-   public void updateSetup(boolean b)
-   {
-       this.setup = b;
+       this.setup = bool;
    }
 
    public boolean getSetup()

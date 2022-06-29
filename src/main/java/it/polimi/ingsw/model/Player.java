@@ -6,7 +6,10 @@ import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import it.polimi.ingsw.model.cards.assistants.AssistantDeck;
 
-
+/**
+ * Player class contains everything needed to represent and manipulate a Player object, such as its schools, coins, assistants
+ * and other helpful information.
+ */
 public class Player
 {
   private String name;
@@ -18,22 +21,25 @@ public class Player
   private int maxMotherMovement;
   private int movementValue;
   private int value;
-  private boolean towerOwner;
+  private final boolean towerOwner;
 
 
-  /** Class constructor
-   * @param nome  the chosen nickname of the player
+  /**
+   * Class constructor. It instantiates the Player's attributes and in particular it gives a random value to the Value
+   * parameter at the start of the game: this ensures that the first player to play will be chosen randomly through existing
+   * methods in classes higher in the hierarchy.
+   * @param name  the chosen nickname of the player
    * @param col  the color of the towers assigned to the player
    * @param towerAmount  the amount of towers assigned to the player's school, depending on the game mode
    * @param wizard  the wizard chosen by the player
    * @param expertGame  the game mode chosen by the host: determines whether the player is assigned coins
    */
-  public Player(String nome, ColTow col, int towerAmount, Wizard wizard, boolean expertGame)
+  public Player(String name, ColTow col, int towerAmount, Wizard wizard, boolean expertGame)
   {
-    this.name = nome;
+    this.name = name;
     this.school = new School(col, towerAmount);
     this.towerOwner = towerAmount != 0;
-    this.assistantDeck = new AssistantDeck(wizard, nome);
+    this.assistantDeck = new AssistantDeck(wizard);
     this.currentAssistantCard = null;
     this.lastPlayedCard = null;
     this.movementValue = 0;
@@ -47,8 +53,9 @@ public class Player
   }
 
 
-  /** Plays the Assistant Card chosen by the player, by removing it from the Assistant Deck and by
-   updating the player's fields "Value" and "MaxMotherMovement" accordingly
+  /**
+   * Plays the Assistant Card chosen by the player, by removing it from the Assistant Deck and by
+   * updating the player's fields "Value" and "MaxMotherMovement" accordingly
    * @param cardPosition  the position of the chosen card into the Assistant Deck
    */
   public void chooseAssistantCard(int cardPosition)
@@ -58,8 +65,8 @@ public class Player
     value = currentAssistantCard.getValue();
   }
 
-  /** Removes the last played Assistant Card from the Current Assistant Card field and places it into the
-   Last Played Card field
+  /**
+   * Removes the last played Assistant Card from the Current Assistant Card field and places it into the Last Played Card field
    */
   public void discard()
   {
@@ -68,7 +75,9 @@ public class Player
     this.maxMotherMovement = 0;
   }
 
-  /** Calculates the amount of coins gained by the players in relation to the "Checkpoints" in his Dining Room
+  /**
+   * Calculates the amount of coins gained by the players in relation to the "Checkpoints" in his Dining Room. If there
+   * are coins to gain, it also updates the "Checkpoints" in the dining room
    * @return the amount of coins gained
    */
   public int gainCoin()
@@ -86,7 +95,8 @@ public class Player
       return gainedCoins;
   }
 
-  /** Updates the player's reserve of coins by adding the desired value to it
+  /**
+   * Updates the player's reserve of coins by adding the desired value to it
    * @param gain  the amount of coins that the player has gained or lost
    */
   public void updateCoins(int gain)
@@ -101,7 +111,8 @@ public class Player
       }
     }
 
-  /** Modifies the Maximum Mother Nature Movement by adding to it the desired value
+  /**
+   * Modifies the Maximum Mother Nature Movement by adding to it the desired value
    * @param movement  the desired amount used to increase or decrease the MaxMotherMovement field
    */
   public void updateMaxMotherMovement(int movement)

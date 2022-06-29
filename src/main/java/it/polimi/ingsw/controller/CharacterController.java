@@ -34,7 +34,8 @@ public class CharacterController
     }
 
 
-    /** Checks if the desired card can be picked, by comparing its ID with the cards in the CharacterDeck
+    /**
+     * Checks if the desired card can be picked, by comparing its ID with the cards in the CharacterDeck
      * @param game  an instance of the game
      * @param characterName  the type of the desired card
      * @param player  the player responsible for the action
@@ -53,8 +54,9 @@ public class CharacterController
     }
 
 
-    /** Checks if the effect of the desired card can be activated, by comparing the ID of the card with
-     the cards into the CurrentActiveCharacterCard list
+    /**
+     * Checks if the effect of the desired card can be activated, by comparing the ID of the card with
+     * the cards into the CurrentActiveCharacterCard list
      * @param game  an instance of the game
      * @param characterName the type of the desired card
      * @return true if the card is present, false if not
