@@ -24,7 +24,7 @@ public class MotherNature
      * @param value  movement value
      * @param maxIdIsland  highest ID of all the islands
      */
-    public void move(int value,int maxIdIsland)
+    public void move(int value, int maxIdIsland)
     {
         int temp = idPosition + value;
         if(temp > maxIdIsland)

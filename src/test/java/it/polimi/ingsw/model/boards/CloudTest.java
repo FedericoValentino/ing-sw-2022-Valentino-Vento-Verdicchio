@@ -49,7 +49,7 @@ public class  CloudTest {
         Student student = c.getStudents().get(1);
         assertEquals(student.getColor(), st2.getColor());
         //now i want to verify the try catch into the getStudent
-        assertNull(c.getStudents().get(70));
+        assertNull(c.getStudents().get(2));
     }
 
     @Test

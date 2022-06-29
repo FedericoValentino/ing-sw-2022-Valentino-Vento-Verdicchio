@@ -2,17 +2,17 @@ package it.polimi.ingsw.model;
 
 //URGENT
 //TODO game testing (especially 3 and ESPECIALLY 4 players)
-//TODO somehow islands (sometimes, hardly replicable) do not update. Very bad issue   !!could be fixed!!
-//TODO hints on turn end (3 Players)    !!could be fixed!!
-//TODO hints bug sometimes upon character usage     !!could be fixed!!
-//TODO test school checkpoints when using minstrel
-//TODO Testing of Knight, Centaur, GHerbs
+//TODO Herald throws a strange exception
 //TODO Documentation!!
-//TODO Update network protocol
+//TODO reset first view to ensure that you can play again from main menu
+
+//less urgent
+//TODO test GHerbs, Centaur and Knight in CLI
 
 //Less less urgent
 //TODO aesthetic of GUI in general
 //TODO CLI school information appears not aligned
+//TODO convert name with spaces to name with underscore
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
