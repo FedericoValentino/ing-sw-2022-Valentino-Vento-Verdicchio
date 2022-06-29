@@ -10,6 +10,9 @@ import org.fusesource.jansi.AnsiConsole;
 
 import java.util.Arrays;
 
+/**
+ * Class CardPrinters hosts all the methods necessary to print to screen the various card content contained in the view
+ */
 public class CardPrinters extends PrinterCLI
 {
     /** Class constructor; through the parent class constructor, it grants access to the view

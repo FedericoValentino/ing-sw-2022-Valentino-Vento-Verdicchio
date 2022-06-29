@@ -20,7 +20,10 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-
+/**
+ * Class InputParser hosts all the methods necessary to parse the input obtained from the CLI in order to then either show
+ * the player parts from the view or to send messages to the server
+ */
 public class InputParser
 {
     private Scanner parser = new Scanner(System.in).useDelimiter("\\n");

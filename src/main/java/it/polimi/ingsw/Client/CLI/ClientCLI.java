@@ -23,6 +23,9 @@ import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * ClientCLI is the main class for the CLI client, it hosts methods to handle the reception of messages and to get input from keyboard.
+ */
 public class ClientCLI implements ClientView, InformationGenerator
 {
     private ServerConnection main;
@@ -198,6 +201,10 @@ public class ClientCLI implements ClientView, InformationGenerator
         }
     }
 
+    /**
+     * Method run is the main method of the CLI. after getting username and IP the method creates all the structures necessary
+     * for the CLI to work properly and starts the ListenerCLI thread
+     */
     @Override
     public void run(){
         AnsiConsole.systemInstall();

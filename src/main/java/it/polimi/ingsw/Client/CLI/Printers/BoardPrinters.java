@@ -9,6 +9,9 @@ import org.fusesource.jansi.AnsiConsole;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Class BoardPrinters hosts all the methods necessary to print to screen the various game boards contained in the view
+ */
 public class BoardPrinters extends PrinterCLI
 {
 

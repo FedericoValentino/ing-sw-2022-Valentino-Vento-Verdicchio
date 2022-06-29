@@ -7,6 +7,9 @@ import org.fusesource.jansi.AnsiConsole;
 
 import java.util.Arrays;
 
+/**
+ * Class SchoolPrinters hosts all the methods necessary to print to screen the school game board
+ */
 public class SchoolPrinter extends PrinterCLI
 {
     /** Class constructor; through the parent class constructor, it grants access to the view

@@ -9,7 +9,9 @@ import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import org.fusesource.jansi.AnsiConsole;
 
 import java.util.ArrayList;
-
+/**
+ * Class InfoPrinters hosts all the methods necessary to print to screen the various infos obtained from the view
+ */
 public class InfoPrinters extends PrinterCLI
 {
 

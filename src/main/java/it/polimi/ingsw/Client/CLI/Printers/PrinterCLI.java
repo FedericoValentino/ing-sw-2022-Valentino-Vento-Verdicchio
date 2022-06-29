@@ -8,6 +8,9 @@ import org.fusesource.jansi.AnsiConsole;
 
 import java.util.ArrayList;
 
+/**
+ * Abstract Class PrinterCLI hosts all the methods and attributes necessary for the other printer classes
+ */
 public abstract class PrinterCLI
 {
     public static final String ANSI_RESET = "\u001B[0m";

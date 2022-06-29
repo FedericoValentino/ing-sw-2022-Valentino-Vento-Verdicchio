@@ -1,6 +1,8 @@
 package it.polimi.ingsw.Client.CLI;
 
-
+/**
+ * Class ListenerCLI handles the hard task of listening to various server messages
+ */
 public class ListenerCLI implements Runnable
 {
     private ClientCLI client;
