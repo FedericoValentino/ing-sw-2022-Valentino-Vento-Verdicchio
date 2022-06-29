@@ -3,7 +3,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="mainIslandBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandsController">
+<AnchorPane fx:id="mainIslandBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandsController">
    <children>
       <AnchorPane fx:id="cloudsAnchorPane" layoutX="285.0" layoutY="165.0" prefHeight="300.0" prefWidth="300.0">
          <children>

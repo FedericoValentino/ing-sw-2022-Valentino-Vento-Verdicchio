@@ -2,11 +2,17 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="900.0" minWidth="1600.0" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: lightblue;" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.MainBoardController">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="900.0" minWidth="1600.0" prefHeight="900.0" prefWidth="1600.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.GUI.Controllers.MainBoardController">
    <children>
+      <ImageView fitHeight="902.0" fitWidth="1616.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/background.png" />
+         </image>
+      </ImageView>
       <HBox fx:id="mainHBox" layoutX="50.0" layoutY="50.0" prefHeight="800.0" prefWidth="1500.0">
          <children>
             <VBox fx:id="VBox1" prefHeight="850.0" prefWidth="275.0">
@@ -23,9 +29,9 @@
             </VBox>
             <VBox fx:id="VBox2" prefHeight="200.0" prefWidth="950.0">
                <children>
-                  <AnchorPane fx:id="islandAnchorPane" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: white;">
+                  <AnchorPane fx:id="islandAnchorPane" prefHeight="700.0" prefWidth="950.0">
                      <children>
-                        <AnchorPane fx:id="cloudsAnchorPane" layoutX="350.0" layoutY="202.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: lightblue;">
+                        <AnchorPane fx:id="cloudsAnchorPane" layoutX="350.0" layoutY="202.0" prefHeight="300.0" prefWidth="300.0">
                            <children>
                               <Pane fx:id="pouch" layoutX="127.0" layoutY="129.0" prefHeight="42.0" prefWidth="45.0" style="-fx-background-color: red;" />
                            </children>

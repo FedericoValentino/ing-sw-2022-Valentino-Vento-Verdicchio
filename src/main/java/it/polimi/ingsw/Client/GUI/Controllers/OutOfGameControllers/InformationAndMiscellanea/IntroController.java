@@ -3,6 +3,7 @@ package it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationA
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.DescriptionController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.LoginController;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,6 +18,8 @@ public class IntroController extends Controller {
     {
         Stage stage=(Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         stage.close();
+        Platform.exit();
+        System.exit(0);
     }
 
     /**This method is called when the Start button is pressed and use the loadNewScreen method, inherited from the
