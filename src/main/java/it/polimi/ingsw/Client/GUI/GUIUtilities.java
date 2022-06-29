@@ -30,6 +30,11 @@ public final class GUIUtilities
         }
     }
 
+    /**
+     * Choose the correct path according to the color that receive as input
+     * @param color is the tower Color passed
+     * @return the path as a String
+     */
     public static String getSchoolColorPath(ColTow color)
     {
         switch(color)
@@ -45,6 +50,13 @@ public final class GUIUtilities
         }
     }
 
+
+    /**
+     * @param matrix is the GridPane from where we wanto to extract a particular cell
+     * @param column is the column where there is the node that it has to return
+     * @param row is the row where there is the node that it has to return
+     * @return the cell as a Node element
+     */
     public static Node getCellFromGridPane(GridPane matrix, int column, int row)
     {
         for(Node N : matrix.getChildren())

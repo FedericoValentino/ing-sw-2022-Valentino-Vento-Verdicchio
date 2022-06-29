@@ -122,9 +122,9 @@ public class ClientGUI implements ClientView, InformationGenerator
      *                          -WIZARD it shows the Wizard scene where the user choose the wizard, according to which is
      *                                  available;
      *                          -GAME_INFO it shows the ready scene where the user can set the ready status only when
-     *                                     it's effectively ready to start the game. It also end the setup phase setting the
+     *                                     it's effectively ready to start the game. It also ends the setup phase setting the
      *                                     setupState to false;
-     *                          -GAME_START it shows the waiting scene, that will replaced when a new message from
+     *                          -GAME_START it shows the waiting scene, that will be replaced when a new message from
      *                                     the server is received;
      *                          -REJECT it shows the disconnect scene in which the player must return to the intro scene
      *                                  clicking the Menù button.
@@ -216,11 +216,11 @@ public class ClientGUI implements ClientView, InformationGenerator
     /**
      * This method take the answer object and based on the type of it choose the right instructions.
      * If the type is: ERROR, it shows the error;
-     *                 VIEW, it replace the content of the current view with the one that is stored in the answer.
+     *                 VIEW, it replaces the content of the current view with the one that is stored in the answer.
      *                       If it's the first time that receive this message it also use the Platform.runLater method
      *                       to replace the scene with the mainBoard one and then call all the initial setup methods
      *                       contained in all the controller linked to a part of the mainBoard scene;
-     *                 WIN, it disconnect the client showing the win scene and calling the setup method of the related
+     *                 WIN, it disconnects the client showing the win scene and calling the setup method of the related
      *                      controller.
      * @param answer is the object that it's received from the server.
      */
@@ -284,7 +284,7 @@ public class ClientGUI implements ClientView, InformationGenerator
 
     /**
      * This method try to establish the connection to the server identified by the IP parameter and if it's all correct
-     * it also create and start a new Listener GUI. If there are IOException it replaces the current scene with the
+     * it also creates and start a new Listener GUI. If there are IOException it replaces the current scene with the
      * intro one.
      * @param nickname is the name choose by the player
      * @param IP is the String where the player has specified the IP destination

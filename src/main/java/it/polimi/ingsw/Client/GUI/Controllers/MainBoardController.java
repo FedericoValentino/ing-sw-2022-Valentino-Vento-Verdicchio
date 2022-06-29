@@ -71,11 +71,12 @@ public class MainBoardController extends Controller {
     private LightView view;
 
 
-    /**
-     * This method it's called when the mainBoardController is set for the first time.
-     * Firstly it loads the island's fxml from the specified path into the FXMLLoader object called loader.
-     * Then it replaces the content of the islandAnchorPane with the loader's one.
-     * Lastly it creates the reference to the IslandController, and it calls the setup method specified in it.
+    /**This method it's called when the mainBoardController is set for the first time.
+     *  Firstly it loads the island's fxml file from the specified path into the FXMLLoader object called loader.
+     *  Then it replaces the content of the islandAnchorPane with the loader's one.
+     *  Lastly it creates the reference to the IslandController, and it calls the setup method specified in it.
+     * @param view is used to invoke the setup method of the IslandController
+     * @throws IOException to resolve possible problems with the load() method
      * **/
     public void initialSetupIsland(LightView view) throws IOException {
         String path= "/Client/GUI/Controllers/Islands.fxml";
@@ -86,12 +87,13 @@ public class MainBoardController extends Controller {
         contr.setup(islandAnchorPane, view);
     }
 
-    /**
-     * This method it's called when the mainBoardController is set for the first time.
-     * Firstly it loads the Assistant fxml from the specified path into the FXMLLoader object called loader.
-     * Then it replaces the content of the assistantCardAnchorPane with the loader's one.
-     * Lastly it creates the reference to the AssistantCardController, store the value of the current player into the
+    /**This method it's called when the mainBoardController is set for the first time.
+     *  Firstly it loads the Assistant fxml file from the specified path into the FXMLLoader object called loader.
+     *  Then it replaces the content of the assistantCardAnchorPane with the loader's one.
+     *  Lastly it creates the reference to the AssistantCardController, store the value of the current player into the
      * local variable called player and it calls the setup method specified in it.
+     * @param teams contains all the team in the game and it' used in the setup of the assistant's card
+     * @throws IOException to resolve possible problems with the load() method
      * **/
    public void initialSetupAssistantCard(ArrayList<LightTeam> teams) throws IOException {
         String path = "/Client/GUI/Controllers/Assistants.fxml";
@@ -104,6 +106,14 @@ public class MainBoardController extends Controller {
 
     }
 
+    /**This method it's called when the mainBoardController is set for the first time.
+     *  Firstly it loads the Character fxml file from the specified path into the FXMLLoader object called loader.
+     *  Then it replaces the content of the characterAnchorPane with the loader's one.
+     *  Lastly it creates the reference to the CharacterCardsController and it calls the setup method specified in it.
+     * @param charDeck contains the available character not chosen yet
+     * @param activeDeck contains the character card that have been already used in the game
+     * @throws IOException to resolve possible problems with the load() method
+     */
     public void initialSetupCharacterCard(LightCharDeck charDeck, LightActiveDeck activeDeck) throws IOException
     {
         String path = "/Client/GUI/Controllers/Character.fxml";
@@ -115,13 +125,20 @@ public class MainBoardController extends Controller {
         characterController.setup(characterAnchorPane, charDeck, activeDeck, this);
     }
 
+    /**This method it's called when the mainBoardController is set for the first time.
+     *  Firstly it loads the MineSchool fxml file from the specified path into the FXMLLoader object called loader.
+     *  Then it replaces the content of the mineSchoolAnchorPane with the loader's one. Then it also adds a text.
+     *  Lastly it creates the reference to the MineSchoolController, takes the player name and it calls the setup method
+     * specified in it.
+     * @throws IOException to resolve possible problems with the load() method
+     */
     public void initialSetupMineSchool() throws IOException {
         String path= "/Client/GUI/Controllers/MineSchool.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         mineSchoolAnchorPane.getChildren().clear();
         mineSchoolAnchorPane.getChildren().add(0,loader.load());
 
-        //wrapping the text "Your school" in a hbox and add it to the main area
+        //wrapping the text "Your school" in a hbox and add it to the main area (over the fxml preloaded)
         HBox textHbox=new HBox();
         textHbox.setStyle("-fx-border-color: black; -fx-background-color: white; -fx-padding: 2,0,2,10");
         textHbox.getChildren().add(new Text("Your School"));
@@ -133,6 +150,14 @@ public class MainBoardController extends Controller {
         controller.setup(view, player, mineSchoolAnchorPane);
     }
 
+    /**This method it's called when the mainBoardController is set for the first time.
+     *  Firstly it loads the MineSchool fxml file from the specified path into the FXMLLoader object called loader.
+     *  Then it replaces the content of the mineSchoolAnchorPane with the loader's one.
+     *  Lastly it creates the reference to the MineSchoolController and it calls the setup method
+     *specified in it.
+     * @param view contain the view used in the setup call
+     * @throws IOException to resolve possible problems with the load() method
+     */
     public void initialSetupPropaganda(LightView view) throws IOException
     {
         String path = "/Client/GUI/Controllers/Propaganda.fxml";
@@ -144,6 +169,16 @@ public class MainBoardController extends Controller {
         propagandaController.setup(view);
     }
 
+    /**This method it's called when the mainBoardController is set for the first time.
+     *  Firstly it loads the OtherSchool fxml file from the specified path into the FXMLLoader object called loader.
+     *  Secondly for each player it creates a button with his name and set its id as "pSchool"+c
+     *  Thirdly it replaces the content of the otherSchoolAnchorPane with the loader's one and with the buttons to switch
+     * from a player to another one.
+     *  Lastly it creates the reference to the OtherSchoolController and it calls the setup method
+     *specified in it.
+     * @param view  contain the view used in the setup call
+     * @throws IOException to resolve possible problems with the load() method
+     */
     public void initialSetupOtherSchool(LightView view) throws IOException {
 
         String path= "/Client/GUI/Controllers/OtherSchool.fxml";
@@ -178,6 +213,14 @@ public class MainBoardController extends Controller {
         controller.setup(view, otherSchoolAnchorPane);
     }
 
+    /**This method show the description and a greater image of the character (it's called when we click on the character pane)
+     *  Firstly it chooses the charDesctiption and the charImage panes where it has to show the details.
+     *  Secondly it sets the right image and description
+     *  Thirdly it finds the backButton by id and set dynamically its function when it's pressed
+     *  Lastly it set all the graphics elements added as visible
+     * @param card is the character selected
+     * @param path is the path where we take the corresponding card
+     */
     public void displayCharInfo(LightCharacterCard card, String path)
     {
         Pane charDescription = (Pane) (mainAnchorPane.getChildren().stream().filter(node -> node.getId().equals("CharDescription")).collect(Collectors.toList()).get(0));
@@ -205,6 +248,9 @@ public class MainBoardController extends Controller {
         charDescription.setMouseTransparent(false);
     }
 
+    /**This method hide the character description pane set visible in the previous method (displayCharInfo method)
+     * @param mouseEvent is the event generated when the user push the back button
+     */
     public void hideCharacterInfo(MouseEvent mouseEvent)
     {
         Pane charDescription = (Pane) mainAnchorPane.getChildren().stream().filter(node -> node.getId().equals("CharDescription")).collect(Collectors.toList()).get(0);
@@ -213,6 +259,18 @@ public class MainBoardController extends Controller {
         charDescription.setMouseTransparent(true);
     }
 
+    /**This method show a greater image of the assistant card played in the current turn
+     * (it's called when we click on the activate assistant button)
+     * If it has to show the pane (hide is false) it creates a pane cell in which it loads the name of the player that
+     * has played that card and the corresponding image.
+     * Else it sets not visible the pane
+     *
+     * @param path where we can load the image of the assistant
+     * @param column is the column of the grid pane where there is the node in which it has to insert the image and text
+     * @param row is the row of the grid pane where there is the node in which it has to insert the image and text
+     * @param player is the name of the player that played the card
+     * @param hide is the boolean that says if we have to hide the PlayedAssistants or not
+     */
     public void showPlayedAssistants(String path, int column, int row, LightPlayer player, boolean hide)
     {
         if(!hide)
@@ -240,6 +298,12 @@ public class MainBoardController extends Controller {
     }
 
 
+    /**This method set visible the effect panel of the character card that the user wanto to play.
+     * Firstly it changes the text, the input, the integer and sets the method on click for the backButton.
+     * Then according to the type of the cards it:
+     *
+     * @param card
+     */
     public void showCharacterEffectPanel(LightCharacterCard card) {
         EffectPane.setMouseTransparent(false);
         EffectPane.setVisible(true);

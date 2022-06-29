@@ -8,7 +8,7 @@
       <AnchorPane fx:id="cloudsAnchorPane" layoutX="285.0" layoutY="165.0" prefHeight="300.0" prefWidth="300.0">
          <children>
             <Pane fx:id="pouch" layoutX="127.0" layoutY="129.0" prefHeight="42.0" prefWidth="45.0">
-               <children>  
+               <children>
                   <ImageView fitHeight="49.0" fitWidth="53.0" layoutX="-5.0" layoutY="-2.0">
                      <image>
                         <Image url="@../Images/pouch.png" />
@@ -29,7 +29,6 @@
       <AnchorPane fx:id="is6" layoutX="385.0" layoutY="523.0" />
       <AnchorPane fx:id="is7" layoutX="547.0" layoutY="523.0" />
       <AnchorPane fx:id="is4" layoutX="706.0" layoutY="433.0" />
-      <AnchorPane fx:id="is7" layoutX="209.0" layoutY="523.0" />
       <AnchorPane fx:id="is8" layoutX="69.0" layoutY="397.0" />
       <AnchorPane fx:id="is9" layoutX="-18.0" layoutY="250.0" />
       <AnchorPane fx:id="is10" layoutX="28.0" layoutY="81.0" />
