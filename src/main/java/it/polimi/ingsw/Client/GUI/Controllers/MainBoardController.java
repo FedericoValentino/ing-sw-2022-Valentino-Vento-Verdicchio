@@ -300,9 +300,14 @@ public class MainBoardController extends Controller {
 
     /**This method set visible the effect panel of the character card that the user wanto to play.
      * Firstly it changes the text, the input, the integer and sets the method on click for the backButton.
-     * Then according to the type of the cards it:
-     *
-     * @param card
+     * Then according to the type of the cards it choose what to show:
+     *  -NONE: send a message to the server to activate the card and stop
+     *  -INTEGER_1: called the setup for princess or for the other types and then send a message to the server to activate
+     *              the card
+     *  -INTEGER_2: called the setup for minstrel or jester or for the other types and then send a message to the server to activate
+     *              the card, but only if the user chose all the students from dining and card
+     *  -COLOR: call the color setup method and sets the method to handle the click on the playButton
+     * @param card is used because it contains the name and the type of the card
      */
     public void showCharacterEffectPanel(LightCharacterCard card) {
         EffectPane.setMouseTransparent(false);
@@ -404,6 +409,10 @@ public class MainBoardController extends Controller {
         }
     }
 
+    /**This method sets the character effect pane with the student on the card and also sets the method to
+     * handle the selection of the students.
+     * @param card is used because it contains the students that can be taken
+     */
     public void PrincessSetup(LightCharacterCard card)
     {
         input1.getChildren().add(new Text("Students on Card"));
@@ -431,6 +440,9 @@ public class MainBoardController extends Controller {
         }
     }
 
+    /**This method sets the character pane with the 5 colors available (showing a pane with the image of a student of
+     * each color) and sets also the method to handle the selection
+     */
     public void ColorSetup()
     {
         input1.getChildren().add(new Text("Choose a color"));
@@ -450,6 +462,9 @@ public class MainBoardController extends Controller {
         }
     }
 
+    /**This method setup the character pane effect (of the character's type: integer1) adding a text, the islands choice box
+     * and sets the method to run if the user select the island
+     */
     public void Integer1Setup()
     {
         Text hint = new Text();
@@ -469,6 +484,10 @@ public class MainBoardController extends Controller {
         input1.getChildren().add(box);
     }
 
+    /**This method setup the character pane effect (of the character's type: integer2) adding a text, the islands choice box
+     * and the student that can be selected by the user because they are placed on the card.
+     * It also set the method to run if the user select the island and the students
+     */
     public void Integer2Setup(LightCharacterCard card)
     {
         //setup islands
@@ -511,6 +530,11 @@ public class MainBoardController extends Controller {
     }
 
 
+    /**This method sets the character effect pane with the student on the card, the students in the entrance and
+     * sets the method to handle the selection of the students
+     * @param card is used because it contains the students that can be taken
+     * @param player is used because it contains the students in the dining room
+     */
     public void JesterSetup(LightCharacterCard card, LightPlayer player)
     {
         input1.getChildren().add(new Text("Students on card"));
@@ -561,11 +585,16 @@ public class MainBoardController extends Controller {
     }
 
 
+    /**This method setups the student choice of the ministrel. In particular it sets all the student that can be moved
+     * and sets the method to run if the user select the student. Then it calls the setDiningRoomColors to show also the
+     * students in the dining that you can swap with the selected before.
+     * @param player is used because it contains the students in the dining room
+     */
     public void MinstrelSetup(LightPlayer player)
     {
         final int[] diningRoom = player.getSchool().getDiningRoom().clone();
         //setup students
-        input1.getChildren().add(new Text("Students in your entrance"));
+        input1.getChildren().add(new Text("Students in your entrance   "));
         int studentPosition = 0;
         for(Student student : player.getSchool().getEntrance())
         {
@@ -591,7 +620,10 @@ public class MainBoardController extends Controller {
     }
 
 
-
+    /**This method add the selected student to the integer1 (and if the user doesn't select all the 3 students
+     * (or colors in this case is equivalent) it shows the colors already selected and ask to select other colors)
+     * @param event used to add the effect to the clicked pane
+     */
     public void minstrelColorChoice(MouseEvent event)
     {
         LightPlayer player = Utilities.findPlayerByName(view, GuiMainStarter.getClientGUI().getServerConnection().getNickname());
@@ -610,6 +642,10 @@ public class MainBoardController extends Controller {
         }
     }
 
+    /**This method is called by ministrel character and it adds the studentPane available to swap with the student in
+     * the entrance
+     * @param dining is used to set the player that can be switch to the entrance
+     */
     public void setDiningRoomColors(int[] dining)
     {
         for(int i = 0; i < 5; i++)
@@ -627,6 +663,9 @@ public class MainBoardController extends Controller {
         }
     }
 
+    /**This method set visible the error pane and display the error in input
+     * @param error is the String that we have to display
+     */
     public void DisplayError(String error)
     {
         ErrorDisplay.setVisible(true);
@@ -635,6 +674,9 @@ public class MainBoardController extends Controller {
     }
 
 
+    /**This method update the view and sets not visible the errors
+     * @param view is the new lightView
+     */
     public void setup(LightView view)
     {
         this.view = view;
