@@ -17,6 +17,9 @@ public class LightIslands extends Observable
 
     public void updateIslands(LightIslands light)
     {
+        islands.clear();
+        islands.addAll(light.getIslands());
+        /*
         int temp = 0;
         for(int i = 0; i < light.getIslands().size(); i++)
         {
@@ -27,6 +30,7 @@ public class LightIslands extends Observable
         {
             islands.remove(islands.size()-1);
         }
+        */
         notifyLight(this);
     }
 
