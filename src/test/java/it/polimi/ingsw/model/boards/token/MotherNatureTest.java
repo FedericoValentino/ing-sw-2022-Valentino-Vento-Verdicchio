@@ -8,14 +8,32 @@ import static org.junit.Assert.*;
 public class MotherNatureTest {
     MotherNature mother= new MotherNature();
 
+    /**
+     * This method tests the movement of mother nature (problem: mother nature initial position is random, so
+     * to do the test I used a updatePositionAfterMerge that is a function that set the position of MN directly)
+     */
     @Test
     public void testMove()
     {
-        mother.move(123,13);
+        int posIniziale= mother.getPosition();
+        int value;
+        int maxIslands;
 
-        mother.move(5,6);
+        mother.updatePositionAfterMerge(0);
 
-        mother.move(9,11);
+        value=5; maxIslands=6;
+        mother.move(value,maxIslands);
+        assertEquals(5,mother.getPosition());
+
+        mother.updatePositionAfterMerge(10);
+        value=9; maxIslands=11;
+        mother.move(value,maxIslands);
+        assertEquals(7,mother.getPosition());
+
+        mother.updatePositionAfterMerge(0);
+        value=9; maxIslands=9;
+        mother.move(value,maxIslands);
+        assertEquals(9,mother.getPosition());
     }
 
     @Test

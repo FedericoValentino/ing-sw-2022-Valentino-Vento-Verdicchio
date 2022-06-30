@@ -6,7 +6,6 @@ import it.polimi.ingsw.model.CurrentGameState;
 import org.junit.Test;
 
 public class CharacterDeckTest {
-    CurrentGameState game = new CurrentGameState(2,true);
     CharacterDeck cd = new CharacterDeck();
     CharacterCard cc;CharacterCard cc1;
 
@@ -22,11 +21,4 @@ public class CharacterDeckTest {
         assertEquals(cc1,cc);
         assertEquals(cc.getBaseCost()+1,cc.getCurrentCost());
     }
-
-    @Test
-    public void testGetCard() {
-        //assertEquals(cc,cd.getCard(0));
-    }
-
-
 }

@@ -81,9 +81,9 @@ public class CurrentGameStateTest {
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
 
         //assert to verify that any professor is given before calling the method
-        assertTrue(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[0]);
-        assertTrue(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[2]);
-        assertTrue(cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().getProfessorTable()[1]);
+        assertFalse(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[0]);
+        assertFalse(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[2]);
+        assertFalse(cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().getProfessorTable()[1]);
 
         cg1.giveProfessors(false);
 

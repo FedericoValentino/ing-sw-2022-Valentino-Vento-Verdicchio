@@ -5,6 +5,9 @@ import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 
 public final class TestUtilities
 {
+    // Theese are utilities methods to make easier and faster the coding of some methods
+
+
     public static void setupTestFor2(MainController controller)
     {
         controller.addPlayer(0, "jack", 8, Wizard.LORD );
