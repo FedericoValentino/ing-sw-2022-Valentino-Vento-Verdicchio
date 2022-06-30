@@ -14,7 +14,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
 
-
+/**
+ * Class LightView contains mock objects used to mimic those of the model. Each object contains
+ */
 public class LightView extends Observable
 {
     private Boolean firstUpdate = true;
@@ -33,7 +35,7 @@ public class LightView extends Observable
     }
 
     /**
-     * Method parse parses the ViewMessage containing the JSON serialization of the game model
+     * The method parses the ViewMessage containing the JSON serialization of the game model
      */
     public void parse(ViewMessage view) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();

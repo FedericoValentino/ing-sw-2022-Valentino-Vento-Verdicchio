@@ -122,7 +122,7 @@ public class Islands extends Board {
   }
 
   /**
-   * Method getMaxCol determines the color of the team with the highest number of towers built
+   * Method getMaxCol determines the color of the team with the highest number of towers built and sets the winner
    * @param Teams  the arraylist of the teams present in the game
    * @return the color of the team with the highest number of towers built
    */

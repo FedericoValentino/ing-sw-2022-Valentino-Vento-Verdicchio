@@ -50,7 +50,7 @@ public class ClientCLI implements ClientView, InformationGenerator
                 break;
             case GAME_NFO_REQ:
                 GameMode gm = new GameMode();
-                System.out.println("First Client, what gamemode would you like to play?");
+                System.out.println("First Client, which game mode would you like to play?");
                 System.out.println("Player number?[2][3][4]");
                 gm.setMaxPlayers(stdin.integerParser());
                 while(gm.getMaxPlayers() > 4 || gm.getMaxPlayers() < 2)

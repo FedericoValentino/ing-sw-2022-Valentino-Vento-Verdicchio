@@ -5,6 +5,7 @@ import it.polimi.ingsw.Client.LightView.LightTurnState;
 import it.polimi.ingsw.Client.LightView.LightUtilities.InternalMessage;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
+import it.polimi.ingsw.Server.Answers.SetupAnswers.SETUPANSWERTYPE;
 import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 
 import java.util.ArrayList;
@@ -24,19 +25,19 @@ public interface InformationGenerator
             case WRONG_INPUT:
                 return new InternalMessage("Wrong Input or already taken");
             case WRONG_PHASE:
-                return new InternalMessage("Wrong Phase you are in " + view.getCurrentTurnState().getGamePhase());
+                return new InternalMessage("Wrong Phase! You are in " + view.getCurrentTurnState().getGamePhase());
             case MOTHER_ERROR:
                 return new InternalMessage("You moved Mother Nature too much!");
             case CARD_ERROR:
-                return new InternalMessage("The Card you choose couldn't be played");
+                return new InternalMessage("The Card you chose couldn't be played");
             case CLOUD_ERROR:
                 if(view.getCurrentTurnState().getGamePhase().equals(GamePhase.PLANNING))
                 {
-                    return new InternalMessage("Wrong input or you choose a non empty cloud!");
+                    return new InternalMessage("Wrong input or you chose a non empty cloud!");
                 }
                 else if(view.getCurrentTurnState().getGamePhase().equals(GamePhase.ACTION))
                 {
-                    return new InternalMessage("Wrong input or you choose an empty cloud!");
+                    return new InternalMessage("Wrong input or you chose an empty cloud!");
                 }
             case WRONG_TURN:
                 return new InternalMessage("Not your Turn!");
@@ -83,16 +84,17 @@ public interface InformationGenerator
                 if (threePlayerGame)
                     return new InternalMessage("Move Mother Nature");
                 else
-                    return new InternalMessage("Choose an island to refill your entrance");
+                    return new InternalMessage("Choose a cloud to refill your entrance");
             } else if (state.getActionMoves() == 5) {
                 if (threePlayerGame)
-                    return new InternalMessage("Choose an island to refill your entrance");
+                    return new InternalMessage("Choose a cloud to refill your entrance");
                 else
                     return new InternalMessage("End your turn");
             }
         }
         return new InternalMessage("");
     }
+
 
 
 }
