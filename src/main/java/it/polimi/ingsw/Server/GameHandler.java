@@ -61,7 +61,14 @@ public class GameHandler extends Thread implements Observer
         if(Checks.isLastTurn(mainController.getGame()) && Checks.isGamePhase(mainController.getGame(), GamePhase.ACTION))
         {
             mainController.selectWinner();
-            socket.sendAnswer(new SerializedAnswer(new WinMessage(mainController.getGame().getCurrentTurnState().getWinningTeam() + "is the Winner!")));
+            if(mainController.getGame().getCurrentTurnState().getWinningTeam() != null)
+            {
+                currentMatch.announceWinner(mainController.getGame().getCurrentTurnState().getWinningTeam() + "is the Winner!");
+            }
+            else
+            {
+                currentMatch.announceWinner("Game ended in a tie");
+            }
             try
             {
                 socket.getClient().close();
@@ -78,7 +85,6 @@ public class GameHandler extends Thread implements Observer
             mainController.updateTurnState();
             mainController.determineNextPlayer();
         }
-
     }
 
     /**
@@ -163,8 +169,18 @@ public class GameHandler extends Thread implements Observer
         switch(message.type)
         {
             case CLOUD_CHOICE:
-                if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type) && Checks.canCloudBeFilled(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex())) {
-                    mainController.getPlanningController().drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
+                if (MovesChecks.isExpectedPlanningMove(mainController.getGame(), message.type) && Checks.canCloudBeFilled(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex()))
+                {
+                    if(Checks.isPouchAvailable(mainController.getGame()))
+                    {
+                        mainController.getPlanningController().drawStudentForClouds(mainController.getGame(), ((DrawFromPouch) message).getCloudIndex());
+                    }
+                    else
+                    {
+                        //TODO cambiare in metodo di controller
+                        mainController.getGame().getCurrentTurnState().updatePlanningMoves();
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.EMPTY_POUCH)));
+                    }
                 }
                 else
                 {
@@ -234,15 +250,25 @@ public class GameHandler extends Thread implements Observer
         {
             case STUD_MOVE:
                 if (MovesChecks.isExpectedActionMove(mainController.getGame(), mainController.getPlayers(), message.type)) {
-                    if (((MoveStudent) message).isToIsland()) {
-                        mainController.getActionController()
-                                .placeStudentToIsland(((MoveStudent) message).getEntrancePos(),
-                                        ((MoveStudent) message).getIslandId(),
-                                        mainController.getGame());
-                    } else {
-                        mainController.getActionController()
-                                .placeStudentToDiningRoom(((MoveStudent) message).getEntrancePos(),
-                                        mainController.getGame());
+                    if(Checks.isDestinationAvailable(mainController.getGame(), mainController.getCurrentPlayer(),
+                            ((MoveStudent) message).getEntrancePos(),
+                            ((MoveStudent) message).isToIsland(),
+                            ((MoveStudent) message).getIslandId()))
+                    {
+                        if (((MoveStudent) message).isToIsland()) {
+                            mainController.getActionController()
+                                    .placeStudentToIsland(((MoveStudent) message).getEntrancePos(),
+                                            ((MoveStudent) message).getIslandId(),
+                                            mainController.getGame());
+                        } else {
+                            mainController.getActionController()
+                                    .placeStudentToDiningRoom(((MoveStudent) message).getEntrancePos(),
+                                            mainController.getGame());
+                        }
+                    }
+                    else
+                    {
+                        socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.STUD_MOVE_ERROR)));
                     }
                 }
                 break;
@@ -319,7 +345,7 @@ public class GameHandler extends Thread implements Observer
      */
     public void messageHandler(StandardActionMessage message)
     {
-        if(socket.getNickname().equals(mainController.getCurrentPlayer()))
+        if(Checks.isCurrentPlayer(socket.getNickname(), mainController.getCurrentPlayer()))
         {
             if(message.type == ACTIONMESSAGETYPE.CLOUD_CHOICE || message.type == ACTIONMESSAGETYPE.DRAW_CHOICE)
             {

@@ -1,12 +1,9 @@
 package it.polimi.ingsw.model;
-
+//
 //URGENT
 //TODO game testing (especially 3 and ESPECIALLY 4 players)
 //TODO Documentation!!
-//TODO Graphics of Grandma herbs
-
-//less urgent
-//TODO test GHerbs, Centaur and Knight in CLI
+//TODO write the final 4 characters descriptions
 
 //Less less urgent
 //TODO aesthetic of GUI in general

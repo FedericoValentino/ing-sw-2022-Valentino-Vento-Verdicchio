@@ -1,5 +1,6 @@
 package it.polimi.ingsw.controller;
 
+import it.polimi.ingsw.controller.checksandbalances.Checks;
 import it.polimi.ingsw.model.CurrentGameState;
 
 /**
@@ -16,9 +17,13 @@ public class PlanningController
      */
     public void drawStudentForClouds(CurrentGameState game, int position)
     {
-        for(int i=0; i<=game.getCurrentTeams().size(); i++)
+        for(int i=0; i<=game.getCurrentTeams().size() && Checks.isPouchAvailable(game); i++)
         {
             game.getCurrentClouds()[position].placeToken(game.getCurrentPouch().extractStudent());
+        }
+        if(Checks.isPouchAvailable(game))
+        {
+            game.getCurrentTurnState().setLastTurn();
         }
         game.getCurrentTurnState().updatePlanningMoves();
     }

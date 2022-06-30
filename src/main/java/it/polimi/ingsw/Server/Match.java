@@ -22,6 +22,7 @@ public class Match
     private boolean running = false;
     private boolean isGameSet = false;
     private boolean hasEnded = false;
+    private Object winnerLock = new Object();
     private ExecutorService clientPinger = Executors.newFixedThreadPool(128);
 
 
@@ -107,6 +108,21 @@ public class Match
 
     }
 
+
+    public void announceWinner(String announcement)
+    {
+        synchronized (winnerLock)
+        {
+            if(!hasEnded)
+            {
+                hasEnded = true;
+                for(GameHandler GameHandler: clients)
+                    GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage(announcement)));
+            }
+        }
+
+    }
+
     public void setMode(boolean expert, int playerNumber)
     {
         mainController = new MainController(playerNumber, expert);
@@ -124,5 +140,17 @@ public class Match
     public boolean hasEnded()
     {
         return hasEnded;
+    }
+
+    public int getMatchID() {
+        return matchID;
+    }
+
+    public int getPlayers() {
+        return players;
+    }
+
+    public boolean isExpertMode() {
+        return expertMode;
     }
 }

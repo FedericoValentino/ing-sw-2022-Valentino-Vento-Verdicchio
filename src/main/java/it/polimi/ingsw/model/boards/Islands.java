@@ -122,7 +122,7 @@ public class Islands extends Board {
   }
 
   /**
-   * Method getMaxCol determines the color of the team with the highest number of towers built
+   * Method getMaxCol determines the color of the team with the highest number of towers built and sets the winner
    * @param Teams  the arraylist of the teams present in the game
    * @return the color of the team with the highest number of towers built
    */
@@ -132,6 +132,7 @@ public class Islands extends Board {
     int[] Towers = new int[3];
     int max = 0;
     int Winner = 0;
+    boolean tie = false;
     for(Island I: islands)
     {
       if(I.getOwnership() == ColTow.BLACK)
@@ -159,15 +160,25 @@ public class Islands extends Board {
           max = Towers[i];
           Winner = i;
         }
+        if(Towers[i] + ControlledProfessors[i] == Towers[Winner] + ControlledProfessors[Winner])
+        {
+          tie = true;
+        }
       }
       if(Towers[i] > max)
       {
         max = Towers[i];
         Winner = i;
+        tie = false;
       }
     }
 
+    if(tie)
+    {
+      return null;
+    }
     return ColTow.values()[Winner];
+
   }
 
   /**
