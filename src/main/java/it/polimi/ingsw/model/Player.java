@@ -135,9 +135,6 @@ public class Player
   public int getMaxMotherMovement() {
     return maxMotherMovement;
   }
-  public int getMovementValue() {
-    return movementValue;
-  }
   public int getValue() {
     return value;
   }
