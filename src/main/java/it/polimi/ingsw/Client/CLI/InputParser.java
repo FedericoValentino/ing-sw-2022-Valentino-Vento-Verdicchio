@@ -225,6 +225,11 @@ public class InputParser
                     {
                         inputArray.add(input);
                     }
+                    else if(input >= 0 && input <= 4 && Utilities.findPlayerByName(cardPrinters.getView(), nickname).getSchool().getDiningRoom()[card.getStudentList().get(input).getColor().ordinal()] == 10)
+                    {
+                        AnsiConsole.out().println("That table row is full, choose another one");
+                        input = integerParser();
+                    }
                     else
                     {
                         while(input < 0 || input > 4)

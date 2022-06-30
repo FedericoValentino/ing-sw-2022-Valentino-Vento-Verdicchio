@@ -3,6 +3,7 @@ package it.polimi.ingsw.controller.checksandbalances;
 import it.polimi.ingsw.controller.MainController;
 import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.Team;
+import it.polimi.ingsw.model.boards.School;
 import it.polimi.ingsw.model.boards.token.enumerations.CharacterName;
 import it.polimi.ingsw.model.cards.*;
 import it.polimi.ingsw.model.CurrentGameState;
@@ -54,9 +55,17 @@ public final class Checks {
      */
     public static boolean isDestinationAvailable(CurrentGameState game, String currentPlayer, int entrancePosition, boolean toIsland, int islandId)
     {
-        boolean validEntrance = entrancePosition >= 0 && entrancePosition < MainController.findPlayerByName(game, currentPlayer).getSchool().getEntrance().size();
+        School playerSchool = MainController.findPlayerByName(game, currentPlayer).getSchool();
+        boolean validEntrance = entrancePosition >= 0 && entrancePosition < playerSchool.getEntrance().size();
         if(!toIsland)
-            return validEntrance;
+        {
+            if(validEntrance)
+            {
+                if(playerSchool.getDiningRoom()[playerSchool.getEntrance().get(entrancePosition).getColor().ordinal()] < 10)
+                    return true;
+            }
+            return false;
+        }
         else
         {
             if(validEntrance)
