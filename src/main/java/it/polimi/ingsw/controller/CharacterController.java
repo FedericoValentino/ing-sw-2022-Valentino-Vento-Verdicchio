@@ -80,8 +80,8 @@ public class CharacterController
      */
     protected static CharacterCard getCardByName(CharacterName characterName, ArrayList<CharacterCard> deck)
     {
-        for (CharacterCard characterCard : deck)
-            if (characterCard.getCharacterName() == characterName)
+        for(CharacterCard characterCard : deck)
+            if(characterCard.getCharacterName() == characterName)
                 return characterCard;
         return null;
     }
@@ -119,8 +119,11 @@ public class CharacterController
      */
     public void playEffect(CharacterName characterName, CurrentGameState game, ArrayList<Integer> firstChoice, ArrayList<Integer> secondChoice, String currentPlayer, Col color)
     {
-        CharacterCard card = getCardByName(characterName, game.getCurrentActiveCharacterCard());
-        card.effect(game, firstChoice, secondChoice, currentPlayer, color);
+        if(isEffectPlayable(game, characterName))
+        {
+            CharacterCard card = getCardByName(characterName, game.getCurrentActiveCharacterCard());
+            card.effect(game, firstChoice, secondChoice, currentPlayer, color);
+        }
     }
 
     /**

@@ -282,21 +282,14 @@ public class GameHandler extends Thread implements Observer
                     }
                     if(!Checks.checkForInfluenceCharacter(mainController.getGame()))
                     {
-                        if(mainController.getCharacterController().isEffectPlayable(mainController.getGame(), ((PlayCharacter) message).getCharacterName()))
-                        {
-                            mainController.getCharacterController().playEffect(
-                                    ((PlayCharacter) message).getCharacterName(),
-                                    mainController.getGame(),
-                                    ((PlayCharacter) message).getFirst(),
-                                    ((PlayCharacter) message).getSecond(),
-                                    ((PlayCharacter) message).getThird(),
-                                    ((PlayCharacter) message).getStudentColor()
-                            );
-                        }
-                        else
-                        {
-                            socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.CARD_ERROR)));
-                        }
+                        mainController.getCharacterController().playEffect(
+                                ((PlayCharacter) message).getCharacterName(),
+                                mainController.getGame(),
+                                ((PlayCharacter) message).getFirst(),
+                                ((PlayCharacter) message).getSecond(),
+                                ((PlayCharacter) message).getThird(),
+                                ((PlayCharacter) message).getStudentColor()
+                        );
                     }
                 }
                 else
