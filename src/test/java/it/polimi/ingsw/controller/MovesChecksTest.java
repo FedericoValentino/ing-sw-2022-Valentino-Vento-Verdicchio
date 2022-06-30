@@ -11,6 +11,9 @@ public class MovesChecksTest extends TestCase {
     MainController controllerTest = new MainController(2, true);
     MainController getControllerTestFor3 = new MainController(3, true);
 
+    /**
+     * For each value of planningMoves, checks the positive and negative response of the method for both cases.
+     */
     public void testIsExpectedPlanningMove()
     {
         TestUtilities.setupTestFor2(controllerTest);
@@ -27,13 +30,18 @@ public class MovesChecksTest extends TestCase {
         assertFalse(MovesChecks.isExpectedPlanningMove(controllerTest.getGame(), ACTIONMESSAGETYPE.DRAW_CHOICE));
     }
 
+    /**
+     * Both for two and three players, fir each value of actionMoves checks the positive or negative response of the method,
+     * based on what to expect: instead of using all combinations, it generally uses a combination of the right move with
+     * the previous, now wrong, move
+     */
     public void testIsExpectedActionMove() {
         TestUtilities.setupTestFor2(controllerTest);
         TestUtilities.setupTestFor3(getControllerTestFor3);
 
         controllerTest.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
         getControllerTestFor3.getGame().getCurrentTurnState().updateGamePhase(GamePhase.ACTION);
-        //for 2
+
         for (int i = 0; i < 3; i++)
         {
             assertTrue(MovesChecks.isExpectedActionMove(controllerTest.getGame(), 2, ACTIONMESSAGETYPE.STUD_MOVE));
@@ -54,7 +62,7 @@ public class MovesChecksTest extends TestCase {
 
         assertFalse(MovesChecks.isExpectedActionMove(controllerTest.getGame(), 2, ACTIONMESSAGETYPE.TURN_END));
 
-        //for 3
+
         for (int i = 0; i < 4; i++)
         {
             assertTrue(MovesChecks.isExpectedActionMove(getControllerTestFor3.getGame(), 3, ACTIONMESSAGETYPE.STUD_MOVE));

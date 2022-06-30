@@ -20,35 +20,40 @@ public class CharacterControllerTest {
     /**
      * Checks if the function pickCard, in charge of moving a card from the CharDeck
      * to the ActiveCharDeck and modifying the economy of the game, is working properly.
+     * After a basic setup and some preliminary checks about the economy, it saves the initial cost of the card, picks it,
+     * and then checks, in order:
+     * - if the decks have been manipulated correctly
+     * - if the card values and game economy have been handled correctly
      */
     @Test
     public void testPickCard() {
 
-        //Does a basic setup and checks if the desired number of coins has been correctly assigned
         TestUtilities.setupTestFor2(controllerTest);
         TestUtilities.gainCoins(controllerTest);
         assertEquals(104, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
         assertEquals(103, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
-        //Saves the reference to the card and its initial cost
         CharacterCard card = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0);
         int baseInitialCost = card.getBaseCost();
 
-        //picks the card
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), card.getCharacterName(), controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
 
-        //Initially it checks if the decks have been manipulated correctly
         assertEquals(2, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
         assertEquals(card.getCharacterName(), controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getCharacterName());
         assertEquals(1, controllerTest.getGame().getCurrentActiveCharacterCard().size());
 
-        //Then it checks if the card values and the economy have been updated correctly
         assertEquals(1, controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getUses());
         assertEquals(baseInitialCost + 1, controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getCurrentCost());
         assertEquals(104 - baseInitialCost, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
         assertEquals((baseInitialCost - 1) + 18, controllerTest.getGame().getBankBalance());
     }
 
+    /**
+     * Setups three different cards and picks them all, placing them in the active deck. Then, after saving the first card
+     * in the active deck, deckManagement is called. The checks ensure, in order:
+     * - that the sizes of the decks are what we expect them to be
+     * - that the card that was acted upon was effectively the right card, by comparing IDs and values with the card we have saved
+     */
     @Test
     public void deckManagement()
     {
@@ -58,7 +63,6 @@ public class CharacterControllerTest {
         CharacterName cardName2 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(1).getCharacterName();
         CharacterName cardName3 = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(2).getCharacterName();
 
-        //Picks all three cards in the CharDeck
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), cardName1, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), cardName2, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), cardName3, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
@@ -66,34 +70,22 @@ public class CharacterControllerTest {
         CharacterCard card = controllerTest.getGame().getCurrentActiveCharacterCard().get(0);
         CharacterController.deckManagement(controllerTest.getGame());
 
-        //Checks if the sizes of the decks have been handled correctly (2 cards in the Active, one in the Char)
         assertEquals(2, controllerTest.getGame().getCurrentActiveCharacterCard().size());
         assertEquals(1, controllerTest.getGame().getCurrentCharacterDeck().getDeck().size());
 
-        //Checks if the correct Card has been acted upon by comparing the IDs of the cards in the Active and in the CharDeck.
         for(int i=0; i<controllerTest.getGame().getCurrentActiveCharacterCard().size(); i++)
             assertNotEquals(card.getCharacterName(), controllerTest.getGame().getCurrentActiveCharacterCard().get(i).getCharacterName());
         assertEquals(card.getCharacterName(), controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0).getCharacterName());
     }
 
+
+    /**
+     * After a game and deck setups, checks whether the card can be picked, i.e. if it is in the inactive deck and the player
+     * has enough funding. After this, it decreases the player's coinAmount until it is impossible for him to afford the card.
+     * Checks if the player cannot afford the card
+     */
     @Test
-    public void testGetPickedCard ()
-    {
-        TestUtilities.setupTestFor2(controllerTest);
-
-        //Creates a dummy card
-        Knight testCard = new Knight();
-        EffectTestsUtility.setDecks(testCard, controllerTest.getGame());
-
-        controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
-        CharacterCard card = controllerTest.getGame().getCurrentActiveCharacterCard().get(0);
-
-        //Verifies if the method returns the right card by comparing the correct ID with the dummy's ID
-        assertEquals(CharacterName.KNIGHT, card.getCharacterName());
-    }
-
-    @Test
-    public void isPlayable()
+    public void canBePicked()
     {
         TestUtilities.setupTestFor2(controllerTest);
         TestUtilities.gainCoins(controllerTest);
@@ -106,11 +98,14 @@ public class CharacterControllerTest {
         assertTrue(CharacterController.canBePicked(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
 
         controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).updateCoins(-103);
-        System.out.println(controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
         assertFalse(CharacterController.canBePicked(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0)));
     }
 
+    /**
+     * After the usual setups, checks if the card effect can be played, i.e. if the card is in the active deck. After this, it
+     * calls deck management and verifies the inability by the player to now play the effect
+     */
     @Test
     public void isEffectPlayable()
     {
@@ -129,16 +124,20 @@ public class CharacterControllerTest {
         assertFalse(controllerTest.getCharacterController().isEffectPlayable(controllerTest.getGame(), CharacterName.HERALD));
     }
 
+    /**
+     * Sets up the active deck with a Herald and a knight card, and checks if we can find both cards in that structure.
+     * Then calls deckManagement two times, and then does the ame checks again, but this time with the inactive deck
+     */
     @Test
     public void getCardByName()
     {
         TestUtilities.setupTestFor2(controllerTest);
 
-        Herald testCard1 = new Herald();
-        EffectTestsUtility.setDecks(testCard1, controllerTest.getGame());
-        Knight testCard2 = new Knight();
+        Herald herald = new Herald();
+        EffectTestsUtility.setDecks(herald, controllerTest.getGame());
+        Knight knight = new Knight();
 
-        controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(testCard2);
+        controllerTest.getGame().getCurrentCharacterDeck().getDeck().add(knight);
 
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.HERALD, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0));
         controllerTest.getCharacterController().pickCard(controllerTest.getGame(), CharacterName.KNIGHT, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0));
@@ -159,6 +158,10 @@ public class CharacterControllerTest {
         assert(resultCard4 instanceof Herald);
     }
 
+    /**
+     * After a basic setup of the charDecks and the input parameters, verifies if the decks have remained the same after the
+     * effect has been played (as it should until the end of the turn)
+     */
     @Test
     public void playEffect()
     {
@@ -181,6 +184,10 @@ public class CharacterControllerTest {
 
     }
 
+    /**
+     * Sets up the deck with a truffle hunter card, then picks it and sets a certain color on it. Checks whether the color
+     * on the card is exactly what we expect it to be
+     */
     @Test
     public void testSetTruffleHunterColor()
     {
