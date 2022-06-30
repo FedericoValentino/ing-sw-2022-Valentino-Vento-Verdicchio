@@ -13,7 +13,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
-
+//
 /**
  * Class LightView contains mock objects used to mimic those of the model. Each object contains
  */

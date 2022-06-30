@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
+//
 /**
  * ClientCLI is the main class for the CLI client, it hosts methods to handle the reception of messages and to get input from keyboard.
  */
