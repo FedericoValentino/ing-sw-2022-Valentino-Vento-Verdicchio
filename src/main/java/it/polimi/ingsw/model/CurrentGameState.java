@@ -1,8 +1,7 @@
 package it.polimi.ingsw.model;
-//
+
 //URGENT
-//TODO notify player about last turn
-//TODO check pouch for cards
+//TODO test last turn message
 //TODO game testing (especially 3 and ESPECIALLY 4 players)
 //TODO Documentation!!
 //TODO write the final 4 characters descriptions
