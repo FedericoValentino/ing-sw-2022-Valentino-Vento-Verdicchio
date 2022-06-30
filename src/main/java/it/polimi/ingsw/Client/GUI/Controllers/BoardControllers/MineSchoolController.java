@@ -35,7 +35,9 @@ public class MineSchoolController implements ObserverLightView
 
     MouseEvent eventStudent;
 
-    /**This method give a particular effect to the student clicked and it replace the id
+    /**
+     * Method entranceClick is called whenever a click is registered on a student token in the entrance. It makes the
+     * studentChoice table visible to the user and then gets the id of the student in the entrance
      * @param event
      */
     public void entranceClick(MouseEvent event)
@@ -59,7 +61,7 @@ public class MineSchoolController implements ObserverLightView
         }
     }
 
-    /**This method send the movestudent message to the server
+    /**This method send the movestudent message to the server, with parameters that will move the student with ID studentChoice into the diningRoom
      * @param event
      */
     public void sendDining(MouseEvent event)
@@ -70,6 +72,9 @@ public class MineSchoolController implements ObserverLightView
         ((Pane) eventStudent.getSource()).setEffect(null);
     }
 
+    /**This method send the movestudent message to the server, with parameters that will move the student with ID studentChoice into the island with id contained in the choice box
+     * @param event
+     */
     public void sendIsland(MouseEvent event)
     {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, true, Integer.parseInt(islands.getValue()))));
@@ -78,6 +83,13 @@ public class MineSchoolController implements ObserverLightView
         ((Pane) eventStudent.getSource()).setEffect(null);
     }
 
+
+    /**
+     * Method setup sets up the school at the start of the game by looking at the school entrance and tower number
+     * @param view is the current view of the game
+     * @param PlayerName is the user's name
+     * @param School is the anchorPane for the school placement in the GUI
+     */
     public void setup(LightView view,String PlayerName, AnchorPane School)
     {
         this.view = view;
@@ -108,6 +120,12 @@ public class MineSchoolController implements ObserverLightView
     }
 
 
+    /**
+     * Method update is called whenever our user's school is updated. It firsts updates the islands choicebox contained in the studentchoice pane.
+     * Then it removes every student from the entrance to elaborate new ids and set up the onClick functions. Then is looks at the dining room and sets
+     * the right amount of tokens to be visible. Then it looks at the professor table, doing the same job and at the end updates the towers hiding the ones that have been placed on islands
+     * @param o is our school
+     */
     @Override
     public void update(Object o)
     {

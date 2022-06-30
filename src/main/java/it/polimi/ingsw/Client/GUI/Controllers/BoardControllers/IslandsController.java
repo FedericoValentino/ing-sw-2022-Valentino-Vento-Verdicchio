@@ -23,11 +23,10 @@ public class IslandsController extends Controller implements ObserverLightView {
     public final int radius = 250;
     private LightView view;
 
-    /**This method call the cloud controller setup, loaded from fxml file, add the observer to the islands
-     * and call also the update of the islands
-     *
-     * @param view contains the current clouds, islands and turn state
-     * @throws IOException  to resolve possible problems with the load() method
+    /**
+     * Method Setup is called when first visualizing the island and cloud part of the board.
+     * @param view is our current view used to get the islands and the clouds
+     * @throws IOException when the file Clouds.fxml is not found
      */
     public void setup( LightView view) throws IOException {
         this.view = view;
@@ -47,9 +46,10 @@ public class IslandsController extends Controller implements ObserverLightView {
 
     }
 
-    /**This method update the islands firstly removing the islands merged, then for each island it loads the island fxml,
-     * empty it, calls the setup method and finally add it to the mainIslandBoard
-     * @param o contains the lightIslands attribute updated
+    /**
+     * Method Update updates the islands in the GUI. It first removes them totally and after that, a bit of algebra is
+     * used to convert polar coordinates of the current island that is being placed to the JAVAFX ones
+     * @param o is the LightIslands object being passed on every update
      */
     @Override
     public void update(Object o){

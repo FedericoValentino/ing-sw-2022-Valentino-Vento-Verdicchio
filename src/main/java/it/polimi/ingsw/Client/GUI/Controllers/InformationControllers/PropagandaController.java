@@ -26,6 +26,10 @@ public class PropagandaController extends Controller implements ObserverLightVie
 
     private LightView view;
 
+    /**
+     * Method setup adds the observer to the currentTurnState and sets up the buttons for ending the turn and to exit the game
+     * @param view is our current game view
+     */
     public void setup(LightView view)
     {
         endTurn.setOnMouseClicked(this:: endTurnOnClick);
@@ -38,6 +42,9 @@ public class PropagandaController extends Controller implements ObserverLightVie
         update(view.getCurrentTurnState());
     }
 
+    /**
+     * Generates and displays a string containing the current hint
+     */
     public void hintGeneration()
     {
         Text hint = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("hints")).collect(Collectors.toList()).get(0));
@@ -45,7 +52,10 @@ public class PropagandaController extends Controller implements ObserverLightVie
         hint.setText(GuiMainStarter.getClientGUI().informationCreator(view.getCurrentTurnState(), view.getCurrentTeams()).getInfoMessage());
     }
 
-
+    /**
+     * Method exitOnClick is called whenever the exit button is clicked. It sends a disconnect message to the server and closes the game
+     * @param mouseEvent
+     */
     private void exitOnClick(MouseEvent mouseEvent)
     {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new Disconnect()));
@@ -53,11 +63,19 @@ public class PropagandaController extends Controller implements ObserverLightVie
         Platform.exit();
     }
 
+    /**
+     * Method endTurnOnClick is called whenever the endTurn button is clicked. It sends a EndTurn message to the server
+     * @param mouseEvent
+     */
     private void endTurnOnClick(MouseEvent mouseEvent)
     {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new EndTurn()));
     }
 
+    /**
+     * Method update updates the hints, the current coins and the bank balance for our user
+     * @param o
+     */
     @Override
     public void update(Object o)
     {
@@ -72,7 +90,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
 
             Text coins = (Text) (propaganda.getChildren().stream().filter(node -> node.getId().equals("coins")).collect(Collectors.toList()).get(0));
             coins.setText("");
-            coins.setText("Your coins: " + currentPlayer.getCoinAmount() + " Bank Balance: " + view.getBankBalance());
+            coins.setText("Your coins: " + currentPlayer.getCoinAmount() + "   Bank Balance: " + view.getBankBalance());
         });
     }
 }

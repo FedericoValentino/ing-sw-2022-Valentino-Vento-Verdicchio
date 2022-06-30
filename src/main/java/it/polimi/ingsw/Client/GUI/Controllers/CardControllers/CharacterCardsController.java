@@ -42,6 +42,16 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     @FXML private Button nextButton;
     @FXML private Button activateButton;
 
+    /**
+     * Method Setup is called when first initializing the characterCard AnchorPane. It reads through all the active deck and inactive deck and sets up a stackPane,
+     * containing the character to show.
+     * If the game is not set to be played in expertMode then no stackpane is created and just a text telling the user that the slot is not available will show up
+     * @param characterPane is the anchorPane to be modified
+     * @param inactiveCharacters is our characterDeck in the lightView
+     * @param activeCharacters is our activeCharacterDeck in the lightView
+     * @param controller is our mainBoarController. We save it here so that we can then call the cards visualization methods contained in there.
+     * @throws IOException
+     */
     public void setup(AnchorPane characterPane, LightCharDeck inactiveCharacters, LightActiveDeck activeCharacters, MainBoardController controller) throws IOException {
         this.characterPane = characterPane;
         if(inactiveCharacters != null)
@@ -103,11 +113,19 @@ public class CharacterCardsController extends Controller implements ObserverLigh
         }
     }
 
+    /**
+     * Method activateOnClick is called whenever the play button is clicked. It calls the function in the mainBoardController showing the right form to fulfill
+     * @param mouseEvent is the click event
+     */
     private void activateOnClick(MouseEvent mouseEvent)
     {
         mainController.showCharacterEffectPanel(sceneCards.get(currentlyShowedCard));
     }
 
+    /**
+     * Shows the next character in the stackPane
+     * @param mouseEvent is the click event
+     */
     private void nextOnClick(MouseEvent mouseEvent)
     {
         Node FrontNode = mainPane.getChildren().get(2);
@@ -120,6 +138,10 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             currentlyShowedCard = 2;
     }
 
+    /**
+     * Shows the previous character in the stackPane
+     * @param mouseEvent is the click event
+     */
     private void previousOnClick(MouseEvent mouseEvent)
     {
         Node FrontNode = mainPane.getChildren().get(2);
@@ -132,6 +154,11 @@ public class CharacterCardsController extends Controller implements ObserverLigh
             currentlyShowedCard = 0;
     }
 
+    /**
+     * Method show on click is called whenever the character ImageView is clicked. It then calls the method in main controller
+     * for displaying the character info on screen
+     * @param mouseEvent is the click event
+     */
     private void showOnClick(MouseEvent mouseEvent)
     {
         LightCharacterCard card = sceneCards.get(currentlyShowedCard);
@@ -140,6 +167,12 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     }
 
 
+    /**
+     * Method update is called whenever the LightCharacterDeck is updated if updated with a card then the method finds the
+     * right pane and sets the usually red dot to green, indicating that the character is active. If the Update doesn't receive
+     * anything then it updates the cards with the new data and sets the dot of every pane in the stackPane to red.
+     * @param o is our activeCard, can be also NULL
+     */
     @Override
     public void update(Object o)
     {

@@ -26,13 +26,21 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
     private LightView view;
 
 
-
+    /**
+     * Method onClick sets the attribute lookedPlayer and changes the school to be visualized
+     * @param event
+     */
     public void onClick(ActionEvent event)
     {
         this.lookedPlayer = ((Button)event.getSource()).getText();
         update(Utilities.getSchoolByName(view, lookedPlayer));
     }
 
+    /**
+     * Method setup adds an observer to every other player school and sets up the buttons to switch between them
+     * @param view is our current game view
+     * @param otherSchool is the AnchorPane used to set the panel in the right position
+     */
     public void setup(LightView view, AnchorPane otherSchool)
     {
         this.view = view;
@@ -55,6 +63,11 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
     }
 
 
+    /**
+     * Method update updates the school only if the school passed in the object parameter is the currently visualized player's school.
+     * The update goes the same as the one in the mine school controller without the setup of buttons on the entrance panes
+     * @param o is the school to be updated
+     */
     @Override
     public void update(Object o)
     {

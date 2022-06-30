@@ -41,7 +41,7 @@ public class IslandController extends Controller {
     private LightMotherNature MN;
     private int totalIslands;
 
-    /**This method calculates the amount of movement for mother nature and then it sends it to the server
+    /**This method calculates the amount of movement for mother nature and sends the appropriate message to the server
      *
      * @param event is the click on an island
      */
@@ -61,14 +61,14 @@ public class IslandController extends Controller {
     }
 
 
-    /**This method fill the island with the student, no entry token, mother nature and the tower if presents
+    /**This method fills the island with students, no entry tokens, mother nature and the towers if present
      *
-     * @param island contain the id
-     * @param ID contain the id of the island
-     * @param Mother is the mother nature attribute and it's used to show the token if its value it's true in the right
-     *               island
+     * @param island contains all the information the island need to be filled with
+     * @param ID is the island ID
+     * @param Mother is the LightView representation of motherNature. It is saved in the controller so that the onClick
+     *               function can work out the movement amount
      * @param total is the total number of islands
-     * @param angle is the angle where this method will place the specific island
+     * @param angle is a parameter used to place in the right spot the noEntry token and the island ID
      */
     public void setup(LightIsland island, int ID, LightMotherNature Mother, int total, double angle)
     {

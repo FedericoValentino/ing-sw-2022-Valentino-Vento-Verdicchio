@@ -36,6 +36,11 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     private MainBoardController mainController;
 
 
+    /**
+     * Method assistantsOnClick is called whenever the lastPlayedButton is clicked. It calls the method in the mainBoardController
+     * to display every player currentAssistantCard
+     * @param event
+     */
     private void assistantsOnClick(MouseEvent event)
     {
         if(lastPlayedButton.getText().equals("Active\nAssistants"))
@@ -59,6 +64,13 @@ public class AssistantCardsController extends Controller implements ObserverLigh
         }
     }
 
+    /**
+     * Method Setup sets up the lower part of the GUI by adding the assistant cards and by adding observers to the players
+     * @param currentPlayer is our user's nickname
+     * @param teams is our array of teams in the light view
+     * @param AssistantsPane is our AnchorPane for visualization of the cards
+     * @param controller is the controller for the mainBoard. We need this since an entire tab for visualization of the current cards been played is there
+     */
     public void setup(String currentPlayer, ArrayList<LightTeam> teams, AnchorPane AssistantsPane, MainBoardController controller) {
         this.teams = teams;
         this.assistantsAnchorPane = AssistantsPane;
@@ -77,7 +89,11 @@ public class AssistantCardsController extends Controller implements ObserverLigh
             update(player);
     }
 
-
+    /**
+     * Method update runs whenever a player is updated. If our user is updated then the update removes all the cards and
+     * then replaces them according to what the player has in his deck
+     * @param o
+     */
     @Override
     public void update(Object o)
     {
@@ -107,6 +123,11 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     }
 
 
+    /**
+     * Method getAssistantPath returns the right card image path
+     * @param card is the card being passed
+     * @return the image path
+     */
     public String getAssistantPath(AssistantCard card)
     {
         switch(card.getValue())
