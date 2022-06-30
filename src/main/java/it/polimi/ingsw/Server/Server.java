@@ -72,7 +72,7 @@ public class Server
     * @param GH an instance of the Game handler associated with he desired client
     * @return the requested GameMode
     */
-   public GameMode requestGameInfo(GameHandler GH)
+   public void requestGameInfo(GameHandler GH, Match last)
    {
       try
       {
@@ -80,8 +80,7 @@ public class Server
          GH.getSocket().sendAnswer(new SerializedAnswer(new RequestGameInfo()));
          //receiving GameMode info from first client
          GameMode info =(GameMode) GH.getSocket().getInputStream().readObject();
-         isGameSet = true;
-         return info;
+         last.setMode(info.isExpertGame(), info.getMaxPlayers());
       }
       catch(IOException e)
       {
@@ -93,7 +92,6 @@ public class Server
          System.out.println("Couldn't understand client");
          matches.get(matches.size() - 1).getClients().remove(GH);
       }
-      return new GameMode();
    }
 
    /**
@@ -127,10 +125,9 @@ public class Server
 
             if(last.getClients().size() == 1 && !last.isGameSet())
             {
-               info = requestGameInfo(last.getClients().get(0));
-               last.setMode(info.isExpertGame(), info.getMaxPlayers());
+               requestGameInfo(last.getClients().get(0), last);
             }
-            if(last.getClients().size() == info.getMaxPlayers())
+            if(last.getClients().size() == last.getPlayers())
             {
                last.startGame();
             }

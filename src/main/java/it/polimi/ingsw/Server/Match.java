@@ -141,4 +141,16 @@ public class Match
     {
         return hasEnded;
     }
+
+    public int getMatchID() {
+        return matchID;
+    }
+
+    public int getPlayers() {
+        return players;
+    }
+
+    public boolean isExpertMode() {
+        return expertMode;
+    }
 }
