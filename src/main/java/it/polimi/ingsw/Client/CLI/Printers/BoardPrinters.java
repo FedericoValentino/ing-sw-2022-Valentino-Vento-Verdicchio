@@ -34,6 +34,17 @@ public class BoardPrinters extends PrinterCLI
         else
             return "O";
     }
+    private String addNoEntry(int id)
+    {
+        if(super.getView().getCurrentIslands().getIslands().get(id).isNoEntry())
+        {
+            return ANSI_RED_BACKGROUND + ANSI_BLACK + "!" + ANSI_RESET;
+        }
+        else
+        {
+            return " ";
+        }
+    }
 
 
     /** Used by the function "showIslands", it constructs and returns the outline and content of the graphical representation
@@ -46,7 +57,7 @@ public class BoardPrinters extends PrinterCLI
         int StudentNumber;
         LightIsland island = super.getView().getCurrentIslands().getIslands().get(id);
         islands[0] += "____________________  ";
-        islands[1] += "|   Island n: " + addZero(island.getIslandId()) +"   |  ";
+        islands[1] += "|   Island n: " + addZero(island.getIslandId()) +" " + addNoEntry(id) + " |  ";
         islands[2] += "|       MN: " + printMN(island.getIslandId()) + "      |  ";
         StudentNumber = (int)super.getView().getCurrentIslands().getIslands().get(island.getIslandId()).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.GREEN).count();
         islands[3] += "| " + ANSI_GREEN + ":D " + ANSI_RESET + addZero(StudentNumber) + "            |  ";
