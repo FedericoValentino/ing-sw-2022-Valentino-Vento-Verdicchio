@@ -12,12 +12,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Grandma herbs GUI">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="fix to the fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/CharacterController.java" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
@@ -103,7 +101,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IslandTest.testUpdateTeamInfluence">
+  <component name="RunManager" selected="Application.ClientApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -111,7 +109,7 @@
         <env name="set PATH_TO_FX" value="&quot;C:\--Ufficio--\JDK\lib&quot;" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="ClientApp" />
-      <module name="ing-sw-2022-Valentino-Vento-Verdicchio" />
+      <module name="softeng-GC61" />
       <option name="VM_PARAMETERS" value="--module-path=&quot;C:\--Ufficio--\JDK\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,11 +210,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerApp" />
         <item itemvalue="JUnit.IslandTest.testUpdateTeamInfluence" />
         <item itemvalue="JUnit.it.polimi.ingsw.model in softeng-GC61" />
         <item itemvalue="JUnit.IslandTest.testCalculateOwnership" />
         <item itemvalue="JUnit.SchoolTest.testExtractStudent" />
-        <item itemvalue="JUnit.SchoolTest" />
       </list>
     </recent_temporary>
   </component>
@@ -286,21 +284,7 @@
       <workItem from="1656528089385" duration="2193000" />
       <workItem from="1656530419432" duration="1595000" />
       <workItem from="1656537736988" duration="309000" />
-      <workItem from="1656594522545" duration="3841000" />
-    </task>
-    <task id="LOCAL-00171" summary="same, but code with me">
-      <created>1656104026305</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1656104026305</updated>
-    </task>
-    <task id="LOCAL-00172" summary="Proudly announcing Eriantys Ping Edition">
-      <created>1656115550506</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1656115550507</updated>
+      <workItem from="1656594522545" duration="6789000" />
     </task>
     <task id="LOCAL-00173" summary="Code with me">
       <created>1656115562641</created>
@@ -631,7 +615,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656596715690</updated>
     </task>
-    <option name="localTasksCounter" value="220" />
+    <task id="LOCAL-00220" summary="grandma herbs fix">
+      <created>1656598525811</created>
+      <option name="number" value="00220" />
+      <option name="presentableId" value="LOCAL-00220" />
+      <option name="project" value="LOCAL" />
+      <updated>1656598525811</updated>
+    </task>
+    <task id="LOCAL-00221" summary="fix to the fix">
+      <created>1656598675150</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1656598675151</updated>
+    </task>
+    <option name="localTasksCounter" value="222" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,8 +660,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="maybe fix?" />
-    <MESSAGE value="Added TODOs, now testing three different cards" />
     <MESSAGE value="fix" />
     <MESSAGE value="Added economy in CLI" />
     <MESSAGE value="Now it is impossible to play more than 1 card per round by controller design. CLI will show an error message" />
@@ -687,7 +683,9 @@
     <MESSAGE value="LittleDocumentation and Handling of the timeout in GUI" />
     <MESSAGE value="No entry in CLI" />
     <MESSAGE value="Grandma herbs GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grandma herbs GUI" />
+    <MESSAGE value="grandma herbs fix" />
+    <MESSAGE value="fix to the fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix to the fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

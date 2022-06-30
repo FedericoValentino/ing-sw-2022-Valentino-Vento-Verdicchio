@@ -244,9 +244,9 @@ public class InputParser
                         inputArray.add(input);
                     }
                 }
-                if(card.getName().equals(CharacterName.GRANDMA_HERBS) && cardPrinters.getView().getCurrentIslands().getIslands().get(input).isNoEntry())
+                if(card.getName().equals(CharacterName.GRANDMA_HERBS) && (cardPrinters.getView().getCurrentIslands().getIslands().get(input).isNoEntry() || card.getNoEntry() == 0))
                 {
-                    AnsiConsole.out().println("You can't place a noEntry token on an already blocked island");
+                    AnsiConsole.out().println("Island already occupied by noEntry or no more noEntry remaining on the card");
                 }
                 else
                 {

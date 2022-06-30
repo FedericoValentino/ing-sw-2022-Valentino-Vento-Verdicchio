@@ -355,9 +355,9 @@ public class MainBoardController extends Controller {
                 }
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
-                            if(card.getName() == CharacterName.GRANDMA_HERBS && view.getCurrentIslands().getIslands().get(integerChoice_1.get(0)).isNoEntry())
+                            if(card.getName() == CharacterName.GRANDMA_HERBS && (view.getCurrentIslands().getIslands().get(integerChoice_1.get(0)).isNoEntry() || card.getNoEntry() == 0))
                             {
-                                DisplayError("You can't place a noEntry token on an already blocked island");
+                                DisplayError("Island already occupied by noEntry \n or \n no more noEntry remaining on the card");
                             }
                             else
                             {
