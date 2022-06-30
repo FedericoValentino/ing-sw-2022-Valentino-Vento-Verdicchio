@@ -9,5 +9,6 @@ public enum ERRORTYPES
     CARD_ERROR,
     MOTHER_ERROR,
     STUD_MOVE_ERROR,
-    EMPTY_POUCH
+    EMPTY_POUCH,
+    LAST_TURN
 }

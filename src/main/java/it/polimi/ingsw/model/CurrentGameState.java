@@ -1,13 +1,11 @@
 package it.polimi.ingsw.model;
 //
 //URGENT
+//TODO notify player about last turn
+//TODO check pouch for cards
 //TODO game testing (especially 3 and ESPECIALLY 4 players)
 //TODO Documentation!!
 //TODO write the final 4 characters descriptions
-
-//Less less urgent
-//TODO aesthetic of GUI in general
-//TODO CLI school information appears not aligned
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;

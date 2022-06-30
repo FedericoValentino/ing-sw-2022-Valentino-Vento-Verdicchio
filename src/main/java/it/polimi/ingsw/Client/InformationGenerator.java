@@ -45,6 +45,8 @@ public interface InformationGenerator
                 return new InternalMessage("You student move was invalid");
             case EMPTY_POUCH:
                 return new InternalMessage("Pouch unavailable, skipping phase");
+            case LAST_TURN:
+                return new InternalMessage("This will be the last turn of the game");
             default:
                 return new InternalMessage("Generic Error");
         }

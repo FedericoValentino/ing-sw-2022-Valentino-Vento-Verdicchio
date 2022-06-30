@@ -1,5 +1,7 @@
 package it.polimi.ingsw.Server;
 //ciao
+import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
+import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.WinMessage;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.GameStarting;
@@ -22,7 +24,8 @@ public class Match
     private boolean running = false;
     private boolean isGameSet = false;
     private boolean hasEnded = false;
-    private Object winnerLock = new Object();
+    private boolean lastTurnAnnounced = false;
+    private Object announceLock = new Object();
     private ExecutorService clientPinger = Executors.newFixedThreadPool(128);
 
 
@@ -108,10 +111,24 @@ public class Match
 
     }
 
+    public void announceLastTurn()
+    {
+        synchronized (announceLock)
+        {
+            if(!lastTurnAnnounced)
+            {
+                lastTurnAnnounced = true;
+                for(GameHandler GameHandler: clients)
+                    GameHandler.getSocket().sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.LAST_TURN)));
+            }
+        }
+
+    }
+
 
     public void announceWinner(String announcement)
     {
-        synchronized (winnerLock)
+        synchronized (announceLock)
         {
             if(!hasEnded)
             {
@@ -152,5 +169,9 @@ public class Match
 
     public boolean isExpertMode() {
         return expertMode;
+    }
+
+    public boolean isLastTurnAnnounced() {
+        return lastTurnAnnounced;
     }
 }

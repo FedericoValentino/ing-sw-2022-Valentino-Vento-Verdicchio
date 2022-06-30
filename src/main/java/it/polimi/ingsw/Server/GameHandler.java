@@ -416,6 +416,10 @@ public class GameHandler extends Thread implements Observer
         {
             if(connected)
             {
+                if(Checks.isLastTurn(mainController.getGame()) && !currentMatch.isLastTurnAnnounced())
+                {
+                    currentMatch.announceLastTurn();
+                }
                 if(Checks.isThereAWinner(mainController.getGame()))
                 {
                     currentMatch.end();
