@@ -21,7 +21,8 @@ public class PlanningController
         {
             game.getCurrentClouds()[position].placeToken(game.getCurrentPouch().extractStudent());
         }
-        if(!Checks.isPouchAvailable(game))
+        //TODO readd ! for later
+        if(Checks.isPouchAvailable(game))
         {
             game.getCurrentTurnState().setLastTurn();
         }

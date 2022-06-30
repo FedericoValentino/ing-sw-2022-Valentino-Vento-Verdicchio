@@ -1,5 +1,6 @@
 package it.polimi.ingsw.model.boards;
 import it.polimi.ingsw.model.CurrentGameState;
+import it.polimi.ingsw.model.Player;
 import it.polimi.ingsw.model.Team;
 import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
@@ -128,76 +129,51 @@ public class Islands extends Board {
    */
   public ColTow getMaxCol(ArrayList<Team> Teams)
   {
-    int[] ControlledProfessors = new int[3];
-    int[] Towers = new int[3];
-    int max = 0;
-    int Winner = 0;
-    boolean tie = false;
-    for(Island I: islands)
+    HashMap<ColTow, Integer> teamsToTower = new HashMap<>();
+    HashMap<ColTow, Integer> teamsToProfessors = new HashMap<>();
+    for(Team team : Teams)
     {
-      if(I.getOwnership() == ColTow.BLACK)
-      {
-        Towers[ColTow.BLACK.ordinal()] += I.getTowerNumber();
-        ControlledProfessors[ColTow.BLACK.ordinal()] += getTeam(Teams, ColTow.BLACK).getControlledProfessors().size();
-      }
-      else if(I.getOwnership() == ColTow.GREY)
-      {
-        Towers[ColTow.GREY.ordinal()] += I.getTowerNumber();
-        ControlledProfessors[ColTow.GREY.ordinal()] += getTeam(Teams, ColTow.GREY).getControlledProfessors().size();
-      }
-      else if(I.getOwnership() == ColTow.WHITE)
-      {
-        Towers[ColTow.WHITE.ordinal()] += I.getTowerNumber();
-        ControlledProfessors[ColTow.WHITE.ordinal()] += getTeam(Teams, ColTow.WHITE).getControlledProfessors().size();
-      }
-    }
-    for(int i = 0; i < 3; i++)
-    {
-      if(Towers[i] == max)
-      {
-        if(Towers[i] + ControlledProfessors[i] > Towers[Winner] + ControlledProfessors[Winner])
-        {
-          max = Towers[i];
-          Winner = i;
-          tie = false;
-        }
-        if(Towers[i] + ControlledProfessors[i] == Towers[Winner] + ControlledProfessors[Winner])
-        {
-          tie = true;
-        }
-      }
-      if(Towers[i] > max)
-      {
-        max = Towers[i];
-        Winner = i;
-        tie = false;
-      }
+      teamsToTower.put(team.getColor(), 0);
+      teamsToProfessors.put(team.getColor(), team.getControlledProfessors().size());
     }
 
-    if(tie)
+    for(Island island : islands)
+      if(island.getOwnership() != null)
+        teamsToTower.put(island.getOwnership(), teamsToTower.get(island.getOwnership()) + island.getTowerNumber());
+
+
+
+    int maxTower = Collections.max(teamsToTower.values());
+    ArrayList<ColTow> teamMax = new ArrayList<>();
+    teamsToTower.forEach((teamColor, integer) ->
     {
-      return null;
+      if(integer == maxTower)
+        teamMax.add(teamColor);
+    });
+
+
+    if(teamMax.size() == 1)
+    {
+      return teamMax.get(0);
     }
-    return ColTow.values()[Winner];
-
-  }
-
-  /**
-   * Given a color, finds the team associated to said color
-   * @param Teams a list of the competing teams
-   * @param color the color of the desired team
-   * @return the team corresponding to said color
-   */
-  private Team getTeam(ArrayList<Team> Teams, ColTow color)
-  {
-    for(Team team: Teams)
+    else
     {
-      if(team.getColor() == color)
+      ArrayList<ColTow> profMax = new ArrayList<>();
+      int maxProf = Collections.max(teamsToProfessors.values());
+      for(ColTow teamColor : teamMax)
       {
-        return team;
+        if(teamsToProfessors.get(teamColor) == maxProf && teamMax.contains(teamColor))
+          profMax.add(teamColor);
+      }
+      if(profMax.size() == 1)
+      {
+        return profMax.get(0);
+      }
+      else
+      {
+        return null;
       }
     }
-    return null;
   }
 
   public ArrayList<Island> getIslands()
