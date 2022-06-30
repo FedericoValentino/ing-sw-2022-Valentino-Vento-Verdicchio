@@ -6,6 +6,9 @@ import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.stream.Collectors;
 //
 /**
  * Islands is generally used as a collection of island objects. It contains methods that need to access more islands at once,
@@ -123,7 +126,8 @@ public class Islands extends Board {
   }
 
   /**
-   * Method getMaxCol determines the color of the team with the highest number of towers built and sets the winner
+   * Method getMaxCol determines the color of the team with the highest number of towers built and sets the winner. It uses
+   * a hashmap that has the team color as key, and an Array of two values to memorize placed towers and controlled professors.
    * @param Teams  the arraylist of the teams present in the game
    * @return the color of the team with the highest number of towers built
    */
