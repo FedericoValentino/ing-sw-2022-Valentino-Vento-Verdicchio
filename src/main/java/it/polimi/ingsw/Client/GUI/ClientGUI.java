@@ -27,6 +27,7 @@ import javafx.scene.Scene;
 import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 
 import java.io.IOException;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -95,6 +96,16 @@ public class ClientGUI implements ClientView, InformationGenerator
                 StandardActionAnswer answer = input.getAction();
                 messageHandler(answer);
             }
+        }
+        catch(SocketTimeoutException e)
+        {
+            Platform.runLater(() -> {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Winner.fxml"));
+                GuiMainStarter.getClientGUI().changeScene(loader);
+                WinnerController winnerControl = loader.getController();
+                winnerControl.setGuiMainStarter(guiMainStarter);
+                winnerControl.setup("Connection Lost");
+            });
         }
         catch(IOException e)
         {

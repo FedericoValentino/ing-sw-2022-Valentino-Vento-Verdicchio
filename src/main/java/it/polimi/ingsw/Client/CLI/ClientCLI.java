@@ -37,7 +37,10 @@ public class ClientCLI implements ClientView, InformationGenerator
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
 
-
+    /**
+     * Method setupHandler handles the game setup and PING messages coming from the server
+     * @param answer the message comeing from the server
+     */
     @Override
     public void setupHandler(StandardSetupAnswer answer){
         switch(answer.getType())
@@ -131,7 +134,10 @@ public class ClientCLI implements ClientView, InformationGenerator
         }
     }
 
-
+    /**
+     * Method messageHandler handles all the game related messages
+     * @param answer the message comeing from the server
+     */
     @Override
     public void messageHandler(StandardActionAnswer answer) {
 
@@ -166,7 +172,11 @@ public class ClientCLI implements ClientView, InformationGenerator
         }
 
     }
-//
+
+    /**
+     * Method readMessage is called whenever a message needs to be read from the server. It then sends the message to right
+     * handler depending on the message nature
+     */
     @Override
     public void readMessage(){
         try
