@@ -12,13 +12,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Finished MainBoardController documentation">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Finished cloudController,islandController, IslandsController and started MineSchoolController documentation">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/CloudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/CloudController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/IslandsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/MineSchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/BoardControllers/MineSchoolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/InformationAndMiscellanea/RejectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/InformationAndMiscellanea/RejectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/InformationAndMiscellanea/WinnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/OutOfGameControllers/InformationAndMiscellanea/WinnerController.java" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
@@ -265,13 +263,6 @@
       <workItem from="1656528089385" duration="2193000" />
       <workItem from="1656530419432" duration="1595000" />
       <workItem from="1656537736988" duration="309000" />
-    </task>
-    <task id="LOCAL-00168" summary="Little changes in inputParser (put activation (it's a parameter) from a method to the main declaration part of the class)">
-      <created>1656067898877</created>
-      <option name="number" value="00168" />
-      <option name="presentableId" value="LOCAL-00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1656067898878</updated>
     </task>
     <task id="LOCAL-00169" summary="Jestser added to the Printers and resolved some code repetitions in CardPrinters">
       <created>1656100806002</created>
@@ -609,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656545845978</updated>
     </task>
-    <option name="localTasksCounter" value="217" />
+    <task id="LOCAL-00217" summary="Finished cloudController,islandController, IslandsController and started MineSchoolController documentation">
+      <created>1656579861985</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1656579861985</updated>
+    </task>
+    <option name="localTasksCounter" value="218" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="change" />
     <MESSAGE value="lmao" />
     <MESSAGE value="change in idsetting" />
     <MESSAGE value="maybe fix?" />
@@ -664,7 +661,8 @@
     <MESSAGE value="CLI documentation" />
     <MESSAGE value="Part of MainBoardController, all ClientGUI, all GUIUtilities documentation" />
     <MESSAGE value="Finished MainBoardController documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished MainBoardController documentation" />
+    <MESSAGE value="Finished cloudController,islandController, IslandsController and started MineSchoolController documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished cloudController,islandController, IslandsController and started MineSchoolController documentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

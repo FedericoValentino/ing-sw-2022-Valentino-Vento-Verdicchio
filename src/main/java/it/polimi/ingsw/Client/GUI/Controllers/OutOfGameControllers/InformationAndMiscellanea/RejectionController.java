@@ -16,6 +16,10 @@ public class RejectionController extends Controller
     @FXML private Button backToMenu;
 
 
+    /**This method load the intro fxml file, then create the associate controller and then preserve the reference to the
+     * guiMainStarter
+     * @param event is the click on the return to menu button
+     */
     public void OnClickMenu(MouseEvent event)
     {
         Platform.runLater(() -> {
@@ -26,6 +30,8 @@ public class RejectionController extends Controller
         });
     }
 
+    /**This method add to the backButton the onClickMenu method to come back to the intro scene
+     */
     public void setup()
     {
         backToMenu.setOnMouseClicked(this::OnClickMenu);
