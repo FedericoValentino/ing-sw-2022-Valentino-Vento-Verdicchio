@@ -122,7 +122,7 @@ public class IslandsTest {
      * to the player 1 and the group become 2
      */
     @Test
-    public void testIdManagmentCase1() {
+    public void testIdManagementCase1() {
 
         initialization();
         initPlaceToken1();// I put the students in the islands
@@ -260,7 +260,7 @@ public class IslandsTest {
      *In this method we do a simple merging without any
      */
     @Test
-    public void testIdManagmentCase3() {
+    public void testIdManagementCase3() {
         initialization();
         initPlaceToken3();
 
@@ -304,7 +304,7 @@ public class IslandsTest {
     public void testGetMax()
     {
         initialization();
-        testIdManagmentCase1();
+        testIdManagementCase1();
         assertEquals(ColTow.GREY, is1.getMaxCol(c.getCurrentTeams()));
     }
 }

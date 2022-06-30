@@ -159,6 +159,7 @@ public class Islands extends Board {
         {
           max = Towers[i];
           Winner = i;
+          tie = false;
         }
         if(Towers[i] + ControlledProfessors[i] == Towers[Winner] + ControlledProfessors[Winner])
         {
