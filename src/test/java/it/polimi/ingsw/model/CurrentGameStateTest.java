@@ -9,17 +9,14 @@ import java.util.HashMap;
 import static org.junit.Assert.*;
 
 public class CurrentGameStateTest {
-    CurrentGameState dummy = new CurrentGameState(2, false);
     CurrentGameState cg1=new CurrentGameState(2,false);
     CurrentGameState cg2=new CurrentGameState(2,true);
-    CurrentGameState cg3=new CurrentGameState(3,false);
-    Student s2=new Student(Col.RED);
-    Student s5=new Student(Col.BLUE);
+    Student studRED =new Student(Col.RED);
+    Student studBLUE =new Student(Col.BLUE);
 
-    Player p1=new Player("ci", ColTow.WHITE,8, Wizard.DRUID,false);
-    Player p2=new Player("asd", ColTow.GREY,8,Wizard.WITCH,false);
-    HashMap<String, Integer> tO=new HashMap<>();
-    HashMap<String, Integer> tOO=new HashMap<>();
+    Player p1=new Player("CiroScapece", ColTow.WHITE,8, Wizard.DRUID,false);
+    Player p2=new Player("SparaPeppinoSpara", ColTow.GREY,8,Wizard.WITCH,false);
+    HashMap<String, Integer> turn1 =new HashMap<>();
 
 
     @Test
@@ -44,54 +41,25 @@ public class CurrentGameStateTest {
     @Test
     public void testUpdateTurnState()
     {
+        p1.chooseAssistantCard(0);
+        assertEquals(p1.getValue(),1);
+        p2.chooseAssistantCard(1);
+        assertEquals(p2.getValue(),2);
+
         cg2.getCurrentTeams().get(0).addPlayer(p2);//grey
         cg2.getCurrentTeams().get(1).addPlayer(p1);//white
-        p1.chooseAssistantCard(0);
-        p2.chooseAssistantCard(1);
-        cg2.updateTurnState();
-        tO.put(p1.getName(), p1.getValue());
-        tOO.put(p2.getName(),p2.getValue());
 
-        //TO DO risolvere questo
-        //assertEquals(cg2.getCurrentTurnState().getTurnOrder().get(0),tO);
+
+        cg2.updateTurnState();
+        turn1.put(p1.getName(), p1.getValue());
+        turn1.put(p2.getName(),p2.getValue());
+
+        assertEquals(cg2.getCurrentTurnState().getTurnOrder().get(2),turn1.get(2));
     }
 
-    /*this is a service method used in 3° test of testCheckWinner
-    @Test
-    public void testPlaceToken1()
-   {
-       for()
-        cg2.getCurrentIslands().getIslands().get(0).getCurrentStudents().add(s2);
-        cg2.getCurrentIslands().getIslands().get(1).getCurrentStudents().add(s2);
-        cg2.getCurrentIslands().getIslands().get(2).getCurrentStudents().add(s2);
-        cg2.getCurrentIslands().getIslands().get(3).getCurrentStudents().add(s2);
-        cg2.getCurrentIslands().getIslands().get(4).getCurrentStudents().add(s2);
-        cg2.getCurrentIslands().getIslands().get(5).getCurrentStudents().add(s2);
-        cg2.getCurrentIslands().getIslands().get(6).getCurrentStudents().add(s5);
-        cg2.getCurrentIslands().getIslands().get(7).getCurrentStudents().add(s5);
-        cg2.getCurrentIslands().getIslands().get(8).getCurrentStudents().add(s5);
-
-        cg2.getCurrentIslands().getIslands().get(9).getCurrentStudents().add(s2);
-        cg2.getCurrentIslands().getIslands().get(10).getCurrentStudents().add(s2);
-        cg2.getCurrentIslands().getIslands().get(11).getCurrentStudents().add(s2);
-
-        p1.getSchool().updateProfessorsTable(1,true);//red prof
-        p2.getSchool().updateProfessorsTable(4,true);//blue prof
-        cg2.getCurrentTeams().get(0).updateProfessors();//team p2 grey
-        cg2.getCurrentTeams().get(1).updateProfessors();//team p1 black
-
-        for(int i=0;i<cg2.getCurrentIslands().getTotalGroups();i++)
-        {
-            cg2.getCurrentIslands().getIslands().get(i).updateTeamInfluence(cg2.getCurrentTeams());
-            cg2.getCurrentIslands().getIslands().get(i).updateMotherNature();
-            cg2.getCurrentIslands().getIslands().get(i).calculateOwnership();
-            cg2.getCurrentIslands().getIslands().get(i).updateTeamInfluence(cg2.getCurrentTeams());
-        }
-        cg2.getCurrentIslands().idManagement();
-        assertEquals(2, cg2.getCurrentIslands().getTotalGroups());
-    }*/
-
-
+    /**
+     * This method give some students to the players and call the method giveProfessor
+     */
     @Test
     public void testGiveProfessors()
     {
@@ -102,28 +70,37 @@ public class CurrentGameStateTest {
         cg1.getCurrentTeams().get(0).addPlayer(p1);
         cg1.getCurrentTeams().get(1).addPlayer(p2);
 
-
+        //give yellow, red, green student to player 1
         cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().placeInDiningRoom(Col.YELLOW);
         cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
         cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().placeInDiningRoom(Col.GREEN);
+
+        //give 3 red students to player 2
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
+
+        //assert to verify that any professor is given before calling the method
+        assertTrue(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[0]);
+        assertTrue(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[2]);
+        assertTrue(cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().getProfessorTable()[1]);
+
         cg1.giveProfessors(false);
+
+        //verify the given professors
+        assertTrue(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[0]);
+        assertTrue(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[2]);
+        assertTrue(cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().getProfessorTable()[1]);
     }
 
     @Test
     public void testGetter()
     {
-
         assertEquals(cg1.getCurrentPouch().getContent().size(),130);
         assertTrue(cg1.getCurrentMotherNature().getPosition()>=0);
         assertFalse(cg2.getCurrentCharacterDeck().getDeck().isEmpty());
 
         assertEquals(2, cg2.getCurrentClouds().length);
-        //da rivedere, perché questa add va messa  in una funzione dedicata nel model (problema discusso)
-        //assertEquals(,cg1.getCurrentActiveCharacterCard());
-        // cg1.getCurrentActiveCharacterCard().add(cg1.getCurrentCharacterDeck().drawCard(0));
     }
 }
 
