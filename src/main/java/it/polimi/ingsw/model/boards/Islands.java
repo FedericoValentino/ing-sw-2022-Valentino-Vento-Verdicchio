@@ -5,7 +5,7 @@ import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 
 import java.util.ArrayList;
-
+//
 /**
  * Islands is generally used as a collection of island objects. It contains methods that need to access more islands at once,
  * for example the methods that rule the merging of island objects after the influence calculation
