@@ -68,7 +68,8 @@ public class Princess extends CharacterCard implements Serializable {
     {
         color = getStudent(studentPosition.get(0)).getColor();
         MainController.findPlayerByName(game, currentPlayer).getSchool().placeInDiningRoom(color);
-        updateStudents(game.getCurrentPouch());
+        if(!game.getCurrentPouch().getContent().isEmpty())
+            updateStudents(game.getCurrentPouch());
         game.giveProfessors(false);
         game.notify(game.modelToJson());
     }
