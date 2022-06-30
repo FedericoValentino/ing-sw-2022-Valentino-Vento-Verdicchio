@@ -345,6 +345,10 @@ public class MainBoardController extends Controller {
                 {
                     PrincessSetup(card);
                 }
+                if(card.getName().equals(CharacterName.GRANDMA_HERBS))
+                {
+                    GrandmaHerbsSetup(card);
+                }
                 else
                 {
                     Integer1Setup();
@@ -407,6 +411,39 @@ public class MainBoardController extends Controller {
                 break;
 
         }
+    }
+
+    /**
+     * Method GrandmaHerbsSetup sets up the character pane with information regarding the grandma weed card
+     * @param card the grandma herbs card
+     */
+    public void GrandmaHerbsSetup(LightCharacterCard card)
+    {
+        input1.getChildren().add(new Text("No entry Tokens"));
+        for(int i = 0; i < card.getNoEntry(); i++)
+        {
+            ImageView image = new ImageView("/Client/GUI/Images/deny_island_icon.png");
+            image.setFitHeight(27);
+            image.setFitWidth(27);
+            input1.getChildren().add(image);
+        }
+
+        Text hint = new Text();
+        hint.setText("Select the target island");
+        input2.getChildren().add(hint);
+        ChoiceBox<Integer> box = new ChoiceBox<>();
+        for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
+        {
+            box.getItems().add(i);
+        }
+        box.setOnAction((Event) ->
+        {
+            integerChoice_1.clear();
+            integerChoice_1.add(box.getSelectionModel().getSelectedIndex());
+        });
+
+        input2.getChildren().add(box);
+
     }
 
     /**This method sets the character effect pane with the student on the card and also sets the method to
