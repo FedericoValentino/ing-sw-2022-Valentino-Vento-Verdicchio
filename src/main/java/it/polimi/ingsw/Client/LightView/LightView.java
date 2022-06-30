@@ -61,7 +61,7 @@ public class LightView extends Observable
             {
                 currentTeams.get(i).updateTeam(newView.currentTeams.get(i));
             }
-            for(int i = 0; i < currentTeams.size(); i++)
+            for(int i = 0; i < currentClouds.length; i++)
             {
                 currentClouds[i].updateCloud(newView.currentClouds[i]);
             }

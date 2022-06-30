@@ -12,10 +12,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="fix to the fix">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="fix to the fix to the fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/Controllers/MainBoardController.java" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
@@ -284,14 +282,7 @@
       <workItem from="1656528089385" duration="2193000" />
       <workItem from="1656530419432" duration="1595000" />
       <workItem from="1656537736988" duration="309000" />
-      <workItem from="1656594522545" duration="6789000" />
-    </task>
-    <task id="LOCAL-00173" summary="Code with me">
-      <created>1656115562641</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1656115562641</updated>
+      <workItem from="1656594522545" duration="7541000" />
     </task>
     <task id="LOCAL-00174" summary="(╯°□°)╯︵ ┻━┻">
       <created>1656116936831</created>
@@ -629,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656598675151</updated>
     </task>
-    <option name="localTasksCounter" value="222" />
+    <task id="LOCAL-00222" summary="fix to the fix to the fix">
+      <created>1656601496704</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1656601496704</updated>
+    </task>
+    <option name="localTasksCounter" value="223" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,7 +658,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix" />
     <MESSAGE value="Added economy in CLI" />
     <MESSAGE value="Now it is impossible to play more than 1 card per round by controller design. CLI will show an error message" />
     <MESSAGE value="fix to color type cards" />
@@ -685,7 +682,8 @@
     <MESSAGE value="Grandma herbs GUI" />
     <MESSAGE value="grandma herbs fix" />
     <MESSAGE value="fix to the fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix to the fix" />
+    <MESSAGE value="fix to the fix to the fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix to the fix to the fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
