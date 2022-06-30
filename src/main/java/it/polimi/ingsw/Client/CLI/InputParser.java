@@ -216,29 +216,18 @@ public class InputParser
                 break;
             case INTEGER_1:
                 ArrayList<Integer> inputArray = new ArrayList<>();
-                if(card.getName().equals(CharacterName.PRINCESS))
+                if(cardName.equals(CharacterName.PRINCESS))
                 {
                     PrinterCLI.printStudent(card.getStudentList(), 2);
                     AnsiConsole.out().println("Choose a student to move to dining room");
                     input = integerParser();
-                    if(input >= 0 && input <= 4)
+
+                    while (input < 0 || input > 4)
                     {
-                        inputArray.add(input);
-                    }
-                    else if(input >= 0 && input <= 4 && Utilities.findPlayerByName(cardPrinters.getView(), nickname).getSchool().getDiningRoom()[card.getStudentList().get(input).getColor().ordinal()] == 10)
-                    {
-                        AnsiConsole.out().println("That table row is full, choose another one");
+                        AnsiConsole.out().println("Wrong input insert the index again");
                         input = integerParser();
                     }
-                    else
-                    {
-                        while(input < 0 || input > 4)
-                        {
-                            AnsiConsole.out().println("Wrong input insert the index again");
-                            input = integerParser();
-                        }
                         inputArray.add(input);
-                    }
                 }
                 else
                 {
@@ -249,9 +238,13 @@ public class InputParser
                         inputArray.add(input);
                     }
                 }
-                if(card.getName().equals(CharacterName.GRANDMA_HERBS) && (cardPrinters.getView().getCurrentIslands().getIslands().get(input).isNoEntry() || card.getNoEntry() == 0))
+                if(cardName.equals(CharacterName.GRANDMA_HERBS) && (cardPrinters.getView().getCurrentIslands().getIslands().get(input).isNoEntry() || card.getNoEntry() == 0))
                 {
                     AnsiConsole.out().println("Island already occupied by noEntry or no more noEntry remaining on the card");
+                }
+                else if(cardName.equals(CharacterName.PRINCESS) && Utilities.findPlayerByName(cardPrinters.getView(), nickname).getSchool().getDiningRoom()[card.getStudentList().get(input).getColor().ordinal()] == 10)
+                {
+                    AnsiConsole.out().println("That table row is full, choose another student");
                 }
                 else
                 {
@@ -263,11 +256,11 @@ public class InputParser
             case INTEGER_2:
                 ArrayList<Integer> inputArray1 = new ArrayList<>();
                 ArrayList<Integer> inputArray2 = new ArrayList<>();
-                if(card.getName().equals(CharacterName.MINSTREL))
+                if(cardName.equals(CharacterName.MINSTREL))
                 {
                     MinstrelParser(player, inputArray2, inputArray1);
                 }
-                else if(card.getName().equals(CharacterName.JESTER))
+                else if(cardName.equals(CharacterName.JESTER))
                 {
                     JesterParser(card, player, inputArray1, inputArray2);
                 }
