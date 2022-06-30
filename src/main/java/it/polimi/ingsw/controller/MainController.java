@@ -121,11 +121,17 @@ public class MainController
             }
         }
         game.getCurrentPouch().updateSetup(false);
+
+        int studentsToGive = 7;
+        if(players == 3)
+        {
+            studentsToGive = 9;
+        }
         for(Team team: game.getCurrentTeams())
         {
             for(Player player: team.getPlayers())
             {
-                for(int i = 0; i < 7; i++)
+                for(int i = 0; i < studentsToGive; i++)
                 {
                     player.getSchool().placeToken(game.getCurrentPouch().extractStudent());
                 }

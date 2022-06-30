@@ -355,6 +355,11 @@ public class MainBoardController extends Controller {
                 }
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
+                            if(card.getName() == CharacterName.PRINCESS &&
+                                    Utilities.getSchoolByName(view, GuiMainStarter.getClientGUI().getServerConnection().getNickname()).getDiningRoom()[card.getStudentList().get(integerChoice_1.get(0)).getColor().ordinal()] == 10)
+                            {
+                                    DisplayError("You can't place that student in your dining room,\n the positions are already full!");
+                            }
                             if(card.getName() == CharacterName.GRANDMA_HERBS && (view.getCurrentIslands().getIslands().get(integerChoice_1.get(0)).isNoEntry() || card.getNoEntry() == 0))
                             {
                                 DisplayError("Island already occupied by noEntry \n or \n no more noEntry remaining on the card");
