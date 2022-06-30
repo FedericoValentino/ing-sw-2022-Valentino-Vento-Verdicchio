@@ -7,14 +7,14 @@ import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import it.polimi.ingsw.model.boards.token.Student;
 import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import org.junit.Test;
-import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class IslandsTest {
     CurrentGameState dummy = new CurrentGameState(2, false);
-    Islands is1;
-    Islands is2;
-    Islands is3;
+    Islands islands1;
+    Islands islands2;
+    Islands islands3;
 
     Student studGREEN;
     Student studRED;
@@ -32,9 +32,9 @@ public class IslandsTest {
 
 
     public void initialization() {
-        is1 =new Islands(dummy);
-        is2=new Islands(dummy);
-        is3=new Islands(dummy);
+        islands1 =new Islands(dummy);
+        islands2 =new Islands(dummy);
+        islands3 =new Islands(dummy);
 
         studGREEN =new Student(Col.GREEN);
         studRED =new Student(Col.RED);
@@ -60,21 +60,21 @@ public class IslandsTest {
     //place token in 4 groups
     public void initPlaceToken1()
     {
-        is1.getIslands().get(0).getCurrentStudents().add(studGREEN);//green
+        islands1.getIslands().get(0).getCurrentStudents().add(studGREEN);//green
 
-        is1.getIslands().get(1).getCurrentStudents().add(studPINK);//pink
-        is1.getIslands().get(2).getCurrentStudents().add(studPINK);//pink
-        is1.getIslands().get(3).getCurrentStudents().add(studPINK);//pink
+        islands1.getIslands().get(1).getCurrentStudents().add(studPINK);//pink
+        islands1.getIslands().get(2).getCurrentStudents().add(studPINK);//pink
+        islands1.getIslands().get(3).getCurrentStudents().add(studPINK);//pink
 
-        is1.getIslands().get(4).getCurrentStudents().add(studYELLOW);//yellow
-        is1.getIslands().get(5).getCurrentStudents().add(studYELLOW);//yellow
-        is1.getIslands().get(6).getCurrentStudents().add(studYELLOW);//yellow
+        islands1.getIslands().get(4).getCurrentStudents().add(studYELLOW);//yellow
+        islands1.getIslands().get(5).getCurrentStudents().add(studYELLOW);//yellow
+        islands1.getIslands().get(6).getCurrentStudents().add(studYELLOW);//yellow
 
-        is1.getIslands().get(7).getCurrentStudents().add(studPINK);//pink
-        is1.getIslands().get(8).getCurrentStudents().add(studPINK);//pink
-        is1.getIslands().get(9).getCurrentStudents().add(studPINK);//pink
-        is1.getIslands().get(10).getCurrentStudents().add(studPINK);//pink
-        is1.getIslands().get(11).getCurrentStudents().add(studPINK);//pink
+        islands1.getIslands().get(7).getCurrentStudents().add(studPINK);//pink
+        islands1.getIslands().get(8).getCurrentStudents().add(studPINK);//pink
+        islands1.getIslands().get(9).getCurrentStudents().add(studPINK);//pink
+        islands1.getIslands().get(10).getCurrentStudents().add(studPINK);//pink
+        islands1.getIslands().get(11).getCurrentStudents().add(studPINK);//pink
     }
 
     /**
@@ -82,39 +82,39 @@ public class IslandsTest {
      */
     public void initPlaceToken2()
     {
-        is2.getIslands().get(0).getCurrentStudents().add(studGREEN);
-        is2.getIslands().get(1).getCurrentStudents().add(studRED);
-        is2.getIslands().get(2).getCurrentStudents().add(studYELLOW);
-        is2.getIslands().get(3).getCurrentStudents().add(studPINK);
-        is2.getIslands().get(4).getCurrentStudents().add(studBLUE);
-        is2.getIslands().get(5).getCurrentStudents().add(studGREEN);
-        is2.getIslands().get(6).getCurrentStudents().add(studRED);
-        is2.getIslands().get(7).getCurrentStudents().add(studYELLOW);
-        is2.getIslands().get(8).getCurrentStudents().add(studPINK);
-        is2.getIslands().get(9).getCurrentStudents().add(studBLUE);
-        is2.getIslands().get(10).getCurrentStudents().add(studGREEN);
-        is2.getIslands().get(11).getCurrentStudents().add(studRED);
+        islands2.getIslands().get(0).getCurrentStudents().add(studGREEN);
+        islands2.getIslands().get(1).getCurrentStudents().add(studRED);
+        islands2.getIslands().get(2).getCurrentStudents().add(studYELLOW);
+        islands2.getIslands().get(3).getCurrentStudents().add(studPINK);
+        islands2.getIslands().get(4).getCurrentStudents().add(studBLUE);
+        islands2.getIslands().get(5).getCurrentStudents().add(studGREEN);
+        islands2.getIslands().get(6).getCurrentStudents().add(studRED);
+        islands2.getIslands().get(7).getCurrentStudents().add(studYELLOW);
+        islands2.getIslands().get(8).getCurrentStudents().add(studPINK);
+        islands2.getIslands().get(9).getCurrentStudents().add(studBLUE);
+        islands2.getIslands().get(10).getCurrentStudents().add(studGREEN);
+        islands2.getIslands().get(11).getCurrentStudents().add(studRED);
     }
 
     public void initPlaceToken3()
     {
-        is3.getIslands().get(0).getCurrentStudents().add(studGREEN);//green  black
+        islands3.getIslands().get(0).getCurrentStudents().add(studGREEN);//green  black
 
-        is3.getIslands().get(1).getCurrentStudents().add(studPINK);//pink   grey
-        is3.getIslands().get(3).getCurrentStudents().add(studPINK);//pink
-        is3.getIslands().get(2).getCurrentStudents().add(studPINK);//pink
+        islands3.getIslands().get(1).getCurrentStudents().add(studPINK);//pink   grey
+        islands3.getIslands().get(3).getCurrentStudents().add(studPINK);//pink
+        islands3.getIslands().get(2).getCurrentStudents().add(studPINK);//pink
 
-        is3.getIslands().get(4).getCurrentStudents().add(studYELLOW);//yellow  white
+        islands3.getIslands().get(4).getCurrentStudents().add(studYELLOW);//yellow  white
 
-        is3.getIslands().get(5).getCurrentStudents().add(studBLUE);
+        islands3.getIslands().get(5).getCurrentStudents().add(studBLUE);
 
-        is3.getIslands().get(6).getCurrentStudents().add(studYELLOW);
+        islands3.getIslands().get(6).getCurrentStudents().add(studYELLOW);
 
-        is3.getIslands().get(7).getCurrentStudents().add(studPINK);//pink   grey
-        is3.getIslands().get(8).getCurrentStudents().add(studPINK);//pink
-        is3.getIslands().get(9).getCurrentStudents().add(studPINK);//pink
-        is3.getIslands().get(10).getCurrentStudents().add(studPINK);//pink
-        is3.getIslands().get(11).getCurrentStudents().add(studPINK);//pink
+        islands3.getIslands().get(7).getCurrentStudents().add(studPINK);//pink   grey
+        islands3.getIslands().get(8).getCurrentStudents().add(studPINK);//pink
+        islands3.getIslands().get(9).getCurrentStudents().add(studPINK);//pink
+        islands3.getIslands().get(10).getCurrentStudents().add(studPINK);//pink
+        islands3.getIslands().get(11).getCurrentStudents().add(studPINK);//pink
     }
 
     /**
@@ -122,7 +122,7 @@ public class IslandsTest {
      * to the player 1 and the group become 2
      */
     @Test
-    public void testIdManagementCase1() {
+    public void testIdManagmentCase1() {
 
         initialization();
         initPlaceToken1();// I put the students in the islands
@@ -135,35 +135,35 @@ public class IslandsTest {
         c.getCurrentTeams().add(t1);
         c.getCurrentTeams().add(t2);
         for(int i=0;i<12;i++) {
-            is1.getIslands().get(i).calculateOwnership();
-            is1.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            islands1.getIslands().get(i).calculateOwnership();
+            islands1.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
 
         //calling the management function, but it can't operate because I've done calculate Ownerhip before
         //the update team influence
-        is1.idManagement();
-        assertEquals(is1.getTotalGroups(),12);
+        islands1.idManagement();
+        assertEquals(islands1.getTotalGroups(),12);
 
         //merging the island in positions 4,5,6 ( so remain 12-3+1= 10 groups)
-        for(int i = 0; i< is1.getTotalGroups(); i++)
+        for(int i = 0; i< islands1.getTotalGroups(); i++)
         {
-            is1.getIslands().get(i).updateMotherNature();
-            is1.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-            is1.getIslands().get(i).calculateOwnership();
+            islands1.getIslands().get(i).updateMotherNature();
+            islands1.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            islands1.getIslands().get(i).calculateOwnership();
         }
-        is1.idManagement();
-        assertEquals(10, is1.getTotalGroups());
+        islands1.idManagement();
+        assertEquals(10, islands1.getTotalGroups());
 
         //now it adds the pink professor to the p1
         p1.getSchool().updateProfessorsTable(3,true);//pink prof
         t1.updateProfessors();
-        for(int i = 0; i< is1.getTotalGroups(); i++)
+        for(int i = 0; i< islands1.getTotalGroups(); i++)
         {
-            is1.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-            is1.getIslands().get(i).calculateOwnership();
+            islands1.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            islands1.getIslands().get(i).calculateOwnership();
         }
-        is1.idManagement();
-        assertEquals(2, is1.getTotalGroups());
+        islands1.idManagement();
+        assertEquals(2, islands1.getTotalGroups());
     }
 
     /**
@@ -177,24 +177,24 @@ public class IslandsTest {
         initialization();
         initPlaceToken2();// I put the students in the islands
 
-        is2.placeToken(studGREEN,0);
-        assertEquals(is2.getIslands().get(0).getCurrentStudents().get(0).getColor(), studGREEN.getColor());
+        islands2.placeToken(studGREEN,0);
+        assertEquals(islands2.getIslands().get(0).getCurrentStudents().get(0).getColor(), studGREEN.getColor());
 
-        is2.placeToken(studPINK,1);
-        assertEquals(is2.getIslands().get(1).getCurrentStudents().get(0).getColor(), studRED.getColor());
-        assertEquals(is2.getIslands().get(1).getCurrentStudents().get(1).getColor(), studPINK.getColor());
+        islands2.placeToken(studPINK,1);
+        assertEquals(islands2.getIslands().get(1).getCurrentStudents().get(0).getColor(), studRED.getColor());
+        assertEquals(islands2.getIslands().get(1).getCurrentStudents().get(1).getColor(), studPINK.getColor());
 
-        is2.placeToken(studGREEN,2);
-        assertEquals(is2.getIslands().get(2).getCurrentStudents().get(0).getColor(), studYELLOW.getColor());
-        assertEquals(is2.getIslands().get(2).getCurrentStudents().get(1).getColor(), studGREEN.getColor());
+        islands2.placeToken(studGREEN,2);
+        assertEquals(islands2.getIslands().get(2).getCurrentStudents().get(0).getColor(), studYELLOW.getColor());
+        assertEquals(islands2.getIslands().get(2).getCurrentStudents().get(1).getColor(), studGREEN.getColor());
 
         //now I remove all the previous placing
-        is2.getIslands().get(0).getCurrentStudents().remove(0);
-        is2.getIslands().get(1).getCurrentStudents().remove(0);
-        is2.getIslands().get(2).getCurrentStudents().remove(0);
-        assertEquals(is2.getIslands().get(0).getCurrentStudents().size(),1);
-        assertEquals(is2.getIslands().get(1).getCurrentStudents().size(),1);
-        assertEquals(is2.getIslands().get(2).getCurrentStudents().size(),1);
+        islands2.getIslands().get(0).getCurrentStudents().remove(0);
+        islands2.getIslands().get(1).getCurrentStudents().remove(0);
+        islands2.getIslands().get(2).getCurrentStudents().remove(0);
+        assertEquals(islands2.getIslands().get(0).getCurrentStudents().size(),1);
+        assertEquals(islands2.getIslands().get(1).getCurrentStudents().size(),1);
+        assertEquals(islands2.getIslands().get(2).getCurrentStudents().size(),1);
 
 
 
@@ -223,44 +223,44 @@ public class IslandsTest {
         c.getCurrentTeams().add(t1);
         c.getCurrentTeams().add(t2);
         c.getCurrentTeams().add(t3);
-        assertEquals(is2.getTotalGroups(),12);
+        assertEquals(islands2.getTotalGroups(),12);
 
-        for(int i=0;i<is2.getTotalGroups();i++)
+        for(int i = 0; i< islands2.getTotalGroups(); i++)
         {
-            is2.getIslands().get(i).calculateOwnership();
-            is2.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            islands2.getIslands().get(i).calculateOwnership();
+            islands2.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
-        is2.idManagement();
-        assertEquals(12,is2.getTotalGroups());
+        islands2.idManagement();
+        assertEquals(12, islands2.getTotalGroups());
 
         //Retrying merging without any changes to see if there are some problems
-        is2.idManagement();
-        assertEquals(12,is2.getTotalGroups());
+        islands2.idManagement();
+        assertEquals(12, islands2.getTotalGroups());
         //because I don't have mother nature= true, so it doesn't change anything
 
 
         //don't do anything because I don't have already updated the ownership
-        is2.idManagement();
+        islands2.idManagement();
 
         //now it adds some student to start merging but it doesn't have mother nature so it won't merge
-        is2.placeToken(studGREEN,1);
-        is2.placeToken(studGREEN,1);
-        is2.placeToken(studPINK,6);
-        is2.placeToken(studPINK,6);
+        islands2.placeToken(studGREEN,1);
+        islands2.placeToken(studGREEN,1);
+        islands2.placeToken(studPINK,6);
+        islands2.placeToken(studPINK,6);
 
-        for(int i=0;i<is2.getTotalGroups();i++) {
-            is1.getIslands().get(i).calculateOwnership();
-            is2.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+        for(int i = 0; i< islands2.getTotalGroups(); i++) {
+            islands1.getIslands().get(i).calculateOwnership();
+            islands2.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
-        is2.idManagement();
-        assertEquals(12,is2.getTotalGroups());
+        islands2.idManagement();
+        assertEquals(12, islands2.getTotalGroups());
     }
 
     /**
      *In this method we do a simple merging without any
      */
     @Test
-    public void testIdManagementCase3() {
+    public void testIdManagmentCase3() {
         initialization();
         initPlaceToken3();
 
@@ -276,15 +276,15 @@ public class IslandsTest {
         c.getCurrentTeams().add(t3);
 
         for(int i=0;i<12;i++) {
-            is3.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
-            is3.getIslands().get(i).updateMotherNature();
-            is3.getIslands().get(i).calculateOwnership();
+            islands3.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
+            islands3.getIslands().get(i).updateMotherNature();
+            islands3.getIslands().get(i).calculateOwnership();
         }
         //before merging are all initialized and with the right ownership
-        assertEquals(12,is3.getTotalGroups());
+        assertEquals(12, islands3.getTotalGroups());
 
-        is3.idManagement();
-        assertEquals(6,is3.getTotalGroups());
+        islands3.idManagement();
+        assertEquals(6, islands3.getTotalGroups());
 }
 
     @Test
@@ -293,7 +293,7 @@ public class IslandsTest {
         initialization();
         initPlaceToken1();
         //basic test at the beginning
-        assertEquals(is1.getTotalGroups(),12);
+        assertEquals(islands1.getTotalGroups(),12);
     }
 
 
@@ -304,7 +304,7 @@ public class IslandsTest {
     public void testGetMax()
     {
         initialization();
-        testIdManagementCase1();
-        assertEquals(ColTow.GREY, is1.getMaxCol(c.getCurrentTeams()));
+        testIdManagmentCase1();
+        assertEquals(ColTow.GREY, islands1.getMaxCol(c.getCurrentTeams()));
     }
 }
