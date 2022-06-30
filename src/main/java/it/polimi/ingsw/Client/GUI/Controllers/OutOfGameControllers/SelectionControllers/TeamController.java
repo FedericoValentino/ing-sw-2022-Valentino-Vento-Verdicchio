@@ -19,6 +19,10 @@ public class TeamController extends Controller
 {
     @FXML private HBox AvailableTeams;
 
+    /**This method return the correct image path according to the index passed
+     * @param i is the index of the tower selected
+     * @return contains the correct path to the tower image used in the team choice at the beginning of the game
+     */
     public String getTeamColorPath(int i)
     {
         switch(ColTow.values()[i])
@@ -35,6 +39,10 @@ public class TeamController extends Controller
     }
 
 
+    /**This method for each team available display the name and the image of the tower with that color.
+     * It also sets the method to handle the click on a tower
+     * @param availableTeams is the array that contains the value of the tower available
+     */
     public void init(int[] availableTeams)
     {
         this.AvailableTeams.getChildren().clear();
