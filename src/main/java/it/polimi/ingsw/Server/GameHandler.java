@@ -417,7 +417,7 @@ public class GameHandler extends Thread implements Observer
     }
 
 
-    /**
+    /**z
      * The update function is run after every successful client interaction with the model. It sends the client a view message, containing the json serialization of the game model
      * @param message is the serialized model
      */
