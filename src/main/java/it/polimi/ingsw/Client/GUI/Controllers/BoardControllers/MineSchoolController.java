@@ -34,9 +34,13 @@ public class MineSchoolController implements ObserverLightView
     private LightView view;
 
     MouseEvent eventStudent;
+
+    /**This method give a particular effect to the student clicked and it replace the id
+     * @param event
+     */
     public void entranceClick(MouseEvent event)
     {
-        //mi salvo l'evento per poterlo rimuovere dopo invece che dover cercare tra tutti i pane della school
+        //it saves the event to preserve the reference to the pane and to remove the following effect from the student later
         eventStudent=event;
         ((Pane) event.getSource()).setEffect(new DropShadow(5, Color.DARKRED));
         if(!studentChoice.isVisible())
@@ -55,10 +59,13 @@ public class MineSchoolController implements ObserverLightView
         }
     }
 
+    /**This method send the movestudent message to the server
+     * @param event
+     */
     public void sendDining(MouseEvent event)
     {
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new MoveStudent(studentEntrancePos, false, 0)));
-        //tolgo il pane di scelta e disabilito l'effetto rosso dello student
+        //removes the choice pane of the students and removes the effect
         studentChoice.setVisible(false);
         ((Pane) eventStudent.getSource()).setEffect(null);
     }

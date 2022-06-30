@@ -41,6 +41,10 @@ public class IslandController extends Controller {
     private LightMotherNature MN;
     private int totalIslands;
 
+    /**This method calculates the amount of movement for mother nature and then it sends it to the server
+     *
+     * @param event is the click on an island
+     */
     public void onClick(MouseEvent event)
     {
         int amount;
@@ -57,7 +61,15 @@ public class IslandController extends Controller {
     }
 
 
-
+    /**This method fill the island with the student, no entry token, mother nature and the tower if presents
+     *
+     * @param island contain the id
+     * @param ID contain the id of the island
+     * @param Mother is the mother nature attribute and it's used to show the token if its value it's true in the right
+     *               island
+     * @param total is the total number of islands
+     * @param angle is the angle where this method will place the specific island
+     */
     public void setup(LightIsland island, int ID, LightMotherNature Mother, int total, double angle)
     {
         towerNumber.setVisible(false);
@@ -93,6 +105,12 @@ public class IslandController extends Controller {
     }
 
 
+    /**This method place the student into the island only if there are, showing the pane with the color of that student
+     *  and the number of student of the same color in it (so if the number of a student of some color is
+     * 0 it doesn't show the pane and the text)
+     *
+     * @param island is used because it contains the student to place into the island
+     */
     void studentPlacing(LightIsland island)
     {
 

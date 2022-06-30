@@ -30,6 +30,10 @@ public class CloudController extends Controller implements ObserverLightView
     @FXML private GridPane cloud3;
 
 
+    /**This method is called on the click of the cloud and if we are in the planning phase it sends to the server the
+     * draw from pouch message and if we are in the action phase it sends a message with the cloud selected to the server
+     * @param event is the click on the cloud
+     */
     public void CloudSelection(MouseEvent event)
     {
         if(turn.getGamePhase() == GamePhase.PLANNING)
@@ -43,6 +47,10 @@ public class CloudController extends Controller implements ObserverLightView
         }
     }
 
+    /**This method show the clouds and add the observer to the cloudsArray
+     * @param cloudsArray is used to show the right number of clouds
+     * @param turnState is used to save its value into turn attribute
+     */
     public void setup(LightCloud[] cloudsArray, LightTurnState turnState)
     {
         turn = turnState;
@@ -64,8 +72,10 @@ public class CloudController extends Controller implements ObserverLightView
     }
 
 
-
-
+    /**This method empty all the cloud and then refill it with the students ( by calling also the getRightColorPath method)
+     * @param fillable is the gridpane of the cloud
+     * @param filler is the reference to the cloud that contains the color of the students to place in it
+     */
     public void fill(GridPane fillable, LightCloud filler)
     {
         int temp = filler.getStudents().size();
@@ -90,6 +100,9 @@ public class CloudController extends Controller implements ObserverLightView
         }
     }
 
+    /**This method update the cloud and according to the number of the cloud to fill it calls the fill method
+     * @param o is the object that is changed
+     */
     @Override
     public void update(Object o)
     {

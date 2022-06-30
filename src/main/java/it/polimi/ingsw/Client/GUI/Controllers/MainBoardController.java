@@ -84,7 +84,7 @@ public class MainBoardController extends Controller {
         islandAnchorPane.getChildren().clear();
         islandAnchorPane.getChildren().add(loader.load());
         IslandsController contr = loader.getController();
-        contr.setup(islandAnchorPane, view);
+        contr.setup(view);
     }
 
     /**This method it's called when the mainBoardController is set for the first time.
