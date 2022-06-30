@@ -64,7 +64,8 @@ public class Priest extends CharacterCard implements Serializable {
     public void effect(CurrentGameState game, ArrayList<Integer> studentPosition, ArrayList<Integer> chosenIsland, String currentPlayer, Col color)
     {
         game.getCurrentIslands().placeToken(getStudent(studentPosition.get(0)), chosenIsland.get(0));
-        updateStudents(game.getCurrentPouch());
+        if(!game.getCurrentPouch().getContent().isEmpty())
+            updateStudents(game.getCurrentPouch());
         game.notify(game.modelToJson());
     }
 
