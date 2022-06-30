@@ -30,7 +30,7 @@ public class WinnerController extends Controller
 
     /**This method initialize the text of "match ended" and link to the close game button the specific method to handle
      * the click on it
-     * @param text
+     * @param text has the text to show on the screen
      */
     public void setup(String text)
     {
