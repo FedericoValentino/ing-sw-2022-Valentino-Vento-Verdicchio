@@ -12,14 +12,6 @@ public class CurrentTurnStateTest {
 
 
     @Test
-    public void TestGetTurn() {
-
-        curTurnObj.getTurn();
-        cW=curTurnObj.getWinningTeam();
-    }
-
-
-    @Test
     public void TestUpdateTurn() {
         int t = curTurnObj.getTurn();
         curTurnObj.updateTurn();
@@ -31,8 +23,6 @@ public class CurrentTurnStateTest {
     @Test
     public void TestUpdateANDGetWinner() {
         //da vedere se effettivamente il costruttore di Team non prende nulla
-
-
         assertNull(curTurnObj.getWinningTeam());
         curTurnObj.updateWinner(cW);
         assertEquals(curTurnObj.getWinningTeam(), cW);

@@ -24,6 +24,9 @@ public class PlayerTest {
         assertEquals(p1.getMaxMotherMovement(),1);
     }
 
+    /**
+     * This method tests if the chosseAssistantCard it's correct: choose the card 1 that has value=1 and movement=1
+     */
     @Test
     public void testChooseAssistantCard()
     {
@@ -40,6 +43,9 @@ public class PlayerTest {
         assertEquals(p1.getSchool(),p1.school);
     }
 
+    /**
+     * This method try to pick up a card using the choosing method and then verify that current and last card are updated
+     */
     @Test
     public void testDiscard()
     {
@@ -56,6 +62,11 @@ public class PlayerTest {
         assertTrue(p1.isTowerOwner());
     }
 
+    /**
+     * This method place 2 students in the dining room and verify that the player doesn't gain a coin.
+     * Then it inserts other 2 students and verify that gain only 1 coin.
+     * Then it inserts other 2 students and verify that gain only 2 coin.
+     */
     @Test
     public void testGainCoin()
     {
@@ -78,6 +89,10 @@ public class PlayerTest {
     }
 
 
+    /**
+     * This method verify the proper behaviour of updateCoin, also testing the case in which it ties to add a negative
+     * value of coins
+     */
     @Test
     public void testUpdateCoins()
     {

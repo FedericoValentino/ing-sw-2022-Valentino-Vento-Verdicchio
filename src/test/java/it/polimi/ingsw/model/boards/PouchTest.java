@@ -4,30 +4,35 @@ import static org.junit.Assert.*;
 
 import it.polimi.ingsw.model.boards.token.Student;
 import org.junit.Test;
-import it.polimi.ingsw.model.boards.Pouch;
 
 public class PouchTest{
-    Pouch test = new Pouch();
+    Pouch pouch = new Pouch();
 
+    /**
+     * This method tests the extract student from pouch in setup mode or not (in the 2 cases it draw the student from a
+     * different index of the pouch)
+     */
     @Test
     public void testExtractStudent()
     {
-        assertEquals(130, test.getContent().size());
-        test.extractStudent();
-        //da inserire il testing con il gamesetup a false
-        test.updateSetup(false);
-        Student s=test.getContent().get(0);
-        Student s1=test.extractStudent();//perché l'index a 0??????
+        assertEquals(130, pouch.getContent().size());
+        pouch.extractStudent();
+
+        //now it exit from the setup phase (setting setup on false)
+        pouch.updateSetup(false);
+
+        Student s= pouch.getContent().get(0);
+        Student s1= pouch.extractStudent();
         assertEquals(s,s1);
     }
     @Test
     public void testCheckEmpty()
     {
-        assertFalse(test.getContent().isEmpty());
+        assertFalse(pouch.getContent().isEmpty());
     }
     @Test
     public void testGetSetup()
     {
-        assertTrue(test.getSetup());
+        assertTrue(pouch.getSetup());
     }
 }

@@ -2,7 +2,6 @@ package it.polimi.ingsw.model.boards;
 
 import static org.junit.Assert.*;
 
-import it.polimi.ingsw.model.CurrentGameState;
 import org.junit.Test;
 import it.polimi.ingsw.model.boards.token.enumerations.Col;
 import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
@@ -12,75 +11,83 @@ import java.util.ArrayList;
 
 public class SchoolTest
 {
-    School s=new School(ColTow.BLACK,6);
-    School s2=new School(ColTow.GREY,6);
-    Student ss1=new Student(Col.YELLOW);
-    Student ss2=new Student(Col.GREEN);
+    School schoolBlack =new School(ColTow.BLACK,6);
+    Student studYellow =new Student(Col.YELLOW);
+    Student studGreen =new Student(Col.GREEN);
 
 
     @Test
     public void testPlaceToken() {
-        s.placeToken(ss1);
-        assertEquals(s.getEntrance().get(0),ss1);
+        schoolBlack.placeToken(studYellow);
+        assertEquals(schoolBlack.getEntrance().get(0), studYellow);
     }
 
+    /**
+     * This method tests the adds of 2 students to the entrance
+     */
     @Test
     public void testPlaceToken2()
     {
         School st = new School(ColTow.BLACK,6);
         st.getEntrance().removeAll(st.getEntrance());
-        ArrayList<Student> ss = new ArrayList<>();
-        ss.add(ss1);
-        ss.add(ss2);
-        st.placeToken(ss);
-        assertEquals(st.getEntrance().get(0), ss1);
-        assertEquals(st.getEntrance().get(1), ss2);
+        ArrayList<Student> studentArrayList = new ArrayList<>();
+        studentArrayList.add(studYellow);
+        studentArrayList.add(studGreen);
+        st.placeToken(studentArrayList);
+        assertEquals(st.getEntrance().get(0), studYellow);
+        assertEquals(st.getEntrance().get(1), studGreen);
     }
 
 
     @Test
     public void testExtractStudent() {
         testPlaceToken();
-        assertEquals(s.extractStudent(0),ss1);
+        assertEquals(schoolBlack.extractStudent(0), studYellow);
+
         //I use it to test the catch branch
-        s.extractStudent(2);
+        assertNull(schoolBlack.extractStudent(2));
     }
 
     @Test
     public void testPlaceInDiningRoom() {
         testPlaceToken();
-        s.placeInDiningRoom(Col.YELLOW);
-        assertEquals(s.getDiningRoom()[2],1);
-        s.placeToken(ss2);
-        s.placeInDiningRoom(Col.GREEN);
-        assertEquals(s.getDiningRoom()[0],1);
+
+        //testing that in the yellow column there is only 1 students (because 1 is the entrance and not in dining)
+        schoolBlack.placeInDiningRoom(Col.YELLOW);
+        assertEquals(schoolBlack.getDiningRoom()[2],1);
+
+        //testing that in the green column there is 1 student
+        schoolBlack.placeToken(studGreen);
+        schoolBlack.placeInDiningRoom(Col.GREEN);
+        assertEquals(schoolBlack.getDiningRoom()[0],1);
     }
 
     @Test
     public void testUpdateCheckpoint() {
         int i=0;
-        s.updateCheckpoint(i, true);
-        //udating the position
-        assertEquals(s.getRoomCheckpoints()[i],5);
+        //udating the position of the checkpoint
+        schoolBlack.updateCheckpoint(i, true);
+        assertEquals(schoolBlack.getRoomCheckpoints()[i],5);
     }
 
     @Test
     public void testUpdateTowerCount() {
-        int tt=s.getTowerCount();
-        s.updateTowerCount(2);
-        assertEquals(s.getTowerCount(),tt+2);
+        int tt= schoolBlack.getTowerCount();
+        schoolBlack.updateTowerCount(2);
+        assertEquals(schoolBlack.getTowerCount(),tt+2);
     }
 
 
     @Test
     public void testGetProfessorTable() {
-        //da capire che valori hanno, perchè adesso sono a null
-        s.updateProfessorsTable(0,true);
-        assertEquals(s.getProfessorTable()[0], true);
+        schoolBlack.updateProfessorsTable(0,true);
+        assertEquals(schoolBlack.getProfessorTable()[0], true);
+        schoolBlack.updateProfessorsTable(0, false);
+        assertEquals(schoolBlack.getProfessorTable()[0], false);
     }
 
     @Test
     public void testGetColor() {
-        assertEquals(s.getColor(),ColTow.BLACK);
+        assertEquals(schoolBlack.getColor(),ColTow.BLACK);
     }
 }

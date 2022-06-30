@@ -18,16 +18,6 @@ public class  CloudTest {
     Student st3=new Student(Col.YELLOW);
     ArrayList<Student> stud1=new ArrayList<>();
 
-    @Test
-    public void testConstructor()
-    {
-        stud1.add(st1);
-        stud1.add(st2);
-        Cloud c1=new Cloud(stud1, false, 0);
-        assertEquals(c1.getStudents().get(1),st2);
-    }
-
-
     /**
      * This method test the place token functionality.
      */
@@ -39,6 +29,10 @@ public class  CloudTest {
         c.placeToken(s);
         assertFalse(c.getStudents().isEmpty());
     }
+
+    /**
+     * This method test the getter of the student in a cloud
+     */
     @Test
     public void testGetPos()
     {
@@ -48,8 +42,6 @@ public class  CloudTest {
 
         Student student = c.getStudents().get(1);
         assertEquals(student.getColor(), st2.getColor());
-        //now i want to verify the try catch into the getStudent
-        assertNull(c.getStudents().get(2));
     }
 
     @Test
@@ -58,7 +50,6 @@ public class  CloudTest {
         c2.placeToken(st1);
         c2.removeToken(st1);
         assertTrue(c2.getStudents().isEmpty());
-        c2.removeToken(st1);
     }
 
     @Test
@@ -67,14 +58,14 @@ public class  CloudTest {
         Cloud c1 = new Cloud(1);
         Student s1 = new Student(Col.YELLOW);
         Student s2 = new Student(Col.GREEN);
-        ArrayList<Student> ss;
+        ArrayList<Student> studentArrayList;
         c1.placeToken(s1);
         c1.placeToken(s2);
-        ss = c1.EmptyCloud();
-        assert(ss.contains(s1));
-        assert(ss.contains(s2));
+
+        studentArrayList = c1.EmptyCloud();
+
+        assert(studentArrayList.contains(s1));
+        assert(studentArrayList.contains(s2));
         assert(c1.getStudents().isEmpty());
-
-
     }
 }
