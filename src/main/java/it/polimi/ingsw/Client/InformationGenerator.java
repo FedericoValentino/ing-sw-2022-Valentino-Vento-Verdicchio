@@ -40,6 +40,10 @@ public interface InformationGenerator
                 }
             case WRONG_TURN:
                 return new InternalMessage("Not your Turn!");
+            case STUD_MOVE_ERROR:
+                return new InternalMessage("You student move was invalid");
+            case EMPTY_POUCH:
+                return new InternalMessage("Pouch unavailable, skipping phase");
             default:
                 return new InternalMessage("Generic Error");
         }
