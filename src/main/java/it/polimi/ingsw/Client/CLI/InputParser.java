@@ -244,8 +244,15 @@ public class InputParser
                         inputArray.add(input);
                     }
                 }
-                activation = new CharacterActivationParser(nickname, cardName, inputArray);
-                socket.sendMessage(new SerializedMessage(activation.buildMessage()));
+                if(card.getName().equals(CharacterName.GRANDMA_HERBS) && cardPrinters.getView().getCurrentIslands().getIslands().get(input).isNoEntry())
+                {
+                    AnsiConsole.out().println("You can't place a noEntry token on an already blocked island");
+                }
+                else
+                {
+                    activation = new CharacterActivationParser(nickname, cardName, inputArray);
+                    socket.sendMessage(new SerializedMessage(activation.buildMessage()));
+                }
                 break;
 
             case INTEGER_2:

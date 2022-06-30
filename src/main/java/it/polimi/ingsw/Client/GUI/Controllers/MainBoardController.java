@@ -355,8 +355,15 @@ public class MainBoardController extends Controller {
                 }
                 PlayButton.setOnMouseClicked((MouseEvent) ->
                         {
-                            CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1);
-                            GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                            if(card.getName() == CharacterName.GRANDMA_HERBS && view.getCurrentIslands().getIslands().get(integerChoice_1.get(0)).isNoEntry())
+                            {
+                                DisplayError("You can't place a noEntry token on an already blocked island");
+                            }
+                            else
+                            {
+                                CharacterActivationParser activation = new CharacterActivationParser(GuiMainStarter.getClientGUI().getServerConnection().getNickname(), card.getName(), integerChoice_1);
+                                GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(activation.buildMessage()));
+                            }
                             EffectPane.setVisible(false);
                             EffectPane.setMouseTransparent(true);
                         }

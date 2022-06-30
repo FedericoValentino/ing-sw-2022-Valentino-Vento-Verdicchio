@@ -66,7 +66,7 @@ public class CharacterController
     public boolean isEffectPlayable(CurrentGameState game, CharacterName characterName)
     {
         for(int i=0; i<game.getCurrentActiveCharacterCard().size(); i++)
-            if(game.getCurrentActiveCharacterCard().get(i).getCharacterName() == characterName)
+            if (game.getCurrentActiveCharacterCard().get(i).getCharacterName() == characterName)
                 return true;
         return false;
     }
@@ -119,11 +119,8 @@ public class CharacterController
      */
     public void playEffect(CharacterName characterName, CurrentGameState game, ArrayList<Integer> firstChoice, ArrayList<Integer> secondChoice, String currentPlayer, Col color)
     {
-        if(isEffectPlayable(game, characterName))
-        {
-            CharacterCard card = getCardByName(characterName, game.getCurrentActiveCharacterCard());
-            card.effect(game, firstChoice, secondChoice, currentPlayer, color);
-        }
+        CharacterCard card = getCardByName(characterName, game.getCurrentActiveCharacterCard());
+        card.effect(game, firstChoice, secondChoice, currentPlayer, color);
     }
 
     /**
