@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI;
-//
+
 import it.polimi.ingsw.Client.ClientView;
 import it.polimi.ingsw.Client.InformationGenerator;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.IntroController;

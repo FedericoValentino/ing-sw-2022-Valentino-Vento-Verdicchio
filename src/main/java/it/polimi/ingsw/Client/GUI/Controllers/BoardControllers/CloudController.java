@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
-
+//
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
