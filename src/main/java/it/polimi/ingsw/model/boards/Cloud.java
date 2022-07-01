@@ -21,18 +21,6 @@ public class Cloud extends Board
     students = new ArrayList<>();
   }
 
-  /**
-   * Class constructor 2
-   */
-  public Cloud(@JsonProperty("students") ArrayList<Student> students,
-               @JsonProperty("empty") boolean empty,
-               @JsonProperty("CloudID") int id)
-  {
-      this.students = new ArrayList<>();
-
-      for(int i = 0; i < students.size(); i++)
-        this.students.add(i, students.get(i));
-  }
 
   /**
    * Adds the selected student to the cloud

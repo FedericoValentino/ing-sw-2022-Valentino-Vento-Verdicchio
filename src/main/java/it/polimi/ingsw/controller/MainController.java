@@ -275,6 +275,7 @@ public class MainController
     /**
      * Method emergencyUpdatePlanning updates the planning moves to skip the cloud selection part when the pouch is empty
      */
+    //TODO add to tests
     public void emergencyUpdatePlanning()
     {
         game.getCurrentTurnState().updatePlanningMoves();

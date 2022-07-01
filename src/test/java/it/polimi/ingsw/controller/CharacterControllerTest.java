@@ -30,8 +30,8 @@ public class CharacterControllerTest {
 
         TestUtilities.setupTestFor2(controllerTest);
         TestUtilities.gainCoins(controllerTest);
-        assertEquals(104, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
-        assertEquals(103, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
+        assertEquals(6, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
+        assertEquals(5, controllerTest.getGame().getCurrentTeams().get(1).getPlayers().get(0).getCoinAmount());
 
         CharacterCard card = controllerTest.getGame().getCurrentCharacterDeck().getDeck().get(0);
         int baseInitialCost = card.getBaseCost();
@@ -44,7 +44,7 @@ public class CharacterControllerTest {
 
         assertEquals(1, controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getUses());
         assertEquals(baseInitialCost + 1, controllerTest.getGame().getCurrentActiveCharacterCard().get(0).getCurrentCost());
-        assertEquals(104 - baseInitialCost, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
+        assertEquals(6 - baseInitialCost, controllerTest.getGame().getCurrentTeams().get(0).getPlayers().get(0).getCoinAmount());
         assertEquals((baseInitialCost - 1) + 18, controllerTest.getGame().getBankBalance());
     }
 

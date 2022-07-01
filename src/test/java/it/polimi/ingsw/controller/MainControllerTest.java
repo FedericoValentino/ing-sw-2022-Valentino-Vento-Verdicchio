@@ -298,7 +298,7 @@ public class MainControllerTest
         controllerTest.selectWinner();
 
         assertTrue(controllerTest.getGame().getCurrentTurnState().getIsGameEnded());
-        assertEquals(ColTow.GREY, controllerTest.getGame().getCurrentTurnState().getWinningTeam());
+        assertNull(controllerTest.getGame().getCurrentTurnState().getWinningTeam());
     }
 
     /**
