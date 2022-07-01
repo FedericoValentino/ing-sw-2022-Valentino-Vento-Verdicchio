@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.CLI;
-//
+
 import it.polimi.ingsw.Client.CLI.Printers.PrinterCLI;
 import it.polimi.ingsw.Client.ClientView;
 import it.polimi.ingsw.Client.InformationGenerator;

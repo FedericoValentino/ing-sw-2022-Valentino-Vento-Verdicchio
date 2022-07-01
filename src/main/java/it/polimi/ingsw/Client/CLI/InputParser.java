@@ -19,7 +19,7 @@ import org.fusesource.jansi.AnsiConsole;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
-
+//
 /**
  * Class InputParser hosts all the methods necessary to parse the input obtained from the CLI in order to then either show
  * parts from the view or to send messages to the server
