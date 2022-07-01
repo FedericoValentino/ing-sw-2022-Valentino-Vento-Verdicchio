@@ -4,6 +4,7 @@ import it.polimi.ingsw.Client.ClientView;
 import it.polimi.ingsw.Server.Server;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -19,30 +20,45 @@ public class ClientApp
     public static void main( String[] args ) throws IOException, ClassNotFoundException {
         ClientView view;
         Scanner stdin = new Scanner(System.in);
-        System.out.println("Which graphical interface would you like to run, CLI or GUI? If you would like to run the server instead just type SERVER");
+        System.out.println("Which graphical interface would you like to run, CLI or GUI?\n" +
+                            "If you would like to run the server instead just type SERVER.\n" +
+                            "Type EXIT instead if you want to quit the game");
         String selection = stdin.next();
+        selection.toUpperCase(Locale.ROOT);
+        boolean validSelection = false;
 
-        switch(selection)
+        while(!validSelection)
         {
-            case "CLI":
-                view = new ClientCLI();
-                view.run();
-                break;
-            case "GUI":
-                view = new ClientGUI();
-                view.run();
-                break;
-            case "SERVER":
-                Server server;
-                try {
-                    server = new Server();
-                    server.run();
-                } catch(IOException e){
-                    System.err.println("Impossible to start the server!\n" + e.getMessage());
-                    throw new RuntimeException(e);
-                }
-            default:
-                break;
+            switch (selection) {
+                case "CLI":
+                    validSelection = true;
+                    view = new ClientCLI();
+                    view.run();
+                    break;
+                case "GUI":
+                    validSelection = true;
+                    view = new ClientGUI();
+                    view.run();
+                    break;
+                case "SERVER":
+                    validSelection = true;
+                    Server server;
+                    try {
+                        server = new Server();
+                        server.run();
+                    } catch (IOException e) {
+                        System.err.println("Impossible to start the server!\n" + e.getMessage());
+                        throw new RuntimeException(e);
+                    }
+                case "EXIT":
+                    System.exit(0);
+                default:
+                    System.out.println("Not a valid selection");
+                    System.out.println("Which graphical interface would you like to run, CLI or GUI? If you would like to run the server instead just type SERVER");
+                    selection = stdin.next();
+                    selection.toUpperCase(Locale.ROOT);
+                    break;
+            }
         }
     }
 }

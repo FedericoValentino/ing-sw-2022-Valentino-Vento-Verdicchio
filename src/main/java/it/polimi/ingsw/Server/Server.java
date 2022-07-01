@@ -115,6 +115,7 @@ public class Server
     */
    public void run()
    {
+      System.out.println("Server Started!");
       while(true)
       {
          try
