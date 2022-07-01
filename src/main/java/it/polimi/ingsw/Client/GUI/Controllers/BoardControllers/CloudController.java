@@ -5,6 +5,7 @@ import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightCloud;
 import it.polimi.ingsw.Client.LightView.LightTurnState;
+import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.ActionMessages.ChooseCloud;
 import it.polimi.ingsw.Client.Messages.ActionMessages.DrawFromPouch;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
@@ -23,7 +24,7 @@ import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
  */
 public class CloudController extends Controller implements ObserverLightView
 {
-    private LightTurnState turn;
+    private LightView view;
 
     @FXML private GridPane clouds;
     @FXML private GridPane cloud0;
@@ -39,11 +40,11 @@ public class CloudController extends Controller implements ObserverLightView
      */
     public void CloudSelection(MouseEvent event)
     {
-        if(turn.getGamePhase() == GamePhase.PLANNING)
+        if(view.getCurrentTurnState().getGamePhase() == GamePhase.PLANNING)
         {
             GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new DrawFromPouch(Integer.parseInt(((StackPane)event.getSource()).getId().replace("stack_", "")))));
         }
-        else if(turn.getGamePhase() == GamePhase.ACTION)
+        else if(view.getCurrentTurnState().getGamePhase() == GamePhase.ACTION)
         {
             int cloudIndex = Integer.parseInt(((StackPane)event.getSource()).getId().replace("stack_", ""));
             GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new ChooseCloud(cloudIndex)));
@@ -54,11 +55,11 @@ public class CloudController extends Controller implements ObserverLightView
      * Method Setup is called when initializing the cloud pane. It gets the right amount of clouds to show up on the screen
      * and starts observing each one of them
      * @param cloudsArray is the lightView representation of the clouds in the game model
-     * @param turnState is the data structure containing all the information about the current turn.
+     * @param view is the data structure containing all the information about the current turn.
      */
-    public void setup(LightCloud[] cloudsArray, LightTurnState turnState)
+    public void setup(LightCloud[] cloudsArray, LightView view)
     {
-        turn = turnState;
+        this.view = view;
         int temp = cloudsArray.length;
         for(int i = 0; i < 2 && temp > 0; i++)
         {

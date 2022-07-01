@@ -22,7 +22,6 @@ public class Server
    private static final int PORT = 1234;
    private ServerSocket server;
    private ArrayList<Match> matches = new ArrayList<>();
-   private boolean isGameSet = false;
 
 
    /**

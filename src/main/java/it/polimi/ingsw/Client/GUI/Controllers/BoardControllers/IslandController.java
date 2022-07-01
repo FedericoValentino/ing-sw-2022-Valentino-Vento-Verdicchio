@@ -5,6 +5,7 @@ import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightBoards.LightIsland;
 import it.polimi.ingsw.Client.LightView.LightToken.LightMotherNature;
+import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Client.Messages.ActionMessages.MoveMN;
 import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import javafx.fxml.FXML;
@@ -40,7 +41,7 @@ public class IslandController extends Controller {
     @FXML private Text islandIDText;
 
     private int islandID;
-    private LightMotherNature MN;
+    private LightView view;
     private int totalIslands;
 
     /**
@@ -49,6 +50,7 @@ public class IslandController extends Controller {
      */
     public void onClick(MouseEvent event)
     {
+        LightMotherNature MN = view.getCurrentMotherNature();
         int amount;
         if(MN.getIdPosition() > islandID)
         {
@@ -68,16 +70,16 @@ public class IslandController extends Controller {
      *
      * @param island contains all the information the island need to be filled with
      * @param ID is the island ID
-     * @param Mother is the LightView representation of motherNature. It is saved in the controller so that the onClick
-     *               function can work out the movement amount
+     * @param view is the LightView. It is saved in the controller so that the onClick
+     *               function can work out the movement amount from mother nature
      * @param total is the total number of islands
      * @param angle is a parameter used to place in the right spot the noEntry token and the island ID
      */
-    public void setup(LightIsland island, int ID, LightMotherNature Mother, int total, double angle)
+    public void setup(LightIsland island, int ID, LightView view, int total, double angle)
     {
         towerNumber.setVisible(false);
         ownerShip.setVisible(false);
-        this.MN = Mother;
+        this.view = view;
         islandID = ID;
         this.totalIslands = total;
 

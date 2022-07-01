@@ -30,7 +30,6 @@ public class ClientCLI implements ClientView, InformationGenerator
 {
     private ServerConnection main;
     private InputParser stdin;
-    private SerializedAnswer input;
     private boolean setupState = true;
     private final Object setupLock = new Object();
     private Scanner info = new Scanner(System.in);
@@ -178,7 +177,7 @@ public class ClientCLI implements ClientView, InformationGenerator
     public void readMessage(){
         try
         {
-            input = (SerializedAnswer) main.getIn().readObject();
+            SerializedAnswer input = (SerializedAnswer) main.getIn().readObject();
             if(input.getCommand() != null)
             {
                 StandardSetupAnswer answer = input.getCommand();
