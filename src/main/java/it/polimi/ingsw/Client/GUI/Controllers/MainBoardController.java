@@ -249,7 +249,12 @@ public class MainBoardController extends Controller {
 
         Text description = (Text) charDescription.getChildren().stream().filter(node -> node.getId().equals("Description")).collect(Collectors.toList()).get(0);
         description.setText("");
-        description.setText(Arrays.toString(card.getDescription()));
+        StringBuilder finalDescription = new StringBuilder();
+        for(int i = 0; i < card.getDescription().length; i++)
+        {
+            finalDescription.append(card.getDescription()[i]);
+        }
+        description.setText(finalDescription.toString());
 
         Button back = (Button) (charDescription.getChildren().stream().filter(node -> node.getId().equals("BackButton")).collect(Collectors.toList()).get(0));
         back.setOnMouseClicked(this:: hideCharacterInfo);
