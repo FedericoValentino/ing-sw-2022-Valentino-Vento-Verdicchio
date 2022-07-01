@@ -5,6 +5,10 @@ import it.polimi.ingsw.model.cards.CharacterDeck;
 
 import java.util.ArrayList;
 
+/**
+ * Message used to send the current game model to the client via JSON serialization; the Character deck
+ * and the active character card are not serialized
+ */
 public class ViewMessage extends StandardActionAnswer
 {
 
@@ -14,8 +18,7 @@ public class ViewMessage extends StandardActionAnswer
     private boolean expertMode;
 
     /**
-     * Class Constructor, used to send the current game model to the client via JSON serialization, the Character deck
-     * and the active character card are not serialized
+     * Class Constructor.
      */
     public ViewMessage(String jsonView, CharacterDeck CD, ArrayList<CharacterCard> CACD, boolean expertMode) {
         this.jsonView = jsonView;

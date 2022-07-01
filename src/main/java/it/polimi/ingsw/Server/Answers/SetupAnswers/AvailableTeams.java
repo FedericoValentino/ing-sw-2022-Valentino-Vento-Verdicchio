@@ -1,12 +1,14 @@
 package it.polimi.ingsw.Server.Answers.SetupAnswers;
 
-
+/**
+ * This Message is used to tell the clients the available team slots
+ */
 public class AvailableTeams extends StandardSetupAnswer
 {
     private int[] availableTeams;
 
     /**
-     * Class Constructor, this message is used to tell the clients the available team slots
+     * Class Constructor.
      */
     public AvailableTeams(int[] teams)
     {

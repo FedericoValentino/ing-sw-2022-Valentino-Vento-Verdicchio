@@ -1,10 +1,13 @@
 package it.polimi.ingsw.Server.Answers.SetupAnswers;
 
+/**
+ * Message used to tell the client whichever information is in the input string
+ */
 public class InfoMessage extends StandardSetupAnswer {
     private String info;
 
     /**
-     * Class Constructor, used to tell the client whichever information is in the input string
+     * Class Constructor.
      */
     public InfoMessage(String input)
     {

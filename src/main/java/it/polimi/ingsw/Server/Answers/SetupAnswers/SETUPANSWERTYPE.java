@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Server.Answers.SetupAnswers;
 
+/**
+ * Enumeration detailing the types of setupAnswers
+ */
 public enum SETUPANSWERTYPE {
     WIZARDS,
     TEAMS,
