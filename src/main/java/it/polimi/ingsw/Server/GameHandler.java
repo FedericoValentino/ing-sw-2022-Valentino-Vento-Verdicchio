@@ -15,7 +15,6 @@ import it.polimi.ingsw.Client.Messages.SetupMessages.WizardChoice;
 import it.polimi.ingsw.Observer.Observer;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ViewMessage;
-import it.polimi.ingsw.Server.Answers.ActionAnswers.WinMessage;
 import it.polimi.ingsw.controller.CharacterController;
 import it.polimi.ingsw.controller.checksandbalances.Checks;
 import it.polimi.ingsw.controller.MainController;

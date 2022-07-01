@@ -140,6 +140,8 @@ public class ClientCLI implements ClientView, InformationGenerator
         switch(answer.getType())
         {
             case ERROR:
+                PrinterCLI.cls();
+                stdin.printGame();
                 System.out.println(errorGenerator(((ErrorMessage)answer).getError(), MyView).getInfoMessage());
                 break;
             case START_NFO:
