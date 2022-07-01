@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI;
-//
+
 import it.polimi.ingsw.Client.ClientView;
 import it.polimi.ingsw.Client.InformationGenerator;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAndMiscellanea.IntroController;
@@ -9,6 +9,7 @@ import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.InformationAn
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.ReadyController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.TeamController;
 import it.polimi.ingsw.Client.GUI.Controllers.OutOfGameControllers.SelectionControllers.WizardController;
+import it.polimi.ingsw.Client.Messages.SerializedMessage;
 import it.polimi.ingsw.Client.ServerConnection;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.StandardActionAnswer;
@@ -38,7 +39,6 @@ import java.util.concurrent.Executors;
 public class ClientGUI implements ClientView, InformationGenerator
 {
     private GuiMainStarter guiMainStarter;
-    private SerializedAnswer input;
     private ServerConnection serverConnection;
     private Boolean setupState = true;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -86,7 +86,7 @@ public class ClientGUI implements ClientView, InformationGenerator
     {
         try
         {
-            input = (SerializedAnswer) serverConnection.getIn().readObject();
+            SerializedAnswer input = (SerializedAnswer) serverConnection.getIn().readObject();
             if(input.getCommand() != null)
             {
                 StandardSetupAnswer answer = input.getCommand();
