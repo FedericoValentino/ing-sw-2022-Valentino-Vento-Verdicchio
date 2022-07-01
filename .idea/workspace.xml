@@ -12,14 +12,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="(◕‿◕)╭∩╮╭∩╮╭∩╮ to intellij">
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Hopefully last commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/InputParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" afterDir="false" />
     </list>
-    <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
-    <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +59,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Deliverables" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -102,7 +99,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.it.polimi.ingsw in softeng-GC61">
+  <component name="RunManager" selected="Application.ClientApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -271,55 +268,7 @@
       <workItem from="1656530419432" duration="1595000" />
       <workItem from="1656537736988" duration="309000" />
       <workItem from="1656594522545" duration="3841000" />
-    </task>
-    <task id="LOCAL-00188" summary="change">
-      <created>1656449379424</created>
-      <option name="number" value="00188" />
-      <option name="presentableId" value="LOCAL-00188" />
-      <option name="project" value="LOCAL" />
-      <updated>1656449379424</updated>
-    </task>
-    <task id="LOCAL-00189" summary="lmao">
-      <created>1656449779188</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1656449779188</updated>
-    </task>
-    <task id="LOCAL-00190" summary="change in idsetting">
-      <created>1656450320355</created>
-      <option name="number" value="00190" />
-      <option name="presentableId" value="LOCAL-00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1656450320355</updated>
-    </task>
-    <task id="LOCAL-00191" summary="maybe fix?">
-      <created>1656451262032</created>
-      <option name="number" value="00191" />
-      <option name="presentableId" value="LOCAL-00191" />
-      <option name="project" value="LOCAL" />
-      <updated>1656451262032</updated>
-    </task>
-    <task id="LOCAL-00192" summary="maybe fix?">
-      <created>1656452315417</created>
-      <option name="number" value="00192" />
-      <option name="presentableId" value="LOCAL-00192" />
-      <option name="project" value="LOCAL" />
-      <updated>1656452315417</updated>
-    </task>
-    <task id="LOCAL-00193" summary="maybe fix?">
-      <created>1656452344644</created>
-      <option name="number" value="00193" />
-      <option name="presentableId" value="LOCAL-00193" />
-      <option name="project" value="LOCAL" />
-      <updated>1656452344644</updated>
-    </task>
-    <task id="LOCAL-00194" summary="Added TODOs, now testing three different cards">
-      <created>1656453285474</created>
-      <option name="number" value="00194" />
-      <option name="presentableId" value="LOCAL-00194" />
-      <option name="project" value="LOCAL" />
-      <updated>1656453285474</updated>
+      <workItem from="1656694024865" duration="850000" />
     </task>
     <task id="LOCAL-00195" summary="fix">
       <created>1656453971491</created>
@@ -615,7 +564,56 @@
       <option name="project" value="LOCAL" />
       <updated>1656689090827</updated>
     </task>
-    <option name="localTasksCounter" value="237" />
+    <task id="LOCAL-00237" summary="(◕‿◕)╭∩╮╭∩╮╭∩╮">
+      <created>1656691605186</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1656691605186</updated>
+    </task>
+    <task id="LOCAL-00238" summary="Penultimo Commit">
+      <created>1656692997270</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1656692997270</updated>
+    </task>
+    <task id="LOCAL-00239" summary="Penultimissimo Commit">
+      <created>1656693614442</created>
+      <option name="number" value="00239" />
+      <option name="presentableId" value="LOCAL-00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1656693614442</updated>
+    </task>
+    <task id="LOCAL-00240" summary="Penultimissimissimo Commit">
+      <created>1656693822397</created>
+      <option name="number" value="00240" />
+      <option name="presentableId" value="LOCAL-00240" />
+      <option name="project" value="LOCAL" />
+      <updated>1656693822397</updated>
+    </task>
+    <task id="LOCAL-00241" summary="Penultimo Commit">
+      <created>1656694156761</created>
+      <option name="number" value="00241" />
+      <option name="presentableId" value="LOCAL-00241" />
+      <option name="project" value="LOCAL" />
+      <updated>1656694156762</updated>
+    </task>
+    <task id="LOCAL-00242" summary="Deliverable 1">
+      <created>1656694194780</created>
+      <option name="number" value="00242" />
+      <option name="presentableId" value="LOCAL-00242" />
+      <option name="project" value="LOCAL" />
+      <updated>1656694194780</updated>
+    </task>
+    <task id="LOCAL-00243" summary="Hopefully last commit">
+      <created>1656694764505</created>
+      <option name="number" value="00243" />
+      <option name="presentableId" value="LOCAL-00243" />
+      <option name="project" value="LOCAL" />
+      <updated>1656694764505</updated>
+    </task>
+    <option name="localTasksCounter" value="244" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,12 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="little islands fix" />
-    <MESSAGE value="maybe it now works" />
-    <MESSAGE value="Herald exception fixed" />
-    <MESSAGE value="GUI background" />
-    <MESSAGE value="title screen for CLI" />
-    <MESSAGE value="Little addition for when playing Priest" />
     <MESSAGE value="CLI documentation" />
     <MESSAGE value="Part of MainBoardController, all ClientGUI, all GUIUtilities documentation" />
     <MESSAGE value="Documentation for GUI" />
@@ -671,7 +663,13 @@
     <MESSAGE value="Utilities test classes documented. My documentation job is now complete" />
     <MESSAGE value="Added a TODO and corrected two things" />
     <MESSAGE value="(◕‿◕)╭∩╮╭∩╮╭∩╮ to intellij" />
-    <option name="LAST_COMMIT_MESSAGE" value="(◕‿◕)╭∩╮╭∩╮╭∩╮ to intellij" />
+    <MESSAGE value="(◕‿◕)╭∩╮╭∩╮╭∩╮" />
+    <MESSAGE value="Penultimissimo Commit" />
+    <MESSAGE value="Penultimissimissimo Commit" />
+    <MESSAGE value="Penultimo Commit" />
+    <MESSAGE value="Deliverable 1" />
+    <MESSAGE value="Hopefully last commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hopefully last commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
