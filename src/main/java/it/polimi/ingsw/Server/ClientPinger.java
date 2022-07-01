@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Server;
-
+//
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.Ping;
 

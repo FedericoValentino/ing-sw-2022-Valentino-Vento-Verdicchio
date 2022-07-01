@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Server;
-
+//
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.WinMessage;

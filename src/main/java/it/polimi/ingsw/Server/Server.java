@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Server;
-
+//
 import it.polimi.ingsw.Client.Messages.SetupMessages.GameMode;
 import it.polimi.ingsw.Client.Messages.SetupMessages.SetupConnection;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
