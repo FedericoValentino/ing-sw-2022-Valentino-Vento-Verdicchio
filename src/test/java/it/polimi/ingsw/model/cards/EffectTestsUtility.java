@@ -10,8 +10,9 @@ import static org.junit.Assert.assertEquals;
 public final class EffectTestsUtility
 {
 
-    /** Checks if the decks have been manipulated correctly
-     after the effect call.
+    /**
+     * Checks if the decks have been manipulated correctly
+     * after the effect call.
      * @param testCard  the character card whose functionalities are being tested
      */
     public static void verifyDecks(CharacterCard testCard, CurrentGameState game)
@@ -21,9 +22,10 @@ public final class EffectTestsUtility
         assertEquals(testCard.getCharacterName(), game.getCurrentCharacterDeck().getDeck().get(0).getCharacterName());
     }
 
-    /** Specializes the setup by removing all character cards
-     currently in the deck and adding the character card whose
-     effect is the object of the test.
+    /**
+     * Specializes the setup by removing all character cards
+     * currently in the deck and adding the character card whose
+     * effect is the object of the test.
      * @param testCard  the character card whose functionalities are being tested
      */
     public static void setDecks(CharacterCard testCard, CurrentGameState game)
@@ -32,18 +34,22 @@ public final class EffectTestsUtility
         game.getCurrentCharacterDeck().getDeck().add(testCard);
     }
 
-    /** Prepares a basic island configuration that can be eventually further specialized.
-     The island to modify is chosen by generating a random number from 0 to 11.
-     To standardize the process of testing, the island in question has its student removed, if present.
-     * @return the position to the island prepared to be a test environment
+    /**
+     * Prepares a basic island configuration that can be eventually further specialized.
+     * The island to modify is chosen by generating a random number from 0 to 11.
+     * To standardize the process of testing, the island in question has its student removed, if present.
+     *
+     * Grants the control of 3 professors to the first team, 2 to the other, then Checks if the  assignment of professors
+     * has been done correctly.
+     *
+     * Creates one student for each colour; after it places them on the chosen island, then returns a reference to the island itself to be further used
+     * @return the position to the island prepared to be a test environment.
      */
     public static int basicIslandSetup(CurrentGameState game)
     {
         int island = (int) ((Math.random()*11));
         if(game.getCurrentIslands().getIslands().get(island).getCurrentStudents().size() == 1)
             game.getCurrentIslands().getIslands().get(island).getCurrentStudents().remove(0);
-
-        //Grants the control of 3 professors to the first team, 2 to the other
 
         game.getCurrentTeams().get(0).getPlayers().get(0).getSchool().updateProfessorsTable(0, true);   //green
         game.getCurrentTeams().get(0).getPlayers().get(0).getSchool().updateProfessorsTable(1, true);   //red
@@ -56,8 +62,6 @@ public final class EffectTestsUtility
         game.getCurrentTeams().get(0).updateProfessors();
         game.getCurrentTeams().get(1).updateProfessors();
 
-        //Checks if the  assignment of professors has been done correctly
-
         assertEquals(3, game.getCurrentTeams().get(0).getControlledProfessors().size());
         assertEquals(0, game.getCurrentTeams().get(0).getControlledProfessors().get(0).ordinal());
         assertEquals(1, game.getCurrentTeams().get(0).getControlledProfessors().get(1).ordinal());
@@ -66,8 +70,6 @@ public final class EffectTestsUtility
         assertEquals(2, game.getCurrentTeams().get(1).getControlledProfessors().size());
         assertEquals(3, game.getCurrentTeams().get(1).getControlledProfessors().get(0).ordinal());
         assertEquals(4, game.getCurrentTeams().get(1).getControlledProfessors().get(1).ordinal());
-
-        //Creates one student for each colour; after it places them on the chosen island
 
         Student s1 = new Student(Col.GREEN);
         Student s2 = new Student(Col.RED);
@@ -81,14 +83,13 @@ public final class EffectTestsUtility
         game.getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s4);
         game.getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s5);
 
-        //returns a reference to the island itself to be further used
-
         return island;
     }
 
-    /** Number of standardized checks to assess if the SolveEverything function did
-     the calculation of influence and the subsequent actions properly.
-     Two different outcomes are explored.
+    /**
+     * Number of standardized checks to assess if the SolveEverything function did
+     * the calculation of influence and the subsequent actions properly.
+     * Two different outcomes are explored.
      * @param winningTeam  the index of the team that, according to the card effect, should win the island after the influence calculation
      * @param island  index of the prepared island
      */
