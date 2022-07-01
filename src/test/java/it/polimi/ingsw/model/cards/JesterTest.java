@@ -14,6 +14,13 @@ import java.util.ArrayList;
 
 public class JesterTest{
 
+    /**
+     * After saving the color of the first student on the Jester card and emptying the GREY player's entrance, we refill
+     * the entrance with one student of each color, in order.
+     * After this, we select the first student on the card and the last student in the entrance for the swap. and call
+     * the Jester effect.
+     * Since arraylists add elements to the tail, we check the tails of the card and of the entrance to see if the students have been swapped correctly
+     */
     @Test
     public void testEffect()
     {

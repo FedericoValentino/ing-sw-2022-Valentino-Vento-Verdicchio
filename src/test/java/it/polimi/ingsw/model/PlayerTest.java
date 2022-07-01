@@ -25,7 +25,7 @@ public class PlayerTest {
     }
 
     /**
-     * This method tests if the chosseAssistantCard it's correct: choose the card 1 that has value=1 and movement=1
+     * This method tests if the chooseAssistantCard it's correct: choose the card 1 that has value=1 and movement = 1
      */
     @Test
     public void testChooseAssistantCard()

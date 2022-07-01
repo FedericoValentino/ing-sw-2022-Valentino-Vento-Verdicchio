@@ -44,8 +44,13 @@ public class TruffleHunterTest {
         assertEquals(Col.YELLOW,t.getChosenColor());
     }
 
+    /**
+     * Adds two students of a colour controlled by WHITE on the island: White has the higher influence now,
+     * but with the activation of the effect, the colour BLUE will not count towards the influence calculation,
+     * and GREY should secure the victory.
+     * Checks if GREY has won the island and if the eliminated students have been re-added on it.
+     */
     @Test
-    /** Truffle Hunter effect test */
     public void testTestEffect5()
     {
         MainController controllerTest = new MainController(2, true);
@@ -58,9 +63,6 @@ public class TruffleHunterTest {
 
         int island = EffectTestsUtility.basicIslandSetup(controllerTest.getGame());
 
-        /*Adds two students of a colour controlled by WHITE on the island: White has the higher influence now,
-        but with the activation of the effect, the colour BLUE will not count towards the influence calculation,
-        and GREY should secure the victory   */
         Student s6 = new Student(Col.BLUE);
         Student s7 = new Student(Col.BLUE);
         controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().add(s6);
@@ -76,8 +78,6 @@ public class TruffleHunterTest {
         testCard.setChosenColor(Col.BLUE);
         testCard.effect(controllerTest.getGame(), null, chosenIsland, null, null);
 
-
-        //Checks if GREY has won the island and if the eliminated students have been re-added on it
         EffectTestsUtility.checksAfterInfluenceCalculation(controllerTest.getGame(), 0, island);
         assertEquals(3, (int) controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().stream().filter(Student -> Student.getColor() == Col.BLUE).count());
 

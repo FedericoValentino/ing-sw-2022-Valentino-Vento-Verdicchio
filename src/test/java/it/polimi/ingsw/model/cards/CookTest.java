@@ -12,6 +12,15 @@ import static org.junit.Assert.*;
 
 public class CookTest {
 
+    /**
+     * Places two Green students and one Blue student in the GREY player's dining room, one Green and one Blue in the
+     * WHITE player's dining room.
+     * After calling the methods to distribute the professors, and checking that they acted as expected, the WHITE player
+     * plays the Cook effect: he should now control the Green professors, and the relative checks follow
+     *
+     * After this, another Blue student is added to WHITE's dining room ,a dn the effect is once again called: now the WHITE
+     * player should control both Green and BLue professors.
+     */
     @Test
     public void testEffect()
     {

@@ -52,8 +52,15 @@ public class PriestTest {
         assertTrue(p.getStudent(2) != null);
     }
 
+    /**
+     * Fills the Priest card with 4 students chosen randomly from the pouch,
+     * then saves the colour of the first one in the arraylist for testing purposes.
+     * Checks if a new student has been added to the card after the effect.
+     * Initially, it verifies that the last student added to the island is of the same colour of that
+     * taken from the card.
+     * Then, it checks if the correct number of students are on the island at the end of the effect
+     */
     @Test
-    /** Priest effect test */
     public void effect()
     {
         MainController controllerTest = new MainController(2, true);
@@ -65,8 +72,6 @@ public class PriestTest {
 
             int island = (int) ((Math.random()*11));
 
-        /*fills the Priest card with 4 students chosen randomly from the pouch,
-        then saves the colour of the first one in the arraylist for testing purposes*/
             for (int i = 0; i < 4; i++)
                 testCard.updateStudents(controllerTest.getGame().getCurrentPouch());
             Col color = testCard.getStudents().get(0).getColor();
@@ -79,16 +84,7 @@ public class PriestTest {
         chosenIsland.add(island);
         testCard.effect(controllerTest.getGame(), chosenStudent, chosenIsland, null, null);
 
-
-
-
-
-        //Checks if a new student has been added to the card after the effect
         assertEquals(4, testCard.getStudents().size());
-
-        /*First of all, it verifies that the last student added to the island is of the same colour of that
-        taken from the card.
-        Then, it checks if the correct number of students are on the island at the end of the effect  */
 
         int islandSize = controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().size();
         assertEquals(color, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getCurrentStudents().get(islandSize - 1).getColor());

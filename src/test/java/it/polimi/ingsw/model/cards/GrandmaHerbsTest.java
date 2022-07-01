@@ -50,8 +50,11 @@ public class GrandmaHerbsTest {
         assertEquals(i+1,g.getNoEntry());
     }
 
+    /**
+     * It checks if the noEntry has been placed on the chosen island and if the counter on
+     * GWeed has been updated accordingly
+     */
     @Test
-    /** Grandma Weed effect test */
     public void testTestEffect3()
     {
         MainController controllerTest = new MainController(2, true);
@@ -71,9 +74,6 @@ public class GrandmaHerbsTest {
         testCard.effect(controllerTest.getGame(), null, chosenIsland, null, null);
 
 
-
-        /*It checks if the noEntry has been placed on the chosen island and if the counter on
-        GWeed has been updated accordingly */
         assertTrue(controllerTest.getGame().getCurrentIslands().getIslands().get(island).getNoEntry());
         assertEquals(3, testCard.getNoEntry());
 

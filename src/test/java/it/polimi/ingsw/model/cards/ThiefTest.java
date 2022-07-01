@@ -10,6 +10,15 @@ import junit.framework.TestCase;
 
 public class ThiefTest extends TestCase {
 
+    /**
+     * We set up the two players' dining rooms this way:
+     * - The white player will get three students for each color
+     * - The Grey player will get four students of the first three colors, and then one student for each of the last colors
+     * After saving the pouch size, The effect is played on the color Green: we check if WHITE's dining room has been
+     * depleted of greens, and if GREY's dining room still has one green student.
+     * Then, we check that exactly six students have been added to the pouch.
+     *
+     */
     public void testEffect()
     {
         MainController controllerTest = new MainController(2, true);

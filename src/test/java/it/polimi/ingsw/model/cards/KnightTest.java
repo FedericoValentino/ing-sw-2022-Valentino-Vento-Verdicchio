@@ -34,7 +34,11 @@ public class KnightTest {
         assertEquals(k.getCharacterName(), CharacterName.KNIGHT);
     }
 
-    /** Knight effect test */
+    /**
+     * Checks if the winning team is the WHITE team, after the effect has boosted its influence on the island
+     * (without the effect, the GREY team would have won).
+     * Checks if the WHITE influence has been re-updated accordingly at the end of the influence calculation
+     */
     @Test
     public void testTestEffect6()
     {
@@ -61,9 +65,7 @@ public class KnightTest {
 
 
 
-        /*Checks if the winning team is the WHITE team, after the effect has boosted its influence on the island
-        (without the effect, the GREY team would have won).
-         Checks if the WHITE influence has been re-updated accordingly at the end of the influence calculation*/
+
         EffectTestsUtility.checksAfterInfluenceCalculation(controllerTest.getGame(), 1, island);
         assertEquals(2, controllerTest.getGame().getCurrentIslands().getIslands().get(island).getTeamInfluence()[1]);
 

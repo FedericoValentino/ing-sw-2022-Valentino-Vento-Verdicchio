@@ -13,6 +13,14 @@ import java.util.ArrayList;
 
 public class MinstrelTest extends TestCase {
 
+    /**
+     * We clear the WHITE player's entrance and refill it with 5 students of each color, in order; then we place a Green and
+     * a Blue students in his dining room.
+     * We then proceed to call the Minstrel effects, choosing the Red and Yellow students from the entrance and the Green and Blue students
+     * from the dining room.
+     * We ensure that now only one Red and one Yellow students will be present in the dining room, and that at the tail of
+     * the entrance we will have a Green and a Blue student
+     */
     public void testEffect()
     {
         MainController controllerTest = new MainController(2, true);
