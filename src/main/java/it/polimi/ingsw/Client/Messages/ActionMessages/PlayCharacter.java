@@ -5,6 +5,9 @@ import it.polimi.ingsw.model.boards.token.enumerations.Col;
 
 import java.util.ArrayList;
 
+/**
+ * Message type concerning the player's character choice
+ */
 public class PlayCharacter extends StandardActionMessage
 {
     private CharacterName name;

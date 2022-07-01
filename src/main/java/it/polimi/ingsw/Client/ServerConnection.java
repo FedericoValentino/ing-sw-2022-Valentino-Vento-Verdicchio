@@ -9,6 +9,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+/**
+ * Class responsible for holding the methods necessary to handle the connection with the server
+ */
 public class ServerConnection
 {
     private Socket server;
@@ -21,7 +24,7 @@ public class ServerConnection
 
 
     /**
-     * Class Constructor saves the parameters to send to the server after connecting
+     * Class Constructor, saves the parameters to send to the server after connecting
      */
     public ServerConnection(String nickname, String serverIP)
     {
@@ -56,6 +59,7 @@ public class ServerConnection
             out.flush();
             out.reset();
         }
+        //TODO Unhandled exception catch
         catch (IOException e)
         {
         }

@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Client.Messages.ActionMessages;
 
+/**
+ * Message type concerning the action iof moving a student at the beginning of the action phase
+ */
 public class MoveStudent extends StandardActionMessage
 {
     private int entrancePos;

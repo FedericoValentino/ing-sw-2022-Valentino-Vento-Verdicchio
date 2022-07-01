@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Client.Messages.SetupMessages;
 
+/**
+ * Message used to communicate to the server number of players and whether they want to play in normal or expert mode
+ */
 public class GameMode extends StandardSetupMessage
 {
     private int maxPlayers;

@@ -14,7 +14,9 @@ public class LightTeam extends Observable
     private int controlledIslands;
     private ArrayList<Col> controlledProfessors;
 
-    /** Json class constructor */
+    /**
+     * Json class constructor
+     */
     public LightTeam(@JsonProperty("color") ColTow color,
                 @JsonProperty("players") ArrayList<LightPlayer> players,
                 @JsonProperty("controlledIslands") int controlledIslands,

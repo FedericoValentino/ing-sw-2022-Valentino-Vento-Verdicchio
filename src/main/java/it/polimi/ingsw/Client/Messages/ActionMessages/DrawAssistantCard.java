@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Client.Messages.ActionMessages;
 
+/**
+ * Message type used to identify the player's assistant choice move
+ */
 public class DrawAssistantCard extends StandardActionMessage
 {
     public int cardIndex;

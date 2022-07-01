@@ -5,15 +5,17 @@ import it.polimi.ingsw.Client.LightView.LightTurnState;
 import it.polimi.ingsw.Client.LightView.LightUtilities.InternalMessage;
 import it.polimi.ingsw.Client.LightView.LightView;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
-import it.polimi.ingsw.Server.Answers.SetupAnswers.SETUPANSWERTYPE;
 import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 
 import java.util.ArrayList;
 
+/**
+ * Interface needed both by CLI and GUI implementing two factory methods used to generate hints and error messages
+ */
 public interface InformationGenerator
 {
     /**
-     * Factory Method to produce the correct error message string
+     * Factory Method to produce the correct error message string based on the ERROR_TYPE received as input
      * @param error the type of error
      * @param view our current LightView
      * @return a string containing the error information
@@ -53,7 +55,8 @@ public interface InformationGenerator
     }
 
 
-    /** A factory method that uses the client's own information on the game to dynamically generate hints to display to the player
+    /**
+     * A factory method that uses the client's own information on the game to dynamically generate hints
      * @param state the actual state of the game
      * @param teams the list of teams
      * @return the dynamically generated hint

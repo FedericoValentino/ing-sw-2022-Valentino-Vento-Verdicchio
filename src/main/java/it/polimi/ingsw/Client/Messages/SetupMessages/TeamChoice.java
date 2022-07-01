@@ -1,12 +1,14 @@
 package it.polimi.ingsw.Client.Messages.SetupMessages;
 
-
+/**
+ * Message used to tell the Server which team the player wants to enter
+ */
 public class TeamChoice extends StandardSetupMessage
 {
     private int team;
 
     /**
-     * Class Constructor, this message is used to tell the server which team the player wants to join
+     * Class Constructor, sets up the desired team
      */
     public TeamChoice(int team)
     {

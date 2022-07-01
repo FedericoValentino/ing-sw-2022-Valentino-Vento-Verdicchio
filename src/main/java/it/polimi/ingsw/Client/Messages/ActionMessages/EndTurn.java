@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Client.Messages.ActionMessages;
 
+/**
+ * Message type referencing the end turn action
+ */
 public class EndTurn extends StandardActionMessage
 {
     /**

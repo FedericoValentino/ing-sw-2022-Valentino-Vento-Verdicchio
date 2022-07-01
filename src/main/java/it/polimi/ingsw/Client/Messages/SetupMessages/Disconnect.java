@@ -1,15 +1,12 @@
 package it.polimi.ingsw.Client.Messages.SetupMessages;
 
+/**
+ * Message type that concerns with the client disconnection
+ */
 public class Disconnect extends StandardSetupMessage
 {
-    private boolean disconnecting;
-
     public Disconnect()
     {
         super.type = SETUPMESSAGETYPE.DISCONNECTION;
-    }
-
-    public boolean isDisconnecting() {
-        return disconnecting;
     }
 }

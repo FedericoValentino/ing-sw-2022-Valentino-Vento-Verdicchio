@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Client.Messages.ActionMessages;
 
+/**
+ * Message type concerning the action of moving mother nature
+ */
 public class MoveMN extends StandardActionMessage
 {
     private int amount;

@@ -2,16 +2,19 @@ package it.polimi.ingsw.Client.Messages.SetupMessages;
 
 import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 
+/**
+ * Message used to tell the server which Wizard the player wishes to use
+ */
 public class WizardChoice extends StandardSetupMessage
 {
     private Wizard wizard;
 
     /**
-     * Class Constructor, this message is used to tell the server about the player's wizard choice
+     * Class Constructor, sets up the wizard choice
      */
-    public WizardChoice(Wizard w)
+    public WizardChoice(Wizard wizard)
     {
-        this.wizard = w;
+        this.wizard = wizard;
         super.type = SETUPMESSAGETYPE.WIZARD_CHOICE;
     }
 

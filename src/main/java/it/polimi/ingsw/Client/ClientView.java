@@ -7,6 +7,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.io.IOException;
 
+/**
+ * Interface containing common methods between CLI and GUI
+ */
 public interface ClientView
 {
     LightView MyView = new LightView();
@@ -19,6 +22,10 @@ public interface ClientView
 
     void readMessage();
 
+    /**
+     * Default method that replaces the spaces in a username with underscores
+     * @param nickname
+     */
     default void checkUsername(String nickname)
     {
         nickname.replace(" ", "_");

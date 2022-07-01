@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Client.Messages.SetupMessages;
 
+/**
+ * Enumeration listing all the types of messages used in the setup phase
+ */
 public enum SETUPMESSAGETYPE
 {
     DISCONNECTION,

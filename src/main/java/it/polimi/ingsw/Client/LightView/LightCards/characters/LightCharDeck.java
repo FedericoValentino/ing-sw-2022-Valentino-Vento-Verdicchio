@@ -5,11 +5,18 @@ import it.polimi.ingsw.model.cards.CharacterCard;
 
 import java.util.ArrayList;
 
+/**
+ * Deck of inactive character cards
+ */
 public class LightCharDeck extends Observable
 {
     private ArrayList<LightCharacterCard> lightCharDeck;
     private LightCharacterFactory factory = new LightCharacterFactory();
 
+    /**
+     * Class constructor, acts similarly to the Active deck
+     * @param cards list of character cards
+     */
     public LightCharDeck(ArrayList<CharacterCard> cards)
     {
         this.lightCharDeck = new ArrayList<>();
@@ -19,6 +26,10 @@ public class LightCharDeck extends Observable
         }
     }
 
+    /**
+     * Contrary to the Active deck, it simply clears the deck and adds the updated cards back in
+     * @param light updated deck
+     */
     public void updateCharDeck(LightCharDeck light)
     {
         lightCharDeck.clear();

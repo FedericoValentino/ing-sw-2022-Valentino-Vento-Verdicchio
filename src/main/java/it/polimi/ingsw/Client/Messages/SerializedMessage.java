@@ -5,6 +5,9 @@ import it.polimi.ingsw.Client.Messages.SetupMessages.StandardSetupMessage;
 
 import java.io.Serializable;
 
+/**
+ * Class containing the methods to form a serialized message
+ */
 public class SerializedMessage implements Serializable
 {
     private static final long serialVersionUID = 7526472295622776147L;

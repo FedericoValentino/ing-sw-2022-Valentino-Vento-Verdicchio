@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Client.Messages.ActionMessages;
 
+/**
+ * Message type used to identify the "choose a cloud to refill it with the pouch" move
+ */
 public class DrawFromPouch extends StandardActionMessage
 {
     private int cloudIndex;

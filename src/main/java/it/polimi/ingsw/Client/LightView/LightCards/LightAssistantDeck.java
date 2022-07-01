@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.LightView.LightCards;
-//
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import it.polimi.ingsw.model.cards.assistants.AssistantCard;
