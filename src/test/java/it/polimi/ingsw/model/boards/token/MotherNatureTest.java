@@ -17,7 +17,6 @@ public class MotherNatureTest {
     @Test
     public void testMove()
     {
-        int posIniziale= mother.getPosition();
         int value;
         int maxIslands;
 
