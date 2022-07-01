@@ -47,9 +47,6 @@ public class ClientGUI implements ClientView, InformationGenerator
     private MainBoardController mbc;
 
 
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-
 
     /**
      * This method is called by the ClientApp when the user sets the type of view that he wants to use.
