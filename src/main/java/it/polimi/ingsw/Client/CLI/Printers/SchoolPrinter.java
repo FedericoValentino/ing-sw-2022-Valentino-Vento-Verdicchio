@@ -12,7 +12,8 @@ import java.util.Arrays;
  */
 public class SchoolPrinter extends PrinterCLI
 {
-    /** Class constructor; through the parent class constructor, it grants access to the view
+    /**
+     * Class constructor; through the parent class constructor, it grants access to the view
      * @param view the LightView coming from the PrinterCLI class
      */
     public SchoolPrinter(LightView view)
@@ -21,7 +22,8 @@ public class SchoolPrinter extends PrinterCLI
     }
 
 
-    /** Given a player's name, returns the player's school entrance, using the function "printStudent"
+    /**
+     * Given a player's name, returns the player's school entrance, using the function "printStudent"
      * @param nome the player's name
      * @return the string representing the entrance, i.e a list of students
      */
@@ -48,7 +50,8 @@ public class SchoolPrinter extends PrinterCLI
     }
 
 
-    /** Given a player's name and the row of the dining room, it returns a list of students (colored X), blank spaces (O)
+    /**
+     * Given a player's name and the row of the dining room, it returns a list of students (colored X), blank spaces (O)
      *  and coin spaces (grey C), representing that row of the player's school dining table
      * @param nome the player's name
      * @param dinnerPosition identifies the row of the dining table
@@ -105,7 +108,8 @@ public class SchoolPrinter extends PrinterCLI
     }
 
 
-    /** Return a string containing a colored P if the player controls the professor identified by the color of the dining table row,
+    /**
+     * Return a string containing a colored P if the player controls the professor identified by the color of the dining table row,
      * identified by "tablePosition"; returns a white O if the professor is not present
      * @param nome the player's name
      * @param tablePosition identifies the correct dining table row
@@ -131,7 +135,8 @@ public class SchoolPrinter extends PrinterCLI
     }
 
 
-    /** Using the aforementioned auxiliary methods, it fills the given string array with the drawing of a full school
+    /**
+     * Using the aforementioned auxiliary methods, it fills the given string array with the drawing of a full school
      * @param schools the string to manipulate
      * @param player the player owning rhe school
      * @param currentPlayer the current player, used to understand which school description the method should use
@@ -162,7 +167,8 @@ public class SchoolPrinter extends PrinterCLI
     }
 
 
-    /** Shows the selected player's school, using the aforementioned auxiliary methods
+    /**
+     * Shows the selected player's school, using the aforementioned auxiliary methods
      * @param name the player's name used to identify the correct school to display
      * @param currentPlayer necessary to the "printSchool" function above
      */

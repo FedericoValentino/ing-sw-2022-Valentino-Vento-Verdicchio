@@ -22,7 +22,7 @@ import java.util.Scanner;
 
 /**
  * Class InputParser hosts all the methods necessary to parse the input obtained from the CLI in order to then either show
- * the player parts from the view or to send messages to the server
+ * parts from the view or to send messages to the server
  */
 public class InputParser
 {
@@ -106,8 +106,8 @@ public class InputParser
     /**
      * Method MinstrelParser Parses the input for the CharacterCard Minstrel
      * @param player is the current player
-     * @param inputArray1 is the list of students
-     * @param inputArray2 is the list of colors we want to exchange
+     * @param inputArray1 is the list of students in the entrance
+     * @param inputArray2 is the list of colors ordinals in the dining room
      */
     public void MinstrelParser(LightPlayer player, ArrayList<Integer> inputArray1, ArrayList<Integer> inputArray2)
     {
@@ -297,7 +297,7 @@ public class InputParser
     {
         switch(words[1])
         {
-            case "island": //mostra isole
+            case "island":
                 if(words.length == 3)
                 {
                     try
@@ -313,26 +313,26 @@ public class InputParser
             case "islands":
                 boardPrinters.showIsland(-1);
                 break;
-            case "school": //mostra scuole
+            case "school":
                 if(words.length == 3)
                     schoolPrinter.showSchool(words[2], socket.getNickname());
                 break;
             case "schools":
                 schoolPrinter.showSchool("-1", socket.getNickname());
                 break;
-            case "clouds":  //mostra nuvole
+            case "clouds":
                 boardPrinters.showCloud();
                 break;
-            case "assistants": //mostra carte assistente
+            case "assistants":
                 cardPrinters.showAssistantDeck(socket.getNickname());
                 break;
             case "playedcards":
                 cardPrinters.showPlayedCards();
                 break;
-            case "characters": //mostra personaggi attivi e non
+            case "characters":
                 cardPrinters.showCharacters();
                 break;
-            case "player": //mostra status players
+            case "player":
                 if(words.length == 3)
                 {
                     infoPrinters.showPlayer(words[2]);

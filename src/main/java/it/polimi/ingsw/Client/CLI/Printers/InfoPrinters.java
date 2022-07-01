@@ -10,12 +10,13 @@ import org.fusesource.jansi.AnsiConsole;
 
 import java.util.ArrayList;
 /**
- * Class InfoPrinters hosts all the methods necessary to print to screen the various infos obtained from the view
+ * Class InfoPrinters hosts all the methods necessary to print to screen the various info obtained from the view
  */
 public class InfoPrinters extends PrinterCLI
 {
 
-    /** Class constructor; through the parent class constructor, it grants access to the view
+    /**
+     * Class constructor; through the parent class constructor, it grants access to the view
      * @param view the LightView coming from the PrinterCLI class
      */
     public InfoPrinters(LightView view)
@@ -24,7 +25,8 @@ public class InfoPrinters extends PrinterCLI
     }
 
 
-    /** Upon player's input, it shows a short list of information about the selected player and its team, such as controlled
+    /**
+     * Upon player's input, it shows a short list of information about the selected player and its team, such as controlled
      * islands, number of towers left, and other useful information
      * @param name the name of the player to show
      */
@@ -73,11 +75,11 @@ public class InfoPrinters extends PrinterCLI
         else
             AnsiConsole.out().println(ANSI_CYAN + name + ANSI_RESET + " can move " + ANSI_GREEN + "Mother Nature" + ANSI_RESET + " up to " + player.getMaxMotherMovement() + " spaces");
         System.out.println();
-        //Team color, Coins, isole controllate, professori controllati, torri rimanenti(solo se towerHolder), MaxMotherMovement
     }
 
 
-    /** Calls the aforementioned "showPlayer" function to show information on all the players, to grant a  strategic
+    /**
+     * Calls the aforementioned "showPlayer" function to show information on all the players, to grant a  strategic
      * ensemble view on the game
      */
     public void showPlayers()
@@ -91,6 +93,10 @@ public class InfoPrinters extends PrinterCLI
         }
     }
 
+    /**
+     * Prints to screen, along with the MainBoard, the player's coins and the current BankBalance
+     * @param playerName the player's nickname
+     */
     public void printEconomy(String playerName)
     {
         LightPlayer player = Utilities.findPlayerByName(super.getView(), playerName);
@@ -99,7 +105,8 @@ public class InfoPrinters extends PrinterCLI
     }
 
 
-    /** Upon player's input, it shows a brief but sufficiently detailed description of the main board and of all the commands
+    /**
+     * Upon player's input, it shows a brief but sufficiently detailed description of the main board and of all the commands
      * a player can use
      */
     public void showHelp()
@@ -142,7 +149,8 @@ public class InfoPrinters extends PrinterCLI
     }
 
 
-    /** Used by the "showPlayer" function, it returns a list of the islands controlled by the specified team
+    /**
+     * Used by the "showPlayer" function, it returns a list of the islands controlled by the specified team
      * @param team the desired team
      * @return the list of the islands controlled by the team
      */
@@ -158,11 +166,18 @@ public class InfoPrinters extends PrinterCLI
         return islands;
     }
 
+    /**
+     * Prints the current Turn number
+     */
     public void printTurn(){
         AnsiConsole.out().println( ANSI_GREEN + "Turn " + ANSI_RESET + super.getView().getCurrentTurnState().getTurn());
     }
 
-
+    /**
+     * given a dining room, forms an Arraylist of colors to return to the caller
+     * @param diningRoom the given dining room
+     * @return a list of colors
+     */
     public ArrayList<Col> printAvailableColors(int[] diningRoom)
     {
         StringBuilder colors = new StringBuilder();
@@ -176,6 +191,7 @@ public class InfoPrinters extends PrinterCLI
             }
         }
         System.out.println(colors);
+        //TODO are we sure we are returning the right thing?
         return available;
     }
 }

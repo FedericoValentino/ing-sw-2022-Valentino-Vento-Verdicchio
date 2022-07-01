@@ -31,7 +31,8 @@ public abstract class PrinterCLI
     private LightView view;
 
 
-    /** Class constructor: it instantiates the LightView
+    /**
+     * Class constructor: it instantiates the LightView
      * @param lv the LightView
      */
     public PrinterCLI(LightView lv)
@@ -40,7 +41,8 @@ public abstract class PrinterCLI
     }
 
 
-    /** Necessary to display numbers from 0 to 99 with ease and order, if the input parameter, which is the number that must
+    /**
+     * Necessary to display numbers from 0 to 99 with ease and order, if the input parameter, which is the number that must
      * be showed, is composed by a single cipher, it adds a 0 in front of it, to make spacing uniform
      * @param X the number to represent
      * @return 0X if X was less than 10, the string equivalent of X if it isn't
@@ -54,7 +56,8 @@ public abstract class PrinterCLI
     }
 
 
-    /** Clear command for the console
+    /**
+     *  Clear command for the console
      */
     public static void cls()
     {
@@ -62,6 +65,9 @@ public abstract class PrinterCLI
         System.out.flush();
     }
 
+    /**
+     * Prints the title of the game
+     */
     public static void printTitle()
     {
         String[] array = new String[11];
@@ -83,7 +89,8 @@ public abstract class PrinterCLI
     }
 
 
-    /** Necessary to resolve the inevitable problems of spacing when dealing with name of different lengths, it brings the
+    /**
+     * Necessary to resolve the inevitable problems of spacing when dealing with name of different lengths, it brings the
      * nickname in input to be 10 characters long, either adding blank spaces or trimming it
      * @param name the name to extend or trim
      * @return the extended or trimmed name
@@ -101,11 +108,13 @@ public abstract class PrinterCLI
     }
 
 
-    /** To uniform the representation of the teams and towers colors, it returns a string containing the identifier of the
+    /**
+     * To uniform the representation of the teams and towers colors, it returns a string containing the identifier of the
      * desired color, composed by three letters
      * @param towerColor the color to trim
      * @return the trimmed color
      */
+    //TODO Can't we just trim to the first three letters automatically?
     protected String convertTo3Char(ColTow towerColor)
     {
         if(towerColor != null)
@@ -129,7 +138,8 @@ public abstract class PrinterCLI
     }
 
 
-    /** used by multiple printers to print students using the correct color and desired spacing between them
+    /**
+     * Used by multiple printers to print students using the correct color and desired spacing between them
      * @param students a generic list of students
      * @param spaces the amount of spaces desired between each student
      * @return the string representing the list of students

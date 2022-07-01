@@ -39,14 +39,14 @@ public class ClientCLI implements ClientView, InformationGenerator
 
     /**
      * Method setupHandler handles the game setup and PING messages coming from the server
-     * @param answer the message comeing from the server
+     * @param answer the message coming from the server
      */
     @Override
     public void setupHandler(StandardSetupAnswer answer){
         switch(answer.getType())
         {
             case PING:
-                //System.out.println("Server pinged do i Pong?");
+                //TODO what now?
                 break;
             case GAME_NFO_REQ:
                 GameMode gm = new GameMode();
@@ -136,7 +136,7 @@ public class ClientCLI implements ClientView, InformationGenerator
 
     /**
      * Method messageHandler handles all the game related messages
-     * @param answer the message comeing from the server
+     * @param answer the message coming from the server
      */
     @Override
     public void messageHandler(StandardActionAnswer answer) {
@@ -174,8 +174,8 @@ public class ClientCLI implements ClientView, InformationGenerator
     }
 
     /**
-     * Method readMessage is called whenever a message needs to be read from the server. It then sends the message to right
-     * handler depending on the message nature
+     * Method readMessage is called whenever a message needs to be read from the server. It then sends the message to the right
+     * handler, depending on the message nature
      */
     @Override
     public void readMessage(){
@@ -212,7 +212,7 @@ public class ClientCLI implements ClientView, InformationGenerator
     }
 
     /**
-     * Method run is the main method of the CLI. after getting username and IP the method creates all the structures necessary
+     * Method run is the main method of the CLI. After getting username and IP, the method creates all the structures necessary
      * for the CLI to work properly and starts the ListenerCLI thread
      */
     @Override

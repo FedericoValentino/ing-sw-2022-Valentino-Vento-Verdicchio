@@ -15,7 +15,8 @@ import java.util.Arrays;
 public class BoardPrinters extends PrinterCLI
 {
 
-    /** Class constructor; through the parent class constructor, it grants access to the view
+    /**
+     * Class constructor; through the parent class constructor, it grants access to the view
      * @param view the LightView coming from the PrinterCLI class
      */
     public BoardPrinters(LightView view)
@@ -23,7 +24,8 @@ public class BoardPrinters extends PrinterCLI
         super(view);
     }
 
-    /** If Mother Nature is present on the selected island, it prints an X, if not, it returns an O
+    /**
+     * If Mother Nature is present on the selected island, it prints an X, if not, it returns an O
      * @param id the island position
      * @return a string that the function "showIsland" will print to indicate whether Mother Nature is present on the island
      */
@@ -47,7 +49,8 @@ public class BoardPrinters extends PrinterCLI
     }
 
 
-    /** Used by the function "showIslands", it constructs and returns the outline and content of the graphical representation
+    /**
+     * Used by the function "showIslands", it constructs and returns the outline and content of the graphical representation
      * of the desired island
      * @param islands the array of strings to manipulate
      * @param id the chosen island
@@ -73,7 +76,8 @@ public class BoardPrinters extends PrinterCLI
     }
 
 
-    /** Using the auxiliary functions discussed above, it prints the island or the islands, based on the island id it receives
+    /**
+     * Using the auxiliary functions discussed above, it prints the island or the islands, based on the island id it receives
      * @param id the selected island
      */
     public void showIsland(int id)
@@ -115,7 +119,8 @@ public class BoardPrinters extends PrinterCLI
     }
 
 
-    /** Used by the function "showCloud", it returns a string containing the graphical representation of the students on the cloud.
+    /**
+     * Used by the function "showCloud", it returns a string containing the graphical representation of the students on the cloud.
      * A colored X is used to mark the presence of a student (of the same color), while an O is used to represent a vacant space
      * @param students the list containing the students on the cloud
      * @return a string representing the students on the cloud
@@ -133,7 +138,8 @@ public class BoardPrinters extends PrinterCLI
     }
 
 
-    /** Upon player's command, and automatically upon every move by any players, it prints the clouds
+    /**
+     * Upon player's command, and automatically upon every move by any players, it prints the clouds
      */
     public void showCloud()
     {

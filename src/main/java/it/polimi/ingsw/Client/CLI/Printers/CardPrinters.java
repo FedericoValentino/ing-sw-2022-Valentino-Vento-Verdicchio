@@ -15,7 +15,8 @@ import java.util.Arrays;
  */
 public class CardPrinters extends PrinterCLI
 {
-    /** Class constructor; through the parent class constructor, it grants access to the view
+    /**
+     * Class constructor; through the parent class constructor, it grants access to the view
      * @param view the LightView coming from the PrinterCLI class
      */
     public CardPrinters(LightView view)
@@ -24,7 +25,8 @@ public class CardPrinters extends PrinterCLI
     }
 
 
-    /** Upon player's command, it prints the player's assistant deck. Of course, each player can see only his deck.
+    /**
+     * Upon player's command, it prints the player's assistant deck. Of course, each player can see only his deck.
      * @param nickname the nickname of the player requesting to see his deck
      */
     public void showAssistantDeck(String nickname)
@@ -61,6 +63,14 @@ public class CardPrinters extends PrinterCLI
         }
     }
 
+    /**
+     * Manipulates the string arrays it receives to form the graphical representation of a played assistantCard: it dynamically
+     * chooses whether the card is "CurrentlyPlayed" or "LastPlayed" card, according to the info received in input
+     * @param card the string array to manipulate
+     * @param currentlyPlayed if tru the card is a "CurrentlyPlayed" card, if not it is a "LastPlayed" card
+     * @param name the player's nickname
+     * @param assistantCard the card in question
+     */
     private void printPlayedAssistant(String[] card, boolean currentlyPlayed, String name, AssistantCard assistantCard)
     {
         card[0] += name+ "      ";
@@ -77,7 +87,8 @@ public class CardPrinters extends PrinterCLI
     }
 
 
-    /** Upon player's input, it shows the currently played and last played assistant cards of all players
+    /**
+     * Upon player's input, it shows the currently played and last played assistant cards of all players
      */
     public void showPlayedCards()
     {
@@ -143,7 +154,8 @@ public class CardPrinters extends PrinterCLI
     }
 
 
-    /** Upon player's input, it shows the character card in the game, and if they are currently active or not
+    /**
+     * Upon player's input, it shows the character card in the game, and if they are currently active or not
      */
     public void showCharacters()
     {
@@ -178,7 +190,8 @@ public class CardPrinters extends PrinterCLI
         }
     }
 
-    /** Used by the function "showCharacters", it fills the strings received in input to form the graphical representation of
+    /**
+     * Used by the function "showCharacters", it fills the strings received in input to form the graphical representation of
      * the cards and their content, based on the type of card. Since a lot of cards can be represented in the same way, it isn't
      * necessary to use more than four if branches.
      * @param card the card to generate
@@ -203,7 +216,8 @@ public class CardPrinters extends PrinterCLI
         character[7] = "|__________________|  " +  description[6] + ANSI_RESET + "\n";
     }
 
-    /** Auxiliary method that adapts a critical line of the character representation according to certain character types.
+    /**
+     * Auxiliary method that adapts a critical line of the character representation according to certain character types.
      * For example, some characters will need to represent a list of students, some nothing at all.
      * @param card the card used to give the correct representation
      * @return the string that will correspond to character[6] into the character string array

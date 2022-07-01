@@ -8,7 +8,7 @@ public class ListenerCLI implements Runnable
     private ClientCLI client;
 
     /**
-     * Class Constructor instatiates a new Listener for the CLI
+     * Class Constructor instantiates a new Listener for the CLI
      */
     public ListenerCLI(ClientCLI client)
     {
