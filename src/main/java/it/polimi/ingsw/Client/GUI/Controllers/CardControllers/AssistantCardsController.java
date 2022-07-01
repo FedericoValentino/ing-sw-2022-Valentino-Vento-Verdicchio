@@ -32,7 +32,6 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     @FXML private Button lastPlayedButton;
     private ArrayList<LightTeam> teams;
     private ArrayList<LightPlayer> players = new ArrayList<>();
-    private ArrayList<AssistantCard> played = new ArrayList<>();
     private String currentPlayer;
 
     private MainBoardController mainController;
