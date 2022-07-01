@@ -8,6 +8,9 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
+/**
+ * Handles the "getReady" process after the first setup of the game
+ */
 public class ReadyController extends Controller {
     @FXML private Pane tickPane;
 
@@ -20,14 +23,12 @@ public class ReadyController extends Controller {
     {
         String path="Client/GUI/Images/tick.png";
         ImageView nI=new ImageView(path);
-        //imageTick.setImage(nI.getImage());
 
         nI.setFitHeight(30);
         nI.setFitWidth(30);
         tickPane.getChildren().clear();
         tickPane.getChildren().add(nI);
 
-        //invio ready da aggiungere
         GuiMainStarter.getClientGUI().getServerConnection().sendMessage(new SerializedMessage(new ReadyStatus()));
     }
 

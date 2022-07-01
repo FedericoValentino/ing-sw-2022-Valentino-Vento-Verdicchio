@@ -19,8 +19,11 @@ import javafx.scene.layout.*;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+/**
+ * GUI controller responsible for the graphical representation and the functions associated with the other players' schools
+ */
 public class OtherSchoolController extends Controller implements ObserverLightView {
-    private AnchorPane APotherSChool;
+    private AnchorPane APotherSchool;
     private ArrayList<LightTeam> teams;
     private String lookedPlayer;
     private LightView view;
@@ -44,7 +47,7 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
     public void setup(LightView view, AnchorPane otherSchool)
     {
         this.view = view;
-        this.APotherSChool = otherSchool;
+        this.APotherSchool = otherSchool;
         this.teams = view.getCurrentTeams();
         for(LightTeam t: this.teams)
         {
@@ -64,8 +67,8 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
 
 
     /**
-     * Method update updates the school only if the school passed in the object parameter is the currently visualized player's school.
-     * The update goes the same as the one in the mine school controller without the setup of buttons on the entrance panes
+     * Method "update" updates the school only if the school passed in the object parameter is the currently visualized player's school.
+     * The update goes the same as the one in the "mineSchoolController" without the setup of buttons on the entrance panes
      * @param o is the school to be updated
      */
     @Override
@@ -76,17 +79,17 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
             String TowerColorPath = GUIUtilities.getSchoolColorPath(school.getColor());
             if(lookedPlayer.equals(school.getOwner()))
             {
-                //Updating Entrance
+
                 for(int i = 0; i < 9; i++)
                 {
                     int finalI = i;
-                    Pane entrance_pos = (Pane)((AnchorPane)APotherSChool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
+                    Pane entrance_pos = (Pane)((AnchorPane) APotherSchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
                     entrance_pos.setVisible(false);
                 }
                 for(int i = 0; i < school.getEntrance().size(); i++)
                 {
                     int finalI = i;
-                    Pane entrance_pos = (Pane)((AnchorPane)APotherSChool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
+                    Pane entrance_pos = (Pane)((AnchorPane) APotherSchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("entrance_"+ finalI)).collect(Collectors.toList()).get(0);
                     entrance_pos.getChildren().clear();
                     ImageView nImage=new ImageView(GUIUtilities.getRightColorPath(school.getEntrance().get(i)));
                     nImage.setFitHeight(27);
@@ -94,8 +97,8 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                     entrance_pos.getChildren().add(nImage);
                     entrance_pos.setVisible(true);
                 }
-                //Updating Dining
-                HBox diningRoom = (HBox)((AnchorPane)APotherSChool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("DiningRoom")).collect(Collectors.toList()).get(0);
+
+                HBox diningRoom = (HBox)((AnchorPane) APotherSchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("DiningRoom")).collect(Collectors.toList()).get(0);
                 for(int i = 0; i < 5; i++)
                 {
                     for(int j = 9; j >= 0; j--)
@@ -110,14 +113,14 @@ public class OtherSchoolController extends Controller implements ObserverLightVi
                         ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(true);
                     }
                 }
-                //Updating Prof
-                HBox profTable = (HBox)((AnchorPane)APotherSChool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("ProfTable")).collect(Collectors.toList()).get(0);
+
+                HBox profTable = (HBox)((AnchorPane) APotherSchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("ProfTable")).collect(Collectors.toList()).get(0);
                 for(int i = 0; i < 5; i++)
                 {
                     profTable.getChildren().get(i).setVisible(school.getProfessorTable()[i]);
                 }
-                //Updating Towers
-                GridPane towers = (GridPane)((AnchorPane)APotherSChool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Towers")).collect(Collectors.toList()).get(0);
+
+                GridPane towers = (GridPane)((AnchorPane) APotherSchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Towers")).collect(Collectors.toList()).get(0);
                 int tempTowers = school.getTowerCount();
                 for(int i = 0; i < 2; i++)
                 {

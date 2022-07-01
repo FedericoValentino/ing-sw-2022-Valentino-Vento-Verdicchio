@@ -8,6 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ChoiceBox;
 import java.io.IOException;
 
+/**
+ * Handles the Login phase of the GUI
+ */
 public class LobbyController extends Controller {
 
 
@@ -15,8 +18,10 @@ public class LobbyController extends Controller {
     @FXML private ChoiceBox <Boolean>difficultyChoice;
 
 
-    /**This method it's call every time loginController.fxml is load as the current scene.
-     * In this method I set the initial value of the player choice and the difficulty selected by the first player.**/
+    /**
+     * This method it's called every time the loginController.fxml is loaded as the current scene.
+     * In this method I set the initial value of the player choice and the difficulty selected by the first player.
+     */
     public void initialize()
     {
         playersChoice.getItems().addAll(2,3,4);
@@ -25,7 +30,8 @@ public class LobbyController extends Controller {
         difficultyChoice.setValue(true);
     }
 
-    /**This method is called when the TryConnection button is pressed.
+    /**
+     * This method is called when the TryConnection button is pressed.
      * Firstly this method create a new GameMode object and sets the number of player and the boolean of the expertGame
      * chose by the first player.
      * Then it sends the gameMode to the server using the combination of writeObject, flush and reset functions.

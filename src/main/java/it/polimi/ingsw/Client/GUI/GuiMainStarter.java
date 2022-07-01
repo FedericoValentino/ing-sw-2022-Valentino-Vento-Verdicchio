@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+/**
+ * Contains the start method that instantiates all the GUI initial stages
+ */
 public class GuiMainStarter extends Application {
     private static Stage mainStage;
     private static ClientGUI clientGUI;
@@ -16,13 +19,15 @@ public class GuiMainStarter extends Application {
         launch();
     }
 
-    /**It's a method to get my reference to CLientGUI, otherwise I'll lose it and I wont be able to replace it with the
+    /**
+     * It's a method to get my reference to CLientGUI, otherwise I'll lose it, and I won't be able to replace it with the
      * next one.
      * **/
     public static void setClientGUI(ClientGUI clientGUI)
     {
         GuiMainStarter.clientGUI=clientGUI;
     }
+
     public static ClientGUI getClientGUI()
     {
         return clientGUI;
@@ -33,7 +38,8 @@ public class GuiMainStarter extends Application {
     }
 
 
-    /** This method it's called by launch(); in GuiMainStarter.main().
+    /**
+     * This method it's called by launch(); in GuiMainStarter.main().
      * In particular sets all the initial stage and load the intro.fxml file that's the first scene to use.
      * **/
     @Override
@@ -42,7 +48,6 @@ public class GuiMainStarter extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
         mainStage=stage;
-        //mainStage.setFullScreen(true);
         mainStage.setAlwaysOnTop(true);
         mainStage.setTitle("Eryantis");
         mainStage.setMinHeight(900);

@@ -1,5 +1,8 @@
 package it.polimi.ingsw.Client.GUI;
 
+/**
+ * Contains the method to receive messages from the Server and calls the client to handle them
+ */
 public class ListenerGui implements Runnable{
 
     private ClientGUI client;

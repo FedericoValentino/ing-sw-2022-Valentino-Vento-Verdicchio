@@ -5,15 +5,19 @@ import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 
+/**
+ * Utility class for frequently used and general purpose functions in the GUI
+ */
 public final class GUIUtilities
 {
-    /**Choose the correct student's path according to the type of Student inserted
-     * @param s is the student passed
+    /**
+     * Chooses the correct student's path according to the type of Student received
+     * @param student is the student passed
      * @return the path to the right color for the current student
      */
-    public static String getRightColorPath(Student s)
+    public static String getRightColorPath(Student student)
     {
-        switch(s.getColor())
+        switch(student.getColor())
         {
             case GREEN:
                 return "/Client/GUI/Images/Student/student_green.png";
@@ -31,7 +35,7 @@ public final class GUIUtilities
     }
 
     /**
-     * Choose the correct path according to the color that receive as input
+     * Chooses the correct path according to the color that received as input
      * @param color is the tower Color passed
      * @return the path as a String
      */
@@ -52,7 +56,9 @@ public final class GUIUtilities
 
 
     /**
-     * @param matrix is the GridPane from where we wanto to extract a particular cell
+     * Gets the correct cell from a GridPAne, given in input desired coordinates in the form of a row and column indexes.
+     * Necessary because of the apparent lack of a standard java function that does the same thing
+     * @param matrix is the GridPane from where we want to extract a particular cell
      * @param column is the column where there is the node that it has to return
      * @param row is the row where there is the node that it has to return
      * @return the cell as a Node element

@@ -13,6 +13,9 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * GUI controller responsible for the graphical representation and the functions associated with the Islands
+ */
 public class IslandsController extends Controller implements ObserverLightView {
 
     @FXML private AnchorPane cloudsAnchorPane;
@@ -58,7 +61,7 @@ public class IslandsController extends Controller implements ObserverLightView {
             LightIslands lightIslands = (LightIslands) o;
             synchronized (lightIslands.getLock())
             {
-                //Islands  initial setup
+
                 double deltaTheta = 2 * Math.PI / lightIslands.getIslands().size();
                 double startingAngle = 0;
                 while (mainIslandBoard.getChildren().removeIf(node -> node.getId().startsWith("is"))) {

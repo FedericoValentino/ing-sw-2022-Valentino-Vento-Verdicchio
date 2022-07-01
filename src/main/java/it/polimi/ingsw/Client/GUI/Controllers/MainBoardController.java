@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI.Controllers;
-//
+
 import it.polimi.ingsw.Client.CharacterActivationParser;
 import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.IslandsController;
 import it.polimi.ingsw.Client.GUI.Controllers.BoardControllers.MineSchoolController;
@@ -38,7 +38,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-
+/**
+ * The most important of the Controllers, it sets up other controllers and handles high level functions needed by other controllers
+ * (displayCharInfo for example) for a correct visualization of all the game assets and information
+ */
 public class MainBoardController extends Controller {
     @FXML private AnchorPane mainAnchorPane;
 
@@ -71,10 +74,11 @@ public class MainBoardController extends Controller {
     private LightView view;
 
 
-    /**This method it's called when the mainBoardController is set for the first time.
-     *  Firstly it loads the island's fxml file from the specified path into the FXMLLoader object called loader.
-     *  Then it replaces the content of the islandAnchorPane with the loader's one.
-     *  Lastly it creates the reference to the IslandController, and it calls the setup method specified in it.
+    /**
+     * This method it's called when the mainBoardController is set for the first time.
+     * Firstly it loads the island's fxml file from the specified path into the FXMLLoader object called loader.
+     * Then it replaces the content of the islandAnchorPane with the loader's one.
+     * Lastly it creates the reference to the IslandController, and it calls the setup method specified in it.
      * @param view is used to invoke the setup method of the IslandController
      * @throws IOException to resolve possible problems with the load() method
      * **/
@@ -87,11 +91,12 @@ public class MainBoardController extends Controller {
         contr.setup(view);
     }
 
-    /**This method it's called when the mainBoardController is set for the first time.
-     *  Firstly it loads the Assistant fxml file from the specified path into the FXMLLoader object called loader.
-     *  Then it replaces the content of the assistantCardAnchorPane with the loader's one.
-     *  Lastly it creates the reference to the AssistantCardController, store the value of the current player into the
-     * local variable called player and it calls the setup method specified in it.
+    /**
+     * This method it's called when the mainBoardController is set for the first time.
+     * Firstly it loads the Assistant fxml file from the specified path into the FXMLLoader object called loader.
+     * Then it replaces the content of the assistantCardAnchorPane with the loader's one.
+     * Lastly it creates the reference to the AssistantCardController, store the value of the current player into the
+     * local variable called player, and it calls the setup method specified in it.
      * @param teams contains all the team in the game and it' used in the setup of the assistant's card
      * @throws IOException to resolve possible problems with the load() method
      * **/
@@ -106,10 +111,11 @@ public class MainBoardController extends Controller {
 
     }
 
-    /**This method it's called when the mainBoardController is set for the first time.
-     *  Firstly it loads the Character fxml file from the specified path into the FXMLLoader object called loader.
-     *  Then it replaces the content of the characterAnchorPane with the loader's one.
-     *  Lastly it creates the reference to the CharacterCardsController and it calls the setup method specified in it.
+    /**
+     * This method it's called when the mainBoardController is set for the first time.
+     * Firstly it loads the Character fxml file from the specified path into the FXMLLoader object called loader.
+     * Then it replaces the content of the characterAnchorPane with the loader's one.
+     * Lastly it creates the reference to the CharacterCardsController, and it calls the setup method specified in it.
      * @param charDeck contains the available character not chosen yet
      * @param activeDeck contains the character card that have been already used in the game
      * @throws IOException to resolve possible problems with the load() method
@@ -125,10 +131,11 @@ public class MainBoardController extends Controller {
         characterController.setup(characterAnchorPane, charDeck, activeDeck, this);
     }
 
-    /**This method it's called when the mainBoardController is set for the first time.
-     *  Firstly it loads the MineSchool fxml file from the specified path into the FXMLLoader object called loader.
-     *  Then it replaces the content of the mineSchoolAnchorPane with the loader's one. Then it also adds a text.
-     *  Lastly it creates the reference to the MineSchoolController, takes the player name and it calls the setup method
+    /**
+     * This method it's called when the mainBoardController is set for the first time.
+     * Firstly it loads the MineSchool fxml file from the specified path into the FXMLLoader object called loader.
+     * Then it replaces the content of the mineSchoolAnchorPane with the loader's one. Then it also adds a text.
+     * Lastly it creates the reference to the MineSchoolController, takes the player name, and it calls the setup method
      * specified in it.
      * @throws IOException to resolve possible problems with the load() method
      */
@@ -150,11 +157,12 @@ public class MainBoardController extends Controller {
         controller.setup(view, player, mineSchoolAnchorPane);
     }
 
-    /**This method it's called when the mainBoardController is set for the first time.
-     *  Firstly it loads the MineSchool fxml file from the specified path into the FXMLLoader object called loader.
-     *  Then it replaces the content of the mineSchoolAnchorPane with the loader's one.
-     *  Lastly it creates the reference to the MineSchoolController and it calls the setup method
-     *specified in it.
+    /**
+     * This method it's called when the mainBoardController is set for the first time.
+     * Firstly it loads the MineSchool fxml file from the specified path into the FXMLLoader object called loader.
+     * Then it replaces the content of the mineSchoolAnchorPane with the loader's one.
+     * Lastly it creates the reference to the MineSchoolController, and it calls the setup method
+     * specified in it.
      * @param view contain the view used in the setup call
      * @throws IOException to resolve possible problems with the load() method
      */
@@ -169,12 +177,13 @@ public class MainBoardController extends Controller {
         propagandaController.setup(view);
     }
 
-    /**This method it's called when the mainBoardController is set for the first time.
-     *  Firstly it loads the OtherSchool fxml file from the specified path into the FXMLLoader object called loader.
-     *  Secondly for each player it creates a button with his name and set its id as "pSchool"+c
-     *  Thirdly it replaces the content of the otherSchoolAnchorPane with the loader's one and with the buttons to switch
+    /**
+     * This method it's called when the mainBoardController is set for the first time.
+     * Firstly it loads the OtherSchool fxml file from the specified path into the FXMLLoader object called loader.
+     * Secondly for each player it creates a button with his name and set its id as "pSchool"+c
+     * Thirdly it replaces the content of the otherSchoolAnchorPane with the loader's one and with the buttons to switch
      * from a player to another one.
-     *  Lastly it creates the reference to the OtherSchoolController and it calls the setup method
+     * Lastly it creates the reference to the OtherSchoolController, and it calls the setup method
      *specified in it.
      * @param view  contain the view used in the setup call
      * @throws IOException to resolve possible problems with the load() method
@@ -213,11 +222,12 @@ public class MainBoardController extends Controller {
         controller.setup(view, otherSchoolAnchorPane);
     }
 
-    /**This method show the description and a greater image of the character (it's called when we click on the character pane)
-     *  Firstly it chooses the charDesctiption and the charImage panes where it has to show the details.
-     *  Secondly it sets the right image and description
-     *  Thirdly it finds the backButton by id and set dynamically its function when it's pressed
-     *  Lastly it set all the graphics elements added as visible
+    /**
+     * This method shows the description and a greater image of the character (it's called when we click on the character pane)
+     * Firstly it chooses the charDescription and the charImage panes where it has to show the details.
+     * Secondly it sets the right image and description
+     * Thirdly it finds the backButton by id and set dynamically its function when it's pressed
+     * Lastly it set all the graphics elements added as visible
      * @param card is the character selected
      * @param path is the path where we take the corresponding card
      */
@@ -248,7 +258,8 @@ public class MainBoardController extends Controller {
         charDescription.setMouseTransparent(false);
     }
 
-    /**This method hide the character description pane set visible in the previous method (displayCharInfo method)
+    /**
+     * This method hides the character description pane set visible in the previous method (displayCharInfo method)
      * @param mouseEvent is the event generated when the user push the back button
      */
     public void hideCharacterInfo(MouseEvent mouseEvent)
@@ -259,9 +270,10 @@ public class MainBoardController extends Controller {
         charDescription.setMouseTransparent(true);
     }
 
-    /**This method show a greater image of the assistant card played in the current turn
+    /**
+     * This method shows a greater image of the assistant cards played in the current turn
      * (it's called when we click on the activate assistant button)
-     * If it has to show the pane (hide is false) it creates a pane cell in which it loads the name of the player that
+     * If it has to show the pane (hide is false) it creates a pane in the correct cell in which it loads the name of the player that
      * has played that card and the corresponding image.
      * Else it sets not visible the pane
      *
@@ -298,15 +310,15 @@ public class MainBoardController extends Controller {
     }
 
 
-    /**This method set visible the effect panel of the character card that the user wanto to play.
+    /**
+     * This method sets visible the effect panel of the character card that the user wants to play.
      * Firstly it changes the text, the input, the integer and sets the method on click for the backButton.
-     * Then according to the type of the cards it choose what to show:
+     * Then according to the type of the cards it chooses what to show:
      *  -NONE: send a message to the server to activate the card and stop
-     *  -INTEGER_1: called the setup for princess or for the other types and then send a message to the server to activate
-     *              the card
-     *  -INTEGER_2: called the setup for minstrel or jester or for the other types and then send a message to the server to activate
-     *              the card, but only if the user chose all the students from dining and card
-     *  -COLOR: call the color setup method and sets the method to handle the click on the playButton
+     *  -INTEGER_1: calls the setup for princess or for the other types and then builds a PlayCharacter message.
+     *  -INTEGER_2: calls the setup for minstrel or jester or for the other types and then builds a PlayCharacter message.
+     *  -COLOR: calls the color setup method and then builds a PlayCharacterMessage
+     *  For some cards, it checks preemptively if the player's choices are correct.
      * @param card is used because it contains the name and the type of the card
      */
     public void showCharacterEffectPanel(LightCharacterCard card) {
@@ -458,7 +470,8 @@ public class MainBoardController extends Controller {
 
     }
 
-    /**This method sets the character effect pane with the student on the card and also sets the method to
+    /**
+     * This method sets the character effect pane with the student on the card and also sets the method to
      * handle the selection of the students.
      * @param card is used because it contains the students that can be taken
      */
@@ -489,7 +502,8 @@ public class MainBoardController extends Controller {
         }
     }
 
-    /**This method sets the character pane with the 5 colors available (showing a pane with the image of a student of
+    /**
+     * This method sets the character pane with the 5 colors available (showing a pane with the image of a student of
      * each color) and sets also the method to handle the selection
      */
     public void ColorSetup()
@@ -511,7 +525,8 @@ public class MainBoardController extends Controller {
         }
     }
 
-    /**This method setup the character pane effect (of the character's type: integer1) adding a text, the islands choice box
+    /**
+     * This method sets up the character pane effect (of the character's type: integer1) adding a text, the islands choice box
      * and sets the method to run if the user select the island
      */
     public void Integer1Setup()
@@ -533,13 +548,14 @@ public class MainBoardController extends Controller {
         input1.getChildren().add(box);
     }
 
-    /**This method setup the character pane effect (of the character's type: integer2) adding a text, the islands choice box
-     * and the student that can be selected by the user because they are placed on the card.
-     * It also set the method to run if the user select the island and the students
+    /**
+     * This method sets up the character pane effect (of the character's type: integer2) adding a text, the islands choice box
+     * and the students that can be selected by the user because they are placed on the card.
+     * It also sets the method to run if the user select the island and the students
      */
     public void Integer2Setup(LightCharacterCard card)
     {
-        //setup islands
+
         Text hint = new Text();
         hint.setText("Select the target island");
         input1.getChildren().add(hint);
@@ -555,7 +571,7 @@ public class MainBoardController extends Controller {
         });
         input1.getChildren().add(box);
 
-        //setup students
+
         input2.getChildren().add(new Text("Select the student"));
         int studentPosition = 0;
         for(Student student : card.getStudentList())
@@ -579,7 +595,8 @@ public class MainBoardController extends Controller {
     }
 
 
-    /**This method sets the character effect pane with the student on the card, the students in the entrance and
+    /**
+     * This method sets the character effect pane with the student on the card, the students in the entrance and
      * sets the method to handle the selection of the students
      * @param card is used because it contains the students that can be taken
      * @param player is used because it contains the students in the dining room
@@ -587,7 +604,7 @@ public class MainBoardController extends Controller {
     public void JesterSetup(LightCharacterCard card, LightPlayer player)
     {
         input1.getChildren().add(new Text("Students on card"));
-        //setup students
+
         int studentPosition = 0;
         for(Student student : card.getStudentList())
         {
@@ -610,7 +627,7 @@ public class MainBoardController extends Controller {
             studentPosition++;
         }
         input2.getChildren().add(new Text("Students in your entrance"));
-        //setup students
+
         int entrancePos = 0;
         for(Student student : player.getSchool().getEntrance())
         {
@@ -634,15 +651,16 @@ public class MainBoardController extends Controller {
     }
 
 
-    /**This method setups the student choice of the ministrel. In particular it sets all the student that can be moved
+    /**
+     * This method sets up the student choice of the minstrel. In particular, it sets all the student that can be moved
      * and sets the method to run if the user select the student. Then it calls the setDiningRoomColors to show also the
-     * students in the dining that you can swap with the selected before.
+     * students in the dining that you can swap.
      * @param player is used because it contains the students in the dining room
      */
     public void MinstrelSetup(LightPlayer player)
     {
         final int[] diningRoom = player.getSchool().getDiningRoom().clone();
-        //setup students
+
         input1.getChildren().add(new Text("Students in your entrance   "));
         int studentPosition = 0;
         for(Student student : player.getSchool().getEntrance())
@@ -669,8 +687,9 @@ public class MainBoardController extends Controller {
     }
 
 
-    /**This method add the selected student to the integer1 (and if the user doesn't select all the 3 students
-     * (or colors in this case is equivalent) it shows the colors already selected and ask to select other colors)
+    /**
+     * This method adds the selected student to the integer1 (and if the user doesn't select all the 3 students
+     * (or colors in this case is equivalent) it shows the colors already selected and asks to select other colors)
      * @param event used to add the effect to the clicked pane
      */
     public void minstrelColorChoice(MouseEvent event)
@@ -691,7 +710,8 @@ public class MainBoardController extends Controller {
         }
     }
 
-    /**This method is called by ministrel character and it adds the studentPane available to swap with the student in
+    /**
+     * This method is called by minstrel character, and it adds the studentPane available to swap with the student in
      * the entrance
      * @param dining is used to set the player that can be switch to the entrance
      */
@@ -712,7 +732,8 @@ public class MainBoardController extends Controller {
         }
     }
 
-    /**This method set visible the error pane and display the error in input
+    /**
+     * This method sets visible the error pane and display the error in input
      * @param error is the String that we have to display
      */
     public void DisplayError(String error)
@@ -723,7 +744,8 @@ public class MainBoardController extends Controller {
     }
 
 
-    /**This method update the view and sets not visible the errors
+    /**
+     * This method updates the view and sets not visible the errors
      * @param view is the new lightView
      */
     public void setup(LightView view)

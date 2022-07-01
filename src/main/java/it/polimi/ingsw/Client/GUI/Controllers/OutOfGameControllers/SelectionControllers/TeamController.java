@@ -14,18 +14,21 @@ import it.polimi.ingsw.model.boards.token.enumerations.ColTow;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-
+/**
+ * Handles the team selection phase
+ */
 public class TeamController extends Controller
 {
     @FXML private HBox AvailableTeams;
 
-    /**This method return the correct image path according to the index passed
-     * @param i is the index of the tower selected
+    /**
+     * This method returns the correct image path according to the index passed
+     * @param index is the index of the tower selected
      * @return contains the correct path to the tower image used in the team choice at the beginning of the game
      */
-    public String getTeamColorPath(int i)
+    public String getTeamColorPath(int index)
     {
-        switch(ColTow.values()[i])
+        switch(ColTow.values()[index])
         {
             case WHITE:
                 return "/Client/GUI/Images/Tower/white_tower_for_choice.png";
@@ -39,8 +42,9 @@ public class TeamController extends Controller
     }
 
 
-    /**This method for each team available display the name and the image of the tower with that color.
-     * It also sets the method to handle the click on a tower
+    /**
+     * This method displays, for each team available, the name and the image of the tower with that color; it also sets the
+     * method to handle the click on a tower
      * @param availableTeams is the array that contains the value of the tower available
      */
     public void init(int[] availableTeams)

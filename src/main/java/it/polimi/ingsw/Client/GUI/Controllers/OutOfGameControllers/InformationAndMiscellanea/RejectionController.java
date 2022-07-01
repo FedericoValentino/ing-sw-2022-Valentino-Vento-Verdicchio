@@ -10,13 +10,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
-
+/**
+ * Handles the case of rejection of the client's connection
+ */
 public class RejectionController extends Controller
 {
     @FXML private Button backToMenu;
 
 
-    /**This method load the intro fxml file, then create the associate controller and then preserve the reference to the
+    /**
+     * This method loads the intro fxml file, then creates the associated controller and then preserves the reference to the
      * guiMainStarter
      * @param event is the click on the return to menu button
      */
@@ -30,7 +33,8 @@ public class RejectionController extends Controller
         });
     }
 
-    /**This method add to the backButton the onClickMenu method to come back to the intro scene
+    /**
+     * This method add to the backButton the onClickMenu method to come back to the intro scene
      */
     public void setup()
     {
