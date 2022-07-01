@@ -45,9 +45,6 @@ public class ClientCLI implements ClientView, InformationGenerator
     public void setupHandler(StandardSetupAnswer answer){
         switch(answer.getType())
         {
-            case PING:
-                //TODO what now?
-                break;
             case GAME_NFO_REQ:
                 GameMode gm = new GameMode();
                 System.out.println("First Client, which game mode would you like to play?");

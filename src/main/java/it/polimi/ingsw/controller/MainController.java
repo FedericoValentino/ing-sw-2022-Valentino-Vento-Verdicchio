@@ -272,6 +272,14 @@ public class MainController
         readyPlayers++;
     }
 
+    /**
+     * Method emergencyUpdatePlanning updates the planning moves to skip the cloud selection part when the pouch is empty
+     */
+    public void emergencyUpdatePlanning()
+    {
+        game.getCurrentTurnState().updatePlanningMoves();
+    }
+
     public CurrentGameState getGame()
     {
         return game;

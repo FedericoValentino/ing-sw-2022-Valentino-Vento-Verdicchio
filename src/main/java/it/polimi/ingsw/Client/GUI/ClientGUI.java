@@ -147,9 +147,6 @@ public class ClientGUI implements ClientView, InformationGenerator
     {
         switch(answer.getType())
         {
-            case PING:
-                System.out.println("Server is Alive");
-                break;
             case GAME_NFO_REQ:
                 Platform.runLater(()->
                 {

@@ -59,7 +59,6 @@ public class ServerConnection
             out.flush();
             out.reset();
         }
-        //TODO Unhandled exception catch
         catch (IOException e)
         {
         }

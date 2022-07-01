@@ -114,7 +114,6 @@ public abstract class PrinterCLI
      * @param towerColor the color to trim
      * @return the trimmed color
      */
-    //TODO Can't we just trim to the first three letters automatically?
     protected String convertTo3Char(ColTow towerColor)
     {
         if(towerColor != null)

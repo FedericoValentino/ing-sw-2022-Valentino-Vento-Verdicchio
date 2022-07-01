@@ -46,8 +46,7 @@ public class Player
     this.maxMotherMovement = 0;
     this.value = (int) (Math.random() * 10 + 1);
     if(expertGame)
-      //TODO revert this to 1 later
-      this.coinAmount = 99;
+      this.coinAmount = 1;
     else
       this.coinAmount = 0;
   }

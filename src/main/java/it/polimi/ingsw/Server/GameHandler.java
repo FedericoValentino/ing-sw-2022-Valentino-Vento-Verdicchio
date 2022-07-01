@@ -177,8 +177,7 @@ public class GameHandler extends Thread implements Observer
                     }
                     else
                     {
-                        //TODO cambiare in metodo di controller
-                        mainController.getGame().getCurrentTurnState().updatePlanningMoves();
+                        mainController.emergencyUpdatePlanning();
                         socket.sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.EMPTY_POUCH)));
                     }
                 }

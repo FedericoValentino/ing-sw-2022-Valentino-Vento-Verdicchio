@@ -191,7 +191,6 @@ public class InfoPrinters extends PrinterCLI
             }
         }
         System.out.println(colors);
-        //TODO are we sure we are returning the right thing?
         return available;
     }
 }
