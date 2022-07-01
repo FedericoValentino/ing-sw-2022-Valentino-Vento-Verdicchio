@@ -336,5 +336,14 @@ public class MainControllerTest
         assertEquals(0, controllerTest.getAvailableTeams()[2]);
         assertEquals(1, controllerTestFor3.getAvailableTeams()[2]);
     }
+
+    @Test
+    public void EmergencyUpdatePlanning()
+    {
+        TestUtilities.setupTestFor2(controllerTest);
+        int planningMove = controllerTest.getGame().getCurrentTurnState().getPlanningMoves();
+        controllerTest.emergencyUpdatePlanning();
+        assertEquals(planningMove + 1, controllerTest.getGame().getCurrentTurnState().getPlanningMoves());
+    }
 }
 

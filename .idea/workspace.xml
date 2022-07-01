@@ -103,7 +103,7 @@
       <recent name="Client.GUI.Controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in softeng-GC61">
+  <component name="RunManager" selected="JUnit.it.polimi.ingsw in softeng-GC61">
     <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -141,33 +141,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IslandsTest.testIdManagmentCase2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainControllerTest.EmergencyUpdatePlanning" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.model.boards.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.boards" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.boards.IslandsTest" />
-      <option name="METHOD_NAME" value="testIdManagmentCase2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IslandsTest.testIdManagmentCase3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.model.boards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.boards" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.boards.IslandsTest" />
-      <option name="METHOD_NAME" value="testIdManagmentCase3" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.controller" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.controller.MainControllerTest" />
+      <option name="METHOD_NAME" value="EmergencyUpdatePlanning" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -189,16 +173,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="it.polimi.ingsw in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softeng-GC61" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.polimi.ingsw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.ClientApp" />
-      <item itemvalue="JUnit.IslandsTest.testIdManagmentCase2" />
-      <item itemvalue="JUnit.IslandsTest.testIdManagmentCase3" />
       <item itemvalue="JUnit.All in softeng-GC61" />
       <item itemvalue="JUnit.CharacterControllerTest.testPickCard" />
       <item itemvalue="JUnit.MainControllerTest.testSelectWinner" />
+      <item itemvalue="JUnit.MainControllerTest.EmergencyUpdatePlanning" />
+      <item itemvalue="JUnit.it.polimi.ingsw in softeng-GC61" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.it.polimi.ingsw in softeng-GC61" />
+        <item itemvalue="JUnit.MainControllerTest.EmergencyUpdatePlanning" />
         <item itemvalue="JUnit.All in softeng-GC61" />
         <item itemvalue="JUnit.MainControllerTest.testSelectWinner" />
         <item itemvalue="JUnit.CharacterControllerTest.testPickCard" />
