@@ -39,24 +39,28 @@ public class SchoolTest
     }
 
 
+    /**
+     * This method test also the catch branch
+     */
     @Test
     public void testExtractStudent() {
         testPlaceToken();
         assertEquals(schoolBlack.extractStudent(0), studYellow);
 
-        //I use it to test the catch branch
         assertNull(schoolBlack.extractStudent(2));
     }
 
+    /**
+     * This method is testing that in the yellow column there is only 1 students (because 1 is the entrance and
+     * not in dining). Then it also tests that  in the green column there is 1 student
+     */
     @Test
     public void testPlaceInDiningRoom() {
         testPlaceToken();
 
-        //testing that in the yellow column there is only 1 students (because 1 is the entrance and not in dining)
         schoolBlack.placeInDiningRoom(Col.YELLOW);
         assertEquals(schoolBlack.getDiningRoom()[2],1);
 
-        //testing that in the green column there is 1 student
         schoolBlack.placeToken(studGreen);
         schoolBlack.placeInDiningRoom(Col.GREEN);
         assertEquals(schoolBlack.getDiningRoom()[0],1);
@@ -65,7 +69,6 @@ public class SchoolTest
     @Test
     public void testUpdateCheckpoint() {
         int i=0;
-        //udating the position of the checkpoint
         schoolBlack.updateCheckpoint(i, true);
         assertEquals(schoolBlack.getRoomCheckpoints()[i],5);
     }

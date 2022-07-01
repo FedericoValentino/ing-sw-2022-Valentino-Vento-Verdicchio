@@ -58,7 +58,9 @@ public class CurrentGameStateTest {
     }
 
     /**
-     * This method give some students to the players and call the method giveProfessor
+     * This method give some students to the players and call the method giveProfessor. In particular it gives
+     * yellow, red, green student to player 1, gives 3 red students to player 2, then do asserts to
+     * verify that any professor is given before calling the method. Finally verify the given professors
      */
     @Test
     public void testGiveProfessors()
@@ -70,24 +72,20 @@ public class CurrentGameStateTest {
         cg1.getCurrentTeams().get(0).addPlayer(p1);
         cg1.getCurrentTeams().get(1).addPlayer(p2);
 
-        //give yellow, red, green student to player 1
         cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().placeInDiningRoom(Col.YELLOW);
         cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
         cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().placeInDiningRoom(Col.GREEN);
 
-        //give 3 red students to player 2
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
         cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().placeInDiningRoom(Col.RED);
 
-        //assert to verify that any professor is given before calling the method
         assertFalse(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[0]);
         assertFalse(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[2]);
         assertFalse(cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().getProfessorTable()[1]);
 
         cg1.giveProfessors(false);
 
-        //verify the given professors
         assertTrue(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[0]);
         assertTrue(cg1.getCurrentTeams().get(0).getPlayers().get(0).getSchool().getProfessorTable()[2]);
         assertTrue(cg1.getCurrentTeams().get(1).getPlayers().get(0).getSchool().getProfessorTable()[1]);

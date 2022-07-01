@@ -17,10 +17,7 @@ public class PouchTest{
     {
         assertEquals(130, pouch.getContent().size());
         pouch.extractStudent();
-
-        //now it exit from the setup phase (setting setup on false)
         pouch.updateSetup(false);
-
         Student s= pouch.getContent().get(0);
         Student s1= pouch.extractStudent();
         assertEquals(s,s1);

@@ -57,7 +57,6 @@ public class IslandsTest {
         assertEquals(t1.getControlledProfessors().size(),0);
     }
 
-    //place token in 4 groups
     public void initPlaceToken1()
     {
         islands1.getIslands().get(0).getCurrentStudents().add(studGREEN);//green
@@ -118,14 +117,14 @@ public class IslandsTest {
     }
 
     /**
-     * This method test a simple case in which it has initially 10 groups, then it adds the pink professor
+     * This method test the case in which it has initially 10 groups, then it adds the pink professor
      * to the player 1 and the group become 2
      */
     @Test
     public void testIdManagmentCase1() {
 
         initialization();
-        initPlaceToken1();// I put the students in the islands
+        initPlaceToken1();
 
 
         p1.getSchool().updateProfessorsTable(0,true);//green prof
@@ -139,12 +138,9 @@ public class IslandsTest {
             islands1.getIslands().get(i).updateTeamInfluence(c.getCurrentTeams());
         }
 
-        //calling the management function, but it can't operate because I've done calculate Ownerhip before
-        //the update team influence
         islands1.idManagement();
         assertEquals(islands1.getTotalGroups(),12);
 
-        //merging the island in positions 4,5,6 ( so remain 12-3+1= 10 groups)
         for(int i = 0; i< islands1.getTotalGroups(); i++)
         {
             islands1.getIslands().get(i).updateMotherNature();
@@ -154,7 +150,6 @@ public class IslandsTest {
         islands1.idManagement();
         assertEquals(10, islands1.getTotalGroups());
 
-        //now it adds the pink professor to the p1
         p1.getSchool().updateProfessorsTable(3,true);//pink prof
         t1.updateProfessors();
         for(int i = 0; i< islands1.getTotalGroups(); i++)
@@ -175,7 +170,7 @@ public class IslandsTest {
     @Test
     public void testIdManagmentCase2() {
         initialization();
-        initPlaceToken2();// I put the students in the islands
+        initPlaceToken2();
 
         islands2.placeToken(studGREEN,0);
         assertEquals(islands2.getIslands().get(0).getCurrentStudents().get(0).getColor(), studGREEN.getColor());
@@ -188,7 +183,6 @@ public class IslandsTest {
         assertEquals(islands2.getIslands().get(2).getCurrentStudents().get(0).getColor(), studYELLOW.getColor());
         assertEquals(islands2.getIslands().get(2).getCurrentStudents().get(1).getColor(), studGREEN.getColor());
 
-        //now I remove all the previous placing
         islands2.getIslands().get(0).getCurrentStudents().remove(0);
         islands2.getIslands().get(1).getCurrentStudents().remove(0);
         islands2.getIslands().get(2).getCurrentStudents().remove(0);
@@ -198,12 +192,10 @@ public class IslandsTest {
 
 
 
-        //Initializing the professors and all the other things
         t1.addPlayer(p1);//white
         t2.addPlayer(p2);//grey
         t3.addPlayer(p3);//black
 
-        //reset the professors table of testIdManagmentCase1 becuase they have player in common
         for(int i=0;i<5;i++)
         {
             p1.getSchool().updateProfessorsTable(i,false);//green prof
@@ -236,11 +228,7 @@ public class IslandsTest {
         //Retrying merging without any changes to see if there are some problems
         islands2.idManagement();
         assertEquals(12, islands2.getTotalGroups());
-        //because I don't have mother nature= true, so it doesn't change anything
 
-
-        //don't do anything because I don't have already updated the ownership
-        islands2.idManagement();
 
         //now it adds some student to start merging but it doesn't have mother nature so it won't merge
         islands2.placeToken(studGREEN,1);
@@ -257,7 +245,7 @@ public class IslandsTest {
     }
 
     /**
-     *In this method we do a simple merging without any
+     *In this method we do a simple merge
      */
     @Test
     public void testIdManagmentCase3() {
@@ -280,7 +268,6 @@ public class IslandsTest {
             islands3.getIslands().get(i).updateMotherNature();
             islands3.getIslands().get(i).calculateOwnership();
         }
-        //before merging are all initialized and with the right ownership
         assertEquals(12, islands3.getTotalGroups());
 
         islands3.idManagement();

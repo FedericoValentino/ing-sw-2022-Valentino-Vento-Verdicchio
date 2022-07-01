@@ -9,8 +9,10 @@ public class MotherNatureTest {
     MotherNature mother= new MotherNature();
 
     /**
-     * This method tests the movement of mother nature (problem: mother nature initial position is random, so
-     * to do the test I used a updatePositionAfterMerge that is a function that set the position of MN directly)
+     * This method tests the movement of mother nature with different values. (NB: problem: mother nature initial
+     * position is random, so to do the test I used a updatePositionAfterMerge that is a function that set the
+     * position of MN directly)
+     *
      */
     @Test
     public void testMove()
