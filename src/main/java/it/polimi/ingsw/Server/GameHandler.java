@@ -27,7 +27,10 @@ import it.polimi.ingsw.model.boards.token.enumerations.Wizard;
 import java.io.IOException;
 
 
-
+/**
+ * Class gameHandler contains all methods to interpret a client message and ask the controller to modify the game accordingly.
+ * GameHandler also alerts the client about errors in the moves.
+ */
 public class GameHandler extends Thread implements Observer
 {
     private ClientConnection socket;

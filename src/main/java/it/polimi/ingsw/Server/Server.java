@@ -11,8 +11,12 @@ import it.polimi.ingsw.Server.Answers.SetupAnswers.RequestGameInfo;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 
+/**
+ * Class Server is the main server the clients connect to, it registers new connections and creates new matches
+ */
 public class Server
 {
    private static final int PORT = 1234;
@@ -78,19 +82,32 @@ public class Server
       {
          //requesting GameInfo to first client
          GH.getSocket().sendAnswer(new SerializedAnswer(new RequestGameInfo()));
+         GH.getSocket().getClient().setSoTimeout(10000);
          //receiving GameMode info from first client
          GameMode info =(GameMode) GH.getSocket().getInputStream().readObject();
+         GH.getSocket().getClient().setSoTimeout(0);
          last.setMode(info.isExpertGame(), info.getMaxPlayers());
+      }
+      catch(SocketTimeoutException e)
+      {
+         try {
+            GH.getSocket().getClient().close();
+         } catch (IOException ex)
+         {
+
+         }
+         System.out.println("Client disconnected");
+         last.getClients().remove(GH);
       }
       catch(IOException e)
       {
          System.out.println("Client disconnected");
-         matches.get(matches.size() - 1).getClients().remove(GH);
+         last.getClients().remove(GH);
       }
       catch(ClassNotFoundException e)
       {
          System.out.println("Couldn't understand client");
-         matches.get(matches.size() - 1).getClients().remove(GH);
+         last.getClients().remove(GH);
       }
    }
 
@@ -99,7 +116,6 @@ public class Server
     */
    public void run()
    {
-      GameMode info = new GameMode();
       while(true)
       {
          try

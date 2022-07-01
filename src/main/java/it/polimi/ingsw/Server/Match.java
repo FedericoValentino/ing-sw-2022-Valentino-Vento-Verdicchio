@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Server;
-//ciao
+
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ERRORTYPES;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.WinMessage;
@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
+/**
+ * Class Match contains all the information about a match and handles the various game announcements broadcasting to all clients
+ */
 public class Match
 {
     private int matchID;
@@ -86,7 +90,6 @@ public class Match
         {
             for(GameHandler GameHandler: clients)
             {
-                GameHandler.getSocket().sendAnswer(new SerializedAnswer(new InfoMessage("Client Disconnected, game is Ending")));
                 GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
                 GameHandler.interrupt();
             }

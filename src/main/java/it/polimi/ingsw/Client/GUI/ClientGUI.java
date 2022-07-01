@@ -111,10 +111,11 @@ public class ClientGUI implements ClientView, InformationGenerator
         {
             serverConnection.disconnect();
             Platform.runLater(() -> {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Intro.fxml"));
-                changeScene(loader);
-                IntroController intro = loader.getController();
-                intro.setGuiMainStarter(guiMainStarter);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Client/GUI/Controllers/Winner.fxml"));
+                GuiMainStarter.getClientGUI().changeScene(loader);
+                WinnerController winnerControl = loader.getController();
+                winnerControl.setGuiMainStarter(guiMainStarter);
+                winnerControl.setup("Connection Lost");
             });
         }
         catch(ClassNotFoundException e)
@@ -182,8 +183,6 @@ public class ClientGUI implements ClientView, InformationGenerator
                 });
                 break;
             case GAME_NFO:
-                if(((InfoMessage) answer).getInfo().equals("Wizard Selected, type " + ANSI_GREEN + "[Ready] " + ANSI_RESET + "if you're ready to start!"))
-                {
                     Platform.runLater(() ->
                     {
                         String path = "/Client/GUI/Controllers/Ready.fxml";
@@ -195,7 +194,6 @@ public class ClientGUI implements ClientView, InformationGenerator
                     if (setupState) {
                         setupState = false;
                     }
-                }
                 break;
             case GAME_START:
                 Platform.runLater(()->

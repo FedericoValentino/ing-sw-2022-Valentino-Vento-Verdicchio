@@ -3,7 +3,9 @@ package it.polimi.ingsw.Server;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.Ping;
 
-
+/**
+ * Class ClientPinger handles the pinging of the various clients in the game
+ */
 public class ClientPinger implements /*always*/ Runnable
 {
     private GameHandler client;

@@ -12,20 +12,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="Finished the documentation of LightView and client side Messages, added a couple of TODOs">
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/ClientCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/InfoPrinters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/InfoPrinters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/CLI/Printers/PrinterCLI.java" afterDir="false" />
+    <list default="true" id="77873dc4-e89e-424d-8df5-ddb97d65533f" name="Changes" comment="(◕‿◕)╭∩╮">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/GUI/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightBoards/LightIsland.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/LightView/LightBoards/LightIsland.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/Messages/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/Messages/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Client/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/ClientPinger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/ClientPinger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/PlanningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/controller/PlanningController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/CurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/model/cards/CharacterDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/Server/Server.java" afterDir="false" />
     </list>
     <list id="8b6df3d7-b8ba-400f-84cc-24d76d9dae7c" name="Changes by enric" comment="cod with me" />
     <list id="ed258069-bd50-49bc-bde5-464ded5e1b2f" name="Changes by valef" comment="same, but code with me" />
@@ -125,6 +120,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerApp" />
+      <module name="softeng-GC61" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in softeng-GC61" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softeng-GC61" />
       <option name="PACKAGE_NAME" value="" />
@@ -144,22 +146,6 @@
       <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.boards" />
       <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.boards.IslandsTest" />
       <option name="METHOD_NAME" value="testGetMax" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IslandsTest.testIdManagmentCase1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softeng-GC61" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.model.boards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.polimi.ingsw.model.boards" />
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.model.boards.IslandsTest" />
-      <option name="METHOD_NAME" value="testIdManagmentCase1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,12 +185,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.ClientApp" />
-      <item itemvalue="JUnit.IslandsTest.testIdManagmentCase1" />
       <item itemvalue="JUnit.IslandsTest.testGetMax" />
       <item itemvalue="JUnit.IslandsTest.testIdManagmentCase2" />
       <item itemvalue="JUnit.IslandsTest.testIdManagmentCase3" />
       <item itemvalue="JUnit.All in softeng-GC61" />
+      <item itemvalue="Application.ServerApp" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ServerApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -273,13 +264,6 @@
       <workItem from="1656530419432" duration="1595000" />
       <workItem from="1656537736988" duration="309000" />
       <workItem from="1656594522545" duration="3841000" />
-    </task>
-    <task id="LOCAL-00181" summary="change">
-      <created>1656362628858</created>
-      <option name="number" value="00181" />
-      <option name="presentableId" value="LOCAL-00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1656362628858</updated>
     </task>
     <task id="LOCAL-00182" summary="change">
       <created>1656362825853</created>
@@ -617,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656665577228</updated>
     </task>
-    <option name="localTasksCounter" value="230" />
+    <task id="LOCAL-00230" summary="(◕‿◕)╭∩╮">
+      <created>1656669178014</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1656669178014</updated>
+    </task>
+    <option name="localTasksCounter" value="231" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,7 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed delayed updating of influence based cards" />
     <MESSAGE value="Updated TODOs" />
     <MESSAGE value="Added runLater to CharacterCardsController in GUI" />
     <MESSAGE value="Added RunLater to PropController" />
@@ -673,7 +663,8 @@
     <MESSAGE value="Added Dining room control to Princess CLI" />
     <MESSAGE value="Fixed endturn not showing in three players game" />
     <MESSAGE value="Finished the documentation of LightView and client side Messages, added a couple of TODOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the documentation of LightView and client side Messages, added a couple of TODOs" />
+    <MESSAGE value="(◕‿◕)╭∩╮" />
+    <option name="LAST_COMMIT_MESSAGE" value="(◕‿◕)╭∩╮" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

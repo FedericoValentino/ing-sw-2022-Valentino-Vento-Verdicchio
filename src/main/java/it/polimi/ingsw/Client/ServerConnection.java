@@ -61,6 +61,7 @@ public class ServerConnection
         }
         catch (IOException e)
         {
+            e.printStackTrace();
         }
     }
 
