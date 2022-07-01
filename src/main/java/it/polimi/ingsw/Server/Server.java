@@ -47,7 +47,7 @@ public class Server
 
 
 
-         for(GameHandler GH : lastCreated.getClients())
+         for(ClientHandler GH : lastCreated.getClients())
          {
             if(GH.getSocket().getNickname().equals(connection.getNickname()))
             {
@@ -75,7 +75,7 @@ public class Server
     * @param GH an instance of the Game handler associated with he desired client
     * @return the requested GameMode
     */
-   public void requestGameInfo(GameHandler GH, Match last)
+   public void requestGameInfo(ClientHandler GH, Match last)
    {
       try
       {

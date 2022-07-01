@@ -5,7 +5,6 @@ import it.polimi.ingsw.Server.Answers.ActionAnswers.ErrorMessage;
 import it.polimi.ingsw.Server.Answers.ActionAnswers.WinMessage;
 import it.polimi.ingsw.Server.Answers.SerializedAnswer;
 import it.polimi.ingsw.Server.Answers.SetupAnswers.GameStarting;
-import it.polimi.ingsw.Server.Answers.SetupAnswers.InfoMessage;
 import it.polimi.ingsw.controller.checksandbalances.Checks;
 import it.polimi.ingsw.controller.MainController;
 
@@ -24,7 +23,7 @@ public class Match
     private MainController mainController;
     private int players;
     private boolean expertMode;
-    private ArrayList<GameHandler> clients = new ArrayList<>();
+    private ArrayList<ClientHandler> clients = new ArrayList<>();
     private boolean running = false;
     private boolean isGameSet = false;
     private boolean hasEnded = false;
@@ -47,9 +46,9 @@ public class Match
      * Method addClient adds a client to the clients ArrayList
      */
     public void addClient(ClientConnection client) {
-        GameHandler gameHandler = new GameHandler(client, this);
-        clients.add(gameHandler);
-        clientPinger.execute(new ClientPinger(gameHandler));
+        ClientHandler clientHandler = new ClientHandler(client, this);
+        clients.add(clientHandler);
+        clientPinger.execute(new ClientPinger(clientHandler));
     }
 
     /**
@@ -57,12 +56,12 @@ public class Match
      */
     public void startGame()
     {
-        for(GameHandler GH: getClients())
+        for(ClientHandler GH: getClients())
         {
             GH.setMainController(mainController);
         }
         running = true;
-        for(GameHandler client : clients)
+        for(ClientHandler client : clients)
         {
             mainController.getGame().addObserver(client);
             client.start();
@@ -74,7 +73,7 @@ public class Match
      */
     public void announceGameReady()
     {
-        for(GameHandler GH : clients)
+        for(ClientHandler GH : clients)
         {
             GH.getSocket().sendAnswer(new SerializedAnswer(new GameStarting()));
         }
@@ -88,21 +87,21 @@ public class Match
         running = false;
         if(!Checks.isThereAWinner(mainController.getGame()))
         {
-            for(GameHandler GameHandler: clients)
+            for(ClientHandler ClientHandler : clients)
             {
-                GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
-                GameHandler.interrupt();
+                ClientHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage("Game ended with no winner due to disconnection")));
+                ClientHandler.interrupt();
             }
         }
         else
         {
-            for(GameHandler GameHandler: clients)
+            for(ClientHandler ClientHandler : clients)
             {
-                GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage(mainController.getGame().getCurrentTurnState().getWinningTeam() + "is the Winner!")));
+                ClientHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage(mainController.getGame().getCurrentTurnState().getWinningTeam() + "is the Winner!")));
                 try
                 {
-                    GameHandler.getSocket().getClient().close();
-                    GameHandler.interrupt();
+                    ClientHandler.getSocket().getClient().close();
+                    ClientHandler.interrupt();
                 }
                 catch(IOException e)
                 {
@@ -121,8 +120,8 @@ public class Match
             if(!lastTurnAnnounced)
             {
                 lastTurnAnnounced = true;
-                for(GameHandler GameHandler: clients)
-                    GameHandler.getSocket().sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.LAST_TURN)));
+                for(ClientHandler ClientHandler : clients)
+                    ClientHandler.getSocket().sendAnswer(new SerializedAnswer(new ErrorMessage(ERRORTYPES.LAST_TURN)));
             }
         }
 
@@ -136,8 +135,8 @@ public class Match
             if(!hasEnded)
             {
                 hasEnded = true;
-                for(GameHandler GameHandler: clients)
-                    GameHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage(announcement)));
+                for(ClientHandler ClientHandler : clients)
+                    ClientHandler.getSocket().sendAnswer(new SerializedAnswer(new WinMessage(announcement)));
             }
         }
 
@@ -153,7 +152,7 @@ public class Match
 
     public boolean getRunning(){return running;}
 
-    public ArrayList<GameHandler> getClients(){return clients;}
+    public ArrayList<ClientHandler> getClients(){return clients;}
 
     public boolean isGameSet(){ return isGameSet; }
 

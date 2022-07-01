@@ -8,9 +8,9 @@ import it.polimi.ingsw.Server.Answers.SetupAnswers.Ping;
  */
 public class ClientPinger implements /*always*/ Runnable
 {
-    private GameHandler client;
+    private ClientHandler client;
 
-    public ClientPinger(GameHandler client)
+    public ClientPinger(ClientHandler client)
     {
         this.client = client;
     }

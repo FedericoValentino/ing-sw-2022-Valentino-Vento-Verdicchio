@@ -30,7 +30,7 @@ import java.io.IOException;
  * Class gameHandler contains all methods to interpret a client message and ask the controller to modify the game accordingly.
  * GameHandler also alerts the client about errors in the moves.
  */
-public class GameHandler extends Thread implements Observer
+public class ClientHandler extends Thread implements Observer
 {
     private ClientConnection socket;
     private MainController mainController;
@@ -44,7 +44,7 @@ public class GameHandler extends Thread implements Observer
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_GREEN = "\u001B[32m";
 
-    public GameHandler(ClientConnection s, Match match)
+    public ClientHandler(ClientConnection s, Match match)
     {
         this.socket = s;
         this.ready = false;
