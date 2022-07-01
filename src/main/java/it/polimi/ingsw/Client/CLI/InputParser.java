@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.CLI;
-//
+
 import it.polimi.ingsw.Client.CLI.Printers.*;
 import it.polimi.ingsw.Client.CharacterActivationParser;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightCharacterCard;
@@ -27,17 +27,14 @@ import java.util.Scanner;
 public class InputParser
 {
     private Scanner parser = new Scanner(System.in).useDelimiter("\\n");
-    private String playerName;
     private ServerConnection socket;
     private BoardPrinters boardPrinters;
     private SchoolPrinter schoolPrinter;
     private InfoPrinters infoPrinters;
     private CardPrinters cardPrinters;
-    private Boolean printView = false;
 
     public InputParser(ServerConnection socket, LightView lv)
     {
-        this.playerName = socket.getNickname();
         this.socket = socket;
         this.boardPrinters = new BoardPrinters(lv);
         this.schoolPrinter = new SchoolPrinter(lv);
@@ -396,11 +393,9 @@ public class InputParser
                 break;
             case "help":
                 infoPrinters.showHelp();
-                printView = false;
                 break;
             case "show":
                 showView(words);
-                printView = false;
                 break;
             case "ready":
                 socket.sendMessage(new SerializedMessage(new ReadyStatus()));
