@@ -36,7 +36,7 @@ public class LightIsland {
         this.teamInfluence = teamInfluence;
         this.noEntry = noEntry;
     }
-
+    //TODO find out why this is the case
     public void updateIsland(LightIsland island)
     {
         this.islandId = island.getIslandId();

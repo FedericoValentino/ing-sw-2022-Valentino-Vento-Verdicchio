@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client;
-//
+
 import it.polimi.ingsw.Client.LightView.LightTeams.LightTeam;
 import it.polimi.ingsw.Client.LightView.LightTurnState;
 import it.polimi.ingsw.Client.LightView.LightUtilities.InternalMessage;

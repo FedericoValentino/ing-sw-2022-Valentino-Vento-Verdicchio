@@ -5,6 +5,10 @@ import it.polimi.ingsw.model.boards.token.Student;
 
 import java.util.ArrayList;
 
+/**
+ * View representation of a character card: adds a "description" string array, which will contain a lore based description
+ * of the character card "character" and relative effect
+ */
 public class LightCharacterCard
 {
     private CharacterName name;
@@ -12,7 +16,7 @@ public class LightCharacterCard
     private int uses;
     private int currentCost;
     private int noEntry;
-    private ArrayList<Student> studentList = new ArrayList<>();
+    private ArrayList<Student> studentList;
     private String[] description;
     private LightCharacterType type;
 

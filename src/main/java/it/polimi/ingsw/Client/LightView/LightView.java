@@ -13,9 +13,17 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
-//
+
 /**
- * Class LightView contains mock objects used to mimic those of the model. Each object contains
+ * Class LightView contains mock objects used to mimic those of the model. Each object contains the attributes needed for
+ * its representation, and the associated getters. For this reason, only the classes with some peculiarities will have a
+ * documentation attached (it's not very informative documenting getters, and most of the classes are 1:1 reproductions of those
+ * inside the model).
+ * Moreover, each object (aside from some objects that are contained within other objects), and the lightView itself,
+ * extends the observable class, and have the update method to synchronize themselves with the latest view.
+ * LightView contains its update method, a method to parse the JSON file containing the updated view, and some service methods useful
+ * in lots of classes that retain an instance of the view.
+ * The seemingly unused setters are required by JSON protocol, even though they seem useless
  */
 public class LightView extends Observable
 {
@@ -29,13 +37,16 @@ public class LightView extends Observable
     private LightTurnState currentTurnState;
     private int bankBalance;
 
-
+    /**
+     * Class constructor
+     */
     public LightView()
     {
     }
 
     /**
      * The method parses the ViewMessage containing the JSON serialization of the game model
+     * @param view the viewMessage containing the JSON
      */
     public void parse(ViewMessage view) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -51,7 +62,8 @@ public class LightView extends Observable
     }
 
     /**
-     * Method updateLightView updates the client view, after the deserialization of the model JSON
+     * Method updateLightView updates the client view and its objects, after the deserialization of the model JSON
+     * @param newView the up-to-date view
      */
     public void updateLightView(LightView newView)
     {
@@ -113,24 +125,23 @@ public class LightView extends Observable
 
     /** Method findPlayerByName returns the Player with the given name
      * @param currentTeams  the teams to search the player name in
-     * @param player  the name of the player object to seek
+     * @param playerName  the name of the player object to seek
      * @return p, the correct player object
      */
-    public LightPlayer findPlayerByName(ArrayList<LightTeam> currentTeams, String player)
+    public LightPlayer findPlayerByName(ArrayList<LightTeam> currentTeams, String playerName)
     {
-        for(LightTeam t: currentTeams)
+        for(LightTeam team: currentTeams)
         {
-            for(LightPlayer p: t.getPlayers())
+            for(LightPlayer player: team.getPlayers())
             {
-                if(p.getName().equals(player))
+                if(player.getName().equals(playerName))
                 {
-                    return p;
+                    return player;
                 }
             }
         }
         return null;
     }
-
 
     public void setCurrentIslands(LightIslands currentIslands) {
         this.currentIslands = currentIslands;
