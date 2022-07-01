@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
-//
+
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
@@ -18,7 +18,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import it.polimi.ingsw.model.boards.token.enumerations.GamePhase;
 
-
+/**
+ * GUI controller responsible for the graphics and functions associated to the CLouds
+ */
 public class CloudController extends Controller implements ObserverLightView
 {
     private LightTurnState turn;
@@ -33,7 +35,7 @@ public class CloudController extends Controller implements ObserverLightView
     /**
      * Method CloudSelection is called when a click is registered on one of the many game clouds. It checks the gamePhase
      * and then sends the server the appropriate message.
-     * @param event
+     * @param event the mouseEvent
      */
     public void CloudSelection(MouseEvent event)
     {
@@ -51,7 +53,7 @@ public class CloudController extends Controller implements ObserverLightView
     /**
      * Method Setup is called when initializing the cloud pane. It gets the right amount of clouds to show up on the screen
      * and starts observing each one of them
-     * @param cloudsArray is the lightview representation of the clouds in the game model
+     * @param cloudsArray is the lightView representation of the clouds in the game model
      * @param turnState is the data structure containing all the information about the current turn.
      */
     public void setup(LightCloud[] cloudsArray, LightTurnState turnState)
@@ -76,18 +78,18 @@ public class CloudController extends Controller implements ObserverLightView
 
 
     /**
-     * Method fill fills the clouds with students
-     * @param fillable is the GridPane containing the clouds to be filled
+     * Method "fill" fills the clouds with students
+     * @param toFill is the GridPane containing the clouds to be filled
      * @param filler is the reference cloud containing the information on the students that need to be displayed
      */
-    public void fill(GridPane fillable, LightCloud filler)
+    public void fill(GridPane toFill, LightCloud filler)
     {
         int temp = filler.getStudents().size();
         for(int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 2; j++)
             {
-                Pane cell = (Pane) GUIUtilities.getCellFromGridPane(fillable, j, i);
+                Pane cell = (Pane) GUIUtilities.getCellFromGridPane(toFill, j, i);
                 cell.setVisible(false);
             }
         }
@@ -95,7 +97,7 @@ public class CloudController extends Controller implements ObserverLightView
         {
             for(int j = 0; j < 2 && temp > 0; j++)
             {
-                Pane cell = (Pane) GUIUtilities.getCellFromGridPane(fillable, j, i);
+                Pane cell = (Pane) GUIUtilities.getCellFromGridPane(toFill, j, i);
                 cell.setVisible(true);
                 cell.getChildren().clear();
                 cell.getChildren().add(new ImageView(GUIUtilities.getRightColorPath(filler.getStudents().get(temp-1))));

@@ -12,11 +12,13 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
+/**
+ * Handles the Login phase of the setup
+ */
 public class LoginController extends Controller {
 
     @FXML private TextField nickname;
     @FXML private TextField IP;
-    //@FXML private TextField Port;
     @FXML private Button TryConn;
 
 
@@ -29,7 +31,8 @@ public class LoginController extends Controller {
         TryConn.setOnMouseClicked(this::onClickTryConnection);
     }
 
-    /**This method is called when the TryConnection button is pressed.
+    /**
+     * This method is called when the TryConnection button is pressed.
      * Firstly send all the attributes for the constructions of the connection with the server.
      * Secondly it uses the loadNewScreen method, inherited from the abstract class Controller, to replace
      * the current scene with the Waiting scene.

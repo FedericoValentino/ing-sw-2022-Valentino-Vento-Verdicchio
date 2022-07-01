@@ -16,7 +16,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import it.polimi.ingsw.model.boards.token.enumerations.Col;
 
-
+/**
+ * GUI controller responsible for the graphical representation and the functions associated with the single Island
+ */
 public class IslandController extends Controller {
 
     @FXML private ImageView stud_green;
@@ -41,8 +43,8 @@ public class IslandController extends Controller {
     private LightMotherNature MN;
     private int totalIslands;
 
-    /**This method calculates the amount of movement for mother nature and sends the appropriate message to the server
-     *
+    /**
+     * This method calculates the amount of movement for mother nature and sends the appropriate message to the server
      * @param event is the click on an island
      */
     public void onClick(MouseEvent event)
@@ -61,7 +63,8 @@ public class IslandController extends Controller {
     }
 
 
-    /**This method fills the island with students, no entry tokens, mother nature and the towers if present
+    /**
+     * This method fills the island with students, no entry tokens, mother nature and the towers if present
      *
      * @param island contains all the information the island need to be filled with
      * @param ID is the island ID
@@ -105,8 +108,9 @@ public class IslandController extends Controller {
     }
 
 
-    /**This method place the student into the island only if there are, showing the pane with the color of that student
-     *  and the number of student of the same color in it (so if the number of a student of some color is
+    /**
+     * This method place the student into the island only if there are, showing the pane with the color of that student
+     * and the number of student of the same color in it (so if the number of a student of some color is
      * 0 it doesn't show the pane and the text)
      *
      * @param island is used because it contains the student to place into the island

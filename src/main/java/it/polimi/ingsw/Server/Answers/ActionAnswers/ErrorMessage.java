@@ -1,8 +1,9 @@
 package it.polimi.ingsw.Server.Answers.ActionAnswers;
 
-import it.polimi.ingsw.Server.Answers.ActionAnswers.ACTIONANSWERTYPE;
-import it.polimi.ingsw.Server.Answers.ActionAnswers.StandardActionAnswer;
 
+/**
+ * This message is used to tell the client about his errors
+ */
 public class ErrorMessage extends StandardActionAnswer
 {
 
@@ -10,7 +11,7 @@ public class ErrorMessage extends StandardActionAnswer
     private ERRORTYPES error;
 
     /**
-     * Class Constructor, this message is used to tell the client about his errors
+     * Class Constructor.
      */
     public ErrorMessage(ERRORTYPES error)
     {

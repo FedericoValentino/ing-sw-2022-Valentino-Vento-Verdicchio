@@ -17,6 +17,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import java.util.stream.Collectors;
 
+/**
+ * GUI controller responsible for the graphical representation and the functions associated with the Information panel
+ */
 public class PropagandaController extends Controller implements ObserverLightView
 {
 
@@ -54,7 +57,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
 
     /**
      * Method exitOnClick is called whenever the exit button is clicked. It sends a disconnect message to the server and closes the game
-     * @param mouseEvent
+     * @param mouseEvent the mouseEvent
      */
     private void exitOnClick(MouseEvent mouseEvent)
     {
@@ -65,7 +68,7 @@ public class PropagandaController extends Controller implements ObserverLightVie
 
     /**
      * Method endTurnOnClick is called whenever the endTurn button is clicked. It sends a EndTurn message to the server
-     * @param mouseEvent
+     * @param mouseEvent the mouseEvent
      */
     private void endTurnOnClick(MouseEvent mouseEvent)
     {
@@ -73,8 +76,8 @@ public class PropagandaController extends Controller implements ObserverLightVie
     }
 
     /**
-     * Method update updates the hints, the current coins and the bank balance for our user
-     * @param o
+     * Method "update" updates the hints, the current coins and the bank balance for our user
+     * @param o the LightTurnState object it receives with each update
      */
     @Override
     public void update(Object o)

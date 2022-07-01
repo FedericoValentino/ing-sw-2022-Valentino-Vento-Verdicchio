@@ -6,11 +6,14 @@ import it.polimi.ingsw.Server.Server;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * The Client application main
+ */
 public class ClientApp
 {
     /**
-     * This main method display into the standard output console which interface (cli or gui) we want to run and
-     * according to the choice it starts the ClientCLI or the ClientGUI.
+     * This main method display into the standard output console which interface (cli or gui or even server) we want to run and,
+     * according to the choice, it starts the ClientCLI or the ClientGUI.
      * @param args is the Standard String vector that main must have
      */
     public static void main( String[] args ) throws IOException, ClassNotFoundException {

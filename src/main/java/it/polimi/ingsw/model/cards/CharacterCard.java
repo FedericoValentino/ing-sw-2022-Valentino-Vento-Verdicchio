@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Character Card is an abstract class from which each Character Card subclass inherits base common attributes and methods.
  * The effect method, as for the strategy pattern, is overridden by each particular card.
  * Regarding the implementation of Serializable interface, due to the intrinsic dynamic nature of the character cards, it
- * is difficult to serialize them with a json file with the rest of the currentGameState without encurring in copious runtime
+ * is difficult to serialize them with a json file with the rest of the currentGameState without incurring in copious runtime
  * problems; our solution is to handle them separately.
  */
 public abstract class CharacterCard implements Serializable {

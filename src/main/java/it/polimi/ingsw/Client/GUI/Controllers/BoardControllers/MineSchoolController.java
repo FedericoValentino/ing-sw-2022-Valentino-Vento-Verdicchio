@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI.Controllers.BoardControllers;
-////
+
 import it.polimi.ingsw.Client.GUI.GUIUtilities;
 import it.polimi.ingsw.Client.GUI.GuiMainStarter;
 import it.polimi.ingsw.Client.LightView.LightTeams.LightPlayer;
@@ -22,6 +22,9 @@ import javafx.scene.paint.Color;
 
 import java.util.stream.Collectors;
 
+/**
+ * GUI controller responsible for the graphical representation and the functions associated with the Client owner's school
+ */
 public class MineSchoolController implements ObserverLightView
 {
     @FXML private Pane studentChoice;
@@ -61,7 +64,8 @@ public class MineSchoolController implements ObserverLightView
         }
     }
 
-    /**This method send the movestudent message to the server, with parameters that will move the student with ID studentChoice into the diningRoom
+    /**
+     * This method send the movestudent message to the server, with parameters that will move the student with ID studentChoice into the diningRoom
      * @param event
      */
     public void sendDining(MouseEvent event)
@@ -72,7 +76,8 @@ public class MineSchoolController implements ObserverLightView
         ((Pane) eventStudent.getSource()).setEffect(null);
     }
 
-    /**This method send the movestudent message to the server, with parameters that will move the student with ID studentChoice into the island with id contained in the choice box
+    /**
+     * This method send the movestudent message to the server, with parameters that will move the student with ID studentChoice into the island with id contained in the choice box
      * @param event
      */
     public void sendIsland(MouseEvent event)
@@ -132,13 +137,13 @@ public class MineSchoolController implements ObserverLightView
         Platform.runLater(()->{
             LightSchool school = (LightSchool) o;
             String TowerColorPath = GUIUtilities.getSchoolColorPath(school.getColor());
-            //Updating ChoiceBox
+
             islands.getItems().clear();
             for(int i = 0; i < view.getCurrentIslands().getIslands().size(); i++)
             {
                 islands.getItems().add(Integer.toString(i));
             }
-            //Updating Entrance
+
             for(int i = 0; i < 9; i++)
             {
                 int finalI = i;
@@ -156,7 +161,7 @@ public class MineSchoolController implements ObserverLightView
                 entrance_pos.getChildren().add(nImage);
                 entrance_pos.setVisible(true);
             }
-            //Updating Dining
+
             HBox diningRoom = (HBox)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("DiningRoom")).collect(Collectors.toList()).get(0);
             for(int i = 0; i < 5; i++)
             {
@@ -172,13 +177,13 @@ public class MineSchoolController implements ObserverLightView
                     ((VBox)diningRoom.getChildren().get(i)).getChildren().get(j).setVisible(true);
                 }
             }
-            //Updating Prof
+
             HBox profTable = (HBox)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("ProfTable")).collect(Collectors.toList()).get(0);
             for(int i = 0; i < 5; i++)
             {
                 profTable.getChildren().get(i).setVisible(school.getProfessorTable()[i]);
             }
-            //Updating Towers
+
             GridPane towers = (GridPane)((AnchorPane)MySchool.getChildren().get(0)).getChildren().stream().filter(node -> node.getId().equals("Towers")).collect(Collectors.toList()).get(0);
             int tempTowers = school.getTowerCount();
             for(int i = 0; i < 2; i++)

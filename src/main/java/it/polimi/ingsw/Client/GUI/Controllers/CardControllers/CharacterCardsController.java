@@ -1,5 +1,5 @@
 package it.polimi.ingsw.Client.GUI.Controllers.CardControllers;
-//y
+
 import it.polimi.ingsw.Client.GUI.Controllers.Controller;
 import it.polimi.ingsw.Client.GUI.Controllers.MainBoardController;
 import it.polimi.ingsw.Client.LightView.LightCards.characters.LightActiveDeck;
@@ -26,6 +26,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+/**
+ * GUI controller responsible for the graphical representation and the functions associated with the CharacterCards
+ */
 public class CharacterCardsController extends Controller implements ObserverLightView
 {
     private AnchorPane characterPane;
@@ -45,11 +48,11 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     /**
      * Method Setup is called when first initializing the characterCard AnchorPane. It reads through all the active deck and inactive deck and sets up a stackPane,
      * containing the character to show.
-     * If the game is not set to be played in expertMode then no stackpane is created and just a text telling the user that the slot is not available will show up
+     * If the game is not set to be played in expertMode then no stackPane is created and just a text telling the user that the slot is not available will show up
      * @param characterPane is the anchorPane to be modified
      * @param inactiveCharacters is our characterDeck in the lightView
      * @param activeCharacters is our activeCharacterDeck in the lightView
-     * @param controller is our mainBoarController. We save it here so that we can then call the cards visualization methods contained in there.
+     * @param controller is our mainBoarController. We save it here so that we can then call the card visualization methods contained in there.
      * @throws IOException
      */
     public void setup(AnchorPane characterPane, LightCharDeck inactiveCharacters, LightActiveDeck activeCharacters, MainBoardController controller) throws IOException {
@@ -155,7 +158,7 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     }
 
     /**
-     * Method show on click is called whenever the character ImageView is clicked. It then calls the method in main controller
+     * Method "showOnClick" is called whenever the character ImageView is clicked. It then calls the method in main controller
      * for displaying the character info on screen
      * @param mouseEvent is the click event
      */
@@ -206,6 +209,11 @@ public class CharacterCardsController extends Controller implements ObserverLigh
     }
 
 
+    /**
+     * Useful to extract the correct CharacterPane from the StackPane of characters
+     * @param card the card we will use to help with this process
+     * @return the pane containing the representation of the given card
+     */
     public Pane getCorrectPane(LightCharacterCard card)
     {
         CharacterName name = card.getName();
@@ -219,7 +227,11 @@ public class CharacterCardsController extends Controller implements ObserverLigh
         return null;
     }
 
-
+    /**
+     * Given the characterName, it returns the cardImage path
+     * @param name the character's name
+     * @return the image path
+     */
     public String getCardPath(CharacterName name){
         switch(name)
         {

@@ -32,6 +32,9 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Contains all the references needed to set up the GUI correctly, from the MainBoardController to the ServerConnection
+ */
 public class ClientGUI implements ClientView, InformationGenerator
 {
     private GuiMainStarter guiMainStarter;
@@ -49,10 +52,10 @@ public class ClientGUI implements ClientView, InformationGenerator
 
 
     /**
-     * This method is called by the ClientApp when the user set the type of view that want to use.
-     * In particular this function create a new instance of guiMainStarter, set the lightView (using the object MyView
-     * that is defined in the Client View interface), then set the parameter ClientGUi in the GuiMainStarter on this
-     * and then start the guiMainStarter calling its own method called main().
+     * This method is called by the ClientApp when the user sets the type of view that he wants to use.
+     * In particular this function creates a new instance of guiMainStarter, sets the lightView (using the object MyView
+     * defined in the Client View interface), then sets the parameter ClientGUi in the GuiMainStarter on this
+     * and then starts the guiMainStarter by calling its own method called main().
      */
     @Override
     public void run() {
@@ -63,7 +66,7 @@ public class ClientGUI implements ClientView, InformationGenerator
 
 
     /**
-     * This method replace the current scene with the one that is contained in the loader.
+     * This method replaces the current scene with the one that is contained in the loader.
      * @param loader contains the next scene to show
      */
     public void changeScene(FXMLLoader loader)
@@ -78,7 +81,8 @@ public class ClientGUI implements ClientView, InformationGenerator
     }
 
     /**
-     * to do (because I don't know exactly what to write in it)
+     * Method readMessage handles the messages coming from the server and calls the right messageHandler for any occasion.
+     * It also handles the correlated exceptions, generally by sending the client back to the Menu or intro screen
      */
     @Override
     public void readMessage()
@@ -125,8 +129,8 @@ public class ClientGUI implements ClientView, InformationGenerator
     }
 
     /**
-     * This method take the answer object and based on the type of it choose the next scene to show and display it
-     * using the Platform.runLater method. Inside it has a call to the changeScene method and a setting of
+     * This method takes the answer object and, based on its type, chooses the next scene to show and displays it
+     * using the Platform.runLater method. Inside it hosts a call to the changeScene method and a setting of
      * the current instance of the guiMainStarter into the right loader.
      * In particular if it's a: -GAME_NFO_REQ it shows the Lobby scene where the first user set the number of team
      *                                       and the difficulty of the game;
@@ -139,7 +143,7 @@ public class ClientGUI implements ClientView, InformationGenerator
      *                          -GAME_START it shows the waiting scene, that will be replaced when a new message from
      *                                     the server is received;
      *                          -REJECT it shows the disconnect scene in which the player must return to the intro scene
-     *                                  clicking the Menù button.
+     *                                  clicking the Menu button.
      *
      * @param answer is the object that it's received from the server.
      */
@@ -220,13 +224,13 @@ public class ClientGUI implements ClientView, InformationGenerator
 
 
     /**
-     * This method take the answer object and based on the type of it choose the right instructions.
+     * This method takes the answer object and, based on its type, it chooses the right instructions.
      * If the type is: ERROR, it shows the error;
      *                 VIEW, it replaces the content of the current view with the one that is stored in the answer.
-     *                       If it's the first time that receive this message it also use the Platform.runLater method
-     *                       to replace the scene with the mainBoard one and then call all the initial setup methods
-     *                       contained in all the controller linked to a part of the mainBoard scene;
-     *                 WIN, it disconnects the client showing the win scene and calling the setup method of the related
+     *                       If it's the first time receiving this message it also uses the Platform.runLater method
+     *                       to replace the scene with the mainBoard one, and then calls all the initial setup methods
+     *                       contained in all the controllers linked to a part of the mainBoard scene;
+     *                 WIN, it disconnects the client, showing the win scene and calling the setup method of the related
      *                      controller.
      * @param answer is the object that it's received from the server.
      */
@@ -289,7 +293,7 @@ public class ClientGUI implements ClientView, InformationGenerator
     }
 
     /**
-     * This method try to establish the connection to the server identified by the IP parameter and if it's all correct
+     * This method tries to establish the connection to the server, identified by the IP parameter: if it's all correct
      * it also creates and start a new Listener GUI. If there are IOException it replaces the current scene with the
      * intro one.
      * @param nickname is the name choose by the player

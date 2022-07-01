@@ -6,15 +6,20 @@ import javafx.scene.Scene;
 
 import java.io.IOException;
 
+/**
+ * Abstract class from which all the GUI controllers inherit the reference to the gui
+ */
 public abstract class Controller {
 
-    /**That's the reference to the gui **/
+    /**
+     * That's the reference to the gui *
+     */
     protected static GuiMainStarter guiMainStarter;
 
 
     /**
-     * This function take the path of the screen that must be load and try to load it into the FMLLoader object (called "loader") and then
-     * replace the current scene with the loaded one.
+     * This function takes the path of the screen that must be loaded and tries to load it into the FMLLoader object (called "loader");
+     * then replaces the current scene with the loaded one.
      *
      * @param path is the path that must be load by the parameter loader
      * @return loader, the FXMLLoader object

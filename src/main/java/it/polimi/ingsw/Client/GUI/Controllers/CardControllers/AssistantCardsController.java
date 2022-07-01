@@ -21,13 +21,15 @@ import it.polimi.ingsw.model.cards.assistants.AssistantCard;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
-//
+
+/**
+ * GUI controller responsible for the graphical representation and the functions associated with the AssistantDeck
+ */
 public class AssistantCardsController extends Controller implements ObserverLightView
 
 {
     @FXML private AnchorPane assistantsAnchorPane;
     @FXML private Button lastPlayedButton;
-    //private HBox Box;
     private ArrayList<LightTeam> teams;
     private ArrayList<LightPlayer> players = new ArrayList<>();
     private ArrayList<AssistantCard> played = new ArrayList<>();
@@ -39,21 +41,21 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     /**
      * Method assistantsOnClick is called whenever the lastPlayedButton is clicked. It calls the method in the mainBoardController
      * to display every player currentAssistantCard
-     * @param event
+     * @param event the mouseEvent
      */
     private void assistantsOnClick(MouseEvent event)
     {
         if(lastPlayedButton.getText().equals("Active\nAssistants"))
         {
-            int totalcards = 0;
+            int totalCards = 0;
             for (LightTeam team : teams)
                 for (LightPlayer player : team.getPlayers())
                 {
                     if (player.getCurrentAssistantCard() != null)
                     {
                         String path = getAssistantPath(player.getCurrentAssistantCard());
-                        mainController.showPlayedAssistants(path, totalcards / 2, totalcards % 2, player, false);
-                        totalcards++;
+                        mainController.showPlayedAssistants(path, totalCards / 2, totalCards % 2, player, false);
+                        totalCards++;
                     }
                 }
             lastPlayedButton.setText("Hide");
@@ -92,7 +94,7 @@ public class AssistantCardsController extends Controller implements ObserverLigh
     /**
      * Method update runs whenever a player is updated. If our user is updated then the update removes all the cards and
      * then replaces them according to what the player has in his deck
-     * @param o
+     * @param o the LightPlayer object passed with each update
      */
     @Override
     public void update(Object o)
