@@ -4,7 +4,7 @@ Eriantys Board Game is the final test of "**Software Engineering**", course of "
 
 **Teacher** Gianpaolo Cugola
 
-**Final Score** TBD
+**Final Score** 30L
 
 ## Project specifications
 The project was about programming from scratch a Java version of the game _Eriantys_ by Cranio Creations.
@@ -29,7 +29,7 @@ The final version includes:
 | Persistence | ⛔ |
 | Disconnection Resiliance | ⛔ |
 
-##Test Coverage
+## Test Coverage
 | Component | Class Coverage |Method Coverage | Line Coverage
 |:-----------------------:|:------------------------------------:|:------------------------------------:|:------------------------------------:|
 |Model | 100% | 100% | 98% |
