@@ -362,7 +362,7 @@ public class MainBoardController extends Controller {
                 {
                     PrincessSetup(card);
                 }
-                if(card.getName().equals(CharacterName.GRANDMA_HERBS))
+                else if(card.getName().equals(CharacterName.GRANDMA_HERBS))
                 {
                     GrandmaHerbsSetup(card);
                 }

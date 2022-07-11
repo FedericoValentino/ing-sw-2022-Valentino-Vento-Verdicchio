@@ -103,8 +103,9 @@ public class CharacterController
                 game.getCurrentActiveCharacterCard().remove(0);
                 game.getCurrentCharacterDeck().getDeck().add(card);
             }
+            Collections.sort(game.getCurrentCharacterDeck().getDeck(), Comparator.comparingInt(CharacterCard::getDeckIndex));
         }
-        Collections.sort(game.getCurrentCharacterDeck().getDeck(), Comparator.comparingInt(CharacterCard::getDeckIndex));
+
     }
 
     /**
